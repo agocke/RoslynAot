@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <IsAotCompatible>true</IsAotCompatible>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <AssemblyName>Microsoft.CodeAnalysis</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign>true</PublicSign>
+    <AssemblyOriginatorKeyFile>../../eng/Microsoft.CodeAnalysis.public.snk</AssemblyOriginatorKeyFile>
+    <NoWarn>$(NoWarn);CS0108;CS0169;CS0659;CS0672;CS8669;CA2256</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../RoslynAot.Abi/RoslynAot.Abi.csproj" />
+    <ProjectReference Include="../RoslynAot.GeneratedFacade.Runtime/RoslynAot.GeneratedFacade.Runtime.csproj" />
+    <Compile Include="AnalyzerLocalFacade.cs" />
+    <Compile Include="../RoslynAot.Generated/Projection/Facades/Microsoft.CodeAnalysis/**/*.cs"
+             Link="Generated/%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <IsAotCompatible>true</IsAotCompatible>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign>true</PublicSign>
+    <AssemblyOriginatorKeyFile>../../eng/Roslyn.Test.public.snk</AssemblyOriginatorKeyFile>
+    <NoWarn>$(NoWarn);RSEXPERIMENTAL006</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../RoslynAot.Abi/RoslynAot.Abi.csproj" />
+    <ProjectReference Include="../RoslynAot.GeneratedFacade.Runtime/RoslynAot.GeneratedFacade.Runtime.csproj" />
+    <ProjectReference Include="../RoslynAot.GeneratedFacade/RoslynAot.GeneratedFacade.csproj" />
+    <ProjectReference Include="../RoslynAot.GeneratedFacade.CSharp/RoslynAot.GeneratedFacade.CSharp.csproj" />
+    <Compile Include="../RoslynAot.Generated/Projection/AnalyzerRuntime/**/*.cs"
+             Link="Generated/Roslyn/%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

@@ -1,6 +1,0 @@
-<Project>
-  <PropertyGroup>
-    <AnalyzeAotEnabled Condition="'$(AnalyzeAotEnabled)' == ''">true</AnalyzeAotEnabled>
-    <AnalyzeAotOutputPath Condition="'$(AnalyzeAotOutputPath)' == ''">$(BaseIntermediateOutputPath)analyze-aot/</AnalyzeAotOutputPath>
-  </PropertyGroup>
-</Project>

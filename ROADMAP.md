@@ -1,8 +1,8 @@
-# AnalyzeAot roadmap
+# RoslynAot roadmap
 
 ## Goal
 
-A user installs the AnalyzeAot NuGet package and their normal build uses:
+A user installs the RoslynAot NuGet package and their normal build uses:
 
 - A NativeAOT-compiled C# compiler instead of the standard JIT-compiled compiler
   process.
@@ -22,7 +22,7 @@ measure the result.
 The final integration should require only a package reference:
 
 ```xml
-<PackageReference Include="AnalyzeAot" Version="..." />
+<PackageReference Include="RoslynAot" Version="..." />
 ```
 
 The package should then:
@@ -30,7 +30,7 @@ The package should then:
 1. Select the native compiler for the current platform.
 2. Find the analyzers already supplied to the C# compiler.
 3. Produce or reuse a cached native module for each analyzer assembly.
-4. Pass those native modules to the AnalyzeAot compiler.
+4. Pass those native modules to the RoslynAot compiler.
 5. Preserve the normal build's diagnostics and outputs.
 
 Users should not need to create native wrapper projects, list analyzer types,
@@ -38,7 +38,7 @@ invoke generators, or understand the compiler/analyzer ABI.
 
 ## Definition of done
 
-AnalyzeAot is usable when a representative C# project can add the package and:
+RoslynAot is usable when a representative C# project can add the package and:
 
 - Build through the NativeAOT compiler using the existing MSBuild `Csc` inputs.
 - Run its existing analyzer assemblies through generated native modules.
@@ -46,7 +46,7 @@ AnalyzeAot is usable when a representative C# project can add the package and:
   information for supported inputs.
 - Reuse native compiler and analyzer artifacts on subsequent builds.
 - Report unsupported analyzers or compiler features clearly.
-- Disable AnalyzeAot and return to the standard compiler without project
+- Disable RoslynAot and return to the standard compiler without project
   restructuring.
 - Work on supported Windows, Linux, and macOS environments.
 
@@ -79,7 +79,7 @@ builds, caching is incomplete, and only Linux has been validated.
 
 ### Package integration
 
-- Make the package configure the existing `Csc` task to invoke the AnalyzeAot
+- Make the package configure the existing `Csc` task to invoke the RoslynAot
   compiler.
 - Convert the managed `@(Analyzer)` inputs into native module paths before
   compilation.
@@ -151,10 +151,10 @@ handles through a private generated ABI.
 
 This constraint is fundamental, but most implementation details are not part of
 the product roadmap. The
-[native ABI](src/AnalyzeAot.Abi/README.md),
-[analyzer runtime](src/AnalyzeAot.AnalyzerRuntime/README.md),
-[compiler host](src/AnalyzeAot.CompilerHost/README.md), and
-[Roslyn facade generator](tools/AnalyzeAot.RoslynFacadeGenerator/README.md)
+[native ABI](src/RoslynAot.Abi/README.md),
+[analyzer runtime](src/RoslynAot.AnalyzerRuntime/README.md),
+[C# compiler](src/CscAot/README.md), and
+[Roslyn facade generator](tools/RoslynAot.RoslynFacadeGenerator/README.md)
 document their own engineering semantics.
 
 ## Non-goals

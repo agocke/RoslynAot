@@ -1,0 +1,95 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <PackageId>RoslynAot.Experimental</PackageId>
+    <Version>0.1.0</Version>
+    <Description>Experimental NativeAOT compiler host and analyzer ABI.</Description>
+    <Authors>RoslynAot contributors</Authors>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <_PackageConfiguration>$([System.String]::Copy('$(Configuration)').ToLowerInvariant())</_PackageConfiguration>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../RoslynAot.Abi/RoslynAot.Abi.csproj"
+                      ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+    <ProjectReference Include="../RoslynAot.AnalyzerRuntime/RoslynAot.AnalyzerRuntime.csproj"
+                      ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+    <ProjectReference Include="../RoslynAot.GeneratedFacade.Runtime/RoslynAot.GeneratedFacade.Runtime.csproj"
+                      ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+    <ProjectReference Include="../RoslynAot.GeneratedFacade/RoslynAot.GeneratedFacade.csproj"
+                      ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+    <ProjectReference Include="../RoslynAot.GeneratedFacade.CSharp/RoslynAot.GeneratedFacade.CSharp.csproj"
+                      ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+
+    <None Include="buildTransitive/RoslynAot.Experimental.props"
+          Pack="true"
+          PackagePath="buildTransitive/" />
+    <None Include="buildTransitive/RoslynAot.Experimental.targets"
+          Pack="true"
+          PackagePath="buildTransitive/" />
+    <None Include="tools/compiler/CscAot.csproj"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../CscAot/Program.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../CscAot/NativeDiagnosticAnalyzer.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../CscAot/RoslynAotCSharpCompiler.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../CscAot/RoslynHandleTable.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../CscAot/RoslynInterop.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../CscAot/RoslynProjectionValidation.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../RoslynAot.Abi/AnalyzerAbi.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../RoslynAot.Generated/Projection/Abi/**/*.cs"
+          Pack="true"
+          PackagePath="tools/compiler/Generated/Roslyn/Abi/" />
+    <None Include="../RoslynAot.Generated/Projection/Compiler/**/*.cs"
+          Pack="true"
+          PackagePath="tools/compiler/Generated/Roslyn/Compiler/" />
+    <None Include="../RoslynAot.Generated/Projection/Manifest/RoslynProjection.json"
+          Pack="true"
+          PackagePath="tools/compiler/Generated/Roslyn/Manifest/" />
+    <None Include="../../eng/Roslyn.Test.public.snk"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../../artifacts/bin/RoslynAot.Abi/$(_PackageConfiguration)/RoslynAot.Abi.dll"
+          Pack="true"
+          PackagePath="tools/analyzer-runtime/" />
+    <None Include="../../artifacts/bin/RoslynAot.AnalyzerRuntime/$(_PackageConfiguration)/RoslynAot.AnalyzerRuntime.dll"
+          Pack="true"
+          PackagePath="tools/analyzer-runtime/" />
+    <None Include="../../artifacts/bin/RoslynAot.GeneratedFacade.Runtime/$(_PackageConfiguration)/RoslynAot.GeneratedFacade.Runtime.dll"
+          Pack="true"
+          PackagePath="tools/analyzer-runtime/" />
+    <None Include="../../artifacts/bin/RoslynAot.GeneratedFacade/$(_PackageConfiguration)/Microsoft.CodeAnalysis.dll"
+          Pack="true"
+          PackagePath="tools/analyzer-runtime/" />
+    <None Include="../../artifacts/bin/RoslynAot.GeneratedFacade.CSharp/$(_PackageConfiguration)/Microsoft.CodeAnalysis.CSharp.dll"
+          Pack="true"
+          PackagePath="tools/analyzer-runtime/" />
+    <None Include="../../README.md"
+          Pack="true"
+          PackagePath="/" />
+  </ItemGroup>
+
+</Project>

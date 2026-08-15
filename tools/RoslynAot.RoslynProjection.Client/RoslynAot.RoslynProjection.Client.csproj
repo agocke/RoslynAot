@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PublishAot>true</PublishAot>
+    <NativeLib>Shared</NativeLib>
+    <IsAotCompatible>true</IsAotCompatible>
+    <AssemblyName>roslyn-aot-roslyn-projection-client</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign>true</PublicSign>
+    <AssemblyOriginatorKeyFile>../../eng/Microsoft.CodeAnalysis.public.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/RoslynAot.Abi/RoslynAot.Abi.csproj" />
+    <ProjectReference Include="../../src/RoslynAot.GeneratedFacade.Runtime/RoslynAot.GeneratedFacade.Runtime.csproj" />
+    <ProjectReference Include="../../src/RoslynAot.GeneratedFacade/RoslynAot.GeneratedFacade.csproj" />
+    <ProjectReference Include="../../src/RoslynAot.GeneratedFacade.CSharp/RoslynAot.GeneratedFacade.CSharp.csproj" />
+  </ItemGroup>
+
+</Project>

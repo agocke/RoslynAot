@@ -1,0 +1,26 @@
+<Project>
+  <PropertyGroup>
+    <_RoslynAotCompilerProject>$(MSBuildThisFileDirectory)../tools/compiler/CscAot.csproj</_RoslynAotCompilerProject>
+    <_RoslynAotCompilerOutput>$(RoslynAotOutputPath)compiler/</_RoslynAotCompilerOutput>
+    <_RoslynAotCompilerExecutable>$(_RoslynAotCompilerOutput)csc-aot$(ExeExtension)</_RoslynAotCompilerExecutable>
+  </PropertyGroup>
+
+  <Target Name="RoslynAotPublishCompiler"
+          BeforeTargets="CoreCompile"
+          Condition="'$(RoslynAotEnabled)' == 'true'"
+          Inputs="$(_RoslynAotCompilerProject)"
+          Outputs="$(_RoslynAotCompilerExecutable)">
+    <MakeDir Directories="$(_RoslynAotCompilerOutput)" />
+    <Exec Command="dotnet publish &quot;$(_RoslynAotCompilerProject)&quot; --nologo --configuration $(Configuration) --runtime $(NETCoreSdkRuntimeIdentifier) --output &quot;$(_RoslynAotCompilerOutput)&quot;" />
+    <ItemGroup>
+      <FileWrites Include="$(_RoslynAotCompilerOutput)**/*" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="RoslynAotPublishAnalyzers"
+          BeforeTargets="CoreCompile"
+          DependsOnTargets="RoslynAotPublishCompiler"
+          Condition="'$(RoslynAotEnabled)' == 'true' and '@(RoslynAotNativeAnalyzer)' != ''">
+    <Exec Command="dotnet publish &quot;%(RoslynAotNativeAnalyzer.Identity)&quot; --nologo --configuration $(Configuration) --runtime $(NETCoreSdkRuntimeIdentifier) --output &quot;$(RoslynAotOutputPath)analyzers/%(RoslynAotNativeAnalyzer.Filename)/&quot;" />
+  </Target>
+</Project>

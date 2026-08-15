@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PublishAot>true</PublishAot>
+    <IsAotCompatible>true</IsAotCompatible>
+    <AssemblyName>csc</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign>true</PublicSign>
+    <AssemblyOriginatorKeyFile>Roslyn.Test.public.snk</AssemblyOriginatorKeyFile>
+    <NoWarn>$(NoWarn);RS1001;RS1025;RS1026</NoWarn>
+    <_RoslynBincore>$(RoslynTargetsPath)/bincore</_RoslynBincore>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Generated/Roslyn/Abi/**/*.cs" />
+    <Compile Include="Generated/Roslyn/Compiler/**/*.cs" />
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>$(_RoslynBincore)/Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>$(_RoslynBincore)/Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="RenameCscAotExecutable"
+          AfterTargets="Publish"
+          Condition="'$(PublishAot)' == 'true'">
+    <Move SourceFiles="$(PublishDir)$(AssemblyName)$(ExeExtension)"
+          DestinationFiles="$(PublishDir)csc-aot$(ExeExtension)" />
+  </Target>
+
+</Project>

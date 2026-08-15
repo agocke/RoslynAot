@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <RoslynAotEnabled Condition="'$(RoslynAotEnabled)' == ''">true</RoslynAotEnabled>
+    <RoslynAotOutputPath Condition="'$(RoslynAotOutputPath)' == ''">$(BaseIntermediateOutputPath)roslyn-aot/</RoslynAotOutputPath>
+  </PropertyGroup>
+</Project>

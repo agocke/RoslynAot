@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PublishAot>true</PublishAot>
+    <NativeLib>Shared</NativeLib>
+    <IsAotCompatible>true</IsAotCompatible>
+    <AssemblyName>roslyn-aot-sample-analyzer</AssemblyName>
+    <TypeMapEntryAssembly>$(AssemblyName)</TypeMapEntryAssembly>
+    <_AnalyzerConfiguration>$([System.String]::Copy('$(Configuration)').ToLowerInvariant())</_AnalyzerConfiguration>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/RoslynAot.AnalyzerRuntime/RoslynAot.AnalyzerRuntime.csproj" />
+    <ProjectReference Include="../RoslynAot.SampleAnalyzer/RoslynAot.SampleAnalyzer.csproj"
+                      ReferenceOutputAssembly="false" />
+    <Reference Include="RoslynAot.SampleAnalyzer">
+      <HintPath>../../artifacts/bin/RoslynAot.SampleAnalyzer/$(_AnalyzerConfiguration)/RoslynAot.SampleAnalyzer.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

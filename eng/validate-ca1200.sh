@@ -31,12 +31,12 @@ if [[ -z "$reference_directory" ]]; then
 fi
 
 dotnet publish \
-    src/AnalyzeAot.CompilerHost/AnalyzeAot.CompilerHost.csproj \
+    src/CscAot/CscAot.csproj \
     -r linux-x64 \
     -c Release \
     --nologo
 dotnet publish \
-    samples/AnalyzeAot.CSharpNetAnalyzers.Native/AnalyzeAot.CSharpNetAnalyzers.Native.csproj \
+    samples/RoslynAot.CSharpNetAnalyzers.Native/RoslynAot.CSharpNetAnalyzers.Native.csproj \
     -r linux-x64 \
     -c Release \
     --nologo
@@ -68,11 +68,11 @@ managed=(
     samples/CA1200.cs
 )
 native=(
-    artifacts/publish/AnalyzeAot.CompilerHost/release_linux-x64/analyze-aot
+    artifacts/publish/CscAot/release_linux-x64/csc-aot
     "${common[@]}"
     "/out:$output_directory/native/CA1200.dll"
     "/doc:$output_directory/native/CA1200.xml"
-    "/analyzer:artifacts/publish/AnalyzeAot.CSharpNetAnalyzers.Native/release_linux-x64/libanalyze-aot-csharp-net-analyzers.so"
+    "/analyzer:artifacts/publish/RoslynAot.CSharpNetAnalyzers.Native/release_linux-x64/libroslyn-aot-csharp-net-analyzers.so"
     "${references[@]}"
     samples/CA1200.cs
 )
