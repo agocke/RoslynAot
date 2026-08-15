@@ -42,7 +42,13 @@
     <None Include="../AnalyzeAot.CompilerHost/NativeDiagnosticAnalyzer.cs"
           Pack="true"
           PackagePath="tools/compiler/" />
+    <None Include="../AnalyzeAot.CompilerHost/AnalyzeAotCSharpCompiler.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
     <None Include="../AnalyzeAot.Abi/AnalyzerAbi.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../../eng/Roslyn.Test.public.snk"
           Pack="true"
           PackagePath="tools/compiler/" />
     <None Include="../../artifacts/bin/AnalyzeAot.Abi/$(_PackageConfiguration)/AnalyzeAot.Abi.dll"

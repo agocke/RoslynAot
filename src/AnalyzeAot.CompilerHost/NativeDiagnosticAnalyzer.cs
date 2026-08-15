@@ -18,6 +18,11 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
 
     private readonly IAnalyzerTransport _transport;
 
+    internal NativeDiagnosticAnalyzer(string analyzerPath)
+        : this(LoadTransport(analyzerPath))
+    {
+    }
+
     private NativeDiagnosticAnalyzer(IAnalyzerTransport transport)
     {
         _transport = transport;
@@ -29,7 +34,7 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
         get;
     }
 
-    public static NativeDiagnosticAnalyzer Load(string analyzerPath)
+    private static IAnalyzerTransport LoadTransport(string analyzerPath)
     {
         nint library = NativeLibrary.Load(analyzerPath);
         s_loadedLibraries.Add(library);
@@ -59,7 +64,7 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
                     $"Analyzer '{analyzerPath}' uses an incompatible ABI.");
             }
 
-            return new NativeDiagnosticAnalyzer(transport);
+            return transport;
         }
         finally
         {

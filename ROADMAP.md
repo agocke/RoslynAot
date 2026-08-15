@@ -72,13 +72,16 @@ separate project manifest:
    compiler switches and response files.
 2. The package disables shared compilation and points `CscToolPath` and
    `CscToolExe` at the NativeAOT executable.
-3. The stub parses the standard compiler arguments through
-   `CSharpCommandLineParser` from the `Microsoft.CodeAnalysis.CSharp` package.
-4. It uses the resulting `CSharpCommandLineArguments`, parse options,
-   compilation options, and public Roslyn compilation APIs to execute the
-   build.
-5. Analyzer arguments are intercepted and resolved to cached native analyzer
-   artifacts or an explicit managed fallback.
+3. The stub derives from Roslyn's internal `CSharpCompiler`, which parses the
+   standard arguments through `CSharpCommandLineParser` and executes the
+   existing `CommonCompiler` pipeline.
+4. The stub overrides only analyzer resolution, preserving Roslyn's existing
+   source parsing, reference resolution, generators, diagnostics, and emit
+   orchestration.
+5. An earlier MSBuild preparation target compiles managed analyzer DLLs into
+   cached native modules and replaces the `@(Analyzer)` items passed to `Csc`.
+   The stub receives native module paths and creates compiler-side
+   `DiagnosticAnalyzer` proxies before constructing the compilation.
 
 This avoids reproducing MSBuild's compiler-input normalization and keeps the
 stub compatible with existing SDK targets. The Roslyn package exposes the
@@ -86,6 +89,29 @@ parser and compiler object model, but not a single supported public entry point
 that performs every `csc` driver operation. The stub must still orchestrate
 source loading, reference resolution, resources, analyzers, generators,
 diagnostic output, signing, PDBs, Source Link, and emitting.
+
+### Internal Csc driver reuse
+
+Roslyn's `CSharpCompiler` contains the complete command-line compilation
+pipeline and exposes analyzer resolution as a protected virtual method.
+`MockCSharpCompiler` in Roslyn's tests demonstrates the intended extension
+shape by overriding `ResolveAnalyzersFromArguments`.
+
+Released `Microsoft.CodeAnalysis` and `Microsoft.CodeAnalysis.CSharp`
+assemblies grant internals access to
+`Microsoft.CodeAnalysis.CSharp.Test.Utilities`. The compiler driver uses that
+friend identity and Roslyn's test public key, with public signing, to derive
+from `CSharpCompiler`. Its override converts native `/analyzer:` paths directly
+into compiler-side proxy instances and returns them to `CommonCompiler`.
+
+This keeps Roslyn's parsing, resources, generators, diagnostics, signing, PDB,
+Source Link, and emit behavior without entering `AnalyzerFileReference` or
+performing reflection over native modules. The prototype successfully reports
+native analyzer diagnostics and emits portable PDBs from a NativeAOT compiler.
+
+This is intentionally version-coupled to Roslyn internals. The package must pin
+or validate compatible SDK compiler versions, and CI must fail clearly if the
+friend grant, constructor, or override signature changes.
 
 ## ABI generator and ComWrappers
 
@@ -265,6 +291,9 @@ Deliverables:
 - Configuration of `CscToolPath`, `CscToolExe`, and shared-compilation behavior.
 - Compatibility with compiler switches and response files emitted by the SDK's
   `Csc` task.
+- Analyzer preparation before `Csc`, including native wrapper generation,
+  publishing, caching, and replacement of managed `@(Analyzer)` items with
+  native module paths.
 - RID selection and native artifact discovery.
 - Incremental build inputs and outputs.
 - Content-addressed native artifact cache.
@@ -406,8 +435,8 @@ separately from cached build performance.
 
 1. Generate analyzer-type discovery and NativeAOT wrapper projects from
    existing analyzer DLLs instead of using the handwritten sample bootstrap.
-2. Replace the prototype's custom compiler arguments with
-   `CSharpCommandLineParser` and a standard `csc` response file.
+2. Add an explicit compatibility check for the selected SDK Roslyn version,
+   friend-assembly grant, and `CSharpCompiler` override signatures.
 3. Add an executable managed-versus-native diagnostic equivalence test for the
    unchanged sample analyzer.
 4. Validate the working Linux source-generated `ComWrappers` prototype on

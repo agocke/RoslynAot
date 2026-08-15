@@ -43,11 +43,18 @@ Run the compiler with reference assemblies supplied by the build:
 
 ```bash
 analyze-aot \
-  --source samples/Bad.cs \
-  --output artifacts/Bad.dll \
-  --reference /path/to/System.Runtime.dll \
-  --analyzer /path/to/analyze-aot-sample-analyzer.so
+  /nologo \
+  /target:library \
+  /out:artifacts/Bad.dll \
+  /reference:/path/to/System.Runtime.dll \
+  /analyzer:/path/to/analyze-aot-sample-analyzer.so \
+  samples/Bad.cs
 ```
+
+The arguments are parsed by Roslyn's `CSharpCommandLineParser`, including
+response files produced by MSBuild. Analyzer preparation occurs before this
+invocation, so every `/analyzer:` value received by the native compiler is
+already a platform-native shared library.
 
 Analyzer libraries remain loaded for the compiler process lifetime because
 `ComWrappers` proxies can release their native references during garbage
@@ -56,9 +63,12 @@ collection.
 ## Package integration
 
 `AnalyzeAot.Experimental` currently publishes the NativeAOT compiler host before
-`CoreCompile`. The planned integration will accept existing analyzer DLLs,
-generate a static NativeAOT wrapper project, and link each analyzer against the
-facade and analyzer runtime shipped by the package.
+`CoreCompile`. The analyzer preparation target will accept existing analyzer
+DLLs, generate and publish static NativeAOT wrapper projects, then replace the
+`@(Analyzer)` items passed to `Csc` with the resulting native module paths. The
+compiler host derives from Roslyn's internal `CSharpCompiler` and resolves those
+paths directly into compiler-side analyzer proxy instances; it does not run
+nested builds or use managed analyzer reflection.
 
 ```xml
 <ItemGroup>
@@ -66,5 +76,6 @@ facade and analyzer runtime shipped by the package.
 </ItemGroup>
 ```
 
-Replacing the SDK's `Csc` task is intentionally not enabled yet: the prototype
-host does not implement the complete `csc` response-file contract.
+Replacing the SDK's `Csc` task is intentionally not enabled yet: the internal
+driver path works, but the package still needs analyzer preparation, caching,
+compiler-tool wiring, and Roslyn-version compatibility checks.
