@@ -1,0 +1,26 @@
+<Project>
+  <PropertyGroup>
+    <_AnalyzeAotCompilerProject>$(MSBuildThisFileDirectory)../tools/compiler/AnalyzeAot.CompilerHost.csproj</_AnalyzeAotCompilerProject>
+    <_AnalyzeAotCompilerOutput>$(AnalyzeAotOutputPath)compiler/</_AnalyzeAotCompilerOutput>
+    <_AnalyzeAotCompilerExecutable>$(_AnalyzeAotCompilerOutput)analyze-aot$(ExeExtension)</_AnalyzeAotCompilerExecutable>
+  </PropertyGroup>
+
+  <Target Name="AnalyzeAotPublishCompiler"
+          BeforeTargets="CoreCompile"
+          Condition="'$(AnalyzeAotEnabled)' == 'true'"
+          Inputs="$(_AnalyzeAotCompilerProject)"
+          Outputs="$(_AnalyzeAotCompilerExecutable)">
+    <MakeDir Directories="$(_AnalyzeAotCompilerOutput)" />
+    <Exec Command="dotnet publish &quot;$(_AnalyzeAotCompilerProject)&quot; --nologo --configuration $(Configuration) --runtime $(NETCoreSdkRuntimeIdentifier) --output &quot;$(_AnalyzeAotCompilerOutput)&quot;" />
+    <ItemGroup>
+      <FileWrites Include="$(_AnalyzeAotCompilerOutput)**/*" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="AnalyzeAotPublishAnalyzers"
+          BeforeTargets="CoreCompile"
+          DependsOnTargets="AnalyzeAotPublishCompiler"
+          Condition="'$(AnalyzeAotEnabled)' == 'true' and '@(AnalyzeAotNativeAnalyzer)' != ''">
+    <Exec Command="dotnet publish &quot;%(AnalyzeAotNativeAnalyzer.Identity)&quot; --nologo --configuration $(Configuration) --runtime $(NETCoreSdkRuntimeIdentifier) --output &quot;$(AnalyzeAotOutputPath)analyzers/%(AnalyzeAotNativeAnalyzer.Filename)/&quot;" />
+  </Target>
+</Project>

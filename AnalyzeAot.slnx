@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/samples/">
+    <Project Path="samples/AnalyzeAot.SampleAnalyzer.Native/AnalyzeAot.SampleAnalyzer.Native.csproj" />
+    <Project Path="samples/AnalyzeAot.SampleAnalyzer/AnalyzeAot.SampleAnalyzer.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/AnalyzeAot.Abi/AnalyzeAot.Abi.csproj" />
+    <Project Path="src/AnalyzeAot.AnalyzerRuntime/AnalyzeAot.AnalyzerRuntime.csproj" />
+    <Project Path="src/AnalyzeAot.Build/AnalyzeAot.Build.csproj" />
+    <Project Path="src/AnalyzeAot.CompilerHost/AnalyzeAot.CompilerHost.csproj" />
+    <Project Path="src/AnalyzeAot.RoslynShim.CSharp/AnalyzeAot.RoslynShim.CSharp.csproj" />
+    <Project Path="src/AnalyzeAot.RoslynShim/AnalyzeAot.RoslynShim.csproj" />
+  </Folder>
+</Solution>

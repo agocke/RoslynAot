@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <IsAotCompatible>true</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../AnalyzeAot.Abi/AnalyzeAot.Abi.csproj" />
+    <ProjectReference Include="../AnalyzeAot.RoslynShim/AnalyzeAot.RoslynShim.csproj" />
+    <ProjectReference Include="../AnalyzeAot.RoslynShim.CSharp/AnalyzeAot.RoslynShim.CSharp.csproj" />
+  </ItemGroup>
+
+</Project>

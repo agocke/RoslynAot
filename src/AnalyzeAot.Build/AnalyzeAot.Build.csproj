@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <PackageId>AnalyzeAot.Experimental</PackageId>
+    <Version>0.1.0</Version>
+    <Description>Experimental NativeAOT compiler host and analyzer ABI.</Description>
+    <Authors>AnalyzeAot contributors</Authors>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <_PackageConfiguration>$([System.String]::Copy('$(Configuration)').ToLowerInvariant())</_PackageConfiguration>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../AnalyzeAot.Abi/AnalyzeAot.Abi.csproj"
+                      ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+    <ProjectReference Include="../AnalyzeAot.AnalyzerRuntime/AnalyzeAot.AnalyzerRuntime.csproj"
+                      ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+    <ProjectReference Include="../AnalyzeAot.RoslynShim/AnalyzeAot.RoslynShim.csproj"
+                      ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+    <ProjectReference Include="../AnalyzeAot.RoslynShim.CSharp/AnalyzeAot.RoslynShim.CSharp.csproj"
+                      ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+
+    <None Include="buildTransitive/AnalyzeAot.Experimental.props"
+          Pack="true"
+          PackagePath="buildTransitive/" />
+    <None Include="buildTransitive/AnalyzeAot.Experimental.targets"
+          Pack="true"
+          PackagePath="buildTransitive/" />
+    <None Include="tools/compiler/AnalyzeAot.CompilerHost.csproj"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../AnalyzeAot.CompilerHost/Program.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../AnalyzeAot.CompilerHost/NativeDiagnosticAnalyzer.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../AnalyzeAot.Abi/AnalyzerAbi.cs"
+          Pack="true"
+          PackagePath="tools/compiler/" />
+    <None Include="../../artifacts/bin/AnalyzeAot.Abi/$(_PackageConfiguration)/AnalyzeAot.Abi.dll"
+          Pack="true"
+          PackagePath="tools/analyzer-runtime/" />
+    <None Include="../../artifacts/bin/AnalyzeAot.AnalyzerRuntime/$(_PackageConfiguration)/AnalyzeAot.AnalyzerRuntime.dll"
+          Pack="true"
+          PackagePath="tools/analyzer-runtime/" />
+    <None Include="../../artifacts/bin/AnalyzeAot.RoslynShim/$(_PackageConfiguration)/Microsoft.CodeAnalysis.dll"
+          Pack="true"
+          PackagePath="tools/analyzer-runtime/" />
+    <None Include="../../artifacts/bin/AnalyzeAot.RoslynShim.CSharp/$(_PackageConfiguration)/Microsoft.CodeAnalysis.CSharp.dll"
+          Pack="true"
+          PackagePath="tools/analyzer-runtime/" />
+    <None Include="../../README.md"
+          Pack="true"
+          PackagePath="/" />
+  </ItemGroup>
+
+</Project>
