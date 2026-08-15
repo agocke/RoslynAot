@@ -4,7 +4,7 @@
 
 AnalyzeAot will provide a NuGet package that replaces the managed C# compiler
 process with a NativeAOT executable and runs analyzers as NativeAOT shared
-libraries. The compiler and analyzers communicate through a stable, versioned C
+libraries. The compiler and analyzers communicate through a private generated C
 ABI rather than exchanging managed Roslyn objects.
 
 The intended outcomes are:
@@ -31,6 +31,11 @@ substitutes public-signed facade assemblies named `Microsoft.CodeAnalysis` and
 token expected by the analyzer. These facades present Roslyn-shaped managed
 types whose implementations serialize operations over the C ABI.
 
+The facades are generated independently of any analyzer. For each supported
+Roslyn version, tooling mirrors the complete public metadata surface of the
+official assemblies. Analyzer preparation happens later and links arbitrary
+precompiled analyzers against those already-generated facades.
+
 The public signature supplies assembly identity only; it is not a Microsoft
 signature or authenticity claim. Facades are package tooling inputs under
 `tools/`, used only while privately linking analyzer native modules. They must
@@ -50,7 +55,7 @@ NativeAOT csc-compatible stub
   - compiler-side Roslyn object/handle tables
         |
         | registrations, callbacks, handles, diagnostics
-        | versioned IUnknown-compatible C ABI
+        | private IUnknown-compatible C ABI
         v
 NativeAOT analyzer module
   - analyzer transport runtime
@@ -155,27 +160,18 @@ system. Interfaces will be passed directly between loaded native modules.
 Our generator and analyzers will add the parts that `ComWrappers` does not
 provide:
 
-- Portable C11 headers for native consumers.
-- An ABI manifest containing interface IDs, versions, method slots, signatures,
-  ownership, and layout hashes.
-- Compatibility diagnostics comparing the current manifest with the previous
-  published version.
 - Restrictions to the portable AnalyzeAot type and ownership model.
 - Cross-platform layout and calling-convention validation.
 
-A Roslyn source generator cannot reliably emit arbitrary package files such as C
-headers, so header and manifest emission will be an MSBuild-invoked tool. It
-will inspect the same interfaces consumed by the .NET COM interface generator.
-If the generated COM surface cannot satisfy the portable ABI on all target
-platforms, the same interface model can drive custom vtable generation without
-changing the authored contracts.
+If the generated COM surface cannot satisfy the transport on all target
+platforms, the same interface model can drive custom vtable generation.
 
 ### ABI authoring rules
 
-- Every interface has an explicit immutable 128-bit ID and version.
-- Existing method order and signatures are immutable within an interface ID.
-  New functionality is introduced with a new derived interface and immutable
-  interface ID, following `IUnknown` interface-versioning rules.
+- Every interface has the explicit 128-bit ID required by generated COM.
+- The compiler and analyzer endpoints are generated and shipped together.
+  Interface IDs, method order, and signatures may change between package
+  versions as long as both endpoints and cache keys change together.
 - Cross-boundary types are limited to fixed-width integers, explicitly based
   enums, pointers, opaque handles, generated blittable structs, and pointer-plus-
   length spans.
@@ -200,8 +196,8 @@ contract while avoiding Windows COM infrastructure.
    change diagnostics, generated code, or emitted assemblies.
 2. **No managed objects across the ABI.** All cross-module data uses handles,
    fixed-layout values, UTF-8 buffers, or explicit serialization.
-3. **Version every boundary.** Function tables include ABI version and size so
-   compatible fields can be added without breaking older analyzers.
+3. **Build both sides together.** The transport does not provide backward
+   compatibility; stale or mismatched native artifacts are rejected and rebuilt.
 4. **Fail explicitly.** Unsupported Roslyn APIs and incompatible analyzers must
    produce actionable build errors.
 5. **Make fallback safe.** Projects can return to the standard compiler when a
@@ -215,15 +211,56 @@ Analyzer compatibility will be delivered incrementally:
 
 | Tier | Description |
 | --- | --- |
-| Facade-compatible | An unchanged analyzer uses only Roslyn APIs implemented by the drop-in facades. |
+| Facade-binding | An unchanged analyzer binds against a complete, version-specific generated Roslyn facade. |
 | Generated wrapper | Package tooling discovers analyzer types and generates the NativeAOT bootstrap automatically. |
-| Expanded facade | More syntax, semantic, symbol, operation, option, and additional-file APIs are transported. |
-| Rewritten fallback | Assembly-reference or call-site rewriting is available if a dependency cannot bind to the drop-in identity. |
+| Transport-covered | More syntax, semantic, symbol, operation, option, and additional-file facade members receive working transport implementations. |
 | Managed fallback | Unsupported analyzers continue to run under standard Roslyn. |
 
-The first usable release will support unchanged, facade-compatible analyzer
-DLLs. Claims of broad compatibility will wait until representative analyzer
-packages pass equivalence tests.
+Every supported Roslyn version has a complete facade metadata surface. Runtime
+compatibility is delivered incrementally as mirrored members receive transport
+implementations.
+
+## Roslyn facade generation
+
+Hand-authoring the facade is not viable. The public Roslyn surface spans
+thousands of types and members across `Microsoft.CodeAnalysis`,
+`Microsoft.CodeAnalysis.CSharp`, and related analyzer-facing assemblies.
+AnalyzeAot will generate complete version-specific facades from the official
+Roslyn binaries without inspecting any analyzer.
+
+The generator must reproduce:
+
+- Assembly name, version, culture, public key, and public signing.
+- Namespaces, nested types, accessibility, type kind, inheritance, and
+  implemented interfaces.
+- Generic parameters and constraints.
+- Methods, constructors, properties, events, fields, operators, overloads,
+  optional values, `ref` kinds, and custom modifiers.
+- Struct and enum layout, underlying types, constants, delegates, and public
+  attributes that affect binding or behavior.
+- Nullable annotations and other compiler-recognized metadata needed for
+  signature fidelity.
+
+Surface generation and behavior generation are separate:
+
+1. The metadata generator emits every public type and member needed to bind
+   arbitrary precompiled analyzers.
+2. A declarative classification assigns each member an implementation strategy:
+   local value behavior, handle-backed query, registration/callback transport,
+   serialization, or explicit unsupported failure.
+3. Facade bodies and compiler-side transport dispatch are generated from that
+   shared classification.
+4. Unimplemented members retain the correct metadata shape and fail explicitly
+   when called; they must not fail assembly, type, or member binding.
+
+Generation is keyed by the exact Roslyn binary set. Facades, both transport
+endpoints, and native cache keys advance together. API compatibility validation
+compares official and generated assemblies and fails on any missing or
+mismatched public surface.
+
+The facades preserve public metadata needed by ordinary reflection. Analyzers
+that depend on private Roslyn implementation details, dynamic assembly loading,
+or runtime code generation may require managed fallback.
 
 ## Milestone 0: prove the runtime model
 
@@ -235,7 +272,7 @@ Deliverables:
 - NativeAOT analyzer module containing an unchanged precompiled analyzer.
 - Public-signed `Microsoft.CodeAnalysis` facade assemblies.
 - A real compiler-side `DiagnosticAnalyzer` proxy.
-- Versioned host and analyzer interfaces.
+- Private host and analyzer transport interfaces.
 - Opaque syntax handles and UTF-8 buffer methods.
 - Diagnostic reporting from analyzer to compiler.
 - Compilation of a small C# input into a valid assembly.
@@ -260,25 +297,26 @@ Deliverables:
   compiler and analyzer modules, with Linux completed first.
 - Generated vtables, thunks, and managed proxies supplied by the .NET COM
   interface generator where viable.
-- Build-time generator for C11 headers and compatibility manifests.
 - Handle type, ownership, lifetime, and invalidation rules.
 - Host allocator or caller-provided-buffer conventions.
 - Cancellation, exception, and error-code conventions.
 - Thread-safety and analyzer concurrency rules.
 - Syntax tree, source text, location, and diagnostic APIs.
-- ABI compatibility tests across at least two versions.
+- Endpoint agreement tests for generated interface layouts and stale-cache
+  rejection.
 
 Exit criteria:
 
-- C# and C ABI declarations are generated from one authoritative interface
+- Both transport endpoints are generated from one authoritative interface
   model.
 - Handwritten unmanaged vtables are removed from product code.
-- CI rejects method-order, signature, ownership, layout, and interface-ID
-  breaks.
+- CI rejects endpoint disagreement in method order, signatures, ownership,
+  layout, and interface IDs.
 - The same interface round-trips across NativeAOT modules on Windows, Linux,
   and macOS.
 - Invalid handles and buffer sizes cannot corrupt either module.
-- Older analyzers can run against a host with additive ABI changes.
+- Stale analyzer modules are rejected and rebuilt when the private transport
+  changes.
 - Analyzer failures are isolated and reported as build failures.
 
 ## Milestone 2: MSBuild and NuGet integration
@@ -351,26 +389,31 @@ Exit criteria:
 - Symbol and operation handles remain valid for their documented scope.
 - Large solutions do not require serializing complete semantic models.
 
-## Milestone 5: existing analyzer adaptation
+## Milestone 5: complete Roslyn facade generation
 
-**Goal:** run useful existing Roslyn analyzers without manually rewriting each
-one.
+**Goal:** bind arbitrary precompiled analyzers against generated, version-exact
+Roslyn facade assemblies without hand-maintaining the API surface.
 
 Work streams:
 
-1. Inventory Roslyn APIs used by representative analyzer packages.
-2. Define a supported Roslyn facade mapped onto the ABI.
-3. Prototype source generation or source rewriting for analyzers built from
-   source.
-4. Evaluate IL rewriting for analyzer packages distributed only as assemblies.
-5. Detect unsupported reflection, dynamic loading, and runtime code generation.
+1. Read the complete public metadata surface from official Roslyn assemblies.
+2. Generate public-signed facades with matching assembly and member identity.
+3. Build a declarative member-classification database and generate facade
+   implementations plus compiler-side transport dispatch from it.
+4. Verify metadata equivalence with API compatibility and reflection-based
+   signature tests.
+5. Detect unsupported private implementation dependencies, dynamic loading,
+   and runtime code generation.
 
 Exit criteria:
 
-- A documented subset of existing analyzers is translated automatically.
-- Unsupported API use is detected before native publishing.
-- StyleCop Analyzers, Roslynator, or similarly broad packages run a meaningful
-  subset with diagnostic equivalence.
+- The generated facade contains every public API from the selected Roslyn
+  binary set with matching metadata identity.
+- Multiple unchanged analyzer packages bind without assembly rewriting.
+- Representative syntax and semantic analyzers execute through generated
+  transport implementations.
+- Calling a mirrored but unsupported member produces a specific failure and can
+  trigger managed fallback.
 
 Code fixes and refactorings are outside this milestone because they normally run
 inside an IDE host rather than the command-line compiler.
@@ -402,7 +445,7 @@ Exit criteria:
 
 Testing will use four layers:
 
-1. ABI unit tests for layout, versioning, buffers, handles, and failures.
+1. ABI unit tests for endpoint layout agreement, buffers, handles, and failures.
 2. Analyzer equivalence tests comparing native and managed diagnostics.
 3. Compiler golden tests comparing standard Roslyn and AnalyzeAot outputs.
 4. End-to-end MSBuild tests using packed NuGet artifacts and clean machines.
@@ -435,11 +478,13 @@ separately from cached build performance.
 
 1. Generate analyzer-type discovery and NativeAOT wrapper projects from
    existing analyzer DLLs instead of using the handwritten sample bootstrap.
-2. Add an explicit compatibility check for the selected SDK Roslyn version,
+2. Prototype full public-surface generation for `Microsoft.CodeAnalysis` and
+   `Microsoft.CodeAnalysis.CSharp`, with API compatibility validation.
+3. Add an explicit compatibility check for the selected SDK Roslyn version,
    friend-assembly grant, and `CSharpCompiler` override signatures.
-3. Add an executable managed-versus-native diagnostic equivalence test for the
+4. Add an executable managed-versus-native diagnostic equivalence test for the
    unchanged sample analyzer.
-4. Validate the working Linux source-generated `ComWrappers` prototype on
+5. Validate the working Linux source-generated `ComWrappers` prototype on
    Windows and macOS, then use the result to finalize the ABI generator.
-5. Select three representative analyzers and inventory their Roslyn API usage
-   to guide ABI priorities.
+6. Select representative analyzers to prioritize which already-mirrored
+   members receive transport implementations first.
