@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Upstream/**/*.cs" />
+    <EmbeddedResource Remove="Upstream/**/*.resx" />
+    <ProjectReference Include="Upstream/Microsoft.DotNet.GenAPI/Microsoft.DotNet.GenAPI.csproj" />
+  </ItemGroup>
+
+</Project>

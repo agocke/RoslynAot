@@ -11,4 +11,9 @@
     <Project Path="src/AnalyzeAot.RoslynShim.CSharp/AnalyzeAot.RoslynShim.CSharp.csproj" />
     <Project Path="src/AnalyzeAot.RoslynShim/AnalyzeAot.RoslynShim.csproj" />
   </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/AnalyzeAot.RoslynFacadeGenerator/AnalyzeAot.RoslynFacadeGenerator.csproj" />
+    <Project Path="tools/AnalyzeAot.RoslynFacadeGenerator/Upstream/Microsoft.DotNet.ApiSymbolExtensions/Microsoft.DotNet.ApiSymbolExtensions.csproj" />
+    <Project Path="tools/AnalyzeAot.RoslynFacadeGenerator/Upstream/Microsoft.DotNet.GenAPI/Microsoft.DotNet.GenAPI.csproj" />
+  </Folder>
 </Solution>
