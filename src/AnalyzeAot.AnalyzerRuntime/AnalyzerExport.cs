@@ -37,6 +37,7 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
     private readonly Dictionary<DiagnosticDescriptor, int> _descriptorIndexes;
     private readonly Dictionary<int, Action<SyntaxNodeAnalysisContext>> _syntaxActions =
         [];
+    private IRoslynControlVtbl? _roslynControlVtbl;
     private int _nextActionId;
 
     public AnalyzerTransport(DiagnosticAnalyzer analyzer)
@@ -96,14 +97,8 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
             return AnalyzerAbi.InvalidArgument;
         }
 
-        string value = field switch
-        {
-            AnalyzerDescriptorField.Id => descriptor.Id,
-            AnalyzerDescriptorField.Title => descriptor.Title,
-            AnalyzerDescriptorField.MessageFormat => descriptor.MessageFormat,
-            AnalyzerDescriptorField.Category => descriptor.Category,
-            _ => throw new ArgumentOutOfRangeException(nameof(field)),
-        };
+        string value =
+            AnalyzerFacadeFactory.GetDescriptorString(descriptor, field);
 
         requiredLength = Encoding.UTF8.GetByteCount(value);
         if (buffer == 0)
@@ -122,14 +117,34 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
         return AnalyzerAbi.Success;
     }
 
-    public int Initialize(nint hostPointer)
+    public int Initialize(nint hostPointer, nint roslynInteropPointer)
     {
-        if (!TryGetHost(hostPointer, out IAnalyzerHost host))
+        if (!TryGetHost(hostPointer, out IAnalyzerHost host) ||
+            !TryGetRoslynControlVtbl(
+                roslynInteropPointer,
+                out IRoslynControlVtbl controlVtbl))
         {
             return AnalyzerAbi.IncompatibleVersion;
         }
 
-        _analyzer.Initialize(new TransportAnalysisContext(this, host));
+        using (RoslynFacadeRuntime.Enter(controlVtbl))
+        {
+            _analyzer.Initialize(
+                AnalyzerFacadeFactory.CreateAnalysisContext(
+                    (action, rawKinds) =>
+                    {
+                        int result = RegisterSyntaxNodeAction(
+                            host,
+                            action,
+                            rawKinds);
+                        if (result != AnalyzerAbi.Success)
+                        {
+                            throw new InvalidOperationException(
+                                $"Registering an analyzer action failed with 0x{result:x8}.");
+                        }
+                    }));
+        }
+
         GC.KeepAlive(host);
         return AnalyzerAbi.Success;
     }
@@ -137,20 +152,30 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
     public int InvokeSyntaxNodeAction(
         int actionId,
         nint hostPointer,
-        int nodeHandle)
+        nint roslynInteropPointer,
+        long nodeHandle)
     {
         if (!_syntaxActions.TryGetValue(actionId, out var action) ||
-            !TryGetHost(hostPointer, out IAnalyzerHost host))
+            !TryGetHost(hostPointer, out IAnalyzerHost host) ||
+            !TryGetRoslynControlVtbl(
+                roslynInteropPointer,
+                out IRoslynControlVtbl controlVtbl))
         {
             return AnalyzerAbi.InvalidArgument;
         }
 
-        SyntaxNode node = FacadeFactory.CreateSyntaxNode(host, nodeHandle);
+        SyntaxNode node = AnalyzerFacadeFactory.CreateSyntaxNode(
+            controlVtbl,
+            nodeHandle);
         SyntaxNodeAnalysisContext context =
-            FacadeFactory.CreateSyntaxNodeAnalysisContext(
+            AnalyzerFacadeFactory.CreateSyntaxNodeAnalysisContext(
             node,
             diagnostic => ReportDiagnostic(host, diagnostic));
-        action(context);
+        using (RoslynFacadeRuntime.Enter(controlVtbl))
+        {
+            action(context);
+        }
+
         GC.KeepAlive(host);
         return AnalyzerAbi.Success;
     }
@@ -215,6 +240,41 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
             version == AnalyzerAbi.Version;
     }
 
+    private bool TryGetRoslynControlVtbl(
+        nint interopPointer,
+        out IRoslynControlVtbl controlVtbl)
+    {
+        if (interopPointer == 0)
+        {
+            controlVtbl = null!;
+            return false;
+        }
+
+        try
+        {
+            IRoslynControlVtbl candidate =
+                RoslynFacadeRuntime.GetOrCreateControlVtbl(
+                    interopPointer);
+            if (_roslynControlVtbl is null)
+            {
+                _roslynControlVtbl = candidate;
+            }
+            else if (!ReferenceEquals(_roslynControlVtbl, candidate))
+            {
+                controlVtbl = null!;
+                return false;
+            }
+
+            controlVtbl = _roslynControlVtbl;
+            return true;
+        }
+        catch (InvalidOperationException)
+        {
+            controlVtbl = null!;
+            return false;
+        }
+    }
+
     private bool TryGetDescriptor(
         int descriptorIndex,
         out DiagnosticDescriptor descriptor)
@@ -229,23 +289,4 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
         return true;
     }
 
-    private sealed class TransportAnalysisContext(
-        AnalyzerTransport transport,
-        IAnalyzerHost host) : AnalysisContext
-    {
-        protected override void RegisterSyntaxNodeActionCore(
-            Action<SyntaxNodeAnalysisContext> action,
-            int[] rawKinds)
-        {
-            int result = transport.RegisterSyntaxNodeAction(
-                host,
-                action,
-                rawKinds);
-            if (result != AnalyzerAbi.Success)
-            {
-                throw new InvalidOperationException(
-                    $"Registering an analyzer action failed with 0x{result:x8}.");
-            }
-        }
-    }
 }

@@ -10,8 +10,9 @@
 
   <ItemGroup>
     <ProjectReference Include="../AnalyzeAot.Abi/AnalyzeAot.Abi.csproj" />
-    <ProjectReference Include="../AnalyzeAot.RoslynShim/AnalyzeAot.RoslynShim.csproj" />
-    <ProjectReference Include="../AnalyzeAot.RoslynShim.CSharp/AnalyzeAot.RoslynShim.CSharp.csproj" />
+    <ProjectReference Include="../AnalyzeAot.GeneratedFacade.Runtime/AnalyzeAot.GeneratedFacade.Runtime.csproj" />
+    <ProjectReference Include="../AnalyzeAot.GeneratedFacade/AnalyzeAot.GeneratedFacade.csproj" />
+    <ProjectReference Include="../AnalyzeAot.GeneratedFacade.CSharp/AnalyzeAot.GeneratedFacade.CSharp.csproj" />
   </ItemGroup>
 
 </Project>

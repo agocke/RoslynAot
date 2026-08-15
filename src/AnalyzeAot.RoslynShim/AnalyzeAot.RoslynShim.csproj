@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../AnalyzeAot.Abi/AnalyzeAot.Abi.csproj" />
+    <ProjectReference Include="../AnalyzeAot.GeneratedFacade.Runtime/AnalyzeAot.GeneratedFacade.Runtime.csproj" />
   </ItemGroup>
 
 </Project>

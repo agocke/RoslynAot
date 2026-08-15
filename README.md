@@ -44,6 +44,7 @@ Run the compiler with reference assemblies supplied by the build:
 ```bash
 analyze-aot \
   /nologo \
+  /nostdlib+ \
   /target:library \
   /out:artifacts/Bad.dll \
   /reference:/path/to/System.Runtime.dll \

@@ -17,6 +17,7 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
     private static readonly List<nint> s_loadedLibraries = [];
 
     private readonly IAnalyzerTransport _transport;
+    private readonly RoslynInterop _roslynInterop = new();
 
     internal NativeDiagnosticAnalyzer(string analyzerPath)
         : this(LoadTransport(analyzerPath))
@@ -75,7 +76,10 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
     public override void Initialize(AnalysisContext context)
     {
         var host = new CompilerAnalyzerHost(this, context);
-        InvokeWithHost(host, pointer => _transport.Initialize(pointer));
+        InvokeWithHost(
+            host,
+            (hostPointer, interopPointer) =>
+                _transport.Initialize(hostPointer, interopPointer));
     }
 
     internal void InvokeSyntaxNodeAction(
@@ -83,12 +87,15 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
         SyntaxNodeAnalysisContext context)
     {
         var host = new CompilerAnalyzerHost(this, context);
+        long nodeHandle = _roslynInterop.AddObject(context.Node);
         InvokeWithHost(
             host,
-            pointer => _transport.InvokeSyntaxNodeAction(
+            (hostPointer, interopPointer) =>
+                _transport.InvokeSyntaxNodeAction(
                 actionId,
-                pointer,
-                nodeHandle: 0));
+                hostPointer,
+                interopPointer,
+                nodeHandle));
     }
 
     internal bool TryGetDescriptor(
@@ -173,21 +180,27 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
         return Encoding.UTF8.GetString(buffer);
     }
 
-    private static void InvokeWithHost(
+    private void InvokeWithHost(
         CompilerAnalyzerHost host,
-        Func<nint, int> operation)
+        Func<nint, nint, int> invoke)
     {
         nint hostPointer =
             s_comWrappers.GetOrCreateComInterfaceForObject(
                 host,
                 CreateComInterfaceFlags.None);
+        nint interopPointer =
+            s_comWrappers.GetOrCreateComInterfaceForObject(
+                _roslynInterop,
+                CreateComInterfaceFlags.None);
         try
         {
-            ThrowIfFailed(operation(hostPointer));
+            ThrowIfFailed(invoke(hostPointer, interopPointer));
             GC.KeepAlive(host);
+            GC.KeepAlive(_roslynInterop);
         }
         finally
         {
+            AnalyzerAbi.Release(interopPointer);
             AnalyzerAbi.Release(hostPointer);
         }
     }

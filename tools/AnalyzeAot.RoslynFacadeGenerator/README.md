@@ -10,8 +10,8 @@ require revisiting the projection rules.
 
 ## Current status
 
-The first implemented command validates managed assembly inputs and inventories
-their public and protected API surface:
+The inspect command validates managed assembly inputs and inventories their
+public and protected API surface:
 
 ```bash
 dotnet run \
@@ -21,7 +21,8 @@ dotnet run \
   path/to/Microsoft.CodeAnalysis.CSharp.dll
 ```
 
-Generate executable facade stubs with:
+Generate executable facade sources and their synchronized ABI, compiler
+dispatch, and manifest outputs with:
 
 ```bash
 dotnet run \
@@ -32,32 +33,47 @@ dotnet run \
   path/to/Microsoft.CodeAnalysis.CSharp.dll
 ```
 
-The generated types are partial. Every concrete constructor, method, operator,
-and accessor currently throws `PlatformNotSupportedException`; abstract and
-interface members retain declaration-only bodies. This makes unsupported calls
-explicit while the direct COM projection is implemented. Binding-relevant
-assembly attributes, including Roslyn friend-assembly declarations, are
-preserved. GenAPI's usual `ReferenceAssemblyAttribute` is deliberately omitted
-because these facades must execute.
+The generated types are partial. Members covered by the initial projection
+receive executable COM proxy bodies. Other concrete constructors, methods,
+operators, and accessors throw `PlatformNotSupportedException`; abstract and
+interface members retain declaration-only bodies. Binding-relevant assembly
+attributes, including Roslyn friend-assembly declarations, are preserved.
+GenAPI's usual `ReferenceAssemblyAttribute` is deliberately omitted because
+these facades must execute.
+
+The initial generated projection covers `SyntaxNode.RawKind`,
+`CSharpParseOptions.Default`, and the complete public `SyntaxTokenParser`
+cluster described below. A runtime operation creates the `SourceText`
+handle needed by `CreateTokenParser`; string-based Roslyn APIs remain
+unsupported. The generated facade projects under
+`src/AnalyzeAot.GeneratedFacade*` compile the complete emitted surface, while
+the ABI and compiler dispatch trees are wired into `AnalyzeAot.Abi` and
+`AnalyzeAot.CompilerHost`.
 
 Generated source mirrors the API structure on disk:
 
 ```text
 roslyn-facade/
-  Microsoft.CodeAnalysis/
-    AssemblyInfo.cs
-    Microsoft/
-      CodeAnalysis/
-        SyntaxNode.cs
-        SyntaxTree.cs
-        Diagnostics/
-          DiagnosticAnalyzer.cs
-  Microsoft.CodeAnalysis.CSharp/
-    AssemblyInfo.cs
-    Microsoft/
-      CodeAnalysis/
-        CSharp/
-          CSharpCompilation.cs
+  Facades/
+    Runtime/
+      RoslynFacadeRuntime.g.cs
+    Microsoft.CodeAnalysis/
+      AssemblyInfo.cs
+      Microsoft/
+        CodeAnalysis/
+          SyntaxNode.cs
+          SyntaxTree.cs
+          Diagnostics/
+            DiagnosticAnalyzer.cs
+    Microsoft.CodeAnalysis.CSharp/
+      AssemblyInfo.cs
+      Microsoft/
+        CodeAnalysis/
+          CSharp/
+            CSharpCompilation.cs
+  Abi/
+  Compiler/
+  Manifest/
 ```
 
 Each assembly receives its own root directory. Namespace components become
@@ -67,7 +83,7 @@ when needed to distinguish legal same-name types such as `Name` and `Name<T>`.
 
 ## Source generation
 
-The facade declaration generator will be based on a fork of the .NET SDK's
+The facade declaration generator is based on a fork of the .NET SDK's
 `Microsoft.DotNet.GenAPI` source. GenAPI already handles the difficult metadata
 to C# declaration conversion, including nested and generic types, attributes,
 constraints, overloads, and language syntax.
@@ -76,7 +92,7 @@ The relevant GenAPI implementation is vendored under `Upstream/` from
 `dotnet/sdk` tag `v10.0.100`. Each vendored file retains its original license
 header, and `Upstream/README.md` records the exact source commit.
 
-The fork will differ from ordinary GenAPI output in two important ways:
+The fork differs from ordinary GenAPI output in two important ways:
 
 1. Generated declarations must be executable facade implementations rather
    than reference-assembly stubs.
@@ -126,6 +142,359 @@ Roslyn symbol:
 2. The generated COM interface operation.
 3. The compiler-side dispatch implementation that invokes real Roslyn.
 
+## Emit strategy
+
+The COM projection must be generated mechanically. Handwritten code is limited
+to the transport runtime, the object table, error handling, and explicit
+overrides for signatures that cannot use a general projection rule. Individual
+Roslyn members are not implemented by hand.
+
+The generator performs one symbol traversal and creates an in-memory projection
+model. All generated outputs consume that same model:
+
+```text
+Roslyn assemblies
+    -> GenAPI symbol traversal
+    -> projection model
+       -> facade source
+       -> COM ABI source
+       -> compiler dispatch source
+       -> compatibility manifest
+```
+
+The projection model records, for every member:
+
+- Its canonical metadata signature and containing assembly.
+- Its deterministic generated operation name.
+- Whether it is an instance, static, constructor, property, event, or operator
+  operation.
+- The ABI representation of the receiver, parameters, and result.
+- The facade expression used to convert each argument to its ABI
+  representation.
+- The compiler expression used to resolve each ABI value to the real Roslyn
+  value.
+- Its generated implementation strategy or the reason it is unsupported.
+
+The model is in-memory generator state, not a checked-in member database.
+Projection behavior comes from general type and signature rules. A small
+explicit override table is allowed only for semantic exceptions.
+
+The implementation classifies ABI types compositionally, then derives member
+strategies from method shape, accessibility, receiver kind, accessor kind,
+static/constructor semantics, and the `IDisposable.Dispose` pattern. It does
+not select strategies by Roslyn type or member name. The deterministic
+`Manifest/ProjectionInventory.txt` records every classification; the initial
+override table is empty.
+
+### GenAPI integration
+
+The vendored GenAPI emitter remains responsible for declarations. It has an
+implementation callback at the point where it emits a concrete member body.
+The callback receives the original Roslyn symbol and the corresponding
+projection plan.
+
+The generator must not recover member identity by parsing the emitted source
+and matching C# names afterward. That would be unreliable for overloads,
+operators, explicit interface implementations, nested generic types, custom
+modifiers, and members whose C# spelling differs from their metadata name.
+
+The existing source-layout pass remains a final formatting operation after
+facade generation. It does not participate in ABI design.
+
+### Generated output
+
+One invocation emits four related trees:
+
+```text
+roslyn-facade/
+  Facades/
+    Runtime/
+    Microsoft.CodeAnalysis/
+    Microsoft.CodeAnalysis.CSharp/
+  Abi/
+    RoslynControlVtbl.g.cs
+    ISyntaxNodeVtbl.g.cs
+    ISyntaxFactoryVtbl.g.cs
+    ISyntaxTokenParserVtbl.g.cs
+  Compiler/
+    RoslynDispatcherRegistry.g.cs
+    SyntaxNodeVtblDispatcher.g.cs
+    SyntaxFactoryVtblDispatcher.g.cs
+    SyntaxTokenParserVtblDispatcher.g.cs
+  Manifest/
+    RoslynProjection.json
+```
+
+The generator emits one instance vtbl interface per projected facade type and
+a separate type vtbl for constructors and static members. Instance vtbl
+inheritance follows the facade class hierarchy when possible. `RoslynInterop`
+implements only the small control vtbl. It lazily creates and caches one
+generated dispatcher CCW per requested vtbl type; those dispatchers share its
+handle table and error state. Roslyn objects never receive CCWs.
+
+The generated COM interface declarations currently include support for both
+wrapper directions. A future size optimization should emit compiler-side
+CCW-only declarations and analyzer-side RCW-only declarations with identical
+IIDs and signatures. This is intentionally deferred until after the generated
+facade analyzer path is validated end to end.
+
+The manifest records the input assembly identities, canonical operation
+signatures, generated names, per-type vtbl IDs, and unsupported
+reasons. The analyzer validates the manifest identity when it obtains
+`IRoslynControlVtbl` from the compiler pointer.
+
+### Handwritten runtime
+
+The generated code depends on a small handwritten runtime:
+
+- `RoslynInterop`, the compiler-side control object and owner of shared
+  projection state.
+- A compiler-side handle table with type checking, slot generations, and
+  interop-identity-scoped lifetime.
+- Generated per-vtbl dispatchers and a lazy dispatcher registry.
+- Generated helpers that request and cache the required per-type RCWs.
+- Facade helpers for control identity validation, HRESULT translation, and
+  proxy construction.
+- Compiler helpers for exception capture and handle creation, lookup, release,
+  and disposal.
+
+Roslyn objects do not receive individual COM callable wrappers. A facade object
+is an ordinary managed object containing its generated per-type vtbl and an
+opaque 64-bit handle. Base and derived facade parts use the same inherited vtbl
+object where possible and share one `IRoslynControlVtbl` identity. Complex
+facade structs use the same representation. Only
+`RoslynInterop`, generated per-vtbl dispatchers, and reverse analyzer callback
+services are COM objects.
+
+### Initial ABI type rules
+
+The ABI assembly does not reference Roslyn assemblies. Its signatures contain
+only explicitly sized ABI values:
+
+| Roslyn signature type | Initial ABI representation |
+| --- | --- |
+| `void` | HRESULT only |
+| Integral primitive | Same-width integral value |
+| `bool` | 32-bit normalized integer |
+| Enum | 32-bit normalized integer |
+| Reference parameter/receiver | 64-bit object handle |
+| Sealed reference result | 64-bit object handle |
+| Complex value type | 64-bit value handle |
+| Nullable remote value | Zero or a 64-bit handle |
+| Unsupported type | No operation; facade retains an unsupported body |
+
+Strings, arrays, collections, delegates, generic substitutions, pointers,
+function pointers, and nontrivial `ref` parameters are initially unsupported.
+They will add projection rules rather than per-member implementations.
+Non-sealed reference results remain unsupported until runtime type
+discrimination exists. Types with externally visible non-const instance
+fields remain unsupported until field state can be mirrored. Non-const static
+facade fields receive explicit throwing initializers rather than silent default
+values; constants retain their original values.
+
+Handles are scoped to one `RoslynInterop` identity. The handle table distinguishes
+object and value entries, validates the expected Roslyn type, and rejects stale
+or foreign handles. Non-disposable values live for the interop identity. Disposing a
+remote `IDisposable` atomically invalidates its facade handle and disposes and
+removes the corresponding compiler entry. Repeated disposal succeeds.
+For non-nullable facade value types, handle zero resolves to `default(T)`;
+nullable handles continue to use zero for `null`.
+
+### Facade templates
+
+An instance property:
+
+```csharp
+public int RawKind
+{
+    get
+    {
+        ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
+        IRoslynControlVtbl controlVtbl = (IRoslynControlVtbl)vtbl;
+        RoslynFacadeRuntime.ThrowIfFailed(
+            controlVtbl,
+            vtbl.SyntaxNode_get_RawKind(
+                _handle,
+                out int value));
+        return value;
+    }
+}
+```
+
+A method returning a remote reference type:
+
+```csharp
+public SyntaxTokenParser CreateParser()
+{
+    IExampleVtbl vtbl = __AnalyzeAotGetVtbl();
+    IRoslynControlVtbl controlVtbl = (IRoslynControlVtbl)vtbl;
+    RoslynFacadeRuntime.ThrowIfFailed(
+        controlVtbl,
+        vtbl.Example_CreateParser(
+            _handle,
+            out long result));
+    return SyntaxTokenParser.__AnalyzeAotCreateProxy(controlVtbl, result);
+}
+```
+
+A method returning a complex value type:
+
+```csharp
+public SyntaxTokenParser.Result ParseNextToken()
+{
+    ISyntaxTokenParserVtbl vtbl = __AnalyzeAotGetVtbl();
+    IRoslynControlVtbl controlVtbl = (IRoslynControlVtbl)vtbl;
+    RoslynFacadeRuntime.ThrowIfFailed(
+        controlVtbl,
+        vtbl.SyntaxTokenParser_ParseNextToken(
+            _handle,
+            out long result));
+    return SyntaxTokenParser.Result.__AnalyzeAotCreateProxy(
+        controlVtbl,
+        result);
+}
+```
+
+Static members obtain `IRoslynControlVtbl` from the facade runtime, then query
+the generated type vtbl. Arguments that are remote proxies must
+belong to that same control identity before their handles are passed to the
+ABI.
+
+Constructors and static factories become creation calls. Public or
+protected Roslyn constructors retain their original declaration, but their
+generated body requests creation through the active type vtbl
+and stores the returned handle. Internal constructors used only by the facade
+accept their per-type vtbl and a handle.
+
+Complex structs receive generated private vtbl and handle fields.
+Copying the struct copies the remote value identity. `default` values are
+handled according to the real API contract: default-safe Roslyn structs receive
+the appropriate local behavior, while structs documented as not default-safe
+fail when used.
+
+### ABI templates
+
+Every projected operation returns an HRESULT-style status. A Roslyn return
+value becomes the final `out` parameter:
+
+```csharp
+[GeneratedComInterface]
+[Guid("...")]
+internal partial interface ISyntaxNodeVtbl
+{
+    [PreserveSig]
+    int SyntaxNode_get_RawKind(
+        long receiver,
+        out int value);
+
+    [PreserveSig]
+}
+
+[GeneratedComInterface]
+[Guid("...")]
+internal partial interface ISyntaxTokenParserVtbl
+{
+    [PreserveSig]
+    int SyntaxTokenParser_ParseNextToken(long receiver, out long result);
+}
+```
+
+Operation names are generated from a readable member name plus a stable suffix
+when required for overload disambiguation. Canonical signatures, not metadata
+tokens or traversal order, determine names, ordering, vtbl grouping, and vtbl
+identity.
+
+### Compiler dispatch templates
+
+The compiler emitter generates one dispatcher class per vtbl. Each dispatcher
+delegates shared handle and error operations to its owning `RoslynInterop`:
+
+```csharp
+public sealed class SyntaxNodeVtblDispatcher : ISyntaxNodeVtbl
+{
+    private readonly RoslynInterop _owner;
+
+    public int SyntaxNode_get_RawKind(
+    long receiver,
+    out int value)
+    {
+        value = default;
+
+        try
+        {
+            value = _owner.Objects.GetObject<SyntaxNode>(receiver).RawKind;
+            return Success;
+        }
+        catch (Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+}
+```
+
+Remote return values are inserted into the handle table:
+
+```csharp
+public int SyntaxTokenParser_ParseNextToken(
+    long receiver,
+    out long result)
+{
+    result = default;
+
+    try
+    {
+        SyntaxTokenParser parser =
+            _objects.GetObject<SyntaxTokenParser>(receiver);
+        result = _objects.AddValue(parser.ParseNextToken());
+        return Success;
+    }
+    catch (Exception exception)
+    {
+        return SetError(exception);
+    }
+}
+```
+
+Exceptions never escape through the unmanaged entry point. `SetError` records
+enough information for the facade runtime to recreate common argument,
+disposal, cancellation, and unsupported-operation exceptions. Other
+exceptions become an explicit remote Roslyn exception.
+Synchronous error details are stored per interop identity and calling thread, and the
+facade validates both the error-size query and copy operation.
+
+### `SyntaxTokenParser` projection
+
+`SyntaxTokenParser` follows the general rules and does not require handwritten
+member implementations:
+
+- `SyntaxFactory.CreateTokenParser` returns an object handle.
+- The parser facade stores `ISyntaxTokenParserVtbl` and an object handle.
+- Parse methods return value handles containing the real
+  `SyntaxTokenParser.Result`.
+- `Result.Token` resolves the result value, obtains the real `SyntaxToken`, and
+  returns another value handle.
+- `Result.ContextualKind` resolves the result and returns an enum value.
+- `ResetTo` passes the parser object handle and result value handle.
+- `SkipForwardTo` passes the parser handle and position directly.
+- `Dispose` uses the generated disposable-object template.
+
+Keeping the real `Result` compiler-side preserves its internal directive stack
+without exposing that version-specific implementation detail in the ABI.
+
+### Implemented initial increments
+
+1. Add the projection model and GenAPI member-body callback while retaining
+   unsupported plans for every member.
+2. Emit a generated ABI operation and compiler dispatch for scalar instance
+   properties, beginning with `SyntaxNode.RawKind`.
+3. Add reference and complex-value handle results and proxy construction.
+4. Generate the complete `SyntaxTokenParser` cluster, including creation,
+   result properties, reset, skipping, and disposal.
+5. Add deterministic manifests and projection identity validation.
+6. Expand signature rules by type category, leaving unknown categories
+   explicitly unsupported.
+
 ## Initial projection rules
 
 - An instance receiver becomes an opaque object handle.
@@ -133,9 +502,9 @@ Roslyn symbol:
 - A Roslyn return value becomes an `out` parameter.
 - Roslyn object arguments and results become handles.
 - Primitive values and enums cross the ABI directly.
-- Properties become getter and setter operations.
-- Constructors become creation operations that return a new handle.
-- Delegates become generated callback COM interfaces.
+- Properties become getter and setter calls.
+- Constructors become creation calls that return a new handle.
+- Delegates remain unsupported until callback COM interfaces are introduced.
 - Exceptions are caught on the originating side and converted to explicit
   status codes; exceptions never cross the ABI.
 

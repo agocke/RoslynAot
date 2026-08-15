@@ -19,8 +19,15 @@ internal static class GeneratedSourceLayout
                 diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
         if (error is not null)
         {
+            int lineNumber =
+                error.Location.GetLineSpan().StartLinePosition.Line + 1;
+            string sourceLine = File.ReadLines(combinedSourcePath)
+                .Skip(lineNumber - 1)
+                .FirstOrDefault()
+                ?? string.Empty;
             throw new InvalidOperationException(
-                $"Generated source could not be parsed: {error}");
+                $"Generated source could not be parsed: {error}" +
+                $"{Environment.NewLine}{lineNumber}: {sourceLine}");
         }
 
         var root = (CompilationUnitSyntax)syntaxTree.GetRoot();
@@ -178,11 +185,11 @@ internal static class GeneratedSourceLayout
 
         SyntaxNode normalized = compilationUnit
             .WithoutLeadingTrivia()
-            .NormalizeWhitespace(eol: Environment.NewLine);
+            .NormalizeWhitespace(eol: "\n");
         File.WriteAllText(
             path,
-            CSharpFileBuilder.DefaultFileHeader
+            (CSharpFileBuilder.DefaultFileHeader
                 + normalized.ToFullString()
-                + Environment.NewLine);
+                + "\n").ReplaceLineEndings("\n"));
     }
 }

@@ -8,11 +8,15 @@
     <Project Path="src/AnalyzeAot.AnalyzerRuntime/AnalyzeAot.AnalyzerRuntime.csproj" />
     <Project Path="src/AnalyzeAot.Build/AnalyzeAot.Build.csproj" />
     <Project Path="src/AnalyzeAot.CompilerHost/AnalyzeAot.CompilerHost.csproj" />
+    <Project Path="src/AnalyzeAot.GeneratedFacade.CSharp/AnalyzeAot.GeneratedFacade.CSharp.csproj" />
+    <Project Path="src/AnalyzeAot.GeneratedFacade.Runtime/AnalyzeAot.GeneratedFacade.Runtime.csproj" />
+    <Project Path="src/AnalyzeAot.GeneratedFacade/AnalyzeAot.GeneratedFacade.csproj" />
     <Project Path="src/AnalyzeAot.RoslynShim.CSharp/AnalyzeAot.RoslynShim.CSharp.csproj" />
     <Project Path="src/AnalyzeAot.RoslynShim/AnalyzeAot.RoslynShim.csproj" />
   </Folder>
   <Folder Name="/tools/">
     <Project Path="tools/AnalyzeAot.RoslynFacadeGenerator/AnalyzeAot.RoslynFacadeGenerator.csproj" />
+    <Project Path="tools/AnalyzeAot.RoslynProjection.Client/AnalyzeAot.RoslynProjection.Client.csproj" />
     <Project Path="tools/AnalyzeAot.RoslynFacadeGenerator/Upstream/Microsoft.DotNet.ApiSymbolExtensions/Microsoft.DotNet.ApiSymbolExtensions.csproj" />
     <Project Path="tools/AnalyzeAot.RoslynFacadeGenerator/Upstream/Microsoft.DotNet.GenAPI/Microsoft.DotNet.GenAPI.csproj" />
   </Folder>

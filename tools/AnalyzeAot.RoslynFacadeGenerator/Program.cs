@@ -146,8 +146,9 @@ internal static class Program
             will be used as input to facade and COM projection generation.
 
             The generate command writes one executable facade stub source file
-            per input assembly. Concrete members throw PlatformNotSupportedException
-            until a generated COM projection replaces their bodies.
+            per input assembly together with synchronized ABI, compiler dispatch,
+            and manifest trees. Unsupported concrete members explicitly throw
+            PlatformNotSupportedException.
             """);
     }
 

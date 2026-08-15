@@ -31,6 +31,7 @@ public sealed class CSharpAssemblyDocumentGeneratorOptions
     public bool ShouldReduce { get; set; }
     public IEnumerable<KeyValuePair<string, ReportDiagnostic>>? DiagnosticOptions { get; set; }
     public IEnumerable<MetadataReference>? MetadataReferences { get; set; }
+    public Func<ISymbol, SyntaxNode, SyntaxNode>? DeclarationTransform { get; set; }
     public List<CSharpSyntaxRewriter> SyntaxRewriters { get; set; } = [];
     public List<SyntaxAnnotation> AdditionalAnnotations { get; set; } = [Formatter.Annotation, Simplifier.Annotation];
 }

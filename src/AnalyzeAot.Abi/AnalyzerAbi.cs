@@ -5,8 +5,8 @@ namespace AnalyzeAot.Abi;
 
 public static unsafe class AnalyzerAbi
 {
-    public const uint Version = 1;
-    public const string GetAnalyzerEntryPoint = "analyze_aot_get_analyzer_v1";
+    public const uint Version = 2;
+    public const string GetAnalyzerEntryPoint = "analyze_aot_get_analyzer_v2";
 
     public const int Success = 0;
     public const int InvalidArgument = unchecked((int)0x80070057);
@@ -67,10 +67,14 @@ public partial interface IAnalyzerTransport
         out int requiredLength);
 
     [PreserveSig]
-    int Initialize(nint host);
+    int Initialize(nint host, nint roslynInterop);
 
     [PreserveSig]
-    int InvokeSyntaxNodeAction(int actionId, nint host, int nodeHandle);
+    int InvokeSyntaxNodeAction(
+        int actionId,
+        nint host,
+        nint roslynInterop,
+        long nodeHandle);
 }
 
 [GeneratedComInterface]

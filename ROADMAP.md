@@ -15,6 +15,35 @@ The intended outcomes are:
 - Deterministic, cacheable native artifacts for a given analyzer and toolchain.
 - Diagnostics and emitted assemblies equivalent to the standard Roslyn build.
 
+## Current implementation status
+
+The Linux prototype now completes the first generated-facade vertical slice:
+
+- The generator mirrors the complete public
+  `Microsoft.CodeAnalysis` and `Microsoft.CodeAnalysis.CSharp` metadata surface.
+- One symbol-driven projection model emits facade bodies, per-type ABI vtables,
+  compiler dispatchers, and a deterministic compatibility manifest.
+- The current inventory contains 465 per-type vtables and 3,481 supported
+  calls; unsupported members retain their API shape and fail explicitly.
+- `RoslynInterop` implements only the stable control vtable. Requested typed
+  vtables are backed by lazily created per-vtable dispatcher CCWs sharing one
+  handle table and error state.
+- A NativeAOT projection client validates typed vtable lookup, inheritance,
+  handles, error isolation, `SyntaxTokenParser`, and UTF-8 string returns across
+  the native module boundary.
+- `AnalyzeAot.AnalyzerRuntime` now links against the generated facade projects,
+  not the handwritten Roslyn shims.
+- The unchanged sample analyzer is compiled against official Roslyn, linked
+  into a NativeAOT shared library against the generated facades, and reports
+  `AA0001` through the NativeAOT compiler.
+- The NuGet package payload contains the generated facade assemblies under
+  `tools/analyzer-runtime/`.
+
+This proves facade binding and one syntax-node analyzer path. It does not yet
+establish broad analyzer compatibility: generic transport, most registration
+kinds, semantic APIs, array/container projection, and scalable handle release
+remain incomplete.
+
 ## Fundamental constraint
 
 Independent NativeAOT modules do not share a managed heap or runtime type
@@ -266,6 +295,8 @@ or runtime code generation may require managed fallback.
 
 **Goal:** demonstrate that the core process and module architecture works.
 
+**Status:** completed on Linux for the unchanged sample analyzer.
+
 Deliverables:
 
 - NativeAOT Roslyn compiler executable.
@@ -289,6 +320,10 @@ Exit criteria:
 ## Milestone 1: production-quality ABI foundation
 
 **Goal:** establish rules that later API expansion can preserve.
+
+**Status:** in progress. Per-type vtables, control identity, generated
+dispatchers, handle validation, deterministic manifests, and cross-NativeAOT
+validation are implemented on Linux.
 
 Deliverables:
 
@@ -398,8 +433,9 @@ Work streams:
 
 1. Read the complete public metadata surface from official Roslyn assemblies.
 2. Generate public-signed facades with matching assembly and member identity.
-3. Build a declarative member-classification database and generate facade
-   implementations plus compiler-side transport dispatch from it.
+3. Build compositional signature classification rules and generate facade
+   implementations plus compiler-side transport dispatch from one in-memory
+   projection model. Keep explicit semantic overrides small and auditable.
 4. Verify metadata equivalence with API compatibility and reflection-based
    signature tests.
 5. Detect unsupported private implementation dependencies, dynamic loading,
@@ -476,15 +512,22 @@ separately from cached build performance.
 
 ## Immediate next steps
 
-1. Generate analyzer-type discovery and NativeAOT wrapper projects from
+1. Add automated API compatibility validation between official Roslyn and the
+   generated facade assemblies.
+2. Generate analyzer-type discovery and NativeAOT wrapper projects from
    existing analyzer DLLs instead of using the handwritten sample bootstrap.
-2. Prototype full public-surface generation for `Microsoft.CodeAnalysis` and
-   `Microsoft.CodeAnalysis.CSharp`, with API compatibility validation.
-3. Add an explicit compatibility check for the selected SDK Roslyn version,
+3. Add release or arena lifetime management for non-disposable handles before
+   exercising large syntax trees and broad analyzers.
+4. Implement measured container and callback shapes, beginning with
+   `ImmutableArray<T>`, additional analyzer registration kinds, and runtime-type
+   discrimination for non-sealed Roslyn return types.
+5. Add an explicit compatibility check for the selected SDK Roslyn version,
    friend-assembly grant, and `CSharpCompiler` override signatures.
-4. Add an executable managed-versus-native diagnostic equivalence test for the
+6. Add an executable managed-versus-native diagnostic equivalence test for the
    unchanged sample analyzer.
-5. Validate the working Linux source-generated `ComWrappers` prototype on
+7. Split generated COM declarations into compiler CCW-only and analyzer
+   RCW-only forms to improve NativeAOT trimming.
+8. Validate the working Linux source-generated `ComWrappers` prototype on
    Windows and macOS, then use the result to finalize the ABI generator.
-6. Select representative analyzers to prioritize which already-mirrored
+9. Select representative analyzers to prioritize which already-mirrored
    members receive transport implementations first.

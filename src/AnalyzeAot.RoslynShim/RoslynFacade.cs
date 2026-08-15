@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using System.Text;
 using AnalyzeAot.Abi;
+using AnalyzeAot.RoslynFacade;
 
 namespace Microsoft.CodeAnalysis
 {
@@ -98,11 +99,21 @@ namespace Microsoft.CodeAnalysis
     public class SyntaxNode
     {
         private readonly IAnalyzerHost _host;
-        private readonly int _handle;
+        private readonly int _legacyHandle;
+        private readonly ISyntaxNodeVtbl _vtbl;
+        private readonly long _handle;
 
-        internal SyntaxNode(IAnalyzerHost host, int handle)
+        internal SyntaxNode(
+            IAnalyzerHost host,
+            int legacyHandle,
+            IRoslynControlVtbl controlVtbl,
+            long handle)
         {
             _host = host;
+            _legacyHandle = legacyHandle;
+            _vtbl =
+                RoslynVtblFactory.GetSyntaxNodeVtbl(
+                    controlVtbl);
             _handle = handle;
         }
 
@@ -110,7 +121,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                ThrowIfFailed(_host.GetRawKind(_handle, out int rawKind));
+                RoslynFacadeRuntime.ThrowIfFailed(
+                    (IRoslynControlVtbl)_vtbl,
+                    _vtbl.SyntaxNode_get_RawKind(
+                        _handle,
+                        out int rawKind));
                 return rawKind;
             }
         }
@@ -119,8 +134,10 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                ThrowIfFailed(_host.GetSpanStart(_handle, out int start));
-                ThrowIfFailed(_host.GetSpanLength(_handle, out int length));
+                ThrowIfFailed(
+                    _host.GetSpanStart(_legacyHandle, out int start));
+                ThrowIfFailed(
+                    _host.GetSpanLength(_legacyHandle, out int length));
                 return new Text.TextSpan(start, length);
             }
         }
@@ -130,7 +147,11 @@ namespace Microsoft.CodeAnalysis
         public override unsafe string ToString()
         {
             ThrowIfFailed(
-                _host.CopyTextUtf8(_handle, 0, 0, out int byteCount));
+                _host.CopyTextUtf8(
+                    _legacyHandle,
+                    0,
+                    0,
+                    out int byteCount));
             Span<byte> buffer = byteCount <= 512
                 ? stackalloc byte[byteCount]
                 : new byte[byteCount];
@@ -138,7 +159,7 @@ namespace Microsoft.CodeAnalysis
             {
                 ThrowIfFailed(
                     _host.CopyTextUtf8(
-                        _handle,
+                    _legacyHandle,
                         (nint)bufferPointer,
                         buffer.Length,
                         out _));
@@ -252,8 +273,10 @@ namespace AnalyzeAot.RoslynFacade
     {
         public static SyntaxNode CreateSyntaxNode(
             IAnalyzerHost host,
-            int handle) =>
-            new(host, handle);
+            int legacyHandle,
+            IRoslynControlVtbl controlVtbl,
+            long handle) =>
+            new(host, legacyHandle, controlVtbl, handle);
 
         public static SyntaxNodeAnalysisContext CreateSyntaxNodeAnalysisContext(
             SyntaxNode node,

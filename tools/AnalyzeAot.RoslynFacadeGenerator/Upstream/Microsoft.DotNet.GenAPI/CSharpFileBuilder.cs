@@ -5,6 +5,7 @@
 using System.Text.RegularExpressions;
 #endif
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.DotNet.ApiSymbolExtensions;
 using Microsoft.DotNet.ApiSymbolExtensions.Filtering;
 using Microsoft.DotNet.ApiSymbolExtensions.Logging;
@@ -42,10 +43,23 @@ namespace Microsoft.DotNet.GenAPI
                                  string? exceptionMessage,
                                  bool includeAssemblyAttributes,
                                  IEnumerable<MetadataReference>? metadataReferences = null,
-                                 bool addPartialModifier = true)
+                                 bool addPartialModifier = true,
+                                 Func<ISymbol, SyntaxNode, SyntaxNode>? declarationTransform = null)
         {
             _textWriter = textWriter;
             _header = header;
+
+            List<CSharpSyntaxRewriter> syntaxRewriters =
+            [
+                new TypeDeclarationCSharpSyntaxRewriter(addPartialModifier),
+            ];
+            if (declarationTransform is null)
+            {
+                syntaxRewriters.Add(
+                    new BodyBlockCSharpSyntaxRewriter(exceptionMessage));
+                syntaxRewriters.Add(
+                    SingleLineStatementCSharpSyntaxRewriter.Singleton);
+            }
 
             CSharpAssemblyDocumentGeneratorOptions options = new(loader, symbolFilter, attributeDataSymbolFilter)
             {
@@ -54,11 +68,8 @@ namespace Microsoft.DotNet.GenAPI
                 ShouldReduce = true,
                 IncludeAssemblyAttributes = includeAssemblyAttributes,
                 MetadataReferences = metadataReferences,
-                SyntaxRewriters = [
-                    new TypeDeclarationCSharpSyntaxRewriter(addPartialModifier),
-                    new BodyBlockCSharpSyntaxRewriter(exceptionMessage),
-                    SingleLineStatementCSharpSyntaxRewriter.Singleton
-                ]
+                DeclarationTransform = declarationTransform,
+                SyntaxRewriters = syntaxRewriters,
             };
 
             _docGenerator = new CSharpAssemblyDocumentGenerator(log, options);

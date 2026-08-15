@@ -11,7 +11,7 @@ using Microsoft.DotNet.ApiSymbolExtensions.Filtering;
 
 namespace Microsoft.DotNet.GenAPI
 {
-    internal static class SyntaxGeneratorExtensions
+    public static class SyntaxGeneratorExtensions
     {
         // Creates a declaration matching an existing symbol.
         // The reason of having this similar to `SyntaxGenerator.Declaration` extension method is that

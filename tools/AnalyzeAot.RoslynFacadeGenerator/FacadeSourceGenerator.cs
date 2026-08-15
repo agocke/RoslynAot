@@ -1,3 +1,5 @@
+using Microsoft.CodeAnalysis;
+using Microsoft.DotNet.ApiSymbolExtensions;
 using Microsoft.DotNet.ApiSymbolExtensions.Logging;
 using Microsoft.DotNet.GenAPI;
 using System.Reflection;
@@ -20,26 +22,52 @@ internal static class FacadeSourceGenerator
             [.. GetReferencePaths(assemblies, referencePaths)];
         string outputDirectory = Path.GetFullPath(outputPath);
         Directory.CreateDirectory(outputDirectory);
-        string temporaryDirectory = Path.Combine(
-            Path.GetTempPath(),
-            "AnalyzeAot.RoslynFacadeGenerator",
-            Guid.NewGuid().ToString("N"));
+        string temporaryDirectory =
+            Path.Combine(outputDirectory, ".intermediate");
+        if (Directory.Exists(temporaryDirectory))
+        {
+            Directory.Delete(temporaryDirectory, recursive: true);
+        }
+
         Directory.CreateDirectory(temporaryDirectory);
+        string facadesDirectory = Path.Combine(
+            outputDirectory,
+            "Facades");
+        if (Directory.Exists(facadesDirectory))
+        {
+            Directory.Delete(facadesDirectory, recursive: true);
+        }
+
+        Directory.CreateDirectory(facadesDirectory);
 
         var log = new ConsoleLog(MessageImportance.Normal);
         try
         {
+            (
+                IAssemblySymbolLoader loader,
+                Dictionary<string, IAssemblySymbol> assemblySymbols) =
+                AssemblySymbolLoader.CreateFromFiles(
+                    log,
+                    assemblies,
+                    references,
+                    assembliesToExclude: [],
+                    respectInternals: false);
+            ProjectionModel model =
+                ProjectionModel.Create(assemblySymbols.Values);
+            var transform = new FacadeDeclarationTransform(model);
+
             GenAPIApp.Run(
                 log,
-                assemblies,
-                references,
+                loader,
+                assemblySymbols,
                 temporaryDirectory,
                 headerFile: null,
                 exceptionMessage: UnsupportedMessage,
                 excludeApiFiles: null,
                 excludeAttributesFiles: null,
                 respectInternals: false,
-                includeAssemblyAttributes: true);
+                includeAssemblyAttributes: true,
+                transform.Transform);
 
             if (log.HasLoggedErrors)
             {
@@ -58,13 +86,23 @@ internal static class FacadeSourceGenerator
                     $"{assemblyName}.cs");
                 GeneratedSourceLayout.WriteAssembly(
                     combinedSourcePath,
-                    outputDirectory,
+                    facadesDirectory,
                     assemblyName);
             }
+
+            ProjectionOutputEmitter.WriteFacadeRuntime(
+                model,
+                facadesDirectory);
+            ProjectionOutputEmitter.WriteNonFacadeOutputs(
+                model,
+                outputDirectory);
         }
         finally
         {
-            Directory.Delete(temporaryDirectory, recursive: true);
+            if (Directory.Exists(temporaryDirectory))
+            {
+                Directory.Delete(temporaryDirectory, recursive: true);
+            }
         }
     }
 

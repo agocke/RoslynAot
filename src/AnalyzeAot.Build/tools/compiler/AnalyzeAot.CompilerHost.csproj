@@ -16,6 +16,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Generated/Roslyn/Abi/**/*.cs" />
+    <Compile Include="Generated/Roslyn/Compiler/**/*.cs" />
     <Reference Include="Microsoft.CodeAnalysis">
       <HintPath>$(_RoslynBincore)/Microsoft.CodeAnalysis.dll</HintPath>
     </Reference>

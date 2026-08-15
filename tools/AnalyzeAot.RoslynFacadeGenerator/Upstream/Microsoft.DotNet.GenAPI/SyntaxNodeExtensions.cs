@@ -9,7 +9,7 @@ using Microsoft.DotNet.ApiSymbolExtensions.Filtering;
 
 namespace Microsoft.DotNet.GenAPI
 {
-    internal static class SyntaxNodeExtensions
+    public static class SyntaxNodeExtensions
     {
         public static SyntaxNode Rewrite(this SyntaxNode node, CSharpSyntaxRewriter rewriter) => rewriter.Visit(node);
 

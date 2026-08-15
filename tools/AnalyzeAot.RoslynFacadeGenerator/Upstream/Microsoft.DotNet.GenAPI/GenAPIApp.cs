@@ -29,7 +29,8 @@ namespace Microsoft.DotNet.GenAPI
             string[]? excludeApiFiles,
             string[]? excludeAttributesFiles,
             bool respectInternals,
-            bool includeAssemblyAttributes)
+            bool includeAssemblyAttributes,
+            Func<ISymbol, SyntaxNode, SyntaxNode>? declarationTransform = null)
         {
             (IAssemblySymbolLoader loader, Dictionary<string, IAssemblySymbol> assemblySymbols) = AssemblySymbolLoader.CreateFromFiles(
                 log,
@@ -47,7 +48,8 @@ namespace Microsoft.DotNet.GenAPI
                 excludeApiFiles,
                 excludeAttributesFiles,
                 respectInternals,
-                includeAssemblyAttributes);
+                includeAssemblyAttributes,
+                declarationTransform);
         }
 
         /// <summary>
@@ -62,7 +64,8 @@ namespace Microsoft.DotNet.GenAPI
             string[]? excludeApiFiles,
             string[]? excludeAttributesFiles,
             bool respectInternals,
-            bool includeAssemblyAttributes)
+            bool includeAssemblyAttributes,
+            Func<ISymbol, SyntaxNode, SyntaxNode>? declarationTransform = null)
         {
             // Shared accessibility filter for the API and Attribute composite filters.
             AccessibilitySymbolFilter accessibilitySymbolFilter = new(
@@ -93,7 +96,8 @@ namespace Microsoft.DotNet.GenAPI
                     exceptionMessage,
                     includeAssemblyAttributes,
                     loader.MetadataReferences,
-                    addPartialModifier: true);
+                    addPartialModifier: true,
+                    declarationTransform);
 
                 fileBuilder.WriteAssembly(kvp.Value);
             }

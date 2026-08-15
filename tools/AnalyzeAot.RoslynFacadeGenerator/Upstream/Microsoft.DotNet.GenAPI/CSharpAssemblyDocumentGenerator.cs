@@ -128,6 +128,12 @@ public sealed class CSharpAssemblyDocumentGenerator
                 .AddMemberAttributes(_syntaxGenerator, typeMember, _options.AttributeSymbolFilter);
 
             typeDeclaration = Visit(typeDeclaration, typeMember);
+            if (_options.DeclarationTransform is not null)
+            {
+                typeDeclaration = _options.DeclarationTransform(
+                    typeMember,
+                    typeDeclaration);
+            }
 
             namespaceNode = _syntaxGenerator.AddMembers(namespaceNode, typeDeclaration);
         }
@@ -233,6 +239,13 @@ public sealed class CSharpAssemblyDocumentGenerator
             {
                 DeclarationModifiers mods = _syntaxGenerator.GetModifiers(memberDeclaration);
                 memberDeclaration = _syntaxGenerator.WithModifiers(memberDeclaration, mods.WithIsNew(isNew: true));
+            }
+
+            if (_options.DeclarationTransform is not null)
+            {
+                memberDeclaration = _options.DeclarationTransform(
+                    member,
+                    memberDeclaration);
             }
 
             try
