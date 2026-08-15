@@ -23,7 +23,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::AnalyzeAot.Abi.ILanguageVersionFactsVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetLanguageVersionFactsVtbl(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.LanguageVersionFacts_ToDisplayString((int)version, buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.LanguageVersionFacts_ToDisplayString((int)version, buffer, bufferLength, out requiredLength))!;
         }
 
         public static bool TryParse(string? version, out LanguageVersion result)

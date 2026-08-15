@@ -937,7 +937,7 @@ internal static class FacadeBodyEmitter
         var arguments = new List<string>();
         if (operation.HasReceiver)
         {
-            if (operation.ReturnValue.Kind == AbiTypeKind.Utf8String)
+            if (operation.ReturnValue.Kind == AbiTypeKind.Utf16String)
             {
                 yield return
                     $"{operation.Receiver!.AbiType} __analyzeAotReceiver = " +
@@ -955,7 +955,7 @@ internal static class FacadeBodyEmitter
 
         string invocationPrefix =
             $"vtbl.{operation.GeneratedName}(";
-        if (operation.ReturnValue.Kind == AbiTypeKind.Utf8String)
+        if (operation.ReturnValue.Kind == AbiTypeKind.Utf16String)
         {
             arguments.Add("buffer");
             arguments.Add("bufferLength");
@@ -964,7 +964,7 @@ internal static class FacadeBodyEmitter
                 operation.ReturnValue.IsNullable ? string.Empty : "!";
             yield return
                 "return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime." +
-                "ReadUtf8String(controlVtbl, " +
+                "ReadUtf16String(controlVtbl, " +
                 "(nint buffer, int bufferLength, out int requiredLength) => " +
                 $"{invocationPrefix}{string.Join(", ", arguments)}))" +
                 nullableSuppression + ";";

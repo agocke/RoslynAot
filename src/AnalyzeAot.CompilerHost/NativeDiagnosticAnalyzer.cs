@@ -2,7 +2,6 @@ using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
-using System.Text;
 using AnalyzeAot.Abi;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -165,27 +164,33 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
         AnalyzerDescriptorField field)
     {
         ThrowIfFailed(
-            transport.CopyDescriptorStringUtf8(
+            transport.CopyDescriptorStringUtf16(
                 descriptorIndex,
                 field,
                 0,
                 0,
-                out int byteCount));
-        Span<byte> buffer = byteCount <= 256
-            ? stackalloc byte[byteCount]
-            : new byte[byteCount];
-        fixed (byte* bufferPointer = buffer)
-        {
-            ThrowIfFailed(
-                transport.CopyDescriptorStringUtf8(
-                    descriptorIndex,
-                    field,
-                    (nint)bufferPointer,
-                    buffer.Length,
-                    out _));
-        }
-
-        return Encoding.UTF8.GetString(buffer);
+                out int charCount));
+        return string.Create(
+            charCount,
+            (transport, descriptorIndex, field),
+            static (buffer, state) =>
+            {
+                fixed (char* bufferPointer = buffer)
+                {
+                    ThrowIfFailed(
+                        state.transport.CopyDescriptorStringUtf16(
+                            state.descriptorIndex,
+                            state.field,
+                            (nint)bufferPointer,
+                            buffer.Length,
+                            out int copiedCharCount));
+                    if (copiedCharCount != buffer.Length)
+                    {
+                        throw new InvalidOperationException(
+                            "The analyzer descriptor string changed while being copied.");
+                    }
+                }
+            });
     }
 
     private void InvokeWithHost(

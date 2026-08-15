@@ -51,7 +51,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
                 global::AnalyzeAot.Abi.IMetadataReferencePropertiesTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetMetadataReferencePropertiesTypeVtbl(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.MetadataReferenceProperties_get_GlobalAlias(buffer, bufferLength, out requiredLength))!;
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.MetadataReferenceProperties_get_GlobalAlias(buffer, bufferLength, out requiredLength))!;
             }
         }
 

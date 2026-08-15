@@ -23,7 +23,7 @@ internal enum AbiTypeKind
     Integral,
     Boolean,
     Enum,
-    Utf8String,
+    Utf16String,
     ObjectHandle,
     ValueHandle,
     NullableHandle,
@@ -195,14 +195,19 @@ internal sealed class ProjectionModel
                         $"{operation.ReturnValue.InventoryName}|" +
                         $"{operation.UnsupportedReason}|" +
                         $"{operation.OverrideReason}")));
-        byte[] hash = SHA256.HashData(Encoding.UTF8.GetBytes(identityInput));
+        byte[] modelHash =
+            SHA256.HashData(Encoding.UTF8.GetBytes(identityInput));
+        byte[] hash = SHA256.HashData(
+            Encoding.UTF8.GetBytes(
+                "AnalyzeAot.RoslynProjection.v2|" +
+                Convert.ToHexString(modelHash).ToLowerInvariant()));
         Identity = Convert.ToHexString(hash).ToLowerInvariant();
         IdentityLow = BitConverter.ToInt64(hash, 0);
         IdentityHigh = BitConverter.ToInt64(hash, 8);
         ControlVtblId = CreateVtblId(
             SHA256.HashData(
                 Encoding.UTF8.GetBytes(
-                    "AnalyzeAot.RoslynControlVtbl.v1")));
+                    "AnalyzeAot.RoslynControlVtbl.v2")));
     }
 
     public IReadOnlyList<IAssemblySymbol> Assemblies { get; }
@@ -1228,7 +1233,7 @@ internal sealed class AbiTypeClassifier
         {
             return position == AbiTypePosition.Return
                 ? new AbiTypePlan(
-                    AbiTypeKind.Utf8String,
+                    AbiTypeKind.Utf16String,
                     "string",
                     type,
                     nullableAnnotation == NullableAnnotation.Annotated,

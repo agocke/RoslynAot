@@ -143,7 +143,7 @@ namespace Microsoft.CodeAnalysis.Text
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ITextLineVtbl vtbl = __AnalyzeAotGetVtbl();
             long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.TextLine_ToString(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.TextLine_ToString(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
         private readonly global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;

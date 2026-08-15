@@ -19,9 +19,9 @@ public static unsafe class RoslynAbi
     public const int Unsupported = unchecked((int)0x80131515);
     public const int Failure = unchecked((int)0x80004005);
 
-    public const string ManifestIdentity = "7cefff244ae13e6538544d70e9bae80b3e67f4654dc674395a606e9cc7087ff4";
-    public const long ManifestIdentityLow = 7295516154951364476L;
-    public const long ManifestIdentityHigh = 858141240788341816L;
+    public const string ManifestIdentity = "7c9995c003fa950bd6a321dc29c5a38776e9faf5401ce6f2186df7eb71f523d9";
+    public const long ManifestIdentityLow = 834848199969970556L;
+    public const long ManifestIdentityHigh = -8672871673807920170L;
 
     public static uint Release(nint instance)
     {
@@ -47,7 +47,7 @@ public enum RoslynRemoteErrorKind
 }
 
 [GeneratedComInterface]
-[Guid("ff11ba69-c4f0-55d2-a2e4-1de31156969f")]
+[Guid("3c3c2fe6-4ce7-517c-b264-63350d98698e")]
 public partial interface IRoslynControlVtbl
 {
     [PreserveSig]
@@ -62,16 +62,16 @@ public partial interface IRoslynControlVtbl
         out nint vtbl);
 
     [PreserveSig]
-    int CopyLastErrorUtf8(
+    int CopyLastErrorUtf16(
         nint buffer,
         int bufferLength,
         out int requiredLength,
         out RoslynRemoteErrorKind errorKind);
 
     [PreserveSig]
-    int CreateSourceTextUtf8(
-        nint utf8Text,
-        int utf8Length,
+    int CreateSourceTextUtf16(
+        nint utf16Text,
+        int utf16Length,
         int checksumAlgorithm,
         out long result);
 

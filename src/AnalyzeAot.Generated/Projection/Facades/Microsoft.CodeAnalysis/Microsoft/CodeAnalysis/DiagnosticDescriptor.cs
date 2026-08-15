@@ -29,7 +29,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.IDiagnosticDescriptorVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.DiagnosticDescriptor_get_Category(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.DiagnosticDescriptor_get_Category(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
 
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.IDiagnosticDescriptorVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.DiagnosticDescriptor_get_HelpLinkUri(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.DiagnosticDescriptor_get_HelpLinkUri(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
 
@@ -93,7 +93,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.IDiagnosticDescriptorVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.DiagnosticDescriptor_get_Id(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.DiagnosticDescriptor_get_Id(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
 

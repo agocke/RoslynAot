@@ -17,7 +17,7 @@ namespace Microsoft.CodeAnalysis.CSharp
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.IInterceptableLocationVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.InterceptableLocation_get_Data(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.InterceptableLocation_get_Data(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
 
@@ -52,7 +52,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.IInterceptableLocationVtbl vtbl = __AnalyzeAotGetVtbl();
             long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.InterceptableLocation_GetDisplayLocation(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.InterceptableLocation_GetDisplayLocation(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
         public int GetHashCode()

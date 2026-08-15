@@ -1,4 +1,3 @@
-using System.Text;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
@@ -40,7 +39,8 @@ internal static class RoslynProjectionValidation
                 "A zero value handle did not resolve to default(TextSpan).");
         }
 
-        var root = CSharpSyntaxTree.ParseText("class C { }").GetRoot();
+        var root = CSharpSyntaxTree.ParseText(
+            "// \u03c0 \ud83d\ude00\nclass C { }").GetRoot();
         long rootHandle = interop.AddObject(root);
         AssertSuccess(
             syntaxNodeVtbl.SyntaxNode_get_RawKind(
@@ -67,14 +67,14 @@ internal static class RoslynProjectionValidation
             parseOptionsTypeVtbl.CSharpParseOptions_get_Default(
                 out long optionsHandle));
 
-        byte[] sourceBytes = Encoding.UTF8.GetBytes(" // trivia\nclass C { }");
+        string sourceText = " // \u03c0 \ud83d\ude00\nclass C { }";
         long sourceHandle;
-        fixed (byte* source = sourceBytes)
+        fixed (char* source = sourceText)
         {
             AssertSuccess(
-                interop.CreateSourceTextUtf8(
+                interop.CreateSourceTextUtf16(
                     (nint)source,
-                    sourceBytes.Length,
+                    sourceText.Length,
                     checksumAlgorithm: 1,
                     out sourceHandle));
         }
@@ -258,21 +258,21 @@ internal static class RoslynProjectionValidation
         RoslynInterop interop)
     {
         AssertSuccess(
-            interop.CopyLastErrorUtf8(
+            interop.CopyLastErrorUtf16(
                 0,
                 0,
-                out int byteCount,
+                out int charCount,
                 out RoslynRemoteErrorKind errorKind));
-        byte[] bytes = new byte[Math.Max(byteCount, 1)];
-        fixed (byte* buffer = bytes)
+        char[] chars = new char[Math.Max(charCount, 1)];
+        fixed (char* buffer = chars)
         {
             AssertSuccess(
-                interop.CopyLastErrorUtf8(
+                interop.CopyLastErrorUtf16(
                     (nint)buffer,
-                    byteCount,
-                    out int copiedByteCount,
+                    charCount,
+                    out int copiedCharCount,
                     out RoslynRemoteErrorKind copiedKind));
-            if (copiedByteCount != byteCount ||
+            if (copiedCharCount != charCount ||
                 copiedKind != errorKind)
             {
                 throw new InvalidOperationException(

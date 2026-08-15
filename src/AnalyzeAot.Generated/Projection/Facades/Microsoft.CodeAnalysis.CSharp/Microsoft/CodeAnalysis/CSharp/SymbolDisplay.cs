@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::AnalyzeAot.Abi.ISymbolDisplayVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayVtbl(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_FormatLiteral_15828359((ushort)c, quote ? 1 : 0, buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_FormatLiteral_15828359((ushort)c, quote ? 1 : 0, buffer, bufferLength, out requiredLength))!;
         }
 
         public static string FormatLiteral(string value, bool quote)

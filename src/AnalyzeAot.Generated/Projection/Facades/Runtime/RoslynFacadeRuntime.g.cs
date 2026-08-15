@@ -8,13 +8,12 @@
 //------------------------------------------------------------------------------
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
-using System.Text;
 using System.Threading;
 using AnalyzeAot.Abi;
 
 namespace AnalyzeAot.RoslynFacade;
 
-public delegate int CopyUtf8String(
+public delegate int CopyUtf16String(
     nint buffer,
     int bufferLength,
     out int requiredLength);
@@ -151,7 +150,7 @@ public static unsafe class RoslynFacadeRuntime
         return new Scope(previous);
     }
 
-    public static void ThrowIfFailed(
+    public static unsafe void ThrowIfFailed(
         IRoslynControlVtbl controlVtbl,
         int status)
     {
@@ -160,12 +159,12 @@ public static unsafe class RoslynFacadeRuntime
             return;
         }
 
-        int queryStatus = controlVtbl.CopyLastErrorUtf8(
+        int queryStatus = controlVtbl.CopyLastErrorUtf16(
             0,
             0,
-            out int byteCount,
+            out int charCount,
             out RoslynRemoteErrorKind errorKind);
-        if (queryStatus != RoslynAbi.Success || byteCount < 0)
+        if (queryStatus != RoslynAbi.Success || charCount < 0)
         {
             throw new RoslynRemoteException(
                 $"Remote Roslyn operation failed with 0x{status:x8}; " +
@@ -173,28 +172,32 @@ public static unsafe class RoslynFacadeRuntime
                 status);
         }
 
-        byte[] bytes = new byte[Math.Max(byteCount, 1)];
-        fixed (byte* buffer = bytes)
-        {
-            int copyStatus = controlVtbl.CopyLastErrorUtf8(
-                (nint)buffer,
-                byteCount,
-                out int copiedByteCount,
-                out RoslynRemoteErrorKind copiedErrorKind);
-            if (copyStatus != RoslynAbi.Success ||
-                copiedByteCount != byteCount ||
-                copiedErrorKind != errorKind)
-            {
-                throw new RoslynRemoteException(
-                    $"Remote Roslyn operation failed with 0x{status:x8}; " +
-                    "its error details changed while being copied.",
-                    status);
-            }
-        }
-
-        string message = byteCount == 0
+        string message = charCount == 0
             ? $"Remote Roslyn operation failed with 0x{status:x8}."
-            : Encoding.UTF8.GetString(bytes.AsSpan(0, byteCount));
+            : string.Create(
+                charCount,
+                (controlVtbl, errorKind, status),
+                static (destination, state) =>
+                {
+                    fixed (char* buffer = destination)
+                    {
+                        int copyStatus =
+                            state.controlVtbl.CopyLastErrorUtf16(
+                                (nint)buffer,
+                                destination.Length,
+                                out int copiedCharCount,
+                                out RoslynRemoteErrorKind copiedErrorKind);
+                        if (copyStatus != RoslynAbi.Success ||
+                            copiedCharCount != destination.Length ||
+                            copiedErrorKind != state.errorKind)
+                        {
+                            throw new RoslynRemoteException(
+                                $"Remote Roslyn operation failed with 0x{state.status:x8}; " +
+                                "its error details changed while being copied.",
+                                state.status);
+                        }
+                    }
+                });
         throw errorKind switch
         {
             RoslynRemoteErrorKind.Argument =>
@@ -212,47 +215,50 @@ public static unsafe class RoslynFacadeRuntime
     public static T UnsupportedStaticField<T>(string message) =>
         throw new PlatformNotSupportedException(message);
 
-    public static unsafe string? ReadUtf8String(
+    public static unsafe string? ReadUtf16String(
         IRoslynControlVtbl controlVtbl,
-        CopyUtf8String copy)
+        CopyUtf16String copy)
     {
         ArgumentNullException.ThrowIfNull(controlVtbl);
         ArgumentNullException.ThrowIfNull(copy);
 
-        int status = copy(0, 0, out int byteCount);
+        int status = copy(0, 0, out int charCount);
         ThrowIfFailed(controlVtbl, status);
-        if (byteCount == -1)
+        if (charCount == -1)
         {
             return null;
         }
 
-        if (byteCount < -1)
+        if (charCount < -1)
         {
             throw new InvalidOperationException(
-                "The remote UTF-8 string length is invalid.");
+                "The remote UTF-16 string length is invalid.");
         }
 
-        if (byteCount == 0)
+        if (charCount == 0)
         {
             return string.Empty;
         }
 
-        byte[] bytes = new byte[byteCount];
-        fixed (byte* buffer = bytes)
-        {
-            status = copy(
-                (nint)buffer,
-                bytes.Length,
-                out int copiedByteCount);
-            ThrowIfFailed(controlVtbl, status);
-            if (copiedByteCount != byteCount)
+        return string.Create(
+            charCount,
+            (controlVtbl, copy),
+            static (destination, state) =>
             {
-                throw new InvalidOperationException(
-                    "The remote UTF-8 string changed while being copied.");
-            }
-        }
-
-        return Encoding.UTF8.GetString(bytes);
+                fixed (char* buffer = destination)
+                {
+                    int copyStatus = state.copy(
+                        (nint)buffer,
+                        destination.Length,
+                        out int copiedCharCount);
+                    ThrowIfFailed(state.controlVtbl, copyStatus);
+                    if (copiedCharCount != destination.Length)
+                    {
+                        throw new InvalidOperationException(
+                            "The remote UTF-16 string changed while being copied.");
+                    }
+                }
+            });
     }
 
     public static long CreateSourceTextHandle(
@@ -261,13 +267,12 @@ public static unsafe class RoslynFacadeRuntime
         int checksumAlgorithm)
     {
         ArgumentNullException.ThrowIfNull(text);
-        byte[] bytes = Encoding.UTF8.GetBytes(text);
         long result;
-        fixed (byte* buffer = bytes)
+        fixed (char* buffer = text)
         {
-            int status = controlVtbl.CreateSourceTextUtf8(
+            int status = controlVtbl.CreateSourceTextUtf16(
                 (nint)buffer,
-                bytes.Length,
+                text.Length,
                 checksumAlgorithm,
                 out result);
             ThrowIfFailed(controlVtbl, status);

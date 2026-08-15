@@ -72,7 +72,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CompilationOptions_get_CryptoKeyContainer(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CompilationOptions_get_CryptoKeyContainer(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
             }
 
             protected set
@@ -88,7 +88,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CompilationOptions_get_CryptoKeyFile(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CompilationOptions_get_CryptoKeyFile(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
             }
 
             protected set
@@ -188,7 +188,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CompilationOptions_get_MainTypeName(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CompilationOptions_get_MainTypeName(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
             }
 
             protected set
@@ -238,7 +238,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CompilationOptions_get_ModuleName(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CompilationOptions_get_ModuleName(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
             }
 
             protected set
@@ -341,7 +341,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CompilationOptions_get_ScriptClassName(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CompilationOptions_get_ScriptClassName(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
             }
 
             protected set

@@ -36,10 +36,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).AppConfigPath;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -61,10 +61,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).BaseDirectory;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -103,10 +103,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).CompilationName;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -213,10 +213,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).DocumentationPath;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -306,10 +306,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).ErrorLogPath;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -331,10 +331,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).GeneratedFilesOutputDirectory;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -390,10 +390,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).OutputDirectory;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -415,10 +415,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).OutputFileName;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -440,10 +440,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).OutputRefFilePath;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -482,10 +482,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).PdbPath;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -558,10 +558,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).RuleSetPath;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -600,10 +600,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).SourceLink;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -625,10 +625,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).TouchedFilesPath;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -667,10 +667,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).Win32Icon;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -692,10 +692,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).Win32Manifest;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -717,10 +717,10 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).Win32ResourceFile;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

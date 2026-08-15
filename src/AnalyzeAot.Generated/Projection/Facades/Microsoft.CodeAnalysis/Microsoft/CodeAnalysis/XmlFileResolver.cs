@@ -22,7 +22,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.IXmlFileResolverVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.XmlFileResolver_get_BaseDirectory(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.XmlFileResolver_get_BaseDirectory(__analyzeAotReceiver, buffer, bufferLength, out requiredLength));
             }
         }
 

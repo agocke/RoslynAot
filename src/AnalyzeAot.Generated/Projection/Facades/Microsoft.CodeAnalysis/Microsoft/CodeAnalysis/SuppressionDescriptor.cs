@@ -27,7 +27,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ISuppressionDescriptorVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SuppressionDescriptor_get_Id(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SuppressionDescriptor_get_Id(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
 
@@ -50,7 +50,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ISuppressionDescriptorVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SuppressionDescriptor_get_SuppressedDiagnosticId(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SuppressionDescriptor_get_SuppressedDiagnosticId(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
 

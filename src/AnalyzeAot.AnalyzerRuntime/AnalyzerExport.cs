@@ -1,7 +1,6 @@
 using System.Collections.Immutable;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
-using System.Text;
 using AnalyzeAot.Abi;
 using AnalyzeAot.RoslynFacade;
 using Microsoft.CodeAnalysis;
@@ -80,7 +79,7 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
         return AnalyzerAbi.Success;
     }
 
-    public int CopyDescriptorStringUtf8(
+    public unsafe int CopyDescriptorStringUtf16(
         int descriptorIndex,
         AnalyzerDescriptorField field,
         nint buffer,
@@ -100,7 +99,7 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
         string value =
             AnalyzerFacadeFactory.GetDescriptorString(descriptor, field);
 
-        requiredLength = Encoding.UTF8.GetByteCount(value);
+        requiredLength = value.Length;
         if (buffer == 0)
         {
             return AnalyzerAbi.Success;
@@ -111,9 +110,8 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
             return AnalyzerAbi.InvalidArgument;
         }
 
-        Encoding.UTF8.GetBytes(
-            value.AsSpan(),
-            new Span<byte>((void*)buffer, bufferLength));
+        value.AsSpan().CopyTo(
+            new Span<char>((void*)buffer, bufferLength));
         return AnalyzerAbi.Success;
     }
 

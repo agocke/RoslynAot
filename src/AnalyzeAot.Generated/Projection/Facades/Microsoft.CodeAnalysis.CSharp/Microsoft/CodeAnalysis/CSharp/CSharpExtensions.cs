@@ -375,7 +375,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::AnalyzeAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CSharpExtensions_GetInterceptsLocationAttributeSyntax(location.__AnalyzeAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CSharpExtensions_GetInterceptsLocationAttributeSyntax(location.__AnalyzeAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
         }
 
         public static Syntax.DirectiveTriviaSyntax? GetLastDirective(this SyntaxNode node, System.Func<Syntax.DirectiveTriviaSyntax, bool>? predicate = null)

@@ -77,7 +77,7 @@ namespace Microsoft.CodeAnalysis
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ILocalizableStringVtbl vtbl = __AnalyzeAotGetVtbl();
             long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.LocalizableString_ToString_a1eaba99(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.LocalizableString_ToString_a1eaba99(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
         public string ToString(System.IFormatProvider? formatProvider)

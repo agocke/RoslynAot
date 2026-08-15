@@ -38,6 +38,12 @@ public static class ProjectionClient
                     return RoslynAbi.Failure;
                 }
 
+                if (node.ToFullString() !=
+                    "// \u03c0 \ud83d\ude00\nclass C { }")
+                {
+                    return RoslynAbi.Failure;
+                }
+
                 CompilationUnitSyntax compilationUnit =
                     CompilationUnitSyntax.__AnalyzeAotCreateProxy(
                         controlVtbl,
@@ -52,7 +58,7 @@ public static class ProjectionClient
                 long textHandle =
                     RoslynFacadeRuntime.CreateSourceTextHandle(
                         controlVtbl,
-                        " // trivia\nclass C { }",
+                        " // \u03c0 \ud83d\ude00\nclass C { }",
                         (int)SourceHashAlgorithm.Sha1);
                 SourceText text =
                     SourceText.__AnalyzeAotCreateProxy(

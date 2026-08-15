@@ -33,7 +33,7 @@ The Linux prototype now completes a real framework-analyzer vertical slice:
   preserve observable derived-type casts without an analyzer-specific global
   runtime-type switch.
 - A NativeAOT projection client validates typed vtable lookup, inheritance,
-  handles, error isolation, `SyntaxTokenParser`, and UTF-8 string returns across
+  handles, error isolation, `SyntaxTokenParser`, and UTF-16 string returns across
   the native module boundary.
 - `AnalyzeAot.AnalyzerRuntime` now links against the generated facade projects,
   not the handwritten Roslyn shims.
@@ -216,8 +216,8 @@ platforms, the same interface model can drive custom vtable generation.
 - Cross-boundary types are limited to fixed-width integers, explicitly based
   enums, pointers, opaque handles, generated blittable structs, and pointer-plus-
   length spans.
-- Strings are UTF-8 buffers with explicit lengths; no `string`, `BSTR`, or
-  platform `wchar_t` appears in the ABI.
+- Strings are UTF-16 code-unit buffers with explicit lengths; no `string`,
+  `BSTR`, or platform `wchar_t` appears in the ABI.
 - Arrays use pointer/count views or enumeration methods; no `SAFEARRAY` or
   managed array crosses the boundary.
 - Ownership and lifetime are explicit through attributes such as borrowed,
@@ -236,7 +236,7 @@ contract while avoiding Windows COM infrastructure.
 1. **Correctness before performance.** Native compilation must not silently
    change diagnostics, generated code, or emitted assemblies.
 2. **No managed objects across the ABI.** All cross-module data uses handles,
-   fixed-layout values, UTF-8 buffers, or explicit serialization.
+   fixed-layout values, UTF-16 buffers, or explicit serialization.
 3. **Build both sides together.** The transport does not provide backward
    compatibility; stale or mismatched native artifacts are rejected and rebuilt.
 4. **Fail explicitly.** Unsupported Roslyn APIs and incompatible analyzers must
@@ -319,7 +319,7 @@ Deliverables:
 - Public-signed `Microsoft.CodeAnalysis` facade assemblies.
 - A real compiler-side `DiagnosticAnalyzer` proxy.
 - Private host and analyzer transport interfaces.
-- Opaque syntax handles and UTF-8 buffer methods.
+- Opaque syntax handles and UTF-16 buffer methods.
 - Diagnostic reporting from analyzer to compiler.
 - Compilation of a small C# input into a valid assembly.
 

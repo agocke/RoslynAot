@@ -317,10 +317,10 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Emit.EmitOptions>(receiver).OutputNameOverride;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -342,10 +342,10 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Emit.EmitOptions>(receiver).PdbFilePath;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -367,10 +367,10 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
             string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Emit.EmitOptions>(receiver).RuntimeMetadataVersion;
             if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            requiredLength = value.Length;
             if (buffer == 0) return RoslynAbi.Success;
-            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
-            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

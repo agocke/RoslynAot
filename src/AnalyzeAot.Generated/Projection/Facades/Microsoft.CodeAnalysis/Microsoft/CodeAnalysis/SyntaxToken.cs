@@ -116,7 +116,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ISyntaxTokenVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxToken_get_Language(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxToken_get_Language(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
 
@@ -199,7 +199,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ISyntaxTokenVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxToken_get_Text(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxToken_get_Text(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
 
@@ -230,7 +230,7 @@ namespace Microsoft.CodeAnalysis
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ISyntaxTokenVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxToken_get_ValueText(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxToken_get_ValueText(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
 
@@ -379,7 +379,7 @@ namespace Microsoft.CodeAnalysis
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxTokenVtbl vtbl = __AnalyzeAotGetVtbl();
             long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxToken_ToFullString(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxToken_ToFullString(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
         public override readonly string ToString()
@@ -387,7 +387,7 @@ namespace Microsoft.CodeAnalysis
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxTokenVtbl vtbl = __AnalyzeAotGetVtbl();
             long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxToken_ToString(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxToken_ToString(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
         public readonly SyntaxToken WithAdditionalAnnotations(params SyntaxAnnotation[] annotations)

@@ -366,7 +366,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::AnalyzeAot.Abi.ICompilationTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCompilationTypeVtbl(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.Compilation_GetRequiredLanguageVersion(diagnostic.__AnalyzeAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength));
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.Compilation_GetRequiredLanguageVersion(diagnostic.__AnalyzeAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength));
         }
 
         [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL001", UrlFormat = "https://github.com/dotnet/roslyn/issues/70609")]

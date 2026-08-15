@@ -1,6 +1,5 @@
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
-using System.Text;
 using AnalyzeAot.Abi;
 
 namespace AnalyzeAot.CompilerHost;
@@ -66,26 +65,26 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         }
     }
 
-    public unsafe int CreateSourceTextUtf8(
-        nint utf8Text,
-        int utf8Length,
+    public unsafe int CreateSourceTextUtf16(
+        nint utf16Text,
+        int utf16Length,
         int checksumAlgorithm,
         out long result)
     {
         result = default;
         try
         {
-            if (utf8Length < 0 ||
-                (utf8Length != 0 && utf8Text == 0))
+            if (utf16Length < 0 ||
+                (utf16Length != 0 && utf16Text == 0))
             {
                 throw new ArgumentException(
-                    "The UTF-8 source text buffer is invalid.");
+                    "The UTF-16 source text buffer is invalid.");
             }
 
-            string text = Encoding.UTF8.GetString(
-                new ReadOnlySpan<byte>(
-                    (void*)utf8Text,
-                    utf8Length));
+            string text = new(
+                new ReadOnlySpan<char>(
+                    (void*)utf16Text,
+                    utf16Length));
             result = _objects.AddObject(
                 global::Microsoft.CodeAnalysis.Text.SourceText.From(
                     text,
@@ -124,7 +123,7 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         }
     }
 
-    public unsafe int CopyLastErrorUtf8(
+    public unsafe int CopyLastErrorUtf16(
         nint buffer,
         int bufferLength,
         out int requiredLength,
@@ -143,7 +142,7 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
             return RoslynAbi.InvalidArgument;
         }
 
-        requiredLength = Encoding.UTF8.GetByteCount(message);
+        requiredLength = message.Length;
         if (buffer == 0)
         {
             return RoslynAbi.Success;
@@ -154,9 +153,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
             return RoslynAbi.InvalidArgument;
         }
 
-        Encoding.UTF8.GetBytes(
-            message.AsSpan(),
-            new Span<byte>((void*)buffer, bufferLength));
+        message.AsSpan().CopyTo(
+            new Span<char>((void*)buffer, bufferLength));
         return RoslynAbi.Success;
     }
 

@@ -174,7 +174,7 @@ namespace Microsoft.CodeAnalysis.Text
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISourceTextVtbl vtbl = __AnalyzeAotGetVtbl();
             long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_36435385(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_36435385(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
         public virtual string ToString(TextSpan span)
@@ -182,7 +182,7 @@ namespace Microsoft.CodeAnalysis.Text
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISourceTextVtbl vtbl = __AnalyzeAotGetVtbl();
             long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_b3c549ee(__analyzeAotReceiver, span.__AnalyzeAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_b3c549ee(__analyzeAotReceiver, span.__AnalyzeAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
         }
 
         public SourceText WithChanges(params TextChange[] changes)

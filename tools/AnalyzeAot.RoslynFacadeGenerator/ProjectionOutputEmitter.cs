@@ -188,16 +188,16 @@ internal static class ProjectionOutputEmitter
                 out nint vtbl);
 
             [PreserveSig]
-            int CopyLastErrorUtf8(
+            int CopyLastErrorUtf16(
                 nint buffer,
                 int bufferLength,
                 out int requiredLength,
                 out RoslynRemoteErrorKind errorKind);
 
             [PreserveSig]
-            int CreateSourceTextUtf8(
-                nint utf8Text,
-                int utf8Length,
+            int CreateSourceTextUtf16(
+                nint utf16Text,
+                int utf16Length,
                 int checksumAlgorithm,
                 out long result);
 
@@ -440,7 +440,7 @@ internal static class ProjectionOutputEmitter
     {
         builder.AppendLine();
         builder.AppendLine(
-            $"    public{(operation.ReturnValue.Kind == AbiTypeKind.Utf8String ? " unsafe" : string.Empty)} int {operation.GeneratedName}(");
+            $"    public{(operation.ReturnValue.Kind == AbiTypeKind.Utf16String ? " unsafe" : string.Empty)} int {operation.GeneratedName}(");
         IReadOnlyList<string> abiParameters = GetAbiParameters(operation);
         for (int index = 0; index < abiParameters.Count; index++)
         {
@@ -450,7 +450,7 @@ internal static class ProjectionOutputEmitter
         }
 
         builder.AppendLine("    {");
-        if (operation.ReturnValue.Kind == AbiTypeKind.Utf8String)
+        if (operation.ReturnValue.Kind == AbiTypeKind.Utf16String)
         {
             builder.AppendLine("        requiredLength = default;");
         }
@@ -515,7 +515,7 @@ internal static class ProjectionOutputEmitter
         }
 
         string invocation = GetCompilerInvocation(operation);
-        if (operation.ReturnValue.Kind == AbiTypeKind.Utf8String)
+        if (operation.ReturnValue.Kind == AbiTypeKind.Utf16String)
         {
             yield return
                 "if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));";
@@ -523,12 +523,12 @@ internal static class ProjectionOutputEmitter
             yield return
                 "if (value is null) { requiredLength = -1; return RoslynAbi.Success; }";
             yield return
-                "requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);";
+                "requiredLength = value.Length;";
             yield return "if (buffer == 0) return RoslynAbi.Success;";
             yield return
-                "if (bufferLength < requiredLength) throw new global::System.ArgumentException(\"The UTF-8 result buffer is too small.\", nameof(bufferLength));";
+                "if (bufferLength < requiredLength) throw new global::System.ArgumentException(\"The UTF-16 result buffer is too small.\", nameof(bufferLength));";
             yield return
-                "global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));";
+                "value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));";
             yield break;
         }
 
@@ -667,7 +667,7 @@ internal static class ProjectionOutputEmitter
             $"{parameter.AbiType.AbiType} " +
             CSharpName.EscapeIdentifier(parameter.Symbol.Name)));
 
-        if (operation.ReturnValue.Kind == AbiTypeKind.Utf8String)
+        if (operation.ReturnValue.Kind == AbiTypeKind.Utf16String)
         {
             parameters.Add("nint buffer");
             parameters.Add("int bufferLength");
@@ -686,13 +686,12 @@ internal static class ProjectionOutputEmitter
         return """
         using System.Runtime.InteropServices;
         using System.Runtime.InteropServices.Marshalling;
-        using System.Text;
         using System.Threading;
         using AnalyzeAot.Abi;
 
         namespace AnalyzeAot.RoslynFacade;
 
-        public delegate int CopyUtf8String(
+        public delegate int CopyUtf16String(
             nint buffer,
             int bufferLength,
             out int requiredLength);
@@ -829,7 +828,7 @@ internal static class ProjectionOutputEmitter
                 return new Scope(previous);
             }
 
-            public static void ThrowIfFailed(
+            public static unsafe void ThrowIfFailed(
                 IRoslynControlVtbl controlVtbl,
                 int status)
             {
@@ -838,12 +837,12 @@ internal static class ProjectionOutputEmitter
                     return;
                 }
 
-                int queryStatus = controlVtbl.CopyLastErrorUtf8(
+                int queryStatus = controlVtbl.CopyLastErrorUtf16(
                     0,
                     0,
-                    out int byteCount,
+                    out int charCount,
                     out RoslynRemoteErrorKind errorKind);
-                if (queryStatus != RoslynAbi.Success || byteCount < 0)
+                if (queryStatus != RoslynAbi.Success || charCount < 0)
                 {
                     throw new RoslynRemoteException(
                         $"Remote Roslyn operation failed with 0x{status:x8}; " +
@@ -851,28 +850,32 @@ internal static class ProjectionOutputEmitter
                         status);
                 }
 
-                byte[] bytes = new byte[Math.Max(byteCount, 1)];
-                fixed (byte* buffer = bytes)
-                {
-                    int copyStatus = controlVtbl.CopyLastErrorUtf8(
-                        (nint)buffer,
-                        byteCount,
-                        out int copiedByteCount,
-                        out RoslynRemoteErrorKind copiedErrorKind);
-                    if (copyStatus != RoslynAbi.Success ||
-                        copiedByteCount != byteCount ||
-                        copiedErrorKind != errorKind)
-                    {
-                        throw new RoslynRemoteException(
-                            $"Remote Roslyn operation failed with 0x{status:x8}; " +
-                            "its error details changed while being copied.",
-                            status);
-                    }
-                }
-
-                string message = byteCount == 0
+                string message = charCount == 0
                     ? $"Remote Roslyn operation failed with 0x{status:x8}."
-                    : Encoding.UTF8.GetString(bytes.AsSpan(0, byteCount));
+                    : string.Create(
+                        charCount,
+                        (controlVtbl, errorKind, status),
+                        static (destination, state) =>
+                        {
+                            fixed (char* buffer = destination)
+                            {
+                                int copyStatus =
+                                    state.controlVtbl.CopyLastErrorUtf16(
+                                        (nint)buffer,
+                                        destination.Length,
+                                        out int copiedCharCount,
+                                        out RoslynRemoteErrorKind copiedErrorKind);
+                                if (copyStatus != RoslynAbi.Success ||
+                                    copiedCharCount != destination.Length ||
+                                    copiedErrorKind != state.errorKind)
+                                {
+                                    throw new RoslynRemoteException(
+                                        $"Remote Roslyn operation failed with 0x{state.status:x8}; " +
+                                        "its error details changed while being copied.",
+                                        state.status);
+                                }
+                            }
+                        });
                 throw errorKind switch
                 {
                     RoslynRemoteErrorKind.Argument =>
@@ -890,47 +893,50 @@ internal static class ProjectionOutputEmitter
             public static T UnsupportedStaticField<T>(string message) =>
                 throw new PlatformNotSupportedException(message);
 
-            public static unsafe string? ReadUtf8String(
+            public static unsafe string? ReadUtf16String(
                 IRoslynControlVtbl controlVtbl,
-                CopyUtf8String copy)
+                CopyUtf16String copy)
             {
                 ArgumentNullException.ThrowIfNull(controlVtbl);
                 ArgumentNullException.ThrowIfNull(copy);
 
-                int status = copy(0, 0, out int byteCount);
+                int status = copy(0, 0, out int charCount);
                 ThrowIfFailed(controlVtbl, status);
-                if (byteCount == -1)
+                if (charCount == -1)
                 {
                     return null;
                 }
 
-                if (byteCount < -1)
+                if (charCount < -1)
                 {
                     throw new InvalidOperationException(
-                        "The remote UTF-8 string length is invalid.");
+                        "The remote UTF-16 string length is invalid.");
                 }
 
-                if (byteCount == 0)
+                if (charCount == 0)
                 {
                     return string.Empty;
                 }
 
-                byte[] bytes = new byte[byteCount];
-                fixed (byte* buffer = bytes)
-                {
-                    status = copy(
-                        (nint)buffer,
-                        bytes.Length,
-                        out int copiedByteCount);
-                    ThrowIfFailed(controlVtbl, status);
-                    if (copiedByteCount != byteCount)
+                return string.Create(
+                    charCount,
+                    (controlVtbl, copy),
+                    static (destination, state) =>
                     {
-                        throw new InvalidOperationException(
-                            "The remote UTF-8 string changed while being copied.");
-                    }
-                }
-
-                return Encoding.UTF8.GetString(bytes);
+                        fixed (char* buffer = destination)
+                        {
+                            int copyStatus = state.copy(
+                                (nint)buffer,
+                                destination.Length,
+                                out int copiedCharCount);
+                            ThrowIfFailed(state.controlVtbl, copyStatus);
+                            if (copiedCharCount != destination.Length)
+                            {
+                                throw new InvalidOperationException(
+                                    "The remote UTF-16 string changed while being copied.");
+                            }
+                        }
+                    });
             }
 
             public static long CreateSourceTextHandle(
@@ -939,13 +945,12 @@ internal static class ProjectionOutputEmitter
                 int checksumAlgorithm)
             {
                 ArgumentNullException.ThrowIfNull(text);
-                byte[] bytes = Encoding.UTF8.GetBytes(text);
                 long result;
-                fixed (byte* buffer = bytes)
+                fixed (char* buffer = text)
                 {
-                    int status = controlVtbl.CreateSourceTextUtf8(
+                    int status = controlVtbl.CreateSourceTextUtf16(
                         (nint)buffer,
-                        bytes.Length,
+                        text.Length,
                         checksumAlgorithm,
                         out result);
                     ThrowIfFailed(controlVtbl, status);

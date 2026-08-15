@@ -5,8 +5,8 @@ namespace AnalyzeAot.Abi;
 
 public static unsafe class AnalyzerAbi
 {
-    public const uint Version = 3;
-    public const string GetAnalyzerEntryPoint = "analyze_aot_get_analyzer_v3";
+    public const uint Version = 4;
+    public const string GetAnalyzerEntryPoint = "analyze_aot_get_analyzer_v4";
 
     public const int Success = 0;
     public const int InvalidArgument = unchecked((int)0x80070057);
@@ -45,7 +45,7 @@ public enum AnalyzerDescriptorField
 }
 
 [GeneratedComInterface]
-[Guid("274e22df-306d-4b8d-9f55-235e949c7863")]
+[Guid("d3d4c4ab-e589-4aa6-a23d-713c1782cebf")]
 public partial interface IAnalyzerTransport
 {
     [PreserveSig]
@@ -61,7 +61,7 @@ public partial interface IAnalyzerTransport
         out int enabledByDefault);
 
     [PreserveSig]
-    int CopyDescriptorStringUtf8(
+    int CopyDescriptorStringUtf16(
         int descriptorIndex,
         AnalyzerDescriptorField field,
         nint buffer,

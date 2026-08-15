@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::AnalyzeAot.Abi.ITypedConstantExtensionsVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetTypedConstantExtensionsVtbl(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.TypedConstantExtensions_ToCSharpString(constant.__AnalyzeAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.TypedConstantExtensions_ToCSharpString(constant.__AnalyzeAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
         }
     }
 }
