@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4270e2e7-b7e5-5267-9ca4-e19de1d1c4f2")]
+[Guid("2b8f3a83-e553-5251-bb45-16dfe413937b")]
 public partial interface IAssemblyIdentityComparerVtbl
 {
 
@@ -25,7 +25,7 @@ public partial interface IAssemblyIdentityComparerVtbl
     );
 
     [PreserveSig]
-    int AssemblyIdentityComparer_ReferenceMatchesDefinition_f6795a64(
+    int AssemblyIdentityComparer_ReferenceMatchesDefinition_0539a3af(
         long receiver,
         long reference,
         long definition,

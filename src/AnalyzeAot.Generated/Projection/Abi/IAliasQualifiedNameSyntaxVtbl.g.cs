@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("a51da4a7-a63c-5e4c-8150-445480f69c83")]
+[Guid("8f321853-5f1c-57ef-99b8-2f8ded3cdb23")]
 public partial interface IAliasQualifiedNameSyntaxVtbl : INameSyntaxVtbl
 {
 
     [PreserveSig]
-    int AliasQualifiedNameSyntax_Accept_7bc6a6aa(
+    int AliasQualifiedNameSyntax_Accept_84cb258d(
         long receiver,
         long visitor
     );
@@ -60,6 +60,12 @@ public partial interface IAliasQualifiedNameSyntaxVtbl : INameSyntaxVtbl
 
     [PreserveSig]
     int AliasQualifiedNameSyntax_get_ColonColonToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int AliasQualifiedNameSyntax_get_Name(
         long receiver,
         out long result
     );

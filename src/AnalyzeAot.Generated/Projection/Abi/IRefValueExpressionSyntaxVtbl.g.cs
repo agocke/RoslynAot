@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f0a1a496-2ce6-57b3-aafc-2bfc0d3a2c5f")]
+[Guid("702c414b-c60e-50af-9708-275752340aa8")]
 public partial interface IRefValueExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int RefValueExpressionSyntax_Accept_024bf6e6(
+    int RefValueExpressionSyntax_Accept_1b38648e(
         long receiver,
         long visitor
     );
@@ -89,6 +89,12 @@ public partial interface IRefValueExpressionSyntaxVtbl : IExpressionSyntaxVtbl
     );
 
     [PreserveSig]
+    int RefValueExpressionSyntax_get_Expression(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int RefValueExpressionSyntax_get_Keyword(
         long receiver,
         out long result
@@ -96,6 +102,12 @@ public partial interface IRefValueExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 
     [PreserveSig]
     int RefValueExpressionSyntax_get_OpenParenToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int RefValueExpressionSyntax_get_Type(
         long receiver,
         out long result
     );

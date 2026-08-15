@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.FlowAnalysis
 {
-    public sealed partial class ControlFlowRegion
+    public partial interface ControlFlowRegion
     {
-        internal ControlFlowRegion()
-        {
-        }
-
         public System.Collections.Immutable.ImmutableArray<CaptureId> CaptureIds
         {
             get
@@ -102,26 +98,15 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
             }
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.IControlFlowRegionVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal ControlFlowRegion(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IControlFlowRegionVtbl vtbl, long handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IControlFlowRegionVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetControlFlowRegionVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static ControlFlowRegion __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ControlFlowRegion)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("f7368adc-61ce-5fe4-a011-d13823606173")]
+        internal partial interface __AnalyzeAotImplementation : ControlFlowRegion
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.IControlFlowRegionVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        internal static ControlFlowRegion __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new ControlFlowRegion(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetControlFlowRegionVtbl(controlVtbl), handle);
     }
 }

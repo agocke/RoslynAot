@@ -12,7 +12,33 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("2e870bd3-ed34-50f2-8d42-95fa026467e2")]
+[Guid("21c58c55-3938-5ff1-a2b1-b92190412063")]
 public partial interface IBaseExpressionColonSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
+
+    [PreserveSig]
+    int BaseExpressionColonSyntax_WithColonToken(
+        long receiver,
+        long colonToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseExpressionColonSyntax_WithExpression(
+        long receiver,
+        long expression,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseExpressionColonSyntax_get_ColonToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseExpressionColonSyntax_get_Expression(
+        long receiver,
+        out long result
+    );
 }

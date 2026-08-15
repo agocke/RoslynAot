@@ -23,6 +23,42 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int ParseOptions_WithDocumentationMode(
+        long receiver,
+        byte documentationMode,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(receiver).WithDocumentationMode((global::Microsoft.CodeAnalysis.DocumentationMode)documentationMode));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ParseOptions_WithKind(
+        long receiver,
+        int kind,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(receiver).WithKind((global::Microsoft.CodeAnalysis.SourceCodeKind)kind));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ParseOptions_get_DocumentationMode(
         long receiver,
         out byte result)

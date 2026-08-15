@@ -12,7 +12,27 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fd8ad6c5-fcd8-5a9d-9e0a-f5cfe21404aa")]
+[Guid("3a4252ce-4627-50b5-8bc6-21fe6264c9b3")]
 public partial interface IBranchingDirectiveTriviaSyntaxVtbl : IDirectiveTriviaSyntaxVtbl
 {
+
+    [PreserveSig]
+    int BranchingDirectiveTriviaSyntax_WithEndOfDirectiveToken(
+        long receiver,
+        long endOfDirectiveToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int BranchingDirectiveTriviaSyntax_WithHashToken(
+        long receiver,
+        long hashToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int BranchingDirectiveTriviaSyntax_get_BranchTaken(
+        long receiver,
+        out int result
+    );
 }

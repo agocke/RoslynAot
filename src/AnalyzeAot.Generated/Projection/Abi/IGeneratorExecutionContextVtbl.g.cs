@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e805ab7a-e9f4-5da4-b17f-25927381af69")]
+[Guid("b2f28410-05cb-5c63-9bfd-fc4684b06707")]
 public partial interface IGeneratorExecutionContextVtbl
 {
 
@@ -20,5 +20,17 @@ public partial interface IGeneratorExecutionContextVtbl
     int GeneratorExecutionContext_ReportDiagnostic(
         long receiver,
         long diagnostic
+    );
+
+    [PreserveSig]
+    int GeneratorExecutionContext_get_AnalyzerConfigOptions(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int GeneratorExecutionContext_get_ParseOptions(
+        long receiver,
+        out long result
     );
 }

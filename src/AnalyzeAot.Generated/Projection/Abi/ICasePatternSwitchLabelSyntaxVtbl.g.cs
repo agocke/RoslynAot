@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("452729d9-269e-5a5f-bffd-0c53f7716b88")]
+[Guid("729d863a-ab37-53cf-b255-e8e2aa2c9498")]
 public partial interface ICasePatternSwitchLabelSyntaxVtbl : ISwitchLabelSyntaxVtbl
 {
 
     [PreserveSig]
-    int CasePatternSwitchLabelSyntax_Accept_c817b483(
+    int CasePatternSwitchLabelSyntax_Accept_c808425a(
         long receiver,
         long visitor
     );
@@ -68,6 +68,12 @@ public partial interface ICasePatternSwitchLabelSyntaxVtbl : ISwitchLabelSyntaxV
 
     [PreserveSig]
     int CasePatternSwitchLabelSyntax_get_Keyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CasePatternSwitchLabelSyntax_get_Pattern(
         long receiver,
         out long result
     );

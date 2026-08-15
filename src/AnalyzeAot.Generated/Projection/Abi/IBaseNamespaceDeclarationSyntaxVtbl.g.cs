@@ -12,7 +12,40 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("92182a33-5d42-5465-ad55-a9948c7583d9")]
+[Guid("fa6f85c8-43a5-56c4-8d3e-4a06eee09d23")]
 public partial interface IBaseNamespaceDeclarationSyntaxVtbl : IMemberDeclarationSyntaxVtbl
 {
+
+    [PreserveSig]
+    int BaseNamespaceDeclarationSyntax_WithModifiers(
+        long receiver,
+        long modifiers,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseNamespaceDeclarationSyntax_WithName(
+        long receiver,
+        long name,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseNamespaceDeclarationSyntax_WithNamespaceKeyword(
+        long receiver,
+        long namespaceKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseNamespaceDeclarationSyntax_get_Name(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseNamespaceDeclarationSyntax_get_NamespaceKeyword(
+        long receiver,
+        out long result
+    );
 }

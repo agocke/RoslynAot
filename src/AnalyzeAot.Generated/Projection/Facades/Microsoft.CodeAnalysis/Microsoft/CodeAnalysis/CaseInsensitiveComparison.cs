@@ -57,7 +57,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::AnalyzeAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
-            int status = vtbl.CaseInsensitiveComparison_ToLower_cf8aebcb((ushort)c, out ushort result);
+            int status = vtbl.CaseInsensitiveComparison_ToLower_8c71e35e((ushort)c, out ushort result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return (char)result;
         }

@@ -30,7 +30,9 @@ internal static class GeneratedSourceLayout
                 $"{Environment.NewLine}{lineNumber}: {sourceLine}");
         }
 
-        var root = (CompilationUnitSyntax)syntaxTree.GetRoot();
+        var root = (CompilationUnitSyntax)
+            (new InterfaceAttributeRewriter().Visit(syntaxTree.GetRoot())
+                ?? syntaxTree.GetRoot());
         string safeAssemblyName = GetSafePathSegment(assemblyName);
         string assemblyDirectory = Path.Combine(
             outputRoot,
@@ -191,5 +193,31 @@ internal static class GeneratedSourceLayout
             (CSharpFileBuilder.DefaultFileHeader
                 + normalized.ToFullString()
                 + "\n").ReplaceLineEndings("\n"));
+    }
+
+    private sealed class InterfaceAttributeRewriter : CSharpSyntaxRewriter
+    {
+        public override SyntaxNode? VisitInterfaceDeclaration(
+            InterfaceDeclarationSyntax node)
+        {
+            InterfaceDeclarationSyntax rewritten =
+                (InterfaceDeclarationSyntax)
+                (base.VisitInterfaceDeclaration(node) ?? node);
+            return rewritten.WithAttributeLists(
+                SyntaxFactory.List(
+                    rewritten.AttributeLists
+                        .Select(
+                            list =>
+                                list.WithAttributes(
+                                    SyntaxFactory.SeparatedList(
+                                        list.Attributes.Where(
+                                            attribute =>
+                                                !attribute.Name
+                                                    .ToString()
+                                                    .EndsWith(
+                                                        "DebuggerDisplay",
+                                                        StringComparison.Ordinal)))))
+                        .Where(list => list.Attributes.Count != 0)));
+        }
     }
 }

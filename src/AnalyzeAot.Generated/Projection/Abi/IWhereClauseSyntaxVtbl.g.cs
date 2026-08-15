@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1d6897b3-3258-5768-a08e-df89bb131b9a")]
+[Guid("6eb668c7-4308-57bc-9944-dea12f4cb7b7")]
 public partial interface IWhereClauseSyntaxVtbl : IQueryClauseSyntaxVtbl
 {
 
     [PreserveSig]
-    int WhereClauseSyntax_Accept_f29751bc(
+    int WhereClauseSyntax_Accept_ca12306f(
         long receiver,
         long visitor
     );
@@ -41,6 +41,12 @@ public partial interface IWhereClauseSyntaxVtbl : IQueryClauseSyntaxVtbl
     int WhereClauseSyntax_WithWhereKeyword(
         long receiver,
         long whereKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int WhereClauseSyntax_get_Condition(
+        long receiver,
         out long result
     );
 

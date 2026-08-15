@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("74500015-e886-534b-a6d5-a46f53f67fee")]
+[Guid("a726274e-d8b7-54fe-8dc6-f56fea9c2d5a")]
 public partial interface ITypeCrefSyntaxVtbl : ICrefSyntaxVtbl
 {
 
     [PreserveSig]
-    int TypeCrefSyntax_Accept_decd4ee3(
+    int TypeCrefSyntax_Accept_8f9f03db(
         long receiver,
         long visitor
     );
@@ -33,6 +33,12 @@ public partial interface ITypeCrefSyntaxVtbl : ICrefSyntaxVtbl
     int TypeCrefSyntax_WithType(
         long receiver,
         long @type,
+        out long result
+    );
+
+    [PreserveSig]
+    int TypeCrefSyntax_get_Type(
+        long receiver,
         out long result
     );
 }

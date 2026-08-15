@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp.Syntax
 {
-    public sealed partial class BinaryExpressionSyntax : ExpressionSyntax
+    public partial interface BinaryExpressionSyntax : ExpressionSyntax
     {
-        internal BinaryExpressionSyntax()
-        {
-        }
-
         public ExpressionSyntax Left
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IBinaryExpressionSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.BinaryExpressionSyntax_get_Left(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ExpressionSyntax.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -38,20 +38,23 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IBinaryExpressionSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.BinaryExpressionSyntax_get_Right(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ExpressionSyntax.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
-        public override void Accept(CSharpSyntaxVisitor visitor)
+        public void Accept(CSharpSyntaxVisitor visitor)
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.IBinaryExpressionSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.BinaryExpressionSyntax_Accept_7b26e968(__AnalyzeAotGetHandle(controlVtbl), visitor.__AnalyzeAotGetHandle(controlVtbl));
+            int status = vtbl.BinaryExpressionSyntax_Accept_f99950aa(__AnalyzeAotGetHandle(controlVtbl), visitor.__AnalyzeAotGetHandle(controlVtbl));
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
-        public override TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
-            where TResult : default
+        public TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
@@ -92,26 +95,15 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.IBinaryExpressionSyntaxVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal BinaryExpressionSyntax(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IBinaryExpressionSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IBinaryExpressionSyntaxVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetBinaryExpressionSyntaxVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static BinaryExpressionSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (BinaryExpressionSyntax)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("cedbe18c-01c7-5951-8c91-d252ac0e0d02")]
+        internal partial interface __AnalyzeAotImplementation : BinaryExpressionSyntax
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.IBinaryExpressionSyntaxVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        internal static BinaryExpressionSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new BinaryExpressionSyntax(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetBinaryExpressionSyntaxVtbl(controlVtbl), handle);
     }
 }

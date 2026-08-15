@@ -8,14 +8,27 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp.Syntax
 {
-    public abstract partial class LambdaExpressionSyntax : AnonymousFunctionExpressionSyntax
+    public partial interface LambdaExpressionSyntax : AnonymousFunctionExpressionSyntax
     {
-        internal LambdaExpressionSyntax()
+        public SyntaxToken ArrowToken
         {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.LambdaExpressionSyntax_get_ArrowToken(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SyntaxToken.__AnalyzeAotCreateProxy(controlVtbl, result);
+            }
         }
 
-        public abstract SyntaxToken ArrowToken { get; }
-        public abstract SyntaxList<AttributeListSyntax> AttributeLists { get; }
+        public SyntaxList<AttributeListSyntax> AttributeLists
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
+        }
 
         public LambdaExpressionSyntax AddAttributeLists(params AttributeListSyntax[] items)
         {
@@ -39,12 +52,20 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public LambdaExpressionSyntax WithArrowToken(SyntaxToken arrowToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.LambdaExpressionSyntax_WithArrowToken(__AnalyzeAotGetHandle(controlVtbl), arrowToken.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public new LambdaExpressionSyntax WithAsyncKeyword(SyntaxToken asyncKeyword)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.LambdaExpressionSyntax_WithAsyncKeyword(__AnalyzeAotGetHandle(controlVtbl), asyncKeyword.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public LambdaExpressionSyntax WithAttributeLists(SyntaxList<AttributeListSyntax> attributeLists)
@@ -54,110 +75,49 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public new LambdaExpressionSyntax WithBlock(BlockSyntax? block)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.LambdaExpressionSyntax_WithBlock(__AnalyzeAotGetHandle(controlVtbl), block is null ? 0L : block.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public new LambdaExpressionSyntax WithBody(CSharpSyntaxNode body)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.LambdaExpressionSyntax_WithBody(__AnalyzeAotGetHandle(controlVtbl), body.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public new LambdaExpressionSyntax WithExpressionBody(ExpressionSyntax? expressionBody)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.LambdaExpressionSyntax_WithExpressionBody(__AnalyzeAotGetHandle(controlVtbl), expressionBody is null ? 0L : expressionBody.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public new LambdaExpressionSyntax WithModifiers(SyntaxTokenList modifiers)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.LambdaExpressionSyntax_WithModifiers(__AnalyzeAotGetHandle(controlVtbl), modifiers.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal LambdaExpressionSyntax(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetLambdaExpressionSyntaxVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static LambdaExpressionSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (LambdaExpressionSyntax)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("5ccc26d8-a3cd-55d8-8c2b-78562314c530")]
+        internal partial interface __AnalyzeAotImplementation : LambdaExpressionSyntax
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        private sealed partial class __AnalyzeAotProxy : LambdaExpressionSyntax
-        {
-            internal __AnalyzeAotProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ILambdaExpressionSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
-            {
-            }
-
-            public override SyntaxToken ArrowToken
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxList<AttributeListSyntax> AttributeLists
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxToken AsyncKeyword
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override BlockSyntax? Block
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override ExpressionSyntax? ExpressionBody
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxTokenList Modifiers
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override void Accept(CSharpSyntaxVisitor visitor)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            public override TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
-                where TResult : default
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-        }
-
-        internal static LambdaExpressionSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __AnalyzeAotProxy(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetLambdaExpressionSyntaxVtbl(controlVtbl), handle);
     }
 }

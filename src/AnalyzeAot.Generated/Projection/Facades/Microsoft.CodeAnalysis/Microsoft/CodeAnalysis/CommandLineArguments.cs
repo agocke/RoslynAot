@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    public abstract partial class CommandLineArguments
+    public partial interface CommandLineArguments
     {
-        internal CommandLineArguments()
-        {
-        }
-
         public System.Collections.Immutable.ImmutableArray<CommandLineSourceFile> AdditionalFiles
         {
             get
@@ -87,11 +83,21 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ICommandLineArgumentsVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.CommandLineArguments_get_CompilationOptions(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return CompilationOptions.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
-        protected abstract CompilationOptions CompilationOptionsCore { get; }
+        protected CompilationOptions CompilationOptionsCore
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
+        }
 
         public bool DisplayHelp
         {
@@ -339,11 +345,21 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ICommandLineArgumentsVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.CommandLineArguments_get_ParseOptions(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ParseOptions.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
-        protected abstract ParseOptions ParseOptionsCore { get; }
+        protected ParseOptions ParseOptionsCore
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
+        }
 
         public System.Collections.Immutable.ImmutableArray<System.Collections.Generic.KeyValuePair<string, string>> PathMap
         {
@@ -550,49 +566,15 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.ICommandLineArgumentsVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal CommandLineArguments(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ICommandLineArgumentsVtbl vtbl, long handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.ICommandLineArgumentsVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCommandLineArgumentsVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static CommandLineArguments __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CommandLineArguments)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("c1e18efe-309a-55eb-a393-8c4d541af19a")]
+        internal partial interface __AnalyzeAotImplementation : CommandLineArguments
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.ICommandLineArgumentsVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        private sealed partial class __AnalyzeAotProxy : CommandLineArguments
-        {
-            internal __AnalyzeAotProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ICommandLineArgumentsVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
-            {
-            }
-
-            protected override CompilationOptions CompilationOptionsCore
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            protected override ParseOptions ParseOptionsCore
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-        }
-
-        internal static CommandLineArguments __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __AnalyzeAotProxy(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCommandLineArgumentsVtbl(controlVtbl), handle);
     }
 }

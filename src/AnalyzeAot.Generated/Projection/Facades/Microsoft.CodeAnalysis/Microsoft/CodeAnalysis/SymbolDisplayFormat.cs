@@ -25,7 +25,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.ISymbolDisplayFormatTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayFormatTypeVtbl(controlVtbl);
+                int status = vtbl.SymbolDisplayFormat_get_CSharpErrorMessageFormat(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -33,7 +37,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.ISymbolDisplayFormatTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayFormatTypeVtbl(controlVtbl);
+                int status = vtbl.SymbolDisplayFormat_get_CSharpShortErrorMessageFormat(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -65,7 +73,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.ISymbolDisplayFormatTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayFormatTypeVtbl(controlVtbl);
+                int status = vtbl.SymbolDisplayFormat_get_FullyQualifiedFormat(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -133,7 +145,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.ISymbolDisplayFormatTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayFormatTypeVtbl(controlVtbl);
+                int status = vtbl.SymbolDisplayFormat_get_MinimallyQualifiedFormat(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -189,7 +205,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.ISymbolDisplayFormatTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayFormatTypeVtbl(controlVtbl);
+                int status = vtbl.SymbolDisplayFormat_get_VisualBasicErrorMessageFormat(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -197,103 +217,183 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.ISymbolDisplayFormatTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayFormatTypeVtbl(controlVtbl);
+                int status = vtbl.SymbolDisplayFormat_get_VisualBasicShortErrorMessageFormat(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
         public SymbolDisplayFormat AddGenericsOptions(SymbolDisplayGenericsOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_AddGenericsOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat AddKindOptions(SymbolDisplayKindOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_AddKindOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat AddLocalOptions(SymbolDisplayLocalOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_AddLocalOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat AddMemberOptions(SymbolDisplayMemberOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_AddMemberOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat AddMiscellaneousOptions(SymbolDisplayMiscellaneousOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_AddMiscellaneousOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat AddParameterOptions(SymbolDisplayParameterOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_AddParameterOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat RemoveGenericsOptions(SymbolDisplayGenericsOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_RemoveGenericsOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat RemoveKindOptions(SymbolDisplayKindOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_RemoveKindOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat RemoveLocalOptions(SymbolDisplayLocalOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_RemoveLocalOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat RemoveMemberOptions(SymbolDisplayMemberOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_RemoveMemberOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat RemoveMiscellaneousOptions(SymbolDisplayMiscellaneousOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_RemoveMiscellaneousOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat RemoveParameterOptions(SymbolDisplayParameterOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_RemoveParameterOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat WithGenericsOptions(SymbolDisplayGenericsOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_WithGenericsOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat WithGlobalNamespaceStyle(SymbolDisplayGlobalNamespaceStyle style)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_WithGlobalNamespaceStyle(__AnalyzeAotGetHandle(controlVtbl), (int)style, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat WithKindOptions(SymbolDisplayKindOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_WithKindOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat WithLocalOptions(SymbolDisplayLocalOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_WithLocalOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat WithMemberOptions(SymbolDisplayMemberOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_WithMemberOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat WithMiscellaneousOptions(SymbolDisplayMiscellaneousOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_WithMiscellaneousOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SymbolDisplayFormat WithParameterOptions(SymbolDisplayParameterOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISymbolDisplayFormatVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SymbolDisplayFormat_WithParameterOptions(__AnalyzeAotGetHandle(controlVtbl), (int)options, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         internal SymbolDisplayFormat()

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("738f8b30-3d1e-530d-b86b-83a1efcbabda")]
+[Guid("0dfdcfe0-d711-542b-91b2-e647c972ddc9")]
 public partial interface ISymbolInfoVtbl
 {
 
     [PreserveSig]
-    int SymbolInfo_Equals_0bba06e1(
+    int SymbolInfo_Equals_450dbb25(
         long receiver,
         long other,
         out int result

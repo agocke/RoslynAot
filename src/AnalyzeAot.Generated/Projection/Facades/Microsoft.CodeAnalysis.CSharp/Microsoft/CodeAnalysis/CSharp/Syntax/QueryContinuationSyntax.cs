@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp.Syntax
 {
-    public sealed partial class QueryContinuationSyntax : CSharpSyntaxNode
+    public partial interface QueryContinuationSyntax : CSharpSyntaxNode
     {
-        internal QueryContinuationSyntax()
-        {
-        }
-
         public QueryBodySyntax Body
         {
             get
@@ -50,16 +46,15 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override void Accept(CSharpSyntaxVisitor visitor)
+        public void Accept(CSharpSyntaxVisitor visitor)
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.IQueryContinuationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.QueryContinuationSyntax_Accept_53f170c8(__AnalyzeAotGetHandle(controlVtbl), visitor.__AnalyzeAotGetHandle(controlVtbl));
+            int status = vtbl.QueryContinuationSyntax_Accept_0d475231(__AnalyzeAotGetHandle(controlVtbl), visitor.__AnalyzeAotGetHandle(controlVtbl));
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
-        public override TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
-            where TResult : default
+        public TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
@@ -105,26 +100,15 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.IQueryContinuationSyntaxVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal QueryContinuationSyntax(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IQueryContinuationSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IQueryContinuationSyntaxVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetQueryContinuationSyntaxVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static QueryContinuationSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (QueryContinuationSyntax)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("2e25a3bf-b66b-5dde-887f-aa8cf68ae1b0")]
+        internal partial interface __AnalyzeAotImplementation : QueryContinuationSyntax
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.IQueryContinuationSyntaxVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        internal static QueryContinuationSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new QueryContinuationSyntax(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetQueryContinuationSyntaxVtbl(controlVtbl), handle);
     }
 }

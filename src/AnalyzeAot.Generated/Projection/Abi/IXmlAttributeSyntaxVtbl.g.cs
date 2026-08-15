@@ -12,7 +12,59 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0c824e29-783e-56f9-872c-096b3647c5b3")]
+[Guid("7f71f90b-a6b5-5e45-a2fd-0e7ebbc07dbb")]
 public partial interface IXmlAttributeSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
+
+    [PreserveSig]
+    int XmlAttributeSyntax_WithEndQuoteToken(
+        long receiver,
+        long endQuoteToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int XmlAttributeSyntax_WithEqualsToken(
+        long receiver,
+        long equalsToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int XmlAttributeSyntax_WithName(
+        long receiver,
+        long name,
+        out long result
+    );
+
+    [PreserveSig]
+    int XmlAttributeSyntax_WithStartQuoteToken(
+        long receiver,
+        long startQuoteToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int XmlAttributeSyntax_get_EndQuoteToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int XmlAttributeSyntax_get_EqualsToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int XmlAttributeSyntax_get_Name(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int XmlAttributeSyntax_get_StartQuoteToken(
+        long receiver,
+        out long result
+    );
 }

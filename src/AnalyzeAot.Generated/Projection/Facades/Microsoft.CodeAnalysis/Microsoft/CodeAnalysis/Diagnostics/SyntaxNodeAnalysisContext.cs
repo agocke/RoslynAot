@@ -64,7 +64,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISyntaxNodeAnalysisContextVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SyntaxNodeAnalysisContext_get_FilterTree(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SyntaxTree.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -92,7 +96,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISyntaxNodeAnalysisContextVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SyntaxNodeAnalysisContext_get_Options(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return AnalyzerOptions.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -100,7 +108,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISyntaxNodeAnalysisContextVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SyntaxNodeAnalysisContext_get_SemanticModel(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SemanticModel.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 

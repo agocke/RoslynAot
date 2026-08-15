@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp.Syntax
 {
-    public sealed partial class DelegateDeclarationSyntax : MemberDeclarationSyntax
+    public partial interface DelegateDeclarationSyntax : MemberDeclarationSyntax
     {
-        internal DelegateDeclarationSyntax()
-        {
-        }
-
         public int Arity
         {
             get
@@ -26,7 +22,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxList<AttributeListSyntax> AttributeLists
+        public SyntaxList<AttributeListSyntax> AttributeLists
         {
             get
             {
@@ -66,7 +62,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxTokenList Modifiers
+        public SyntaxTokenList Modifiers
         {
             get
             {
@@ -94,7 +90,11 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IDelegateDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.DelegateDeclarationSyntax_get_ReturnType(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return TypeSyntax.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -122,16 +122,15 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override void Accept(CSharpSyntaxVisitor visitor)
+        public void Accept(CSharpSyntaxVisitor visitor)
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.IDelegateDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.DelegateDeclarationSyntax_Accept_2d163180(__AnalyzeAotGetHandle(controlVtbl), visitor.__AnalyzeAotGetHandle(controlVtbl));
+            int status = vtbl.DelegateDeclarationSyntax_Accept_65ed7181(__AnalyzeAotGetHandle(controlVtbl), visitor.__AnalyzeAotGetHandle(controlVtbl));
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
-        public override TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
-            where TResult : default
+        public TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
@@ -239,26 +238,15 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.IDelegateDeclarationSyntaxVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal DelegateDeclarationSyntax(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IDelegateDeclarationSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IDelegateDeclarationSyntaxVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetDelegateDeclarationSyntaxVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static DelegateDeclarationSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (DelegateDeclarationSyntax)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("5e2cd2a6-8254-5876-957a-4fdb4cb0977e")]
+        internal partial interface __AnalyzeAotImplementation : DelegateDeclarationSyntax
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.IDelegateDeclarationSyntaxVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        internal static DelegateDeclarationSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new DelegateDeclarationSyntax(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetDelegateDeclarationSyntaxVtbl(controlVtbl), handle);
     }
 }

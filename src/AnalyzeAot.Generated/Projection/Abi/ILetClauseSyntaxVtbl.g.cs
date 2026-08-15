@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("8dcb82f3-7216-5ae7-bc65-0e92623bf05e")]
+[Guid("55a1a1c9-c3b0-5b5d-8fb5-d41a928ee927")]
 public partial interface ILetClauseSyntaxVtbl : IQueryClauseSyntaxVtbl
 {
 
     [PreserveSig]
-    int LetClauseSyntax_Accept_e6498b47(
+    int LetClauseSyntax_Accept_168e9b0c(
         long receiver,
         long visitor
     );
@@ -62,6 +62,12 @@ public partial interface ILetClauseSyntaxVtbl : IQueryClauseSyntaxVtbl
 
     [PreserveSig]
     int LetClauseSyntax_get_EqualsToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int LetClauseSyntax_get_Expression(
         long receiver,
         out long result
     );

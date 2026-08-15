@@ -23,7 +23,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int AwaitExpressionInfo_Equals_88f8f46b(
+    public int AwaitExpressionInfo_Equals_ebfc1f36(
         long receiver,
         long other,
         out int result)

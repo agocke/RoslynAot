@@ -235,6 +235,45 @@ internal sealed class ProjectionModel
     public bool RequiresProxy(INamedTypeSymbol type) =>
         _proxyTypes.Contains(type);
 
+    public bool UsesDynamicInterfaceProxy(INamedTypeSymbol type)
+        => _proxyTypes.Contains(type) &&
+            IsDynamicInterfaceProxyCandidate(type);
+
+    private static bool IsDynamicInterfaceProxyCandidate(
+        INamedTypeSymbol type)
+    {
+        if (type.TypeKind != TypeKind.Class ||
+            IsAnalyzerLocalClass(type) ||
+            type.InstanceConstructors.Any(
+                constructor =>
+                    IsVisibleAccessibility(
+                        constructor.DeclaredAccessibility)) ||
+            type.GetMembers()
+                .OfType<IMethodSymbol>()
+                .Any(
+                    method =>
+                        method.MethodKind is
+                            MethodKind.UserDefinedOperator or
+                            MethodKind.Conversion))
+        {
+            return false;
+        }
+
+        INamedTypeSymbol? baseType = type.BaseType;
+        return baseType is null ||
+            baseType.SpecialType == SpecialType.System_Object ||
+            IsDynamicInterfaceProxyCandidate(baseType);
+    }
+
+    private static bool IsAnalyzerLocalClass(
+        INamedTypeSymbol type) =>
+        CanonicalSignatureBuilder.GetMetadataTypeName(type) is
+            "Microsoft.CodeAnalysis.LocalizableString" or
+            "Microsoft.CodeAnalysis.LocalizableResourceString" or
+            "Microsoft.CodeAnalysis.DiagnosticDescriptor" or
+            "Microsoft.CodeAnalysis.Diagnostic" or
+            "Microsoft.CodeAnalysis.Location";
+
     public VtblProjection GetInstanceVtbl(
         INamedTypeSymbol type) =>
         _instanceVtbls.TryGetValue(type, out var vtbl)
@@ -532,8 +571,9 @@ internal sealed class ProjectionModel
             return attributeReason;
         }
 
-        if (method.IsAbstract ||
-            method.ContainingType.TypeKind == TypeKind.Interface)
+        if (method.ContainingType.TypeKind == TypeKind.Interface ||
+            method.IsAbstract &&
+            !IsDynamicInterfaceProxyCandidate(method.ContainingType))
         {
             return "Declaration-only members have no facade implementation body.";
         }
@@ -657,6 +697,27 @@ internal sealed class ProjectionModel
             AddProxyType(call.ReturnValue.RemoteType);
         }
 
+        INamedTypeSymbol[] polymorphicReturnTypes =
+            [.. new HashSet<INamedTypeSymbol>(
+                calls
+                    .Where(call => call.IsSupported)
+                    .Select(call => call.ReturnValue.RemoteType)
+                    .OfType<INamedTypeSymbol>()
+                    .Where(type =>
+                        type.TypeKind == TypeKind.Class &&
+                        !type.IsSealed),
+                SymbolEqualityComparer.Default)];
+        foreach (INamedTypeSymbol candidate in assemblies
+            .SelectMany(GetVisibleTypes)
+            .Where(IsExternallyReferenceable))
+        {
+            if (polymorphicReturnTypes.Any(
+                    returnType => IsOrDerivesFrom(candidate, returnType)))
+            {
+                AddProxyType(candidate);
+            }
+        }
+
         foreach (INamedTypeSymbol type in proxyTypes.ToArray())
         {
             for (INamedTypeSymbol? baseType = type.BaseType;
@@ -676,13 +737,117 @@ internal sealed class ProjectionModel
                 type.TypeKind is not (TypeKind.Class or TypeKind.Struct) ||
                 type.IsStatic ||
                 type.IsGenericType ||
-                type.IsRefLikeType)
+                type.IsRefLikeType ||
+                HasVisibleInstanceFields(type))
             {
                 return;
             }
 
             proxyTypes.Add(type);
         }
+    }
+
+    private static bool HasVisibleInstanceFields(INamedTypeSymbol type)
+    {
+        for (INamedTypeSymbol? current = type;
+             current is not null;
+             current = current.BaseType)
+        {
+            if (current.SpecialType == SpecialType.System_Object)
+            {
+                break;
+            }
+
+            if (current.GetMembers()
+                .OfType<IFieldSymbol>()
+                .Any(field =>
+                    !field.IsStatic &&
+                    !field.IsConst &&
+                    field.DeclaredAccessibility is
+                        Accessibility.Public or
+                        Accessibility.Protected or
+                        Accessibility.ProtectedOrInternal))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static IEnumerable<INamedTypeSymbol> GetVisibleTypes(
+        IAssemblySymbol assembly) =>
+        GetVisibleTypes(assembly.GlobalNamespace);
+
+    private static IEnumerable<INamedTypeSymbol> GetVisibleTypes(
+        INamespaceSymbol namespaceSymbol)
+    {
+        foreach (INamespaceSymbol childNamespace in
+                 namespaceSymbol.GetNamespaceMembers())
+        {
+            foreach (INamedTypeSymbol type in GetVisibleTypes(childNamespace))
+            {
+                yield return type;
+            }
+        }
+
+        foreach (INamedTypeSymbol type in namespaceSymbol
+            .GetTypeMembers()
+            .Where(IsVisibleType))
+        {
+            foreach (INamedTypeSymbol visibleType in GetVisibleTypes(type))
+            {
+                yield return visibleType;
+            }
+        }
+    }
+
+    private static IEnumerable<INamedTypeSymbol> GetVisibleTypes(
+        INamedTypeSymbol type)
+    {
+        yield return type;
+        foreach (INamedTypeSymbol nestedType in type
+            .GetTypeMembers()
+            .Where(IsVisibleType))
+        {
+            foreach (INamedTypeSymbol visibleType in
+                     GetVisibleTypes(nestedType))
+            {
+                yield return visibleType;
+            }
+        }
+    }
+
+    private static bool IsExternallyReferenceable(INamedTypeSymbol type)
+    {
+        for (INamedTypeSymbol? current = type;
+             current is not null;
+             current = current.ContainingType)
+        {
+            if (current.DeclaredAccessibility != Accessibility.Public)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private static bool IsOrDerivesFrom(
+        INamedTypeSymbol type,
+        INamedTypeSymbol baseType)
+    {
+        for (INamedTypeSymbol? current = type;
+             current is not null;
+             current = current.BaseType)
+        {
+            if (SymbolEqualityComparer.Default.Equals(current, baseType))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private static IReadOnlyList<VtblProjection>
@@ -1139,15 +1304,6 @@ internal sealed class AbiTypeClassifier
 
         if (namedType.TypeKind == TypeKind.Class)
         {
-            if (position == AbiTypePosition.Return &&
-                !namedType.IsSealed)
-            {
-                return Unsupported(
-                    type,
-                    "Reference-type results require a sealed declared facade " +
-                    "class because runtime type discrimination is unavailable.");
-            }
-
             return new AbiTypePlan(
                 AbiTypeKind.ObjectHandle,
                 "long",

@@ -72,4 +72,38 @@ internal sealed partial class SyntaxTreeAnalysisContextVtblDispatcher : ISyntaxT
             return _owner.SetError(exception);
         }
     }
+
+    public int SyntaxTreeAnalysisContext_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SyntaxTreeAnalysisContext>(receiver).Options);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTreeAnalysisContext_get_Tree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SyntaxTreeAnalysisContext>(receiver).Tree);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

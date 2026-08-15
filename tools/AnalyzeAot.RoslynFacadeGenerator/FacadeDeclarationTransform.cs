@@ -41,6 +41,20 @@ internal sealed class FacadeDeclarationTransform
             return declaration;
         }
 
+        if (declaration is ConversionOperatorDeclarationSyntax
+                conversionDeclaration &&
+            projection.Symbol is IMethodSymbol conversionSymbol &&
+            ConversionUsesDynamicInterface(conversionSymbol))
+        {
+            string suffix = projection.Calls
+                .SingleOrDefault()?
+                .GeneratedName ?? "Conversion";
+            return ParseMember(
+                "private static void " +
+                "__AnalyzeAotOmittedConversion_" +
+                $"{suffix}() {{ }}");
+        }
+
         return declaration switch
         {
             ConstructorDeclarationSyntax constructor =>
@@ -64,6 +78,15 @@ internal sealed class FacadeDeclarationTransform
         };
     }
 
+    private bool ConversionUsesDynamicInterface(
+        IMethodSymbol conversion) =>
+        conversion.Parameters.Any(
+            parameter =>
+                parameter.Type is INamedTypeSymbol type &&
+                _model.UsesDynamicInterfaceProxy(type)) ||
+        conversion.ReturnType is INamedTypeSymbol returnType &&
+        _model.UsesDynamicInterfaceProxy(returnType);
+
     private SyntaxNode AddProxyMembers(
         INamedTypeSymbol type,
         SyntaxNode declaration)
@@ -72,6 +95,13 @@ internal sealed class FacadeDeclarationTransform
             declaration is not TypeDeclarationSyntax typeDeclaration)
         {
             return declaration;
+        }
+
+        if (_model.UsesDynamicInterfaceProxy(type))
+        {
+            return AddDynamicInterfaceProxyMembers(
+                type,
+                typeDeclaration);
         }
 
         VtblProjection instanceVtbl =
@@ -206,6 +236,116 @@ internal sealed class FacadeDeclarationTransform
         }
 
         return typeDeclaration.AddMembers([.. members]);
+    }
+
+    private SyntaxNode AddDynamicInterfaceProxyMembers(
+        INamedTypeSymbol type,
+        TypeDeclarationSyntax declaration)
+    {
+        VtblProjection instanceVtbl = _model.GetInstanceVtbl(type);
+        string vtblType =
+            $"global::AnalyzeAot.Abi.{instanceVtbl.Name}";
+        string fullyQualifiedType = type.ToDisplayString(
+            SymbolDisplayFormat.FullyQualifiedFormat);
+        var memberRewriter = new InterfaceMemberRewriter();
+        var interfaceDeclaration = SyntaxFactory.InterfaceDeclaration(
+                declaration.Identifier)
+            .WithAttributeLists(
+                FilterInterfaceAttributes(declaration.AttributeLists))
+            .WithModifiers(
+                new SyntaxTokenList(
+                    declaration.Modifiers.Where(
+                        modifier =>
+                            !modifier.IsKind(SyntaxKind.AbstractKeyword) &&
+                            !modifier.IsKind(SyntaxKind.SealedKeyword))))
+            .WithTypeParameterList(declaration.TypeParameterList)
+            .WithBaseList(
+                RewriteInterfaceBaseList(type, declaration.BaseList))
+            .WithConstraintClauses(declaration.ConstraintClauses)
+            .WithMembers(
+                SyntaxFactory.List(
+                    declaration.Members
+                        .Where(
+                            member =>
+                                member is not ConstructorDeclarationSyntax)
+                        .Select(
+                            member =>
+                                (MemberDeclarationSyntax)memberRewriter
+                                    .Visit(member)!)))
+            .AddMembers(
+                ParseMember(
+                    "private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy " +
+                    "__AnalyzeAotGetProxy() => " +
+                    "(global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)" +
+                    "(global::System.Object)this;"),
+                ParseMember(
+                    $"public {vtblType} __AnalyzeAotGetVtbl() => " +
+                    "global::AnalyzeAot.RoslynFacade.RoslynVtblFactory." +
+                    $"{instanceVtbl.FactoryMethodName}(" +
+                    "__AnalyzeAotGetControlVtbl());"),
+                ParseMember(
+                    "public global::AnalyzeAot.Abi.IRoslynControlVtbl " +
+                    "__AnalyzeAotGetControlVtbl() => " +
+                    "__AnalyzeAotGetProxy().ControlVtbl;"),
+                ParseMember(
+                    "public long __AnalyzeAotGetHandle(" +
+                    "global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => " +
+                    "__AnalyzeAotGetProxy().GetHandle(controlVtbl);"),
+                ParseMember(
+                    $"internal static {fullyQualifiedType} " +
+                    "__AnalyzeAotCreateProxy(" +
+                    "global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, " +
+                    "long handle) => " +
+                    $"({fullyQualifiedType})(global::System.Object)new " +
+                    "global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(" +
+                    "controlVtbl, handle);"),
+                ParseMember(
+                    "[global::System.Runtime.InteropServices." +
+                    "DynamicInterfaceCastableImplementation] " +
+                    $"[global::System.Runtime.InteropServices.Guid(" +
+                    $"\"{instanceVtbl.VtblId:D}\")] " +
+                    "internal interface __AnalyzeAotImplementation : " +
+                    $"{fullyQualifiedType} {{ }}"));
+
+        return interfaceDeclaration;
+    }
+
+    private static SyntaxList<AttributeListSyntax> FilterInterfaceAttributes(
+        SyntaxList<AttributeListSyntax> attributeLists) =>
+        SyntaxFactory.List(
+            attributeLists
+                .Select(
+                    list =>
+                        list.WithAttributes(
+                            SyntaxFactory.SeparatedList(
+                                list.Attributes.Where(
+                                    attribute =>
+                                        !attribute.Name
+                                            .ToString()
+                                            .EndsWith(
+                                                "DebuggerDisplay",
+                                                StringComparison.Ordinal)))))
+                .Where(list => list.Attributes.Count != 0));
+
+    private static BaseListSyntax? RewriteInterfaceBaseList(
+        INamedTypeSymbol type,
+        BaseListSyntax? baseList)
+    {
+        if (baseList is null)
+        {
+            return null;
+        }
+
+        SeparatedSyntaxList<BaseTypeSyntax> types = baseList.Types;
+        if (type.BaseType?.SpecialType == SpecialType.System_Object &&
+            types.Count != 0)
+        {
+            types = types.RemoveAt(0);
+        }
+
+        return types.Count == 0
+            ? null
+            : baseList.WithTypes(types);
     }
 
     private static FieldDeclarationSyntax RewriteField(
@@ -487,17 +627,25 @@ internal sealed class FacadeDeclarationTransform
             .WithBody(GetBody(projection.Calls.SingleOrDefault()));
     }
 
-    private static MethodDeclarationSyntax RewriteMethod(
+    private MethodDeclarationSyntax RewriteMethod(
         MethodDeclarationSyntax declaration,
         MemberProjection projection)
     {
-        if (declaration.Modifiers.Any(SyntaxKind.AbstractKeyword) ||
-            declaration.Body is null)
+        bool dynamicInterfaceMember =
+            projection.Symbol.ContainingType is INamedTypeSymbol type &&
+            _model.UsesDynamicInterfaceProxy(type);
+        if ((declaration.Modifiers.Any(SyntaxKind.AbstractKeyword) ||
+                declaration.Body is null) &&
+            !dynamicInterfaceMember)
         {
             return declaration;
         }
 
         return declaration
+            .WithModifiers(
+                RemoveModifiers(
+                    declaration.Modifiers,
+                    SyntaxKind.AbstractKeyword))
             .WithExpressionBody(null)
             .WithSemicolonToken(default)
             .WithBody(GetBody(projection.Calls.SingleOrDefault()));
@@ -519,61 +667,98 @@ internal sealed class FacadeDeclarationTransform
             .WithSemicolonToken(default)
             .WithBody(GetBody(projection.Calls.SingleOrDefault()));
 
-    private static PropertyDeclarationSyntax RewriteProperty(
+    private PropertyDeclarationSyntax RewriteProperty(
         PropertyDeclarationSyntax declaration,
-        MemberProjection projection) =>
-        declaration.AccessorList is null ||
-        projection.Symbol is IPropertySymbol
-        {
-            IsAbstract: true
-        } ||
-        projection.Symbol.ContainingType?.TypeKind == TypeKind.Interface
-            ? declaration
-            : declaration
-                .WithExpressionBody(null)
-                .WithSemicolonToken(default)
-                .WithAccessorList(
-                    declaration.AccessorList.WithAccessors(
-                        RewriteAccessors(
-                            declaration.AccessorList.Accessors,
-                            projection)));
-
-    private static IndexerDeclarationSyntax RewriteIndexer(
-        IndexerDeclarationSyntax declaration,
-        MemberProjection projection) =>
-        declaration.AccessorList is null ||
-        projection.Symbol is IPropertySymbol
-        {
-            IsAbstract: true
-        } ||
-        projection.Symbol.ContainingType?.TypeKind == TypeKind.Interface
-            ? declaration
-            : declaration
-                .WithExpressionBody(null)
-                .WithSemicolonToken(default)
-                .WithAccessorList(
-                    declaration.AccessorList.WithAccessors(
-                        RewriteAccessors(
-                            declaration.AccessorList.Accessors,
-                            projection)));
-
-    private static EventDeclarationSyntax RewriteEvent(
-        EventDeclarationSyntax declaration,
         MemberProjection projection)
     {
+        bool dynamicInterfaceMember =
+            projection.Symbol.ContainingType is INamedTypeSymbol type &&
+            _model.UsesDynamicInterfaceProxy(type);
         if (declaration.AccessorList is null ||
-            projection.Symbol is IEventSymbol { IsAbstract: true } ||
-            projection.Symbol.ContainingType?.TypeKind == TypeKind.Interface)
+            projection.Symbol.ContainingType?.TypeKind == TypeKind.Interface ||
+            projection.Symbol is IPropertySymbol { IsAbstract: true } &&
+            !dynamicInterfaceMember)
         {
             return declaration;
         }
 
-        return declaration.WithAccessorList(
-            declaration.AccessorList.WithAccessors(
-                RewriteAccessors(
-                    declaration.AccessorList.Accessors,
-                    projection)));
+        return declaration
+            .WithModifiers(
+                RemoveModifiers(
+                    declaration.Modifiers,
+                    SyntaxKind.AbstractKeyword))
+            .WithExpressionBody(null)
+            .WithSemicolonToken(default)
+            .WithAccessorList(
+                declaration.AccessorList.WithAccessors(
+                    RewriteAccessors(
+                        declaration.AccessorList.Accessors,
+                        projection)));
     }
+
+    private IndexerDeclarationSyntax RewriteIndexer(
+        IndexerDeclarationSyntax declaration,
+        MemberProjection projection)
+    {
+        bool dynamicInterfaceMember =
+            projection.Symbol.ContainingType is INamedTypeSymbol type &&
+            _model.UsesDynamicInterfaceProxy(type);
+        if (declaration.AccessorList is null ||
+            projection.Symbol.ContainingType?.TypeKind == TypeKind.Interface ||
+            projection.Symbol is IPropertySymbol { IsAbstract: true } &&
+            !dynamicInterfaceMember)
+        {
+            return declaration;
+        }
+
+        return declaration
+            .WithModifiers(
+                RemoveModifiers(
+                    declaration.Modifiers,
+                    SyntaxKind.AbstractKeyword))
+            .WithExpressionBody(null)
+            .WithSemicolonToken(default)
+            .WithAccessorList(
+                declaration.AccessorList.WithAccessors(
+                    RewriteAccessors(
+                        declaration.AccessorList.Accessors,
+                        projection)));
+    }
+
+    private EventDeclarationSyntax RewriteEvent(
+        EventDeclarationSyntax declaration,
+        MemberProjection projection)
+    {
+        bool dynamicInterfaceMember =
+            projection.Symbol.ContainingType is INamedTypeSymbol type &&
+            _model.UsesDynamicInterfaceProxy(type);
+        if (declaration.AccessorList is null ||
+            projection.Symbol.ContainingType?.TypeKind == TypeKind.Interface ||
+            projection.Symbol is IEventSymbol { IsAbstract: true } &&
+            !dynamicInterfaceMember)
+        {
+            return declaration;
+        }
+
+        return declaration
+            .WithModifiers(
+                RemoveModifiers(
+                    declaration.Modifiers,
+                    SyntaxKind.AbstractKeyword))
+            .WithAccessorList(
+                declaration.AccessorList.WithAccessors(
+                    RewriteAccessors(
+                        declaration.AccessorList.Accessors,
+                        projection)));
+    }
+
+    private static SyntaxTokenList RemoveModifiers(
+        SyntaxTokenList modifiers,
+        params SyntaxKind[] kinds) =>
+        new(
+            modifiers.Where(
+                modifier =>
+                    !kinds.Contains(modifier.Kind())));
 
     private static SyntaxList<AccessorDeclarationSyntax> RewriteAccessors(
         SyntaxList<AccessorDeclarationSyntax> accessors,
@@ -636,6 +821,68 @@ internal sealed class FacadeDeclarationTransform
     private sealed class IncludeAllSymbolFilter : ISymbolFilter
     {
         public bool Include(ISymbol symbol) => true;
+    }
+
+    private sealed class InterfaceMemberRewriter : CSharpSyntaxRewriter
+    {
+        public override SyntaxNode? VisitMethodDeclaration(
+            MethodDeclarationSyntax node)
+        {
+            MethodDeclarationSyntax rewritten =
+                (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
+            return rewritten
+                .WithModifiers(RewriteModifiers(node.Modifiers))
+                .WithConstraintClauses(
+                    SyntaxFactory.List(
+                        rewritten.ConstraintClauses
+                            .Select(
+                                clause =>
+                                    clause.WithConstraints(
+                                        SyntaxFactory.SeparatedList(
+                                            clause.Constraints.Where(
+                                                constraint =>
+                                                    constraint
+                                                        .ToString() !=
+                                                    "default"))))
+                            .Where(
+                                clause =>
+                                    clause.Constraints.Count != 0)));
+        }
+
+        public override SyntaxNode? VisitPropertyDeclaration(
+            PropertyDeclarationSyntax node) =>
+            ((PropertyDeclarationSyntax)base.VisitPropertyDeclaration(node)!)
+                .WithModifiers(RewriteModifiers(node.Modifiers));
+
+        public override SyntaxNode? VisitIndexerDeclaration(
+            IndexerDeclarationSyntax node) =>
+            ((IndexerDeclarationSyntax)base.VisitIndexerDeclaration(node)!)
+                .WithModifiers(RewriteModifiers(node.Modifiers));
+
+        public override SyntaxNode? VisitEventDeclaration(
+            EventDeclarationSyntax node) =>
+            ((EventDeclarationSyntax)base.VisitEventDeclaration(node)!)
+                .WithModifiers(RewriteModifiers(node.Modifiers));
+
+        public override SyntaxNode? VisitOperatorDeclaration(
+            OperatorDeclarationSyntax node) =>
+            ((OperatorDeclarationSyntax)base.VisitOperatorDeclaration(node)!)
+                .WithModifiers(RewriteModifiers(node.Modifiers));
+
+        public override SyntaxNode? VisitConversionOperatorDeclaration(
+            ConversionOperatorDeclarationSyntax node) =>
+            ((ConversionOperatorDeclarationSyntax)base
+                .VisitConversionOperatorDeclaration(node)!)
+                .WithModifiers(RewriteModifiers(node.Modifiers));
+
+        private static SyntaxTokenList RewriteModifiers(
+            SyntaxTokenList modifiers) =>
+            RemoveModifiers(
+                modifiers,
+                SyntaxKind.AbstractKeyword,
+                SyntaxKind.VirtualKeyword,
+                SyntaxKind.OverrideKeyword,
+                SyntaxKind.SealedKeyword);
     }
 
     private sealed class SynthesizedBodyRewriter : CSharpSyntaxRewriter
@@ -832,7 +1079,9 @@ internal static class FacadeBodyEmitter
         INamedTypeSymbol remoteType = plan.RemoteType
             ?? throw new InvalidOperationException(
                 $"ABI plan '{plan.Kind}' has no remote type.");
-        return $"{remoteType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)}." +
+        string typeName = remoteType.ToDisplayString(
+            SymbolDisplayFormat.FullyQualifiedFormat);
+        return $"{typeName}." +
             $"__AnalyzeAotCreateProxy(controlVtbl, {expression})";
     }
 }
@@ -846,16 +1095,157 @@ internal static class AnalyzerLocalFacadeEmitter
         IMethodSymbol method = operation.Symbol;
         string containingType = method.ContainingType.ToDisplayString();
 
+        if (containingType == "Microsoft.CodeAnalysis.LocalizableString")
+        {
+            if (method.Name == "add_OnException")
+            {
+                statements =
+                [
+                    "__AnalyzeAotAddExceptionHandler(value);",
+                ];
+                return true;
+            }
+
+            if (method.Name == "remove_OnException")
+            {
+                statements =
+                [
+                    "__AnalyzeAotRemoveExceptionHandler(value);",
+                ];
+                return true;
+            }
+
+            if (method.Name == "Equals" &&
+                method.Parameters.Length == 1)
+            {
+                statements = WithRemoteFallback(
+                    operation,
+                    "if (__AnalyzeAotIsLocal) return other is not null && __AnalyzeAotAreEqual(other);");
+                return true;
+            }
+
+            if (method.Name == "GetHashCode" &&
+                method.Parameters.IsEmpty)
+            {
+                statements = WithRemoteFallback(
+                    operation,
+                    "if (__AnalyzeAotIsLocal) return __AnalyzeAotGetHash();");
+                return true;
+            }
+
+            if (method.MethodKind == MethodKind.Conversion &&
+                method.Name == "op_Explicit")
+            {
+                statements =
+                [
+                    "return localizableResource?.__AnalyzeAotGetText(null);",
+                ];
+                return true;
+            }
+
+            if (method.MethodKind == MethodKind.Conversion &&
+                method.Name == "op_Implicit")
+            {
+                statements =
+                [
+                    "return __AnalyzeAotCreateFixed(fixedResource);",
+                ];
+                return true;
+            }
+
+            if (method.Name == "ToString")
+            {
+                string provider = method.Parameters.Length == 0
+                    ? "null"
+                    : method.Parameters[^1].Name;
+                statements = WithRemoteFallback(
+                    operation,
+                    $"if (__AnalyzeAotIsLocal) return __AnalyzeAotGetText({provider});");
+                return true;
+            }
+        }
+
+        if (containingType ==
+            "Microsoft.CodeAnalysis.LocalizableResourceString")
+        {
+            if (method.MethodKind == MethodKind.Constructor)
+            {
+                string formatArguments = method.Parameters.Length == 4
+                    ? "formatArguments"
+                    : "global::System.Array.Empty<string>()";
+                statements =
+                [
+                    $"__AnalyzeAotInitializeLocal(nameOfLocalizableResource, resourceManager, resourceSource, {formatArguments});",
+                ];
+                return true;
+            }
+
+            if (method.Name == "AreEqual")
+            {
+                statements =
+                [
+                    "return __AnalyzeAotAreEqualLocal(other);",
+                ];
+                return true;
+            }
+
+            if (method.Name == "GetHash")
+            {
+                statements =
+                [
+                    "return __AnalyzeAotGetHashLocal();",
+                ];
+                return true;
+            }
+
+            if (method.Name == "GetText")
+            {
+                statements =
+                [
+                    "return __AnalyzeAotGetTextLocal(formatProvider);",
+                ];
+                return true;
+            }
+        }
+
         if (containingType == "Microsoft.CodeAnalysis.DiagnosticDescriptor")
         {
             if (method.MethodKind == MethodKind.Constructor &&
-                method.Parameters.Length == 9 &&
-                method.Parameters[1].Type.SpecialType ==
-                    SpecialType.System_String)
+                method.Parameters.Length == 9)
             {
                 statements =
                 [
                     "__AnalyzeAotInitializeLocal(id, title, messageFormat, category, defaultSeverity, isEnabledByDefault, description, helpLinkUri, customTags);",
+                ];
+                return true;
+            }
+
+            if (method.Name is
+                "get_Title" or
+                "get_MessageFormat" or
+                "get_Description")
+            {
+                string propertyName = method.Name[4..];
+                statements = WithRemoteFallback(
+                    operation,
+                    $"if (__AnalyzeAotIsLocal) return __AnalyzeAotLocal{propertyName}Value;");
+                return true;
+            }
+
+            if (method.Name == "get_HelpLinkUri")
+            {
+                statements = WithRemoteFallback(
+                    operation,
+                    "if (__AnalyzeAotIsLocal) return __AnalyzeAotLocalHelpLinkUri;");
+                return true;
+            }
+
+            if (method.Name == "get_CustomTags")
+            {
+                statements =
+                [
+                    "if (__AnalyzeAotIsLocal) return __AnalyzeAotLocalCustomTags;",
+                    "throw new global::System.PlatformNotSupportedException(\"This Roslyn API is not implemented by AnalyzeAot.\");",
                 ];
                 return true;
             }
@@ -920,6 +1310,22 @@ internal static class AnalyzerLocalFacadeEmitter
             statements =
             [
                 "return __AnalyzeAotCreateLocal(descriptor, location, messageArgs);",
+            ];
+            return true;
+        }
+
+        if (containingType == "Microsoft.CodeAnalysis.Location" &&
+            method.Name == "Create" &&
+            method.IsStatic &&
+            method.Parameters is
+            [
+                { Name: "syntaxTree" },
+                { Name: "textSpan" }
+            ])
+        {
+            statements =
+            [
+                "return __AnalyzeAotCreateLocal(syntaxTree, textSpan);",
             ];
             return true;
         }

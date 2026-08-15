@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("68c40c57-0f6b-5725-b51b-4a72fffee863")]
+[Guid("d8286c12-bf04-56e7-90c5-5852ef44f91f")]
 public partial interface IRecursivePatternSyntaxVtbl : IPatternSyntaxVtbl
 {
 
     [PreserveSig]
-    int RecursivePatternSyntax_Accept_7cf7093b(
+    int RecursivePatternSyntax_Accept_736e6a0e(
         long receiver,
         long visitor
     );
@@ -61,6 +61,12 @@ public partial interface IRecursivePatternSyntaxVtbl : IPatternSyntaxVtbl
     );
 
     [PreserveSig]
+    int RecursivePatternSyntax_get_Designation(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int RecursivePatternSyntax_get_PositionalPatternClause(
         long receiver,
         out long result
@@ -68,6 +74,12 @@ public partial interface IRecursivePatternSyntaxVtbl : IPatternSyntaxVtbl
 
     [PreserveSig]
     int RecursivePatternSyntax_get_PropertyPatternClause(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int RecursivePatternSyntax_get_Type(
         long receiver,
         out long result
     );

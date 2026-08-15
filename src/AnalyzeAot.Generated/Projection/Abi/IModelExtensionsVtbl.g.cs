@@ -12,9 +12,39 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("bd8def6e-8b07-5e64-a3b1-578dac63793c")]
+[Guid("e6815da9-7e63-5494-8dbd-64b500c9f102")]
 public partial interface IModelExtensionsVtbl
 {
+
+    [PreserveSig]
+    int ModelExtensions_AnalyzeControlFlow_db00f58d(
+        long semanticModel,
+        long statement,
+        out long result
+    );
+
+    [PreserveSig]
+    int ModelExtensions_AnalyzeControlFlow_ba8f74ea(
+        long semanticModel,
+        long firstStatement,
+        long lastStatement,
+        out long result
+    );
+
+    [PreserveSig]
+    int ModelExtensions_AnalyzeDataFlow_5df8adbb(
+        long semanticModel,
+        long statementOrExpression,
+        out long result
+    );
+
+    [PreserveSig]
+    int ModelExtensions_AnalyzeDataFlow_16248c3b(
+        long semanticModel,
+        long firstStatement,
+        long lastStatement,
+        out long result
+    );
 
     [PreserveSig]
     int ModelExtensions_GetSpeculativeSymbolInfo(

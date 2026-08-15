@@ -8,13 +8,9 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp.Syntax
 {
-    public sealed partial class XmlNameAttributeSyntax : XmlAttributeSyntax
+    public partial interface XmlNameAttributeSyntax : XmlAttributeSyntax
     {
-        internal XmlNameAttributeSyntax()
-        {
-        }
-
-        public override SyntaxToken EndQuoteToken
+        public SyntaxToken EndQuoteToken
         {
             get
             {
@@ -26,7 +22,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxToken EqualsToken
+        public SyntaxToken EqualsToken
         {
             get
             {
@@ -50,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override XmlNameSyntax Name
+        public XmlNameSyntax Name
         {
             get
             {
@@ -62,7 +58,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxToken StartQuoteToken
+        public SyntaxToken StartQuoteToken
         {
             get
             {
@@ -74,16 +70,15 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override void Accept(CSharpSyntaxVisitor visitor)
+        public void Accept(CSharpSyntaxVisitor visitor)
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.IXmlNameAttributeSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.XmlNameAttributeSyntax_Accept_955e76ab(__AnalyzeAotGetHandle(controlVtbl), visitor.__AnalyzeAotGetHandle(controlVtbl));
+            int status = vtbl.XmlNameAttributeSyntax_Accept_4cea5679(__AnalyzeAotGetHandle(controlVtbl), visitor.__AnalyzeAotGetHandle(controlVtbl));
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
-        public override TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
-            where TResult : default
+        public TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
@@ -142,26 +137,15 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.IXmlNameAttributeSyntaxVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal XmlNameAttributeSyntax(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IXmlNameAttributeSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IXmlNameAttributeSyntaxVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetXmlNameAttributeSyntaxVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static XmlNameAttributeSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (XmlNameAttributeSyntax)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("e4cd3356-35e6-5b32-a09c-917558058f0a")]
+        internal partial interface __AnalyzeAotImplementation : XmlNameAttributeSyntax
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.IXmlNameAttributeSyntaxVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        internal static XmlNameAttributeSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new XmlNameAttributeSyntax(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetXmlNameAttributeSyntaxVtbl(controlVtbl), handle);
     }
 }

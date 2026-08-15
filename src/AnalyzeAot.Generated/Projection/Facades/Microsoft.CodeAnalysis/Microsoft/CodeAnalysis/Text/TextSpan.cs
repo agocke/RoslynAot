@@ -87,7 +87,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ITextSpanVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.TextSpan_Contains_2e872998(__AnalyzeAotGetHandle(controlVtbl), span.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.TextSpan_Contains_280d6f3d(__AnalyzeAotGetHandle(controlVtbl), span.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -96,7 +96,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ITextSpanVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.TextSpan_Contains_d84c8203(__AnalyzeAotGetHandle(controlVtbl), position, out int result);
+            int status = vtbl.TextSpan_Contains_6dd56088(__AnalyzeAotGetHandle(controlVtbl), position, out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -105,7 +105,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ITextSpanVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.TextSpan_Equals_12df1233(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.TextSpan_Equals_f0c3d453(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -146,7 +146,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ITextSpanVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.TextSpan_IntersectsWith_886d4b45(__AnalyzeAotGetHandle(controlVtbl), span.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.TextSpan_IntersectsWith_a6c6b98b(__AnalyzeAotGetHandle(controlVtbl), span.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -155,7 +155,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ITextSpanVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.TextSpan_IntersectsWith_c7246f52(__AnalyzeAotGetHandle(controlVtbl), position, out int result);
+            int status = vtbl.TextSpan_IntersectsWith_173790fd(__AnalyzeAotGetHandle(controlVtbl), position, out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

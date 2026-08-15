@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1731e5ae-d701-53ea-bec3-a44e9703e64a")]
+[Guid("d1b43ea8-a4ed-502a-bbe4-1c24ce5f6ae6")]
 public partial interface IEventDeclarationSyntaxVtbl : IBasePropertyDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int EventDeclarationSyntax_Accept_4b2d143a(
+    int EventDeclarationSyntax_Accept_c1849688(
         long receiver,
         long visitor
     );
@@ -103,6 +103,12 @@ public partial interface IEventDeclarationSyntaxVtbl : IBasePropertyDeclarationS
 
     [PreserveSig]
     int EventDeclarationSyntax_get_SemicolonToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int EventDeclarationSyntax_get_Type(
         long receiver,
         out long result
     );

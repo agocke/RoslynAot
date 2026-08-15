@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d1e13060-dad8-55df-a9a3-d2df5d060b44")]
+[Guid("0c128ed3-171f-5200-920d-d657b680ae72")]
 public partial interface IFromClauseSyntaxVtbl : IQueryClauseSyntaxVtbl
 {
 
     [PreserveSig]
-    int FromClauseSyntax_Accept_123a31d6(
+    int FromClauseSyntax_Accept_1656a3d0(
         long receiver,
         long visitor
     );
@@ -69,6 +69,12 @@ public partial interface IFromClauseSyntaxVtbl : IQueryClauseSyntaxVtbl
     );
 
     [PreserveSig]
+    int FromClauseSyntax_get_Expression(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int FromClauseSyntax_get_FromKeyword(
         long receiver,
         out long result
@@ -82,6 +88,12 @@ public partial interface IFromClauseSyntaxVtbl : IQueryClauseSyntaxVtbl
 
     [PreserveSig]
     int FromClauseSyntax_get_InKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int FromClauseSyntax_get_Type(
         long receiver,
         out long result
     );

@@ -15,7 +15,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ICaptureIdVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.CaptureId_Equals_b73fa5f3(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.CaptureId_Equals_6784afca(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

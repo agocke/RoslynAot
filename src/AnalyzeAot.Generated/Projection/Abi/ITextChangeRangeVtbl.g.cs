@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d18be42d-b854-5cce-bac2-c80b5e896747")]
+[Guid("208166b7-d1f9-5415-aba6-46e17e997764")]
 public partial interface ITextChangeRangeVtbl
 {
 
     [PreserveSig]
-    int TextChangeRange_Equals_8cf5a513(
+    int TextChangeRange_Equals_83821016(
         long receiver,
         long other,
         out int result

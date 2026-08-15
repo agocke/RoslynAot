@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fe128011-99b9-58a4-8618-dbed499679cd")]
+[Guid("6383e005-fe32-54ba-9f2a-378c09f0e5ba")]
 public partial interface IPropertyDeclarationSyntaxVtbl : IBasePropertyDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int PropertyDeclarationSyntax_Accept_13650abf(
+    int PropertyDeclarationSyntax_Accept_4a0307cd(
         long receiver,
         long visitor
     );
@@ -116,6 +116,12 @@ public partial interface IPropertyDeclarationSyntaxVtbl : IBasePropertyDeclarati
 
     [PreserveSig]
     int PropertyDeclarationSyntax_get_SemicolonToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int PropertyDeclarationSyntax_get_Type(
         long receiver,
         out long result
     );

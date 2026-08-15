@@ -29,7 +29,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISyntaxTreeVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SyntaxTree_get_Options(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ParseOptions.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 

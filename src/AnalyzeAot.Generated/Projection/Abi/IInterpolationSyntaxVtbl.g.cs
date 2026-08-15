@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c64d76ee-41d9-547a-9d15-f842cfa6ee1f")]
+[Guid("91f6bfbe-7dc4-564d-8cc4-211b2cb2521f")]
 public partial interface IInterpolationSyntaxVtbl : IInterpolatedStringContentSyntaxVtbl
 {
 
     [PreserveSig]
-    int InterpolationSyntax_Accept_25b8842b(
+    int InterpolationSyntax_Accept_4e5b743b(
         long receiver,
         long visitor
     );
@@ -76,6 +76,12 @@ public partial interface IInterpolationSyntaxVtbl : IInterpolatedStringContentSy
 
     [PreserveSig]
     int InterpolationSyntax_get_CloseBraceToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int InterpolationSyntax_get_Expression(
         long receiver,
         out long result
     );

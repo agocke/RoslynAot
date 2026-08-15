@@ -23,6 +23,23 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int SyntaxNodeOrToken_AsNode(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).AsNode());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxNodeOrToken_AsToken(
         long receiver,
         out long result)
@@ -57,7 +74,7 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         }
     }
 
-    public int SyntaxNodeOrToken_Equals_da6a78cc(
+    public int SyntaxNodeOrToken_Equals_1ae3035a(
         long receiver,
         long other,
         out int result)
@@ -101,6 +118,23 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).GetLeadingTrivia());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNodeOrToken_GetLocation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).GetLocation());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -442,6 +476,23 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         }
     }
 
+    public int SyntaxNodeOrToken_get_Parent(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).Parent);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxNodeOrToken_get_RawKind(
         long receiver,
         out int result)
@@ -485,6 +536,23 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).Span);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNodeOrToken_get_SyntaxTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).SyntaxTree);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

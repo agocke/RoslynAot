@@ -8,17 +8,63 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp.Syntax
 {
-    public abstract partial class BasePropertyDeclarationSyntax : MemberDeclarationSyntax
+    public partial interface BasePropertyDeclarationSyntax : MemberDeclarationSyntax
     {
-        internal BasePropertyDeclarationSyntax()
+        public AccessorListSyntax? AccessorList
         {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.BasePropertyDeclarationSyntax_get_AccessorList(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : AccessorListSyntax.__AnalyzeAotCreateProxy(controlVtbl, result);
+            }
         }
 
-        public abstract AccessorListSyntax? AccessorList { get; }
-        public abstract override SyntaxList<AttributeListSyntax> AttributeLists { get; }
-        public abstract ExplicitInterfaceSpecifierSyntax? ExplicitInterfaceSpecifier { get; }
-        public abstract override SyntaxTokenList Modifiers { get; }
-        public abstract TypeSyntax Type { get; }
+        public SyntaxList<AttributeListSyntax> AttributeLists
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
+        }
+
+        public ExplicitInterfaceSpecifierSyntax? ExplicitInterfaceSpecifier
+        {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.BasePropertyDeclarationSyntax_get_ExplicitInterfaceSpecifier(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : ExplicitInterfaceSpecifierSyntax.__AnalyzeAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        public SyntaxTokenList Modifiers
+        {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.BasePropertyDeclarationSyntax_get_Modifiers(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SyntaxTokenList.__AnalyzeAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        public TypeSyntax Type
+        {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.BasePropertyDeclarationSyntax_get_Type(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return TypeSyntax.__AnalyzeAotCreateProxy(controlVtbl, result);
+            }
+        }
 
         public BasePropertyDeclarationSyntax AddAccessorListAccessors(params AccessorDeclarationSyntax[] items)
         {
@@ -37,7 +83,11 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public BasePropertyDeclarationSyntax WithAccessorList(AccessorListSyntax? accessorList)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.BasePropertyDeclarationSyntax_WithAccessorList(__AnalyzeAotGetHandle(controlVtbl), accessorList is null ? 0L : accessorList.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public new BasePropertyDeclarationSyntax WithAttributeLists(SyntaxList<AttributeListSyntax> attributeLists)
@@ -47,97 +97,40 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public BasePropertyDeclarationSyntax WithExplicitInterfaceSpecifier(ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.BasePropertyDeclarationSyntax_WithExplicitInterfaceSpecifier(__AnalyzeAotGetHandle(controlVtbl), explicitInterfaceSpecifier is null ? 0L : explicitInterfaceSpecifier.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public new BasePropertyDeclarationSyntax WithModifiers(SyntaxTokenList modifiers)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.BasePropertyDeclarationSyntax_WithModifiers(__AnalyzeAotGetHandle(controlVtbl), modifiers.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public BasePropertyDeclarationSyntax WithType(TypeSyntax type)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.BasePropertyDeclarationSyntax_WithType(__AnalyzeAotGetHandle(controlVtbl), @type.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal BasePropertyDeclarationSyntax(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetBasePropertyDeclarationSyntaxVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static BasePropertyDeclarationSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (BasePropertyDeclarationSyntax)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("9b9bdbfa-cd61-5d13-b10d-b17767253fb2")]
+        internal partial interface __AnalyzeAotImplementation : BasePropertyDeclarationSyntax
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        private sealed partial class __AnalyzeAotProxy : BasePropertyDeclarationSyntax
-        {
-            internal __AnalyzeAotProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IBasePropertyDeclarationSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
-            {
-            }
-
-            public override AccessorListSyntax? AccessorList
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxList<AttributeListSyntax> AttributeLists
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override ExplicitInterfaceSpecifierSyntax? ExplicitInterfaceSpecifier
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxTokenList Modifiers
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override TypeSyntax Type
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override void Accept(CSharpSyntaxVisitor visitor)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            public override TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
-                where TResult : default
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-        }
-
-        internal static BasePropertyDeclarationSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __AnalyzeAotProxy(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetBasePropertyDeclarationSyntaxVtbl(controlVtbl), handle);
     }
 }

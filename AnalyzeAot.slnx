@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/samples/">
+    <Project Path="samples/AnalyzeAot.CA1200Analyzer.Native/AnalyzeAot.CA1200Analyzer.Native.csproj" />
     <Project Path="samples/AnalyzeAot.SampleAnalyzer.Native/AnalyzeAot.SampleAnalyzer.Native.csproj" />
     <Project Path="samples/AnalyzeAot.SampleAnalyzer/AnalyzeAot.SampleAnalyzer.csproj" />
   </Folder>
@@ -11,8 +12,6 @@
     <Project Path="src/AnalyzeAot.GeneratedFacade.CSharp/AnalyzeAot.GeneratedFacade.CSharp.csproj" />
     <Project Path="src/AnalyzeAot.GeneratedFacade.Runtime/AnalyzeAot.GeneratedFacade.Runtime.csproj" />
     <Project Path="src/AnalyzeAot.GeneratedFacade/AnalyzeAot.GeneratedFacade.csproj" />
-    <Project Path="src/AnalyzeAot.RoslynShim.CSharp/AnalyzeAot.RoslynShim.CSharp.csproj" />
-    <Project Path="src/AnalyzeAot.RoslynShim/AnalyzeAot.RoslynShim.csproj" />
   </Folder>
   <Folder Name="/tools/">
     <Project Path="tools/AnalyzeAot.RoslynFacadeGenerator/AnalyzeAot.RoslynFacadeGenerator.csproj" />

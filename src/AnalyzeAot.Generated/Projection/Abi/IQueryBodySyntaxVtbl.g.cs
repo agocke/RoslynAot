@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("6b075616-5de6-5915-86c1-506d5833e3ee")]
+[Guid("5c6d3738-31a9-5d37-9c2e-1f527abd4066")]
 public partial interface IQueryBodySyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int QueryBodySyntax_Accept_05026be6(
+    int QueryBodySyntax_Accept_ef5e9388(
         long receiver,
         long visitor
     );
@@ -38,6 +38,12 @@ public partial interface IQueryBodySyntaxVtbl : ICSharpSyntaxNodeVtbl
 
     [PreserveSig]
     int QueryBodySyntax_get_Continuation(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int QueryBodySyntax_get_SelectOrGroup(
         long receiver,
         out long result
     );

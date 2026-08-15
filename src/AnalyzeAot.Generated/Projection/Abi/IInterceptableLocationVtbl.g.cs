@@ -12,7 +12,42 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f972895c-4591-5a17-892b-3ca81af58b99")]
+[Guid("26cec153-7641-5115-980b-75576848f7f0")]
 public partial interface IInterceptableLocationVtbl
 {
+
+    [PreserveSig]
+    int InterceptableLocation_Equals_ddbefe89(
+        long receiver,
+        long other,
+        out int result
+    );
+
+    [PreserveSig]
+    int InterceptableLocation_GetDisplayLocation(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int InterceptableLocation_GetHashCode(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int InterceptableLocation_get_Data(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int InterceptableLocation_get_Version(
+        long receiver,
+        out int result
+    );
 }

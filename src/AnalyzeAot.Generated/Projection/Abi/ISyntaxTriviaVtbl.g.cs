@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("24746031-d845-5367-8cc4-6ed652c1c278")]
+[Guid("1b59a1e3-afba-5890-bc99-d9a562ec5790")]
 public partial interface ISyntaxTriviaVtbl
 {
 
@@ -24,7 +24,7 @@ public partial interface ISyntaxTriviaVtbl
     );
 
     [PreserveSig]
-    int SyntaxTrivia_Equals_2b043e58(
+    int SyntaxTrivia_Equals_193a4eaf(
         long receiver,
         long other,
         out int result
@@ -34,6 +34,18 @@ public partial interface ISyntaxTriviaVtbl
     int SyntaxTrivia_GetHashCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int SyntaxTrivia_GetLocation(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTrivia_GetStructure(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]
@@ -118,6 +130,12 @@ public partial interface ISyntaxTriviaVtbl
 
     [PreserveSig]
     int SyntaxTrivia_get_Span(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTrivia_get_SyntaxTree(
         long receiver,
         out long result
     );

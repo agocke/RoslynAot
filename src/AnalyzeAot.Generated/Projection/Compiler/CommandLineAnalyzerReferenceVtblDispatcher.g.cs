@@ -23,7 +23,7 @@ internal sealed partial class CommandLineAnalyzerReferenceVtblDispatcher : IComm
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CommandLineAnalyzerReference_Equals_be622433(
+    public int CommandLineAnalyzerReference_Equals_25a0bc00(
         long receiver,
         long other,
         out int result)

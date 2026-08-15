@@ -40,7 +40,11 @@ namespace Microsoft.CodeAnalysis
 
         public RuleSet? LoadRuleSet(RuleSet parent)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IRuleSetIncludeVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.RuleSetInclude_LoadRuleSet(__AnalyzeAotGetHandle(controlVtbl), parent.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : RuleSet.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         internal RuleSetInclude()

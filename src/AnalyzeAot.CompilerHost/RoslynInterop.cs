@@ -100,6 +100,30 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         }
     }
 
+    public int IsObjectType(
+        long handle,
+        long vtblIdLow,
+        long vtblIdHigh,
+        out int isType)
+    {
+        isType = 0;
+        try
+        {
+            object value = _objects.GetObject(handle);
+            isType = RoslynDispatcherRegistry.IsRuntimeType(
+                value,
+                vtblIdLow,
+                vtblIdHigh)
+                ? 1
+                : 0;
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
     public unsafe int CopyLastErrorUtf8(
         nint buffer,
         int bufferLength,

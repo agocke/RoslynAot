@@ -19,6 +19,84 @@ public delegate int CopyUtf8String(
     int bufferLength,
     out int requiredLength);
 
+public sealed class RoslynProxyTypeMap;
+
+public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
+{
+    public RoslynObjectProxy(
+        IRoslynControlVtbl controlVtbl,
+        long handle)
+    {
+        ControlVtbl = controlVtbl ??
+            throw new ArgumentNullException(nameof(controlVtbl));
+        Handle = handle != 0
+            ? handle
+            : throw new ArgumentOutOfRangeException(nameof(handle));
+    }
+
+    public IRoslynControlVtbl ControlVtbl { get; }
+
+    private long Handle { get; }
+
+    public long GetHandle(IRoslynControlVtbl controlVtbl)
+    {
+        if (!ReferenceEquals(ControlVtbl, controlVtbl))
+        {
+            throw new InvalidOperationException(
+                "Roslyn facade values cannot cross control vtbl identities.");
+        }
+
+        return Handle;
+    }
+
+    public bool IsInterfaceImplemented(
+        RuntimeTypeHandle interfaceType,
+        bool throwIfNotImplemented)
+    {
+        if (!TryGetImplementationType(
+                interfaceType,
+                out Type? implementationType))
+        {
+            return false;
+        }
+
+        byte[] bytes = implementationType.GUID.ToByteArray();
+        int status = ControlVtbl.IsObjectType(
+            Handle,
+            BitConverter.ToInt64(bytes, 0),
+            BitConverter.ToInt64(bytes, 8),
+            out int isType);
+        RoslynFacadeRuntime.ThrowIfFailed(ControlVtbl, status);
+        return isType != 0;
+    }
+
+    public RuntimeTypeHandle GetInterfaceImplementation(
+        RuntimeTypeHandle interfaceType)
+    {
+        if (!TryGetImplementationType(
+                interfaceType,
+                out Type? implementationType))
+        {
+            throw new InvalidCastException(
+                Type.GetTypeFromHandle(interfaceType).FullName);
+        }
+
+        return implementationType.TypeHandle;
+    }
+
+    private static bool TryGetImplementationType(
+        RuntimeTypeHandle interfaceType,
+        out Type? implementationType)
+    {
+        Type requestedType = Type.GetTypeFromHandle(interfaceType);
+        return TypeMapping
+            .GetOrCreateProxyTypeMapping<RoslynProxyTypeMap>()
+            .TryGetValue(
+                requestedType,
+                out implementationType);
+    }
+}
+
 public sealed class RoslynRemoteException : Exception
 {
     public RoslynRemoteException(string message, int status)

@@ -12,13 +12,45 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3a87a83e-a4e4-5005-b3e9-8c37f842ebef")]
+[Guid("97311aad-a3da-5b7b-a7ea-fcc06f00ee93")]
 public partial interface IDirectiveTriviaSyntaxVtbl : IStructuredTriviaSyntaxVtbl
 {
+
+    [PreserveSig]
+    int DirectiveTriviaSyntax_WithEndOfDirectiveToken(
+        long receiver,
+        long endOfDirectiveToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int DirectiveTriviaSyntax_WithHashToken(
+        long receiver,
+        long hashToken,
+        out long result
+    );
 
     [PreserveSig]
     int DirectiveTriviaSyntax_get_DirectiveNameToken(
         long receiver,
         out long result
+    );
+
+    [PreserveSig]
+    int DirectiveTriviaSyntax_get_EndOfDirectiveToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DirectiveTriviaSyntax_get_HashToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DirectiveTriviaSyntax_get_IsActive(
+        long receiver,
+        out int result
     );
 }

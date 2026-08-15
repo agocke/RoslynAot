@@ -12,7 +12,33 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ef0923c2-9b25-528d-b3f2-d14ac08dab93")]
+[Guid("031269d1-d2f7-534e-95bd-1b223f1e2f29")]
 public partial interface ISwitchLabelSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
+
+    [PreserveSig]
+    int SwitchLabelSyntax_WithColonToken(
+        long receiver,
+        long colonToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int SwitchLabelSyntax_WithKeyword(
+        long receiver,
+        long keyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int SwitchLabelSyntax_get_ColonToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SwitchLabelSyntax_get_Keyword(
+        long receiver,
+        out long result
+    );
 }

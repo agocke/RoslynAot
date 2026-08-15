@@ -1,4 +1,6 @@
 using System.Collections.Immutable;
+using System.Globalization;
+using System.Resources;
 using AnalyzeAot.Abi;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
@@ -7,6 +9,144 @@ using Microsoft.CodeAnalysis.Text;
 namespace Microsoft.CodeAnalysis
 {
 
+public abstract partial class LocalizableString
+{
+    private EventHandler<Exception>? __analyzeAotOnException;
+
+    internal bool __AnalyzeAotIsLocal =>
+        __analyzeAotControlVtbl is null;
+
+    internal void __AnalyzeAotAddExceptionHandler(
+        EventHandler<Exception>? handler) =>
+        __analyzeAotOnException += handler;
+
+    internal void __AnalyzeAotRemoveExceptionHandler(
+        EventHandler<Exception>? handler) =>
+        __analyzeAotOnException -= handler;
+
+    internal bool __AnalyzeAotAreEqual(object? other) =>
+        AreEqual(other);
+
+    internal int __AnalyzeAotGetHash() => GetHash();
+
+    internal string __AnalyzeAotGetText(
+        IFormatProvider? formatProvider)
+    {
+        try
+        {
+            return GetText(formatProvider);
+        }
+        catch (Exception exception)
+        {
+            __analyzeAotOnException?.Invoke(this, exception);
+            return string.Empty;
+        }
+    }
+
+    internal static LocalizableString __AnalyzeAotCreateFixed(
+        string? value) =>
+        new AnalyzerFixedLocalizableString(value ?? string.Empty);
+
+    private sealed class AnalyzerFixedLocalizableString : LocalizableString
+    {
+        private readonly string _value;
+
+        public AnalyzerFixedLocalizableString(string value)
+        {
+            _value = value;
+        }
+
+        protected override bool AreEqual(object? other) =>
+            other is AnalyzerFixedLocalizableString fixedString &&
+            string.Equals(
+                _value,
+                fixedString._value,
+                StringComparison.Ordinal);
+
+        protected override int GetHash() =>
+            StringComparer.Ordinal.GetHashCode(_value);
+
+        protected override string GetText(
+            IFormatProvider? formatProvider) =>
+            _value;
+    }
+}
+
+public sealed partial class LocalizableResourceString
+{
+    private string __analyzeAotResourceName = string.Empty;
+    private ResourceManager? __analyzeAotResourceManager;
+    private Type? __analyzeAotResourceSource;
+    private string[] __analyzeAotFormatArguments = [];
+
+    internal void __AnalyzeAotInitializeLocal(
+        string resourceName,
+        ResourceManager resourceManager,
+        Type resourceSource,
+        string[] formatArguments)
+    {
+        ArgumentNullException.ThrowIfNull(resourceName);
+        ArgumentNullException.ThrowIfNull(resourceManager);
+        ArgumentNullException.ThrowIfNull(resourceSource);
+        ArgumentNullException.ThrowIfNull(formatArguments);
+
+        __analyzeAotResourceName = resourceName;
+        __analyzeAotResourceManager = resourceManager;
+        __analyzeAotResourceSource = resourceSource;
+        __analyzeAotFormatArguments = formatArguments;
+    }
+
+    internal bool __AnalyzeAotAreEqualLocal(object? other) =>
+        other is LocalizableResourceString resourceString &&
+        string.Equals(
+            __analyzeAotResourceName,
+            resourceString.__analyzeAotResourceName,
+            StringComparison.Ordinal) &&
+        ReferenceEquals(
+            __analyzeAotResourceManager,
+            resourceString.__analyzeAotResourceManager) &&
+        __analyzeAotResourceSource ==
+            resourceString.__analyzeAotResourceSource &&
+        __analyzeAotFormatArguments.SequenceEqual(
+            resourceString.__analyzeAotFormatArguments,
+            StringComparer.Ordinal);
+
+    internal int __AnalyzeAotGetHashLocal()
+    {
+        var hash = new HashCode();
+        hash.Add(__analyzeAotResourceName, StringComparer.Ordinal);
+        hash.Add(__analyzeAotResourceManager);
+        hash.Add(__analyzeAotResourceSource);
+        foreach (string argument in __analyzeAotFormatArguments)
+        {
+            hash.Add(argument, StringComparer.Ordinal);
+        }
+
+        return hash.ToHashCode();
+    }
+
+    internal string __AnalyzeAotGetTextLocal(
+        IFormatProvider? formatProvider)
+    {
+        ResourceManager resourceManager =
+            __analyzeAotResourceManager ??
+            throw new InvalidOperationException(
+                "The localizable resource string is not initialized.");
+        CultureInfo? culture = formatProvider as CultureInfo;
+        string resource =
+            resourceManager.GetString(
+                __analyzeAotResourceName,
+                culture ?? CultureInfo.CurrentUICulture) ??
+            __analyzeAotResourceName;
+        return __analyzeAotFormatArguments.Length == 0
+            ? resource
+            : string.Format(
+                formatProvider,
+                resource,
+                __analyzeAotFormatArguments);
+    }
+}
+
 public sealed partial class DiagnosticDescriptor
 {
     private bool __analyzeAotIsLocal;
@@ -14,6 +154,14 @@ public sealed partial class DiagnosticDescriptor
     private string __analyzeAotLocalTitle = string.Empty;
     private string __analyzeAotLocalMessageFormat = string.Empty;
     private string __analyzeAotLocalCategory = string.Empty;
+    private LocalizableString __analyzeAotLocalTitleValue =
+        LocalizableString.__AnalyzeAotCreateFixed(string.Empty);
+    private LocalizableString __analyzeAotLocalMessageFormatValue =
+        LocalizableString.__AnalyzeAotCreateFixed(string.Empty);
+    private LocalizableString __analyzeAotLocalDescriptionValue =
+        LocalizableString.__AnalyzeAotCreateFixed(string.Empty);
+    private string __analyzeAotLocalHelpLinkUri = string.Empty;
+    private string[] __analyzeAotLocalCustomTags = [];
     private DiagnosticSeverity __analyzeAotLocalDefaultSeverity;
     private bool __analyzeAotLocalIsEnabledByDefault;
 
@@ -24,6 +172,16 @@ public sealed partial class DiagnosticDescriptor
         __analyzeAotLocalDefaultSeverity;
     internal bool __AnalyzeAotLocalIsEnabledByDefault =>
         __analyzeAotLocalIsEnabledByDefault;
+    internal LocalizableString __AnalyzeAotLocalTitleValue =>
+        __analyzeAotLocalTitleValue;
+    internal LocalizableString __AnalyzeAotLocalMessageFormatValue =>
+        __analyzeAotLocalMessageFormatValue;
+    internal LocalizableString __AnalyzeAotLocalDescriptionValue =>
+        __analyzeAotLocalDescriptionValue;
+    internal string __AnalyzeAotLocalHelpLinkUri =>
+        __analyzeAotLocalHelpLinkUri;
+    internal IEnumerable<string> __AnalyzeAotLocalCustomTags =>
+        __analyzeAotLocalCustomTags;
 
     internal void __AnalyzeAotInitializeLocal(
         string id,
@@ -42,11 +200,48 @@ public sealed partial class DiagnosticDescriptor
         ArgumentNullException.ThrowIfNull(category);
         ArgumentNullException.ThrowIfNull(customTags);
 
+        __AnalyzeAotInitializeLocal(
+            id,
+            LocalizableString.__AnalyzeAotCreateFixed(title),
+            LocalizableString.__AnalyzeAotCreateFixed(messageFormat),
+            category,
+            defaultSeverity,
+            isEnabledByDefault,
+            LocalizableString.__AnalyzeAotCreateFixed(description),
+            helpLinkUri,
+            customTags);
+    }
+
+    internal void __AnalyzeAotInitializeLocal(
+        string id,
+        LocalizableString title,
+        LocalizableString messageFormat,
+        string category,
+        DiagnosticSeverity defaultSeverity,
+        bool isEnabledByDefault,
+        LocalizableString? description,
+        string? helpLinkUri,
+        string[] customTags)
+    {
+        ArgumentNullException.ThrowIfNull(id);
+        ArgumentNullException.ThrowIfNull(title);
+        ArgumentNullException.ThrowIfNull(messageFormat);
+        ArgumentNullException.ThrowIfNull(category);
+        ArgumentNullException.ThrowIfNull(customTags);
+
         __analyzeAotIsLocal = true;
         __analyzeAotLocalId = id;
-        __analyzeAotLocalTitle = title;
-        __analyzeAotLocalMessageFormat = messageFormat;
+        __analyzeAotLocalTitleValue = title;
+        __analyzeAotLocalMessageFormatValue = messageFormat;
+        __analyzeAotLocalDescriptionValue =
+            description ??
+            LocalizableString.__AnalyzeAotCreateFixed(string.Empty);
+        __analyzeAotLocalTitle = title.__AnalyzeAotGetText(null);
+        __analyzeAotLocalMessageFormat =
+            messageFormat.__AnalyzeAotGetText(null);
         __analyzeAotLocalCategory = category;
+        __analyzeAotLocalHelpLinkUri = helpLinkUri ?? string.Empty;
+        __analyzeAotLocalCustomTags = [.. customTags];
         __analyzeAotLocalDefaultSeverity = defaultSeverity;
         __analyzeAotLocalIsEnabledByDefault = isEnabledByDefault;
     }
@@ -67,6 +262,10 @@ public sealed partial class DiagnosticDescriptor
             AnalyzerDescriptorField.MessageFormat =>
                 __analyzeAotLocalMessageFormat,
             AnalyzerDescriptorField.Category => __analyzeAotLocalCategory,
+            AnalyzerDescriptorField.Description =>
+                __analyzeAotLocalDescriptionValue.__AnalyzeAotGetText(null),
+            AnalyzerDescriptorField.HelpLinkUri =>
+                __analyzeAotLocalHelpLinkUri,
             _ => throw new ArgumentOutOfRangeException(nameof(field)),
         };
     }
@@ -122,18 +321,33 @@ public abstract partial class Diagnostic
 public abstract partial class Location
 {
     internal static Location __AnalyzeAotCreateLocal(TextSpan sourceSpan) =>
-        new AnalyzerLocalLocation(LocationKind.SourceFile, sourceSpan);
+        new AnalyzerLocalLocation(
+            LocationKind.SourceFile,
+            sourceTree: null,
+            sourceSpan);
+
+    internal static Location __AnalyzeAotCreateLocal(
+        SyntaxTree sourceTree,
+        TextSpan sourceSpan) =>
+        new AnalyzerLocalLocation(
+            LocationKind.SourceFile,
+            sourceTree,
+            sourceSpan);
 
     internal static Location __AnalyzeAotCreateNone() =>
-        new AnalyzerLocalLocation(LocationKind.None, default);
+        new AnalyzerLocalLocation(
+            LocationKind.None,
+            sourceTree: null,
+            default);
 
     private sealed class AnalyzerLocalLocation(
         LocationKind kind,
+        SyntaxTree? sourceTree,
         TextSpan sourceSpan) : Location
     {
         public override LocationKind Kind => kind;
         public override TextSpan SourceSpan => sourceSpan;
-        public override SyntaxTree? SourceTree => null;
+        public override SyntaxTree? SourceTree => sourceTree;
 
         public override bool Equals(object? obj) =>
             ReferenceEquals(this, obj);

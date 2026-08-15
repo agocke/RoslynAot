@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis
     {
         public DiagnosticDescriptor(string id, LocalizableString title, LocalizableString messageFormat, string category, DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, LocalizableString? description = null, string? helpLinkUri = null, params string[] customTags)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            __AnalyzeAotInitializeLocal(id, title, messageFormat, category, defaultSeverity, isEnabledByDefault, description, helpLinkUri, customTags);
         }
 
         public DiagnosticDescriptor(string id, string title, string messageFormat, string category, DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, string? description = null, string? helpLinkUri = null, params string[] customTags)
@@ -37,6 +37,8 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
+                if (__AnalyzeAotIsLocal)
+                    return __AnalyzeAotLocalCustomTags;
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
             }
         }
@@ -59,7 +61,13 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                if (__AnalyzeAotIsLocal)
+                    return __AnalyzeAotLocalDescriptionValue;
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IDiagnosticDescriptorVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.DiagnosticDescriptor_get_Description(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return LocalizableString.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -67,6 +75,8 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
+                if (__AnalyzeAotIsLocal)
+                    return __AnalyzeAotLocalHelpLinkUri;
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.IDiagnosticDescriptorVtbl vtbl = __AnalyzeAotGetVtbl();
                 long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
@@ -105,7 +115,13 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                if (__AnalyzeAotIsLocal)
+                    return __AnalyzeAotLocalMessageFormatValue;
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IDiagnosticDescriptorVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.DiagnosticDescriptor_get_MessageFormat(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return LocalizableString.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -113,7 +129,13 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                if (__AnalyzeAotIsLocal)
+                    return __AnalyzeAotLocalTitleValue;
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IDiagnosticDescriptorVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.DiagnosticDescriptor_get_Title(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return LocalizableString.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -123,7 +145,7 @@ namespace Microsoft.CodeAnalysis
                 return ReferenceEquals(this, other);
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.IDiagnosticDescriptorVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.DiagnosticDescriptor_Equals_efbe4d0d(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.DiagnosticDescriptor_Equals_7497f57f(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

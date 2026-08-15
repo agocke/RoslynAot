@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("09e6ef64-cb58-5e26-b426-20a6a477e0c3")]
+[Guid("5cfbb34a-9542-5f1d-939a-4de5b3889d13")]
 public partial interface ICompilationWithAnalyzersOptionsVtbl
 {
 
@@ -26,6 +26,12 @@ public partial interface ICompilationWithAnalyzersOptionsVtbl
     int CompilationWithAnalyzersOptions_get_LogAnalyzerExecutionTime(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int CompilationWithAnalyzersOptions_get_Options(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]

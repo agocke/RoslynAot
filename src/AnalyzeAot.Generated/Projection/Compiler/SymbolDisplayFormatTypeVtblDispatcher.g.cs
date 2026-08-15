@@ -49,4 +49,100 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
             return _owner.SetError(exception);
         }
     }
+
+    public int SymbolDisplayFormat_get_CSharpErrorMessageFormat(
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.SymbolDisplayFormat.CSharpErrorMessageFormat);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_get_CSharpShortErrorMessageFormat(
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.SymbolDisplayFormat.CSharpShortErrorMessageFormat);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_get_FullyQualifiedFormat(
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.SymbolDisplayFormat.FullyQualifiedFormat);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_get_MinimallyQualifiedFormat(
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.SymbolDisplayFormat.MinimallyQualifiedFormat);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_get_VisualBasicErrorMessageFormat(
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.SymbolDisplayFormat.VisualBasicErrorMessageFormat);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_get_VisualBasicShortErrorMessageFormat(
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.SymbolDisplayFormat.VisualBasicShortErrorMessageFormat);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

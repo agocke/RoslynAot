@@ -132,4 +132,21 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
             return _owner.SetError(exception);
         }
     }
+
+    public int Location_get_SourceTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Location>(receiver).SourceTree);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

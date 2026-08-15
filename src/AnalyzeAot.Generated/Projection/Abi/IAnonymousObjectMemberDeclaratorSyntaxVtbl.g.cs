@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("214cee07-89a3-5c5e-98d6-f49e0f5f236f")]
+[Guid("35e2cddc-5f44-516d-844d-24cc08b92995")]
 public partial interface IAnonymousObjectMemberDeclaratorSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int AnonymousObjectMemberDeclaratorSyntax_Accept_72721120(
+    int AnonymousObjectMemberDeclaratorSyntax_Accept_22fe144a(
         long receiver,
         long visitor
     );
@@ -41,6 +41,12 @@ public partial interface IAnonymousObjectMemberDeclaratorSyntaxVtbl : ICSharpSyn
     int AnonymousObjectMemberDeclaratorSyntax_WithNameEquals(
         long receiver,
         long nameEquals,
+        out long result
+    );
+
+    [PreserveSig]
+    int AnonymousObjectMemberDeclaratorSyntax_get_Expression(
+        long receiver,
         out long result
     );
 

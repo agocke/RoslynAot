@@ -56,6 +56,23 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         }
     }
 
+    public int OperationBlockAnalysisContext_get_FilterTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext>(receiver).FilterTree);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int OperationBlockAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result)
@@ -65,6 +82,23 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext>(receiver).IsGeneratedCode ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int OperationBlockAnalysisContext_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext>(receiver).Options);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

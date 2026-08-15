@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d9613bb1-e0af-558a-8aa4-74b8aa2af072")]
+[Guid("155a61c0-2f23-5fc9-beba-9ecbdd430c55")]
 public partial interface ISelectClauseSyntaxVtbl : ISelectOrGroupClauseSyntaxVtbl
 {
 
     [PreserveSig]
-    int SelectClauseSyntax_Accept_06855a84(
+    int SelectClauseSyntax_Accept_36f69a3b(
         long receiver,
         long visitor
     );
@@ -41,6 +41,12 @@ public partial interface ISelectClauseSyntaxVtbl : ISelectOrGroupClauseSyntaxVtb
     int SelectClauseSyntax_WithSelectKeyword(
         long receiver,
         long selectKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int SelectClauseSyntax_get_Expression(
+        long receiver,
         out long result
     );
 

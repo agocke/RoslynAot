@@ -37,7 +37,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ICompilationReferenceVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.CompilationReference_Equals_e9a54551(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.CompilationReference_Equals_776ef3ef(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -68,12 +68,20 @@ namespace Microsoft.CodeAnalysis
 
         public new CompilationReference WithEmbedInteropTypes(bool value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationReferenceVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationReference_WithEmbedInteropTypes(__AnalyzeAotGetHandle(controlVtbl), value ? 1 : 0, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public new CompilationReference WithProperties(MetadataReferenceProperties properties)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationReferenceVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationReference_WithProperties(__AnalyzeAotGetHandle(controlVtbl), properties.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;

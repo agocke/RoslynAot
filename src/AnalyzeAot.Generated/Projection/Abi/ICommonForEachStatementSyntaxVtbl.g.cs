@@ -12,7 +12,98 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("991fbc78-7f50-5438-b857-2042e5287e5d")]
+[Guid("1ae82275-d491-5f26-bafe-58decc28fe29")]
 public partial interface ICommonForEachStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_WithAwaitKeyword(
+        long receiver,
+        long awaitKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_WithCloseParenToken(
+        long receiver,
+        long closeParenToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_WithExpression(
+        long receiver,
+        long expression,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_WithForEachKeyword(
+        long receiver,
+        long forEachKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_WithInKeyword(
+        long receiver,
+        long inKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_WithOpenParenToken(
+        long receiver,
+        long openParenToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_WithStatement(
+        long receiver,
+        long statement,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_get_AwaitKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_get_CloseParenToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_get_Expression(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_get_ForEachKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_get_InKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_get_OpenParenToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_get_Statement(
+        long receiver,
+        out long result
+    );
 }

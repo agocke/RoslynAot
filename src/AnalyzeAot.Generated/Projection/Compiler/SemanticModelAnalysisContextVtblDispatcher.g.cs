@@ -56,6 +56,23 @@ internal sealed partial class SemanticModelAnalysisContextVtblDispatcher : ISema
         }
     }
 
+    public int SemanticModelAnalysisContext_get_FilterTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SemanticModelAnalysisContext>(receiver).FilterTree);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SemanticModelAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result)
@@ -65,6 +82,40 @@ internal sealed partial class SemanticModelAnalysisContextVtblDispatcher : ISema
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SemanticModelAnalysisContext>(receiver).IsGeneratedCode ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModelAnalysisContext_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SemanticModelAnalysisContext>(receiver).Options);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModelAnalysisContext_get_SemanticModel(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SemanticModelAnalysisContext>(receiver).SemanticModel);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

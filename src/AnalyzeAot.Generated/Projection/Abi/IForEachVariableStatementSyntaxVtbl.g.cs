@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("9ea3f6ce-ef12-5432-8fda-b93d84acdcdc")]
+[Guid("7c0ed10f-0945-55b2-92de-cb4b6f780d16")]
 public partial interface IForEachVariableStatementSyntaxVtbl : ICommonForEachStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int ForEachVariableStatementSyntax_Accept_7cf2c203(
+    int ForEachVariableStatementSyntax_Accept_2a15082e(
         long receiver,
         long visitor
     );
@@ -118,6 +118,12 @@ public partial interface IForEachVariableStatementSyntaxVtbl : ICommonForEachSta
     );
 
     [PreserveSig]
+    int ForEachVariableStatementSyntax_get_Expression(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int ForEachVariableStatementSyntax_get_ForEachKeyword(
         long receiver,
         out long result
@@ -131,6 +137,18 @@ public partial interface IForEachVariableStatementSyntaxVtbl : ICommonForEachSta
 
     [PreserveSig]
     int ForEachVariableStatementSyntax_get_OpenParenToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ForEachVariableStatementSyntax_get_Statement(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ForEachVariableStatementSyntax_get_Variable(
         long receiver,
         out long result
     );

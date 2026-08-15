@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("a7d64341-8ffa-5f26-b3f1-936a8171e6b4")]
+[Guid("b87f1d51-7585-586a-8d26-7dd8adb187b9")]
 public partial interface IQualifiedCrefSyntaxVtbl : ICrefSyntaxVtbl
 {
 
     [PreserveSig]
-    int QualifiedCrefSyntax_Accept_255ecd98(
+    int QualifiedCrefSyntax_Accept_c44764f6(
         long receiver,
         long visitor
     );
@@ -53,7 +53,19 @@ public partial interface IQualifiedCrefSyntaxVtbl : ICrefSyntaxVtbl
     );
 
     [PreserveSig]
+    int QualifiedCrefSyntax_get_Container(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int QualifiedCrefSyntax_get_DotToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int QualifiedCrefSyntax_get_Member(
         long receiver,
         out long result
     );

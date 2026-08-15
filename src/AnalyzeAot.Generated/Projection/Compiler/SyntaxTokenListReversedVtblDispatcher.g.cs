@@ -23,7 +23,7 @@ internal sealed partial class SyntaxTokenListReversedVtblDispatcher : ISyntaxTok
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxTokenList_Reversed_Equals_66fd4b68(
+    public int SyntaxTokenList_Reversed_Equals_d155bfc8(
         long receiver,
         long other,
         out int result)

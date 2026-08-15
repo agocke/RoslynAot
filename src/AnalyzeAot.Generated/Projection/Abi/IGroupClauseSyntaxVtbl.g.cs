@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1047e1f2-caf5-5e31-b18d-0ffc2d0acd1a")]
+[Guid("cc6a3102-1002-56d2-972f-ead8ca093086")]
 public partial interface IGroupClauseSyntaxVtbl : ISelectOrGroupClauseSyntaxVtbl
 {
 
     [PreserveSig]
-    int GroupClauseSyntax_Accept_dcccbb0a(
+    int GroupClauseSyntax_Accept_71cf450c(
         long receiver,
         long visitor
     );
@@ -61,7 +61,19 @@ public partial interface IGroupClauseSyntaxVtbl : ISelectOrGroupClauseSyntaxVtbl
     );
 
     [PreserveSig]
+    int GroupClauseSyntax_get_ByExpression(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int GroupClauseSyntax_get_ByKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int GroupClauseSyntax_get_GroupExpression(
         long receiver,
         out long result
     );

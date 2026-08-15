@@ -12,7 +12,79 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("aadb174b-ed29-5798-9987-4f2dedb06957")]
+[Guid("c01b7b38-3768-51d3-ae52-a905fa8fbbee")]
 public partial interface IBaseTypeDeclarationSyntaxVtbl : IMemberDeclarationSyntaxVtbl
 {
+
+    [PreserveSig]
+    int BaseTypeDeclarationSyntax_WithBaseList(
+        long receiver,
+        long baseList,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseTypeDeclarationSyntax_WithCloseBraceToken(
+        long receiver,
+        long closeBraceToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseTypeDeclarationSyntax_WithIdentifier(
+        long receiver,
+        long identifier,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseTypeDeclarationSyntax_WithModifiers(
+        long receiver,
+        long modifiers,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseTypeDeclarationSyntax_WithOpenBraceToken(
+        long receiver,
+        long openBraceToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseTypeDeclarationSyntax_WithSemicolonToken(
+        long receiver,
+        long semicolonToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseTypeDeclarationSyntax_get_BaseList(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseTypeDeclarationSyntax_get_CloseBraceToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseTypeDeclarationSyntax_get_Identifier(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseTypeDeclarationSyntax_get_OpenBraceToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseTypeDeclarationSyntax_get_SemicolonToken(
+        long receiver,
+        out long result
+    );
 }

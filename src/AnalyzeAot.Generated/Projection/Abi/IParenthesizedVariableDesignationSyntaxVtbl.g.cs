@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d330b651-c2c9-5274-9dad-9d72f4d1acce")]
+[Guid("8dbe1eec-35e4-5e25-92af-b9269c95c985")]
 public partial interface IParenthesizedVariableDesignationSyntaxVtbl : IVariableDesignationSyntaxVtbl
 {
 
     [PreserveSig]
-    int ParenthesizedVariableDesignationSyntax_Accept_6a89ec61(
+    int ParenthesizedVariableDesignationSyntax_Accept_99f4d65e(
         long receiver,
         long visitor
     );

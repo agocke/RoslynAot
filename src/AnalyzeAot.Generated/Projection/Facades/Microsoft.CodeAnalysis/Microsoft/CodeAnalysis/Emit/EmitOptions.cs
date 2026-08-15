@@ -195,7 +195,7 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.IEmitOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.EmitOptions_Equals_33e44ed3(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.EmitOptions_Equals_6cab27c9(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

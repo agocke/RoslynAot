@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("aeae36ab-5ea5-5a87-8ef7-548117baaebc")]
+[Guid("55e63405-fe47-5ccb-8a3b-e22054a8faa0")]
 public partial interface ICompilationReferenceVtbl : IMetadataReferenceVtbl
 {
 
     [PreserveSig]
-    int CompilationReference_Equals_e9a54551(
+    int CompilationReference_Equals_776ef3ef(
         long receiver,
         long other,
         out int result
@@ -27,6 +27,20 @@ public partial interface ICompilationReferenceVtbl : IMetadataReferenceVtbl
     int CompilationReference_GetHashCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int CompilationReference_WithEmbedInteropTypes(
+        long receiver,
+        int value,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationReference_WithProperties(
+        long receiver,
+        long properties,
+        out long result
     );
 
     [PreserveSig]

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fe951bfc-3121-5f4d-bd51-fbe1859aa3a2")]
+[Guid("feb1b332-15c8-521d-aa1a-77083ab0b829")]
 public partial interface ISymbolDisplayFormatTypeVtbl
 {
 
@@ -29,6 +29,36 @@ public partial interface ISymbolDisplayFormatTypeVtbl
         int localOptions,
         int kindOptions,
         int miscellaneousOptions,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_get_CSharpErrorMessageFormat(
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_get_CSharpShortErrorMessageFormat(
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_get_FullyQualifiedFormat(
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_get_MinimallyQualifiedFormat(
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_get_VisualBasicErrorMessageFormat(
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_get_VisualBasicShortErrorMessageFormat(
         out long result
     );
 }

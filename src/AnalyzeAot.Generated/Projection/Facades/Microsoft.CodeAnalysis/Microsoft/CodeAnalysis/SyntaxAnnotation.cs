@@ -15,7 +15,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxAnnotationTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationTypeVtbl(controlVtbl);
-            int status = vtbl.SyntaxAnnotation_ctor_3d9c3533(out long result);
+            int status = vtbl.SyntaxAnnotation_ctor_706a5ffb(out long result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __analyzeAotControlVtbl = controlVtbl;
             __analyzeAotVtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationVtbl(controlVtbl);
@@ -70,7 +70,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxAnnotationVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.SyntaxAnnotation_Equals_96059184(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.SyntaxAnnotation_Equals_ae21757d(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

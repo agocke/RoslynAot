@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("45d8c5b8-a75a-5f45-9bd2-feaf32915097")]
+[Guid("fd9c06a2-d716-52d8-911c-285689971cd7")]
 public partial interface ICaseInsensitiveComparisonVtbl
 {
 
     [PreserveSig]
-    int CaseInsensitiveComparison_ToLower_cf8aebcb(
+    int CaseInsensitiveComparison_ToLower_8c71e35e(
         ushort c,
         out ushort result
     );

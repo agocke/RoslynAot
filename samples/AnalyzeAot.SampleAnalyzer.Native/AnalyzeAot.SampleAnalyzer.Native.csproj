@@ -9,6 +9,7 @@
     <NativeLib>Shared</NativeLib>
     <IsAotCompatible>true</IsAotCompatible>
     <AssemblyName>analyze-aot-sample-analyzer</AssemblyName>
+    <TypeMapEntryAssembly>$(AssemblyName)</TypeMapEntryAssembly>
     <_AnalyzerConfiguration>$([System.String]::Copy('$(Configuration)').ToLowerInvariant())</_AnalyzerConfiguration>
   </PropertyGroup>
 

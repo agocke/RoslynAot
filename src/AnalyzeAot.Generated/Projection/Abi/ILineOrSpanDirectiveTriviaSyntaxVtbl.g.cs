@@ -12,7 +12,47 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d02bfc74-8878-5974-825c-0df1d6c14b1f")]
+[Guid("fae8ed55-7cf5-5cb8-9450-81fcd3488ae7")]
 public partial interface ILineOrSpanDirectiveTriviaSyntaxVtbl : IDirectiveTriviaSyntaxVtbl
 {
+
+    [PreserveSig]
+    int LineOrSpanDirectiveTriviaSyntax_WithEndOfDirectiveToken(
+        long receiver,
+        long endOfDirectiveToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int LineOrSpanDirectiveTriviaSyntax_WithFile(
+        long receiver,
+        long @file,
+        out long result
+    );
+
+    [PreserveSig]
+    int LineOrSpanDirectiveTriviaSyntax_WithHashToken(
+        long receiver,
+        long hashToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int LineOrSpanDirectiveTriviaSyntax_WithLineKeyword(
+        long receiver,
+        long lineKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int LineOrSpanDirectiveTriviaSyntax_get_File(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int LineOrSpanDirectiveTriviaSyntax_get_LineKeyword(
+        long receiver,
+        out long result
+    );
 }

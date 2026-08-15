@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("dcc6e34b-f8d2-5c93-b9ed-ce256a513de7")]
+[Guid("76c7b89c-ae1a-5001-ae67-7d829a563fac")]
 public partial interface IXmlCrefAttributeSyntaxVtbl : IXmlAttributeSyntaxVtbl
 {
 
     [PreserveSig]
-    int XmlCrefAttributeSyntax_Accept_7888b995(
+    int XmlCrefAttributeSyntax_Accept_4a7be25c(
         long receiver,
         long visitor
     );
@@ -65,6 +65,12 @@ public partial interface IXmlCrefAttributeSyntaxVtbl : IXmlAttributeSyntaxVtbl
     int XmlCrefAttributeSyntax_WithStartQuoteToken(
         long receiver,
         long startQuoteToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int XmlCrefAttributeSyntax_get_Cref(
+        long receiver,
         out long result
     );
 

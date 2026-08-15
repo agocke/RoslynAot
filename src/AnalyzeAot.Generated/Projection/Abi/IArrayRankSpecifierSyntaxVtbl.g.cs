@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4cb198c0-d4fc-547d-8014-132f55d84c19")]
+[Guid("cf091382-b02c-588f-9f95-a82d9c61515f")]
 public partial interface IArrayRankSpecifierSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int ArrayRankSpecifierSyntax_Accept_34e32e14(
+    int ArrayRankSpecifierSyntax_Accept_2e42d392(
         long receiver,
         long visitor
     );

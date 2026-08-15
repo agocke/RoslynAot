@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e7cfc470-3b58-5c79-a2b9-4519620647e4")]
+[Guid("ff2bcb5b-a644-5fe2-8494-bd4cc4a9613f")]
 public partial interface ILocalFunctionStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int LocalFunctionStatementSyntax_Accept_7a5935d5(
+    int LocalFunctionStatementSyntax_Accept_959bfb59(
         long receiver,
         long visitor
     );
@@ -104,6 +104,12 @@ public partial interface ILocalFunctionStatementSyntaxVtbl : IStatementSyntaxVtb
 
     [PreserveSig]
     int LocalFunctionStatementSyntax_get_ParameterList(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int LocalFunctionStatementSyntax_get_ReturnType(
         long receiver,
         out long result
     );

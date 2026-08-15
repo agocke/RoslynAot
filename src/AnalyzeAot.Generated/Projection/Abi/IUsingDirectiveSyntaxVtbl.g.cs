@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3e0d44c0-8b22-588a-98b5-e1a4c792b452")]
+[Guid("43ece9d0-1b08-557b-ab8c-a078608cc1f3")]
 public partial interface IUsingDirectiveSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int UsingDirectiveSyntax_Accept_737c7cba(
+    int UsingDirectiveSyntax_Accept_4c6f3612(
         long receiver,
         long visitor
     );
@@ -122,6 +122,18 @@ public partial interface IUsingDirectiveSyntaxVtbl : ICSharpSyntaxNodeVtbl
 
     [PreserveSig]
     int UsingDirectiveSyntax_get_GlobalKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int UsingDirectiveSyntax_get_Name(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int UsingDirectiveSyntax_get_NamespaceOrType(
         long receiver,
         out long result
     );

@@ -12,13 +12,26 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fb4dc4d8-6e43-527c-bbed-ef514a741018")]
+[Guid("39bb6d6d-e7b8-5f9e-bd28-9fcbd44552e1")]
 public partial interface ISuppressionAnalysisContextVtbl
 {
+
+    [PreserveSig]
+    int SuppressionAnalysisContext_GetSemanticModel(
+        long receiver,
+        long syntaxTree,
+        out long result
+    );
 
     [PreserveSig]
     int SuppressionAnalysisContext_ReportSuppression(
         long receiver,
         long suppression
+    );
+
+    [PreserveSig]
+    int SuppressionAnalysisContext_get_Options(
+        long receiver,
+        out long result
     );
 }

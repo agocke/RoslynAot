@@ -12,9 +12,142 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("525b6952-b2f1-57ab-baf4-932ecd32b3f5")]
+[Guid("7c575d10-3a4f-5c25-8f80-d7c7dd47ccf1")]
 public partial interface ISymbolDisplayFormatVtbl
 {
+
+    [PreserveSig]
+    int SymbolDisplayFormat_AddGenericsOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_AddKindOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_AddLocalOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_AddMemberOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_AddMiscellaneousOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_AddParameterOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_RemoveGenericsOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_RemoveKindOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_RemoveLocalOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_RemoveMemberOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_RemoveMiscellaneousOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_RemoveParameterOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_WithGenericsOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_WithGlobalNamespaceStyle(
+        long receiver,
+        int style,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_WithKindOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_WithLocalOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_WithMemberOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_WithMiscellaneousOptions(
+        long receiver,
+        int options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayFormat_WithParameterOptions(
+        long receiver,
+        int options,
+        out long result
+    );
 
     [PreserveSig]
     int SymbolDisplayFormat_get_DelegateStyle(

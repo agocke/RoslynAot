@@ -40,7 +40,11 @@ namespace Microsoft.CodeAnalysis
         protected abstract DocumentationProvider CreateDocumentationProvider();
         public Metadata GetMetadata()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IPortableExecutableReferenceVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.PortableExecutableReference_GetMetadata(__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Metadata.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public MetadataId GetMetadataId()
@@ -65,12 +69,20 @@ namespace Microsoft.CodeAnalysis
 
         public new PortableExecutableReference WithEmbedInteropTypes(bool value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IPortableExecutableReferenceVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.PortableExecutableReference_WithEmbedInteropTypes(__AnalyzeAotGetHandle(controlVtbl), value ? 1 : 0, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public new PortableExecutableReference WithProperties(MetadataReferenceProperties properties)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IPortableExecutableReferenceVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.PortableExecutableReference_WithProperties(__AnalyzeAotGetHandle(controlVtbl), properties.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         protected abstract PortableExecutableReference WithPropertiesImpl(MetadataReferenceProperties properties);

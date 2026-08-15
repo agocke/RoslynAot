@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("dd519e5f-b19b-5d7a-ba43-164f37b74bbd")]
+[Guid("74882d05-e94e-5c8f-9dd7-5cead73dbd0a")]
 public partial interface ISyntaxTreeVtbl
 {
 
@@ -22,5 +22,11 @@ public partial interface ISyntaxTreeVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int SyntaxTree_get_Options(
+        long receiver,
+        out long result
     );
 }

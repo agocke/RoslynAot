@@ -112,7 +112,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISyntaxTriviaVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SyntaxTrivia_get_SyntaxTree(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : SyntaxTree.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -141,7 +145,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxTriviaVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.SyntaxTrivia_Equals_2b043e58(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.SyntaxTrivia_Equals_193a4eaf(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -177,12 +181,20 @@ namespace Microsoft.CodeAnalysis
 
         public readonly Location GetLocation()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISyntaxTriviaVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SyntaxTrivia_GetLocation(__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Location.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public readonly SyntaxNode? GetStructure()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISyntaxTriviaVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SyntaxTrivia_GetStructure(__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public readonly bool HasAnnotation(SyntaxAnnotation? annotation)

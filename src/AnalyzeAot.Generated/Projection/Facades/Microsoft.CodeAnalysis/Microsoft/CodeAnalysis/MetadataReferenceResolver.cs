@@ -26,7 +26,11 @@ namespace Microsoft.CodeAnalysis
         public abstract override int GetHashCode();
         public virtual PortableExecutableReference? ResolveMissingAssembly(MetadataReference definition, AssemblyIdentity referenceIdentity)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IMetadataReferenceResolverVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.MetadataReferenceResolver_ResolveMissingAssembly(__AnalyzeAotGetHandle(controlVtbl), definition.__AnalyzeAotGetHandle(controlVtbl), referenceIdentity.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : PortableExecutableReference.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public abstract System.Collections.Immutable.ImmutableArray<PortableExecutableReference> ResolveReference(string reference, string? baseFilePath, MetadataReferenceProperties properties);

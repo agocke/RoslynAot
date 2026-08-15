@@ -412,7 +412,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.IConversionVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.Conversion_Equals_59c1bd24(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.Conversion_Equals_acba79f2(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

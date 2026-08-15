@@ -12,7 +12,7 @@
     <SignAssembly>true</SignAssembly>
     <PublicSign>true</PublicSign>
     <AssemblyOriginatorKeyFile>../../eng/Roslyn.Test.public.snk</AssemblyOriginatorKeyFile>
-    <NoWarn>$(NoWarn);RS1001;RS1025;RS1026</NoWarn>
+    <NoWarn>$(NoWarn);RS1001;RS1025;RS1026;RSEXPERIMENTAL006</NoWarn>
     <_RoslynBincore>$(RoslynTargetsPath)/bincore</_RoslynBincore>
   </PropertyGroup>
 

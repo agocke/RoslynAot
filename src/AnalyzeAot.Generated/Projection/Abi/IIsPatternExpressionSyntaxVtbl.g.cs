@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("a3aa8f27-db94-5e6a-886d-43dd4708360a")]
+[Guid("c8efe238-e5ba-581c-b8b2-fae0eab97f54")]
 public partial interface IIsPatternExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int IsPatternExpressionSyntax_Accept_0951684e(
+    int IsPatternExpressionSyntax_Accept_fd3f0bc0(
         long receiver,
         long visitor
     );
@@ -53,7 +53,19 @@ public partial interface IIsPatternExpressionSyntaxVtbl : IExpressionSyntaxVtbl
     );
 
     [PreserveSig]
+    int IsPatternExpressionSyntax_get_Expression(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int IsPatternExpressionSyntax_get_IsKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int IsPatternExpressionSyntax_get_Pattern(
         long receiver,
         out long result
     );

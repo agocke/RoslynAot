@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("42fe9cee-ccec-52d4-a5c5-522b484f202a")]
+[Guid("cedbe18c-01c7-5951-8c91-d252ac0e0d02")]
 public partial interface IBinaryExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int BinaryExpressionSyntax_Accept_7b26e968(
+    int BinaryExpressionSyntax_Accept_f99950aa(
         long receiver,
         long visitor
     );
@@ -53,7 +53,19 @@ public partial interface IBinaryExpressionSyntaxVtbl : IExpressionSyntaxVtbl
     );
 
     [PreserveSig]
+    int BinaryExpressionSyntax_get_Left(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int BinaryExpressionSyntax_get_OperatorToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BinaryExpressionSyntax_get_Right(
         long receiver,
         out long result
     );

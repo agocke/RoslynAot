@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4d79a43f-ce74-5ebb-83e3-5b71c9cecff1")]
+[Guid("d6b00825-23fc-5f21-979e-3f7bbfc64618")]
 public partial interface IPointerTypeSyntaxVtbl : ITypeSyntaxVtbl
 {
 
     [PreserveSig]
-    int PointerTypeSyntax_Accept_9f9ad993(
+    int PointerTypeSyntax_Accept_9f04b786(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface IPointerTypeSyntaxVtbl : ITypeSyntaxVtbl
 
     [PreserveSig]
     int PointerTypeSyntax_get_AsteriskToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int PointerTypeSyntax_get_ElementType(
         long receiver,
         out long result
     );

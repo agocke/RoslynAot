@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("609df094-a414-5318-a9a8-1568602a124a")]
+[Guid("80eaafa7-05a6-51d9-968d-b07648612414")]
 public partial interface ITypedConstantVtbl
 {
 
     [PreserveSig]
-    int TypedConstant_Equals_7de14614(
+    int TypedConstant_Equals_c2d410e2(
         long receiver,
         long other,
         out int result

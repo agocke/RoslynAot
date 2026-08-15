@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c56d2b5e-6488-5d1e-a63c-bd66821c7153")]
+[Guid("d1f1bea3-a3ed-5025-b42b-92fa894560c6")]
 public partial interface IStackAllocArrayCreationExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int StackAllocArrayCreationExpressionSyntax_Accept_250a165f(
+    int StackAllocArrayCreationExpressionSyntax_Accept_b68abf94(
         long receiver,
         long visitor
     );
@@ -68,6 +68,12 @@ public partial interface IStackAllocArrayCreationExpressionSyntaxVtbl : IExpress
 
     [PreserveSig]
     int StackAllocArrayCreationExpressionSyntax_get_StackAllocKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int StackAllocArrayCreationExpressionSyntax_get_Type(
         long receiver,
         out long result
     );

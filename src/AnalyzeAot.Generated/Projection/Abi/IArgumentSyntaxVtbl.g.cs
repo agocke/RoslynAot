@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("742d6ff9-c076-5cf0-9609-3978dd7623cf")]
+[Guid("68da1f57-1a7c-57b5-82da-275c5ad3e014")]
 public partial interface IArgumentSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int ArgumentSyntax_Accept_e6356818(
+    int ArgumentSyntax_Accept_ef73c1fd(
         long receiver,
         long visitor
     );
@@ -56,6 +56,12 @@ public partial interface IArgumentSyntaxVtbl : ICSharpSyntaxNodeVtbl
     int ArgumentSyntax_WithRefOrOutKeyword(
         long receiver,
         long refOrOutKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int ArgumentSyntax_get_Expression(
+        long receiver,
         out long result
     );
 

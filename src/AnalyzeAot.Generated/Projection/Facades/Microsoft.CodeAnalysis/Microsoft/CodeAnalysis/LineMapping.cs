@@ -64,7 +64,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ILineMappingVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.LineMapping_Equals_d3745851(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.LineMapping_Equals_38c3299c(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

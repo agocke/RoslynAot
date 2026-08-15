@@ -40,6 +40,311 @@ internal sealed partial class CompilationOptionsVtblDispatcher : ICompilationOpt
         }
     }
 
+    public int CompilationOptions_WithAssemblyIdentityComparer(
+        long receiver,
+        long comparer,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithAssemblyIdentityComparer(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentityComparer>(comparer)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithConcurrentBuild(
+        long receiver,
+        int concurrent,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithConcurrentBuild(concurrent != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithDeterministic(
+        long receiver,
+        int deterministic,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithDeterministic(deterministic != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithGeneralDiagnosticOption(
+        long receiver,
+        int value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithGeneralDiagnosticOption((global::Microsoft.CodeAnalysis.ReportDiagnostic)value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithMetadataImportOptions(
+        long receiver,
+        byte value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithMetadataImportOptions((global::Microsoft.CodeAnalysis.MetadataImportOptions)value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithMetadataReferenceResolver(
+        long receiver,
+        long resolver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithMetadataReferenceResolver(resolver == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.MetadataReferenceResolver>(resolver)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithOptimizationLevel(
+        long receiver,
+        int value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithOptimizationLevel((global::Microsoft.CodeAnalysis.OptimizationLevel)value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithOutputKind(
+        long receiver,
+        int kind,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithOutputKind((global::Microsoft.CodeAnalysis.OutputKind)kind));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithOverflowChecks(
+        long receiver,
+        int checkOverflow,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithOverflowChecks(checkOverflow != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithPlatform(
+        long receiver,
+        int platform,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithPlatform((global::Microsoft.CodeAnalysis.Platform)platform));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithPublicSign(
+        long receiver,
+        int publicSign,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithPublicSign(publicSign != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithReportSuppressedDiagnostics(
+        long receiver,
+        int value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithReportSuppressedDiagnostics(value != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithSourceReferenceResolver(
+        long receiver,
+        long resolver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithSourceReferenceResolver(resolver == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SourceReferenceResolver>(resolver)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithStrongNameProvider(
+        long receiver,
+        long provider,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithStrongNameProvider(provider == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.StrongNameProvider>(provider)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithSyntaxTreeOptionsProvider(
+        long receiver,
+        long provider,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithSyntaxTreeOptionsProvider(provider == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider>(provider)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_WithXmlReferenceResolver(
+        long receiver,
+        long resolver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WithXmlReferenceResolver(resolver == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.XmlReferenceResolver>(resolver)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_get_AssemblyIdentityComparer(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).AssemblyIdentityComparer);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CompilationOptions_get_CheckOverflow(
         long receiver,
         out int result)
@@ -200,6 +505,23 @@ internal sealed partial class CompilationOptionsVtblDispatcher : ICompilationOpt
         }
     }
 
+    public int CompilationOptions_get_MetadataReferenceResolver(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).MetadataReferenceResolver);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int CompilationOptions_get_ModuleName(
         long receiver,
         nint buffer,
@@ -335,6 +657,57 @@ internal sealed partial class CompilationOptionsVtblDispatcher : ICompilationOpt
         }
     }
 
+    public int CompilationOptions_get_SourceReferenceResolver(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).SourceReferenceResolver);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_get_StrongNameProvider(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).StrongNameProvider);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_get_SyntaxTreeOptionsProvider(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).SyntaxTreeOptionsProvider);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CompilationOptions_get_WarningLevel(
         long receiver,
         out int result)
@@ -344,6 +717,23 @@ internal sealed partial class CompilationOptionsVtblDispatcher : ICompilationOpt
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).WarningLevel;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationOptions_get_XmlReferenceResolver(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationOptions>(receiver).XmlReferenceResolver);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

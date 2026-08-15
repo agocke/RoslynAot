@@ -24,7 +24,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IGeneratorAttributeSyntaxContextVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.GeneratorAttributeSyntaxContext_get_SemanticModel(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SemanticModel.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -32,7 +36,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IGeneratorAttributeSyntaxContextVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.GeneratorAttributeSyntaxContext_get_TargetNode(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -43,5 +51,44 @@ namespace Microsoft.CodeAnalysis
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
             }
         }
+
+        private readonly global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
+        private readonly global::AnalyzeAot.Abi.IGeneratorAttributeSyntaxContextVtbl? __analyzeAotVtbl;
+        private readonly long __analyzeAotHandle;
+        internal GeneratorAttributeSyntaxContext(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IGeneratorAttributeSyntaxContextVtbl vtbl, long handle)
+        {
+            this = default;
+            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::AnalyzeAot.Abi.IGeneratorAttributeSyntaxContextVtbl __AnalyzeAotGetVtbl()
+        {
+            if (__analyzeAotVtbl is not null)
+                return __analyzeAotVtbl;
+            if (__analyzeAotHandle == 0)
+                return global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetGeneratorAttributeSyntaxContextVtbl(global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl());
+            throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        }
+
+        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl()
+        {
+            if (__analyzeAotControlVtbl is not null)
+                return __analyzeAotControlVtbl;
+            if (__analyzeAotHandle == 0)
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        }
+
+        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __analyzeAotHandle;
+        }
+
+        internal static GeneratorAttributeSyntaxContext __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new GeneratorAttributeSyntaxContext(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetGeneratorAttributeSyntaxContextVtbl(controlVtbl), handle);
     }
 }

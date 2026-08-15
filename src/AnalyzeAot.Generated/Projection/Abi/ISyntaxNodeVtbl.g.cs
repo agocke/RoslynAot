@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("df645b5d-da17-5d2b-a406-a2487a1dba50")]
+[Guid("bbaf8691-872b-53ed-9c52-204d10f56f2e")]
 public partial interface ISyntaxNodeVtbl
 {
 
@@ -44,6 +44,15 @@ public partial interface ISyntaxNodeVtbl
     );
 
     [PreserveSig]
+    int SyntaxNode_FindNode(
+        long receiver,
+        long span,
+        int findInsideTrivia,
+        int getInnermostNodeForTie,
+        out long result
+    );
+
+    [PreserveSig]
     int SyntaxNode_FindToken(
         long receiver,
         int position,
@@ -52,7 +61,7 @@ public partial interface ISyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int SyntaxNode_FindTrivia_7588035c(
+    int SyntaxNode_FindTrivia_77d2dcea(
         long receiver,
         int position,
         int findInsideTrivia,
@@ -86,6 +95,18 @@ public partial interface ISyntaxNodeVtbl
     );
 
     [PreserveSig]
+    int SyntaxNode_GetLocation(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNode_GetReference(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int SyntaxNode_GetTrailingTrivia(
         long receiver,
         out long result
@@ -99,14 +120,14 @@ public partial interface ISyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int SyntaxNode_IsEquivalentTo_8ad911b9(
+    int SyntaxNode_IsEquivalentTo_8d5726aa(
         long receiver,
         long other,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxNode_IsEquivalentTo_80af97ca(
+    int SyntaxNode_IsEquivalentTo_99548ef5(
         long receiver,
         long node,
         int topLevel,
@@ -203,7 +224,21 @@ public partial interface ISyntaxNodeVtbl
     );
 
     [PreserveSig]
+    int SyntaxNode_get_Language(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
     int SyntaxNode_get_ParentTrivia(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNode_get_Parent(
         long receiver,
         out long result
     );
@@ -222,6 +257,12 @@ public partial interface ISyntaxNodeVtbl
 
     [PreserveSig]
     int SyntaxNode_get_Span(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNode_get_SyntaxTree(
         long receiver,
         out long result
     );

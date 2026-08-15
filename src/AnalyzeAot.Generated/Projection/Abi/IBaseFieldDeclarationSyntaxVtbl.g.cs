@@ -12,7 +12,46 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("59d238a0-18ba-5c22-8d38-fc7c733fc562")]
+[Guid("d7f6d2ed-ece8-5638-9f4a-e97556d60773")]
 public partial interface IBaseFieldDeclarationSyntaxVtbl : IMemberDeclarationSyntaxVtbl
 {
+
+    [PreserveSig]
+    int BaseFieldDeclarationSyntax_WithDeclaration(
+        long receiver,
+        long declaration,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseFieldDeclarationSyntax_WithModifiers(
+        long receiver,
+        long modifiers,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseFieldDeclarationSyntax_WithSemicolonToken(
+        long receiver,
+        long semicolonToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseFieldDeclarationSyntax_get_Declaration(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseFieldDeclarationSyntax_get_Modifiers(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseFieldDeclarationSyntax_get_SemicolonToken(
+        long receiver,
+        out long result
+    );
 }

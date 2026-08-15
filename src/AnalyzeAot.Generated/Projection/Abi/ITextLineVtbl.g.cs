@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e2249b19-5cf0-5a74-90a8-2d4653d657ab")]
+[Guid("5cf6b8a1-5735-5ff9-9ce8-d124b9eda745")]
 public partial interface ITextLineVtbl
 {
 
     [PreserveSig]
-    int TextLine_Equals_d6be859e(
+    int TextLine_Equals_ff95a8aa(
         long receiver,
         long other,
         out int result
@@ -71,5 +71,11 @@ public partial interface ITextLineVtbl
     int TextLine_get_Start(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int TextLine_get_Text(
+        long receiver,
+        out long result
     );
 }

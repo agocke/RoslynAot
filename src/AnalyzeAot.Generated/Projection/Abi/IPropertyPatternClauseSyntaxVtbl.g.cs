@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("13f080f5-7148-5049-bfb0-4cfa37c004ce")]
+[Guid("52a37eac-920b-5cc1-93b6-bccece904493")]
 public partial interface IPropertyPatternClauseSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int PropertyPatternClauseSyntax_Accept_299c84ab(
+    int PropertyPatternClauseSyntax_Accept_496e8593(
         long receiver,
         long visitor
     );

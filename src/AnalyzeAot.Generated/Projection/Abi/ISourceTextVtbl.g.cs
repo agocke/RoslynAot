@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f3db20a5-138b-5b17-ac8d-f43e37ad78fd")]
+[Guid("406b71a8-76e2-54aa-8732-7bb57a0859fd")]
 public partial interface ISourceTextVtbl
 {
 
@@ -24,7 +24,21 @@ public partial interface ISourceTextVtbl
     );
 
     [PreserveSig]
-    int SourceText_ToString_98b75795(
+    int SourceText_GetSubText_cd9710a5(
+        long receiver,
+        long span,
+        out long result
+    );
+
+    [PreserveSig]
+    int SourceText_GetSubText_3c347ab9(
+        long receiver,
+        int start,
+        out long result
+    );
+
+    [PreserveSig]
+    int SourceText_ToString_36435385(
         long receiver,
         nint buffer,
         int bufferLength,
@@ -32,7 +46,7 @@ public partial interface ISourceTextVtbl
     );
 
     [PreserveSig]
-    int SourceText_ToString_cf373e4b(
+    int SourceText_ToString_b3c549ee(
         long receiver,
         long span,
         nint buffer,
@@ -50,5 +64,17 @@ public partial interface ISourceTextVtbl
     int SourceText_get_ChecksumAlgorithm(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int SourceText_get_Container(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SourceText_get_Lines(
+        long receiver,
+        out long result
     );
 }

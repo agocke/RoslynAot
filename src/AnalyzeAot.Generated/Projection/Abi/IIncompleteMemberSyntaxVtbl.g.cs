@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("eb5c3b59-527b-5e45-83c7-2f85b9059420")]
+[Guid("88e27b98-4616-5e49-9fc4-d2bdba17097c")]
 public partial interface IIncompleteMemberSyntaxVtbl : IMemberDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int IncompleteMemberSyntax_Accept_a8c905b1(
+    int IncompleteMemberSyntax_Accept_007326c6(
         long receiver,
         long visitor
     );
@@ -38,6 +38,12 @@ public partial interface IIncompleteMemberSyntaxVtbl : IMemberDeclarationSyntaxV
 
     [PreserveSig]
     int IncompleteMemberSyntax_get_Modifiers(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int IncompleteMemberSyntax_get_Type(
         long receiver,
         out long result
     );

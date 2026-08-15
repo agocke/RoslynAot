@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("588ab97b-8e30-589e-925b-15742bb342bc")]
+[Guid("bec78cb9-df75-53c2-b154-5b41613ad460")]
 public partial interface IDeclarationPatternSyntaxVtbl : IPatternSyntaxVtbl
 {
 
     [PreserveSig]
-    int DeclarationPatternSyntax_Accept_1623c5b7(
+    int DeclarationPatternSyntax_Accept_5fbaff69(
         long receiver,
         long visitor
     );
@@ -41,6 +41,18 @@ public partial interface IDeclarationPatternSyntaxVtbl : IPatternSyntaxVtbl
     int DeclarationPatternSyntax_WithType(
         long receiver,
         long @type,
+        out long result
+    );
+
+    [PreserveSig]
+    int DeclarationPatternSyntax_get_Designation(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DeclarationPatternSyntax_get_Type(
+        long receiver,
         out long result
     );
 }

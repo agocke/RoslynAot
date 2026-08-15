@@ -8,14 +8,23 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    public abstract partial class CommandLineParser
+    public partial interface CommandLineParser
     {
-        internal CommandLineParser()
+        protected string RegularFileExtension
         {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
         }
 
-        protected abstract string RegularFileExtension { get; }
-        protected abstract string ScriptFileExtension { get; }
+        protected string ScriptFileExtension
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
+        }
 
         public CommandLineArguments Parse(System.Collections.Generic.IEnumerable<string> args, string baseDirectory, string? sdkDirectory, string? additionalReferenceDirectories)
         {
@@ -30,6 +39,17 @@ namespace Microsoft.CodeAnalysis
         public static System.Collections.Generic.IEnumerable<string> SplitCommandLineIntoArguments(string commandLine, bool removeHashComments)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.ICommandLineParserVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCommandLineParserVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static CommandLineParser __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CommandLineParser)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("46379bfe-7e85-581f-9352-5000e4f81a03")]
+        internal partial interface __AnalyzeAotImplementation : CommandLineParser
+        {
         }
     }
 }

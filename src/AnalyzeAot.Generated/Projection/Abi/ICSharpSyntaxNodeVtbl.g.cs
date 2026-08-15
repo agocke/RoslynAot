@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3743022c-fc88-5788-ad68-5955dbe5914b")]
+[Guid("28e9c2c0-fd00-585b-99a1-198139674bd4")]
 public partial interface ICSharpSyntaxNodeVtbl : ISyntaxNodeVtbl
 {
+
+    [PreserveSig]
+    int CSharpSyntaxNode_Accept_e101478d(
+        long receiver,
+        long visitor
+    );
 
     [PreserveSig]
     int CSharpSyntaxNode_FindToken(
@@ -25,7 +31,7 @@ public partial interface ICSharpSyntaxNodeVtbl : ISyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int CSharpSyntaxNode_FindTrivia_34d44bc3(
+    int CSharpSyntaxNode_FindTrivia_59a4cbf4(
         long receiver,
         int position,
         int findInsideTrivia,
@@ -54,6 +60,12 @@ public partial interface ICSharpSyntaxNodeVtbl : ISyntaxNodeVtbl
 
     [PreserveSig]
     int CSharpSyntaxNode_GetLeadingTrivia(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpSyntaxNode_GetLocation(
         long receiver,
         out long result
     );

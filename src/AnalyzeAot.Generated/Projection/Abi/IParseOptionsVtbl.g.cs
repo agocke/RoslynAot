@@ -12,9 +12,23 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3819ae35-f0b7-5472-8323-29965de366a1")]
+[Guid("0c6bd12f-cfe7-522a-907d-e2ac665cc6e9")]
 public partial interface IParseOptionsVtbl
 {
+
+    [PreserveSig]
+    int ParseOptions_WithDocumentationMode(
+        long receiver,
+        byte documentationMode,
+        out long result
+    );
+
+    [PreserveSig]
+    int ParseOptions_WithKind(
+        long receiver,
+        int kind,
+        out long result
+    );
 
     [PreserveSig]
     int ParseOptions_get_DocumentationMode(

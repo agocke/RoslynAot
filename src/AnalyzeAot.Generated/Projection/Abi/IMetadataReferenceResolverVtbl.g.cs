@@ -12,9 +12,17 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("cd0dc3c9-308b-5be4-9075-344909694739")]
+[Guid("9f0117b4-b9bd-5097-b223-6454df5c73eb")]
 public partial interface IMetadataReferenceResolverVtbl
 {
+
+    [PreserveSig]
+    int MetadataReferenceResolver_ResolveMissingAssembly(
+        long receiver,
+        long definition,
+        long referenceIdentity,
+        out long result
+    );
 
     [PreserveSig]
     int MetadataReferenceResolver_get_ResolveMissingAssemblies(

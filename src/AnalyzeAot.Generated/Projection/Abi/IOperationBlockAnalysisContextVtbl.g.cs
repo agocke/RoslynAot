@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e571f84c-2f97-5416-9351-a1dfbc926200")]
+[Guid("42061174-62d0-505e-9374-69009d2ab706")]
 public partial interface IOperationBlockAnalysisContextVtbl
 {
 
@@ -29,8 +29,20 @@ public partial interface IOperationBlockAnalysisContextVtbl
     );
 
     [PreserveSig]
+    int OperationBlockAnalysisContext_get_FilterTree(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int OperationBlockAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int OperationBlockAnalysisContext_get_Options(
+        long receiver,
+        out long result
     );
 }

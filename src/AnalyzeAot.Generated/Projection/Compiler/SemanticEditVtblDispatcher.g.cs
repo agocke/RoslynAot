@@ -23,7 +23,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SemanticEdit_Equals_8de8069d(
+    public int SemanticEdit_Equals_927c4ffc(
         long receiver,
         long other,
         out int result)

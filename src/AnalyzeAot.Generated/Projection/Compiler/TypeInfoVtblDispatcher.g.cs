@@ -23,7 +23,7 @@ internal sealed partial class TypeInfoVtblDispatcher : ITypeInfoVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int TypeInfo_Equals_5437b522(
+    public int TypeInfo_Equals_ed067506(
         long receiver,
         long other,
         out int result)

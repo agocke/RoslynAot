@@ -30,7 +30,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.IXmlFileResolverTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetXmlFileResolverTypeVtbl(controlVtbl);
+                int status = vtbl.XmlFileResolver_get_Default(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 

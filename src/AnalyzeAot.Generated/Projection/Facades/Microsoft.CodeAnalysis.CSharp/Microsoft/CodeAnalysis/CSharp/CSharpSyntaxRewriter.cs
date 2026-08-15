@@ -29,667 +29,1199 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public override SyntaxNode? Visit(SyntaxNode? node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_Visit(__AnalyzeAotGetHandle(controlVtbl), node is null ? 0L : node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAccessorDeclaration(Syntax.AccessorDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAccessorDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAccessorList(Syntax.AccessorListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAccessorList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAliasQualifiedName(Syntax.AliasQualifiedNameSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAliasQualifiedName(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAllowsConstraintClause(Syntax.AllowsConstraintClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAllowsConstraintClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAnonymousMethodExpression(Syntax.AnonymousMethodExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAnonymousMethodExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAnonymousObjectCreationExpression(Syntax.AnonymousObjectCreationExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAnonymousObjectCreationExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAnonymousObjectMemberDeclarator(Syntax.AnonymousObjectMemberDeclaratorSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAnonymousObjectMemberDeclarator(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitArgument(Syntax.ArgumentSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitArgument(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitArgumentList(Syntax.ArgumentListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitArgumentList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitArrayCreationExpression(Syntax.ArrayCreationExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitArrayCreationExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitArrayRankSpecifier(Syntax.ArrayRankSpecifierSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitArrayRankSpecifier(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitArrayType(Syntax.ArrayTypeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitArrayType(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitArrowExpressionClause(Syntax.ArrowExpressionClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitArrowExpressionClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAssignmentExpression(Syntax.AssignmentExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAssignmentExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAttribute(Syntax.AttributeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAttribute(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAttributeArgument(Syntax.AttributeArgumentSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAttributeArgument(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAttributeArgumentList(Syntax.AttributeArgumentListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAttributeArgumentList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAttributeList(Syntax.AttributeListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAttributeList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAttributeTargetSpecifier(Syntax.AttributeTargetSpecifierSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAttributeTargetSpecifier(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitAwaitExpression(Syntax.AwaitExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitAwaitExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitBadDirectiveTrivia(Syntax.BadDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitBadDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitBaseExpression(Syntax.BaseExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitBaseExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitBaseList(Syntax.BaseListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitBaseList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitBinaryExpression(Syntax.BinaryExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitBinaryExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitBinaryPattern(Syntax.BinaryPatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitBinaryPattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitBlock(Syntax.BlockSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitBlock(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitBracketedArgumentList(Syntax.BracketedArgumentListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitBracketedArgumentList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitBracketedParameterList(Syntax.BracketedParameterListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitBracketedParameterList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitBreakStatement(Syntax.BreakStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitBreakStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCasePatternSwitchLabel(Syntax.CasePatternSwitchLabelSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCasePatternSwitchLabel(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCaseSwitchLabel(Syntax.CaseSwitchLabelSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCaseSwitchLabel(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCastExpression(Syntax.CastExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCastExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCatchClause(Syntax.CatchClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCatchClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCatchDeclaration(Syntax.CatchDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCatchDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCatchFilterClause(Syntax.CatchFilterClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCatchFilterClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCheckedExpression(Syntax.CheckedExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCheckedExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCheckedStatement(Syntax.CheckedStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCheckedStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitClassDeclaration(Syntax.ClassDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitClassDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitClassOrStructConstraint(Syntax.ClassOrStructConstraintSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitClassOrStructConstraint(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCollectionExpression(Syntax.CollectionExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCollectionExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCompilationUnit(Syntax.CompilationUnitSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCompilationUnit(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitConditionalAccessExpression(Syntax.ConditionalAccessExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitConditionalAccessExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitConditionalExpression(Syntax.ConditionalExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitConditionalExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitConstantPattern(Syntax.ConstantPatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitConstantPattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitConstructorConstraint(Syntax.ConstructorConstraintSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitConstructorConstraint(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitConstructorDeclaration(Syntax.ConstructorDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitConstructorDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitConstructorInitializer(Syntax.ConstructorInitializerSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitConstructorInitializer(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitContinueStatement(Syntax.ContinueStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitContinueStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitConversionOperatorDeclaration(Syntax.ConversionOperatorDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitConversionOperatorDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitConversionOperatorMemberCref(Syntax.ConversionOperatorMemberCrefSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitConversionOperatorMemberCref(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCrefBracketedParameterList(Syntax.CrefBracketedParameterListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCrefBracketedParameterList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCrefParameter(Syntax.CrefParameterSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCrefParameter(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitCrefParameterList(Syntax.CrefParameterListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitCrefParameterList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDeclarationExpression(Syntax.DeclarationExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDeclarationExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDeclarationPattern(Syntax.DeclarationPatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDeclarationPattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDefaultConstraint(Syntax.DefaultConstraintSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDefaultConstraint(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDefaultExpression(Syntax.DefaultExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDefaultExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDefaultSwitchLabel(Syntax.DefaultSwitchLabelSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDefaultSwitchLabel(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDefineDirectiveTrivia(Syntax.DefineDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDefineDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDelegateDeclaration(Syntax.DelegateDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDelegateDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDestructorDeclaration(Syntax.DestructorDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDestructorDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDiscardDesignation(Syntax.DiscardDesignationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDiscardDesignation(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDiscardPattern(Syntax.DiscardPatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDiscardPattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDocumentationCommentTrivia(Syntax.DocumentationCommentTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDocumentationCommentTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitDoStatement(Syntax.DoStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitDoStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitElementAccessExpression(Syntax.ElementAccessExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitElementAccessExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitElementBindingExpression(Syntax.ElementBindingExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitElementBindingExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitElifDirectiveTrivia(Syntax.ElifDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitElifDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitElseClause(Syntax.ElseClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitElseClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitElseDirectiveTrivia(Syntax.ElseDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitElseDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitEmptyStatement(Syntax.EmptyStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitEmptyStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitEndIfDirectiveTrivia(Syntax.EndIfDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitEndIfDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitEndRegionDirectiveTrivia(Syntax.EndRegionDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitEndRegionDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitEnumDeclaration(Syntax.EnumDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitEnumDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitEnumMemberDeclaration(Syntax.EnumMemberDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitEnumMemberDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitEqualsValueClause(Syntax.EqualsValueClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitEqualsValueClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitErrorDirectiveTrivia(Syntax.ErrorDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitErrorDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitEventDeclaration(Syntax.EventDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitEventDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitEventFieldDeclaration(Syntax.EventFieldDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitEventFieldDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitExplicitInterfaceSpecifier(Syntax.ExplicitInterfaceSpecifierSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitExplicitInterfaceSpecifier(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitExpressionColon(Syntax.ExpressionColonSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitExpressionColon(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitExpressionElement(Syntax.ExpressionElementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitExpressionElement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitExpressionStatement(Syntax.ExpressionStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitExpressionStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitExtensionBlockDeclaration(Syntax.ExtensionBlockDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitExtensionBlockDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitExtensionMemberCref(Syntax.ExtensionMemberCrefSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitExtensionMemberCref(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitExternAliasDirective(Syntax.ExternAliasDirectiveSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitExternAliasDirective(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFieldDeclaration(Syntax.FieldDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFieldDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFieldExpression(Syntax.FieldExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFieldExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFileScopedNamespaceDeclaration(Syntax.FileScopedNamespaceDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFileScopedNamespaceDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFinallyClause(Syntax.FinallyClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFinallyClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFixedStatement(Syntax.FixedStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFixedStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitForEachStatement(Syntax.ForEachStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitForEachStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitForEachVariableStatement(Syntax.ForEachVariableStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitForEachVariableStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitForStatement(Syntax.ForStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitForStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFromClause(Syntax.FromClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFromClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFunctionPointerCallingConvention(Syntax.FunctionPointerCallingConventionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFunctionPointerCallingConvention(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFunctionPointerParameter(Syntax.FunctionPointerParameterSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFunctionPointerParameter(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFunctionPointerParameterList(Syntax.FunctionPointerParameterListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFunctionPointerParameterList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFunctionPointerType(Syntax.FunctionPointerTypeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFunctionPointerType(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFunctionPointerUnmanagedCallingConvention(Syntax.FunctionPointerUnmanagedCallingConventionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFunctionPointerUnmanagedCallingConvention(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitFunctionPointerUnmanagedCallingConventionList(Syntax.FunctionPointerUnmanagedCallingConventionListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitFunctionPointerUnmanagedCallingConventionList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitGenericName(Syntax.GenericNameSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitGenericName(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitGlobalStatement(Syntax.GlobalStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitGlobalStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitGotoStatement(Syntax.GotoStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitGotoStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitGroupClause(Syntax.GroupClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitGroupClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitIdentifierName(Syntax.IdentifierNameSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitIdentifierName(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitIfDirectiveTrivia(Syntax.IfDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitIfDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitIfStatement(Syntax.IfStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitIfStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitIgnoredDirectiveTrivia(Syntax.IgnoredDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitIgnoredDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitImplicitArrayCreationExpression(Syntax.ImplicitArrayCreationExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitImplicitArrayCreationExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitImplicitElementAccess(Syntax.ImplicitElementAccessSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitImplicitElementAccess(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitImplicitObjectCreationExpression(Syntax.ImplicitObjectCreationExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitImplicitObjectCreationExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitImplicitStackAllocArrayCreationExpression(Syntax.ImplicitStackAllocArrayCreationExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitImplicitStackAllocArrayCreationExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitIncompleteMember(Syntax.IncompleteMemberSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitIncompleteMember(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitIndexerDeclaration(Syntax.IndexerDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitIndexerDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitIndexerMemberCref(Syntax.IndexerMemberCrefSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitIndexerMemberCref(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitInitializerExpression(Syntax.InitializerExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitInitializerExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitInterfaceDeclaration(Syntax.InterfaceDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitInterfaceDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitInterpolatedStringExpression(Syntax.InterpolatedStringExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitInterpolatedStringExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitInterpolatedStringText(Syntax.InterpolatedStringTextSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitInterpolatedStringText(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitInterpolation(Syntax.InterpolationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitInterpolation(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitInterpolationAlignmentClause(Syntax.InterpolationAlignmentClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitInterpolationAlignmentClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitInterpolationFormatClause(Syntax.InterpolationFormatClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitInterpolationFormatClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitInvocationExpression(Syntax.InvocationExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitInvocationExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitIsPatternExpression(Syntax.IsPatternExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitIsPatternExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitJoinClause(Syntax.JoinClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitJoinClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitJoinIntoClause(Syntax.JoinIntoClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitJoinIntoClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitLabeledStatement(Syntax.LabeledStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitLabeledStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitLetClause(Syntax.LetClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitLetClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitLineDirectivePosition(Syntax.LineDirectivePositionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitLineDirectivePosition(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitLineDirectiveTrivia(Syntax.LineDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitLineDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitLineSpanDirectiveTrivia(Syntax.LineSpanDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitLineSpanDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public virtual SyntaxTokenList VisitList(SyntaxTokenList list)
@@ -739,7 +1271,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public override SyntaxNode? VisitListPattern(Syntax.ListPatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitListPattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public virtual SyntaxToken VisitListSeparator(SyntaxToken separator)
@@ -753,377 +1289,677 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public override SyntaxNode? VisitLiteralExpression(Syntax.LiteralExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitLiteralExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitLoadDirectiveTrivia(Syntax.LoadDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitLoadDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitLocalDeclarationStatement(Syntax.LocalDeclarationStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitLocalDeclarationStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitLocalFunctionStatement(Syntax.LocalFunctionStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitLocalFunctionStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitLockStatement(Syntax.LockStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitLockStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitMakeRefExpression(Syntax.MakeRefExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitMakeRefExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitMemberAccessExpression(Syntax.MemberAccessExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitMemberAccessExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitMemberBindingExpression(Syntax.MemberBindingExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitMemberBindingExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitMethodDeclaration(Syntax.MethodDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitMethodDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitNameColon(Syntax.NameColonSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitNameColon(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitNameEquals(Syntax.NameEqualsSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitNameEquals(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitNameMemberCref(Syntax.NameMemberCrefSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitNameMemberCref(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitNamespaceDeclaration(Syntax.NamespaceDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitNamespaceDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitNullableDirectiveTrivia(Syntax.NullableDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitNullableDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitNullableType(Syntax.NullableTypeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitNullableType(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitObjectCreationExpression(Syntax.ObjectCreationExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitObjectCreationExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitOmittedArraySizeExpression(Syntax.OmittedArraySizeExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitOmittedArraySizeExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitOmittedTypeArgument(Syntax.OmittedTypeArgumentSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitOmittedTypeArgument(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitOperatorDeclaration(Syntax.OperatorDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitOperatorDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitOperatorMemberCref(Syntax.OperatorMemberCrefSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitOperatorMemberCref(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitOrderByClause(Syntax.OrderByClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitOrderByClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitOrdering(Syntax.OrderingSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitOrdering(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitParameter(Syntax.ParameterSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitParameter(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitParameterList(Syntax.ParameterListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitParameterList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitParenthesizedExpression(Syntax.ParenthesizedExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitParenthesizedExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitParenthesizedLambdaExpression(Syntax.ParenthesizedLambdaExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitParenthesizedLambdaExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitParenthesizedPattern(Syntax.ParenthesizedPatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitParenthesizedPattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitParenthesizedVariableDesignation(Syntax.ParenthesizedVariableDesignationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitParenthesizedVariableDesignation(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitPointerType(Syntax.PointerTypeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitPointerType(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitPositionalPatternClause(Syntax.PositionalPatternClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitPositionalPatternClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitPostfixUnaryExpression(Syntax.PostfixUnaryExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitPostfixUnaryExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitPragmaChecksumDirectiveTrivia(Syntax.PragmaChecksumDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitPragmaChecksumDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitPragmaWarningDirectiveTrivia(Syntax.PragmaWarningDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitPragmaWarningDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitPredefinedType(Syntax.PredefinedTypeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitPredefinedType(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitPrefixUnaryExpression(Syntax.PrefixUnaryExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitPrefixUnaryExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitPrimaryConstructorBaseType(Syntax.PrimaryConstructorBaseTypeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitPrimaryConstructorBaseType(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitPropertyDeclaration(Syntax.PropertyDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitPropertyDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitPropertyPatternClause(Syntax.PropertyPatternClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitPropertyPatternClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitQualifiedCref(Syntax.QualifiedCrefSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitQualifiedCref(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitQualifiedName(Syntax.QualifiedNameSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitQualifiedName(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitQueryBody(Syntax.QueryBodySyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitQueryBody(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitQueryContinuation(Syntax.QueryContinuationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitQueryContinuation(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitQueryExpression(Syntax.QueryExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitQueryExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitRangeExpression(Syntax.RangeExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitRangeExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitRecordDeclaration(Syntax.RecordDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitRecordDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitRecursivePattern(Syntax.RecursivePatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitRecursivePattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitReferenceDirectiveTrivia(Syntax.ReferenceDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitReferenceDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitRefExpression(Syntax.RefExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitRefExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitRefStructConstraint(Syntax.RefStructConstraintSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitRefStructConstraint(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitRefType(Syntax.RefTypeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitRefType(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitRefTypeExpression(Syntax.RefTypeExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitRefTypeExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitRefValueExpression(Syntax.RefValueExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitRefValueExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitRegionDirectiveTrivia(Syntax.RegionDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitRegionDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitRelationalPattern(Syntax.RelationalPatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitRelationalPattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitReturnStatement(Syntax.ReturnStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitReturnStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitScopedType(Syntax.ScopedTypeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitScopedType(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSelectClause(Syntax.SelectClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSelectClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitShebangDirectiveTrivia(Syntax.ShebangDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitShebangDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSimpleBaseType(Syntax.SimpleBaseTypeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSimpleBaseType(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSimpleLambdaExpression(Syntax.SimpleLambdaExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSimpleLambdaExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSingleVariableDesignation(Syntax.SingleVariableDesignationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSingleVariableDesignation(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSizeOfExpression(Syntax.SizeOfExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSizeOfExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSkippedTokensTrivia(Syntax.SkippedTokensTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSkippedTokensTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSlicePattern(Syntax.SlicePatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSlicePattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSpreadElement(Syntax.SpreadElementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSpreadElement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitStackAllocArrayCreationExpression(Syntax.StackAllocArrayCreationExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitStackAllocArrayCreationExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitStructDeclaration(Syntax.StructDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitStructDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSubpattern(Syntax.SubpatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSubpattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSwitchExpression(Syntax.SwitchExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSwitchExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSwitchExpressionArm(Syntax.SwitchExpressionArmSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSwitchExpressionArm(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSwitchSection(Syntax.SwitchSectionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSwitchSection(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitSwitchStatement(Syntax.SwitchStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitSwitchStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitThisExpression(Syntax.ThisExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitThisExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitThrowExpression(Syntax.ThrowExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitThrowExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitThrowStatement(Syntax.ThrowStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitThrowStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public virtual SyntaxToken VisitToken(SyntaxToken token)
@@ -1146,72 +1982,128 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public override SyntaxNode? VisitTryStatement(Syntax.TryStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTryStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitTupleElement(Syntax.TupleElementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTupleElement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitTupleExpression(Syntax.TupleExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTupleExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitTupleType(Syntax.TupleTypeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTupleType(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitTypeArgumentList(Syntax.TypeArgumentListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTypeArgumentList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitTypeConstraint(Syntax.TypeConstraintSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTypeConstraint(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitTypeCref(Syntax.TypeCrefSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTypeCref(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitTypeOfExpression(Syntax.TypeOfExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTypeOfExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitTypeParameter(Syntax.TypeParameterSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTypeParameter(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitTypeParameterConstraintClause(Syntax.TypeParameterConstraintClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTypeParameterConstraintClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitTypeParameterList(Syntax.TypeParameterListSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTypeParameterList(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitTypePattern(Syntax.TypePatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitTypePattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitUnaryPattern(Syntax.UnaryPatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitUnaryPattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitUndefDirectiveTrivia(Syntax.UndefDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitUndefDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82567")]
@@ -1228,52 +2120,92 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public override SyntaxNode? VisitUnsafeStatement(Syntax.UnsafeStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitUnsafeStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitUsingDirective(Syntax.UsingDirectiveSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitUsingDirective(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitUsingStatement(Syntax.UsingStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitUsingStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitVariableDeclaration(Syntax.VariableDeclarationSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitVariableDeclaration(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitVariableDeclarator(Syntax.VariableDeclaratorSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitVariableDeclarator(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitVarPattern(Syntax.VarPatternSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitVarPattern(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitWarningDirectiveTrivia(Syntax.WarningDirectiveTriviaSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitWarningDirectiveTrivia(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitWhenClause(Syntax.WhenClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitWhenClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitWhereClause(Syntax.WhereClauseSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitWhereClause(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitWhileStatement(Syntax.WhileStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitWhileStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82210")]
@@ -1284,77 +2216,137 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public override SyntaxNode? VisitWithExpression(Syntax.WithExpressionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitWithExpression(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlCDataSection(Syntax.XmlCDataSectionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlCDataSection(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlComment(Syntax.XmlCommentSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlComment(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlCrefAttribute(Syntax.XmlCrefAttributeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlCrefAttribute(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlElement(Syntax.XmlElementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlElement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlElementEndTag(Syntax.XmlElementEndTagSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlElementEndTag(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlElementStartTag(Syntax.XmlElementStartTagSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlElementStartTag(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlEmptyElement(Syntax.XmlEmptyElementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlEmptyElement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlName(Syntax.XmlNameSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlName(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlNameAttribute(Syntax.XmlNameAttributeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlNameAttribute(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlPrefix(Syntax.XmlPrefixSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlPrefix(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlProcessingInstruction(Syntax.XmlProcessingInstructionSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlProcessingInstruction(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlText(Syntax.XmlTextSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlText(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitXmlTextAttribute(Syntax.XmlTextAttributeSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitXmlTextAttribute(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override SyntaxNode? VisitYieldStatement(Syntax.YieldStatementSyntax node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxRewriter_VisitYieldStatement(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         internal CSharpSyntaxRewriter()

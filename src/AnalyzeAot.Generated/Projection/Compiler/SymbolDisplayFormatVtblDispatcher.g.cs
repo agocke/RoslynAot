@@ -23,6 +23,348 @@ internal sealed partial class SymbolDisplayFormatVtblDispatcher : ISymbolDisplay
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int SymbolDisplayFormat_AddGenericsOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).AddGenericsOptions((global::Microsoft.CodeAnalysis.SymbolDisplayGenericsOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_AddKindOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).AddKindOptions((global::Microsoft.CodeAnalysis.SymbolDisplayKindOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_AddLocalOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).AddLocalOptions((global::Microsoft.CodeAnalysis.SymbolDisplayLocalOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_AddMemberOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).AddMemberOptions((global::Microsoft.CodeAnalysis.SymbolDisplayMemberOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_AddMiscellaneousOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).AddMiscellaneousOptions((global::Microsoft.CodeAnalysis.SymbolDisplayMiscellaneousOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_AddParameterOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).AddParameterOptions((global::Microsoft.CodeAnalysis.SymbolDisplayParameterOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_RemoveGenericsOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).RemoveGenericsOptions((global::Microsoft.CodeAnalysis.SymbolDisplayGenericsOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_RemoveKindOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).RemoveKindOptions((global::Microsoft.CodeAnalysis.SymbolDisplayKindOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_RemoveLocalOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).RemoveLocalOptions((global::Microsoft.CodeAnalysis.SymbolDisplayLocalOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_RemoveMemberOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).RemoveMemberOptions((global::Microsoft.CodeAnalysis.SymbolDisplayMemberOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_RemoveMiscellaneousOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).RemoveMiscellaneousOptions((global::Microsoft.CodeAnalysis.SymbolDisplayMiscellaneousOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_RemoveParameterOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).RemoveParameterOptions((global::Microsoft.CodeAnalysis.SymbolDisplayParameterOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_WithGenericsOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).WithGenericsOptions((global::Microsoft.CodeAnalysis.SymbolDisplayGenericsOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_WithGlobalNamespaceStyle(
+        long receiver,
+        int style,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).WithGlobalNamespaceStyle((global::Microsoft.CodeAnalysis.SymbolDisplayGlobalNamespaceStyle)style));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_WithKindOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).WithKindOptions((global::Microsoft.CodeAnalysis.SymbolDisplayKindOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_WithLocalOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).WithLocalOptions((global::Microsoft.CodeAnalysis.SymbolDisplayLocalOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_WithMemberOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).WithMemberOptions((global::Microsoft.CodeAnalysis.SymbolDisplayMemberOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_WithMiscellaneousOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).WithMiscellaneousOptions((global::Microsoft.CodeAnalysis.SymbolDisplayMiscellaneousOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolDisplayFormat_WithParameterOptions(
+        long receiver,
+        int options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolDisplayFormat>(receiver).WithParameterOptions((global::Microsoft.CodeAnalysis.SymbolDisplayParameterOptions)options));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SymbolDisplayFormat_get_DelegateStyle(
         long receiver,
         out int result)

@@ -3,6 +3,11 @@ using System.Runtime.InteropServices;
 using AnalyzeAot.AnalyzerRuntime;
 using AnalyzeAot.SampleAnalyzer;
 
+[assembly: TypeMapAssemblyTarget<AnalyzeAot.RoslynFacade.RoslynProxyTypeMap>(
+    "Microsoft.CodeAnalysis")]
+[assembly: TypeMapAssemblyTarget<AnalyzeAot.RoslynFacade.RoslynProxyTypeMap>(
+    "Microsoft.CodeAnalysis.CSharp")]
+
 namespace AnalyzeAot.SampleAnalyzer.Native;
 
 public static class AnalyzerEntryPoint

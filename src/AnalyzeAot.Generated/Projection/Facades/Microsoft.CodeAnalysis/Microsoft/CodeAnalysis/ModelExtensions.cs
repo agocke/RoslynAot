@@ -12,22 +12,38 @@ namespace Microsoft.CodeAnalysis
     {
         public static ControlFlowAnalysis AnalyzeControlFlow(this SemanticModel semanticModel, SyntaxNode firstStatement, SyntaxNode lastStatement)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::AnalyzeAot.Abi.IModelExtensionsVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetModelExtensionsVtbl(controlVtbl);
+            int status = vtbl.ModelExtensions_AnalyzeControlFlow_ba8f74ea(semanticModel.__AnalyzeAotGetHandle(controlVtbl), firstStatement.__AnalyzeAotGetHandle(controlVtbl), lastStatement.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return ControlFlowAnalysis.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public static ControlFlowAnalysis AnalyzeControlFlow(this SemanticModel semanticModel, SyntaxNode statement)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::AnalyzeAot.Abi.IModelExtensionsVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetModelExtensionsVtbl(controlVtbl);
+            int status = vtbl.ModelExtensions_AnalyzeControlFlow_db00f58d(semanticModel.__AnalyzeAotGetHandle(controlVtbl), statement.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return ControlFlowAnalysis.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public static DataFlowAnalysis AnalyzeDataFlow(this SemanticModel semanticModel, SyntaxNode firstStatement, SyntaxNode lastStatement)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::AnalyzeAot.Abi.IModelExtensionsVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetModelExtensionsVtbl(controlVtbl);
+            int status = vtbl.ModelExtensions_AnalyzeDataFlow_16248c3b(semanticModel.__AnalyzeAotGetHandle(controlVtbl), firstStatement.__AnalyzeAotGetHandle(controlVtbl), lastStatement.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return DataFlowAnalysis.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public static DataFlowAnalysis AnalyzeDataFlow(this SemanticModel semanticModel, SyntaxNode statementOrExpression)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::AnalyzeAot.Abi.IModelExtensionsVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetModelExtensionsVtbl(controlVtbl);
+            int status = vtbl.ModelExtensions_AnalyzeDataFlow_5df8adbb(semanticModel.__AnalyzeAotGetHandle(controlVtbl), statementOrExpression.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return DataFlowAnalysis.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public static IAliasSymbol? GetAliasInfo(this SemanticModel semanticModel, SyntaxNode nameSyntax, System.Threading.CancellationToken cancellationToken = default)

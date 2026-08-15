@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("90c1fe07-6576-5110-b26f-ca886d4ca3db")]
+[Guid("498f9a11-5f74-500d-9e83-c4837a306a4b")]
 public partial interface IEmitOptionsVtbl
 {
 
     [PreserveSig]
-    int EmitOptions_Equals_33e44ed3(
+    int EmitOptions_Equals_6cab27c9(
         long receiver,
         long other,
         out int result

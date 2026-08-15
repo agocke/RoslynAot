@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f7dc82e8-4533-52bf-91ee-1382fe81a915")]
+[Guid("254d3d92-3b9f-5f8b-b3ed-5e7e876e89c5")]
 public partial interface IDoStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int DoStatementSyntax_Accept_e999b6fe(
+    int DoStatementSyntax_Accept_1aa0b2fa(
         long receiver,
         long visitor
     );
@@ -91,6 +91,12 @@ public partial interface IDoStatementSyntaxVtbl : IStatementSyntaxVtbl
     );
 
     [PreserveSig]
+    int DoStatementSyntax_get_Condition(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int DoStatementSyntax_get_DoKeyword(
         long receiver,
         out long result
@@ -104,6 +110,12 @@ public partial interface IDoStatementSyntaxVtbl : IStatementSyntaxVtbl
 
     [PreserveSig]
     int DoStatementSyntax_get_SemicolonToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DoStatementSyntax_get_Statement(
         long receiver,
         out long result
     );

@@ -65,7 +65,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ITextChangeRangeVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.TextChangeRange_Equals_8cf5a513(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.TextChangeRange_Equals_83821016(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

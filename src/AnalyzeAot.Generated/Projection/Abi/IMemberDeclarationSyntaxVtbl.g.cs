@@ -12,7 +12,20 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("518997a3-7bab-5132-90dd-98274b59c620")]
+[Guid("89d7745c-cc3d-5632-9899-58cb6e9c6060")]
 public partial interface IMemberDeclarationSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
+
+    [PreserveSig]
+    int MemberDeclarationSyntax_WithModifiers(
+        long receiver,
+        long modifiers,
+        out long result
+    );
+
+    [PreserveSig]
+    int MemberDeclarationSyntax_get_Modifiers(
+        long receiver,
+        out long result
+    );
 }

@@ -23,7 +23,7 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int TextLine_Equals_d6be859e(
+    public int TextLine_Equals_ff95a8aa(
         long receiver,
         long other,
         out int result)
@@ -177,6 +177,23 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextLine>(receiver).Start;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int TextLine_get_Text(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextLine>(receiver).Text);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

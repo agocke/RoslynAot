@@ -94,6 +94,26 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         }
     }
 
+    public int SyntaxNode_FindNode(
+        long receiver,
+        long span,
+        int findInsideTrivia,
+        int getInnermostNodeForTie,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).FindNode(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span), findInsideTrivia != 0, getInnermostNodeForTie != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxNode_FindToken(
         long receiver,
         int position,
@@ -113,7 +133,7 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         }
     }
 
-    public int SyntaxNode_FindTrivia_7588035c(
+    public int SyntaxNode_FindTrivia_77d2dcea(
         long receiver,
         int position,
         int findInsideTrivia,
@@ -191,6 +211,40 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         }
     }
 
+    public int SyntaxNode_GetLocation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).GetLocation());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNode_GetReference(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).GetReference());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxNode_GetTrailingTrivia(
         long receiver,
         out long result)
@@ -226,7 +280,7 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_8ad911b9(
+    public int SyntaxNode_IsEquivalentTo_8d5726aa(
         long receiver,
         long other,
         out int result)
@@ -244,7 +298,7 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_80af97ca(
+    public int SyntaxNode_IsEquivalentTo_99548ef5(
         long receiver,
         long node,
         int topLevel,
@@ -518,6 +572,31 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         }
     }
 
+    public unsafe int SyntaxNode_get_Language(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).Language;
+            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
+            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxNode_get_ParentTrivia(
         long receiver,
         out long result)
@@ -527,6 +606,23 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).ParentTrivia);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNode_get_Parent(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).Parent);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -586,6 +682,39 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         }
     }
 
+    public int SyntaxNode_get_SyntaxTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).SyntaxTree);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpSyntaxNode_Accept_e101478d(
+        long receiver,
+        long visitor)
+    {
+
+        try
+        {
+            _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode>(receiver).Accept(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor>(visitor));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CSharpSyntaxNode_FindToken(
         long receiver,
         int position,
@@ -605,7 +734,7 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         }
     }
 
-    public int CSharpSyntaxNode_FindTrivia_34d44bc3(
+    public int CSharpSyntaxNode_FindTrivia_59a4cbf4(
         long receiver,
         int position,
         int findInsideTrivia,
@@ -683,6 +812,23 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         }
     }
 
+    public int CSharpSyntaxNode_GetLocation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode>(receiver).GetLocation());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CSharpSyntaxNode_GetTrailingTrivia(
         long receiver,
         out long result)
@@ -742,7 +888,252 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         }
     }
 
-    public int ForEachStatementSyntax_Accept_e2ccf8a1(
+    public int CommonForEachStatementSyntax_WithAwaitKeyword(
+        long receiver,
+        long awaitKeyword,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).WithAwaitKeyword(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(awaitKeyword)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_WithCloseParenToken(
+        long receiver,
+        long closeParenToken,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).WithCloseParenToken(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(closeParenToken)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_WithExpression(
+        long receiver,
+        long expression,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).WithExpression(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_WithForEachKeyword(
+        long receiver,
+        long forEachKeyword,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).WithForEachKeyword(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(forEachKeyword)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_WithInKeyword(
+        long receiver,
+        long inKeyword,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).WithInKeyword(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(inKeyword)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_WithOpenParenToken(
+        long receiver,
+        long openParenToken,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).WithOpenParenToken(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(openParenToken)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_WithStatement(
+        long receiver,
+        long statement,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).WithStatement(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax>(statement)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_get_AwaitKeyword(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).AwaitKeyword);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_get_CloseParenToken(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).CloseParenToken);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_get_Expression(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).Expression);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_get_ForEachKeyword(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).ForEachKeyword);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_get_InKeyword(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).InKeyword);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_get_OpenParenToken(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).OpenParenToken);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonForEachStatementSyntax_get_Statement(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax>(receiver).Statement);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ForEachStatementSyntax_Accept_67535bf1(
         long receiver,
         long visitor)
     {
@@ -1005,6 +1396,23 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         }
     }
 
+    public int ForEachStatementSyntax_get_Expression(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ForEachStatementSyntax>(receiver).Expression);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ForEachStatementSyntax_get_ForEachKeyword(
         long receiver,
         out long result)
@@ -1065,6 +1473,40 @@ internal sealed partial class ForEachStatementSyntaxVtblDispatcher : IForEachSta
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ForEachStatementSyntax>(receiver).OpenParenToken);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ForEachStatementSyntax_get_Statement(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ForEachStatementSyntax>(receiver).Statement);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ForEachStatementSyntax_get_Type(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ForEachStatementSyntax>(receiver).Type);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

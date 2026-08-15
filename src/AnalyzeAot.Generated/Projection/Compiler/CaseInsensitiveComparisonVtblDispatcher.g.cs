@@ -23,7 +23,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CaseInsensitiveComparison_ToLower_cf8aebcb(
+    public int CaseInsensitiveComparison_ToLower_8c71e35e(
         ushort c,
         out ushort result)
     {

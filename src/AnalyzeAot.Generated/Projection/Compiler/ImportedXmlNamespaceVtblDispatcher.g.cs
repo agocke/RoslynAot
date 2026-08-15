@@ -23,6 +23,23 @@ internal sealed partial class ImportedXmlNamespaceVtblDispatcher : IImportedXmlN
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int ImportedXmlNamespace_get_DeclaringSyntaxReference(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.ImportedXmlNamespace>(receiver).DeclaringSyntaxReference);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int ImportedXmlNamespace_get_XmlNamespace(
         long receiver,
         nint buffer,

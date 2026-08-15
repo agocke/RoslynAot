@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("8b193442-6d63-5e94-abab-e6b9a71397bf")]
+[Guid("19bc2eb4-6458-5c75-935f-e6f4123177fb")]
 public partial interface IListPatternSyntaxVtbl : IPatternSyntaxVtbl
 {
 
     [PreserveSig]
-    int ListPatternSyntax_Accept_fb1b935b(
+    int ListPatternSyntax_Accept_354466f0(
         long receiver,
         long visitor
     );
@@ -45,6 +45,12 @@ public partial interface IListPatternSyntaxVtbl : IPatternSyntaxVtbl
 
     [PreserveSig]
     int ListPatternSyntax_get_CloseBracketToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ListPatternSyntax_get_Designation(
         long receiver,
         out long result
     );

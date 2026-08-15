@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b7d086bb-c13a-53eb-a6ea-11c44f2e56c1")]
+[Guid("fe142a7e-3ed9-54a6-b857-e1b6469f3269")]
 public partial interface IQueryExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int QueryExpressionSyntax_Accept_61d94930(
+    int QueryExpressionSyntax_Accept_3fdb8489(
         long receiver,
         long visitor
     );

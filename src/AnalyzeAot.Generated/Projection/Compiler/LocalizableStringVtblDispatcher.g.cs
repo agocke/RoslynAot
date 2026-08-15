@@ -23,7 +23,7 @@ internal sealed partial class LocalizableStringVtblDispatcher : ILocalizableStri
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int LocalizableString_Equals_c0807c6e(
+    public int LocalizableString_Equals_5694416a(
         long receiver,
         long other,
         out int result)
@@ -58,7 +58,7 @@ internal sealed partial class LocalizableStringVtblDispatcher : ILocalizableStri
         }
     }
 
-    public unsafe int LocalizableString_ToString_89485a59(
+    public unsafe int LocalizableString_ToString_a1eaba99(
         long receiver,
         nint buffer,
         int bufferLength,

@@ -41,7 +41,43 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         }
     }
 
-    public unsafe int SourceText_ToString_98b75795(
+    public int SourceText_GetSubText_cd9710a5(
+        long receiver,
+        long span,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).GetSubText(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SourceText_GetSubText_3c347ab9(
+        long receiver,
+        int start,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).GetSubText(start));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public unsafe int SourceText_ToString_36435385(
         long receiver,
         nint buffer,
         int bufferLength,
@@ -66,7 +102,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         }
     }
 
-    public unsafe int SourceText_ToString_cf373e4b(
+    public unsafe int SourceText_ToString_b3c549ee(
         long receiver,
         long span,
         nint buffer,
@@ -118,6 +154,40 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         try
         {
             result = (int)_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).ChecksumAlgorithm;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SourceText_get_Container(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).Container);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SourceText_get_Lines(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).Lines);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

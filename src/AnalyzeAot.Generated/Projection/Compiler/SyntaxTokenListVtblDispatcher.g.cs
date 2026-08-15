@@ -58,7 +58,7 @@ internal sealed partial class SyntaxTokenListVtblDispatcher : ISyntaxTokenListVt
         }
     }
 
-    public int SyntaxTokenList_Equals_ae415c3b(
+    public int SyntaxTokenList_Equals_27ced153(
         long receiver,
         long other,
         out int result)

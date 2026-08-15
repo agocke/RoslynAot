@@ -18,8 +18,34 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.ICSharpDiagnosticFormatterTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCSharpDiagnosticFormatterTypeVtbl(controlVtbl);
+                int status = vtbl.CSharpDiagnosticFormatter_get_Instance(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
+
+        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
+        private global::AnalyzeAot.Abi.ICSharpDiagnosticFormatterVtbl? __analyzeAotVtbl;
+        private long __analyzeAotHandle;
+        internal CSharpDiagnosticFormatter(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ICSharpDiagnosticFormatterVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+        {
+            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::AnalyzeAot.Abi.ICSharpDiagnosticFormatterVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __analyzeAotHandle;
+        }
+
+        internal static CSharpDiagnosticFormatter __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new CSharpDiagnosticFormatter(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCSharpDiagnosticFormatterVtbl(controlVtbl), handle);
     }
 }

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("51696b72-f687-5840-bd73-4eb0eb5d3ec5")]
+[Guid("c68bb466-f041-51d3-9566-349936824d96")]
 public partial interface ISyntaxTreeAnalysisContextVtbl
 {
 
@@ -32,5 +32,17 @@ public partial interface ISyntaxTreeAnalysisContextVtbl
     int SyntaxTreeAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int SyntaxTreeAnalysisContext_get_Options(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTreeAnalysisContext_get_Tree(
+        long receiver,
+        out long result
     );
 }

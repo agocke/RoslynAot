@@ -17,17 +17,21 @@ The intended outcomes are:
 
 ## Current implementation status
 
-The Linux prototype now completes the first generated-facade vertical slice:
+The Linux prototype now completes a real framework-analyzer vertical slice:
 
 - The generator mirrors the complete public
   `Microsoft.CodeAnalysis` and `Microsoft.CodeAnalysis.CSharp` metadata surface.
 - One symbol-driven projection model emits facade bodies, per-type ABI vtables,
   compiler dispatchers, and a deterministic compatibility manifest.
-- The current inventory contains 465 per-type vtables and 3,481 supported
+- The current inventory contains 506 per-type vtables and 4,319 supported
   calls; unsupported members retain their API shape and fail explicitly.
 - `RoslynInterop` implements only the stable control vtable. Requested typed
   vtables are backed by lazily created per-vtable dispatcher CCWs sharing one
   handle table and error state.
+- Polymorphic Roslyn classes are projected as interfaces with per-type creation
+  stubs. `IDynamicInterfaceCastable` and .NET's trimmable TypeMap support
+  preserve observable derived-type casts without an analyzer-specific global
+  runtime-type switch.
 - A NativeAOT projection client validates typed vtable lookup, inheritance,
   handles, error isolation, `SyntaxTokenParser`, and UTF-8 string returns across
   the native module boundary.
@@ -36,6 +40,14 @@ The Linux prototype now completes the first generated-facade vertical slice:
 - The unchanged sample analyzer is compiled against official Roslyn, linked
   into a NativeAOT shared library against the generated facades, and reports
   `AA0001` through the NativeAOT compiler.
+- The SDK-shipped CA1200 analyzer runs unchanged through the same path,
+  including localized descriptors, XML syntax inspection, polymorphic facade
+  returns, diagnostic locations, and byte-for-byte equivalent compiler output.
+- Native analyzer size is 2.07 MiB for the simple analyzer and 2.86 MiB for
+  CA1200. SizeScope identified and removed a 15.3 MiB projection manifest that
+  had been embedded as an untrimmable resource in `AnalyzeAot.Abi`.
+- With prebuilt managed inputs, a fresh CA1200 NativeAOT publish spends about
+  4.3 seconds in the publish/ILC path on the current Linux test machine.
 - The NuGet package payload contains the generated facade assemblies under
   `tools/analyzer-runtime/`.
 
@@ -287,9 +299,12 @@ endpoints, and native cache keys advance together. API compatibility validation
 compares official and generated assemblies and fails on any missing or
 mismatched public surface.
 
-The facades preserve public metadata needed by ordinary reflection. Analyzers
-that depend on private Roslyn implementation details, dynamic assembly loading,
-or runtime code generation may require managed fallback.
+Reflection compatibility is not an initial goal. Static binding and the
+polymorphic Roslyn hierarchies observed through normal `is`, cast, and virtual
+interface operations are supported by generated facades and trimmable type
+maps. Analyzers that inspect Roslyn through reflection, depend on private
+implementation details, dynamically load assemblies, or generate runtime code
+may require managed fallback.
 
 ## Milestone 0: prove the runtime model
 
@@ -322,8 +337,8 @@ Exit criteria:
 **Goal:** establish rules that later API expansion can preserve.
 
 **Status:** in progress. Per-type vtables, control identity, generated
-dispatchers, handle validation, deterministic manifests, and cross-NativeAOT
-validation are implemented on Linux.
+dispatchers, handle validation, deterministic manifests, trimmable polymorphic
+facades, and cross-NativeAOT validation are implemented on Linux.
 
 Deliverables:
 
@@ -429,6 +444,10 @@ Exit criteria:
 **Goal:** bind arbitrary precompiled analyzers against generated, version-exact
 Roslyn facade assemblies without hand-maintaining the API surface.
 
+**Status:** in progress. Complete facade metadata generation, per-type transport
+generation, trimmable polymorphic projection, and one SDK framework analyzer
+are working on Linux.
+
 Work streams:
 
 1. Read the complete public metadata surface from official Roslyn assemblies.
@@ -486,8 +505,10 @@ Testing will use four layers:
 3. Compiler golden tests comparing standard Roslyn and AnalyzeAot outputs.
 4. End-to-end MSBuild tests using packed NuGet artifacts and clean machines.
 
-Performance results will always include the cost of native analyzer publishing
-separately from cached build performance.
+Performance results will separate managed input generation, fresh NativeAOT
+publishing from already-built IL, no-change publishing, and cached compilation
+latency. Source-tree `dotnet clean` measurements must not be reported as analyzer
+ILC cost when production consumes pregenerated facade, ABI, and analyzer IL.
 
 ## Major risks
 
@@ -519,15 +540,17 @@ separately from cached build performance.
 3. Add release or arena lifetime management for non-disposable handles before
    exercising large syntax trees and broad analyzers.
 4. Implement measured container and callback shapes, beginning with
-   `ImmutableArray<T>`, additional analyzer registration kinds, and runtime-type
-   discrimination for non-sealed Roslyn return types.
+   `ImmutableArray<T>` and additional analyzer registration kinds.
 5. Add an explicit compatibility check for the selected SDK Roslyn version,
    friend-assembly grant, and `CSharpCompiler` override signatures.
-6. Add an executable managed-versus-native diagnostic equivalence test for the
-   unchanged sample analyzer.
+6. Expand the executable managed-versus-native equivalence suite beyond CA1200
+   to representative syntax, symbol, semantic, and operation analyzers.
 7. Split generated COM declarations into compiler CCW-only and analyzer
    RCW-only forms to improve NativeAOT trimming.
 8. Validate the working Linux source-generated `ComWrappers` prototype on
    Windows and macOS, then use the result to finalize the ABI generator.
-9. Select representative analyzers to prioritize which already-mirrored
-   members receive transport implementations first.
+9. Add correct MSBuild `Inputs` and `Outputs` for compiler and analyzer native
+   publishing, including all generated and managed inputs.
+10. Use SizeScope to reduce the remaining approximately 0.87 MiB above an empty
+    NativeAOT shared library, with particular attention to CoreLib reflection
+    and TypeLoader costs introduced by dynamic interface projection.

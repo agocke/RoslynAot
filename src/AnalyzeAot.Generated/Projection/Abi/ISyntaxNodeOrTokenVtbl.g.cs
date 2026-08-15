@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("cf28e6cb-72ec-5699-8892-099540bed14d")]
+[Guid("f50d8348-2bf2-54d9-b3a1-72426ac85261")]
 public partial interface ISyntaxNodeOrTokenVtbl
 {
+
+    [PreserveSig]
+    int SyntaxNodeOrToken_AsNode(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int SyntaxNodeOrToken_AsToken(
@@ -29,7 +35,7 @@ public partial interface ISyntaxNodeOrTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_Equals_da6a78cc(
+    int SyntaxNodeOrToken_Equals_1ae3035a(
         long receiver,
         long other,
         out int result
@@ -43,6 +49,12 @@ public partial interface ISyntaxNodeOrTokenVtbl
 
     [PreserveSig]
     int SyntaxNodeOrToken_GetLeadingTrivia(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNodeOrToken_GetLocation(
         long receiver,
         out long result
     );
@@ -165,6 +177,12 @@ public partial interface ISyntaxNodeOrTokenVtbl
     );
 
     [PreserveSig]
+    int SyntaxNodeOrToken_get_Parent(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int SyntaxNodeOrToken_get_RawKind(
         long receiver,
         out int result
@@ -178,6 +196,12 @@ public partial interface ISyntaxNodeOrTokenVtbl
 
     [PreserveSig]
     int SyntaxNodeOrToken_get_Span(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNodeOrToken_get_SyntaxTree(
         long receiver,
         out long result
     );

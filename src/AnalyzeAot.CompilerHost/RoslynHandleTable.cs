@@ -28,6 +28,9 @@ internal sealed class RoslynHandleTable
         where T : class =>
         Get<T>(handle, isValue: false);
 
+    public object GetObject(long handle) =>
+        Get<object>(handle, isValue: false);
+
     public T GetValue<T>(long handle)
         where T : struct
     {

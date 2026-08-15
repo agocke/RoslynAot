@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b852ae76-50e7-5aad-9102-d224caa02820")]
+[Guid("3c618fea-d844-5bf4-b786-fb5cfdae09c6")]
 public partial interface IElseClauseSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int ElseClauseSyntax_Accept_01fafa37(
+    int ElseClauseSyntax_Accept_ae1d4eab(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface IElseClauseSyntaxVtbl : ICSharpSyntaxNodeVtbl
 
     [PreserveSig]
     int ElseClauseSyntax_get_ElseKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ElseClauseSyntax_get_Statement(
         long receiver,
         out long result
     );

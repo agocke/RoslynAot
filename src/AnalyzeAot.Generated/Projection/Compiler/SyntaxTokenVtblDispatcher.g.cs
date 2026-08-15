@@ -41,7 +41,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_Equals_c3137714(
+    public int SyntaxToken_Equals_38ba030c(
         long receiver,
         long other,
         out int result)
@@ -68,6 +68,23 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxToken_GetLocation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(receiver).GetLocation());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -471,6 +488,23 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
+    public int SyntaxToken_get_Parent(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(receiver).Parent);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxToken_get_RawKind(
         long receiver,
         out int result)
@@ -514,6 +548,23 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(receiver).Span);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxToken_get_SyntaxTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(receiver).SyntaxTree);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

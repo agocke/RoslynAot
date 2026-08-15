@@ -12,7 +12,20 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("421c9b3e-11bb-5f19-bf45-e6242a602ed5")]
+[Guid("059a38bc-8fd4-5df6-bf99-dba93831b5f9")]
 public partial interface ISimpleNameSyntaxVtbl : INameSyntaxVtbl
 {
+
+    [PreserveSig]
+    int SimpleNameSyntax_WithIdentifier(
+        long receiver,
+        long identifier,
+        out long result
+    );
+
+    [PreserveSig]
+    int SimpleNameSyntax_get_Identifier(
+        long receiver,
+        out long result
+    );
 }

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("835c19d5-3d50-5ed6-860f-5e86a6b6afcf")]
+[Guid("7aefbc7f-1aba-5768-9316-f9f800422a88")]
 public partial interface ILocationVtbl
 {
 
@@ -50,6 +50,12 @@ public partial interface ILocationVtbl
 
     [PreserveSig]
     int Location_get_SourceSpan(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int Location_get_SourceTree(
         long receiver,
         out long result
     );

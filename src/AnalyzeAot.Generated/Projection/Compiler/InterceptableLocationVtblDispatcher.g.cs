@@ -22,4 +22,106 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
+
+    public int InterceptableLocation_Equals_ddbefe89(
+        long receiver,
+        long other,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation>(receiver).Equals(other == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation>(other)) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public unsafe int InterceptableLocation_GetDisplayLocation(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation>(receiver).GetDisplayLocation();
+            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
+            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int InterceptableLocation_GetHashCode(
+        long receiver,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public unsafe int InterceptableLocation_get_Data(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation>(receiver).Data;
+            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = global::System.Text.Encoding.UTF8.GetByteCount(value);
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
+            global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int InterceptableLocation_get_Version(
+        long receiver,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation>(receiver).Version;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

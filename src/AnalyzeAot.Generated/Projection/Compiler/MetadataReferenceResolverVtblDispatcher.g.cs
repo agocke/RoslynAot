@@ -23,6 +23,25 @@ internal sealed partial class MetadataReferenceResolverVtblDispatcher : IMetadat
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int MetadataReferenceResolver_ResolveMissingAssembly(
+        long receiver,
+        long definition,
+        long referenceIdentity,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.MetadataReferenceResolver>(receiver).ResolveMissingAssembly(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.MetadataReference>(definition), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(referenceIdentity)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int MetadataReferenceResolver_get_ResolveMissingAssemblies(
         long receiver,
         out int result)

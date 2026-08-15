@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis
             this = default;
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxTriviaListTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSyntaxTriviaListTypeVtbl(controlVtbl);
-            int status = vtbl.SyntaxTriviaList_ctor_d4e3748a(trivia.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.SyntaxTriviaList_ctor_476e443c(trivia.__AnalyzeAotGetHandle(controlVtbl), out long result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __analyzeAotControlVtbl = controlVtbl;
             __analyzeAotVtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSyntaxTriviaListVtbl(controlVtbl);
@@ -145,7 +145,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxTriviaListVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.SyntaxTriviaList_Equals_9e67f7c1(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.SyntaxTriviaList_Equals_2b3c7141(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -368,7 +368,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ISyntaxTriviaListReversedVtbl vtbl = __AnalyzeAotGetVtbl();
-                int status = vtbl.SyntaxTriviaList_Reversed_Equals_51d98215(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.SyntaxTriviaList_Reversed_Equals_998c05e7(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
                 global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }

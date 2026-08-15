@@ -47,4 +47,21 @@ internal sealed partial class SyntaxTreeVtblDispatcher : ISyntaxTreeVtbl
             return _owner.SetError(exception);
         }
     }
+
+    public int SyntaxTree_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).Options);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

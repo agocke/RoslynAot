@@ -12,7 +12,72 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f9b37f5b-e717-5033-8a46-8c21468ee9e2")]
+[Guid("4a1fc168-a274-5136-b30e-c2d4ee0b345c")]
 public partial interface IBaseMethodDeclarationSyntaxVtbl : IMemberDeclarationSyntaxVtbl
 {
+
+    [PreserveSig]
+    int BaseMethodDeclarationSyntax_WithBody(
+        long receiver,
+        long body,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseMethodDeclarationSyntax_WithExpressionBody(
+        long receiver,
+        long expressionBody,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseMethodDeclarationSyntax_WithModifiers(
+        long receiver,
+        long modifiers,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseMethodDeclarationSyntax_WithParameterList(
+        long receiver,
+        long parameterList,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseMethodDeclarationSyntax_WithSemicolonToken(
+        long receiver,
+        long semicolonToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseMethodDeclarationSyntax_get_Body(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseMethodDeclarationSyntax_get_ExpressionBody(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseMethodDeclarationSyntax_get_Modifiers(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseMethodDeclarationSyntax_get_ParameterList(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseMethodDeclarationSyntax_get_SemicolonToken(
+        long receiver,
+        out long result
+    );
 }

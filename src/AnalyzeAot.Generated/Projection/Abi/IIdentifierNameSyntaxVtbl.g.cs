@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("65c66a03-a22f-542e-815f-a5decb09b643")]
+[Guid("9f42aaf8-f8d4-5885-b501-0f53c51c3ba6")]
 public partial interface IIdentifierNameSyntaxVtbl : ISimpleNameSyntaxVtbl
 {
 
     [PreserveSig]
-    int IdentifierNameSyntax_Accept_74773c97(
+    int IdentifierNameSyntax_Accept_c37530bd(
         long receiver,
         long visitor
     );

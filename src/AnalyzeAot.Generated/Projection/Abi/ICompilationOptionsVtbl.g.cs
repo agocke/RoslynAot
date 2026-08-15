@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1f8ff3f5-3480-545e-b61d-f306f0e514be")]
+[Guid("d57bea6f-18e3-548b-8a4d-5616856bd32b")]
 public partial interface ICompilationOptionsVtbl
 {
 
@@ -20,6 +20,124 @@ public partial interface ICompilationOptionsVtbl
     int CompilationOptions_GetHashCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithAssemblyIdentityComparer(
+        long receiver,
+        long comparer,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithConcurrentBuild(
+        long receiver,
+        int concurrent,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithDeterministic(
+        long receiver,
+        int deterministic,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithGeneralDiagnosticOption(
+        long receiver,
+        int value,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithMetadataImportOptions(
+        long receiver,
+        byte value,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithMetadataReferenceResolver(
+        long receiver,
+        long resolver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithOptimizationLevel(
+        long receiver,
+        int value,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithOutputKind(
+        long receiver,
+        int kind,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithOverflowChecks(
+        long receiver,
+        int checkOverflow,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithPlatform(
+        long receiver,
+        int platform,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithPublicSign(
+        long receiver,
+        int publicSign,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithReportSuppressedDiagnostics(
+        long receiver,
+        int value,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithSourceReferenceResolver(
+        long receiver,
+        long resolver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithStrongNameProvider(
+        long receiver,
+        long provider,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithSyntaxTreeOptionsProvider(
+        long receiver,
+        long provider,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithXmlReferenceResolver(
+        long receiver,
+        long resolver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_get_AssemblyIdentityComparer(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]
@@ -77,6 +195,12 @@ public partial interface ICompilationOptionsVtbl
     );
 
     [PreserveSig]
+    int CompilationOptions_get_MetadataReferenceResolver(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int CompilationOptions_get_ModuleName(
         long receiver,
         nint buffer,
@@ -123,8 +247,32 @@ public partial interface ICompilationOptionsVtbl
     );
 
     [PreserveSig]
+    int CompilationOptions_get_SourceReferenceResolver(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_get_StrongNameProvider(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_get_SyntaxTreeOptionsProvider(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int CompilationOptions_get_WarningLevel(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_get_XmlReferenceResolver(
+        long receiver,
+        out long result
     );
 }

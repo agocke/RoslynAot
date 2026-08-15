@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e594293a-eb76-52fd-8582-8d76e5ac20b1")]
+[Guid("78795c53-b7ab-5837-94e4-159db8f4dbb5")]
 public partial interface IMemberAccessExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int MemberAccessExpressionSyntax_Accept_3d2eee66(
+    int MemberAccessExpressionSyntax_Accept_a7564436(
         long receiver,
         long visitor
     );
@@ -49,6 +49,18 @@ public partial interface IMemberAccessExpressionSyntaxVtbl : IExpressionSyntaxVt
     int MemberAccessExpressionSyntax_WithOperatorToken(
         long receiver,
         long operatorToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int MemberAccessExpressionSyntax_get_Expression(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int MemberAccessExpressionSyntax_get_Name(
+        long receiver,
         out long result
     );
 

@@ -23,6 +23,24 @@ internal sealed partial class RuleSetVtblDispatcher : IRuleSetVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int RuleSet_WithEffectiveAction(
+        long receiver,
+        int action,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.RuleSet>(receiver).WithEffectiveAction((global::Microsoft.CodeAnalysis.ReportDiagnostic)action));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int RuleSet_get_FilePath(
         long receiver,
         nint buffer,

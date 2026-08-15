@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("bcf2a66d-ecf9-5a48-bbf5-bc80252da1d9")]
+[Guid("694b46d2-f803-557a-a78a-2e1c0f39455d")]
 public partial interface IChildSyntaxListReversedVtbl
 {
 
     [PreserveSig]
-    int ChildSyntaxList_Reversed_Equals_6ebd1bf0(
+    int ChildSyntaxList_Reversed_Equals_a34ce046(
         long receiver,
         long other,
         out int result

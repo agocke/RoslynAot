@@ -115,6 +115,23 @@ internal sealed partial class CommandLineArgumentsVtblDispatcher : ICommandLineA
         }
     }
 
+    public int CommandLineArguments_get_CompilationOptions(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).CompilationOptions);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CommandLineArguments_get_DisplayHelp(
         long receiver,
         out int result)
@@ -427,6 +444,23 @@ internal sealed partial class CommandLineArgumentsVtblDispatcher : ICommandLineA
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
             global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommandLineArguments_get_ParseOptions(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).ParseOptions);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

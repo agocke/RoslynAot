@@ -84,12 +84,20 @@ namespace Microsoft.CodeAnalysis
 
         public MetadataReference WithEmbedInteropTypes(bool value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IMetadataReferenceVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.MetadataReference_WithEmbedInteropTypes(__AnalyzeAotGetHandle(controlVtbl), value ? 1 : 0, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public MetadataReference WithProperties(MetadataReferenceProperties properties)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IMetadataReferenceVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.MetadataReference_WithProperties(__AnalyzeAotGetHandle(controlVtbl), properties.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         internal MetadataReference()

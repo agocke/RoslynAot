@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("109348ef-da87-5a68-a66d-6520e1e1752a")]
+[Guid("45fe2a4a-76e0-5fcf-a034-f38604c95244")]
 public partial interface IDiagnosticSuppressorVtbl : IDiagnosticAnalyzerVtbl
 {
 

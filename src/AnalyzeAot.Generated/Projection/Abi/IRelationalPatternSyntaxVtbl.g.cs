@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("8a160729-4771-541c-9419-1c1ccba0997b")]
+[Guid("33246abe-a012-5a5f-a2c2-e856fd222063")]
 public partial interface IRelationalPatternSyntaxVtbl : IPatternSyntaxVtbl
 {
 
     [PreserveSig]
-    int RelationalPatternSyntax_Accept_b20916fc(
+    int RelationalPatternSyntax_Accept_91efe2a8(
         long receiver,
         long visitor
     );
@@ -41,6 +41,12 @@ public partial interface IRelationalPatternSyntaxVtbl : IPatternSyntaxVtbl
     int RelationalPatternSyntax_WithOperatorToken(
         long receiver,
         long operatorToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int RelationalPatternSyntax_get_Expression(
+        long receiver,
         out long result
     );
 

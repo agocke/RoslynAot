@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d999832c-fa1c-59b2-8974-87d3f725a7f0")]
+[Guid("f1635672-0d45-59c4-adf4-c04043dee21a")]
 public partial interface ICheckedExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int CheckedExpressionSyntax_Accept_901742ce(
+    int CheckedExpressionSyntax_Accept_5b501be3(
         long receiver,
         long visitor
     );
@@ -62,6 +62,12 @@ public partial interface ICheckedExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 
     [PreserveSig]
     int CheckedExpressionSyntax_get_CloseParenToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CheckedExpressionSyntax_get_Expression(
         long receiver,
         out long result
     );

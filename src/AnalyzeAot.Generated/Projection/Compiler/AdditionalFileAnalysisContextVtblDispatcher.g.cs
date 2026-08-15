@@ -39,6 +39,23 @@ internal sealed partial class AdditionalFileAnalysisContextVtblDispatcher : IAdd
         }
     }
 
+    public int AdditionalFileAnalysisContext_get_AdditionalFile(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.AdditionalFileAnalysisContext>(receiver).AdditionalFile);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int AdditionalFileAnalysisContext_get_FilterSpan(
         long receiver,
         out long result)
@@ -48,6 +65,23 @@ internal sealed partial class AdditionalFileAnalysisContextVtblDispatcher : IAdd
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.AdditionalFileAnalysisContext>(receiver).FilterSpan is { } value ? _owner.Objects.AddValue(value) : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AdditionalFileAnalysisContext_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.AdditionalFileAnalysisContext>(receiver).Options);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

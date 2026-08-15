@@ -13,5 +13,58 @@ namespace Microsoft.CodeAnalysis.Text
         public abstract SourceText CurrentText { get; }
 
         public abstract event System.EventHandler<TextChangeEventArgs> TextChanged;
+        internal SourceTextContainer()
+        {
+        }
+
+        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
+        private global::AnalyzeAot.Abi.ISourceTextContainerVtbl? __analyzeAotVtbl;
+        private long __analyzeAotHandle;
+        internal SourceTextContainer(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ISourceTextContainerVtbl vtbl, long handle)
+        {
+            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::AnalyzeAot.Abi.ISourceTextContainerVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __analyzeAotHandle;
+        }
+
+        private sealed partial class __AnalyzeAotProxy : SourceTextContainer
+        {
+            internal __AnalyzeAotProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ISourceTextContainerVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+            {
+            }
+
+            public override event System.EventHandler<TextChangeEventArgs> TextChanged
+            {
+                add
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+
+                remove
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override SourceText CurrentText
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+        }
+
+        internal static SourceTextContainer __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __AnalyzeAotProxy(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSourceTextContainerVtbl(controlVtbl), handle);
     }
 }

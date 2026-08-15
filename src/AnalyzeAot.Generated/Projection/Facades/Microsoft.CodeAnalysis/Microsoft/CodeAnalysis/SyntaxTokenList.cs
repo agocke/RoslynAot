@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis
             this = default;
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxTokenListTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSyntaxTokenListTypeVtbl(controlVtbl);
-            int status = vtbl.SyntaxTokenList_ctor_20fda59a(token.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.SyntaxTokenList_ctor_c350cef3(token.__AnalyzeAotGetHandle(controlVtbl), out long result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __analyzeAotControlVtbl = controlVtbl;
             __analyzeAotVtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSyntaxTokenListVtbl(controlVtbl);
@@ -124,7 +124,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxTokenListVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.SyntaxTokenList_Equals_ae415c3b(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.SyntaxTokenList_Equals_27ced153(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -357,7 +357,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
                 global::AnalyzeAot.Abi.ISyntaxTokenListReversedVtbl vtbl = __AnalyzeAotGetVtbl();
-                int status = vtbl.SyntaxTokenList_Reversed_Equals_66fd4b68(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.SyntaxTokenList_Reversed_Equals_d155bfc8(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
                 global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }

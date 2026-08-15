@@ -12,12 +12,19 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("9176183e-56c5-5f72-bc75-2987e0deab3b")]
+[Guid("eaa9815c-c7f4-5d72-a812-a4f63f5a05a5")]
 public partial interface ICSharpParseOptionsVtbl : IParseOptionsVtbl
 {
 
     [PreserveSig]
-    int CSharpParseOptions_Equals_faf28257(
+    int CSharpParseOptions_CommonWithKind(
+        long receiver,
+        int kind,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpParseOptions_Equals_51922c40(
         long receiver,
         long other,
         out int result

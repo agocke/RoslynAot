@@ -164,7 +164,7 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
             return AnalyzerAbi.InvalidArgument;
         }
 
-        SyntaxNode node = AnalyzerFacadeFactory.CreateSyntaxNode(
+        SyntaxNode node = RoslynProxyFactory.CreateSyntaxNode(
             controlVtbl,
             nodeHandle);
         SyntaxNodeAnalysisContext context =

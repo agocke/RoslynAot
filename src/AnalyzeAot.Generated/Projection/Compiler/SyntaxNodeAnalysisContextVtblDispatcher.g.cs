@@ -56,6 +56,23 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         }
     }
 
+    public int SyntaxNodeAnalysisContext_get_FilterTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext>(receiver).FilterTree);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxNodeAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result)
@@ -65,6 +82,57 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext>(receiver).IsGeneratedCode ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNodeAnalysisContext_get_Node(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext>(receiver).Node);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNodeAnalysisContext_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext>(receiver).Options);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNodeAnalysisContext_get_SemanticModel(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext>(receiver).SemanticModel);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

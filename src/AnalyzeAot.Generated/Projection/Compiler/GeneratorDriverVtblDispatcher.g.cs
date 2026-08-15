@@ -23,6 +23,23 @@ internal sealed partial class GeneratorDriverVtblDispatcher : IGeneratorDriverVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int GeneratorDriver_GetRunResult(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.GeneratorDriver>(receiver).GetRunResult());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int GeneratorDriver_GetTimingInfo(
         long receiver,
         out long result)
@@ -32,6 +49,61 @@ internal sealed partial class GeneratorDriverVtblDispatcher : IGeneratorDriverVt
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.GeneratorDriver>(receiver).GetTimingInfo());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int GeneratorDriver_ReplaceAdditionalText(
+        long receiver,
+        long oldText,
+        long newText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.GeneratorDriver>(receiver).ReplaceAdditionalText(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AdditionalText>(oldText), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AdditionalText>(newText)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int GeneratorDriver_WithUpdatedAnalyzerConfigOptions(
+        long receiver,
+        long newOptions,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.GeneratorDriver>(receiver).WithUpdatedAnalyzerConfigOptions(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider>(newOptions)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int GeneratorDriver_WithUpdatedParseOptions(
+        long receiver,
+        long newOptions,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.GeneratorDriver>(receiver).WithUpdatedParseOptions(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(newOptions)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

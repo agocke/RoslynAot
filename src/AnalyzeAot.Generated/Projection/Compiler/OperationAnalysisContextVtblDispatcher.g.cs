@@ -73,6 +73,23 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         }
     }
 
+    public int OperationAnalysisContext_get_FilterTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext>(receiver).FilterTree);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int OperationAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result)
@@ -82,6 +99,23 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext>(receiver).IsGeneratedCode ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int OperationAnalysisContext_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext>(receiver).Options);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

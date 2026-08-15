@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4dd53a13-1966-5a1e-8f4f-40e97ab94efa")]
+[Guid("8caada04-3407-55ea-af36-09217bc32b55")]
 public partial interface IConversionOperatorMemberCrefSyntaxVtbl : IMemberCrefSyntaxVtbl
 {
 
     [PreserveSig]
-    int ConversionOperatorMemberCrefSyntax_Accept_2cb2ca0c(
+    int ConversionOperatorMemberCrefSyntax_Accept_c96695e4(
         long receiver,
         long visitor
     );
@@ -98,6 +98,12 @@ public partial interface IConversionOperatorMemberCrefSyntaxVtbl : IMemberCrefSy
 
     [PreserveSig]
     int ConversionOperatorMemberCrefSyntax_get_Parameters(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ConversionOperatorMemberCrefSyntax_get_Type(
         long receiver,
         out long result
     );

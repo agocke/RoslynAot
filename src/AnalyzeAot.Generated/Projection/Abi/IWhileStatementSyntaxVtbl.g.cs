@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b3ee48dc-e5e1-52a5-a344-e6d6af431daf")]
+[Guid("ca1f49d9-bd33-5b33-9414-a4e0f26b3c3d")]
 public partial interface IWhileStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int WhileStatementSyntax_Accept_f857985e(
+    int WhileStatementSyntax_Accept_655b5d2f(
         long receiver,
         long visitor
     );
@@ -75,7 +75,19 @@ public partial interface IWhileStatementSyntaxVtbl : IStatementSyntaxVtbl
     );
 
     [PreserveSig]
+    int WhileStatementSyntax_get_Condition(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int WhileStatementSyntax_get_OpenParenToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int WhileStatementSyntax_get_Statement(
         long receiver,
         out long result
     );

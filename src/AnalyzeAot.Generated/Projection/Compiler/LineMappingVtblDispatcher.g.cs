@@ -23,7 +23,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int LineMapping_Equals_d3745851(
+    public int LineMapping_Equals_38c3299c(
         long receiver,
         long other,
         out int result)

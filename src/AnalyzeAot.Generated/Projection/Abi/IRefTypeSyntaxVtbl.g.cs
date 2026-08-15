@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("82153ae1-05af-5054-9bc3-8dcd6226e803")]
+[Guid("21b29f6c-5890-5f3d-88b0-4f95ac5ecb61")]
 public partial interface IRefTypeSyntaxVtbl : ITypeSyntaxVtbl
 {
 
     [PreserveSig]
-    int RefTypeSyntax_Accept_0d6c6d70(
+    int RefTypeSyntax_Accept_9db56c2e(
         long receiver,
         long visitor
     );
@@ -68,6 +68,12 @@ public partial interface IRefTypeSyntaxVtbl : ITypeSyntaxVtbl
 
     [PreserveSig]
     int RefTypeSyntax_get_RefKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int RefTypeSyntax_get_Type(
         long receiver,
         out long result
     );

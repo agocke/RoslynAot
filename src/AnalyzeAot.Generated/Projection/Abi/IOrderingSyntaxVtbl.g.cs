@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3d43829d-576b-53de-92d4-b9e537d0b7fb")]
+[Guid("6f0cb3ba-4684-505c-8d99-7e9475c541c0")]
 public partial interface IOrderingSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int OrderingSyntax_Accept_fdfb0abf(
+    int OrderingSyntax_Accept_110256a8(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface IOrderingSyntaxVtbl : ICSharpSyntaxNodeVtbl
 
     [PreserveSig]
     int OrderingSyntax_get_AscendingOrDescendingKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int OrderingSyntax_get_Expression(
         long receiver,
         out long result
     );

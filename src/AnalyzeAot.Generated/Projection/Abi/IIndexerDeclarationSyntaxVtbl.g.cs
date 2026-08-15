@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0385bb07-4a62-541f-8cbe-4c82e511b3e2")]
+[Guid("791eddd2-63f4-5c93-b9e0-4af1153e0781")]
 public partial interface IIndexerDeclarationSyntaxVtbl : IBasePropertyDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int IndexerDeclarationSyntax_Accept_826595c1(
+    int IndexerDeclarationSyntax_Accept_7c368f94(
         long receiver,
         long visitor
     );
@@ -116,6 +116,12 @@ public partial interface IIndexerDeclarationSyntaxVtbl : IBasePropertyDeclaratio
 
     [PreserveSig]
     int IndexerDeclarationSyntax_get_ThisKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int IndexerDeclarationSyntax_get_Type(
         long receiver,
         out long result
     );

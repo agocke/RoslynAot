@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("228e9fec-554b-541b-8ff4-d5da4978db21")]
+[Guid("f7368adc-61ce-5fe4-a011-d13823606173")]
 public partial interface IControlFlowRegionVtbl
 {
 

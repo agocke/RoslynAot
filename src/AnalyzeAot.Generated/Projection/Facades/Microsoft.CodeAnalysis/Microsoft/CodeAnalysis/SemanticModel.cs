@@ -44,7 +44,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISemanticModelVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SemanticModel_get_ParentModel(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -55,7 +59,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISemanticModelVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SemanticModel_get_SyntaxTree(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SyntaxTree.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 

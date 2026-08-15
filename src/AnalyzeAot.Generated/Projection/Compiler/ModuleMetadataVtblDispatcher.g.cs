@@ -23,6 +23,38 @@ internal sealed partial class ModuleMetadataVtblDispatcher : IModuleMetadataVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int Metadata_Copy(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Metadata>(receiver).Copy());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Metadata_Dispose(
+        long receiver)
+    {
+
+        try
+        {
+            _owner.Objects.DisposeObject<global::Microsoft.CodeAnalysis.Metadata>(receiver);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int Metadata_get_Id(
         long receiver,
         out long result)
@@ -32,6 +64,23 @@ internal sealed partial class ModuleMetadataVtblDispatcher : IModuleMetadataVtbl
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Metadata>(receiver).Id);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Metadata_get_Kind(
+        long receiver,
+        out byte result)
+    {
+        result = default;
+
+        try
+        {
+            result = (byte)_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Metadata>(receiver).Kind;
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

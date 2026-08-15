@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0d41fb73-0fa4-55a5-86bd-bf4841ead84e")]
+[Guid("e43b0746-dade-5363-a80f-f46ef80a49db")]
 public partial interface IArrowExpressionClauseSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int ArrowExpressionClauseSyntax_Accept_ecbda38b(
+    int ArrowExpressionClauseSyntax_Accept_7ffdb41b(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface IArrowExpressionClauseSyntaxVtbl : ICSharpSyntaxNodeVtb
 
     [PreserveSig]
     int ArrowExpressionClauseSyntax_get_ArrowToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ArrowExpressionClauseSyntax_get_Expression(
         long receiver,
         out long result
     );

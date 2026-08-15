@@ -23,7 +23,7 @@ internal sealed partial class SuppressionDescriptorVtblDispatcher : ISuppression
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SuppressionDescriptor_Equals_1172f3e8(
+    public int SuppressionDescriptor_Equals_6d7d7e69(
         long receiver,
         long other,
         out int result)
@@ -75,6 +75,23 @@ internal sealed partial class SuppressionDescriptorVtblDispatcher : ISuppression
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-8 result buffer is too small.", nameof(bufferLength));
             global::System.Text.Encoding.UTF8.GetBytes(value.AsSpan(), new global::System.Span<byte>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SuppressionDescriptor_get_Justification(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SuppressionDescriptor>(receiver).Justification);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

@@ -12,9 +12,16 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e9125370-287d-5014-827e-d419813b359c")]
+[Guid("68ab9ff4-2cd6-58f7-aae3-5aa7006f1bde")]
 public partial interface ICSharpSyntaxTreeVtbl : ISyntaxTreeVtbl
 {
+
+    [PreserveSig]
+    int CSharpSyntaxTree_GetLocation(
+        long receiver,
+        long span,
+        out long result
+    );
 
     [PreserveSig]
     int CSharpSyntaxTree_HasHiddenRegions(
@@ -28,5 +35,12 @@ public partial interface ICSharpSyntaxTreeVtbl : ISyntaxTreeVtbl
         long tree,
         int topLevel,
         out int result
+    );
+
+    [PreserveSig]
+    int CSharpSyntaxTree_WithChangedText(
+        long receiver,
+        long newText,
+        out long result
     );
 }

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b35a41ba-9e5d-52f2-a593-8604a3d0c0c7")]
+[Guid("757473d5-9254-54f2-a28a-306894c9d6a3")]
 public partial interface ICrefParameterSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int CrefParameterSyntax_Accept_6d843ab2(
+    int CrefParameterSyntax_Accept_2acba3da(
         long receiver,
         long visitor
     );
@@ -81,6 +81,12 @@ public partial interface ICrefParameterSyntaxVtbl : ICSharpSyntaxNodeVtbl
 
     [PreserveSig]
     int CrefParameterSyntax_get_RefOrOutKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CrefParameterSyntax_get_Type(
         long receiver,
         out long result
     );

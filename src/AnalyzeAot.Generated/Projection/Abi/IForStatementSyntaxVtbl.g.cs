@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e197ba13-d45d-512a-ba7f-d924f7960784")]
+[Guid("10574913-da54-559c-ae8a-6ca1f02ebe59")]
 public partial interface IForStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int ForStatementSyntax_Accept_2cbe66bd(
+    int ForStatementSyntax_Accept_01062a97(
         long receiver,
         long visitor
     );
@@ -85,6 +85,12 @@ public partial interface IForStatementSyntaxVtbl : IStatementSyntaxVtbl
     );
 
     [PreserveSig]
+    int ForStatementSyntax_get_Condition(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int ForStatementSyntax_get_Declaration(
         long receiver,
         out long result
@@ -110,6 +116,12 @@ public partial interface IForStatementSyntaxVtbl : IStatementSyntaxVtbl
 
     [PreserveSig]
     int ForStatementSyntax_get_SecondSemicolonToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ForStatementSyntax_get_Statement(
         long receiver,
         out long result
     );

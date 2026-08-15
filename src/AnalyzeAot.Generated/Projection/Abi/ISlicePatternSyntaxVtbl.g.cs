@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e02f0a63-eee4-55eb-bffe-812cffef8ee0")]
+[Guid("292cc399-ea7d-56ef-9baf-34d411ede39e")]
 public partial interface ISlicePatternSyntaxVtbl : IPatternSyntaxVtbl
 {
 
     [PreserveSig]
-    int SlicePatternSyntax_Accept_35c19a4a(
+    int SlicePatternSyntax_Accept_581e5bfc(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface ISlicePatternSyntaxVtbl : IPatternSyntaxVtbl
 
     [PreserveSig]
     int SlicePatternSyntax_get_DotDotToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SlicePatternSyntax_get_Pattern(
         long receiver,
         out long result
     );

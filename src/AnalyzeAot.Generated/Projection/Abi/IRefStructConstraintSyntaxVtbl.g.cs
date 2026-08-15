@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ab6f973a-d1cb-5c50-a037-32dc841045c1")]
+[Guid("b394c2a5-3792-5325-88a7-b0b03ae167c7")]
 public partial interface IRefStructConstraintSyntaxVtbl : IAllowsConstraintSyntaxVtbl
 {
 
     [PreserveSig]
-    int RefStructConstraintSyntax_Accept_b8c6d052(
+    int RefStructConstraintSyntax_Accept_f94f0654(
         long receiver,
         long visitor
     );

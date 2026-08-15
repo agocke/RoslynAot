@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ee2beb8d-f31c-5354-a0b3-b2b21a0b8bf6")]
+[Guid("68b09228-c2ac-5bc9-9358-25ac90641e3e")]
 public partial interface ISymbolAnalysisContextVtbl
 {
 
@@ -29,8 +29,20 @@ public partial interface ISymbolAnalysisContextVtbl
     );
 
     [PreserveSig]
+    int SymbolAnalysisContext_get_FilterTree(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int SymbolAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int SymbolAnalysisContext_get_Options(
+        long receiver,
+        out long result
     );
 }

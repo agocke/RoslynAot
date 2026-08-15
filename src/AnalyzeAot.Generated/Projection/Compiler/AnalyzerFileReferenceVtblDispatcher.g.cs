@@ -48,7 +48,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         }
     }
 
-    public int AnalyzerFileReference_Equals_d1a10423(
+    public int AnalyzerFileReference_Equals_4d319b66(
         long receiver,
         long other,
         out int result)
@@ -66,7 +66,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         }
     }
 
-    public int AnalyzerFileReference_Equals_7d1397c4(
+    public int AnalyzerFileReference_Equals_a165dbf5(
         long receiver,
         long other,
         out int result)

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("cdde5e60-4585-5c3e-ae7d-a7d024db6ed7")]
+[Guid("fdeecb6e-3cbd-596c-a65a-98fb352f0f03")]
 public partial interface IFileScopedNamespaceDeclarationSyntaxVtbl : IBaseNamespaceDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int FileScopedNamespaceDeclarationSyntax_Accept_31669854(
+    int FileScopedNamespaceDeclarationSyntax_Accept_66214fc6(
         long receiver,
         long visitor
     );
@@ -52,6 +52,12 @@ public partial interface IFileScopedNamespaceDeclarationSyntaxVtbl : IBaseNamesp
 
     [PreserveSig]
     int FileScopedNamespaceDeclarationSyntax_get_Modifiers(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int FileScopedNamespaceDeclarationSyntax_get_Name(
         long receiver,
         out long result
     );

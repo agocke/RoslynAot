@@ -42,7 +42,7 @@ internal sealed partial class AssemblyIdentityComparerVtblDispatcher : IAssembly
         }
     }
 
-    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_f6795a64(
+    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_0539a3af(
         long receiver,
         long reference,
         long definition,

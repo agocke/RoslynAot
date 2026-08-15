@@ -12,27 +12,53 @@ namespace Microsoft.CodeAnalysis
     {
         public LocalizableResourceString(string nameOfLocalizableResource, System.Resources.ResourceManager resourceManager, System.Type resourceSource, params string[] formatArguments)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            __AnalyzeAotInitializeLocal(nameOfLocalizableResource, resourceManager, resourceSource, formatArguments);
         }
 
         public LocalizableResourceString(string nameOfLocalizableResource, System.Resources.ResourceManager resourceManager, System.Type resourceSource)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            __AnalyzeAotInitializeLocal(nameOfLocalizableResource, resourceManager, resourceSource, System.Array.Empty<string>());
         }
 
         protected override bool AreEqual(object? other)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            return __AnalyzeAotAreEqualLocal(other);
         }
 
         protected override int GetHash()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            return __AnalyzeAotGetHashLocal();
         }
 
         protected override string GetText(System.IFormatProvider? formatProvider)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            return __AnalyzeAotGetTextLocal(formatProvider);
         }
+
+        internal LocalizableResourceString()
+        {
+        }
+
+        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
+        private global::AnalyzeAot.Abi.ILocalizableResourceStringVtbl? __analyzeAotVtbl;
+        private long __analyzeAotHandle;
+        internal LocalizableResourceString(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ILocalizableResourceStringVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+        {
+            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::AnalyzeAot.Abi.ILocalizableResourceStringVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __analyzeAotHandle;
+        }
+
+        internal static LocalizableResourceString __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new LocalizableResourceString(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetLocalizableResourceStringVtbl(controlVtbl), handle);
     }
 }

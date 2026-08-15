@@ -39,4 +39,21 @@ internal sealed partial class AnalyzerOptionsVtblDispatcher : IAnalyzerOptionsVt
             return _owner.SetError(exception);
         }
     }
+
+    public int AnalyzerOptions_get_AnalyzerConfigOptionsProvider(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions>(receiver).AnalyzerConfigOptionsProvider);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

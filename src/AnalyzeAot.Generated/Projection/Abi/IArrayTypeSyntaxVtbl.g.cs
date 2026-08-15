@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3d021111-3de7-5949-bbe5-0584cb9581a0")]
+[Guid("bb72a741-b8cc-5843-9171-a54b864adbd1")]
 public partial interface IArrayTypeSyntaxVtbl : ITypeSyntaxVtbl
 {
 
     [PreserveSig]
-    int ArrayTypeSyntax_Accept_67475beb(
+    int ArrayTypeSyntax_Accept_10e22c5a(
         long receiver,
         long visitor
     );
@@ -26,6 +26,12 @@ public partial interface IArrayTypeSyntaxVtbl : ITypeSyntaxVtbl
     int ArrayTypeSyntax_WithElementType(
         long receiver,
         long elementType,
+        out long result
+    );
+
+    [PreserveSig]
+    int ArrayTypeSyntax_get_ElementType(
+        long receiver,
         out long result
     );
 }

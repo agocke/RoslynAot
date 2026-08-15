@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("2a974d2f-b415-5087-bb21-bbd1cb2ead43")]
+[Guid("aacce05a-ae6a-5b46-a79e-6b472badfd72")]
 public partial interface IAnalyzerOptionsVtbl
 {
 
@@ -20,5 +20,11 @@ public partial interface IAnalyzerOptionsVtbl
     int AnalyzerOptions_GetHashCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int AnalyzerOptions_get_AnalyzerConfigOptionsProvider(
+        long receiver,
+        out long result
     );
 }

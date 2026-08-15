@@ -8,17 +8,55 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp.Syntax
 {
-    public abstract partial class BaseNamespaceDeclarationSyntax : MemberDeclarationSyntax
+    public partial interface BaseNamespaceDeclarationSyntax : MemberDeclarationSyntax
     {
-        internal BaseNamespaceDeclarationSyntax()
+        public SyntaxList<ExternAliasDirectiveSyntax> Externs
         {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
         }
 
-        public abstract SyntaxList<ExternAliasDirectiveSyntax> Externs { get; }
-        public abstract SyntaxList<MemberDeclarationSyntax> Members { get; }
-        public abstract NameSyntax Name { get; }
-        public abstract SyntaxToken NamespaceKeyword { get; }
-        public abstract SyntaxList<UsingDirectiveSyntax> Usings { get; }
+        public SyntaxList<MemberDeclarationSyntax> Members
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
+        }
+
+        public NameSyntax Name
+        {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IBaseNamespaceDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.BaseNamespaceDeclarationSyntax_get_Name(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return NameSyntax.__AnalyzeAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        public SyntaxToken NamespaceKeyword
+        {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IBaseNamespaceDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.BaseNamespaceDeclarationSyntax_get_NamespaceKeyword(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SyntaxToken.__AnalyzeAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        public SyntaxList<UsingDirectiveSyntax> Usings
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
+        }
 
         public new BaseNamespaceDeclarationSyntax AddAttributeLists(params AttributeListSyntax[] items)
         {
@@ -62,17 +100,29 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public new BaseNamespaceDeclarationSyntax WithModifiers(SyntaxTokenList modifiers)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IBaseNamespaceDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.BaseNamespaceDeclarationSyntax_WithModifiers(__AnalyzeAotGetHandle(controlVtbl), modifiers.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public BaseNamespaceDeclarationSyntax WithName(NameSyntax name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IBaseNamespaceDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.BaseNamespaceDeclarationSyntax_WithName(__AnalyzeAotGetHandle(controlVtbl), name.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public BaseNamespaceDeclarationSyntax WithNamespaceKeyword(SyntaxToken namespaceKeyword)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IBaseNamespaceDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.BaseNamespaceDeclarationSyntax_WithNamespaceKeyword(__AnalyzeAotGetHandle(controlVtbl), namespaceKeyword.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public BaseNamespaceDeclarationSyntax WithUsings(SyntaxList<UsingDirectiveSyntax> usings)
@@ -80,100 +130,15 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.IBaseNamespaceDeclarationSyntaxVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal BaseNamespaceDeclarationSyntax(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IBaseNamespaceDeclarationSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IBaseNamespaceDeclarationSyntaxVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetBaseNamespaceDeclarationSyntaxVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static BaseNamespaceDeclarationSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (BaseNamespaceDeclarationSyntax)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("fa6f85c8-43a5-56c4-8d3e-4a06eee09d23")]
+        internal partial interface __AnalyzeAotImplementation : BaseNamespaceDeclarationSyntax
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.IBaseNamespaceDeclarationSyntaxVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        private sealed partial class __AnalyzeAotProxy : BaseNamespaceDeclarationSyntax
-        {
-            internal __AnalyzeAotProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IBaseNamespaceDeclarationSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
-            {
-            }
-
-            public override SyntaxList<ExternAliasDirectiveSyntax> Externs
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxList<MemberDeclarationSyntax> Members
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override NameSyntax Name
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxToken NamespaceKeyword
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxList<UsingDirectiveSyntax> Usings
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxList<AttributeListSyntax> AttributeLists
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxTokenList Modifiers
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override void Accept(CSharpSyntaxVisitor visitor)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            public override TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
-                where TResult : default
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-        }
-
-        internal static BaseNamespaceDeclarationSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __AnalyzeAotProxy(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetBaseNamespaceDeclarationSyntaxVtbl(controlVtbl), handle);
     }
 }

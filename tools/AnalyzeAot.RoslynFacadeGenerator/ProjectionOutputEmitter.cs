@@ -15,6 +15,8 @@ internal static class ProjectionOutputEmitter
             Path.Combine(outputRoot, "Abi"));
         string compilerDirectory = RecreateDirectory(
             Path.Combine(outputRoot, "Compiler"));
+        string analyzerRuntimeDirectory = RecreateDirectory(
+            Path.Combine(outputRoot, "AnalyzerRuntime"));
         string manifestDirectory = RecreateDirectory(
             Path.Combine(outputRoot, "Manifest"));
 
@@ -39,6 +41,11 @@ internal static class ProjectionOutputEmitter
                 compilerDirectory,
                 "RoslynDispatcherRegistry.g.cs"),
             EmitCompilerDispatcherRegistry(model));
+        WriteGeneratedFile(
+            Path.Combine(
+                analyzerRuntimeDirectory,
+                "RoslynProxyFactory.g.cs"),
+            EmitAnalyzerRuntimeProxyFactory(model));
         WriteManifest(
             Path.Combine(manifestDirectory, "RoslynProjection.json"),
             model);
@@ -72,7 +79,14 @@ internal static class ProjectionOutputEmitter
             """
             [assembly: global::System.Runtime.CompilerServices.InternalsVisibleTo(
                 "analyze-aot-roslyn-projection-client, PublicKey=0024000004800000940000000602000000240000525341310004000001000100b5fc90e7027f67871e773a8fde8938c81dd402ba65b9201d60593e96c492651e889cc13f1415ebb53fac1131ae0bd333c5ee6021672d9718ea31a8aebd0da0072f25d87dba6fc90ffd598ed4da35e44c398c454307e8e33b8426143daec9f596836f97c8f74750e5975c64e2189f45def46b2a2b1247adc3652bf5c308055da9")]
+            [assembly: global::System.Runtime.CompilerServices.InternalsVisibleTo(
+                "AnalyzeAot.AnalyzerRuntime, PublicKey=0024000004800000940000000602000000240000525341310004000001000100b5fc90e7027f67871e773a8fde8938c81dd402ba65b9201d60593e96c492651e889cc13f1415ebb53fac1131ae0bd333c5ee6021672d9718ea31a8aebd0da0072f25d87dba6fc90ffd598ed4da35e44c398c454307e8e33b8426143daec9f596836f97c8f74750e5975c64e2189f45def46b2a2b1247adc3652bf5c308055da9")]
             """);
+        WriteGeneratedFile(
+            Path.Combine(
+                coreDirectory,
+                "AnalyzeAotTypeMap.g.cs"),
+            EmitFacadeTypeMap(model, "Microsoft.CodeAnalysis"));
         WriteGeneratedFile(
             Path.Combine(
                 facadesRoot,
@@ -81,7 +95,39 @@ internal static class ProjectionOutputEmitter
             """
             [assembly: global::System.Runtime.CompilerServices.InternalsVisibleTo(
                 "analyze-aot-roslyn-projection-client, PublicKey=0024000004800000940000000602000000240000525341310004000001000100b5fc90e7027f67871e773a8fde8938c81dd402ba65b9201d60593e96c492651e889cc13f1415ebb53fac1131ae0bd333c5ee6021672d9718ea31a8aebd0da0072f25d87dba6fc90ffd598ed4da35e44c398c454307e8e33b8426143daec9f596836f97c8f74750e5975c64e2189f45def46b2a2b1247adc3652bf5c308055da9")]
+            [assembly: global::System.Runtime.CompilerServices.InternalsVisibleTo(
+                "AnalyzeAot.AnalyzerRuntime, PublicKey=0024000004800000940000000602000000240000525341310004000001000100b5fc90e7027f67871e773a8fde8938c81dd402ba65b9201d60593e96c492651e889cc13f1415ebb53fac1131ae0bd333c5ee6021672d9718ea31a8aebd0da0072f25d87dba6fc90ffd598ed4da35e44c398c454307e8e33b8426143daec9f596836f97c8f74750e5975c64e2189f45def46b2a2b1247adc3652bf5c308055da9")]
             """);
+        WriteGeneratedFile(
+            Path.Combine(
+                facadesRoot,
+                "Microsoft.CodeAnalysis.CSharp",
+                "AnalyzeAotTypeMap.g.cs"),
+            EmitFacadeTypeMap(model, "Microsoft.CodeAnalysis.CSharp"));
+    }
+
+    private static string EmitFacadeTypeMap(
+        ProjectionModel model,
+        string assemblyName)
+    {
+        var builder = new StringBuilder();
+        foreach (VtblProjection vtbl in GetDynamicInterfaceVtbls(model)
+            .Where(
+                vtbl =>
+                    vtbl.FacadeType.ContainingAssembly.Name == assemblyName))
+        {
+            string typeName = vtbl.FacadeType.ToDisplayString(
+                SymbolDisplayFormat.FullyQualifiedFormat);
+            builder.AppendLine(
+                "[assembly: global::System.Runtime.InteropServices." +
+                "TypeMapAssociation<" +
+                "global::AnalyzeAot.RoslynFacade.RoslynProxyTypeMap>(");
+            builder.AppendLine($"    typeof({typeName}),");
+            builder.AppendLine(
+                $"    typeof({typeName}.__AnalyzeAotImplementation))]");
+        }
+
+        return builder.ToString();
     }
 
     private static string EmitAbiMetadata(ProjectionModel model) =>
@@ -154,6 +200,13 @@ internal static class ProjectionOutputEmitter
                 int utf8Length,
                 int checksumAlgorithm,
                 out long result);
+
+            [PreserveSig]
+            int IsObjectType(
+                long handle,
+                long vtblIdLow,
+                long vtblIdHigh,
+                out int isType);
         }
         """;
 
@@ -248,8 +301,105 @@ internal static class ProjectionOutputEmitter
         builder.AppendLine(
             "            _ => throw new PlatformNotSupportedException(\"The requested Roslyn vtable is not available in this build.\"),");
         builder.AppendLine("        };");
+        builder.AppendLine();
+        builder.AppendLine("    public static bool IsRuntimeType(");
+        builder.AppendLine("        object value,");
+        builder.AppendLine("        long vtblIdLow,");
+        builder.AppendLine("        long vtblIdHigh) =>");
+        builder.AppendLine("        (vtblIdLow, vtblIdHigh) switch");
+        builder.AppendLine("    {");
+        foreach (VtblProjection vtbl in GetRuntimeClassVtbls(model))
+        {
+            (long low, long high) = GetVtblIdParts(vtbl);
+            string typeName = vtbl.FacadeType.ToDisplayString(
+                SymbolDisplayFormat.FullyQualifiedFormat);
+            builder.AppendLine(
+                $"            ({low}L, {high}L) => value is {typeName},");
+        }
+
+        builder.AppendLine("            _ => false,");
+        builder.AppendLine("        };");
         builder.AppendLine("}");
         return builder.ToString();
+    }
+
+    private static string EmitAnalyzerRuntimeProxyFactory(
+        ProjectionModel model)
+    {
+        var builder = new StringBuilder();
+        builder.AppendLine("using System.Runtime.CompilerServices;");
+        builder.AppendLine("using System.Runtime.InteropServices;");
+        builder.AppendLine("using AnalyzeAot.Abi;");
+        builder.AppendLine("using AnalyzeAot.RoslynFacade;");
+        builder.AppendLine("using Microsoft.CodeAnalysis;");
+        builder.AppendLine();
+        builder.AppendLine("namespace AnalyzeAot.AnalyzerRuntime;");
+        builder.AppendLine();
+        builder.AppendLine("internal static class RoslynProxyFactory");
+        builder.AppendLine("{");
+        builder.AppendLine("    public static SyntaxNode CreateSyntaxNode(");
+        builder.AppendLine("        IRoslynControlVtbl controlVtbl,");
+        builder.AppendLine("        long handle) =>");
+        builder.AppendLine(
+            "        SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, handle);");
+        builder.AppendLine("}");
+
+        return builder.ToString();
+    }
+
+    private static IEnumerable<VtblProjection> GetDynamicInterfaceVtbls(
+        ProjectionModel model) =>
+        model.Vtbls
+            .Where(
+                vtbl =>
+                    !vtbl.IsTypeVtbl &&
+                    model.UsesDynamicInterfaceProxy(vtbl.FacadeType))
+            .OrderBy(
+                vtbl => CanonicalSignatureBuilder.GetMetadataTypeName(
+                    vtbl.FacadeType),
+                StringComparer.Ordinal);
+
+    private static IEnumerable<VtblProjection> GetRuntimeClassVtbls(
+        ProjectionModel model) =>
+        model.Vtbls
+            .Where(
+                vtbl =>
+                    !vtbl.IsTypeVtbl &&
+                    vtbl.FacadeType.TypeKind == TypeKind.Class &&
+                    IsExternallyReferenceable(vtbl.FacadeType))
+            .OrderByDescending(
+                vtbl => GetInheritanceDepth(vtbl.FacadeType))
+            .ThenBy(
+                vtbl => CanonicalSignatureBuilder.GetMetadataTypeName(
+                    vtbl.FacadeType),
+                StringComparer.Ordinal);
+
+    private static int GetInheritanceDepth(INamedTypeSymbol type)
+    {
+        int depth = 0;
+        for (INamedTypeSymbol? current = type;
+             current is not null;
+             current = current.BaseType)
+        {
+            depth++;
+        }
+
+        return depth;
+    }
+
+    private static bool IsExternallyReferenceable(INamedTypeSymbol type)
+    {
+        for (INamedTypeSymbol? current = type;
+             current is not null;
+             current = current.ContainingType)
+        {
+            if (current.DeclaredAccessibility != Accessibility.Public)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private static IReadOnlyList<ProjectedCall> GetDispatcherMembers(
@@ -546,6 +696,84 @@ internal static class ProjectionOutputEmitter
             nint buffer,
             int bufferLength,
             out int requiredLength);
+
+        public sealed class RoslynProxyTypeMap;
+
+        public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
+        {
+            public RoslynObjectProxy(
+                IRoslynControlVtbl controlVtbl,
+                long handle)
+            {
+                ControlVtbl = controlVtbl ??
+                    throw new ArgumentNullException(nameof(controlVtbl));
+                Handle = handle != 0
+                    ? handle
+                    : throw new ArgumentOutOfRangeException(nameof(handle));
+            }
+
+            public IRoslynControlVtbl ControlVtbl { get; }
+
+            private long Handle { get; }
+
+            public long GetHandle(IRoslynControlVtbl controlVtbl)
+            {
+                if (!ReferenceEquals(ControlVtbl, controlVtbl))
+                {
+                    throw new InvalidOperationException(
+                        "Roslyn facade values cannot cross control vtbl identities.");
+                }
+
+                return Handle;
+            }
+
+            public bool IsInterfaceImplemented(
+                RuntimeTypeHandle interfaceType,
+                bool throwIfNotImplemented)
+            {
+                if (!TryGetImplementationType(
+                        interfaceType,
+                        out Type? implementationType))
+                {
+                    return false;
+                }
+
+                byte[] bytes = implementationType.GUID.ToByteArray();
+                int status = ControlVtbl.IsObjectType(
+                    Handle,
+                    BitConverter.ToInt64(bytes, 0),
+                    BitConverter.ToInt64(bytes, 8),
+                    out int isType);
+                RoslynFacadeRuntime.ThrowIfFailed(ControlVtbl, status);
+                return isType != 0;
+            }
+
+            public RuntimeTypeHandle GetInterfaceImplementation(
+                RuntimeTypeHandle interfaceType)
+            {
+                if (!TryGetImplementationType(
+                        interfaceType,
+                        out Type? implementationType))
+                {
+                    throw new InvalidCastException(
+                        Type.GetTypeFromHandle(interfaceType).FullName);
+                }
+
+                return implementationType.TypeHandle;
+            }
+
+            private static bool TryGetImplementationType(
+                RuntimeTypeHandle interfaceType,
+                out Type? implementationType)
+            {
+                Type requestedType = Type.GetTypeFromHandle(interfaceType);
+                return TypeMapping
+                    .GetOrCreateProxyTypeMapping<RoslynProxyTypeMap>()
+                    .TryGetValue(
+                        requestedType,
+                        out implementationType);
+            }
+        }
 
         public sealed class RoslynRemoteException : Exception
         {

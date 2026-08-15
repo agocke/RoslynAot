@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3d35e3ef-492f-5036-a29a-f06fcebeed1f")]
+[Guid("96cdada4-49a8-5ddd-9dc4-9bbf6783a101")]
 public partial interface ISubpatternSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int SubpatternSyntax_Accept_78fcd2b9(
+    int SubpatternSyntax_Accept_f9779ace(
         long receiver,
         long visitor
     );
@@ -60,7 +60,19 @@ public partial interface ISubpatternSyntaxVtbl : ICSharpSyntaxNodeVtbl
     );
 
     [PreserveSig]
+    int SubpatternSyntax_get_ExpressionColon(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int SubpatternSyntax_get_NameColon(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SubpatternSyntax_get_Pattern(
         long receiver,
         out long result
     );

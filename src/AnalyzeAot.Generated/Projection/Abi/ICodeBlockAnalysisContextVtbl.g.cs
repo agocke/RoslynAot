@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("498292bc-21d4-50f0-b07a-078d28854bce")]
+[Guid("8ffcdd28-c192-577a-b5c3-818990943f55")]
 public partial interface ICodeBlockAnalysisContextVtbl
 {
 
@@ -23,7 +23,19 @@ public partial interface ICodeBlockAnalysisContextVtbl
     );
 
     [PreserveSig]
+    int CodeBlockAnalysisContext_get_CodeBlock(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int CodeBlockAnalysisContext_get_FilterSpan(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CodeBlockAnalysisContext_get_FilterTree(
         long receiver,
         out long result
     );
@@ -32,5 +44,17 @@ public partial interface ICodeBlockAnalysisContextVtbl
     int CodeBlockAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int CodeBlockAnalysisContext_get_Options(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CodeBlockAnalysisContext_get_SemanticModel(
+        long receiver,
+        out long result
     );
 }

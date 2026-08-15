@@ -23,7 +23,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public unsafe int SymbolDisplay_FormatLiteral_8835a55e(
+    public unsafe int SymbolDisplay_FormatLiteral_15828359(
         ushort c,
         int quote,
         nint buffer,

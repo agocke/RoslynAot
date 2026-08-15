@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp
 {
-    public sealed partial class CSharpGeneratorDriver : GeneratorDriver
+    public partial interface CSharpGeneratorDriver : GeneratorDriver
     {
-        internal CSharpGeneratorDriver()
-        {
-        }
-
         public static CSharpGeneratorDriver Create(params IIncrementalGenerator[] incrementalGenerators)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
@@ -33,6 +29,17 @@ namespace Microsoft.CodeAnalysis.CSharp
         public static CSharpGeneratorDriver Create(System.Collections.Generic.IEnumerable<ISourceGenerator> generators, System.Collections.Generic.IEnumerable<AdditionalText>? additionalTexts, CSharpParseOptions? parseOptions, Diagnostics.AnalyzerConfigOptionsProvider? optionsProvider)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.ICSharpGeneratorDriverVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCSharpGeneratorDriverVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static CSharpGeneratorDriver __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CSharpGeneratorDriver)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("14fe4ecd-aca2-5062-a585-863e47f48ab5")]
+        internal partial interface __AnalyzeAotImplementation : CSharpGeneratorDriver
+        {
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::AnalyzeAot.Abi.IGeneratorAttributeTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetGeneratorAttributeTypeVtbl(controlVtbl);
-            int status = vtbl.GeneratorAttribute_ctor_9efc917d(out long result);
+            int status = vtbl.GeneratorAttribute_ctor_58e36c45(out long result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __analyzeAotControlVtbl = controlVtbl;
             __analyzeAotVtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetGeneratorAttributeVtbl(controlVtbl);

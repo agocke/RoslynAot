@@ -12,7 +12,55 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c2154085-3c29-5eab-b40c-b562c63dadff")]
+[Guid("5ccc26d8-a3cd-55d8-8c2b-78562314c530")]
 public partial interface ILambdaExpressionSyntaxVtbl : IAnonymousFunctionExpressionSyntaxVtbl
 {
+
+    [PreserveSig]
+    int LambdaExpressionSyntax_WithArrowToken(
+        long receiver,
+        long arrowToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int LambdaExpressionSyntax_WithAsyncKeyword(
+        long receiver,
+        long asyncKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int LambdaExpressionSyntax_WithBlock(
+        long receiver,
+        long block,
+        out long result
+    );
+
+    [PreserveSig]
+    int LambdaExpressionSyntax_WithBody(
+        long receiver,
+        long body,
+        out long result
+    );
+
+    [PreserveSig]
+    int LambdaExpressionSyntax_WithExpressionBody(
+        long receiver,
+        long expressionBody,
+        out long result
+    );
+
+    [PreserveSig]
+    int LambdaExpressionSyntax_WithModifiers(
+        long receiver,
+        long modifiers,
+        out long result
+    );
+
+    [PreserveSig]
+    int LambdaExpressionSyntax_get_ArrowToken(
+        long receiver,
+        out long result
+    );
 }

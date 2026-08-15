@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e832a1d2-80cb-5abd-a208-c863ba1d570e")]
+[Guid("ae854de4-94f1-5f45-8ba2-80d908fbe61d")]
 public partial interface INamespaceDeclarationSyntaxVtbl : IBaseNamespaceDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int NamespaceDeclarationSyntax_Accept_ea1298f9(
+    int NamespaceDeclarationSyntax_Accept_947b2663(
         long receiver,
         long visitor
     );
@@ -72,6 +72,12 @@ public partial interface INamespaceDeclarationSyntaxVtbl : IBaseNamespaceDeclara
 
     [PreserveSig]
     int NamespaceDeclarationSyntax_get_Modifiers(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int NamespaceDeclarationSyntax_get_Name(
         long receiver,
         out long result
     );

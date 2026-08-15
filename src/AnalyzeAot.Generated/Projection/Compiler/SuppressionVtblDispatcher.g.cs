@@ -23,7 +23,7 @@ internal sealed partial class SuppressionVtblDispatcher : ISuppressionVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int Suppression_Equals_47c31e93(
+    public int Suppression_Equals_661a2ff9(
         long receiver,
         long other,
         out int result)
@@ -67,6 +67,23 @@ internal sealed partial class SuppressionVtblDispatcher : ISuppressionVtbl
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.Suppression>(receiver).Descriptor);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Suppression_get_SuppressedDiagnostic(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.Suppression>(receiver).SuppressedDiagnostic);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

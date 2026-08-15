@@ -23,6 +23,24 @@ internal sealed partial class SuppressionAnalysisContextVtblDispatcher : ISuppre
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int SuppressionAnalysisContext_GetSemanticModel(
+        long receiver,
+        long syntaxTree,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SuppressionAnalysisContext>(receiver).GetSemanticModel(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(syntaxTree)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SuppressionAnalysisContext_ReportSuppression(
         long receiver,
         long suppression)
@@ -31,6 +49,23 @@ internal sealed partial class SuppressionAnalysisContextVtblDispatcher : ISuppre
         try
         {
             _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SuppressionAnalysisContext>(receiver).ReportSuppression(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.Suppression>(suppression));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SuppressionAnalysisContext_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SuppressionAnalysisContext>(receiver).Options);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

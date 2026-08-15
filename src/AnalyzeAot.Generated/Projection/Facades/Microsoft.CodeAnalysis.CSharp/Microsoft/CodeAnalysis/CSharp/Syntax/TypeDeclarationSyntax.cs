@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp.Syntax
 {
-    public abstract partial class TypeDeclarationSyntax : BaseTypeDeclarationSyntax
+    public partial interface TypeDeclarationSyntax : BaseTypeDeclarationSyntax
     {
-        internal TypeDeclarationSyntax()
-        {
-        }
-
         public int Arity
         {
             get
@@ -26,11 +22,57 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public abstract SyntaxList<TypeParameterConstraintClauseSyntax> ConstraintClauses { get; }
-        public abstract SyntaxToken Keyword { get; }
-        public abstract SyntaxList<MemberDeclarationSyntax> Members { get; }
-        public abstract ParameterListSyntax? ParameterList { get; }
-        public abstract TypeParameterListSyntax? TypeParameterList { get; }
+        public SyntaxList<TypeParameterConstraintClauseSyntax> ConstraintClauses
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
+        }
+
+        public SyntaxToken Keyword
+        {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.TypeDeclarationSyntax_get_Keyword(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SyntaxToken.__AnalyzeAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        public SyntaxList<MemberDeclarationSyntax> Members
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
+        }
+
+        public ParameterListSyntax? ParameterList
+        {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.TypeDeclarationSyntax_get_ParameterList(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : ParameterListSyntax.__AnalyzeAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        public TypeParameterListSyntax? TypeParameterList
+        {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.TypeDeclarationSyntax_get_TypeParameterList(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : TypeParameterListSyntax.__AnalyzeAotCreateProxy(controlVtbl, result);
+            }
+        }
 
         public new TypeDeclarationSyntax AddAttributeLists(params AttributeListSyntax[] items)
         {
@@ -74,12 +116,20 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public new TypeDeclarationSyntax WithBaseList(BaseListSyntax? baseList)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.TypeDeclarationSyntax_WithBaseList(__AnalyzeAotGetHandle(controlVtbl), baseList is null ? 0L : baseList.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public new TypeDeclarationSyntax WithCloseBraceToken(SyntaxToken closeBraceToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.TypeDeclarationSyntax_WithCloseBraceToken(__AnalyzeAotGetHandle(controlVtbl), closeBraceToken.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public TypeDeclarationSyntax WithConstraintClauses(SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses)
@@ -89,12 +139,20 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public new TypeDeclarationSyntax WithIdentifier(SyntaxToken identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.TypeDeclarationSyntax_WithIdentifier(__AnalyzeAotGetHandle(controlVtbl), identifier.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public TypeDeclarationSyntax WithKeyword(SyntaxToken keyword)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.TypeDeclarationSyntax_WithKeyword(__AnalyzeAotGetHandle(controlVtbl), keyword.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public TypeDeclarationSyntax WithMembers(SyntaxList<MemberDeclarationSyntax> members)
@@ -104,163 +162,58 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public new TypeDeclarationSyntax WithModifiers(SyntaxTokenList modifiers)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.TypeDeclarationSyntax_WithModifiers(__AnalyzeAotGetHandle(controlVtbl), modifiers.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public new TypeDeclarationSyntax WithOpenBraceToken(SyntaxToken openBraceToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.TypeDeclarationSyntax_WithOpenBraceToken(__AnalyzeAotGetHandle(controlVtbl), openBraceToken.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public TypeDeclarationSyntax WithParameterList(ParameterListSyntax? parameterList)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.TypeDeclarationSyntax_WithParameterList(__AnalyzeAotGetHandle(controlVtbl), parameterList is null ? 0L : parameterList.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public new TypeDeclarationSyntax WithSemicolonToken(SyntaxToken semicolonToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.TypeDeclarationSyntax_WithSemicolonToken(__AnalyzeAotGetHandle(controlVtbl), semicolonToken.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public TypeDeclarationSyntax WithTypeParameterList(TypeParameterListSyntax? typeParameterList)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.TypeDeclarationSyntax_WithTypeParameterList(__AnalyzeAotGetHandle(controlVtbl), typeParameterList is null ? 0L : typeParameterList.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal TypeDeclarationSyntax(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetTypeDeclarationSyntaxVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static TypeDeclarationSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (TypeDeclarationSyntax)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("d4391690-9540-5ede-ade7-b3db5a66b60e")]
+        internal partial interface __AnalyzeAotImplementation : TypeDeclarationSyntax
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        private sealed partial class __AnalyzeAotProxy : TypeDeclarationSyntax
-        {
-            internal __AnalyzeAotProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ITypeDeclarationSyntaxVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
-            {
-            }
-
-            public override SyntaxList<TypeParameterConstraintClauseSyntax> ConstraintClauses
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxToken Keyword
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxList<MemberDeclarationSyntax> Members
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override ParameterListSyntax? ParameterList
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override TypeParameterListSyntax? TypeParameterList
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override BaseListSyntax? BaseList
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxToken CloseBraceToken
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxToken Identifier
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxToken OpenBraceToken
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxToken SemicolonToken
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxList<AttributeListSyntax> AttributeLists
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override SyntaxTokenList Modifiers
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override void Accept(CSharpSyntaxVisitor visitor)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            public override TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
-                where TResult : default
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-        }
-
-        internal static TypeDeclarationSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __AnalyzeAotProxy(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetTypeDeclarationSyntaxVtbl(controlVtbl), handle);
     }
 }

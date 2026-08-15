@@ -23,6 +23,23 @@ internal sealed partial class SuppressionInfoVtblDispatcher : ISuppressionInfoVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int SuppressionInfo_get_Attribute(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.SuppressionInfo>(receiver).Attribute);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int SuppressionInfo_get_Id(
         long receiver,
         nint buffer,

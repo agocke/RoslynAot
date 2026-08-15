@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("272b2068-7292-52df-8a19-da6666ce2352")]
+[Guid("05d04877-13d4-5556-8a06-491f9b333649")]
 public partial interface IGeneratedSourceResultVtbl
 {
 
@@ -22,5 +22,17 @@ public partial interface IGeneratedSourceResultVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int GeneratedSourceResult_get_SourceText(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int GeneratedSourceResult_get_SyntaxTree(
+        long receiver,
+        out long result
     );
 }

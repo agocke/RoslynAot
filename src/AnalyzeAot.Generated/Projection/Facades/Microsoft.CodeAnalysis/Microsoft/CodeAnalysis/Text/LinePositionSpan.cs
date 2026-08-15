@@ -52,7 +52,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ILinePositionSpanVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.LinePositionSpan_Equals_aa41bb1a(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.LinePositionSpan_Equals_bfda8c1e(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

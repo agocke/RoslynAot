@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("242aef75-b5bc-575d-b3f6-c3ea6a97d071")]
+[Guid("685cbbec-d99e-590e-986b-c890ee508216")]
 public partial interface ISimpleLambdaExpressionSyntaxVtbl : ILambdaExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int SimpleLambdaExpressionSyntax_Accept_97736934(
+    int SimpleLambdaExpressionSyntax_Accept_83282f5c(
         long receiver,
         long visitor
     );
@@ -117,6 +117,12 @@ public partial interface ISimpleLambdaExpressionSyntaxVtbl : ILambdaExpressionSy
 
     [PreserveSig]
     int SimpleLambdaExpressionSyntax_get_Block(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SimpleLambdaExpressionSyntax_get_ExpressionBody(
         long receiver,
         out long result
     );

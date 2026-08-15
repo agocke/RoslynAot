@@ -47,4 +47,38 @@ internal sealed partial class GeneratedSourceResultVtblDispatcher : IGeneratedSo
             return _owner.SetError(exception);
         }
     }
+
+    public int GeneratedSourceResult_get_SourceText(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratedSourceResult>(receiver).SourceText);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int GeneratedSourceResult_get_SyntaxTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratedSourceResult>(receiver).SyntaxTree);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

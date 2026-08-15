@@ -48,6 +48,41 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
+    public int SyntaxTree_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).Options);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpSyntaxTree_GetLocation(
+        long receiver,
+        long span,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).GetLocation(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CSharpSyntaxTree_HasHiddenRegions(
         long receiver,
         out int result)
@@ -76,6 +111,24 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).IsEquivalentTo(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(tree), topLevel != 0) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpSyntaxTree_WithChangedText(
+        long receiver,
+        long newText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).WithChangedText(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(newText)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

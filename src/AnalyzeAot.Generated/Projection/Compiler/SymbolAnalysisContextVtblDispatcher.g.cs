@@ -56,6 +56,23 @@ internal sealed partial class SymbolAnalysisContextVtblDispatcher : ISymbolAnaly
         }
     }
 
+    public int SymbolAnalysisContext_get_FilterTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext>(receiver).FilterTree);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SymbolAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result)
@@ -65,6 +82,23 @@ internal sealed partial class SymbolAnalysisContextVtblDispatcher : ISymbolAnaly
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext>(receiver).IsGeneratedCode ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolAnalysisContext_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext>(receiver).Options);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

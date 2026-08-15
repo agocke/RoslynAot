@@ -12,13 +12,41 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("df7ac2bd-d44a-5c75-96eb-a7b252e12618")]
+[Guid("9fcf0081-b97d-570b-ae01-4c7847f68456")]
 public partial interface IGeneratorDriverVtbl
 {
 
     [PreserveSig]
+    int GeneratorDriver_GetRunResult(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int GeneratorDriver_GetTimingInfo(
         long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int GeneratorDriver_ReplaceAdditionalText(
+        long receiver,
+        long oldText,
+        long newText,
+        out long result
+    );
+
+    [PreserveSig]
+    int GeneratorDriver_WithUpdatedAnalyzerConfigOptions(
+        long receiver,
+        long newOptions,
+        out long result
+    );
+
+    [PreserveSig]
+    int GeneratorDriver_WithUpdatedParseOptions(
+        long receiver,
+        long newOptions,
         out long result
     );
 }

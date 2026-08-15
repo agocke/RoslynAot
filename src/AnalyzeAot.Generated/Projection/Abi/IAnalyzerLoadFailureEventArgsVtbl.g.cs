@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("db5bf7bb-7cc7-5b20-95d2-78e658d0349b")]
+[Guid("727db83b-9d07-5ff1-99c4-85b93a9aa604")]
 public partial interface IAnalyzerLoadFailureEventArgsVtbl
 {
 

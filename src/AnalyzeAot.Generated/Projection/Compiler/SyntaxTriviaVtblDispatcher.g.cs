@@ -41,7 +41,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         }
     }
 
-    public int SyntaxTrivia_Equals_2b043e58(
+    public int SyntaxTrivia_Equals_193a4eaf(
         long receiver,
         long other,
         out int result)
@@ -68,6 +68,40 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTrivia_GetLocation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).GetLocation());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTrivia_GetStructure(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).GetStructure());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -315,6 +349,23 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).Span);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTrivia_get_SyntaxTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).SyntaxTree);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d3e437ee-88a1-5249-a13b-05eb72e41c53")]
+[Guid("038f43c5-a518-5c36-8227-540ecf89e0a9")]
 public partial interface IReturnStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int ReturnStatementSyntax_Accept_fc0de443(
+    int ReturnStatementSyntax_Accept_51f3bc0f(
         long receiver,
         long visitor
     );
@@ -49,6 +49,12 @@ public partial interface IReturnStatementSyntaxVtbl : IStatementSyntaxVtbl
     int ReturnStatementSyntax_WithSemicolonToken(
         long receiver,
         long semicolonToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int ReturnStatementSyntax_get_Expression(
+        long receiver,
         out long result
     );
 

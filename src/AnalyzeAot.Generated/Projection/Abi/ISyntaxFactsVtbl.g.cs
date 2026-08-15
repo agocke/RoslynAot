@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1d75d2bb-c0cb-53c6-acfc-07d1e71dbf13")]
+[Guid("994dabf9-f2bd-52ea-9aa7-d378c28b5962")]
 public partial interface ISyntaxFactsVtbl
 {
 
@@ -83,7 +83,7 @@ public partial interface ISyntaxFactsVtbl
     );
 
     [PreserveSig]
-    int SyntaxFacts_GetText_ff43e5c0(
+    int SyntaxFacts_GetText_96c87d32(
         ushort kind,
         nint buffer,
         int bufferLength,
@@ -91,7 +91,7 @@ public partial interface ISyntaxFactsVtbl
     );
 
     [PreserveSig]
-    int SyntaxFacts_GetText_4c5209e5(
+    int SyntaxFacts_GetText_4c6897c1(
         int accessibility,
         nint buffer,
         int bufferLength,

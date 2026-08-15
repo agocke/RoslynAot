@@ -12,9 +12,60 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("63f0c0a0-23f3-5558-af12-70305132b262")]
+[Guid("0ae608f5-c7c0-5c48-8183-7cc5046db841")]
 public partial interface ICSharpExtensionsVtbl_00cd3a63
 {
+
+    [PreserveSig]
+    int CSharpExtensions_AnalyzeControlFlow_6f2a4c2f(
+        long semanticModel,
+        long statement,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_AnalyzeControlFlow_89be6329(
+        long semanticModel,
+        long firstStatement,
+        long lastStatement,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_AnalyzeDataFlow_a88feb29(
+        long semanticModel,
+        long constructorInitializer,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_AnalyzeDataFlow_1d0577fa(
+        long semanticModel,
+        long expression,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_AnalyzeDataFlow_b48425e4(
+        long semanticModel,
+        long primaryConstructorBaseType,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_AnalyzeDataFlow_8d425945(
+        long semanticModel,
+        long statement,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_AnalyzeDataFlow_098b1a6e(
+        long semanticModel,
+        long firstStatement,
+        long lastStatement,
+        out long result
+    );
 
     [PreserveSig]
     int CSharpExtensions_GetAwaitExpressionInfo_92b4f83b(
@@ -83,7 +134,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_659e741c(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_2c643751(
         long semanticModel,
         int position,
         long attribute,
@@ -91,7 +142,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_f7e912d6(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_94a2bcee(
         long semanticModel,
         int position,
         long constructorInitializer,
@@ -99,7 +150,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_b76c036c(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_0f8f0756(
         long semanticModel,
         int position,
         long expression,
@@ -108,7 +159,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_464d6dae(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_b8de0754(
         long semanticModel,
         int position,
         long expression,
@@ -117,7 +168,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_e19af2ab(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_ebe2f354(
         long semanticModel,
         int position,
         long constructorInitializer,

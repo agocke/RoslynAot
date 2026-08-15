@@ -107,7 +107,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public override Location GetLocation(Text.TextSpan span)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxTreeVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxTree_GetLocation(__AnalyzeAotGetHandle(controlVtbl), span.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Location.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public override FileLinePositionSpan GetMappedLineSpan(Text.TextSpan span, System.Threading.CancellationToken cancellationToken = default)
@@ -195,7 +199,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public override SyntaxTree WithChangedText(Text.SourceText newText)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpSyntaxTreeVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpSyntaxTree_WithChangedText(__AnalyzeAotGetHandle(controlVtbl), newText.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxTree.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;

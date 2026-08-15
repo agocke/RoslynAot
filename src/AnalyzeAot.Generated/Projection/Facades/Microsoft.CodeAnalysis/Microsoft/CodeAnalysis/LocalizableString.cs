@@ -14,33 +14,39 @@ namespace Microsoft.CodeAnalysis
         {
             add
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                __AnalyzeAotAddExceptionHandler(value);
             }
 
             remove
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                __AnalyzeAotRemoveExceptionHandler(value);
             }
         }
 
         protected abstract bool AreEqual(object? other);
         public bool Equals(LocalizableString? other)
         {
+            if (__AnalyzeAotIsLocal)
+                return other is not null && __AnalyzeAotAreEqual(other);
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ILocalizableStringVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.LocalizableString_Equals_c0807c6e(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.LocalizableString_Equals_5694416a(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public sealed override bool Equals(object? other)
         {
+            if (__AnalyzeAotIsLocal)
+                return other is not null && __AnalyzeAotAreEqual(other);
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
         protected abstract int GetHash();
         public sealed override int GetHashCode()
         {
+            if (__AnalyzeAotIsLocal)
+                return __AnalyzeAotGetHash();
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ILocalizableStringVtbl vtbl = __AnalyzeAotGetVtbl();
             int status = vtbl.LocalizableString_GetHashCode(__AnalyzeAotGetHandle(controlVtbl), out int result);
@@ -51,12 +57,12 @@ namespace Microsoft.CodeAnalysis
         protected abstract string GetText(System.IFormatProvider? formatProvider);
         public static explicit operator string? (LocalizableString localizableResource)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            return localizableResource?.__AnalyzeAotGetText(null);
         }
 
         public static implicit operator LocalizableString(string? fixedResource)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            return __AnalyzeAotCreateFixed(fixedResource);
         }
 
         string System.IFormattable.ToString(string? ignored, System.IFormatProvider? formatProvider)
@@ -66,14 +72,18 @@ namespace Microsoft.CodeAnalysis
 
         public sealed override string ToString()
         {
+            if (__AnalyzeAotIsLocal)
+                return __AnalyzeAotGetText(null);
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ILocalizableStringVtbl vtbl = __AnalyzeAotGetVtbl();
             long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.LocalizableString_ToString_89485a59(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.LocalizableString_ToString_a1eaba99(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
         public string ToString(System.IFormatProvider? formatProvider)
         {
+            if (__AnalyzeAotIsLocal)
+                return __AnalyzeAotGetText(formatProvider);
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 

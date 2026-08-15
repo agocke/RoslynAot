@@ -23,7 +23,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int DiagnosticDescriptor_Equals_efbe4d0d(
+    public int DiagnosticDescriptor_Equals_7497f57f(
         long receiver,
         long other,
         out int result)
@@ -118,6 +118,23 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         }
     }
 
+    public int DiagnosticDescriptor_get_Description(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DiagnosticDescriptor>(receiver).Description);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int DiagnosticDescriptor_get_HelpLinkUri(
         long receiver,
         nint buffer,
@@ -177,6 +194,40 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DiagnosticDescriptor>(receiver).IsEnabledByDefault ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DiagnosticDescriptor_get_MessageFormat(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DiagnosticDescriptor>(receiver).MessageFormat);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DiagnosticDescriptor_get_Title(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DiagnosticDescriptor>(receiver).Title);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("56ea79bd-f1e8-574f-9206-305332b2328d")]
+[Guid("ceb96fc8-acaa-5d26-b6a9-364120228518")]
 public partial interface IParenthesizedLambdaExpressionSyntaxVtbl : ILambdaExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int ParenthesizedLambdaExpressionSyntax_Accept_a7e7299d(
+    int ParenthesizedLambdaExpressionSyntax_Accept_4241d1d7(
         long receiver,
         long visitor
     );
@@ -129,6 +129,12 @@ public partial interface IParenthesizedLambdaExpressionSyntaxVtbl : ILambdaExpre
     );
 
     [PreserveSig]
+    int ParenthesizedLambdaExpressionSyntax_get_ExpressionBody(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int ParenthesizedLambdaExpressionSyntax_get_Modifiers(
         long receiver,
         out long result
@@ -136,6 +142,12 @@ public partial interface IParenthesizedLambdaExpressionSyntaxVtbl : ILambdaExpre
 
     [PreserveSig]
     int ParenthesizedLambdaExpressionSyntax_get_ParameterList(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ParenthesizedLambdaExpressionSyntax_get_ReturnType(
         long receiver,
         out long result
     );

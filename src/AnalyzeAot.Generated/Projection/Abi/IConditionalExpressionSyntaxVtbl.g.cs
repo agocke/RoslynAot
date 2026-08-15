@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d4a14c58-dedb-5de7-bdae-f17752d48d23")]
+[Guid("34807cc2-8fdf-55bd-91d8-97fe33ae855c")]
 public partial interface IConditionalExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int ConditionalExpressionSyntax_Accept_f4a8d41b(
+    int ConditionalExpressionSyntax_Accept_0609e9a1(
         long receiver,
         long visitor
     );
@@ -75,7 +75,25 @@ public partial interface IConditionalExpressionSyntaxVtbl : IExpressionSyntaxVtb
     );
 
     [PreserveSig]
+    int ConditionalExpressionSyntax_get_Condition(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int ConditionalExpressionSyntax_get_QuestionToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ConditionalExpressionSyntax_get_WhenFalse(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ConditionalExpressionSyntax_get_WhenTrue(
         long receiver,
         out long result
     );

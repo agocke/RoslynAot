@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f7c6d4ae-91c4-52f0-98e9-bf1549335754")]
+[Guid("00bf1833-331d-53b8-9a20-3a5d3b54e054")]
 public partial interface ILockStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int LockStatementSyntax_Accept_7d78ef4c(
+    int LockStatementSyntax_Accept_05a6d86b(
         long receiver,
         long visitor
     );
@@ -75,6 +75,12 @@ public partial interface ILockStatementSyntaxVtbl : IStatementSyntaxVtbl
     );
 
     [PreserveSig]
+    int LockStatementSyntax_get_Expression(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int LockStatementSyntax_get_LockKeyword(
         long receiver,
         out long result
@@ -82,6 +88,12 @@ public partial interface ILockStatementSyntaxVtbl : IStatementSyntaxVtbl
 
     [PreserveSig]
     int LockStatementSyntax_get_OpenParenToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int LockStatementSyntax_get_Statement(
         long receiver,
         out long result
     );

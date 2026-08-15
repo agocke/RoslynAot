@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0865c1bd-6eb7-5cea-8078-4538e06d314b")]
+[Guid("bfecbb68-53b6-5145-a384-ca0d222fe113")]
 public partial interface IConversionOperatorDeclarationSyntaxVtbl : IBaseMethodDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int ConversionOperatorDeclarationSyntax_Accept_b126b393(
+    int ConversionOperatorDeclarationSyntax_Accept_576ff7fd(
         long receiver,
         long visitor
     );
@@ -142,6 +142,12 @@ public partial interface IConversionOperatorDeclarationSyntaxVtbl : IBaseMethodD
 
     [PreserveSig]
     int ConversionOperatorDeclarationSyntax_get_SemicolonToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ConversionOperatorDeclarationSyntax_get_Type(
         long receiver,
         out long result
     );

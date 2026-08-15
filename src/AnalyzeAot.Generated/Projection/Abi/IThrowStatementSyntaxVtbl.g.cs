@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("5e3ac76c-af5d-5cfa-9221-52c46eb8abc8")]
+[Guid("31b6684a-2045-51ae-bc45-0506f49a72a5")]
 public partial interface IThrowStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int ThrowStatementSyntax_Accept_2c815ce0(
+    int ThrowStatementSyntax_Accept_fc2a806c(
         long receiver,
         long visitor
     );
@@ -49,6 +49,12 @@ public partial interface IThrowStatementSyntaxVtbl : IStatementSyntaxVtbl
     int ThrowStatementSyntax_WithThrowKeyword(
         long receiver,
         long throwKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int ThrowStatementSyntax_get_Expression(
+        long receiver,
         out long result
     );
 

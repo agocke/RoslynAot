@@ -8,82 +8,71 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp
 {
-    public abstract partial class InterceptableLocation : System.IEquatable<InterceptableLocation>
+    public partial interface InterceptableLocation : System.IEquatable<InterceptableLocation>
     {
-        internal InterceptableLocation()
+        public string Data
         {
-        }
-
-        public abstract string Data { get; }
-        public abstract int Version { get; }
-
-        public abstract bool Equals(InterceptableLocation? other);
-        public abstract override bool Equals(object? obj);
-        public abstract string GetDisplayLocation();
-        public abstract override int GetHashCode();
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.IInterceptableLocationVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal InterceptableLocation(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IInterceptableLocationVtbl vtbl, long handle)
-        {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
-        }
-
-        internal global::AnalyzeAot.Abi.IInterceptableLocationVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        private sealed partial class __AnalyzeAotProxy : InterceptableLocation
-        {
-            internal __AnalyzeAotProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IInterceptableLocationVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+            get
             {
-            }
-
-            public override bool Equals(InterceptableLocation? other)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            public override bool Equals(object? obj)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            public override string GetDisplayLocation()
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            public override int GetHashCode()
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            public override string Data
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            public override int Version
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IInterceptableLocationVtbl vtbl = __AnalyzeAotGetVtbl();
+                long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.InterceptableLocation_get_Data(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
 
-        internal static InterceptableLocation __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __AnalyzeAotProxy(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetInterceptableLocationVtbl(controlVtbl), handle);
+        public int Version
+        {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IInterceptableLocationVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.InterceptableLocation_get_Version(__AnalyzeAotGetHandle(controlVtbl), out int result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result;
+            }
+        }
+
+        public bool Equals(InterceptableLocation? other)
+        {
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IInterceptableLocationVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.InterceptableLocation_Equals_ddbefe89(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
+        }
+
+        public bool Equals(object? obj)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        public string GetDisplayLocation()
+        {
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IInterceptableLocationVtbl vtbl = __AnalyzeAotGetVtbl();
+            long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.InterceptableLocation_GetDisplayLocation(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+        }
+
+        public int GetHashCode()
+        {
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IInterceptableLocationVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.InterceptableLocation_GetHashCode(__AnalyzeAotGetHandle(controlVtbl), out int result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result;
+        }
+
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IInterceptableLocationVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetInterceptableLocationVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static InterceptableLocation __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (InterceptableLocation)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("26cec153-7641-5115-980b-75576848f7f0")]
+        internal partial interface __AnalyzeAotImplementation : InterceptableLocation
+        {
+        }
     }
 }

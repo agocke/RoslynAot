@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b411c7a3-09a6-52ec-9250-4e8ca7d953aa")]
+[Guid("3d48683a-22b6-5999-92e1-64ece6526e9d")]
 public partial interface IScopedTypeSyntaxVtbl : ITypeSyntaxVtbl
 {
 
     [PreserveSig]
-    int ScopedTypeSyntax_Accept_a33b3ec1(
+    int ScopedTypeSyntax_Accept_261be7d4(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface IScopedTypeSyntaxVtbl : ITypeSyntaxVtbl
 
     [PreserveSig]
     int ScopedTypeSyntax_get_ScopedKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ScopedTypeSyntax_get_Type(
         long receiver,
         out long result
     );

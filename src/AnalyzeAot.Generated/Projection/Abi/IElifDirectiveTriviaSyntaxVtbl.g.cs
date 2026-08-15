@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("cc517aee-cb6d-5cf3-97e0-ce0f801ffc7e")]
+[Guid("37b00b2c-56fa-55ad-9d92-df6fe39cb1a8")]
 public partial interface IElifDirectiveTriviaSyntaxVtbl : IConditionalDirectiveTriviaSyntaxVtbl
 {
 
     [PreserveSig]
-    int ElifDirectiveTriviaSyntax_Accept_afc9231f(
+    int ElifDirectiveTriviaSyntax_Accept_4f04ad07(
         long receiver,
         long visitor
     );
@@ -94,6 +94,12 @@ public partial interface IElifDirectiveTriviaSyntaxVtbl : IConditionalDirectiveT
     int ElifDirectiveTriviaSyntax_get_ConditionValue(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int ElifDirectiveTriviaSyntax_get_Condition(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("2c101c05-8dfd-5cbb-85d8-332145d749a2")]
+[Guid("0bb8fd84-1ebe-5f10-beac-22b250d868fc")]
 public partial interface ITypeOfExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int TypeOfExpressionSyntax_Accept_bfa62ba8(
+    int TypeOfExpressionSyntax_Accept_2a700086(
         long receiver,
         long visitor
     );
@@ -74,6 +74,12 @@ public partial interface ITypeOfExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 
     [PreserveSig]
     int TypeOfExpressionSyntax_get_OpenParenToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int TypeOfExpressionSyntax_get_Type(
         long receiver,
         out long result
     );

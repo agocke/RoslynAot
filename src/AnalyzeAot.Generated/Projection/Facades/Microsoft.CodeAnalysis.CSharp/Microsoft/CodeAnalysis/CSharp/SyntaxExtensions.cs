@@ -52,7 +52,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.SimpleNameSyntax WithIdentifier(this Syntax.SimpleNameSyntax simpleName, SyntaxToken identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::AnalyzeAot.Abi.ISyntaxExtensionsVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
+            int status = vtbl.SyntaxExtensions_WithIdentifier(simpleName.__AnalyzeAotGetHandle(controlVtbl), identifier.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.SimpleNameSyntax.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
     }
 }

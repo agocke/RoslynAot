@@ -76,7 +76,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         }
     }
 
-    public int SyntaxTriviaList_Equals_9e67f7c1(
+    public int SyntaxTriviaList_Equals_2b3c7141(
         long receiver,
         long other,
         out int result)

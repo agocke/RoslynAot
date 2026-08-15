@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fe1d970b-1cde-57f1-b692-9a169d963d86")]
+[Guid("f56c94de-76d9-546f-b54c-e9b0362fbd08")]
 public partial interface ISuppressionInfoVtbl
 {
+
+    [PreserveSig]
+    int SuppressionInfo_get_Attribute(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int SuppressionInfo_get_Id(

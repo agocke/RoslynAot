@@ -41,7 +41,7 @@ internal sealed partial class LinePositionVtblDispatcher : ILinePositionVtbl
         }
     }
 
-    public int LinePosition_Equals_f5299c45(
+    public int LinePosition_Equals_c7695a0d(
         long receiver,
         long other,
         out int result)

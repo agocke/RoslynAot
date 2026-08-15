@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f80d1f70-14e5-54ac-b677-188afe4818af")]
+[Guid("08a8c460-c912-5123-bb67-1ada28f18f29")]
 public partial interface ISyntaxAnnotationVtbl
 {
 
     [PreserveSig]
-    int SyntaxAnnotation_Equals_96059184(
+    int SyntaxAnnotation_Equals_ae21757d(
         long receiver,
         long other,
         out int result

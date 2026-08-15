@@ -28,8 +28,9 @@ The current prototype:
 
 The sample analyzer is compiled normally against the official Roslyn package;
 the NativeAOT wrapper consumes its resulting DLL without rebuilding or rewriting
-it. Arbitrary analyzers are not yet supported because the drop-in facade only
-implements the small Roslyn surface used by the sample.
+it. The SDK-shipped CA1200 analyzer also runs unchanged through the NativeAOT
+pipeline, including localized descriptors, polymorphic Roslyn facade returns,
+XML syntax inspection, and diagnostic locations.
 
 ## Build and run
 
@@ -60,6 +61,17 @@ already a platform-native shared library.
 Analyzer libraries remain loaded for the compiler process lifetime because
 `ComWrappers` proxies can release their native references during garbage
 collection.
+
+Validate the SDK-shipped CA1200 analyzer against the managed compiler on Linux
+x64:
+
+```bash
+bash eng/validate-ca1200.sh
+```
+
+The command NativeAOT-publishes both the compiler and analyzer, compiles the
+same source through both paths, and requires identical diagnostics,
+documentation output, and emitted assemblies.
 
 ## Package integration
 

@@ -12,7 +12,59 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ffc4c28e-d855-5f80-a8fb-e8768184dc0c")]
+[Guid("9b9bdbfa-cd61-5d13-b10d-b17767253fb2")]
 public partial interface IBasePropertyDeclarationSyntaxVtbl : IMemberDeclarationSyntaxVtbl
 {
+
+    [PreserveSig]
+    int BasePropertyDeclarationSyntax_WithAccessorList(
+        long receiver,
+        long accessorList,
+        out long result
+    );
+
+    [PreserveSig]
+    int BasePropertyDeclarationSyntax_WithExplicitInterfaceSpecifier(
+        long receiver,
+        long explicitInterfaceSpecifier,
+        out long result
+    );
+
+    [PreserveSig]
+    int BasePropertyDeclarationSyntax_WithModifiers(
+        long receiver,
+        long modifiers,
+        out long result
+    );
+
+    [PreserveSig]
+    int BasePropertyDeclarationSyntax_WithType(
+        long receiver,
+        long @type,
+        out long result
+    );
+
+    [PreserveSig]
+    int BasePropertyDeclarationSyntax_get_AccessorList(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BasePropertyDeclarationSyntax_get_ExplicitInterfaceSpecifier(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BasePropertyDeclarationSyntax_get_Modifiers(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BasePropertyDeclarationSyntax_get_Type(
+        long receiver,
+        out long result
+    );
 }

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("6e45f75a-57e2-53c4-80f8-5afef58ccb4f")]
+[Guid("fbd19709-7cd4-5ff7-b2c1-a38981a4a8f3")]
 public partial interface ISyntaxNodeAnalysisContextVtbl
 {
 
@@ -29,8 +29,32 @@ public partial interface ISyntaxNodeAnalysisContextVtbl
     );
 
     [PreserveSig]
+    int SyntaxNodeAnalysisContext_get_FilterTree(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int SyntaxNodeAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int SyntaxNodeAnalysisContext_get_Node(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNodeAnalysisContext_get_Options(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNodeAnalysisContext_get_SemanticModel(
+        long receiver,
+        out long result
     );
 }

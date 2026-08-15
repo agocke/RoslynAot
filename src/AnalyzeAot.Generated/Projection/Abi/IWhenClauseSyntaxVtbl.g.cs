@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c6dc57f4-587f-5a08-8dec-237ff54053fb")]
+[Guid("009c85f6-08de-50f1-9542-dd54aacdd71f")]
 public partial interface IWhenClauseSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int WhenClauseSyntax_Accept_c0cddb43(
+    int WhenClauseSyntax_Accept_d976cda3(
         long receiver,
         long visitor
     );
@@ -41,6 +41,12 @@ public partial interface IWhenClauseSyntaxVtbl : ICSharpSyntaxNodeVtbl
     int WhenClauseSyntax_WithWhenKeyword(
         long receiver,
         long whenKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int WhenClauseSyntax_get_Condition(
+        long receiver,
         out long result
     );
 

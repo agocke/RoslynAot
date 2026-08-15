@@ -70,7 +70,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.IAnalyzerFileReferenceVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.AnalyzerFileReference_Equals_d1a10423(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.AnalyzerFileReference_Equals_4d319b66(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -79,7 +79,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.IAnalyzerFileReferenceVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.AnalyzerFileReference_Equals_7d1397c4(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.AnalyzerFileReference_Equals_a165dbf5(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("9f0295ad-188a-5649-972e-424b4367ca4f")]
+[Guid("46130346-f077-5f72-af3a-e84b566c5859")]
 public partial interface IOperatorDeclarationSyntaxVtbl : IBaseMethodDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int OperatorDeclarationSyntax_Accept_6922e3b0(
+    int OperatorDeclarationSyntax_Accept_384bbfd3(
         long receiver,
         long visitor
     );
@@ -136,6 +136,12 @@ public partial interface IOperatorDeclarationSyntaxVtbl : IBaseMethodDeclaration
 
     [PreserveSig]
     int OperatorDeclarationSyntax_get_ParameterList(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int OperatorDeclarationSyntax_get_ReturnType(
         long receiver,
         out long result
     );

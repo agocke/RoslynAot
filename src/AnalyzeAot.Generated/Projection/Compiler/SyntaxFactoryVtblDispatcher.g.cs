@@ -243,7 +243,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_9c9d8b17(
+    public int SyntaxFactory_AreEquivalent_8a50f3bc(
         long oldNode,
         long newNode,
         int topLevel,
@@ -262,7 +262,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_bd564b8d(
+    public int SyntaxFactory_AreEquivalent_8f4e5d46(
         long oldToken,
         long newToken,
         out int result)
@@ -280,7 +280,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_8ec4abec(
+    public int SyntaxFactory_AreEquivalent_0a50461c(
         long oldList,
         long newList,
         out int result)
@@ -298,7 +298,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_e1a3ea7d(
+    public int SyntaxFactory_AreEquivalent_1ac1069e(
         long oldTree,
         long newTree,
         int topLevel,
@@ -639,7 +639,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BadDirectiveTrivia_84324a8d(
+    public int SyntaxFactory_BadDirectiveTrivia_a8fbbc2d(
         long hashToken,
         long identifier,
         long endOfDirectiveToken,
@@ -659,7 +659,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BadDirectiveTrivia_2228d676(
+    public int SyntaxFactory_BadDirectiveTrivia_3bc7f48e(
         long identifier,
         int isActive,
         out long result)
@@ -1824,7 +1824,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefineDirectiveTrivia_8e573ff8(
+    public int SyntaxFactory_DefineDirectiveTrivia_b1a88fae(
         long hashToken,
         long defineKeyword,
         long name,
@@ -1845,7 +1845,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefineDirectiveTrivia_ad64892e(
+    public int SyntaxFactory_DefineDirectiveTrivia_16e54fa5(
         long name,
         int isActive,
         out long result)
@@ -2073,7 +2073,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElifDirectiveTrivia_bc00d35f(
+    public int SyntaxFactory_ElifDirectiveTrivia_9830e5d6(
         long condition,
         int isActive,
         int branchTaken,
@@ -2093,7 +2093,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElifDirectiveTrivia_f739be66(
+    public int SyntaxFactory_ElifDirectiveTrivia_20995b17(
         long hashToken,
         long elifKeyword,
         long condition,
@@ -2151,7 +2151,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElseDirectiveTrivia_efa6c61f(
+    public int SyntaxFactory_ElseDirectiveTrivia_b02992d0(
         long hashToken,
         long elseKeyword,
         long endOfDirectiveToken,
@@ -2172,7 +2172,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElseDirectiveTrivia_adfb54ee(
+    public int SyntaxFactory_ElseDirectiveTrivia_e6a72d37(
         int isActive,
         int branchTaken,
         out long result)
@@ -2223,7 +2223,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndIfDirectiveTrivia_35d3b427(
+    public int SyntaxFactory_EndIfDirectiveTrivia_fa3e3836(
         long hashToken,
         long endIfKeyword,
         long endOfDirectiveToken,
@@ -2243,7 +2243,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndIfDirectiveTrivia_05820434(
+    public int SyntaxFactory_EndIfDirectiveTrivia_8cdf69e6(
         int isActive,
         out long result)
     {
@@ -2260,7 +2260,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndRegionDirectiveTrivia_8cb345f3(
+    public int SyntaxFactory_EndRegionDirectiveTrivia_32326fcd(
         long hashToken,
         long endRegionKeyword,
         long endOfDirectiveToken,
@@ -2280,7 +2280,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndRegionDirectiveTrivia_563b1839(
+    public int SyntaxFactory_EndRegionDirectiveTrivia_e000cecd(
         int isActive,
         out long result)
     {
@@ -2366,7 +2366,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ErrorDirectiveTrivia_923268c6(
+    public int SyntaxFactory_ErrorDirectiveTrivia_2ba9f271(
         long hashToken,
         long errorKeyword,
         long endOfDirectiveToken,
@@ -2386,7 +2386,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ErrorDirectiveTrivia_fa8ea42f(
+    public int SyntaxFactory_ErrorDirectiveTrivia_9ad9a2b3(
         int isActive,
         out long result)
     {
@@ -3162,6 +3162,40 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_GetNonGenericExpression(
+        long expression,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.GetNonGenericExpression(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_GetStandaloneExpression(
+        long expression,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.GetStandaloneExpression(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_GlobalStatement_887da7ea(
         long statement,
         out long result)
@@ -3292,7 +3326,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IfDirectiveTrivia_f53270a3(
+    public int SyntaxFactory_IfDirectiveTrivia_9f75639f(
         long condition,
         int isActive,
         int branchTaken,
@@ -3312,7 +3346,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IfDirectiveTrivia_7c1d75d4(
+    public int SyntaxFactory_IfDirectiveTrivia_f7d936d7(
         long hashToken,
         long ifKeyword,
         long condition,
@@ -3394,7 +3428,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IgnoredDirectiveTrivia_8148eacb(
+    public int SyntaxFactory_IgnoredDirectiveTrivia_f31d449a(
         long hashToken,
         long colonToken,
         long content,
@@ -3415,7 +3449,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IgnoredDirectiveTrivia_966bfd54(
+    public int SyntaxFactory_IgnoredDirectiveTrivia_f5117a95(
         long content,
         int isActive,
         out long result)
@@ -3433,7 +3467,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IgnoredDirectiveTrivia_48c5e272(
+    public int SyntaxFactory_IgnoredDirectiveTrivia_d0f8664e(
         int isActive,
         out long result)
     {
@@ -4199,7 +4233,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineDirectiveTrivia_798e4d07(
+    public int SyntaxFactory_LineDirectiveTrivia_05aeb8c7(
         long hashToken,
         long lineKeyword,
         long line,
@@ -4221,7 +4255,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineDirectiveTrivia_96cb65da(
+    public int SyntaxFactory_LineDirectiveTrivia_9742422c(
         long line,
         long @file,
         int isActive,
@@ -4240,7 +4274,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineDirectiveTrivia_05074ed7(
+    public int SyntaxFactory_LineDirectiveTrivia_709e40f1(
         long line,
         int isActive,
         out long result)
@@ -4258,7 +4292,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineSpanDirectiveTrivia_39be7ccb(
+    public int SyntaxFactory_LineSpanDirectiveTrivia_4601f005(
         long start,
         long end,
         long characterOffset,
@@ -4279,7 +4313,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineSpanDirectiveTrivia_19806900(
+    public int SyntaxFactory_LineSpanDirectiveTrivia_b305809c(
         long start,
         long end,
         long @file,
@@ -4299,7 +4333,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineSpanDirectiveTrivia_09831802(
+    public int SyntaxFactory_LineSpanDirectiveTrivia_25ea7575(
         long hashToken,
         long lineKeyword,
         long start,
@@ -4359,7 +4393,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_a98c34ee(
+    public int SyntaxFactory_Literal_3c3141d7(
         ushort value,
         out long result)
     {
@@ -4376,7 +4410,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_19e93521(
+    public int SyntaxFactory_Literal_520347e6(
         int value,
         out long result)
     {
@@ -4393,7 +4427,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_a8464eb0(
+    public int SyntaxFactory_Literal_6ac4189e(
         long value,
         out long result)
     {
@@ -4410,7 +4444,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_f1120869(
+    public int SyntaxFactory_Literal_13fe7b01(
         uint value,
         out long result)
     {
@@ -4427,7 +4461,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_e4a783f1(
+    public int SyntaxFactory_Literal_07c320ce(
         ulong value,
         out long result)
     {
@@ -4444,7 +4478,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LoadDirectiveTrivia_a842d31e(
+    public int SyntaxFactory_LoadDirectiveTrivia_3e438b68(
         long hashToken,
         long loadKeyword,
         long @file,
@@ -4465,7 +4499,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LoadDirectiveTrivia_f00d00bd(
+    public int SyntaxFactory_LoadDirectiveTrivia_3ea8dd20(
         long @file,
         int isActive,
         out long result)
@@ -4918,7 +4952,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NullableDirectiveTrivia_1a2a9b07(
+    public int SyntaxFactory_NullableDirectiveTrivia_1102f025(
         long hashToken,
         long nullableKeyword,
         long settingToken,
@@ -4940,7 +4974,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NullableDirectiveTrivia_f3d034dc(
+    public int SyntaxFactory_NullableDirectiveTrivia_eacba423(
         long settingToken,
         long targetToken,
         int isActive,
@@ -4959,7 +4993,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NullableDirectiveTrivia_8ac3e534(
+    public int SyntaxFactory_NullableDirectiveTrivia_82e614e6(
         long settingToken,
         int isActive,
         out long result)
@@ -5576,7 +5610,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_4cf3019f(
+    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_b35fe09f(
         long hashToken,
         long pragmaKeyword,
         long checksumKeyword,
@@ -5600,7 +5634,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_b6ae3539(
+    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_059a8866(
         long @file,
         long guid,
         long bytes,
@@ -5620,7 +5654,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PragmaWarningDirectiveTrivia_0536f786(
+    public int SyntaxFactory_PragmaWarningDirectiveTrivia_d13c7747(
         long disableOrRestoreKeyword,
         int isActive,
         out long result)
@@ -6217,7 +6251,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ReferenceDirectiveTrivia_a0def3d3(
+    public int SyntaxFactory_ReferenceDirectiveTrivia_06223e87(
         long hashToken,
         long referenceKeyword,
         long @file,
@@ -6238,7 +6272,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ReferenceDirectiveTrivia_fbcdba9d(
+    public int SyntaxFactory_ReferenceDirectiveTrivia_3c5c73fb(
         long @file,
         int isActive,
         out long result)
@@ -6256,7 +6290,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RegionDirectiveTrivia_4891c983(
+    public int SyntaxFactory_RegionDirectiveTrivia_487e2c49(
         long hashToken,
         long regionKeyword,
         long endOfDirectiveToken,
@@ -6276,7 +6310,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RegionDirectiveTrivia_8126daf5(
+    public int SyntaxFactory_RegionDirectiveTrivia_96ec88de(
         int isActive,
         out long result)
     {
@@ -6417,7 +6451,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ShebangDirectiveTrivia_28b5a279(
+    public int SyntaxFactory_ShebangDirectiveTrivia_8a3ca08c(
         long hashToken,
         long exclamationToken,
         long endOfDirectiveToken,
@@ -6437,7 +6471,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ShebangDirectiveTrivia_3ac23759(
+    public int SyntaxFactory_ShebangDirectiveTrivia_c8023795(
         int isActive,
         out long result)
     {
@@ -7305,6 +7339,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_TypeDeclaration_e3656fdd(
+        ushort kind,
+        long identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.TypeDeclaration((global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)kind, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_TypeOfExpression_7c99c858(
         long @type,
         out long result)
@@ -7428,7 +7480,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UndefDirectiveTrivia_33880b67(
+    public int SyntaxFactory_UndefDirectiveTrivia_2abcc17b(
         long hashToken,
         long undefKeyword,
         long name,
@@ -7449,7 +7501,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UndefDirectiveTrivia_c7c73cdb(
+    public int SyntaxFactory_UndefDirectiveTrivia_feed15ea(
         long name,
         int isActive,
         out long result)
@@ -7826,7 +7878,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WarningDirectiveTrivia_9a7e049e(
+    public int SyntaxFactory_WarningDirectiveTrivia_f04b983e(
         long hashToken,
         long warningKeyword,
         long endOfDirectiveToken,
@@ -7846,7 +7898,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WarningDirectiveTrivia_3bb11cc2(
+    public int SyntaxFactory_WarningDirectiveTrivia_94632c7a(
         int isActive,
         out long result)
     {
@@ -8605,7 +8657,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlThreadSafetyElement_7dea980c(
+    public int SyntaxFactory_XmlThreadSafetyElement_79254635(
         int isStatic,
         int isInstance,
         out long result)

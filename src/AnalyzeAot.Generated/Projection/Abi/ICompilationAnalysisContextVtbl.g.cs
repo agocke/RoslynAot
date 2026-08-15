@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("03eef399-8eb7-5fdf-b985-a9dde06cff12")]
+[Guid("41cffb1b-aa23-5799-9102-aa21b5ab83b3")]
 public partial interface ICompilationAnalysisContextVtbl
 {
 
@@ -20,5 +20,11 @@ public partial interface ICompilationAnalysisContextVtbl
     int CompilationAnalysisContext_ReportDiagnostic(
         long receiver,
         long diagnostic
+    );
+
+    [PreserveSig]
+    int CompilationAnalysisContext_get_Options(
+        long receiver,
+        out long result
     );
 }

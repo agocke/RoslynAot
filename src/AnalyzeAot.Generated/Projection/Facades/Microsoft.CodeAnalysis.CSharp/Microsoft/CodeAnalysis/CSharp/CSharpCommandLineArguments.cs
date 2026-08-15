@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp
 {
-    public sealed partial class CSharpCommandLineArguments : CommandLineArguments
+    public partial interface CSharpCommandLineArguments : CommandLineArguments
     {
-        internal CSharpCommandLineArguments()
-        {
-        }
-
         public new CSharpCompilationOptions CompilationOptions
         {
             get
@@ -26,7 +22,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             }
         }
 
-        protected override CompilationOptions CompilationOptionsCore
+        protected CompilationOptions CompilationOptionsCore
         {
             get
             {
@@ -46,7 +42,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             }
         }
 
-        protected override ParseOptions ParseOptionsCore
+        protected ParseOptions ParseOptionsCore
         {
             get
             {
@@ -54,26 +50,15 @@ namespace Microsoft.CodeAnalysis.CSharp
             }
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.ICSharpCommandLineArgumentsVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal CSharpCommandLineArguments(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ICSharpCommandLineArgumentsVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.ICSharpCommandLineArgumentsVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCSharpCommandLineArgumentsVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static CSharpCommandLineArguments __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CSharpCommandLineArguments)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("7fb21710-cdf5-58de-8f9c-9eba2d22565c")]
+        internal partial interface __AnalyzeAotImplementation : CSharpCommandLineArguments
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.ICSharpCommandLineArgumentsVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        internal static CSharpCommandLineArguments __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new CSharpCommandLineArguments(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCSharpCommandLineArgumentsVtbl(controlVtbl), handle);
     }
 }

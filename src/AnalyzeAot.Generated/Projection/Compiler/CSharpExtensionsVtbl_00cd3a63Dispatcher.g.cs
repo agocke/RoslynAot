@@ -23,6 +23,134 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int CSharpExtensions_AnalyzeControlFlow_6f2a4c2f(
+        long semanticModel,
+        long statement,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.AnalyzeControlFlow(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax>(statement)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpExtensions_AnalyzeControlFlow_89be6329(
+        long semanticModel,
+        long firstStatement,
+        long lastStatement,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.AnalyzeControlFlow(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax>(firstStatement), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax>(lastStatement)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpExtensions_AnalyzeDataFlow_a88feb29(
+        long semanticModel,
+        long constructorInitializer,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.AnalyzeDataFlow(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorInitializerSyntax>(constructorInitializer)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpExtensions_AnalyzeDataFlow_1d0577fa(
+        long semanticModel,
+        long expression,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.AnalyzeDataFlow(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpExtensions_AnalyzeDataFlow_b48425e4(
+        long semanticModel,
+        long primaryConstructorBaseType,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.AnalyzeDataFlow(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.PrimaryConstructorBaseTypeSyntax>(primaryConstructorBaseType)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpExtensions_AnalyzeDataFlow_8d425945(
+        long semanticModel,
+        long statement,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.AnalyzeDataFlow(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax>(statement)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpExtensions_AnalyzeDataFlow_098b1a6e(
+        long semanticModel,
+        long firstStatement,
+        long lastStatement,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.AnalyzeDataFlow(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax>(firstStatement), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax>(lastStatement)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CSharpExtensions_GetAwaitExpressionInfo_92b4f83b(
         long semanticModel,
         long awaitExpression,
@@ -194,7 +322,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_659e741c(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_2c643751(
         long semanticModel,
         int position,
         long attribute,
@@ -213,7 +341,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_f7e912d6(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_94a2bcee(
         long semanticModel,
         int position,
         long constructorInitializer,
@@ -232,7 +360,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_b76c036c(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_0f8f0756(
         long semanticModel,
         int position,
         long expression,
@@ -252,7 +380,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_464d6dae(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_b8de0754(
         long semanticModel,
         int position,
         long expression,
@@ -272,7 +400,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_e19af2ab(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_ebe2f354(
         long semanticModel,
         int position,
         long constructorInitializer,

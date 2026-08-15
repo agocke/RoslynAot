@@ -23,7 +23,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int ForEachStatementInfo_Equals_7023b721(
+    public int ForEachStatementInfo_Equals_c22decb1(
         long receiver,
         long other,
         out int result)

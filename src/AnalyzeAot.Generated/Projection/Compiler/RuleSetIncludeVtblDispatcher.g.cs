@@ -23,6 +23,24 @@ internal sealed partial class RuleSetIncludeVtblDispatcher : IRuleSetIncludeVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int RuleSetInclude_LoadRuleSet(
+        long receiver,
+        long parent,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.RuleSetInclude>(receiver).LoadRuleSet(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.RuleSet>(parent)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int RuleSetInclude_get_Action(
         long receiver,
         out int result)

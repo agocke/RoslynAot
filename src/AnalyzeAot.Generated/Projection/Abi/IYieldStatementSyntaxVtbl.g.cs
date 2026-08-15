@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e4be8db0-e842-5d82-a8ca-0224fa4d6a23")]
+[Guid("3b51a969-7427-5390-9b86-54a970e22fb7")]
 public partial interface IYieldStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int YieldStatementSyntax_Accept_bb5c8ecf(
+    int YieldStatementSyntax_Accept_e90baa29(
         long receiver,
         long visitor
     );
@@ -57,6 +57,12 @@ public partial interface IYieldStatementSyntaxVtbl : IStatementSyntaxVtbl
     int YieldStatementSyntax_WithYieldKeyword(
         long receiver,
         long yieldKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int YieldStatementSyntax_get_Expression(
+        long receiver,
         out long result
     );
 

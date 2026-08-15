@@ -18,7 +18,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.CompilationOptions_get_AssemblyIdentityComparer(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return AssemblyIdentityComparer.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
 
             protected set
@@ -214,7 +218,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.CompilationOptions_get_MetadataReferenceResolver(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : MetadataReferenceResolver.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
 
             protected set
@@ -346,7 +354,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.CompilationOptions_get_SourceReferenceResolver(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : SourceReferenceResolver.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
 
             protected set
@@ -372,7 +384,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.CompilationOptions_get_StrongNameProvider(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : StrongNameProvider.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
 
             protected set
@@ -385,7 +401,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.CompilationOptions_get_SyntaxTreeOptionsProvider(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : SyntaxTreeOptionsProvider.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
 
             protected set
@@ -415,7 +435,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.CompilationOptions_get_XmlReferenceResolver(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : XmlReferenceResolver.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
 
             protected set
@@ -484,12 +508,20 @@ namespace Microsoft.CodeAnalysis
 
         public CompilationOptions WithAssemblyIdentityComparer(AssemblyIdentityComparer comparer)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithAssemblyIdentityComparer(__AnalyzeAotGetHandle(controlVtbl), comparer.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithConcurrentBuild(bool concurrent)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithConcurrentBuild(__AnalyzeAotGetHandle(controlVtbl), concurrent ? 1 : 0, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithCryptoKeyContainer(string? cryptoKeyContainer)
@@ -514,12 +546,20 @@ namespace Microsoft.CodeAnalysis
 
         public CompilationOptions WithDeterministic(bool deterministic)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithDeterministic(__AnalyzeAotGetHandle(controlVtbl), deterministic ? 1 : 0, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithGeneralDiagnosticOption(ReportDiagnostic value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithGeneralDiagnosticOption(__AnalyzeAotGetHandle(controlVtbl), (int)value, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithMainTypeName(string? mainTypeName)
@@ -529,12 +569,20 @@ namespace Microsoft.CodeAnalysis
 
         public CompilationOptions WithMetadataImportOptions(MetadataImportOptions value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithMetadataImportOptions(__AnalyzeAotGetHandle(controlVtbl), (byte)value, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithMetadataReferenceResolver(MetadataReferenceResolver? resolver)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithMetadataReferenceResolver(__AnalyzeAotGetHandle(controlVtbl), resolver is null ? 0L : resolver.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithModuleName(string? moduleName)
@@ -544,32 +592,56 @@ namespace Microsoft.CodeAnalysis
 
         public CompilationOptions WithOptimizationLevel(OptimizationLevel value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithOptimizationLevel(__AnalyzeAotGetHandle(controlVtbl), (int)value, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithOutputKind(OutputKind kind)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithOutputKind(__AnalyzeAotGetHandle(controlVtbl), (int)kind, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithOverflowChecks(bool checkOverflow)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithOverflowChecks(__AnalyzeAotGetHandle(controlVtbl), checkOverflow ? 1 : 0, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithPlatform(Platform platform)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithPlatform(__AnalyzeAotGetHandle(controlVtbl), (int)platform, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithPublicSign(bool publicSign)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithPublicSign(__AnalyzeAotGetHandle(controlVtbl), publicSign ? 1 : 0, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithReportSuppressedDiagnostics(bool value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithReportSuppressedDiagnostics(__AnalyzeAotGetHandle(controlVtbl), value ? 1 : 0, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithScriptClassName(string scriptClassName)
@@ -579,7 +651,11 @@ namespace Microsoft.CodeAnalysis
 
         public CompilationOptions WithSourceReferenceResolver(SourceReferenceResolver? resolver)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithSourceReferenceResolver(__AnalyzeAotGetHandle(controlVtbl), resolver is null ? 0L : resolver.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithSpecificDiagnosticOptions(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, ReportDiagnostic>> value)
@@ -594,17 +670,29 @@ namespace Microsoft.CodeAnalysis
 
         public CompilationOptions WithStrongNameProvider(StrongNameProvider? provider)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithStrongNameProvider(__AnalyzeAotGetHandle(controlVtbl), provider is null ? 0L : provider.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithSyntaxTreeOptionsProvider(SyntaxTreeOptionsProvider? provider)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithSyntaxTreeOptionsProvider(__AnalyzeAotGetHandle(controlVtbl), provider is null ? 0L : provider.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithXmlReferenceResolver(XmlReferenceResolver? resolver)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICompilationOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithXmlReferenceResolver(__AnalyzeAotGetHandle(controlVtbl), resolver is null ? 0L : resolver.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;

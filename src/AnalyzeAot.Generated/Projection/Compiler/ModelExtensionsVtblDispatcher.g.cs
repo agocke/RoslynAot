@@ -23,6 +23,80 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int ModelExtensions_AnalyzeControlFlow_db00f58d(
+        long semanticModel,
+        long statement,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.ModelExtensions.AnalyzeControlFlow(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(statement)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ModelExtensions_AnalyzeControlFlow_ba8f74ea(
+        long semanticModel,
+        long firstStatement,
+        long lastStatement,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.ModelExtensions.AnalyzeControlFlow(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(firstStatement), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(lastStatement)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ModelExtensions_AnalyzeDataFlow_5df8adbb(
+        long semanticModel,
+        long statementOrExpression,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.ModelExtensions.AnalyzeDataFlow(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(statementOrExpression)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ModelExtensions_AnalyzeDataFlow_16248c3b(
+        long semanticModel,
+        long firstStatement,
+        long lastStatement,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.ModelExtensions.AnalyzeDataFlow(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(firstStatement), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(lastStatement)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ModelExtensions_GetSpeculativeSymbolInfo(
         long semanticModel,
         int position,

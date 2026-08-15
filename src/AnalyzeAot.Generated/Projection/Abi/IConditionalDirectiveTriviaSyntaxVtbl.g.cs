@@ -12,7 +12,26 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3a822b4f-ab66-5f49-8dcc-176c30047f1c")]
+[Guid("f0a3159b-db42-5547-a184-c78ead19e8ba")]
 public partial interface IConditionalDirectiveTriviaSyntaxVtbl : IBranchingDirectiveTriviaSyntaxVtbl
 {
+
+    [PreserveSig]
+    int ConditionalDirectiveTriviaSyntax_WithCondition(
+        long receiver,
+        long condition,
+        out long result
+    );
+
+    [PreserveSig]
+    int ConditionalDirectiveTriviaSyntax_get_ConditionValue(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int ConditionalDirectiveTriviaSyntax_get_Condition(
+        long receiver,
+        out long result
+    );
 }

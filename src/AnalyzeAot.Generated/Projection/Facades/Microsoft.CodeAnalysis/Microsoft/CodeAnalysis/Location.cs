@@ -54,7 +54,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.ILocationTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetLocationTypeVtbl(controlVtbl);
+                int status = vtbl.Location_get_None(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -74,13 +78,17 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ILocationVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.Location_get_SourceTree(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : SyntaxTree.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
         public static Location Create(SyntaxTree syntaxTree, Text.TextSpan textSpan)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            return __AnalyzeAotCreateLocal(syntaxTree, textSpan);
         }
 
         public static Location Create(string filePath, Text.TextSpan textSpan, Text.LinePositionSpan lineSpan, string mappedFilePath, Text.LinePositionSpan mappedLineSpan)

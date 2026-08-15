@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0543f109-1b04-526b-a166-c056e9a26c0b")]
+[Guid("6d7336a4-7a63-5505-8b80-112e21894800")]
 public partial interface IAwaitExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int AwaitExpressionSyntax_Accept_9c4fe164(
+    int AwaitExpressionSyntax_Accept_1fcc870b(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface IAwaitExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 
     [PreserveSig]
     int AwaitExpressionSyntax_get_AwaitKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int AwaitExpressionSyntax_get_Expression(
         long receiver,
         out long result
     );

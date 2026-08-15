@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("839f2133-a06d-51b4-abaf-be630d676456")]
+[Guid("6850428e-f7ec-5f41-ac61-c031141ebb1e")]
 public partial interface IImportedXmlNamespaceVtbl
 {
+
+    [PreserveSig]
+    int ImportedXmlNamespace_get_DeclaringSyntaxReference(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int ImportedXmlNamespace_get_XmlNamespace(

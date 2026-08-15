@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("bb37dbb9-6125-50fc-abf5-0cb3cef4a40e")]
+[Guid("24009bb1-f8d1-50c5-9c33-1a4ff9d6b002")]
 public partial interface ISwitchExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int SwitchExpressionSyntax_Accept_06573270(
+    int SwitchExpressionSyntax_Accept_80c9ec5d(
         long receiver,
         long visitor
     );
@@ -52,6 +52,12 @@ public partial interface ISwitchExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 
     [PreserveSig]
     int SwitchExpressionSyntax_get_CloseBraceToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SwitchExpressionSyntax_get_GoverningExpression(
         long receiver,
         out long result
     );

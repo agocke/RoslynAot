@@ -32,7 +32,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISuppressionAnalysisContextVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SuppressionAnalysisContext_get_Options(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return AnalyzerOptions.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -46,7 +50,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public readonly SemanticModel GetSemanticModel(SyntaxTree syntaxTree)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISuppressionAnalysisContextVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SuppressionAnalysisContext_GetSemanticModel(__AnalyzeAotGetHandle(controlVtbl), syntaxTree.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SemanticModel.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public readonly void ReportSuppression(Suppression suppression)

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("05dfa278-28bf-5820-b6bb-64af2191f2e6")]
+[Guid("d79a88d7-71da-5ba0-afc5-81e50f669c0e")]
 public partial interface IUnsafeStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int UnsafeStatementSyntax_Accept_02a8af1d(
+    int UnsafeStatementSyntax_Accept_2fdefafc(
         long receiver,
         long visitor
     );

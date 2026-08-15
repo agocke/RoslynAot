@@ -23,6 +23,42 @@ internal sealed partial class UnresolvedMetadataReferenceVtblDispatcher : IUnres
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int MetadataReference_WithEmbedInteropTypes(
+        long receiver,
+        int value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.MetadataReference>(receiver).WithEmbedInteropTypes(value != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int MetadataReference_WithProperties(
+        long receiver,
+        long properties,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.MetadataReference>(receiver).WithProperties(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.MetadataReferenceProperties>(properties)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int MetadataReference_get_Display(
         long receiver,
         nint buffer,

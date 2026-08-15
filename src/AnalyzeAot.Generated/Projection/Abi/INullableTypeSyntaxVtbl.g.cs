@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0189c19b-5888-54bf-9582-b4c1595d4da4")]
+[Guid("980c6c29-21b1-51ad-aff8-5dc74c1bd7c5")]
 public partial interface INullableTypeSyntaxVtbl : ITypeSyntaxVtbl
 {
 
     [PreserveSig]
-    int NullableTypeSyntax_Accept_95c102c4(
+    int NullableTypeSyntax_Accept_c39ee931(
         long receiver,
         long visitor
     );
@@ -41,6 +41,12 @@ public partial interface INullableTypeSyntaxVtbl : ITypeSyntaxVtbl
     int NullableTypeSyntax_WithQuestionToken(
         long receiver,
         long questionToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int NullableTypeSyntax_get_ElementType(
+        long receiver,
         out long result
     );
 

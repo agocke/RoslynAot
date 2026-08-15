@@ -39,6 +39,23 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         }
     }
 
+    public int CodeBlockAnalysisContext_get_CodeBlock(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.CodeBlockAnalysisContext>(receiver).CodeBlock);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CodeBlockAnalysisContext_get_FilterSpan(
         long receiver,
         out long result)
@@ -56,6 +73,23 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         }
     }
 
+    public int CodeBlockAnalysisContext_get_FilterTree(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.CodeBlockAnalysisContext>(receiver).FilterTree);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CodeBlockAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result)
@@ -65,6 +99,40 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.CodeBlockAnalysisContext>(receiver).IsGeneratedCode ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CodeBlockAnalysisContext_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.CodeBlockAnalysisContext>(receiver).Options);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CodeBlockAnalysisContext_get_SemanticModel(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.CodeBlockAnalysisContext>(receiver).SemanticModel);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

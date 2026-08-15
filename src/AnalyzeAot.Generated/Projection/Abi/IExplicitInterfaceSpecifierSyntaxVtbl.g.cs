@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("dce65f71-92d3-5cb2-96be-f9de95f8c685")]
+[Guid("c5ba95e8-1c58-554b-8ec2-76b6a4b19e25")]
 public partial interface IExplicitInterfaceSpecifierSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int ExplicitInterfaceSpecifierSyntax_Accept_3270a616(
+    int ExplicitInterfaceSpecifierSyntax_Accept_5f4dab86(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface IExplicitInterfaceSpecifierSyntaxVtbl : ICSharpSyntaxNo
 
     [PreserveSig]
     int ExplicitInterfaceSpecifierSyntax_get_DotToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ExplicitInterfaceSpecifierSyntax_get_Name(
         long receiver,
         out long result
     );

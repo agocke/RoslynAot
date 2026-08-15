@@ -23,7 +23,7 @@ internal sealed partial class TextChangeRangeVtblDispatcher : ITextChangeRangeVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int TextChangeRange_Equals_8cf5a513(
+    public int TextChangeRange_Equals_83821016(
         long receiver,
         long other,
         out int result)

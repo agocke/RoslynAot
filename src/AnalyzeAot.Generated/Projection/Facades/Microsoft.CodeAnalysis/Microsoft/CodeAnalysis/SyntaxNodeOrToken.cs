@@ -136,7 +136,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SyntaxNodeOrToken_get_Parent(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -180,13 +184,21 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SyntaxNodeOrToken_get_SyntaxTree(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : SyntaxTree.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
         public readonly SyntaxNode? AsNode()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SyntaxNodeOrToken_AsNode(__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : SyntaxNode.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public readonly SyntaxToken AsToken()
@@ -211,7 +223,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.SyntaxNodeOrToken_Equals_da6a78cc(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.SyntaxNodeOrToken_Equals_1ae3035a(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -265,7 +277,11 @@ namespace Microsoft.CodeAnalysis
 
         public readonly Location? GetLocation()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SyntaxNodeOrToken_GetLocation(__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : Location.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public readonly SyntaxNodeOrToken GetNextSibling()
@@ -337,9 +353,8 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
-        public static explicit operator SyntaxNode? (SyntaxNodeOrToken nodeOrToken)
+        private static void __AnalyzeAotOmittedConversion_SyntaxNodeOrToken_op_Explicit_4fb2a569()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
         public static explicit operator SyntaxToken(SyntaxNodeOrToken nodeOrToken)
@@ -347,9 +362,8 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
-        public static implicit operator SyntaxNodeOrToken(SyntaxNode? node)
+        private static void __AnalyzeAotOmittedConversion_SyntaxNodeOrToken_op_Implicit_beefaf04()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
         public static implicit operator SyntaxNodeOrToken(SyntaxToken token)

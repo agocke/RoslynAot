@@ -12,13 +12,33 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("911a2d76-ba0f-54b7-863b-e9f5455fbb75")]
+[Guid("fb87c706-f137-5006-b0b8-4e802f4d9bb1")]
 public partial interface IPortableExecutableReferenceVtbl : IMetadataReferenceVtbl
 {
 
     [PreserveSig]
     int PortableExecutableReference_GetMetadataId(
         long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int PortableExecutableReference_GetMetadata(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int PortableExecutableReference_WithEmbedInteropTypes(
+        long receiver,
+        int value,
+        out long result
+    );
+
+    [PreserveSig]
+    int PortableExecutableReference_WithProperties(
+        long receiver,
+        long properties,
         out long result
     );
 

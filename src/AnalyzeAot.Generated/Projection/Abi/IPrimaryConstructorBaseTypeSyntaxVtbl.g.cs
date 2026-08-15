@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("26d4f4ed-0176-5a9b-9416-853e270c2f31")]
+[Guid("bcb01809-4bda-5d9a-86ac-a44103a406a0")]
 public partial interface IPrimaryConstructorBaseTypeSyntaxVtbl : IBaseTypeSyntaxVtbl
 {
 
     [PreserveSig]
-    int PrimaryConstructorBaseTypeSyntax_Accept_2a07750f(
+    int PrimaryConstructorBaseTypeSyntax_Accept_218b3ad3(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface IPrimaryConstructorBaseTypeSyntaxVtbl : IBaseTypeSyntax
 
     [PreserveSig]
     int PrimaryConstructorBaseTypeSyntax_get_ArgumentList(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int PrimaryConstructorBaseTypeSyntax_get_Type(
         long receiver,
         out long result
     );

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7ffb3f71-32df-59c9-8c52-b5d4ae6233f8")]
+[Guid("fd75def7-d7ea-5768-8cd7-4f558495e1a6")]
 public partial interface IParenthesizedPatternSyntaxVtbl : IPatternSyntaxVtbl
 {
 
     [PreserveSig]
-    int ParenthesizedPatternSyntax_Accept_faea63e1(
+    int ParenthesizedPatternSyntax_Accept_52acf8a6(
         long receiver,
         long visitor
     );
@@ -60,6 +60,12 @@ public partial interface IParenthesizedPatternSyntaxVtbl : IPatternSyntaxVtbl
 
     [PreserveSig]
     int ParenthesizedPatternSyntax_get_OpenParenToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ParenthesizedPatternSyntax_get_Pattern(
         long receiver,
         out long result
     );

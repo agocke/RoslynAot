@@ -23,6 +23,42 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int MetadataReference_WithEmbedInteropTypes(
+        long receiver,
+        int value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.MetadataReference>(receiver).WithEmbedInteropTypes(value != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int MetadataReference_WithProperties(
+        long receiver,
+        long properties,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.MetadataReference>(receiver).WithProperties(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.MetadataReferenceProperties>(properties)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int MetadataReference_get_Display(
         long receiver,
         nint buffer,
@@ -65,7 +101,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         }
     }
 
-    public int CompilationReference_Equals_e9a54551(
+    public int CompilationReference_Equals_776ef3ef(
         long receiver,
         long other,
         out int result)
@@ -92,6 +128,42 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationReference>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationReference_WithEmbedInteropTypes(
+        long receiver,
+        int value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationReference>(receiver).WithEmbedInteropTypes(value != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CompilationReference_WithProperties(
+        long receiver,
+        long properties,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CompilationReference>(receiver).WithProperties(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.MetadataReferenceProperties>(properties)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

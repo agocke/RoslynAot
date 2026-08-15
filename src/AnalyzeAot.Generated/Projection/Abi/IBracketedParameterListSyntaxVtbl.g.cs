@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f4219860-113b-5bf1-b728-12e7e39e2fe7")]
+[Guid("29300422-ebae-5f15-9418-0f4d91b1a90a")]
 public partial interface IBracketedParameterListSyntaxVtbl : IBaseParameterListSyntaxVtbl
 {
 
     [PreserveSig]
-    int BracketedParameterListSyntax_Accept_06fa82c3(
+    int BracketedParameterListSyntax_Accept_c32abb71(
         long receiver,
         long visitor
     );

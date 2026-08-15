@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d5d6aa98-4af2-556c-b119-f868c9c171f1")]
+[Guid("df3ee336-16da-5487-bc3d-dc4e94012b66")]
 public partial interface ISpreadElementSyntaxVtbl : ICollectionElementSyntaxVtbl
 {
 
     [PreserveSig]
-    int SpreadElementSyntax_Accept_7e5e9a1f(
+    int SpreadElementSyntax_Accept_51c9a67f(
         long receiver,
         long visitor
     );
@@ -41,6 +41,12 @@ public partial interface ISpreadElementSyntaxVtbl : ICollectionElementSyntaxVtbl
     int SpreadElementSyntax_WithOperatorToken(
         long receiver,
         long operatorToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int SpreadElementSyntax_get_Expression(
+        long receiver,
         out long result
     );
 

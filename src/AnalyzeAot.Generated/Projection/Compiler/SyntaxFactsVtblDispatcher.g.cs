@@ -210,7 +210,7 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         }
     }
 
-    public unsafe int SyntaxFacts_GetText_ff43e5c0(
+    public unsafe int SyntaxFacts_GetText_96c87d32(
         ushort kind,
         nint buffer,
         int bufferLength,
@@ -235,7 +235,7 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         }
     }
 
-    public unsafe int SyntaxFacts_GetText_4c5209e5(
+    public unsafe int SyntaxFacts_GetText_4c6897c1(
         int accessibility,
         nint buffer,
         int bufferLength,

@@ -12,9 +12,23 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("080be07d-60a0-53a9-a27c-a17da072b2a6")]
+[Guid("c77fa607-ff51-5ba5-b72d-5eae37730af9")]
 public partial interface IMetadataReferenceVtbl
 {
+
+    [PreserveSig]
+    int MetadataReference_WithEmbedInteropTypes(
+        long receiver,
+        int value,
+        out long result
+    );
+
+    [PreserveSig]
+    int MetadataReference_WithProperties(
+        long receiver,
+        long properties,
+        out long result
+    );
 
     [PreserveSig]
     int MetadataReference_get_Display(

@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    public abstract partial class GeneratorDriver
+    public partial interface GeneratorDriver
     {
-        internal GeneratorDriver()
-        {
-        }
-
         public GeneratorDriver AddAdditionalTexts(System.Collections.Immutable.ImmutableArray<AdditionalText> additionalTexts)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
@@ -26,7 +22,11 @@ namespace Microsoft.CodeAnalysis
 
         public GeneratorDriverRunResult GetRunResult()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IGeneratorDriverVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.GeneratorDriver_GetRunResult(__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return GeneratorDriverRunResult.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public GeneratorDriverTimingInfo GetTimingInfo()
@@ -50,7 +50,11 @@ namespace Microsoft.CodeAnalysis
 
         public GeneratorDriver ReplaceAdditionalText(AdditionalText oldText, AdditionalText newText)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IGeneratorDriverVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.GeneratorDriver_ReplaceAdditionalText(__AnalyzeAotGetHandle(controlVtbl), oldText.__AnalyzeAotGetHandle(controlVtbl), newText.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public GeneratorDriver ReplaceAdditionalTexts(System.Collections.Immutable.ImmutableArray<AdditionalText> newTexts)
@@ -85,41 +89,31 @@ namespace Microsoft.CodeAnalysis
 
         public GeneratorDriver WithUpdatedAnalyzerConfigOptions(Diagnostics.AnalyzerConfigOptionsProvider newOptions)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IGeneratorDriverVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.GeneratorDriver_WithUpdatedAnalyzerConfigOptions(__AnalyzeAotGetHandle(controlVtbl), newOptions.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public GeneratorDriver WithUpdatedParseOptions(ParseOptions newOptions)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.IGeneratorDriverVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.GeneratorDriver_WithUpdatedParseOptions(__AnalyzeAotGetHandle(controlVtbl), newOptions.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.IGeneratorDriverVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal GeneratorDriver(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IGeneratorDriverVtbl vtbl, long handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IGeneratorDriverVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetGeneratorDriverVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static GeneratorDriver __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (GeneratorDriver)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("9fcf0081-b97d-570b-ae01-4c7847f68456")]
+        internal partial interface __AnalyzeAotImplementation : GeneratorDriver
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.IGeneratorDriverVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        private sealed partial class __AnalyzeAotProxy : GeneratorDriver
-        {
-            internal __AnalyzeAotProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IGeneratorDriverVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
-            {
-            }
-        }
-
-        internal static GeneratorDriver __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __AnalyzeAotProxy(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetGeneratorDriverVtbl(controlVtbl), handle);
     }
 }

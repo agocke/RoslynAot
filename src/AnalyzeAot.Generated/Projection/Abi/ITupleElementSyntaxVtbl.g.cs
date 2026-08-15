@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e02ec33e-f1b2-5526-9389-aa86cbdb03ed")]
+[Guid("a1ddb68d-85ba-58c4-ac19-d494bb725b36")]
 public partial interface ITupleElementSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int TupleElementSyntax_Accept_75b619f1(
+    int TupleElementSyntax_Accept_5f1e1a12(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface ITupleElementSyntaxVtbl : ICSharpSyntaxNodeVtbl
 
     [PreserveSig]
     int TupleElementSyntax_get_Identifier(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int TupleElementSyntax_get_Type(
         long receiver,
         out long result
     );

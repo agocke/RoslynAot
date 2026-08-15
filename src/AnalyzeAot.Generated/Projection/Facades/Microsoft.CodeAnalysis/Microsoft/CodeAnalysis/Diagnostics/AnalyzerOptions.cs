@@ -32,7 +32,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IAnalyzerOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.AnalyzerOptions_get_AnalyzerConfigOptionsProvider(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return AnalyzerConfigOptionsProvider.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 

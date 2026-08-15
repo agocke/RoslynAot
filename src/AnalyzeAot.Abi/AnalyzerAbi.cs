@@ -5,8 +5,8 @@ namespace AnalyzeAot.Abi;
 
 public static unsafe class AnalyzerAbi
 {
-    public const uint Version = 2;
-    public const string GetAnalyzerEntryPoint = "analyze_aot_get_analyzer_v2";
+    public const uint Version = 3;
+    public const string GetAnalyzerEntryPoint = "analyze_aot_get_analyzer_v3";
 
     public const int Success = 0;
     public const int InvalidArgument = unchecked((int)0x80070057);
@@ -40,6 +40,8 @@ public enum AnalyzerDescriptorField
     Title,
     MessageFormat,
     Category,
+    Description,
+    HelpLinkUri,
 }
 
 [GeneratedComInterface]
@@ -78,7 +80,7 @@ public partial interface IAnalyzerTransport
 }
 
 [GeneratedComInterface]
-[Guid("8d67b782-69fc-41d7-93c6-4c41f841c65c")]
+[Guid("712beacb-d43f-5c8a-a60f-4f00321a5b07")]
 public partial interface IAnalyzerHost
 {
     [PreserveSig]
@@ -86,28 +88,6 @@ public partial interface IAnalyzerHost
 
     [PreserveSig]
     int RegisterSyntaxNodeAction(int actionId, int rawKind);
-
-    [PreserveSig]
-    int GetRawKind(int handle, out int rawKind);
-
-    [PreserveSig]
-    int GetSpanStart(int handle, out int start);
-
-    [PreserveSig]
-    int GetSpanLength(int handle, out int length);
-
-    [PreserveSig]
-    int GetChildCount(int handle, out int count);
-
-    [PreserveSig]
-    int GetChild(int handle, int index, out int child);
-
-    [PreserveSig]
-    int CopyTextUtf8(
-        int handle,
-        nint buffer,
-        int bufferLength,
-        out int requiredLength);
 
     [PreserveSig]
     int ReportDiagnostic(int descriptorIndex, int start, int length);

@@ -43,7 +43,11 @@ namespace Microsoft.CodeAnalysis.Text
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISourceTextVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SourceText_get_Container(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SourceTextContainer.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -57,7 +61,11 @@ namespace Microsoft.CodeAnalysis.Text
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISourceTextVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SourceText_get_Lines(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return TextLineCollection.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -130,12 +138,20 @@ namespace Microsoft.CodeAnalysis.Text
 
         public virtual SourceText GetSubText(TextSpan span)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISourceTextVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SourceText_GetSubText_cd9710a5(__AnalyzeAotGetHandle(controlVtbl), span.__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SourceText GetSubText(int start)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISourceTextVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SourceText_GetSubText_3c347ab9(__AnalyzeAotGetHandle(controlVtbl), start, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public virtual System.Collections.Generic.IReadOnlyList<TextChange> GetTextChanges(SourceText oldText)
@@ -158,7 +174,7 @@ namespace Microsoft.CodeAnalysis.Text
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISourceTextVtbl vtbl = __AnalyzeAotGetVtbl();
             long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_98b75795(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_36435385(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
         public virtual string ToString(TextSpan span)
@@ -166,7 +182,7 @@ namespace Microsoft.CodeAnalysis.Text
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISourceTextVtbl vtbl = __AnalyzeAotGetVtbl();
             long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
-            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_cf373e4b(__analyzeAotReceiver, span.__AnalyzeAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
+            return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_b3c549ee(__analyzeAotReceiver, span.__AnalyzeAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
         }
 
         public SourceText WithChanges(params TextChange[] changes)

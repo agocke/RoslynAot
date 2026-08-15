@@ -19,9 +19,9 @@ public static unsafe class RoslynAbi
     public const int Unsupported = unchecked((int)0x80131515);
     public const int Failure = unchecked((int)0x80004005);
 
-    public const string ManifestIdentity = "a549798ddd2e904f64cda90e62efd9733b8477506950e23902cb382812b9a37c";
-    public const long ManifestIdentityLow = 5733133854738827685L;
-    public const long ManifestIdentityHigh = 8347966588739767652L;
+    public const string ManifestIdentity = "7cefff244ae13e6538544d70e9bae80b3e67f4654dc674395a606e9cc7087ff4";
+    public const long ManifestIdentityLow = 7295516154951364476L;
+    public const long ManifestIdentityHigh = 858141240788341816L;
 
     public static uint Release(nint instance)
     {
@@ -74,4 +74,11 @@ public partial interface IRoslynControlVtbl
         int utf8Length,
         int checksumAlgorithm,
         out long result);
+
+    [PreserveSig]
+    int IsObjectType(
+        long handle,
+        long vtblIdLow,
+        long vtblIdHigh,
+        out int isType);
 }

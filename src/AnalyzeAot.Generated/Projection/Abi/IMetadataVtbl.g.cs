@@ -12,13 +12,30 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ae621e6d-9430-524b-b98a-4044d0569e8d")]
+[Guid("cfffade2-4536-5589-9389-72c81f0b4c33")]
 public partial interface IMetadataVtbl
 {
+
+    [PreserveSig]
+    int Metadata_Copy(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int Metadata_Dispose(
+        long receiver
+    );
 
     [PreserveSig]
     int Metadata_get_Id(
         long receiver,
         out long result
+    );
+
+    [PreserveSig]
+    int Metadata_get_Kind(
+        long receiver,
+        out byte result
     );
 }

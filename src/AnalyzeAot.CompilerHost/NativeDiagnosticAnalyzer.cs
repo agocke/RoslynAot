@@ -145,7 +145,15 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
                         index,
                         AnalyzerDescriptorField.Category),
                     (DiagnosticSeverity)severity,
-                    enabledByDefault != 0));
+                    enabledByDefault != 0,
+                    description: ReadDescriptorString(
+                        transport,
+                        index,
+                        AnalyzerDescriptorField.Description),
+                    helpLinkUri: ReadDescriptorString(
+                        transport,
+                        index,
+                        AnalyzerDescriptorField.HelpLinkUri)));
         }
 
         return descriptors.MoveToImmutable();
@@ -216,13 +224,12 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
 }
 
 [GeneratedComClass]
-internal sealed unsafe partial class CompilerAnalyzerHost : IAnalyzerHost
+internal sealed partial class CompilerAnalyzerHost : IAnalyzerHost
 {
     private readonly NativeDiagnosticAnalyzer _analyzer;
     private readonly AnalysisContext? _analysisContext;
     private readonly SyntaxNodeAnalysisContext _syntaxContext;
     private readonly bool _hasSyntaxContext;
-    private readonly SyntaxSnapshot? _snapshot;
 
     public CompilerAnalyzerHost(
         NativeDiagnosticAnalyzer analyzer,
@@ -239,7 +246,6 @@ internal sealed unsafe partial class CompilerAnalyzerHost : IAnalyzerHost
         _analyzer = analyzer;
         _syntaxContext = syntaxContext;
         _hasSyntaxContext = true;
-        _snapshot = SyntaxSnapshot.Create(syntaxContext.Node);
     }
 
     public int GetVersion(out uint version)
@@ -260,97 +266,6 @@ internal sealed unsafe partial class CompilerAnalyzerHost : IAnalyzerHost
                 actionId,
                 context),
             (SyntaxKind)rawKind);
-        return AnalyzerAbi.Success;
-    }
-
-    public int GetRawKind(int handle, out int rawKind)
-    {
-        if (!TryGetEntry(handle, out SyntaxEntry entry))
-        {
-            rawKind = 0;
-            return AnalyzerAbi.InvalidArgument;
-        }
-
-        rawKind = entry.RawKind;
-        return AnalyzerAbi.Success;
-    }
-
-    public int GetSpanStart(int handle, out int start)
-    {
-        if (!TryGetEntry(handle, out SyntaxEntry entry))
-        {
-            start = 0;
-            return AnalyzerAbi.InvalidArgument;
-        }
-
-        start = entry.Start;
-        return AnalyzerAbi.Success;
-    }
-
-    public int GetSpanLength(int handle, out int length)
-    {
-        if (!TryGetEntry(handle, out SyntaxEntry entry))
-        {
-            length = 0;
-            return AnalyzerAbi.InvalidArgument;
-        }
-
-        length = entry.Length;
-        return AnalyzerAbi.Success;
-    }
-
-    public int GetChildCount(int handle, out int count)
-    {
-        if (!TryGetEntry(handle, out SyntaxEntry entry))
-        {
-            count = 0;
-            return AnalyzerAbi.InvalidArgument;
-        }
-
-        count = entry.Children.Length;
-        return AnalyzerAbi.Success;
-    }
-
-    public int GetChild(int handle, int index, out int child)
-    {
-        if (!TryGetEntry(handle, out SyntaxEntry entry) ||
-            (uint)index >= (uint)entry.Children.Length)
-        {
-            child = 0;
-            return AnalyzerAbi.InvalidArgument;
-        }
-
-        child = entry.Children[index];
-        return AnalyzerAbi.Success;
-    }
-
-    public int CopyTextUtf8(
-        int handle,
-        nint buffer,
-        int bufferLength,
-        out int requiredLength)
-    {
-        if (!TryGetEntry(handle, out SyntaxEntry entry) ||
-            bufferLength < 0)
-        {
-            requiredLength = 0;
-            return AnalyzerAbi.InvalidArgument;
-        }
-
-        requiredLength = Encoding.UTF8.GetByteCount(entry.Text);
-        if (buffer == 0)
-        {
-            return AnalyzerAbi.Success;
-        }
-
-        if (bufferLength < requiredLength)
-        {
-            return AnalyzerAbi.InvalidArgument;
-        }
-
-        Encoding.UTF8.GetBytes(
-            entry.Text.AsSpan(),
-            new Span<byte>((void*)buffer, bufferLength));
         return AnalyzerAbi.Success;
     }
 
@@ -376,70 +291,4 @@ internal sealed unsafe partial class CompilerAnalyzerHost : IAnalyzerHost
             Diagnostic.Create(descriptor, location));
         return AnalyzerAbi.Success;
     }
-
-    private bool TryGetEntry(int handle, out SyntaxEntry entry)
-    {
-        if (_snapshot is null)
-        {
-            entry = default;
-            return false;
-        }
-
-        return _snapshot.TryGetEntry(handle, out entry);
-    }
 }
-
-internal sealed class SyntaxSnapshot
-{
-    private readonly List<SyntaxEntry> _entries;
-
-    private SyntaxSnapshot(List<SyntaxEntry> entries)
-    {
-        _entries = entries;
-    }
-
-    public bool TryGetEntry(int handle, out SyntaxEntry entry)
-    {
-        if ((uint)handle >= (uint)_entries.Count)
-        {
-            entry = default;
-            return false;
-        }
-
-        entry = _entries[handle];
-        return true;
-    }
-
-    public static SyntaxSnapshot Create(SyntaxNode root)
-    {
-        var entries = new List<SyntaxEntry>();
-        Add(root, entries);
-        return new SyntaxSnapshot(entries);
-    }
-
-    private static int Add(
-        SyntaxNodeOrToken item,
-        List<SyntaxEntry> entries)
-    {
-        int handle = entries.Count;
-        entries.Add(default);
-
-        int[] children = item.ChildNodesAndTokens()
-            .Select(child => Add(child, entries))
-            .ToArray();
-        entries[handle] = new SyntaxEntry(
-            item.RawKind,
-            item.SpanStart,
-            item.Span.Length,
-            item.ToString(),
-            children);
-        return handle;
-    }
-}
-
-internal readonly record struct SyntaxEntry(
-    int RawKind,
-    int Start,
-    int Length,
-    string Text,
-    int[] Children);

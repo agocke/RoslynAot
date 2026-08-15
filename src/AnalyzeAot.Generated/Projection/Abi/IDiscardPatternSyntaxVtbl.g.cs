@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d676337f-62d7-5c82-bd44-3ab89c4e5828")]
+[Guid("f0b3b0e7-56d3-5368-8491-82de78ce6cf7")]
 public partial interface IDiscardPatternSyntaxVtbl : IPatternSyntaxVtbl
 {
 
     [PreserveSig]
-    int DiscardPatternSyntax_Accept_65e718f2(
+    int DiscardPatternSyntax_Accept_eb043220(
         long receiver,
         long visitor
     );

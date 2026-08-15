@@ -90,14 +90,18 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public override ParseOptions CommonWithKind(SourceCodeKind kind)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ICSharpParseOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.CSharpParseOptions_CommonWithKind(__AnalyzeAotGetHandle(controlVtbl), (int)kind, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return ParseOptions.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public bool Equals(CSharpParseOptions? other)
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ICSharpParseOptionsVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.CSharpParseOptions_Equals_faf28257(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.CSharpParseOptions_Equals_51922c40(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

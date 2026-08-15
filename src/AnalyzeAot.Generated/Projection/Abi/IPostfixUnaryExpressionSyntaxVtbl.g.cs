@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f8eb85b8-6b77-51b5-aafb-b5afc6017fe0")]
+[Guid("f263d8bd-09a5-5b59-aa1c-f52d72c5f5da")]
 public partial interface IPostfixUnaryExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int PostfixUnaryExpressionSyntax_Accept_0521a0ac(
+    int PostfixUnaryExpressionSyntax_Accept_c8f3e8bf(
         long receiver,
         long visitor
     );
@@ -41,6 +41,12 @@ public partial interface IPostfixUnaryExpressionSyntaxVtbl : IExpressionSyntaxVt
     int PostfixUnaryExpressionSyntax_WithOperatorToken(
         long receiver,
         long operatorToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int PostfixUnaryExpressionSyntax_get_Operand(
+        long receiver,
         out long result
     );
 

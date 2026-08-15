@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b1cc9237-5a80-53d3-9513-69f9fc366639")]
+[Guid("3f1b59ef-fec9-560f-92a8-56f05260e9b6")]
 public partial interface ISyntaxTokenVtbl
 {
 
@@ -24,7 +24,7 @@ public partial interface ISyntaxTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxToken_Equals_c3137714(
+    int SyntaxToken_Equals_38ba030c(
         long receiver,
         long other,
         out int result
@@ -34,6 +34,12 @@ public partial interface ISyntaxTokenVtbl
     int SyntaxToken_GetHashCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int SyntaxToken_GetLocation(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]
@@ -183,6 +189,12 @@ public partial interface ISyntaxTokenVtbl
     );
 
     [PreserveSig]
+    int SyntaxToken_get_Parent(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int SyntaxToken_get_RawKind(
         long receiver,
         out int result
@@ -196,6 +208,12 @@ public partial interface ISyntaxTokenVtbl
 
     [PreserveSig]
     int SyntaxToken_get_Span(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxToken_get_SyntaxTree(
         long receiver,
         out long result
     );

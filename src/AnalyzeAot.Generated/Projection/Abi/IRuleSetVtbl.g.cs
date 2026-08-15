@@ -12,9 +12,16 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7dbf15b8-3a33-590f-85d5-ddbabebb5e82")]
+[Guid("bf65a47b-3a14-5be2-afde-98b218a21fb3")]
 public partial interface IRuleSetVtbl
 {
+
+    [PreserveSig]
+    int RuleSet_WithEffectiveAction(
+        long receiver,
+        int action,
+        out long result
+    );
 
     [PreserveSig]
     int RuleSet_get_FilePath(

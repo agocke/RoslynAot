@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c12282ef-073d-5cd7-b65f-d70c3954a062")]
+[Guid("71e37bd6-981f-5d1a-8c2a-72bef8102e9c")]
 public partial interface IImplicitArrayCreationExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int ImplicitArrayCreationExpressionSyntax_Accept_65a8b27e(
+    int ImplicitArrayCreationExpressionSyntax_Accept_1896cb5c(
         long receiver,
         long visitor
     );

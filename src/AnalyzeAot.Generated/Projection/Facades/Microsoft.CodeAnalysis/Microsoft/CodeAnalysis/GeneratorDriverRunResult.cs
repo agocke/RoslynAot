@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    public partial class GeneratorDriverRunResult
+    public partial interface GeneratorDriverRunResult
     {
-        internal GeneratorDriverRunResult()
-        {
-        }
-
         public System.Collections.Immutable.ImmutableArray<Diagnostic> Diagnostics
         {
             get
@@ -36,6 +32,17 @@ namespace Microsoft.CodeAnalysis
             {
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
             }
+        }
+
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IGeneratorDriverRunResultVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetGeneratorDriverRunResultVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static GeneratorDriverRunResult __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (GeneratorDriverRunResult)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("cf8ff6ca-d12d-5d8a-bee7-60c7cbe583af")]
+        internal partial interface __AnalyzeAotImplementation : GeneratorDriverRunResult
+        {
         }
     }
 }

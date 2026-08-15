@@ -23,7 +23,7 @@ internal sealed partial class ConversionVtblDispatcher : IConversionVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int Conversion_Equals_59c1bd24(
+    public int Conversion_Equals_acba79f2(
         long receiver,
         long other,
         out int result)

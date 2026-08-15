@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("a43f03f4-36ca-54f2-9f31-6cd8c6684f19")]
+[Guid("70bfb745-a8d6-59e4-981a-f368f9d04543")]
 public partial interface ILabeledStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int LabeledStatementSyntax_Accept_ca91c516(
+    int LabeledStatementSyntax_Accept_ec5d8392(
         long receiver,
         long visitor
     );
@@ -60,6 +60,12 @@ public partial interface ILabeledStatementSyntaxVtbl : IStatementSyntaxVtbl
 
     [PreserveSig]
     int LabeledStatementSyntax_get_Identifier(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int LabeledStatementSyntax_get_Statement(
         long receiver,
         out long result
     );

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("8d459f45-7ce8-53db-a850-d487869791e0")]
+[Guid("2020272c-ae47-5f28-a037-e17deeb705d9")]
 public partial interface IInterpolationAlignmentClauseSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int InterpolationAlignmentClauseSyntax_Accept_5fa4b11e(
+    int InterpolationAlignmentClauseSyntax_Accept_76aef79a(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface IInterpolationAlignmentClauseSyntaxVtbl : ICSharpSyntax
 
     [PreserveSig]
     int InterpolationAlignmentClauseSyntax_get_CommaToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int InterpolationAlignmentClauseSyntax_get_Value(
         long receiver,
         out long result
     );

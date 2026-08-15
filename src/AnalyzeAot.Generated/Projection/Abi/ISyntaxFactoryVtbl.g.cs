@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("9bc4f09a-7c8c-5e47-ba35-478c52bdbaa3")]
+[Guid("6f01dfda-2e77-5b9c-a9eb-8216d08d3fed")]
 public partial interface ISyntaxFactoryVtbl
 {
 
@@ -105,7 +105,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_AreEquivalent_9c9d8b17(
+    int SyntaxFactory_AreEquivalent_8a50f3bc(
         long oldNode,
         long newNode,
         int topLevel,
@@ -113,21 +113,21 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_AreEquivalent_bd564b8d(
+    int SyntaxFactory_AreEquivalent_8f4e5d46(
         long oldToken,
         long newToken,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxFactory_AreEquivalent_8ec4abec(
+    int SyntaxFactory_AreEquivalent_0a50461c(
         long oldList,
         long newList,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxFactory_AreEquivalent_e1a3ea7d(
+    int SyntaxFactory_AreEquivalent_1ac1069e(
         long oldTree,
         long newTree,
         int topLevel,
@@ -259,7 +259,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_BadDirectiveTrivia_84324a8d(
+    int SyntaxFactory_BadDirectiveTrivia_a8fbbc2d(
         long hashToken,
         long identifier,
         long endOfDirectiveToken,
@@ -268,7 +268,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_BadDirectiveTrivia_2228d676(
+    int SyntaxFactory_BadDirectiveTrivia_3bc7f48e(
         long identifier,
         int isActive,
         out long result
@@ -729,7 +729,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_DefineDirectiveTrivia_8e573ff8(
+    int SyntaxFactory_DefineDirectiveTrivia_b1a88fae(
         long hashToken,
         long defineKeyword,
         long name,
@@ -739,7 +739,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_DefineDirectiveTrivia_ad64892e(
+    int SyntaxFactory_DefineDirectiveTrivia_16e54fa5(
         long name,
         int isActive,
         out long result
@@ -824,7 +824,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ElifDirectiveTrivia_bc00d35f(
+    int SyntaxFactory_ElifDirectiveTrivia_9830e5d6(
         long condition,
         int isActive,
         int branchTaken,
@@ -833,7 +833,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ElifDirectiveTrivia_f739be66(
+    int SyntaxFactory_ElifDirectiveTrivia_20995b17(
         long hashToken,
         long elifKeyword,
         long condition,
@@ -858,7 +858,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ElseDirectiveTrivia_efa6c61f(
+    int SyntaxFactory_ElseDirectiveTrivia_b02992d0(
         long hashToken,
         long elseKeyword,
         long endOfDirectiveToken,
@@ -868,7 +868,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ElseDirectiveTrivia_adfb54ee(
+    int SyntaxFactory_ElseDirectiveTrivia_e6a72d37(
         int isActive,
         int branchTaken,
         out long result
@@ -886,7 +886,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_EndIfDirectiveTrivia_35d3b427(
+    int SyntaxFactory_EndIfDirectiveTrivia_fa3e3836(
         long hashToken,
         long endIfKeyword,
         long endOfDirectiveToken,
@@ -895,13 +895,13 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_EndIfDirectiveTrivia_05820434(
+    int SyntaxFactory_EndIfDirectiveTrivia_8cdf69e6(
         int isActive,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_EndRegionDirectiveTrivia_8cb345f3(
+    int SyntaxFactory_EndRegionDirectiveTrivia_32326fcd(
         long hashToken,
         long endRegionKeyword,
         long endOfDirectiveToken,
@@ -910,7 +910,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_EndRegionDirectiveTrivia_563b1839(
+    int SyntaxFactory_EndRegionDirectiveTrivia_e000cecd(
         int isActive,
         out long result
     );
@@ -941,7 +941,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ErrorDirectiveTrivia_923268c6(
+    int SyntaxFactory_ErrorDirectiveTrivia_2ba9f271(
         long hashToken,
         long errorKeyword,
         long endOfDirectiveToken,
@@ -950,7 +950,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ErrorDirectiveTrivia_fa8ea42f(
+    int SyntaxFactory_ErrorDirectiveTrivia_9ad9a2b3(
         int isActive,
         out long result
     );
@@ -1264,6 +1264,18 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
+    int SyntaxFactory_GetNonGenericExpression(
+        long expression,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxFactory_GetStandaloneExpression(
+        long expression,
+        out long result
+    );
+
+    [PreserveSig]
     int SyntaxFactory_GlobalStatement_887da7ea(
         long statement,
         out long result
@@ -1317,7 +1329,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_IfDirectiveTrivia_f53270a3(
+    int SyntaxFactory_IfDirectiveTrivia_9f75639f(
         long condition,
         int isActive,
         int branchTaken,
@@ -1326,7 +1338,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_IfDirectiveTrivia_7c1d75d4(
+    int SyntaxFactory_IfDirectiveTrivia_f7d936d7(
         long hashToken,
         long ifKeyword,
         long condition,
@@ -1364,7 +1376,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_IgnoredDirectiveTrivia_8148eacb(
+    int SyntaxFactory_IgnoredDirectiveTrivia_f31d449a(
         long hashToken,
         long colonToken,
         long content,
@@ -1374,14 +1386,14 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_IgnoredDirectiveTrivia_966bfd54(
+    int SyntaxFactory_IgnoredDirectiveTrivia_f5117a95(
         long content,
         int isActive,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_IgnoredDirectiveTrivia_48c5e272(
+    int SyntaxFactory_IgnoredDirectiveTrivia_d0f8664e(
         int isActive,
         out long result
     );
@@ -1685,7 +1697,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineDirectiveTrivia_798e4d07(
+    int SyntaxFactory_LineDirectiveTrivia_05aeb8c7(
         long hashToken,
         long lineKeyword,
         long line,
@@ -1696,7 +1708,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineDirectiveTrivia_96cb65da(
+    int SyntaxFactory_LineDirectiveTrivia_9742422c(
         long line,
         long @file,
         int isActive,
@@ -1704,14 +1716,14 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineDirectiveTrivia_05074ed7(
+    int SyntaxFactory_LineDirectiveTrivia_709e40f1(
         long line,
         int isActive,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineSpanDirectiveTrivia_39be7ccb(
+    int SyntaxFactory_LineSpanDirectiveTrivia_4601f005(
         long start,
         long end,
         long characterOffset,
@@ -1721,7 +1733,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineSpanDirectiveTrivia_19806900(
+    int SyntaxFactory_LineSpanDirectiveTrivia_b305809c(
         long start,
         long end,
         long @file,
@@ -1730,7 +1742,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineSpanDirectiveTrivia_09831802(
+    int SyntaxFactory_LineSpanDirectiveTrivia_25ea7575(
         long hashToken,
         long lineKeyword,
         long start,
@@ -1757,37 +1769,37 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_a98c34ee(
+    int SyntaxFactory_Literal_3c3141d7(
         ushort value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_19e93521(
+    int SyntaxFactory_Literal_520347e6(
         int value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_a8464eb0(
+    int SyntaxFactory_Literal_6ac4189e(
         long value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_f1120869(
+    int SyntaxFactory_Literal_13fe7b01(
         uint value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_e4a783f1(
+    int SyntaxFactory_Literal_07c320ce(
         ulong value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_LoadDirectiveTrivia_a842d31e(
+    int SyntaxFactory_LoadDirectiveTrivia_3e438b68(
         long hashToken,
         long loadKeyword,
         long @file,
@@ -1797,7 +1809,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LoadDirectiveTrivia_f00d00bd(
+    int SyntaxFactory_LoadDirectiveTrivia_3ea8dd20(
         long @file,
         int isActive,
         out long result
@@ -1975,7 +1987,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_NullableDirectiveTrivia_1a2a9b07(
+    int SyntaxFactory_NullableDirectiveTrivia_1102f025(
         long hashToken,
         long nullableKeyword,
         long settingToken,
@@ -1986,7 +1998,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_NullableDirectiveTrivia_f3d034dc(
+    int SyntaxFactory_NullableDirectiveTrivia_eacba423(
         long settingToken,
         long targetToken,
         int isActive,
@@ -1994,7 +2006,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_NullableDirectiveTrivia_8ac3e534(
+    int SyntaxFactory_NullableDirectiveTrivia_82e614e6(
         long settingToken,
         int isActive,
         out long result
@@ -2237,7 +2249,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_PragmaChecksumDirectiveTrivia_4cf3019f(
+    int SyntaxFactory_PragmaChecksumDirectiveTrivia_b35fe09f(
         long hashToken,
         long pragmaKeyword,
         long checksumKeyword,
@@ -2250,7 +2262,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_PragmaChecksumDirectiveTrivia_b6ae3539(
+    int SyntaxFactory_PragmaChecksumDirectiveTrivia_059a8866(
         long @file,
         long guid,
         long bytes,
@@ -2259,7 +2271,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_PragmaWarningDirectiveTrivia_0536f786(
+    int SyntaxFactory_PragmaWarningDirectiveTrivia_d13c7747(
         long disableOrRestoreKeyword,
         int isActive,
         out long result
@@ -2493,7 +2505,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ReferenceDirectiveTrivia_a0def3d3(
+    int SyntaxFactory_ReferenceDirectiveTrivia_06223e87(
         long hashToken,
         long referenceKeyword,
         long @file,
@@ -2503,14 +2515,14 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ReferenceDirectiveTrivia_fbcdba9d(
+    int SyntaxFactory_ReferenceDirectiveTrivia_3c5c73fb(
         long @file,
         int isActive,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_RegionDirectiveTrivia_4891c983(
+    int SyntaxFactory_RegionDirectiveTrivia_487e2c49(
         long hashToken,
         long regionKeyword,
         long endOfDirectiveToken,
@@ -2519,7 +2531,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_RegionDirectiveTrivia_8126daf5(
+    int SyntaxFactory_RegionDirectiveTrivia_96ec88de(
         int isActive,
         out long result
     );
@@ -2572,7 +2584,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ShebangDirectiveTrivia_28b5a279(
+    int SyntaxFactory_ShebangDirectiveTrivia_8a3ca08c(
         long hashToken,
         long exclamationToken,
         long endOfDirectiveToken,
@@ -2581,7 +2593,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ShebangDirectiveTrivia_3ac23759(
+    int SyntaxFactory_ShebangDirectiveTrivia_c8023795(
         int isActive,
         out long result
     );
@@ -2910,6 +2922,13 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
+    int SyntaxFactory_TypeDeclaration_e3656fdd(
+        ushort kind,
+        long identifier,
+        out long result
+    );
+
+    [PreserveSig]
     int SyntaxFactory_TypeOfExpression_7c99c858(
         long @type,
         out long result
@@ -2956,7 +2975,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_UndefDirectiveTrivia_33880b67(
+    int SyntaxFactory_UndefDirectiveTrivia_2abcc17b(
         long hashToken,
         long undefKeyword,
         long name,
@@ -2966,7 +2985,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_UndefDirectiveTrivia_c7c73cdb(
+    int SyntaxFactory_UndefDirectiveTrivia_feed15ea(
         long name,
         int isActive,
         out long result
@@ -3123,7 +3142,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_WarningDirectiveTrivia_9a7e049e(
+    int SyntaxFactory_WarningDirectiveTrivia_f04b983e(
         long hashToken,
         long warningKeyword,
         long endOfDirectiveToken,
@@ -3132,7 +3151,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_WarningDirectiveTrivia_3bb11cc2(
+    int SyntaxFactory_WarningDirectiveTrivia_94632c7a(
         int isActive,
         out long result
     );
@@ -3429,7 +3448,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlThreadSafetyElement_7dea980c(
+    int SyntaxFactory_XmlThreadSafetyElement_79254635(
         int isStatic,
         int isInstance,
         out long result

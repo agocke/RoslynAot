@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("38a89509-fc0c-5355-80e3-40229a9821aa")]
+[Guid("6bc54508-3f5a-5e74-9e3f-43ebd515a07c")]
 public partial interface IDiagnosticDescriptorVtbl
 {
 
     [PreserveSig]
-    int DiagnosticDescriptor_Equals_efbe4d0d(
+    int DiagnosticDescriptor_Equals_7497f57f(
         long receiver,
         long other,
         out int result
@@ -51,6 +51,12 @@ public partial interface IDiagnosticDescriptorVtbl
     );
 
     [PreserveSig]
+    int DiagnosticDescriptor_get_Description(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int DiagnosticDescriptor_get_HelpLinkUri(
         long receiver,
         nint buffer,
@@ -70,5 +76,17 @@ public partial interface IDiagnosticDescriptorVtbl
     int DiagnosticDescriptor_get_IsEnabledByDefault(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int DiagnosticDescriptor_get_MessageFormat(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DiagnosticDescriptor_get_Title(
+        long receiver,
+        out long result
     );
 }

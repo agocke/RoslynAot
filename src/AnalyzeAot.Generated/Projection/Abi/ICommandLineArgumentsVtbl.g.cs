@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3943d600-e01d-5fa2-b6ad-065eef147041")]
+[Guid("c1e18efe-309a-55eb-a393-8c4d541af19a")]
 public partial interface ICommandLineArgumentsVtbl
 {
 
@@ -44,6 +44,12 @@ public partial interface ICommandLineArgumentsVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int CommandLineArguments_get_CompilationOptions(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]
@@ -152,6 +158,12 @@ public partial interface ICommandLineArgumentsVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int CommandLineArguments_get_ParseOptions(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]

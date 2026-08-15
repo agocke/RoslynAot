@@ -12,7 +12,33 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fbff520f-18c1-5dec-a625-ba9a8669a072")]
+[Guid("1b223f8d-136f-5152-b080-7d1e29f706ea")]
 public partial interface IBaseParameterSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
+
+    [PreserveSig]
+    int BaseParameterSyntax_WithModifiers(
+        long receiver,
+        long modifiers,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseParameterSyntax_WithType(
+        long receiver,
+        long @type,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseParameterSyntax_get_Modifiers(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseParameterSyntax_get_Type(
+        long receiver,
+        out long result
+    );
 }

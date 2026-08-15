@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("27cb7402-f46c-5766-9847-0fa89182592f")]
+[Guid("02c04fc0-15fd-50d6-b1c3-cfaf0dc90583")]
 public partial interface ISyntaxNodeOrTokenTypeVtbl
 {
 

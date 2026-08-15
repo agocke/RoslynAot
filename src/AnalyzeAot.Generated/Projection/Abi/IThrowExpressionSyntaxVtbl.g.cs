@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0caf164b-1c67-5f22-ace6-b45a10c96e52")]
+[Guid("685bbea2-90f4-54ef-a2c5-e592c53a06b9")]
 public partial interface IThrowExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int ThrowExpressionSyntax_Accept_17184a33(
+    int ThrowExpressionSyntax_Accept_69cfdcd5(
         long receiver,
         long visitor
     );
@@ -41,6 +41,12 @@ public partial interface IThrowExpressionSyntaxVtbl : IExpressionSyntaxVtbl
     int ThrowExpressionSyntax_WithThrowKeyword(
         long receiver,
         long throwKeyword,
+        out long result
+    );
+
+    [PreserveSig]
+    int ThrowExpressionSyntax_get_Expression(
+        long receiver,
         out long result
     );
 

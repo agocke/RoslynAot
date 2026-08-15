@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4b2e8307-4c00-501c-8a4e-b20f26d86f6f")]
+[Guid("348e8164-3d81-5ec9-b551-3f89a874fd36")]
 public partial interface IAdditionalFileAnalysisContextVtbl
 {
 
@@ -23,7 +23,19 @@ public partial interface IAdditionalFileAnalysisContextVtbl
     );
 
     [PreserveSig]
+    int AdditionalFileAnalysisContext_get_AdditionalFile(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int AdditionalFileAnalysisContext_get_FilterSpan(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int AdditionalFileAnalysisContext_get_Options(
         long receiver,
         out long result
     );

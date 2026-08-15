@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("aa421afd-5354-55d1-8327-15196f918f0f")]
+[Guid("9d13c1ff-cc58-5e1e-a73d-cd9b840c74c9")]
 public partial interface IXmlElementSyntaxVtbl : IXmlNodeSyntaxVtbl
 {
 
     [PreserveSig]
-    int XmlElementSyntax_Accept_64f12a0b(
+    int XmlElementSyntax_Accept_10cdbae4(
         long receiver,
         long visitor
     );

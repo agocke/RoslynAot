@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("866a6505-87c3-5267-ba9d-8de70a94323a")]
+[Guid("b6ebeea1-1f6a-59e2-b1e7-4960328f8d00")]
 public partial interface IEventFieldDeclarationSyntaxVtbl : IBaseFieldDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int EventFieldDeclarationSyntax_Accept_63fa2f47(
+    int EventFieldDeclarationSyntax_Accept_b443693c(
         long receiver,
         long visitor
     );

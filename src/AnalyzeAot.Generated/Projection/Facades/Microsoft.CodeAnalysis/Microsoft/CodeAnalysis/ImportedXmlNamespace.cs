@@ -16,7 +16,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IImportedXmlNamespaceVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.ImportedXmlNamespace_get_DeclaringSyntaxReference(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : SyntaxReference.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 

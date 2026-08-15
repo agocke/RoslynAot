@@ -38,4 +38,38 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
             return _owner.SetError(exception);
         }
     }
+
+    public int GeneratorExecutionContext_get_AnalyzerConfigOptions(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorExecutionContext>(receiver).AnalyzerConfigOptions);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int GeneratorExecutionContext_get_ParseOptions(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorExecutionContext>(receiver).ParseOptions);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

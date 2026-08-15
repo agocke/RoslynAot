@@ -14,7 +14,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.IAttributeDataVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.AttributeData_get_ApplicationSyntaxReference(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : SyntaxReference.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -55,5 +59,78 @@ namespace Microsoft.CodeAnalysis
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
             }
         }
+
+        internal AttributeData()
+        {
+        }
+
+        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
+        private global::AnalyzeAot.Abi.IAttributeDataVtbl? __analyzeAotVtbl;
+        private long __analyzeAotHandle;
+        internal AttributeData(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IAttributeDataVtbl vtbl, long handle)
+        {
+            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::AnalyzeAot.Abi.IAttributeDataVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __analyzeAotHandle;
+        }
+
+        private sealed partial class __AnalyzeAotProxy : AttributeData
+        {
+            internal __AnalyzeAotProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IAttributeDataVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+            {
+            }
+
+            protected override SyntaxReference? CommonApplicationSyntaxReference
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            protected override INamedTypeSymbol? CommonAttributeClass
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            protected override IMethodSymbol? CommonAttributeConstructor
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            protected internal override System.Collections.Immutable.ImmutableArray<TypedConstant> CommonConstructorArguments
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            protected internal override System.Collections.Immutable.ImmutableArray<System.Collections.Generic.KeyValuePair<string, TypedConstant>> CommonNamedArguments
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+        }
+
+        internal static AttributeData __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __AnalyzeAotProxy(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetAttributeDataVtbl(controlVtbl), handle);
     }
 }

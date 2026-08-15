@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7b73b4dc-cc21-59a9-b6dc-6a4ecacce43c")]
+[Guid("d16fb1eb-caf9-5d55-af1e-55bd081efbc4")]
 public partial interface IAnonymousMethodExpressionSyntaxVtbl : IAnonymousFunctionExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int AnonymousMethodExpressionSyntax_Accept_28281930(
+    int AnonymousMethodExpressionSyntax_Accept_3507c645(
         long receiver,
         long visitor
     );
@@ -117,6 +117,12 @@ public partial interface IAnonymousMethodExpressionSyntaxVtbl : IAnonymousFuncti
 
     [PreserveSig]
     int AnonymousMethodExpressionSyntax_get_DelegateKeyword(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int AnonymousMethodExpressionSyntax_get_ExpressionBody(
         long receiver,
         out long result
     );

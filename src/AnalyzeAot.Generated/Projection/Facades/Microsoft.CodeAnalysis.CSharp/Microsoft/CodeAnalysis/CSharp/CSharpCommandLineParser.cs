@@ -8,21 +8,21 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis.CSharp
 {
-    public partial class CSharpCommandLineParser : CommandLineParser
+    public partial interface CSharpCommandLineParser : CommandLineParser
     {
-        internal CSharpCommandLineParser()
-        {
-        }
-
         public static CSharpCommandLineParser Default
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.ICSharpCommandLineParserTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCSharpCommandLineParserTypeVtbl(controlVtbl);
+                int status = vtbl.CSharpCommandLineParser_get_Default(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
-        protected override string RegularFileExtension
+        protected string RegularFileExtension
         {
             get
             {
@@ -34,11 +34,15 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.ICSharpCommandLineParserTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCSharpCommandLineParserTypeVtbl(controlVtbl);
+                int status = vtbl.CSharpCommandLineParser_get_Script(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
-        protected override string ScriptFileExtension
+        protected string ScriptFileExtension
         {
             get
             {
@@ -54,6 +58,17 @@ namespace Microsoft.CodeAnalysis.CSharp
         public static System.Collections.Generic.IEnumerable<string> ParseConditionalCompilationSymbols(string value, out System.Collections.Generic.IEnumerable<Diagnostic> diagnostics)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.ICSharpCommandLineParserVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetCSharpCommandLineParserVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static CSharpCommandLineParser __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CSharpCommandLineParser)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("5a81ebc0-7c20-56dc-9976-2d535d63b82c")]
+        internal partial interface __AnalyzeAotImplementation : CSharpCommandLineParser
+        {
         }
     }
 }

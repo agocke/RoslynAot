@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("a65310e3-a1a5-5f35-8c2b-870a23ccba28")]
+[Guid("464ea5fc-3f83-5520-847b-036b9f0aa195")]
 public partial interface ISemanticModelVtbl
 {
 
@@ -27,5 +27,17 @@ public partial interface ISemanticModelVtbl
     int SemanticModel_get_IgnoresAccessibility(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int SemanticModel_get_ParentModel(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_get_SyntaxTree(
+        long receiver,
+        out long result
     );
 }

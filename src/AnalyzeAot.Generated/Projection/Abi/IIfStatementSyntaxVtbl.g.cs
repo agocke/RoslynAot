@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("6c69c575-67ea-5298-9af7-35c95bd3390c")]
+[Guid("e18d5ae8-aeba-5356-abd3-facf9deef4ff")]
 public partial interface IIfStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int IfStatementSyntax_Accept_d910d720(
+    int IfStatementSyntax_Accept_aa612551(
         long receiver,
         long visitor
     );
@@ -83,6 +83,12 @@ public partial interface IIfStatementSyntaxVtbl : IStatementSyntaxVtbl
     );
 
     [PreserveSig]
+    int IfStatementSyntax_get_Condition(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int IfStatementSyntax_get_Else(
         long receiver,
         out long result
@@ -96,6 +102,12 @@ public partial interface IIfStatementSyntaxVtbl : IStatementSyntaxVtbl
 
     [PreserveSig]
     int IfStatementSyntax_get_OpenParenToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int IfStatementSyntax_get_Statement(
         long receiver,
         out long result
     );

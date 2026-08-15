@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    public partial class AssemblyIdentityComparer
+    public partial interface AssemblyIdentityComparer
     {
-        internal AssemblyIdentityComparer()
-        {
-        }
-
         public static System.StringComparer CultureComparer
         {
             get
@@ -26,7 +22,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+                global::AnalyzeAot.Abi.IAssemblyIdentityComparerTypeVtbl vtbl = global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetAssemblyIdentityComparerTypeVtbl(controlVtbl);
+                int status = vtbl.AssemblyIdentityComparer_get_Default(out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -51,7 +51,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.IAssemblyIdentityComparerVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.AssemblyIdentityComparer_ReferenceMatchesDefinition_f6795a64(__AnalyzeAotGetHandle(controlVtbl), reference.__AnalyzeAotGetHandle(controlVtbl), definition.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.AssemblyIdentityComparer_ReferenceMatchesDefinition_0539a3af(__AnalyzeAotGetHandle(controlVtbl), reference.__AnalyzeAotGetHandle(controlVtbl), definition.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -68,26 +68,15 @@ namespace Microsoft.CodeAnalysis
             EquivalentIgnoringVersion = 2
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.IAssemblyIdentityComparerVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal AssemblyIdentityComparer(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IAssemblyIdentityComparerVtbl vtbl, long handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IAssemblyIdentityComparerVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetAssemblyIdentityComparerVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static AssemblyIdentityComparer __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AssemblyIdentityComparer)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("2b8f3a83-e553-5251-bb45-16dfe413937b")]
+        internal partial interface __AnalyzeAotImplementation : AssemblyIdentityComparer
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.IAssemblyIdentityComparerVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        internal static AssemblyIdentityComparer __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new AssemblyIdentityComparer(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetAssemblyIdentityComparerVtbl(controlVtbl), handle);
     }
 }

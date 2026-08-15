@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c77760cb-dc01-5166-b51c-af8f59536256")]
+[Guid("5ada05a5-162e-59f0-aba2-b07116306b6d")]
 public partial interface ISemanticModelAnalysisContextVtbl
 {
 
@@ -29,8 +29,26 @@ public partial interface ISemanticModelAnalysisContextVtbl
     );
 
     [PreserveSig]
+    int SemanticModelAnalysisContext_get_FilterTree(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int SemanticModelAnalysisContext_get_IsGeneratedCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int SemanticModelAnalysisContext_get_Options(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModelAnalysisContext_get_SemanticModel(
+        long receiver,
+        out long result
     );
 }

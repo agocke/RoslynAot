@@ -23,7 +23,7 @@ internal sealed partial class SyntaxAnnotationTypeVtblDispatcher : ISyntaxAnnota
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxAnnotation_ctor_3d9c3533(
+    public int SyntaxAnnotation_ctor_706a5ffb(
         out long result)
     {
         result = default;

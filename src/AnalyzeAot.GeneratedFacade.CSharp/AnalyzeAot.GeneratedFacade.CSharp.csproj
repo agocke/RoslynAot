@@ -13,7 +13,7 @@
     <SignAssembly>true</SignAssembly>
     <PublicSign>true</PublicSign>
     <AssemblyOriginatorKeyFile>../../eng/Microsoft.CodeAnalysis.public.snk</AssemblyOriginatorKeyFile>
-    <NoWarn>$(NoWarn);CS0108;CS0169;CS0659;CS8669</NoWarn>
+    <NoWarn>$(NoWarn);CS0108;CS0169;CS0659;CS8669;CA2256;RSEXPERIMENTAL006</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

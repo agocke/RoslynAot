@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d08901ec-19d4-59fb-a309-ef603eb4e538")]
+[Guid("3d7747d3-1421-589d-9e7a-24c70debab32")]
 public partial interface ICatchDeclarationSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int CatchDeclarationSyntax_Accept_829b1ff3(
+    int CatchDeclarationSyntax_Accept_dbc917b5(
         long receiver,
         long visitor
     );
@@ -74,6 +74,12 @@ public partial interface ICatchDeclarationSyntaxVtbl : ICSharpSyntaxNodeVtbl
 
     [PreserveSig]
     int CatchDeclarationSyntax_get_OpenParenToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CatchDeclarationSyntax_get_Type(
         long receiver,
         out long result
     );

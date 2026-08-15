@@ -9,13 +9,9 @@
 namespace Microsoft.CodeAnalysis.CSharp.Syntax
 {
     [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82567")]
-    public sealed partial class UnionDeclarationSyntax : TypeDeclarationSyntax
+    public partial interface UnionDeclarationSyntax : TypeDeclarationSyntax
     {
-        internal UnionDeclarationSyntax()
-        {
-        }
-
-        public override SyntaxList<AttributeListSyntax> AttributeLists
+        public SyntaxList<AttributeListSyntax> AttributeLists
         {
             get
             {
@@ -23,7 +19,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override BaseListSyntax? BaseList
+        public BaseListSyntax? BaseList
         {
             get
             {
@@ -31,7 +27,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxToken CloseBraceToken
+        public SyntaxToken CloseBraceToken
         {
             get
             {
@@ -39,7 +35,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxList<TypeParameterConstraintClauseSyntax> ConstraintClauses
+        public SyntaxList<TypeParameterConstraintClauseSyntax> ConstraintClauses
         {
             get
             {
@@ -47,7 +43,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxToken Identifier
+        public SyntaxToken Identifier
         {
             get
             {
@@ -55,7 +51,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxToken Keyword
+        public SyntaxToken Keyword
         {
             get
             {
@@ -63,7 +59,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxList<MemberDeclarationSyntax> Members
+        public SyntaxList<MemberDeclarationSyntax> Members
         {
             get
             {
@@ -71,7 +67,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxTokenList Modifiers
+        public SyntaxTokenList Modifiers
         {
             get
             {
@@ -79,7 +75,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxToken OpenBraceToken
+        public SyntaxToken OpenBraceToken
         {
             get
             {
@@ -87,7 +83,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override ParameterListSyntax? ParameterList
+        public ParameterListSyntax? ParameterList
         {
             get
             {
@@ -95,7 +91,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override SyntaxToken SemicolonToken
+        public SyntaxToken SemicolonToken
         {
             get
             {
@@ -103,7 +99,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override TypeParameterListSyntax? TypeParameterList
+        public TypeParameterListSyntax? TypeParameterList
         {
             get
             {
@@ -111,13 +107,12 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        public override void Accept(CSharpSyntaxVisitor visitor)
+        public void Accept(CSharpSyntaxVisitor visitor)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
-        public override TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
-            where TResult : default
+        public TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
@@ -221,6 +216,17 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public new UnionDeclarationSyntax WithTypeParameterList(TypeParameterListSyntax? typeParameterList)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.IUnionDeclarationSyntaxVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetUnionDeclarationSyntaxVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static UnionDeclarationSyntax __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (UnionDeclarationSyntax)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("401162c2-4ea8-52a4-ad3c-b69466740580")]
+        internal partial interface __AnalyzeAotImplementation : UnionDeclarationSyntax
+        {
         }
     }
 }

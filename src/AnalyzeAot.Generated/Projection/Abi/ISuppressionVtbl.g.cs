@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b4d4bfce-b96a-5773-966a-2ec0d6fef112")]
+[Guid("7e8d3f70-5ccd-5452-ae95-9f61be1b6c47")]
 public partial interface ISuppressionVtbl
 {
 
     [PreserveSig]
-    int Suppression_Equals_47c31e93(
+    int Suppression_Equals_661a2ff9(
         long receiver,
         long other,
         out int result
@@ -31,6 +31,12 @@ public partial interface ISuppressionVtbl
 
     [PreserveSig]
     int Suppression_get_Descriptor(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int Suppression_get_SuppressedDiagnostic(
         long receiver,
         out long result
     );

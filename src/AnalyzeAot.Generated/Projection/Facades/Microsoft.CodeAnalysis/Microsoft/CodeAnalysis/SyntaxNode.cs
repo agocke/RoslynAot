@@ -8,13 +8,8 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    [System.Diagnostics.DebuggerDisplay("{GetDebuggerDisplay(), nq}")]
-    public abstract partial class SyntaxNode
+    public partial interface SyntaxNode
     {
-        internal SyntaxNode()
-        {
-        }
-
         public bool ContainsAnnotations
         {
             get
@@ -143,17 +138,30 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        public abstract string Language { get; }
+        public string Language
+        {
+            get
+            {
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
+                long __analyzeAotReceiver = __AnalyzeAotGetHandle(controlVtbl);
+                return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxNode_get_Language(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
+            }
+        }
 
         public SyntaxNode? Parent
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SyntaxNode_get_Parent(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : __AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
-        public virtual SyntaxTrivia ParentTrivia
+        public SyntaxTrivia ParentTrivia
         {
             get
             {
@@ -205,11 +213,21 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.SyntaxNode_get_SyntaxTree(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SyntaxTree.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
-        protected abstract SyntaxTree SyntaxTreeCore { get; }
+        protected SyntaxTree SyntaxTreeCore
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            }
+        }
 
         public System.Collections.Generic.IEnumerable<SyntaxNode> Ancestors(bool ascendOutOfTrivia = true)
         {
@@ -235,7 +253,7 @@ namespace Microsoft.CodeAnalysis
             return ChildSyntaxList.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
-        public virtual SyntaxNodeOrToken ChildThatContainsPosition(int position)
+        public SyntaxNodeOrToken ChildThatContainsPosition(int position)
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
@@ -333,14 +351,18 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
-        protected virtual bool EquivalentToCore(SyntaxNode other)
+        protected bool EquivalentToCore(SyntaxNode other)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
         public SyntaxNode FindNode(Text.TextSpan span, bool findInsideTrivia = false, bool getInnermostNodeForTie = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SyntaxNode_FindNode(__AnalyzeAotGetHandle(controlVtbl), span.__AnalyzeAotGetHandle(controlVtbl), findInsideTrivia ? 1 : 0, getInnermostNodeForTie ? 1 : 0, out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public SyntaxToken FindToken(int position, bool findInsideTrivia = false)
@@ -352,12 +374,12 @@ namespace Microsoft.CodeAnalysis
             return SyntaxToken.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
-        protected virtual SyntaxToken FindTokenCore(int position, bool findInsideTrivia)
+        protected SyntaxToken FindTokenCore(int position, bool findInsideTrivia)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
-        protected virtual SyntaxToken FindTokenCore(int position, System.Func<SyntaxTrivia, bool> stepInto)
+        protected SyntaxToken FindTokenCore(int position, System.Func<SyntaxTrivia, bool> stepInto)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
@@ -366,7 +388,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.SyntaxNode_FindTrivia_7588035c(__AnalyzeAotGetHandle(controlVtbl), position, findInsideTrivia ? 1 : 0, out long result);
+            int status = vtbl.SyntaxNode_FindTrivia_77d2dcea(__AnalyzeAotGetHandle(controlVtbl), position, findInsideTrivia ? 1 : 0, out long result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTrivia.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
@@ -376,7 +398,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
-        protected virtual SyntaxTrivia FindTriviaCore(int position, bool findInsideTrivia)
+        protected SyntaxTrivia FindTriviaCore(int position, bool findInsideTrivia)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
@@ -504,7 +526,11 @@ namespace Microsoft.CodeAnalysis
 
         public SyntaxReference GetReference()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+            global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+            global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
+            int status = vtbl.SyntaxNode_GetReference(__AnalyzeAotGetHandle(controlVtbl), out long result);
+            global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxReference.__AnalyzeAotCreateProxy(controlVtbl, result);
         }
 
         public Text.SourceText GetText(System.Text.Encoding? encoding = null, Text.SourceHashAlgorithm checksumAlgorithm = Text.SourceHashAlgorithm.Sha1)
@@ -540,14 +566,26 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
-        protected internal abstract SyntaxNode InsertNodesInListCore(SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<SyntaxNode> nodesToInsert, bool insertBefore);
-        protected internal abstract SyntaxNode InsertTokensInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens, bool insertBefore);
-        protected internal abstract SyntaxNode InsertTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia, bool insertBefore);
+        protected internal SyntaxNode InsertNodesInListCore(SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<SyntaxNode> nodesToInsert, bool insertBefore)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        protected internal SyntaxNode InsertTokensInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens, bool insertBefore)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        protected internal SyntaxNode InsertTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia, bool insertBefore)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
         public bool IsEquivalentTo(SyntaxNode node, bool topLevel = false)
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.SyntaxNode_IsEquivalentTo_80af97ca(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), topLevel ? 1 : 0, out int result);
+            int status = vtbl.SyntaxNode_IsEquivalentTo_99548ef5(__AnalyzeAotGetHandle(controlVtbl), node.__AnalyzeAotGetHandle(controlVtbl), topLevel ? 1 : 0, out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -556,12 +594,16 @@ namespace Microsoft.CodeAnalysis
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.SyntaxNode_IsEquivalentTo_8ad911b9(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.SyntaxNode_IsEquivalentTo_8d5726aa(__AnalyzeAotGetHandle(controlVtbl), other is null ? 0L : other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
-        protected abstract bool IsEquivalentToCore(SyntaxNode node, bool topLevel = false);
+        protected bool IsEquivalentToCore(SyntaxNode node, bool topLevel = false)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
         public bool IsIncrementallyIdenticalTo(SyntaxNode? other)
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
@@ -580,20 +622,44 @@ namespace Microsoft.CodeAnalysis
             return result != 0;
         }
 
-        protected internal abstract SyntaxNode NormalizeWhitespaceCore(string indentation, string eol, bool elasticTrivia);
-        protected internal abstract SyntaxNode? RemoveNodesCore(System.Collections.Generic.IEnumerable<SyntaxNode> nodes, SyntaxRemoveOptions options);
-        protected internal abstract SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode>? nodes = null, System.Func<TNode, TNode, SyntaxNode>? computeReplacementNode = null, System.Collections.Generic.IEnumerable<SyntaxToken>? tokens = null, System.Func<SyntaxToken, SyntaxToken, SyntaxToken>? computeReplacementToken = null, System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia = null, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia>? computeReplacementTrivia = null)
-            where TNode : SyntaxNode;
-        protected internal abstract SyntaxNode ReplaceNodeInListCore(SyntaxNode originalNode, System.Collections.Generic.IEnumerable<SyntaxNode> replacementNodes);
-        protected internal abstract SyntaxNode ReplaceTokenInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens);
-        protected internal abstract SyntaxNode ReplaceTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia);
-        [System.Obsolete("Syntax serialization support is no longer supported", true)]
-        public virtual void SerializeTo(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken = default)
+        protected internal SyntaxNode NormalizeWhitespaceCore(string indentation, string eol, bool elasticTrivia)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
-        public virtual string ToFullString()
+        protected internal SyntaxNode? RemoveNodesCore(System.Collections.Generic.IEnumerable<SyntaxNode> nodes, SyntaxRemoveOptions options)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        protected internal SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode>? nodes = null, System.Func<TNode, TNode, SyntaxNode>? computeReplacementNode = null, System.Collections.Generic.IEnumerable<SyntaxToken>? tokens = null, System.Func<SyntaxToken, SyntaxToken, SyntaxToken>? computeReplacementToken = null, System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia = null, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia>? computeReplacementTrivia = null)
+            where TNode : SyntaxNode
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        protected internal SyntaxNode ReplaceNodeInListCore(SyntaxNode originalNode, System.Collections.Generic.IEnumerable<SyntaxNode> replacementNodes)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        protected internal SyntaxNode ReplaceTokenInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        protected internal SyntaxNode ReplaceTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        [System.Obsolete("Syntax serialization support is no longer supported", true)]
+        public void SerializeTo(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken = default)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+        }
+
+        public string ToFullString()
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
@@ -601,7 +667,7 @@ namespace Microsoft.CodeAnalysis
             return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxNode_ToFullString(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
-        public override string ToString()
+        public string ToString()
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl = __AnalyzeAotGetVtbl();
@@ -609,104 +675,20 @@ namespace Microsoft.CodeAnalysis
             return global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf8String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxNode_ToString(__analyzeAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
-        public virtual void WriteTo(System.IO.TextWriter writer)
+        public void WriteTo(System.IO.TextWriter writer)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
         }
 
-        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
-        private global::AnalyzeAot.Abi.ISyntaxNodeVtbl? __analyzeAotVtbl;
-        private long __analyzeAotHandle;
-        internal SyntaxNode(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl, long handle)
+        private global::AnalyzeAot.RoslynFacade.RoslynObjectProxy __AnalyzeAotGetProxy() => (global::AnalyzeAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::AnalyzeAot.Abi.ISyntaxNodeVtbl __AnalyzeAotGetVtbl() => global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSyntaxNodeVtbl(__AnalyzeAotGetControlVtbl());
+        public global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __AnalyzeAotGetProxy().ControlVtbl;
+        public long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl) => __AnalyzeAotGetProxy().GetHandle(controlVtbl);
+        internal static SyntaxNode __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SyntaxNode)(object)new global::AnalyzeAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("bbaf8691-872b-53ed-9c52-204d10f56f2e")]
+        internal partial interface __AnalyzeAotImplementation : SyntaxNode
         {
-            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
-            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
-            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
         }
-
-        internal global::AnalyzeAot.Abi.ISyntaxNodeVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
-        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __analyzeAotHandle;
-        }
-
-        private sealed partial class __AnalyzeAotProxy : SyntaxNode
-        {
-            internal __AnalyzeAotProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.ISyntaxNodeVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
-            {
-            }
-
-            protected internal override SyntaxNode InsertNodesInListCore(SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<SyntaxNode> nodesToInsert, bool insertBefore)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            protected internal override SyntaxNode InsertTokensInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens, bool insertBefore)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            protected internal override SyntaxNode InsertTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia, bool insertBefore)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            protected override bool IsEquivalentToCore(SyntaxNode node, bool topLevel = false)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            protected internal override SyntaxNode NormalizeWhitespaceCore(string indentation, string eol, bool elasticTrivia)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            protected internal override SyntaxNode? RemoveNodesCore(System.Collections.Generic.IEnumerable<SyntaxNode> nodes, SyntaxRemoveOptions options)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            protected internal override SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode>? nodes = null, System.Func<TNode, TNode, SyntaxNode>? computeReplacementNode = null, System.Collections.Generic.IEnumerable<SyntaxToken>? tokens = null, System.Func<SyntaxToken, SyntaxToken, SyntaxToken>? computeReplacementToken = null, System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia = null, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia>? computeReplacementTrivia = null)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            protected internal override SyntaxNode ReplaceNodeInListCore(SyntaxNode originalNode, System.Collections.Generic.IEnumerable<SyntaxNode> replacementNodes)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            protected internal override SyntaxNode ReplaceTokenInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            protected internal override SyntaxNode ReplaceTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia)
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-            }
-
-            public override string Language
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-
-            protected override SyntaxTree SyntaxTreeCore
-            {
-                get
-                {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
-                }
-            }
-        }
-
-        internal static SyntaxNode __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __AnalyzeAotProxy(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetSyntaxNodeVtbl(controlVtbl), handle);
     }
 }

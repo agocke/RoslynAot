@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("181c0c1c-6e88-5950-b306-f2716a60905b")]
+[Guid("d95a0994-53c5-5340-aba6-8d3a2947ae04")]
 public partial interface IChildSyntaxListVtbl
 {
 
@@ -23,7 +23,7 @@ public partial interface IChildSyntaxListVtbl
     );
 
     [PreserveSig]
-    int ChildSyntaxList_Equals_df3ff5f0(
+    int ChildSyntaxList_Equals_827abeac(
         long receiver,
         long other,
         out int result

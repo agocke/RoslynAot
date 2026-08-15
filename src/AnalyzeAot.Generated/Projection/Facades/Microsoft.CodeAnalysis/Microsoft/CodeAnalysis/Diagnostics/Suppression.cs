@@ -28,7 +28,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
+                global::AnalyzeAot.Abi.ISuppressionVtbl vtbl = __AnalyzeAotGetVtbl();
+                int status = vtbl.Suppression_get_SuppressedDiagnostic(__AnalyzeAotGetHandle(controlVtbl), out long result);
+                global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return Diagnostic.__AnalyzeAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -45,7 +49,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl = __AnalyzeAotGetControlVtbl();
             global::AnalyzeAot.Abi.ISuppressionVtbl vtbl = __AnalyzeAotGetVtbl();
-            int status = vtbl.Suppression_Equals_47c31e93(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.Suppression_Equals_661a2ff9(__AnalyzeAotGetHandle(controlVtbl), other.__AnalyzeAotGetHandle(controlVtbl), out int result);
             global::AnalyzeAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

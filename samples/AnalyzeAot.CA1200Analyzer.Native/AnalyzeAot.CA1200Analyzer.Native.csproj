@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PublishAot>true</PublishAot>
+    <NativeLib>Shared</NativeLib>
+    <IsAotCompatible>true</IsAotCompatible>
+    <AssemblyName>analyze-aot-ca1200-analyzer</AssemblyName>
+    <TypeMapEntryAssembly>$(AssemblyName)</TypeMapEntryAssembly>
+    <_SdkAnalyzerDirectory>$(MSBuildSDKsPath)/Microsoft.NET.Sdk/analyzers</_SdkAnalyzerDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/AnalyzeAot.AnalyzerRuntime/AnalyzeAot.AnalyzerRuntime.csproj" />
+    <Reference Include="Microsoft.CodeAnalysis.NetAnalyzers">
+      <HintPath>$(_SdkAnalyzerDirectory)/Microsoft.CodeAnalysis.NetAnalyzers.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.NetAnalyzers">
+      <HintPath>$(_SdkAnalyzerDirectory)/Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

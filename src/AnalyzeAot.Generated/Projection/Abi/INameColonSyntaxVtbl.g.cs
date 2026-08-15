@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b9416a53-6c46-5a91-b10a-ff09394073bf")]
+[Guid("61a88601-d8b1-5730-9860-5ca8d3651d09")]
 public partial interface INameColonSyntaxVtbl : IBaseExpressionColonSyntaxVtbl
 {
 
     [PreserveSig]
-    int NameColonSyntax_Accept_bd027a9d(
+    int NameColonSyntax_Accept_7bc19c44(
         long receiver,
         long visitor
     );
@@ -46,6 +46,12 @@ public partial interface INameColonSyntaxVtbl : IBaseExpressionColonSyntaxVtbl
 
     [PreserveSig]
     int NameColonSyntax_get_ColonToken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int NameColonSyntax_get_Expression(
         long receiver,
         out long result
     );

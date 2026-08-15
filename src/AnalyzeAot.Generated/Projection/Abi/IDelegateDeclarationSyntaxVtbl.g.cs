@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("43cb6508-c7bc-59e2-befa-a96bf8736fcb")]
+[Guid("5e2cd2a6-8254-5876-957a-4fdb4cb0977e")]
 public partial interface IDelegateDeclarationSyntaxVtbl : IMemberDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int DelegateDeclarationSyntax_Accept_2d163180(
+    int DelegateDeclarationSyntax_Accept_65ed7181(
         long receiver,
         long visitor
     );
@@ -97,6 +97,12 @@ public partial interface IDelegateDeclarationSyntaxVtbl : IMemberDeclarationSynt
 
     [PreserveSig]
     int DelegateDeclarationSyntax_get_ParameterList(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DelegateDeclarationSyntax_get_ReturnType(
         long receiver,
         out long result
     );

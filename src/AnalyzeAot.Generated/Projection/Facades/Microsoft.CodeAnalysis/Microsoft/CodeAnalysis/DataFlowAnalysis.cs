@@ -26,5 +26,166 @@ namespace Microsoft.CodeAnalysis
         public abstract System.Collections.Immutable.ImmutableArray<ISymbol> VariablesDeclared { get; }
         public abstract System.Collections.Immutable.ImmutableArray<ISymbol> WrittenInside { get; }
         public abstract System.Collections.Immutable.ImmutableArray<ISymbol> WrittenOutside { get; }
+
+        internal DataFlowAnalysis()
+        {
+        }
+
+        private global::AnalyzeAot.Abi.IRoslynControlVtbl? __analyzeAotControlVtbl;
+        private global::AnalyzeAot.Abi.IDataFlowAnalysisVtbl? __analyzeAotVtbl;
+        private long __analyzeAotHandle;
+        internal DataFlowAnalysis(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IDataFlowAnalysisVtbl vtbl, long handle)
+        {
+            __analyzeAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __analyzeAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __analyzeAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::AnalyzeAot.Abi.IDataFlowAnalysisVtbl __AnalyzeAotGetVtbl() => __analyzeAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        internal global::AnalyzeAot.Abi.IRoslynControlVtbl __AnalyzeAotGetControlVtbl() => __analyzeAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        internal long __AnalyzeAotGetHandle(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::AnalyzeAot.Abi.IRoslynControlVtbl actual = __AnalyzeAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __analyzeAotHandle;
+        }
+
+        private sealed partial class __AnalyzeAotProxy : DataFlowAnalysis
+        {
+            internal __AnalyzeAotProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, global::AnalyzeAot.Abi.IDataFlowAnalysisVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+            {
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> AlwaysAssigned
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> Captured
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> CapturedInside
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> CapturedOutside
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> DataFlowsIn
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> DataFlowsOut
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> DefinitelyAssignedOnEntry
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> DefinitelyAssignedOnExit
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> ReadInside
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> ReadOutside
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override bool Succeeded
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> UnsafeAddressTaken
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<IMethodSymbol> UsedLocalFunctions
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> VariablesDeclared
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> WrittenInside
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+
+            public override System.Collections.Immutable.ImmutableArray<ISymbol> WrittenOutside
+            {
+                get
+                {
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by AnalyzeAot.");
+                }
+            }
+        }
+
+        internal static DataFlowAnalysis __AnalyzeAotCreateProxy(global::AnalyzeAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __AnalyzeAotProxy(controlVtbl, global::AnalyzeAot.RoslynFacade.RoslynVtblFactory.GetDataFlowAnalysisVtbl(controlVtbl), handle);
     }
 }

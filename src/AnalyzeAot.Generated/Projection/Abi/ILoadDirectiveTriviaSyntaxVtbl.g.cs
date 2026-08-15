@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("064995d3-8d2a-5c8d-9567-768c8368b2b7")]
+[Guid("e6d4828f-aac9-5b86-ab22-982eb560245c")]
 public partial interface ILoadDirectiveTriviaSyntaxVtbl : IDirectiveTriviaSyntaxVtbl
 {
 
     [PreserveSig]
-    int LoadDirectiveTriviaSyntax_Accept_1bf05fec(
+    int LoadDirectiveTriviaSyntax_Accept_84136757(
         long receiver,
         long visitor
     );

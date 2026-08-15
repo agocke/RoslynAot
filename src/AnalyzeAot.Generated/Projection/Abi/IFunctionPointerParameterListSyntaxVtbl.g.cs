@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("43ac8208-3a26-5171-8860-cecd411236c2")]
+[Guid("d0dcf63d-27a7-57e1-9785-cca59a1b1a2b")]
 public partial interface IFunctionPointerParameterListSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int FunctionPointerParameterListSyntax_Accept_d23c896e(
+    int FunctionPointerParameterListSyntax_Accept_5a51c375(
         long receiver,
         long visitor
     );

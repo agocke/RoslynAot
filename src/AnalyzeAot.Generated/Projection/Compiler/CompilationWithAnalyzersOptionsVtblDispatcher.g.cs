@@ -57,6 +57,23 @@ internal sealed partial class CompilationWithAnalyzersOptionsVtblDispatcher : IC
         }
     }
 
+    public int CompilationWithAnalyzersOptions_get_Options(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.CompilationWithAnalyzersOptions>(receiver).Options);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CompilationWithAnalyzersOptions_get_ReportSuppressedDiagnostics(
         long receiver,
         out int result)

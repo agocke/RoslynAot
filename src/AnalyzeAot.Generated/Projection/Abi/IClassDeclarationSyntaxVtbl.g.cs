@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace AnalyzeAot.Abi;
 
 [GeneratedComInterface]
-[Guid("8a1596e3-01ea-5c8a-9ab4-4396b19b7646")]
+[Guid("837b7eba-b579-5fb6-838b-f44becc4b264")]
 public partial interface IClassDeclarationSyntaxVtbl : ITypeDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int ClassDeclarationSyntax_Accept_920c9ccb(
+    int ClassDeclarationSyntax_Accept_f0fa6c81(
         long receiver,
         long visitor
     );
