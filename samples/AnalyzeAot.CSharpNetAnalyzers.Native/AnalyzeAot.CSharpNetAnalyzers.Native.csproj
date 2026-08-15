@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PublishAot>true</PublishAot>
+    <NativeLib>Shared</NativeLib>
+    <IsAotCompatible>true</IsAotCompatible>
+    <AssemblyName>analyze-aot-csharp-net-analyzers</AssemblyName>
+    <TypeMapEntryAssembly>$(AssemblyName)</TypeMapEntryAssembly>
+    <_SdkAnalyzerDirectory>$(MSBuildSDKsPath)/Microsoft.NET.Sdk/analyzers</_SdkAnalyzerDirectory>
+    <_SdkRoslynDirectory>$(MSBuildSDKsPath)/../Roslyn/bincore</_SdkRoslynDirectory>
+    <_AnalyzerAssembly>$(_SdkAnalyzerDirectory)/Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll</_AnalyzerAssembly>
+    <_GeneratorConfiguration>$([System.String]::Copy('$(Configuration)').ToLowerInvariant())</_GeneratorConfiguration>
+    <_GeneratorPath>$(ArtifactsPath)/bin/AnalyzeAot.RoslynFacadeGenerator/$(_GeneratorConfiguration)/AnalyzeAot.RoslynFacadeGenerator.dll</_GeneratorPath>
+    <_GeneratedEntryPoint>$(BaseIntermediateOutputPath)generated/AnalyzerEntryPoint.g.cs</_GeneratedEntryPoint>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/AnalyzeAot.AnalyzerRuntime/AnalyzeAot.AnalyzerRuntime.csproj" />
+    <ProjectReference Include="../../tools/AnalyzeAot.RoslynFacadeGenerator/AnalyzeAot.RoslynFacadeGenerator.csproj"
+                      ReferenceOutputAssembly="false"
+                      GlobalPropertiesToRemove="RuntimeIdentifier;SelfContained;PublishAot;NativeLib" />
+    <Reference Include="Microsoft.CodeAnalysis.NetAnalyzers">
+      <HintPath>$(_SdkAnalyzerDirectory)/Microsoft.CodeAnalysis.NetAnalyzers.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.NetAnalyzers">
+      <HintPath>$(_AnalyzerAssembly)</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Compile Include="$(_GeneratedEntryPoint)" />
+  </ItemGroup>
+
+  <Target Name="GenerateAnalyzerEntryPoint"
+          BeforeTargets="CoreCompile"
+          DependsOnTargets="ResolveProjectReferences"
+          Inputs="$(_GeneratorPath);$(_AnalyzerAssembly);$(_SdkAnalyzerDirectory)/Microsoft.CodeAnalysis.NetAnalyzers.dll"
+          Outputs="$(_GeneratedEntryPoint)">
+    <Exec Command="dotnet &quot;$(_GeneratorPath)&quot; generate-analyzer-entrypoint --output &quot;$(_GeneratedEntryPoint)&quot; --namespace &quot;AnalyzeAot.CSharpNetAnalyzers.Native&quot; --language &quot;C#&quot; --reference &quot;$(_SdkAnalyzerDirectory)&quot; --reference &quot;$(_SdkRoslynDirectory)&quot; &quot;$(_AnalyzerAssembly)&quot;" />
+  </Target>
+
+</Project>

@@ -68,7 +68,7 @@ internal sealed class AnalyzeAotCSharpCompiler : CSharpCompiler
 
             try
             {
-                builder.Add(new NativeDiagnosticAnalyzer(path));
+                builder.AddRange(NativeDiagnosticAnalyzer.Load(path));
             }
             catch (Exception exception)
             {

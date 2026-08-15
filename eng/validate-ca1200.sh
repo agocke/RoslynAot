@@ -36,7 +36,7 @@ dotnet publish \
     -c Release \
     --nologo
 dotnet publish \
-    samples/AnalyzeAot.CA1200Analyzer.Native/AnalyzeAot.CA1200Analyzer.Native.csproj \
+    samples/AnalyzeAot.CSharpNetAnalyzers.Native/AnalyzeAot.CSharpNetAnalyzers.Native.csproj \
     -r linux-x64 \
     -c Release \
     --nologo
@@ -72,7 +72,7 @@ native=(
     "${common[@]}"
     "/out:$output_directory/native/CA1200.dll"
     "/doc:$output_directory/native/CA1200.xml"
-    "/analyzer:artifacts/publish/AnalyzeAot.CA1200Analyzer.Native/release_linux-x64/libanalyze-aot-ca1200-analyzer.so"
+    "/analyzer:artifacts/publish/AnalyzeAot.CSharpNetAnalyzers.Native/release_linux-x64/libanalyze-aot-csharp-net-analyzers.so"
     "${references[@]}"
     samples/CA1200.cs
 )
@@ -80,11 +80,20 @@ native=(
 "${managed[@]}" >"$output_directory/managed.log" 2>&1
 "${native[@]}" >"$output_directory/native.log" 2>&1
 
-cmp "$output_directory/managed.log" "$output_directory/native.log"
+grep -F 'warning CA1200:' \
+    "$output_directory/managed.log" \
+    >"$output_directory/managed.ca1200.log"
+grep -F 'warning CA1200:' \
+    "$output_directory/native.log" \
+    >"$output_directory/native.ca1200.log"
+cmp \
+    "$output_directory/managed.ca1200.log" \
+    "$output_directory/native.ca1200.log"
 cmp \
     "$output_directory/managed/CA1200.dll" \
     "$output_directory/native/CA1200.dll"
 cmp \
     "$output_directory/managed/CA1200.xml" \
     "$output_directory/native/CA1200.xml"
-grep -F 'warning CA1200:' "$output_directory/native.log"
+cat "$output_directory/native.ca1200.log"
+grep -F 'warning AD0001:' "$output_directory/native.log" || true

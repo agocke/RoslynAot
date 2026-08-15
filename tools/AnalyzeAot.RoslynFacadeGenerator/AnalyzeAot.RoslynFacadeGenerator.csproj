@@ -11,6 +11,10 @@
     <Compile Remove="Upstream/**/*.cs" />
     <EmbeddedResource Remove="Upstream/**/*.resx" />
     <ProjectReference Include="Upstream/Microsoft.DotNet.GenAPI/Microsoft.DotNet.GenAPI.csproj" />
+    <Reference Include="System.Reflection.MetadataLoadContext">
+      <HintPath>$(MSBuildBinPath)/System.Reflection.MetadataLoadContext.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -18,15 +18,10 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
     private readonly IAnalyzerTransport _transport;
     private readonly RoslynInterop _roslynInterop = new();
 
-    internal NativeDiagnosticAnalyzer(string analyzerPath)
-        : this(LoadTransport(analyzerPath))
-    {
-    }
-
     private NativeDiagnosticAnalyzer(IAnalyzerTransport transport)
     {
         _transport = transport;
-        SupportedDiagnostics = ReadSupportedDiagnostics(transport);
+        SupportedDiagnostics = ReadSupportedDiagnostics();
     }
 
     public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
@@ -34,41 +29,83 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
         get;
     }
 
-    private static IAnalyzerTransport LoadTransport(string analyzerPath)
+    internal static ImmutableArray<NativeDiagnosticAnalyzer> Load(
+        string analyzerPath)
     {
         nint library = NativeLibrary.Load(analyzerPath);
         s_loadedLibraries.Add(library);
 
         nint export = NativeLibrary.GetExport(
             library,
-            AnalyzerAbi.GetAnalyzerEntryPoint);
-        var getAnalyzer = (delegate* unmanaged[Cdecl]<nint>)export;
-        nint analyzerPointer = getAnalyzer();
-        if (analyzerPointer == 0)
+            AnalyzerAbi.GetAnalyzerModuleEntryPoint);
+        var getAnalyzerModule = (delegate* unmanaged[Cdecl]<nint>)export;
+        nint modulePointer = getAnalyzerModule();
+        if (modulePointer == 0)
         {
             throw new InvalidOperationException(
-                $"Analyzer '{analyzerPath}' returned no transport interface.");
+                $"Analyzer module '{analyzerPath}' returned no module interface.");
         }
 
         try
         {
-            var transport = (IAnalyzerTransport)s_comWrappers
+            var module = (IAnalyzerModule)s_comWrappers
                 .GetOrCreateObjectForComInstance(
-                    analyzerPointer,
+                    modulePointer,
                     CreateObjectFlags.None);
-            int result = transport.GetVersion(out uint version);
+            int result = module.GetVersion(out uint version);
             if (result != AnalyzerAbi.Success ||
                 version != AnalyzerAbi.Version)
             {
                 throw new InvalidOperationException(
-                    $"Analyzer '{analyzerPath}' uses an incompatible ABI.");
+                    $"Analyzer module '{analyzerPath}' uses an incompatible ABI.");
             }
 
-            return transport;
+            ThrowIfFailed(module.GetAnalyzerCount(out int analyzerCount));
+            if (analyzerCount <= 0)
+            {
+                throw new InvalidOperationException(
+                    $"Analyzer module '{analyzerPath}' contains no analyzers.");
+            }
+
+            var analyzers =
+                ImmutableArray.CreateBuilder<NativeDiagnosticAnalyzer>(
+                    analyzerCount);
+            for (int index = 0; index < analyzerCount; index++)
+            {
+                ThrowIfFailed(
+                    module.GetAnalyzer(index, out nint analyzerPointer));
+                if (analyzerPointer == 0)
+                {
+                    throw new InvalidOperationException(
+                        $"Analyzer module '{analyzerPath}' returned no analyzer at index {index}.");
+                }
+
+                try
+                {
+                    var transport = (IAnalyzerTransport)s_comWrappers
+                        .GetOrCreateObjectForComInstance(
+                            analyzerPointer,
+                            CreateObjectFlags.None);
+                    ThrowIfFailed(transport.GetVersion(out version));
+                    if (version != AnalyzerAbi.Version)
+                    {
+                        throw new InvalidOperationException(
+                            $"Analyzer {index} in module '{analyzerPath}' uses an incompatible ABI.");
+                    }
+
+                    analyzers.Add(new NativeDiagnosticAnalyzer(transport));
+                }
+                finally
+                {
+                    AnalyzerAbi.Release(analyzerPointer);
+                }
+            }
+
+            return analyzers.MoveToImmutable();
         }
         finally
         {
-            AnalyzerAbi.Release(analyzerPointer);
+            AnalyzerAbi.Release(modulePointer);
         }
     }
 
@@ -112,59 +149,75 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
         return true;
     }
 
-    private static ImmutableArray<DiagnosticDescriptor>
-        ReadSupportedDiagnostics(IAnalyzerTransport transport)
+    private ImmutableArray<DiagnosticDescriptor>
+        ReadSupportedDiagnostics()
     {
-        ThrowIfFailed(transport.GetDescriptorCount(out int count));
-        var descriptors =
-            ImmutableArray.CreateBuilder<DiagnosticDescriptor>(count);
-        for (int index = 0; index < count; index++)
+        nint interopPointer =
+            s_comWrappers.GetOrCreateComInterfaceForObject(
+                _roslynInterop,
+                CreateComInterfaceFlags.None);
+        try
         {
             ThrowIfFailed(
-                transport.GetDescriptorInfo(
-                    index,
-                    out AnalyzerDiagnosticSeverity severity,
-                    out int enabledByDefault));
-            descriptors.Add(
-                new DiagnosticDescriptor(
-                    ReadDescriptorString(
-                        transport,
+                _transport.GetDescriptorCount(
+                    interopPointer,
+                    out int count));
+            var descriptors =
+                ImmutableArray.CreateBuilder<DiagnosticDescriptor>(count);
+            for (int index = 0; index < count; index++)
+            {
+                ThrowIfFailed(
+                    _transport.GetDescriptorInfo(
+                        interopPointer,
                         index,
-                        AnalyzerDescriptorField.Id),
-                    ReadDescriptorString(
-                        transport,
-                        index,
-                        AnalyzerDescriptorField.Title),
-                    ReadDescriptorString(
-                        transport,
-                        index,
-                        AnalyzerDescriptorField.MessageFormat),
-                    ReadDescriptorString(
-                        transport,
-                        index,
-                        AnalyzerDescriptorField.Category),
-                    (DiagnosticSeverity)severity,
-                    enabledByDefault != 0,
-                    description: ReadDescriptorString(
-                        transport,
-                        index,
-                        AnalyzerDescriptorField.Description),
-                    helpLinkUri: ReadDescriptorString(
-                        transport,
-                        index,
-                        AnalyzerDescriptorField.HelpLinkUri)));
-        }
+                        out AnalyzerDiagnosticSeverity severity,
+                        out int enabledByDefault));
+                descriptors.Add(
+                    new DiagnosticDescriptor(
+                        ReadDescriptorString(
+                            interopPointer,
+                            index,
+                            AnalyzerDescriptorField.Id),
+                        ReadDescriptorString(
+                            interopPointer,
+                            index,
+                            AnalyzerDescriptorField.Title),
+                        ReadDescriptorString(
+                            interopPointer,
+                            index,
+                            AnalyzerDescriptorField.MessageFormat),
+                        ReadDescriptorString(
+                            interopPointer,
+                            index,
+                            AnalyzerDescriptorField.Category),
+                        (DiagnosticSeverity)severity,
+                        enabledByDefault != 0,
+                        description: ReadDescriptorString(
+                            interopPointer,
+                            index,
+                            AnalyzerDescriptorField.Description),
+                        helpLinkUri: ReadDescriptorString(
+                            interopPointer,
+                            index,
+                            AnalyzerDescriptorField.HelpLinkUri)));
+            }
 
-        return descriptors.MoveToImmutable();
+            return descriptors.MoveToImmutable();
+        }
+        finally
+        {
+            AnalyzerAbi.Release(interopPointer);
+        }
     }
 
-    private static string ReadDescriptorString(
-        IAnalyzerTransport transport,
+    private string ReadDescriptorString(
+        nint interopPointer,
         int descriptorIndex,
         AnalyzerDescriptorField field)
     {
         ThrowIfFailed(
-            transport.CopyDescriptorStringUtf16(
+            _transport.CopyDescriptorStringUtf16(
+                interopPointer,
                 descriptorIndex,
                 field,
                 0,
@@ -172,13 +225,14 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
                 out int charCount));
         return string.Create(
             charCount,
-            (transport, descriptorIndex, field),
+            (_transport, interopPointer, descriptorIndex, field),
             static (buffer, state) =>
             {
                 fixed (char* bufferPointer = buffer)
                 {
                     ThrowIfFailed(
-                        state.transport.CopyDescriptorStringUtf16(
+                        state._transport.CopyDescriptorStringUtf16(
+                            state.interopPointer,
                             state.descriptorIndex,
                             state.field,
                             (nint)bufferPointer,
