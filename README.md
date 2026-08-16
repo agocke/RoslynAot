@@ -92,6 +92,18 @@ CA1200 diagnostic, documentation output, and emitted assembly. It also prints
 implemented yet, making those compatibility gaps available for follow-up
 testing.
 
+Validate the sample analyzer module, including the analyzer failure path:
+
+```bash
+bash eng/validate-sample-analyzer.sh
+```
+
+The command compiles `samples/Bad.cs` and requires the expected `AA0001`
+diagnostic, then compiles `samples/Throwing.cs` and requires that the
+deliberately throwing sample analyzer surfaces an `AD0001` diagnostic naming
+the analyzer type, action kind, and exception — without failing the build or
+losing the compiled output.
+
 ## Package integration
 
 `RoslynAot.Experimental` currently publishes the NativeAOT compiler host before
