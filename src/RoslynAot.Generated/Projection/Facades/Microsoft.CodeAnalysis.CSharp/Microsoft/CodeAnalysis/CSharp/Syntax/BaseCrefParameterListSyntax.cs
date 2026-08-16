@@ -20,7 +20,11 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public BaseCrefParameterListSyntax AddParameters(params CrefParameterSyntax[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IBaseCrefParameterListSyntaxVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.BaseCrefParameterListSyntax_AddParameters(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(items, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public BaseCrefParameterListSyntax WithParameters(SeparatedSyntaxList<CrefParameterSyntax> parameters)
@@ -34,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static BaseCrefParameterListSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (BaseCrefParameterListSyntax)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("9509f7ad-12de-5dd1-8e5a-bc4f87cc8697")]
+        [System.Runtime.InteropServices.Guid("c7273065-da12-53cc-86c4-a1a5f80b7a64")]
         internal partial interface __RoslynAotImplementation : BaseCrefParameterListSyntax
         {
         }

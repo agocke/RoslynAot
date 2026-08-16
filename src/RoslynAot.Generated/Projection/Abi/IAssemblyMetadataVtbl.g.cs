@@ -12,13 +12,19 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f4e001da-527b-58bd-8fba-fbd7d0c98bee")]
+[Guid("99d31728-189f-57c5-9048-ffcae78eab21")]
 public partial interface IAssemblyMetadataVtbl : IMetadataVtbl
 {
 
     [PreserveSig]
     int AssemblyMetadata_Dispose(
         long receiver
+    );
+
+    [PreserveSig]
+    int AssemblyMetadata_GetModules(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]

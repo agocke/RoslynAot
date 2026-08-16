@@ -50,7 +50,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IVariableDeclaratorSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.VariableDeclaratorSyntax_Accept_e776c290(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.VariableDeclaratorSyntax_Accept_bc2b842b(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -61,7 +61,11 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public VariableDeclaratorSyntax AddArgumentListArguments(params ArgumentSyntax[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IVariableDeclaratorSyntaxVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.VariableDeclaratorSyntax_AddArgumentListArguments(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(items, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public VariableDeclaratorSyntax Update(SyntaxToken identifier, BracketedArgumentListSyntax? argumentList, EqualsValueClauseSyntax? initializer)
@@ -106,7 +110,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static VariableDeclaratorSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (VariableDeclaratorSyntax)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("91f2ea1c-dedf-58ad-91e3-529d2a35f866")]
+        [System.Runtime.InteropServices.Guid("4cde304c-eac4-57bf-8fcb-08f2c4faa995")]
         internal partial interface __RoslynAotImplementation : VariableDeclaratorSyntax
         {
         }

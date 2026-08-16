@@ -58,7 +58,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITypeParameterConstraintClauseSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TypeParameterConstraintClauseSyntax_Accept_2d080a74(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.TypeParameterConstraintClauseSyntax_Accept_a9ce6219(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -69,7 +69,11 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public TypeParameterConstraintClauseSyntax AddConstraints(params TypeParameterConstraintSyntax[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ITypeParameterConstraintClauseSyntaxVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.TypeParameterConstraintClauseSyntax_AddConstraints(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(items, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public TypeParameterConstraintClauseSyntax Update(SyntaxToken whereKeyword, IdentifierNameSyntax name, SyntaxToken colonToken, SeparatedSyntaxList<TypeParameterConstraintSyntax> constraints)
@@ -115,7 +119,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static TypeParameterConstraintClauseSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (TypeParameterConstraintClauseSyntax)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("3e9e5e1d-4152-5e6d-ab79-e575852ddfe3")]
+        [System.Runtime.InteropServices.Guid("72b94709-e48e-5f67-a1ab-642698ffc128")]
         internal partial interface __RoslynAotImplementation : TypeParameterConstraintClauseSyntax
         {
         }

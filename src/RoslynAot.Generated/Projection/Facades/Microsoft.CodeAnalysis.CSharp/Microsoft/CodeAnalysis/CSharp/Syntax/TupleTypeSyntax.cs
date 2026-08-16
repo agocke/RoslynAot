@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITupleTypeSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TupleTypeSyntax_Accept_636dda69(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.TupleTypeSyntax_Accept_02767b33(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -57,7 +57,11 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public TupleTypeSyntax AddElements(params TupleElementSyntax[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ITupleTypeSyntaxVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.TupleTypeSyntax_AddElements(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(items, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public TupleTypeSyntax Update(SyntaxToken openParenToken, SeparatedSyntaxList<TupleElementSyntax> elements, SyntaxToken closeParenToken)
@@ -94,7 +98,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static TupleTypeSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (TupleTypeSyntax)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("96da9a32-8625-5eeb-95a4-465c95a30b80")]
+        [System.Runtime.InteropServices.Guid("de424578-63ab-556b-af24-828531f56660")]
         internal partial interface __RoslynAotImplementation : TupleTypeSyntax
         {
         }

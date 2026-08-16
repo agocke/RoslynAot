@@ -12,13 +12,27 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f0000a5c-8cb5-5017-a94d-9e9191b02f18")]
+[Guid("27e0dc65-d254-51b0-be3f-d6cde09437b1")]
 public partial interface ISwitchSectionSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int SwitchSectionSyntax_Accept_f172f8d3(
+    int SwitchSectionSyntax_Accept_556ab272(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int SwitchSectionSyntax_AddLabels(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int SwitchSectionSyntax_AddStatements(
+        long receiver,
+        long items,
+        out long result
     );
 }

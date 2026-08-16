@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("6e1f06a8-8149-5408-9fa4-f22c0598e2ce")]
+[Guid("9dec8ec9-5732-5864-8b92-d2853f15e5bd")]
 public partial interface ISourceFileResolverVtbl : ISourceReferenceResolverVtbl
 {
 
     [PreserveSig]
-    int SourceFileResolver_Equals_2690b0f9(
+    int SourceFileResolver_Equals_0526a366(
         long receiver,
         long other,
         out int result
@@ -27,6 +27,26 @@ public partial interface ISourceFileResolverVtbl : ISourceReferenceResolverVtbl
     int SourceFileResolver_GetHashCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int SourceFileResolver_NormalizePath(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string baseFilePath,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int SourceFileResolver_ResolveReference(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string baseFilePath,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
     );
 
     [PreserveSig]

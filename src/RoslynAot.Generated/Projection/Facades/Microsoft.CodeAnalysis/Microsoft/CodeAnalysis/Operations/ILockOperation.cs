@@ -10,8 +10,39 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface ILockOperation : IOperation
     {
-        IOperation Body { get; }
+        IOperation Body
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IILockOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ILockOperation_get_Body(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        IOperation LockedValue { get; }
+        IOperation LockedValue
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IILockOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ILockOperation_get_LockedValue(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IILockOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetILockOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static ILockOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ILockOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("12ad4dc7-bed9-588b-b469-4308f2ee1b87")]
+        internal partial interface __RoslynAotImplementation : ILockOperation
+        {
+        }
     }
 }

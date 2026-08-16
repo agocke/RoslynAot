@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.INameMemberCrefSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.NameMemberCrefSyntax_Accept_8f893fbf(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.NameMemberCrefSyntax_Accept_da7a8207(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -49,7 +49,11 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public NameMemberCrefSyntax AddParametersParameters(params CrefParameterSyntax[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.INameMemberCrefSyntaxVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.NameMemberCrefSyntax_AddParametersParameters(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(items, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public NameMemberCrefSyntax Update(TypeSyntax name, CrefParameterListSyntax? parameters)
@@ -85,7 +89,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static NameMemberCrefSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (NameMemberCrefSyntax)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("996ff46e-144f-5852-a291-0e50d4c69bc0")]
+        [System.Runtime.InteropServices.Guid("fcc89e59-98fe-59c2-8c30-230c17a9e9d8")]
         internal partial interface __RoslynAotImplementation : NameMemberCrefSyntax
         {
         }

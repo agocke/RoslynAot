@@ -10,6 +10,27 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface IParameterInitializerOperation : ISymbolInitializerOperation, IOperation
     {
-        IParameterSymbol Parameter { get; }
+        IParameterSymbol Parameter
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIParameterInitializerOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IParameterInitializerOperation_get_Parameter(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IParameterSymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIParameterInitializerOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIParameterInitializerOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IParameterInitializerOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IParameterInitializerOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("9e9ef589-83b7-5f86-b828-a7c4aa2290b5")]
+        internal partial interface __RoslynAotImplementation : IParameterInitializerOperation
+        {
+        }
     }
 }

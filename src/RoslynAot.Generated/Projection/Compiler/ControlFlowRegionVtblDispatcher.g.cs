@@ -40,6 +40,23 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         }
     }
 
+    public int ControlFlowRegion_get_ExceptionType(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion>(receiver).ExceptionType);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ControlFlowRegion_get_FirstBlockOrdinal(
         long receiver,
         out int result)
@@ -83,6 +100,57 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion>(receiver).LastBlockOrdinal;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowRegion_get_LocalFunctions(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion>(receiver).LocalFunctions).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowRegion_get_Locals(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion>(receiver).Locals).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowRegion_get_NestedRegions(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion>(receiver).NestedRegions).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

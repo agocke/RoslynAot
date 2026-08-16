@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("46f04809-c5f5-5624-b9e1-6f6f0ca16ef0")]
+[Guid("7ca00f44-e020-5643-bbb5-cd9609857e6c")]
 public partial interface ICSharpCompilationOptionsVtbl : ICompilationOptionsVtbl
 {
 
     [PreserveSig]
-    int CSharpCompilationOptions_Equals_ce33b5ac(
+    int CSharpCompilationOptions_Equals_0865511e(
         long receiver,
         long other,
         out int result
@@ -45,6 +45,20 @@ public partial interface ICSharpCompilationOptionsVtbl : ICompilationOptionsVtbl
     );
 
     [PreserveSig]
+    int CSharpCompilationOptions_WithCryptoKeyContainer(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpCompilationOptions_WithCryptoKeyFile(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        out long result
+    );
+
+    [PreserveSig]
     int CSharpCompilationOptions_WithDeterministic(
         long receiver,
         int deterministic,
@@ -59,6 +73,13 @@ public partial interface ICSharpCompilationOptionsVtbl : ICompilationOptionsVtbl
     );
 
     [PreserveSig]
+    int CSharpCompilationOptions_WithMainTypeName(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result
+    );
+
+    [PreserveSig]
     int CSharpCompilationOptions_WithMetadataImportOptions(
         long receiver,
         byte value,
@@ -69,6 +90,13 @@ public partial interface ICSharpCompilationOptionsVtbl : ICompilationOptionsVtbl
     int CSharpCompilationOptions_WithMetadataReferenceResolver(
         long receiver,
         long resolver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpCompilationOptions_WithModuleName(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string moduleName,
         out long result
     );
 
@@ -118,6 +146,13 @@ public partial interface ICSharpCompilationOptionsVtbl : ICompilationOptionsVtbl
     int CSharpCompilationOptions_WithReportSuppressedDiagnostics(
         long receiver,
         int reportSuppressedDiagnostics,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpCompilationOptions_WithScriptClassName(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result
     );
 

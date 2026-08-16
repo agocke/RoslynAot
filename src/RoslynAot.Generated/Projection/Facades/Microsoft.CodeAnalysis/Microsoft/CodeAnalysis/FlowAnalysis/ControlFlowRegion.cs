@@ -34,7 +34,11 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IControlFlowRegionVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ControlFlowRegion_get_ExceptionType(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : ITypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -78,7 +82,11 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IControlFlowRegionVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ControlFlowRegion_get_LocalFunctions(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IMethodSymbol>(controlVtbl, result, static (controlVtbl, handle) => IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -86,7 +94,11 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IControlFlowRegionVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ControlFlowRegion_get_Locals(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ILocalSymbol>(controlVtbl, result, static (controlVtbl, handle) => ILocalSymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -94,7 +106,11 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IControlFlowRegionVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ControlFlowRegion_get_NestedRegions(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ControlFlowRegion>(controlVtbl, result, static (controlVtbl, handle) => ControlFlowRegion.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -104,7 +120,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static ControlFlowRegion __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ControlFlowRegion)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f7368adc-61ce-5fe4-a011-d13823606173")]
+        [System.Runtime.InteropServices.Guid("b5009eea-8644-5e10-ab6b-d8895947f77e")]
         internal partial interface __RoslynAotImplementation : ControlFlowRegion
         {
         }

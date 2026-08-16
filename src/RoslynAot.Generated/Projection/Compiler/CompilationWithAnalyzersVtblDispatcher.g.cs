@@ -39,4 +39,21 @@ internal sealed partial class CompilationWithAnalyzersVtblDispatcher : ICompilat
             return _owner.SetError(exception);
         }
     }
+
+    public int CompilationWithAnalyzers_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.CompilationWithAnalyzers>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

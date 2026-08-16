@@ -28,6 +28,8 @@ internal sealed class FacadeDeclarationTransform
 
     public SyntaxNode Transform(ISymbol symbol, SyntaxNode declaration)
     {
+        symbol = ResolveDeclarationSymbol(symbol, declaration);
+
         if (symbol is INamedTypeSymbol type)
         {
             SyntaxNode completedDeclaration =
@@ -76,6 +78,31 @@ internal sealed class FacadeDeclarationTransform
                 RewriteField(field, fieldSymbol),
             _ => declaration,
         };
+    }
+
+    private static ISymbol ResolveDeclarationSymbol(
+        ISymbol symbol,
+        SyntaxNode declaration)
+    {
+        if (symbol is not IMethodSymbol method ||
+            declaration is not MethodDeclarationSyntax methodDeclaration ||
+            method.Parameters.Length ==
+                methodDeclaration.ParameterList.Parameters.Count)
+        {
+            return symbol;
+        }
+
+        IMethodSymbol[] candidates = method.ContainingType
+            .GetMembers(method.Name)
+            .OfType<IMethodSymbol>()
+            .Where(candidate =>
+                candidate.MethodKind == method.MethodKind &&
+                candidate.Parameters.Length ==
+                    methodDeclaration.ParameterList.Parameters.Count)
+            .ToArray();
+        return candidates.Length == 1
+            ? candidates[0]
+            : symbol;
     }
 
     private bool ConversionUsesDynamicInterface(
@@ -248,6 +275,10 @@ internal sealed class FacadeDeclarationTransform
         string fullyQualifiedType = type.ToDisplayString(
             SymbolDisplayFormat.FullyQualifiedFormat);
         var memberRewriter = new InterfaceMemberRewriter();
+        IEnumerable<MemberDeclarationSyntax> sourceMembers =
+            type.TypeKind == TypeKind.Interface
+                ? RewriteInterfaceMembers(type, declaration.Members)
+                : declaration.Members;
         var interfaceDeclaration = SyntaxFactory.InterfaceDeclaration(
                 declaration.Identifier)
             .WithAttributeLists(
@@ -264,10 +295,15 @@ internal sealed class FacadeDeclarationTransform
             .WithConstraintClauses(declaration.ConstraintClauses)
             .WithMembers(
                 SyntaxFactory.List(
-                    declaration.Members
+                    sourceMembers
                         .Where(
                             member =>
-                                member is not ConstructorDeclarationSyntax)
+                                member is not ConstructorDeclarationSyntax &&
+                                (member is not FieldDeclarationSyntax field ||
+                                    field.Modifiers.Any(
+                                        modifier =>
+                                            modifier.IsKind(
+                                                SyntaxKind.StaticKeyword))))
                         .Select(
                             member =>
                                 (MemberDeclarationSyntax)memberRewriter
@@ -308,6 +344,66 @@ internal sealed class FacadeDeclarationTransform
                     $"{fullyQualifiedType} {{ }}"));
 
         return interfaceDeclaration;
+    }
+
+    private IEnumerable<MemberDeclarationSyntax> RewriteInterfaceMembers(
+        INamedTypeSymbol type,
+        SyntaxList<MemberDeclarationSyntax> members)
+    {
+        var symbolsByName = type.GetMembers()
+            .GroupBy(static symbol => symbol.Name, StringComparer.Ordinal)
+            .ToDictionary(
+                static group => group.Key,
+                static group => new Queue<ISymbol>(group),
+                StringComparer.Ordinal);
+
+        foreach (MemberDeclarationSyntax member in members)
+        {
+            string? name = member switch
+            {
+                MethodDeclarationSyntax method =>
+                    method.Identifier.ValueText,
+                PropertyDeclarationSyntax property =>
+                    property.Identifier.ValueText,
+                IndexerDeclarationSyntax => "this[]",
+                EventDeclarationSyntax @event =>
+                    @event.Identifier.ValueText,
+                FieldDeclarationSyntax field =>
+                    field.Declaration.Variables.FirstOrDefault()
+                        ?.Identifier.ValueText,
+                _ => null,
+            };
+            if (name is null ||
+                !symbolsByName.TryGetValue(name, out Queue<ISymbol>? symbols) ||
+                symbols.Count == 0)
+            {
+                yield return member;
+                continue;
+            }
+
+            ISymbol symbol = symbols.Dequeue();
+            if (!_model.TryGetMember(symbol, out MemberProjection projection))
+            {
+                yield return member;
+                continue;
+            }
+
+            yield return member switch
+            {
+                MethodDeclarationSyntax method =>
+                    RewriteMethod(method, projection),
+                PropertyDeclarationSyntax property =>
+                    RewriteProperty(property, projection),
+                IndexerDeclarationSyntax indexer =>
+                    RewriteIndexer(indexer, projection),
+                EventDeclarationSyntax @event =>
+                    RewriteEvent(@event, projection),
+                FieldDeclarationSyntax field
+                    when symbol is IFieldSymbol fieldSymbol =>
+                    RewriteField(field, fieldSymbol),
+                _ => member,
+            };
+        }
     }
 
     private static SyntaxList<AttributeListSyntax> FilterInterfaceAttributes(
@@ -357,6 +453,19 @@ internal sealed class FacadeDeclarationTransform
             return declaration;
         }
 
+        ExpressionSyntax? wellKnownInitializer =
+            GetWellKnownFieldInitializer(symbol);
+        if (wellKnownInitializer is not null)
+        {
+            return declaration.WithDeclaration(
+                declaration.Declaration.WithVariables(
+                    SyntaxFactory.SeparatedList(
+                        declaration.Declaration.Variables.Select(
+                            variable => variable.WithInitializer(
+                                SyntaxFactory.EqualsValueClause(
+                                    wellKnownInitializer))))));
+        }
+
         string message =
             $"Static Roslyn field '{symbol.ToDisplayString()}' " +
             "is not implemented by RoslynAot.";
@@ -373,6 +482,33 @@ internal sealed class FacadeDeclarationTransform
                     declaration.Declaration.Variables.Select(
                         variable => variable.WithInitializer(
                             SyntaxFactory.EqualsValueClause(initializer))))));
+    }
+
+    private static ExpressionSyntax? GetWellKnownFieldInitializer(
+        IFieldSymbol symbol)
+    {
+        if (symbol.ContainingType.ToDisplayString() !=
+            "Microsoft.CodeAnalysis.SymbolEqualityComparer")
+        {
+            return null;
+        }
+
+        string? kind = symbol.Name switch
+        {
+            "Default" => "SymbolEqualityComparerDefault",
+            "IncludeNullability" =>
+                "SymbolEqualityComparerIncludeNullability",
+            _ => null,
+        };
+        if (kind is null)
+        {
+            return null;
+        }
+
+        return SyntaxFactory.ParseExpression(
+            "SymbolEqualityComparer.__RoslynAotCreateLocal(" +
+            "global::RoslynAot.Abi.RoslynWellKnownObject." +
+            $"{kind})");
     }
 
     private IEnumerable<ISymbol> GetAbstractMembers(INamedTypeSymbol type)
@@ -675,7 +811,6 @@ internal sealed class FacadeDeclarationTransform
             projection.Symbol.ContainingType is INamedTypeSymbol type &&
             _model.UsesDynamicInterfaceProxy(type);
         if (declaration.AccessorList is null ||
-            projection.Symbol.ContainingType?.TypeKind == TypeKind.Interface ||
             projection.Symbol is IPropertySymbol { IsAbstract: true } &&
             !dynamicInterfaceMember)
         {
@@ -704,7 +839,6 @@ internal sealed class FacadeDeclarationTransform
             projection.Symbol.ContainingType is INamedTypeSymbol type &&
             _model.UsesDynamicInterfaceProxy(type);
         if (declaration.AccessorList is null ||
-            projection.Symbol.ContainingType?.TypeKind == TypeKind.Interface ||
             projection.Symbol is IPropertySymbol { IsAbstract: true } &&
             !dynamicInterfaceMember)
         {
@@ -733,7 +867,6 @@ internal sealed class FacadeDeclarationTransform
             projection.Symbol.ContainingType is INamedTypeSymbol type &&
             _model.UsesDynamicInterfaceProxy(type);
         if (declaration.AccessorList is null ||
-            projection.Symbol.ContainingType?.TypeKind == TypeKind.Interface ||
             projection.Symbol is IEventSymbol { IsAbstract: true } &&
             !dynamicInterfaceMember)
         {
@@ -1036,6 +1169,12 @@ internal static class FacadeBodyEmitter
             AbiTypeKind.NullableHandle =>
                 $"{name}.HasValue ? " +
                 $"{name}.Value.__RoslynAotGetHandle({controlVtbl}) : 0L",
+            AbiTypeKind.ObjectArray =>
+                "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime." +
+                $"CreateObjectCollectionHandle({controlVtbl}, " +
+                $"global::System.Array.ConvertAll({name}, " +
+                $"item => item.__RoslynAotGetHandle({controlVtbl})))",
+            AbiTypeKind.Utf16String => name,
             _ => throw new InvalidOperationException(
                 $"No facade argument conversion exists for " +
                 $"'{parameter.Symbol.ToDisplayString()}'."),
@@ -1057,6 +1196,13 @@ internal static class FacadeBodyEmitter
                     SpecialType.System_Char =>
                 $"(char){expression}",
             AbiTypeKind.Integral => expression,
+            AbiTypeKind.StringCollection =>
+                WrapCollectionResult(
+                    result,
+                    "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime." +
+                    $"ReadStringCollection(controlVtbl, {expression})"),
+            AbiTypeKind.ObjectCollection =>
+                GetObjectCollectionCreation(result, expression),
             AbiTypeKind.ObjectHandle =>
                 result.IsNullable
                     ? $"{expression} == 0 ? null : " +
@@ -1071,6 +1217,64 @@ internal static class FacadeBodyEmitter
                 $"No facade result conversion exists for " +
                 $"'{result.SourceType.ToDisplayString()}'."),
         };
+
+    private static string GetObjectCollectionCreation(
+        AbiTypePlan plan,
+        string expression)
+    {
+        if (plan.SourceType is not INamedTypeSymbol
+            {
+                TypeArguments: [INamedTypeSymbol elementType]
+            })
+        {
+            throw new InvalidOperationException(
+                $"Collection ABI plan '{plan.SourceType}' has no element type.");
+        }
+
+        var elementPlan = new AbiTypePlan(
+            AbiTypeKind.ObjectHandle,
+            "long",
+            elementType,
+            elementType.NullableAnnotation == NullableAnnotation.Annotated,
+            UnsupportedReason: null);
+        string typeName = elementType.ToDisplayString(
+            SymbolDisplayFormat.FullyQualifiedFormat);
+        string collection =
+            "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime." +
+            $"ReadObjectCollection<{typeName}>(" +
+            $"controlVtbl, {expression}, " +
+            $"static (controlVtbl, handle) => " +
+            $"{GetProxyCreation(elementPlan, "handle")})";
+        return WrapCollectionResult(plan, collection);
+    }
+
+    private static string WrapCollectionResult(
+        AbiTypePlan plan,
+        string expression) =>
+        plan.SourceType is INamedTypeSymbol
+        {
+            OriginalDefinition:
+            {
+                Name: "ImmutableArray",
+                Arity: 1,
+                ContainingNamespace:
+                {
+                    Name: "Immutable",
+                    ContainingNamespace:
+                    {
+                        Name: "Collections",
+                        ContainingNamespace:
+                        {
+                            Name: "System",
+                            ContainingNamespace.IsGlobalNamespace: true
+                        }
+                    }
+                }
+            }
+        }
+            ? "global::System.Collections.Immutable.ImmutableArray." +
+                $"CreateRange({expression})"
+            : expression;
 
     private static string GetProxyCreation(
         AbiTypePlan plan,
@@ -1094,6 +1298,79 @@ internal static class AnalyzerLocalFacadeEmitter
     {
         IMethodSymbol method = operation.Symbol;
         string containingType = method.ContainingType.ToDisplayString();
+
+        if (containingType == "Microsoft.CodeAnalysis.ISymbol" &&
+            method.Name == "Equals" &&
+            method.Parameters.Length == 2 &&
+            method.Parameters[1].Type.ToDisplayString() ==
+                "Microsoft.CodeAnalysis.SymbolEqualityComparer")
+        {
+            statements =
+            [
+                "return equalityComparer.Equals(this, other);",
+            ];
+            return true;
+        }
+
+        if (containingType == "Microsoft.CodeAnalysis.Location")
+        {
+            if (method.Name == "get_IsInSource")
+            {
+                statements = WithRemoteFallback(
+                    operation,
+                    "if (__RoslynAotIsLocal) return Kind == global::Microsoft.CodeAnalysis.LocationKind.SourceFile;");
+                return true;
+            }
+
+            if (method.Name == "get_IsInMetadata")
+            {
+                statements = WithRemoteFallback(
+                    operation,
+                    "if (__RoslynAotIsLocal) return Kind == global::Microsoft.CodeAnalysis.LocationKind.MetadataFile;");
+                return true;
+            }
+
+            if (method.Name == "get_MetadataModule")
+            {
+                statements = WithRemoteFallback(
+                    operation,
+                    "if (__RoslynAotIsLocal) return null;");
+                return true;
+            }
+        }
+
+        if (containingType ==
+            "Microsoft.CodeAnalysis.SymbolEqualityComparer")
+        {
+            if (method.Name == "Equals" &&
+                method.Parameters.Length == 2)
+            {
+                statements =
+                [
+                    "if (x is null) return y is null;",
+                    "if (y is null) return false;",
+                    "global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = x.__RoslynAotGetControlVtbl();",
+                    "int status = controlVtbl.SymbolEqualityComparerEquals(__RoslynAotKind, x.__RoslynAotGetHandle(controlVtbl), y.__RoslynAotGetHandle(controlVtbl), out int result);",
+                    "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);",
+                    "return result != 0;",
+                ];
+                return true;
+            }
+
+            if (method.Name == "GetHashCode" &&
+                method.Parameters.Length == 1)
+            {
+                statements =
+                [
+                    "if (obj is null) return 0;",
+                    "global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = obj.__RoslynAotGetControlVtbl();",
+                    "int status = controlVtbl.SymbolEqualityComparerGetHashCode(__RoslynAotKind, obj.__RoslynAotGetHandle(controlVtbl), out int result);",
+                    "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);",
+                    "return result;",
+                ];
+                return true;
+            }
+        }
 
         if (containingType == "Microsoft.CodeAnalysis.LocalizableString")
         {
@@ -1314,6 +1591,25 @@ internal static class AnalyzerLocalFacadeEmitter
             return true;
         }
 
+        if (containingType == "Microsoft.CodeAnalysis.Diagnostic" &&
+            method.Name == "Create" &&
+            method.IsStatic &&
+            method.Parameters is
+            [
+                { Name: "descriptor" },
+                { Name: "location" },
+                { Name: "additionalLocations" },
+                { Name: "properties" },
+                { Name: "messageArgs", Type: IArrayTypeSymbol }
+            ])
+        {
+            statements =
+            [
+                "return __RoslynAotCreateLocal(descriptor, location, additionalLocations, properties, messageArgs);",
+            ];
+            return true;
+        }
+
         if (containingType == "Microsoft.CodeAnalysis.Location" &&
             method.Name == "Create" &&
             method.IsStatic &&
@@ -1352,8 +1648,13 @@ internal static class AnalyzerLocalFacadeEmitter
             return true;
         }
 
-        if (containingType ==
-                "Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext" &&
+        if (containingType is
+                "Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext" or
+                "Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext" or
+                "Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext" or
+                "Microsoft.CodeAnalysis.Diagnostics.CompilationAnalysisContext" or
+                "Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext" or
+                "Microsoft.CodeAnalysis.Diagnostics.SyntaxTreeAnalysisContext" &&
             method.Name == "ReportDiagnostic")
         {
             statements = WithRemoteFallback(
@@ -1362,8 +1663,9 @@ internal static class AnalyzerLocalFacadeEmitter
             return true;
         }
 
-        if (containingType ==
-                "Microsoft.CodeAnalysis.Diagnostics.AnalysisContext" &&
+        if (containingType.StartsWith(
+                "Microsoft.CodeAnalysis.Diagnostics.",
+                StringComparison.Ordinal) &&
             method.Name == "RegisterSyntaxNodeAction" &&
             method.IsGenericMethod &&
             method.Parameters.Length == 2 &&
@@ -1374,6 +1676,25 @@ internal static class AnalyzerLocalFacadeEmitter
                 "global::System.ArgumentNullException.ThrowIfNull(action);",
                 "global::System.ArgumentNullException.ThrowIfNull(syntaxKinds);",
                 "RegisterSyntaxNodeAction(action, global::System.Collections.Immutable.ImmutableArray.CreateRange(syntaxKinds));",
+            ];
+            return true;
+        }
+
+        if (containingType.StartsWith(
+                "Microsoft.CodeAnalysis.Diagnostics.",
+                StringComparison.Ordinal) &&
+            method.Name is
+                "RegisterOperationAction" or
+                "RegisterSymbolAction" &&
+            method.Parameters.Length == 2 &&
+            method.Parameters[1].Type is IArrayTypeSymbol)
+        {
+            string kinds = method.Parameters[1].Name;
+            statements =
+            [
+                "global::System.ArgumentNullException.ThrowIfNull(action);",
+                $"global::System.ArgumentNullException.ThrowIfNull({kinds});",
+                $"{method.Name}(action, global::System.Collections.Immutable.ImmutableArray.CreateRange({kinds}));",
             ];
             return true;
         }

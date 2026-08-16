@@ -76,7 +76,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static TypeSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (TypeSyntax)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f6c54275-257a-533f-826b-d433c3b08030")]
+        [System.Runtime.InteropServices.Guid("fc2e5cf6-5cb0-54c0-b5ee-1e45f90c0ea6")]
         internal partial interface __RoslynAotImplementation : TypeSyntax
         {
         }

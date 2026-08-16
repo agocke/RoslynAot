@@ -40,7 +40,7 @@ internal sealed partial class ChildSyntaxListVtblDispatcher : IChildSyntaxListVt
         }
     }
 
-    public int ChildSyntaxList_Equals_827abeac(
+    public int ChildSyntaxList_Equals_df3ff5f0(
         long receiver,
         long other,
         out int result)

@@ -12,14 +12,21 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("711f4549-5959-5596-8f22-4f77c5082fec")]
+[Guid("53ee4d37-6fb2-5ea4-8854-421dc61f8789")]
 public partial interface IDocumentationCommentTriviaSyntaxVtbl : IStructuredTriviaSyntaxVtbl
 {
 
     [PreserveSig]
-    int DocumentationCommentTriviaSyntax_Accept_2e8842af(
+    int DocumentationCommentTriviaSyntax_Accept_c708bc6a(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int DocumentationCommentTriviaSyntax_AddContent(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

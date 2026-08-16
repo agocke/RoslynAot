@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("009374a6-6fbc-5ad9-bede-1f4c1474a9e7")]
+[Guid("b0f3ce2a-d28f-5d38-ae80-0e00687f4d4b")]
 public partial interface IBasicBlockVtbl
 {
+
+    [PreserveSig]
+    int BasicBlock_get_BranchValue(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int BasicBlock_get_ConditionKind(
@@ -53,8 +59,20 @@ public partial interface IBasicBlockVtbl
     );
 
     [PreserveSig]
+    int BasicBlock_get_Operations(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int BasicBlock_get_Ordinal(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int BasicBlock_get_Predecessors(
+        long receiver,
+        out long result
     );
 }

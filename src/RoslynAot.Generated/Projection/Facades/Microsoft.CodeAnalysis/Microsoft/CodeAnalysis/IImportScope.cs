@@ -10,12 +10,55 @@ namespace Microsoft.CodeAnalysis
 {
     public partial interface IImportScope
     {
-        System.Collections.Immutable.ImmutableArray<IAliasSymbol> Aliases { get; }
+        System.Collections.Immutable.ImmutableArray<IAliasSymbol> Aliases
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIImportScopeVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IImportScope_get_Aliases(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IAliasSymbol>(controlVtbl, result, static (controlVtbl, handle) => IAliasSymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
 
-        System.Collections.Immutable.ImmutableArray<IAliasSymbol> ExternAliases { get; }
+        System.Collections.Immutable.ImmutableArray<IAliasSymbol> ExternAliases
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIImportScopeVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IImportScope_get_ExternAliases(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IAliasSymbol>(controlVtbl, result, static (controlVtbl, handle) => IAliasSymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
 
-        System.Collections.Immutable.ImmutableArray<ImportedNamespaceOrType> Imports { get; }
+        System.Collections.Immutable.ImmutableArray<ImportedNamespaceOrType> Imports
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
 
-        System.Collections.Immutable.ImmutableArray<ImportedXmlNamespace> XmlNamespaces { get; }
+        System.Collections.Immutable.ImmutableArray<ImportedXmlNamespace> XmlNamespaces
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIImportScopeVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIImportScopeVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IImportScope __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IImportScope)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("a1dffc8e-6090-5e01-b1f0-efd5890ef8d0")]
+        internal partial interface __RoslynAotImplementation : IImportScope
+        {
+        }
     }
 }

@@ -56,12 +56,20 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public new BaseFieldDeclarationSyntax AddAttributeLists(params AttributeListSyntax[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IBaseFieldDeclarationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.BaseFieldDeclarationSyntax_AddAttributeLists(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(items, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public BaseFieldDeclarationSyntax AddDeclarationVariables(params VariableDeclaratorSyntax[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IBaseFieldDeclarationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.BaseFieldDeclarationSyntax_AddDeclarationVariables(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(items, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public new BaseFieldDeclarationSyntax AddModifiers(params SyntaxToken[] items)
@@ -107,7 +115,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static BaseFieldDeclarationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (BaseFieldDeclarationSyntax)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("d7f6d2ed-ece8-5638-9f4a-e97556d60773")]
+        [System.Runtime.InteropServices.Guid("005ba2c3-fba5-5c96-9c84-7579a3965c6b")]
         internal partial interface __RoslynAotImplementation : BaseFieldDeclarationSyntax
         {
         }

@@ -12,14 +12,28 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("6383e005-fe32-54ba-9f2a-378c09f0e5ba")]
+[Guid("499ddcf9-cce8-5859-9010-cd41d0e5dea1")]
 public partial interface IPropertyDeclarationSyntaxVtbl : IBasePropertyDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int PropertyDeclarationSyntax_Accept_4a0307cd(
+    int PropertyDeclarationSyntax_Accept_13650abf(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int PropertyDeclarationSyntax_AddAccessorListAccessors(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int PropertyDeclarationSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

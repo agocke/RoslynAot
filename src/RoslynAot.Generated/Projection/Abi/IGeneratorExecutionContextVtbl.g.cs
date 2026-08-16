@@ -12,9 +12,23 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b2f28410-05cb-5c63-9bfd-fc4684b06707")]
+[Guid("7a9ee43e-2d7b-59f0-8c69-503d1fef66e6")]
 public partial interface IGeneratorExecutionContextVtbl
 {
+
+    [PreserveSig]
+    int GeneratorExecutionContext_AddSource_2e11c25b(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
+        long sourceText
+    );
+
+    [PreserveSig]
+    int GeneratorExecutionContext_AddSource_b81ae2db(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source
+    );
 
     [PreserveSig]
     int GeneratorExecutionContext_ReportDiagnostic(
@@ -29,7 +43,25 @@ public partial interface IGeneratorExecutionContextVtbl
     );
 
     [PreserveSig]
+    int GeneratorExecutionContext_get_Compilation(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int GeneratorExecutionContext_get_ParseOptions(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int GeneratorExecutionContext_get_SyntaxContextReceiver(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int GeneratorExecutionContext_get_SyntaxReceiver(
         long receiver,
         out long result
     );

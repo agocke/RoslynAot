@@ -12,19 +12,19 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("69b2f577-c512-55fd-9225-725ae919f387")]
+[Guid("a19f84d4-ad16-5a09-ba98-f9e54e3c502b")]
 public partial interface ICSharpExtensionsVtbl_66985417
 {
 
     [PreserveSig]
-    int CSharpExtensions_Any_b082ecfa(
+    int CSharpExtensions_Any_e603017f(
         long list,
         ushort kind,
         out int result
     );
 
     [PreserveSig]
-    int CSharpExtensions_Any_aef0a5fc(
+    int CSharpExtensions_Any_5110d232(
         long list,
         ushort kind,
         out int result
@@ -38,42 +38,42 @@ public partial interface ICSharpExtensionsVtbl_66985417
     );
 
     [PreserveSig]
-    int CSharpExtensions_IndexOf_ab8b5d8c(
+    int CSharpExtensions_IndexOf_f0e5c4f8(
         long list,
         ushort kind,
         out int result
     );
 
     [PreserveSig]
-    int CSharpExtensions_IndexOf_06e4c7db(
+    int CSharpExtensions_IndexOf_cfd6c760(
         long list,
         ushort kind,
         out int result
     );
 
     [PreserveSig]
-    int CSharpExtensions_IsKind_8a92d4f3(
+    int CSharpExtensions_IsKind_86c39e5b(
         long node,
         ushort kind,
         out int result
     );
 
     [PreserveSig]
-    int CSharpExtensions_IsKind_5be19b92(
+    int CSharpExtensions_IsKind_85199867(
         long nodeOrToken,
         ushort kind,
         out int result
     );
 
     [PreserveSig]
-    int CSharpExtensions_IsKind_129f15c5(
+    int CSharpExtensions_IsKind_1beff7a3(
         long token,
         ushort kind,
         out int result
     );
 
     [PreserveSig]
-    int CSharpExtensions_IsKind_b3b67b11(
+    int CSharpExtensions_IsKind_21484bd3(
         long trivia,
         ushort kind,
         out int result

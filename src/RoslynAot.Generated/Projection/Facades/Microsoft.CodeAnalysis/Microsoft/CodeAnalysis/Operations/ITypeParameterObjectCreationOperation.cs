@@ -10,6 +10,27 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface ITypeParameterObjectCreationOperation : IOperation
     {
-        IObjectOrCollectionInitializerOperation? Initializer { get; }
+        IObjectOrCollectionInitializerOperation? Initializer
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IITypeParameterObjectCreationOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ITypeParameterObjectCreationOperation_get_Initializer(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : IObjectOrCollectionInitializerOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IITypeParameterObjectCreationOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetITypeParameterObjectCreationOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static ITypeParameterObjectCreationOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ITypeParameterObjectCreationOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("11fe1f7d-3b57-5b4a-81ce-61e1ccf9b1f5")]
+        internal partial interface __RoslynAotImplementation : ITypeParameterObjectCreationOperation
+        {
+        }
     }
 }

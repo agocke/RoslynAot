@@ -10,6 +10,27 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface INegatedPatternOperation : IPatternOperation, IOperation
     {
-        IPatternOperation Pattern { get; }
+        IPatternOperation Pattern
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IINegatedPatternOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.INegatedPatternOperation_get_Pattern(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IPatternOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IINegatedPatternOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetINegatedPatternOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static INegatedPatternOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (INegatedPatternOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("82772a4b-7d3b-5a65-a4ed-beeafff5d231")]
+        internal partial interface __RoslynAotImplementation : INegatedPatternOperation
+        {
+        }
     }
 }

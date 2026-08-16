@@ -10,6 +10,27 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface IFieldInitializerOperation : ISymbolInitializerOperation, IOperation
     {
-        System.Collections.Immutable.ImmutableArray<IFieldSymbol> InitializedFields { get; }
+        System.Collections.Immutable.ImmutableArray<IFieldSymbol> InitializedFields
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIFieldInitializerOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IFieldInitializerOperation_get_InitializedFields(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IFieldSymbol>(controlVtbl, result, static (controlVtbl, handle) => IFieldSymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIFieldInitializerOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIFieldInitializerOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IFieldInitializerOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IFieldInitializerOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("0d7f388e-9a0b-5d7d-b6ca-dfc557318f97")]
+        internal partial interface __RoslynAotImplementation : IFieldInitializerOperation
+        {
+        }
     }
 }

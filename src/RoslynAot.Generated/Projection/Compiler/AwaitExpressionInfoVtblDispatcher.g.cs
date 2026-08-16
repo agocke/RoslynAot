@@ -23,7 +23,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int AwaitExpressionInfo_Equals_ebfc1f36(
+    public int AwaitExpressionInfo_Equals_88f8f46b(
         long receiver,
         long other,
         out int result)
@@ -58,6 +58,57 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         }
     }
 
+    public int AwaitExpressionInfo_get_GetAwaiterMethod(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo>(receiver).GetAwaiterMethod);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AwaitExpressionInfo_get_GetResultMethod(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo>(receiver).GetResultMethod);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AwaitExpressionInfo_get_IsCompletedProperty(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo>(receiver).IsCompletedProperty);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int AwaitExpressionInfo_get_IsDynamic(
         long receiver,
         out int result)
@@ -67,6 +118,23 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo>(receiver).IsDynamic ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AwaitExpressionInfo_get_RuntimeAwaitMethod(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo>(receiver).RuntimeAwaitMethod);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

@@ -10,12 +10,63 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface IConditionalOperation : IOperation
     {
-        IOperation Condition { get; }
+        IOperation Condition
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIConditionalOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IConditionalOperation_get_Condition(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        bool IsRef { get; }
+        bool IsRef
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIConditionalOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IConditionalOperation_get_IsRef(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
 
-        IOperation? WhenFalse { get; }
+        IOperation? WhenFalse
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIConditionalOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IConditionalOperation_get_WhenFalse(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        IOperation WhenTrue { get; }
+        IOperation WhenTrue
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIConditionalOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IConditionalOperation_get_WhenTrue(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIConditionalOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIConditionalOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IConditionalOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IConditionalOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("e1af8e6d-e339-55eb-99f5-80c8f57050b9")]
+        internal partial interface __RoslynAotImplementation : IConditionalOperation
+        {
+        }
     }
 }

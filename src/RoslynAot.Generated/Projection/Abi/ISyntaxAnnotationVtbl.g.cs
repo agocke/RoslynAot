@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("08a8c460-c912-5123-bb67-1ada28f18f29")]
+[Guid("f80d1f70-14e5-54ac-b677-188afe4818af")]
 public partial interface ISyntaxAnnotationVtbl
 {
 
     [PreserveSig]
-    int SyntaxAnnotation_Equals_ae21757d(
+    int SyntaxAnnotation_Equals_96059184(
         long receiver,
         long other,
         out int result

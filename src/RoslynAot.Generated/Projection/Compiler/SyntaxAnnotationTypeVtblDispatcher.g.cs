@@ -23,7 +23,7 @@ internal sealed partial class SyntaxAnnotationTypeVtblDispatcher : ISyntaxAnnota
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxAnnotation_ctor_706a5ffb(
+    public int SyntaxAnnotation_ctor_3d9c3533(
         out long result)
     {
         result = default;
@@ -31,6 +31,41 @@ internal sealed partial class SyntaxAnnotationTypeVtblDispatcher : ISyntaxAnnota
         try
         {
             result = _owner.Objects.AddObject(new global::Microsoft.CodeAnalysis.SyntaxAnnotation());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxAnnotation_ctor_0d8b8281(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string kind,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(new global::Microsoft.CodeAnalysis.SyntaxAnnotation(kind));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxAnnotation_ctor_649fee3b(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string kind,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string data,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(new global::Microsoft.CodeAnalysis.SyntaxAnnotation(kind, data));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

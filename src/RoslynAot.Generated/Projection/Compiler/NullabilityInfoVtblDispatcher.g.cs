@@ -23,7 +23,7 @@ internal sealed partial class NullabilityInfoVtblDispatcher : INullabilityInfoVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int NullabilityInfo_Equals_9cc98f3d(
+    public int NullabilityInfo_Equals_bc49b00c(
         long receiver,
         long other,
         out int result)

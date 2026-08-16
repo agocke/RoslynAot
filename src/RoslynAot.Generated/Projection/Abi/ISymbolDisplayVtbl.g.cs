@@ -12,14 +12,87 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("cfbb34b7-3e9b-52cc-9e1e-b887f5ee547e")]
+[Guid("21d66127-5f49-578e-a8c4-47666f963496")]
 public partial interface ISymbolDisplayVtbl
 {
 
     [PreserveSig]
-    int SymbolDisplay_FormatLiteral_15828359(
+    int SymbolDisplay_FormatLiteral_8835a55e(
         ushort c,
         int quote,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int SymbolDisplay_FormatLiteral_3821a7c3(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        int quote,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int SymbolDisplay_ToDisplayString_3b6a487c(
+        long symbol,
+        long format,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int SymbolDisplay_ToDisplayString_7d4ef241(
+        long symbol,
+        byte nullableAnnotation,
+        long format,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int SymbolDisplay_ToDisplayString_d1275e7b(
+        long symbol,
+        byte nullableFlowState,
+        long format,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int SymbolDisplay_ToMinimalDisplayString_43a2ac3d(
+        long symbol,
+        long semanticModel,
+        int position,
+        long format,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int SymbolDisplay_ToMinimalDisplayString_e3f2922d(
+        long symbol,
+        byte nullableAnnotation,
+        long semanticModel,
+        int position,
+        long format,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int SymbolDisplay_ToMinimalDisplayString_ade7e0e1(
+        long symbol,
+        byte nullableFlowState,
+        long semanticModel,
+        int position,
+        long format,
         nint buffer,
         int bufferLength,
         out int requiredLength

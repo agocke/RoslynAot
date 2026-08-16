@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f50d8348-2bf2-54d9-b3a1-72426ac85261")]
+[Guid("1814bf39-074e-5ff2-83db-ff2721745808")]
 public partial interface ISyntaxNodeOrTokenVtbl
 {
 
@@ -35,10 +35,23 @@ public partial interface ISyntaxNodeOrTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_Equals_1ae3035a(
+    int SyntaxNodeOrToken_Equals_da6a78cc(
         long receiver,
         long other,
         out int result
+    );
+
+    [PreserveSig]
+    int SyntaxNodeOrToken_GetAnnotations_77a27a49(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNodeOrToken_GetDiagnostics(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]
@@ -85,6 +98,13 @@ public partial interface ISyntaxNodeOrTokenVtbl
     );
 
     [PreserveSig]
+    int SyntaxNodeOrToken_HasAnnotations_47e77cab(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out int result
+    );
+
+    [PreserveSig]
     int SyntaxNodeOrToken_IsEquivalentTo(
         long receiver,
         long other,
@@ -112,6 +132,27 @@ public partial interface ISyntaxNodeOrTokenVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int SyntaxNodeOrToken_WithAdditionalAnnotations_8b8d5e4a(
+        long receiver,
+        long annotations,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNodeOrToken_WithoutAnnotations_ce80e751(
+        long receiver,
+        long annotations,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNodeOrToken_WithoutAnnotations_747bc66f(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result
     );
 
     [PreserveSig]

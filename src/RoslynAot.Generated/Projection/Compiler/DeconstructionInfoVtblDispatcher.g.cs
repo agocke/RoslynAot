@@ -39,4 +39,21 @@ internal sealed partial class DeconstructionInfoVtblDispatcher : IDeconstruction
             return _owner.SetError(exception);
         }
     }
+
+    public int DeconstructionInfo_get_Method(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.DeconstructionInfo>(receiver).Method);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

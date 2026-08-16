@@ -39,6 +39,23 @@ internal sealed partial class SymbolAnalysisContextVtblDispatcher : ISymbolAnaly
         }
     }
 
+    public int SymbolAnalysisContext_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SymbolAnalysisContext_get_FilterSpan(
         long receiver,
         out long result)
@@ -99,6 +116,23 @@ internal sealed partial class SymbolAnalysisContextVtblDispatcher : ISymbolAnaly
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext>(receiver).Options);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolAnalysisContext_get_Symbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext>(receiver).Symbol);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

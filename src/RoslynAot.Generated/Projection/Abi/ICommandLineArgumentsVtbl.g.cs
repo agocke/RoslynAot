@@ -12,9 +12,41 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c1e18efe-309a-55eb-a393-8c4d541af19a")]
+[Guid("8e5f02ee-c34e-5e5f-aaa6-8a07c876b051")]
 public partial interface ICommandLineArgumentsVtbl
 {
+
+    [PreserveSig]
+    int CommandLineArguments_GetOutputFilePath(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string outputFileName,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int CommandLineArguments_GetPdbFilePath(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string outputFileName,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int CommandLineArguments_ResolveAnalyzerReferences(
+        long receiver,
+        long analyzerLoader,
+        out long result
+    );
+
+    [PreserveSig]
+    int CommandLineArguments_ResolveMetadataReferences(
+        long receiver,
+        long metadataResolver,
+        out long result
+    );
 
     [PreserveSig]
     int CommandLineArguments_get_AppConfigPath(

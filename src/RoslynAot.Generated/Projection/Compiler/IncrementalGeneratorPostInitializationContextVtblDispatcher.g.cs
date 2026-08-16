@@ -37,4 +37,38 @@ internal sealed partial class IncrementalGeneratorPostInitializationContextVtblD
             return _owner.SetError(exception);
         }
     }
+
+    public int IncrementalGeneratorPostInitializationContext_AddSource_ae64cc8a(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
+        long sourceText)
+    {
+
+        try
+        {
+            _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.IncrementalGeneratorPostInitializationContext>(receiver).AddSource(hintName, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(sourceText));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int IncrementalGeneratorPostInitializationContext_AddSource_6c25deff(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)
+    {
+
+        try
+        {
+            _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.IncrementalGeneratorPostInitializationContext>(receiver).AddSource(hintName, source);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

@@ -12,7 +12,13 @@ namespace Microsoft.CodeAnalysis
     {
         public ErrorLogOptions(string path, SarifVersion sarifVersion)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IErrorLogOptionsTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetErrorLogOptionsTypeVtbl(controlVtbl);
+            int status = vtbl.ErrorLogOptions_ctor(path, (int)sarifVersion, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            __roslynAotControlVtbl = controlVtbl;
+            __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetErrorLogOptionsVtbl(controlVtbl);
+            __roslynAotHandle = result;
         }
 
         public string Path

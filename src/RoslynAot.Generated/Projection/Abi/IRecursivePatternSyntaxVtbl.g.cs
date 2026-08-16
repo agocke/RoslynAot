@@ -12,14 +12,28 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d8286c12-bf04-56e7-90c5-5852ef44f91f")]
+[Guid("1856cd9c-08b8-50a5-93ac-46ca40b2f3fb")]
 public partial interface IRecursivePatternSyntaxVtbl : IPatternSyntaxVtbl
 {
 
     [PreserveSig]
-    int RecursivePatternSyntax_Accept_736e6a0e(
+    int RecursivePatternSyntax_Accept_7cf7093b(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int RecursivePatternSyntax_AddPositionalPatternClauseSubpatterns(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int RecursivePatternSyntax_AddPropertyPatternClauseSubpatterns(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

@@ -12,12 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e8c57d86-6cc0-5f25-8406-b6d509ed5c32")]
+[Guid("4c633b62-c512-50be-86cd-5c4a714528f8")]
 public partial interface IImportedNamespaceOrTypeVtbl
 {
 
     [PreserveSig]
     int ImportedNamespaceOrType_get_DeclaringSyntaxReference(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ImportedNamespaceOrType_get_NamespaceOrType(
         long receiver,
         out long result
     );

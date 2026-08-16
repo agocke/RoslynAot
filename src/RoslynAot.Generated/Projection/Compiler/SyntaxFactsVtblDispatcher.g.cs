@@ -108,6 +108,23 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         }
     }
 
+    public int SyntaxFacts_GetContextualKeywordKind(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out ushort result)
+    {
+        result = default;
+
+        try
+        {
+            result = (ushort)global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.GetContextualKeywordKind(text);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFacts_GetInstanceExpression(
         ushort token,
         out ushort result)
@@ -125,6 +142,23 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         }
     }
 
+    public int SyntaxFacts_GetKeywordKind(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out ushort result)
+    {
+        result = default;
+
+        try
+        {
+            result = (ushort)global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.GetKeywordKind(text);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFacts_GetLiteralExpression(
         ushort token,
         out ushort result)
@@ -134,6 +168,23 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         try
         {
             result = (ushort)global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.GetLiteralExpression((global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)token);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFacts_GetOperatorKind(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string operatorMetadataName,
+        out ushort result)
+    {
+        result = default;
+
+        try
+        {
+            result = (ushort)global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.GetOperatorKind(operatorMetadataName);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -176,6 +227,23 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         }
     }
 
+    public int SyntaxFacts_GetPreprocessorKeywordKind(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out ushort result)
+    {
+        result = default;
+
+        try
+        {
+            result = (ushort)global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.GetPreprocessorKeywordKind(text);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFacts_GetPrimaryFunction(
         ushort keyword,
         out ushort result)
@@ -210,7 +278,7 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         }
     }
 
-    public unsafe int SyntaxFacts_GetText_96c87d32(
+    public unsafe int SyntaxFacts_GetText_ff43e5c0(
         ushort kind,
         nint buffer,
         int bufferLength,
@@ -221,12 +289,12 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.GetText((global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)kind);
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.GetText((global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)kind);
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -235,7 +303,7 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         }
     }
 
-    public unsafe int SyntaxFacts_GetText_4c6897c1(
+    public unsafe int SyntaxFacts_GetText_4c5209e5(
         int accessibility,
         nint buffer,
         int bufferLength,
@@ -246,12 +314,12 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.GetText((global::Microsoft.CodeAnalysis.Accessibility)accessibility);
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.GetText((global::Microsoft.CodeAnalysis.Accessibility)accessibility);
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -490,6 +558,23 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         try
         {
             result = global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.IsBinaryExpression((global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)token) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFacts_IsCheckedOperator(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string operatorMetadataName,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.IsCheckedOperator(operatorMetadataName) ? 1 : 0;
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -1093,6 +1178,23 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         }
     }
 
+    public int SyntaxFacts_IsReservedTupleElementName(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string elementName,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.IsReservedTupleElementName(elementName) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFacts_IsTrivia(
         ushort kind,
         out int result)
@@ -1178,6 +1280,23 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         }
     }
 
+    public int SyntaxFacts_IsValidIdentifier(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.IsValidIdentifier(name) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFacts_IsWhitespace(
         ushort ch,
         out int result)
@@ -1206,12 +1325,12 @@ internal sealed partial class SyntaxFactsVtblDispatcher : ISyntaxFactsVtbl
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.TryGetInferredMemberName(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(syntax));
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = global::Microsoft.CodeAnalysis.CSharp.SyntaxFacts.TryGetInferredMemberName(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(syntax));
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

@@ -12,12 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f7368adc-61ce-5fe4-a011-d13823606173")]
+[Guid("b5009eea-8644-5e10-ab6b-d8895947f77e")]
 public partial interface IControlFlowRegionVtbl
 {
 
     [PreserveSig]
     int ControlFlowRegion_get_EnclosingRegion(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ControlFlowRegion_get_ExceptionType(
         long receiver,
         out long result
     );
@@ -38,5 +44,23 @@ public partial interface IControlFlowRegionVtbl
     int ControlFlowRegion_get_LastBlockOrdinal(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int ControlFlowRegion_get_LocalFunctions(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ControlFlowRegion_get_Locals(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ControlFlowRegion_get_NestedRegions(
+        long receiver,
+        out long result
     );
 }

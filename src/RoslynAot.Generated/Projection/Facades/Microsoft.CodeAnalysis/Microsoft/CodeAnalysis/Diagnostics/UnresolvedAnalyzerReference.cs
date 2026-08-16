@@ -12,7 +12,13 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     {
         public UnresolvedAnalyzerReference(string unresolvedPath)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IUnresolvedAnalyzerReferenceTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetUnresolvedAnalyzerReferenceTypeVtbl(controlVtbl);
+            int status = vtbl.UnresolvedAnalyzerReference_ctor(unresolvedPath, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            __roslynAotControlVtbl = controlVtbl;
+            __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetUnresolvedAnalyzerReferenceVtbl(controlVtbl);
+            __roslynAotHandle = result;
         }
 
         public override string Display

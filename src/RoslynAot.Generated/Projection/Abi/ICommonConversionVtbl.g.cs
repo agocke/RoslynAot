@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("41332404-49b0-5d0e-a7e9-2881bfbed905")]
+[Guid("28bdab83-a130-5a14-802a-2648e7e02bae")]
 public partial interface ICommonConversionVtbl
 {
+
+    [PreserveSig]
+    int CommonConversion_get_ConstrainedToType(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int CommonConversion_get_Exists(
@@ -56,5 +62,11 @@ public partial interface ICommonConversionVtbl
     int CommonConversion_get_IsUserDefined(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int CommonConversion_get_MethodSymbol(
+        long receiver,
+        out long result
     );
 }

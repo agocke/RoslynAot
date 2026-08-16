@@ -12,9 +12,37 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fa6f85c8-43a5-56c4-8d3e-4a06eee09d23")]
+[Guid("44218f49-911e-5ab5-99cf-bbe6a7f0d576")]
 public partial interface IBaseNamespaceDeclarationSyntaxVtbl : IMemberDeclarationSyntaxVtbl
 {
+
+    [PreserveSig]
+    int BaseNamespaceDeclarationSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseNamespaceDeclarationSyntax_AddExterns(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseNamespaceDeclarationSyntax_AddMembers(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseNamespaceDeclarationSyntax_AddUsings(
+        long receiver,
+        long items,
+        out long result
+    );
 
     [PreserveSig]
     int BaseNamespaceDeclarationSyntax_WithModifiers(

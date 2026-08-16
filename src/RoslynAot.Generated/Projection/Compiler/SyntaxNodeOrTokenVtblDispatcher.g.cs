@@ -74,7 +74,7 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         }
     }
 
-    public int SyntaxNodeOrToken_Equals_1ae3035a(
+    public int SyntaxNodeOrToken_Equals_da6a78cc(
         long receiver,
         long other,
         out int result)
@@ -84,6 +84,41 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).Equals(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(other)) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNodeOrToken_GetAnnotations_77a27a49(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).GetAnnotations(annotationKind)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNodeOrToken_GetDiagnostics(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).GetDiagnostics()).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -212,6 +247,24 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         }
     }
 
+    public int SyntaxNodeOrToken_HasAnnotations_47e77cab(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).HasAnnotations(annotationKind) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxNodeOrToken_IsEquivalentTo(
         long receiver,
         long other,
@@ -259,12 +312,12 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).ToFullString();
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).ToFullString();
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -284,12 +337,66 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).ToString();
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).ToString();
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNodeOrToken_WithAdditionalAnnotations_8b8d5e4a(
+        long receiver,
+        long annotations,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).WithAdditionalAnnotations(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(annotations), static value => (global::Microsoft.CodeAnalysis.SyntaxAnnotation)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNodeOrToken_WithoutAnnotations_ce80e751(
+        long receiver,
+        long annotations,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).WithoutAnnotations(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(annotations), static value => (global::Microsoft.CodeAnalysis.SyntaxAnnotation)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNodeOrToken_WithoutAnnotations_747bc66f(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).WithoutAnnotations(annotationKind));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -462,12 +569,12 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).Language;
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(receiver).Language;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

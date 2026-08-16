@@ -19,6 +19,8 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
+                if (__RoslynAotIsLocal)
+                    return Kind == LocationKind.MetadataFile;
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
                 int status = vtbl.Location_get_IsInMetadata(__RoslynAotGetHandle(controlVtbl), out int result);
@@ -32,6 +34,8 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
+                if (__RoslynAotIsLocal)
+                    return Kind == LocationKind.SourceFile;
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
                 int status = vtbl.Location_get_IsInSource(__RoslynAotGetHandle(controlVtbl), out int result);
@@ -46,7 +50,13 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                if (__RoslynAotIsLocal)
+                    return null;
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Location_get_MetadataModule(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : IModuleSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -93,12 +103,20 @@ namespace Microsoft.CodeAnalysis
 
         public static Location Create(string filePath, Text.TextSpan textSpan, Text.LinePositionSpan lineSpan, string mappedFilePath, Text.LinePositionSpan mappedLineSpan)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ILocationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetLocationTypeVtbl(controlVtbl);
+            int status = vtbl.Location_Create_bc32e9c1(filePath, textSpan.__RoslynAotGetHandle(controlVtbl), lineSpan.__RoslynAotGetHandle(controlVtbl), mappedFilePath, mappedLineSpan.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Location Create(string filePath, Text.TextSpan textSpan, Text.LinePositionSpan lineSpan)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ILocationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetLocationTypeVtbl(controlVtbl);
+            int status = vtbl.Location_Create_b3d99f7b(filePath, textSpan.__RoslynAotGetHandle(controlVtbl), lineSpan.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public abstract override bool Equals(object? obj);

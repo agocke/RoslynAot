@@ -12,14 +12,49 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0fd2a3bb-bcfa-5666-b16b-2d0ccaab33a7")]
+[Guid("0220be45-acd0-51fa-9bf9-ded2dc19c0e7")]
 public partial interface IExtensionBlockDeclarationSyntaxVtbl : ITypeDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int ExtensionBlockDeclarationSyntax_Accept_16f4198f(
+    int ExtensionBlockDeclarationSyntax_Accept_d1f95d13(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int ExtensionBlockDeclarationSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ExtensionBlockDeclarationSyntax_AddConstraintClauses(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ExtensionBlockDeclarationSyntax_AddMembers(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ExtensionBlockDeclarationSyntax_AddParameterListParameters(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ExtensionBlockDeclarationSyntax_AddTypeParameterListParameters(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

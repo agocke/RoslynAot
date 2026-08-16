@@ -12,9 +12,16 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1ae82275-d491-5f26-bafe-58decc28fe29")]
+[Guid("b9f39602-96de-560a-8766-d4689c3e27ba")]
 public partial interface ICommonForEachStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
+
+    [PreserveSig]
+    int CommonForEachStatementSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
 
     [PreserveSig]
     int CommonForEachStatementSyntax_WithAwaitKeyword(

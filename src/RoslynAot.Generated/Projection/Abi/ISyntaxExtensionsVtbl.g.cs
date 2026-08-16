@@ -12,9 +12,43 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4948bd04-3f02-54c9-831e-42c9147a307d")]
+[Guid("0d4fc5c1-1460-5b42-a16a-b5a2034b55a1")]
 public partial interface ISyntaxExtensionsVtbl
 {
+
+    [PreserveSig]
+    int SyntaxExtensions_NormalizeWhitespace_d73600b7(
+        long token,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
+        int elasticTrivia,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxExtensions_NormalizeWhitespace_4993d000(
+        long token,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string eol,
+        int elasticTrivia,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxExtensions_NormalizeWhitespace_9e0b1964(
+        long list,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
+        int elasticTrivia,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxExtensions_NormalizeWhitespace_08ea7961(
+        long list,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string eol,
+        int elasticTrivia,
+        out long result
+    );
 
     [PreserveSig]
     int SyntaxExtensions_WithIdentifier(

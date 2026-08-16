@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d13c2525-f04f-57f5-9657-3e20be11a035")]
+[Guid("b867566c-6a07-5fca-af9c-3115024f7a80")]
 public partial interface ISyntaxTriviaListTypeVtbl
 {
 
     [PreserveSig]
-    int SyntaxTriviaList_ctor_476e443c(
+    int SyntaxTriviaList_ctor_d4e3748a(
         long trivia,
         out long result
     );

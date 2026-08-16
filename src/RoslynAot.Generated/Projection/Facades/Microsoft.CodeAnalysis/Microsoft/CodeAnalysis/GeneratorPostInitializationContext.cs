@@ -22,12 +22,57 @@ namespace Microsoft.CodeAnalysis
 
         public readonly void AddSource(string hintName, Text.SourceText sourceText)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IGeneratorPostInitializationContextVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.GeneratorPostInitializationContext_AddSource_af842938(__RoslynAotGetHandle(controlVtbl), hintName, sourceText.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public readonly void AddSource(string hintName, string source)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IGeneratorPostInitializationContextVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.GeneratorPostInitializationContext_AddSource_6518ecd8(__RoslynAotGetHandle(controlVtbl), hintName, source);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
+
+        private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;
+        private readonly global::RoslynAot.Abi.IGeneratorPostInitializationContextVtbl? __roslynAotVtbl;
+        private readonly long __roslynAotHandle;
+        internal GeneratorPostInitializationContext(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.IGeneratorPostInitializationContextVtbl vtbl, long handle)
+        {
+            this = default;
+            __roslynAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __roslynAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __roslynAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::RoslynAot.Abi.IGeneratorPostInitializationContextVtbl __RoslynAotGetVtbl()
+        {
+            if (__roslynAotVtbl is not null)
+                return __roslynAotVtbl;
+            if (__roslynAotHandle == 0)
+                return global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorPostInitializationContextVtbl(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl());
+            throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        }
+
+        internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl()
+        {
+            if (__roslynAotControlVtbl is not null)
+                return __roslynAotControlVtbl;
+            if (__roslynAotHandle == 0)
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        }
+
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __roslynAotHandle;
+        }
+
+        internal static GeneratorPostInitializationContext __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new GeneratorPostInitializationContext(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorPostInitializationContextVtbl(controlVtbl), handle);
     }
 }

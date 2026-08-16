@@ -10,20 +10,96 @@ namespace Microsoft.CodeAnalysis
 {
     public partial interface IArrayTypeSymbol : ITypeSymbol, INamespaceOrTypeSymbol, ISymbol, System.IEquatable<ISymbol?>
     {
-        System.Collections.Immutable.ImmutableArray<CustomModifier> CustomModifiers { get; }
+        System.Collections.Immutable.ImmutableArray<CustomModifier> CustomModifiers
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
 
-        NullableAnnotation ElementNullableAnnotation { get; }
+        NullableAnnotation ElementNullableAnnotation
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIArrayTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IArrayTypeSymbol_get_ElementNullableAnnotation(__RoslynAotGetHandle(controlVtbl), out byte result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return (NullableAnnotation)result;
+            }
+        }
 
-        ITypeSymbol ElementType { get; }
+        ITypeSymbol ElementType
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIArrayTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IArrayTypeSymbol_get_ElementType(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ITypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        bool IsSZArray { get; }
+        bool IsSZArray
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIArrayTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IArrayTypeSymbol_get_IsSZArray(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
 
-        System.Collections.Immutable.ImmutableArray<int> LowerBounds { get; }
+        System.Collections.Immutable.ImmutableArray<int> LowerBounds
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
 
-        int Rank { get; }
+        int Rank
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIArrayTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IArrayTypeSymbol_get_Rank(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result;
+            }
+        }
 
-        System.Collections.Immutable.ImmutableArray<int> Sizes { get; }
+        System.Collections.Immutable.ImmutableArray<int> Sizes
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
 
-        bool Equals(IArrayTypeSymbol? other);
+        bool Equals(IArrayTypeSymbol? other)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IIArrayTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.IArrayTypeSymbol_Equals(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIArrayTypeSymbolVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIArrayTypeSymbolVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IArrayTypeSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IArrayTypeSymbol)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("c21ab15c-c19b-5183-b279-878f487bbac4")]
+        internal partial interface __RoslynAotImplementation : IArrayTypeSymbol
+        {
+        }
     }
 }

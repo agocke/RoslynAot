@@ -220,7 +220,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.AliasQualifiedNameSyntax AliasQualifiedName(string alias, Syntax.SimpleNameSyntax name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_AliasQualifiedName_676d1ea7(@alias, name.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.AliasQualifiedNameSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.AllowsConstraintClauseSyntax AllowsConstraintClause(SeparatedSyntaxList<Syntax.AllowsConstraintSyntax> constraints = default)
@@ -319,7 +323,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_AreEquivalent_8a50f3bc(oldNode is null ? 0L : oldNode.__RoslynAotGetHandle(controlVtbl), newNode is null ? 0L : newNode.__RoslynAotGetHandle(controlVtbl), topLevel ? 1 : 0, out int result);
+            int status = vtbl.SyntaxFactory_AreEquivalent_9c9d8b17(oldNode is null ? 0L : oldNode.__RoslynAotGetHandle(controlVtbl), newNode is null ? 0L : newNode.__RoslynAotGetHandle(controlVtbl), topLevel ? 1 : 0, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -333,7 +337,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_AreEquivalent_8f4e5d46(oldToken.__RoslynAotGetHandle(controlVtbl), newToken.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.SyntaxFactory_AreEquivalent_bd564b8d(oldToken.__RoslynAotGetHandle(controlVtbl), newToken.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -342,7 +346,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_AreEquivalent_0a50461c(oldList.__RoslynAotGetHandle(controlVtbl), newList.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.SyntaxFactory_AreEquivalent_8ec4abec(oldList.__RoslynAotGetHandle(controlVtbl), newList.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -351,7 +355,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_AreEquivalent_1ac1069e(oldTree is null ? 0L : oldTree.__RoslynAotGetHandle(controlVtbl), newTree is null ? 0L : newTree.__RoslynAotGetHandle(controlVtbl), topLevel ? 1 : 0, out int result);
+            int status = vtbl.SyntaxFactory_AreEquivalent_e1a3ea7d(oldTree is null ? 0L : oldTree.__RoslynAotGetHandle(controlVtbl), newTree is null ? 0L : newTree.__RoslynAotGetHandle(controlVtbl), topLevel ? 1 : 0, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -596,7 +600,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_BadDirectiveTrivia_a8fbbc2d(hashToken.__RoslynAotGetHandle(controlVtbl), identifier.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_BadDirectiveTrivia_84324a8d(hashToken.__RoslynAotGetHandle(controlVtbl), identifier.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.BadDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -605,14 +609,18 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_BadDirectiveTrivia_3bc7f48e(identifier.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_BadDirectiveTrivia_2228d676(identifier.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.BadDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken BadToken(SyntaxTriviaList leading, string text, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_BadToken(leading.__RoslynAotGetHandle(controlVtbl), text, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.BaseExpressionSyntax BaseExpression()
@@ -681,7 +689,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.BlockSyntax Block(params Syntax.StatementSyntax[] statements)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Block_b7d63557(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(statements, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.BlockSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.BlockSyntax Block(SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxList<Syntax.StatementSyntax> statements)
@@ -996,7 +1008,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.ClassDeclarationSyntax ClassDeclaration(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ClassDeclaration_e4c63470(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.ClassDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.ClassOrStructConstraintSyntax ClassOrStructConstraint(SyntaxKind kind, SyntaxToken classOrStructKeyword, SyntaxToken questionToken)
@@ -1038,7 +1054,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxTrivia Comment(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Comment(text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return CodeAnalysis.SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.CompilationUnitSyntax CompilationUnit()
@@ -1164,7 +1184,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.ConstructorDeclarationSyntax ConstructorDeclaration(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ConstructorDeclaration_2a3e37bf(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.ConstructorDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.ConstructorInitializerSyntax ConstructorInitializer(SyntaxKind kind, Syntax.ArgumentListSyntax? argumentList = null)
@@ -1447,7 +1471,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_DefineDirectiveTrivia_b1a88fae(hashToken.__RoslynAotGetHandle(controlVtbl), defineKeyword.__RoslynAotGetHandle(controlVtbl), name.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_DefineDirectiveTrivia_8e573ff8(hashToken.__RoslynAotGetHandle(controlVtbl), defineKeyword.__RoslynAotGetHandle(controlVtbl), name.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.DefineDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1456,14 +1480,18 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_DefineDirectiveTrivia_16e54fa5(name.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_DefineDirectiveTrivia_ad64892e(name.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.DefineDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.DefineDirectiveTriviaSyntax DefineDirectiveTrivia(string name, bool isActive)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_DefineDirectiveTrivia_a143126a(name, isActive ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.DefineDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.DelegateDeclarationSyntax DelegateDeclaration(Syntax.TypeSyntax returnType, SyntaxToken identifier)
@@ -1477,7 +1505,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.DelegateDeclarationSyntax DelegateDeclaration(Syntax.TypeSyntax returnType, string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_DelegateDeclaration_29ed81b1(returnType.__RoslynAotGetHandle(controlVtbl), identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.DelegateDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.DelegateDeclarationSyntax DelegateDeclaration(SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, Syntax.TypeSyntax returnType, SyntaxToken identifier, Syntax.TypeParameterListSyntax? typeParameterList, Syntax.ParameterListSyntax parameterList, SyntaxList<Syntax.TypeParameterConstraintClauseSyntax> constraintClauses)
@@ -1531,12 +1563,20 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.DestructorDeclarationSyntax DestructorDeclaration(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_DestructorDeclaration_dfda7aba(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.DestructorDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxTrivia DisabledText(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_DisabledText(text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return CodeAnalysis.SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.DiscardDesignationSyntax DiscardDesignation()
@@ -1577,12 +1617,20 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.DocumentationCommentTriviaSyntax DocumentationComment(params Syntax.XmlNodeSyntax[] content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_DocumentationComment(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(content, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.DocumentationCommentTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxTrivia DocumentationCommentExterior(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_DocumentationCommentExterior(text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return CodeAnalysis.SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.DocumentationCommentTriviaSyntax DocumentationCommentTrivia(SyntaxKind kind, SyntaxList<Syntax.XmlNodeSyntax> content, SyntaxToken endOfComment)
@@ -1625,12 +1673,20 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxTrivia ElasticEndOfLine(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ElasticEndOfLine(text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return CodeAnalysis.SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxTrivia ElasticWhitespace(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ElasticWhitespace(text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return CodeAnalysis.SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.ElementAccessExpressionSyntax ElementAccessExpression(Syntax.ExpressionSyntax expression, Syntax.BracketedArgumentListSyntax argumentList)
@@ -1673,7 +1729,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_ElifDirectiveTrivia_9830e5d6(condition.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, branchTaken ? 1 : 0, conditionValue ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_ElifDirectiveTrivia_bc00d35f(condition.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, branchTaken ? 1 : 0, conditionValue ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.ElifDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1682,7 +1738,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_ElifDirectiveTrivia_20995b17(hashToken.__RoslynAotGetHandle(controlVtbl), elifKeyword.__RoslynAotGetHandle(controlVtbl), condition.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, branchTaken ? 1 : 0, conditionValue ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_ElifDirectiveTrivia_f739be66(hashToken.__RoslynAotGetHandle(controlVtbl), elifKeyword.__RoslynAotGetHandle(controlVtbl), condition.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, branchTaken ? 1 : 0, conditionValue ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.ElifDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1709,7 +1765,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_ElseDirectiveTrivia_b02992d0(hashToken.__RoslynAotGetHandle(controlVtbl), elseKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, branchTaken ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_ElseDirectiveTrivia_efa6c61f(hashToken.__RoslynAotGetHandle(controlVtbl), elseKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, branchTaken ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.ElseDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1718,7 +1774,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_ElseDirectiveTrivia_e6a72d37(isActive ? 1 : 0, branchTaken ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_ElseDirectiveTrivia_adfb54ee(isActive ? 1 : 0, branchTaken ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.ElseDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1755,7 +1811,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_EndIfDirectiveTrivia_fa3e3836(hashToken.__RoslynAotGetHandle(controlVtbl), endIfKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_EndIfDirectiveTrivia_35d3b427(hashToken.__RoslynAotGetHandle(controlVtbl), endIfKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.EndIfDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1764,7 +1820,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_EndIfDirectiveTrivia_8cdf69e6(isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_EndIfDirectiveTrivia_05820434(isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.EndIfDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1778,14 +1834,18 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxTrivia EndOfLine(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_EndOfLine_bd61063f(text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return CodeAnalysis.SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.EndRegionDirectiveTriviaSyntax EndRegionDirectiveTrivia(SyntaxToken hashToken, SyntaxToken endRegionKeyword, SyntaxToken endOfDirectiveToken, bool isActive)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_EndRegionDirectiveTrivia_32326fcd(hashToken.__RoslynAotGetHandle(controlVtbl), endRegionKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_EndRegionDirectiveTrivia_8cb345f3(hashToken.__RoslynAotGetHandle(controlVtbl), endRegionKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.EndRegionDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1794,7 +1854,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_EndRegionDirectiveTrivia_e000cecd(isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_EndRegionDirectiveTrivia_563b1839(isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.EndRegionDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1820,7 +1880,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.EnumDeclarationSyntax EnumDeclaration(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_EnumDeclaration_3d22b0a6(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.EnumDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.EnumMemberDeclarationSyntax EnumMemberDeclaration(SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxToken identifier, Syntax.EqualsValueClauseSyntax? equalsValue)
@@ -1844,7 +1908,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.EnumMemberDeclarationSyntax EnumMemberDeclaration(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_EnumMemberDeclaration_45cf10c4(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.EnumMemberDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.EqualsValueClauseSyntax EqualsValueClause(Syntax.ExpressionSyntax value)
@@ -1869,7 +1937,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_ErrorDirectiveTrivia_2ba9f271(hashToken.__RoslynAotGetHandle(controlVtbl), errorKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_ErrorDirectiveTrivia_923268c6(hashToken.__RoslynAotGetHandle(controlVtbl), errorKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.ErrorDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1878,7 +1946,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_ErrorDirectiveTrivia_9ad9a2b3(isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_ErrorDirectiveTrivia_fa8ea42f(isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.ErrorDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1894,7 +1962,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.EventDeclarationSyntax EventDeclaration(Syntax.TypeSyntax type, string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_EventDeclaration_5bf84844(@type.__RoslynAotGetHandle(controlVtbl), identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.EventDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.EventDeclarationSyntax EventDeclaration(SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, Syntax.TypeSyntax type, Syntax.ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier, SyntaxToken identifier, Syntax.AccessorListSyntax? accessorList)
@@ -2066,7 +2138,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.ExternAliasDirectiveSyntax ExternAliasDirective(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ExternAliasDirective_e6798a5b(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.ExternAliasDirectiveSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.FieldDeclarationSyntax FieldDeclaration(Syntax.VariableDeclarationSyntax declaration)
@@ -2182,7 +2258,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.ForEachStatementSyntax ForEachStatement(Syntax.TypeSyntax type, string identifier, Syntax.ExpressionSyntax expression, Syntax.StatementSyntax statement)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ForEachStatement_fb29ba27(@type.__RoslynAotGetHandle(controlVtbl), identifier, expression.__RoslynAotGetHandle(controlVtbl), statement.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.ForEachStatementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.ForEachStatementSyntax ForEachStatement(SyntaxList<Syntax.AttributeListSyntax> attributeLists, Syntax.TypeSyntax type, SyntaxToken identifier, Syntax.ExpressionSyntax expression, Syntax.StatementSyntax statement)
@@ -2308,7 +2388,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.FromClauseSyntax FromClause(string identifier, Syntax.ExpressionSyntax expression)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_FromClause_5cd6995a(identifier, expression.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.FromClauseSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.FunctionPointerCallingConventionSyntax FunctionPointerCallingConvention(SyntaxToken managedOrUnmanagedKeyword, Syntax.FunctionPointerUnmanagedCallingConventionListSyntax? unmanagedCallingConventionList)
@@ -2419,7 +2503,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.GenericNameSyntax GenericName(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_GenericName_a4836e6b(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.GenericNameSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.ExpressionSyntax? GetNonGenericExpression(Syntax.ExpressionSyntax expression)
@@ -2511,17 +2599,29 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxToken Identifier(SyntaxTriviaList leading, SyntaxKind contextualKind, string text, string valueText, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Identifier_ef4fb5bd(leading.__RoslynAotGetHandle(controlVtbl), (ushort)contextualKind, text, valueText, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Identifier(SyntaxTriviaList leading, string text, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Identifier_765e232a(leading.__RoslynAotGetHandle(controlVtbl), text, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Identifier(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Identifier_87486ce7(text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.IdentifierNameSyntax IdentifierName(SyntaxToken identifier)
@@ -2535,14 +2635,18 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.IdentifierNameSyntax IdentifierName(string name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_IdentifierName_107ab883(name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.IdentifierNameSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.IfDirectiveTriviaSyntax IfDirectiveTrivia(Syntax.ExpressionSyntax condition, bool isActive, bool branchTaken, bool conditionValue)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_IfDirectiveTrivia_9f75639f(condition.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, branchTaken ? 1 : 0, conditionValue ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_IfDirectiveTrivia_f53270a3(condition.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, branchTaken ? 1 : 0, conditionValue ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.IfDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -2551,7 +2655,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_IfDirectiveTrivia_f7d936d7(hashToken.__RoslynAotGetHandle(controlVtbl), ifKeyword.__RoslynAotGetHandle(controlVtbl), condition.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, branchTaken ? 1 : 0, conditionValue ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_IfDirectiveTrivia_7c1d75d4(hashToken.__RoslynAotGetHandle(controlVtbl), ifKeyword.__RoslynAotGetHandle(controlVtbl), condition.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, branchTaken ? 1 : 0, conditionValue ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.IfDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -2597,7 +2701,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_IgnoredDirectiveTrivia_f31d449a(hashToken.__RoslynAotGetHandle(controlVtbl), colonToken.__RoslynAotGetHandle(controlVtbl), content.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_IgnoredDirectiveTrivia_8148eacb(hashToken.__RoslynAotGetHandle(controlVtbl), colonToken.__RoslynAotGetHandle(controlVtbl), content.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.IgnoredDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -2606,7 +2710,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_IgnoredDirectiveTrivia_f5117a95(content.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_IgnoredDirectiveTrivia_966bfd54(content.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.IgnoredDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -2615,7 +2719,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_IgnoredDirectiveTrivia_d0f8664e(isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_IgnoredDirectiveTrivia_48c5e272(isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.IgnoredDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -2802,7 +2906,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.InterfaceDeclarationSyntax InterfaceDeclaration(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_InterfaceDeclaration_4da18fa5(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.InterfaceDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.InterpolatedStringExpressionSyntax InterpolatedStringExpression(SyntaxToken stringStartToken, SyntaxList<Syntax.InterpolatedStringContentSyntax> contents, SyntaxToken stringEndToken)
@@ -2979,7 +3087,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.JoinClauseSyntax JoinClause(string identifier, Syntax.ExpressionSyntax inExpression, Syntax.ExpressionSyntax leftExpression, Syntax.ExpressionSyntax rightExpression)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_JoinClause_3a3a73ad(identifier, inExpression.__RoslynAotGetHandle(controlVtbl), leftExpression.__RoslynAotGetHandle(controlVtbl), rightExpression.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.JoinClauseSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.JoinIntoClauseSyntax JoinIntoClause(SyntaxToken intoKeyword, SyntaxToken identifier)
@@ -3002,7 +3114,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.JoinIntoClauseSyntax JoinIntoClause(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_JoinIntoClause_ea4e2f6b(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.JoinIntoClauseSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.LabeledStatementSyntax LabeledStatement(SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxToken identifier, Syntax.StatementSyntax statement)
@@ -3035,7 +3151,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.LabeledStatementSyntax LabeledStatement(string identifier, Syntax.StatementSyntax statement)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_LabeledStatement_f136d906(identifier, statement.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.LabeledStatementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.LetClauseSyntax LetClause(SyntaxToken identifier, Syntax.ExpressionSyntax expression)
@@ -3058,7 +3178,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.LetClauseSyntax LetClause(string identifier, Syntax.ExpressionSyntax expression)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_LetClause_2be80288(identifier, expression.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.LetClauseSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.LineDirectivePositionSyntax LineDirectivePosition(SyntaxToken openParenToken, SyntaxToken line, SyntaxToken commaToken, SyntaxToken character, SyntaxToken closeParenToken)
@@ -3083,7 +3207,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_LineDirectiveTrivia_05aeb8c7(hashToken.__RoslynAotGetHandle(controlVtbl), lineKeyword.__RoslynAotGetHandle(controlVtbl), line.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_LineDirectiveTrivia_798e4d07(hashToken.__RoslynAotGetHandle(controlVtbl), lineKeyword.__RoslynAotGetHandle(controlVtbl), line.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.LineDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3092,7 +3216,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_LineDirectiveTrivia_9742422c(line.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_LineDirectiveTrivia_96cb65da(line.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.LineDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3101,7 +3225,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_LineDirectiveTrivia_709e40f1(line.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_LineDirectiveTrivia_05074ed7(line.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.LineDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3110,7 +3234,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_LineSpanDirectiveTrivia_4601f005(start.__RoslynAotGetHandle(controlVtbl), end.__RoslynAotGetHandle(controlVtbl), characterOffset.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_LineSpanDirectiveTrivia_39be7ccb(start.__RoslynAotGetHandle(controlVtbl), end.__RoslynAotGetHandle(controlVtbl), characterOffset.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.LineSpanDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3119,7 +3243,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_LineSpanDirectiveTrivia_b305809c(start.__RoslynAotGetHandle(controlVtbl), end.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_LineSpanDirectiveTrivia_19806900(start.__RoslynAotGetHandle(controlVtbl), end.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.LineSpanDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3128,7 +3252,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_LineSpanDirectiveTrivia_25ea7575(hashToken.__RoslynAotGetHandle(controlVtbl), lineKeyword.__RoslynAotGetHandle(controlVtbl), start.__RoslynAotGetHandle(controlVtbl), minusToken.__RoslynAotGetHandle(controlVtbl), end.__RoslynAotGetHandle(controlVtbl), characterOffset.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_LineSpanDirectiveTrivia_09831802(hashToken.__RoslynAotGetHandle(controlVtbl), lineKeyword.__RoslynAotGetHandle(controlVtbl), start.__RoslynAotGetHandle(controlVtbl), minusToken.__RoslynAotGetHandle(controlVtbl), end.__RoslynAotGetHandle(controlVtbl), characterOffset.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.LineSpanDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3162,7 +3286,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxToken Literal(SyntaxTriviaList leading, string text, char value, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_373a0c37(leading.__RoslynAotGetHandle(controlVtbl), text, (ushort)value, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(SyntaxTriviaList leading, string text, decimal value, SyntaxTriviaList trailing)
@@ -3177,12 +3305,20 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxToken Literal(SyntaxTriviaList leading, string text, int value, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_11601674(leading.__RoslynAotGetHandle(controlVtbl), text, value, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(SyntaxTriviaList leading, string text, long value, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_2fdd3b83(leading.__RoslynAotGetHandle(controlVtbl), text, value, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(SyntaxTriviaList leading, string text, float value, SyntaxTriviaList trailing)
@@ -3192,24 +3328,36 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxToken Literal(SyntaxTriviaList leading, string text, string value, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_1c163345(leading.__RoslynAotGetHandle(controlVtbl), text, value, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(SyntaxTriviaList leading, string text, uint value, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_066efbc3(leading.__RoslynAotGetHandle(controlVtbl), text, value, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(SyntaxTriviaList leading, string text, ulong value, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_939b6309(leading.__RoslynAotGetHandle(controlVtbl), text, value, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(char value)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_Literal_3c3141d7((ushort)value, out long result);
+            int status = vtbl.SyntaxFactory_Literal_a98c34ee((ushort)value, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3228,7 +3376,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_Literal_520347e6(value, out long result);
+            int status = vtbl.SyntaxFactory_Literal_19e93521(value, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3237,7 +3385,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_Literal_6ac4189e(value, out long result);
+            int status = vtbl.SyntaxFactory_Literal_a8464eb0(value, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3249,7 +3397,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxToken Literal(string text, char value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_693358a2(text, (ushort)value, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(string text, decimal value)
@@ -3264,12 +3416,20 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxToken Literal(string text, int value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_48aee82e(text, value, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(string text, long value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_fbff282e(text, value, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(string text, float value)
@@ -3279,29 +3439,45 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxToken Literal(string text, string value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_7c89a6a9(text, value, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(string text, uint value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_fb9d97e6(text, value, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(string text, ulong value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_d39c8cd1(text, value, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(string value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Literal_67e9870a(value, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken Literal(uint value)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_Literal_13fe7b01(value, out long result);
+            int status = vtbl.SyntaxFactory_Literal_f1120869(value, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3310,7 +3486,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_Literal_07c320ce(value, out long result);
+            int status = vtbl.SyntaxFactory_Literal_e4a783f1(value, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3337,7 +3513,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_LoadDirectiveTrivia_3e438b68(hashToken.__RoslynAotGetHandle(controlVtbl), loadKeyword.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_LoadDirectiveTrivia_a842d31e(hashToken.__RoslynAotGetHandle(controlVtbl), loadKeyword.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.LoadDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3346,7 +3522,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_LoadDirectiveTrivia_3ea8dd20(@file.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_LoadDirectiveTrivia_f00d00bd(@file.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.LoadDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3408,7 +3584,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.LocalFunctionStatementSyntax LocalFunctionStatement(Syntax.TypeSyntax returnType, string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_LocalFunctionStatement_68de7937(returnType.__RoslynAotGetHandle(controlVtbl), identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.LocalFunctionStatementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.LocalFunctionStatementSyntax LocalFunctionStatement(SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, Syntax.TypeSyntax returnType, SyntaxToken identifier, Syntax.TypeParameterListSyntax? typeParameterList, Syntax.ParameterListSyntax parameterList, SyntaxList<Syntax.TypeParameterConstraintClauseSyntax> constraintClauses, Syntax.BlockSyntax? body, Syntax.ArrowExpressionClauseSyntax? expressionBody, SyntaxToken semicolonToken)
@@ -3524,7 +3704,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.MethodDeclarationSyntax MethodDeclaration(Syntax.TypeSyntax returnType, string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_MethodDeclaration_29ce1e38(returnType.__RoslynAotGetHandle(controlVtbl), identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.MethodDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.MethodDeclarationSyntax MethodDeclaration(SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, Syntax.TypeSyntax returnType, Syntax.ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier, SyntaxToken identifier, Syntax.TypeParameterListSyntax? typeParameterList, Syntax.ParameterListSyntax parameterList, SyntaxList<Syntax.TypeParameterConstraintClauseSyntax> constraintClauses, Syntax.BlockSyntax? body, Syntax.ArrowExpressionClauseSyntax? expressionBody, SyntaxToken semicolonToken)
@@ -3580,7 +3764,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.NameColonSyntax NameColon(string name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_NameColon_d80fbd3d(name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.NameColonSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.NameEqualsSyntax NameEquals(Syntax.IdentifierNameSyntax name, SyntaxToken equalsToken)
@@ -3603,7 +3791,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.NameEqualsSyntax NameEquals(string name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_NameEquals_766eb0fe(name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.NameEqualsSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.NameMemberCrefSyntax NameMemberCref(Syntax.TypeSyntax name, Syntax.CrefParameterListSyntax? parameters)
@@ -3676,7 +3868,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_NullableDirectiveTrivia_1102f025(hashToken.__RoslynAotGetHandle(controlVtbl), nullableKeyword.__RoslynAotGetHandle(controlVtbl), settingToken.__RoslynAotGetHandle(controlVtbl), targetToken.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_NullableDirectiveTrivia_1a2a9b07(hashToken.__RoslynAotGetHandle(controlVtbl), nullableKeyword.__RoslynAotGetHandle(controlVtbl), settingToken.__RoslynAotGetHandle(controlVtbl), targetToken.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.NullableDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3685,7 +3877,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_NullableDirectiveTrivia_eacba423(settingToken.__RoslynAotGetHandle(controlVtbl), targetToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_NullableDirectiveTrivia_f3d034dc(settingToken.__RoslynAotGetHandle(controlVtbl), targetToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.NullableDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -3694,7 +3886,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_NullableDirectiveTrivia_82e614e6(settingToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_NullableDirectiveTrivia_8ac3e534(settingToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.NullableDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -4042,57 +4234,101 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.ArgumentListSyntax ParseArgumentList(string text, int offset = 0, ParseOptions? options = null, bool consumeFullText = true)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseArgumentList(text, offset, options is null ? 0L : options.__RoslynAotGetHandle(controlVtbl), consumeFullText ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.ArgumentListSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.AttributeArgumentListSyntax? ParseAttributeArgumentList(string text, int offset = 0, ParseOptions? options = null, bool consumeFullText = true)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseAttributeArgumentList(text, offset, options is null ? 0L : options.__RoslynAotGetHandle(controlVtbl), consumeFullText ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : Syntax.AttributeArgumentListSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.BracketedArgumentListSyntax ParseBracketedArgumentList(string text, int offset = 0, ParseOptions? options = null, bool consumeFullText = true)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseBracketedArgumentList(text, offset, options is null ? 0L : options.__RoslynAotGetHandle(controlVtbl), consumeFullText ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.BracketedArgumentListSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.BracketedParameterListSyntax ParseBracketedParameterList(string text, int offset = 0, ParseOptions? options = null, bool consumeFullText = true)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseBracketedParameterList(text, offset, options is null ? 0L : options.__RoslynAotGetHandle(controlVtbl), consumeFullText ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.BracketedParameterListSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.CompilationUnitSyntax ParseCompilationUnit(string text, int offset = 0, CSharpParseOptions? options = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseCompilationUnit(text, offset, options is null ? 0L : options.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.CompilationUnitSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.ExpressionSyntax ParseExpression(string text, int offset = 0, ParseOptions? options = null, bool consumeFullText = true)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseExpression(text, offset, options is null ? 0L : options.__RoslynAotGetHandle(controlVtbl), consumeFullText ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.ExpressionSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxTriviaList ParseLeadingTrivia(string text, int offset = 0)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseLeadingTrivia(text, offset, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxTriviaList.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.MemberDeclarationSyntax? ParseMemberDeclaration(string text, int offset = 0, ParseOptions? options = null, bool consumeFullText = true)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseMemberDeclaration(text, offset, options is null ? 0L : options.__RoslynAotGetHandle(controlVtbl), consumeFullText ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : Syntax.MemberDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.NameSyntax ParseName(string text, int offset = 0, bool consumeFullText = true)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseName(text, offset, consumeFullText ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.NameSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.ParameterListSyntax ParseParameterList(string text, int offset = 0, ParseOptions? options = null, bool consumeFullText = true)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseParameterList(text, offset, options is null ? 0L : options.__RoslynAotGetHandle(controlVtbl), consumeFullText ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.ParameterListSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.StatementSyntax ParseStatement(string text, int offset = 0, ParseOptions? options = null, bool consumeFullText = true)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseStatement(text, offset, options is null ? 0L : options.__RoslynAotGetHandle(controlVtbl), consumeFullText ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.StatementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
@@ -4135,7 +4371,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxToken ParseToken(string text, int offset = 0)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseToken(text, offset, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static System.Collections.Generic.IEnumerable<SyntaxToken> ParseTokens(string text, int offset = 0, int initialTokenPosition = 0, CSharpParseOptions? options = null)
@@ -4145,18 +4385,30 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxTriviaList ParseTrailingTrivia(string text, int offset = 0)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseTrailingTrivia(text, offset, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxTriviaList.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.TypeSyntax ParseTypeName(string text, int offset = 0, ParseOptions? options = null, bool consumeFullText = true)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseTypeName_a4c0cfad(text, offset, options is null ? 0L : options.__RoslynAotGetHandle(controlVtbl), consumeFullText ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.TypeSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public static Syntax.TypeSyntax ParseTypeName(string text, int offset, bool consumeFullText)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseTypeName_4b33a9dc(text, offset, consumeFullText ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.TypeSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.PointerTypeSyntax PointerType(Syntax.TypeSyntax elementType, SyntaxToken asteriskToken)
@@ -4209,7 +4461,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_PragmaChecksumDirectiveTrivia_b35fe09f(hashToken.__RoslynAotGetHandle(controlVtbl), pragmaKeyword.__RoslynAotGetHandle(controlVtbl), checksumKeyword.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), guid.__RoslynAotGetHandle(controlVtbl), bytes.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_PragmaChecksumDirectiveTrivia_4cf3019f(hashToken.__RoslynAotGetHandle(controlVtbl), pragmaKeyword.__RoslynAotGetHandle(controlVtbl), checksumKeyword.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), guid.__RoslynAotGetHandle(controlVtbl), bytes.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.PragmaChecksumDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -4218,7 +4470,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_PragmaChecksumDirectiveTrivia_059a8866(@file.__RoslynAotGetHandle(controlVtbl), guid.__RoslynAotGetHandle(controlVtbl), bytes.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_PragmaChecksumDirectiveTrivia_b6ae3539(@file.__RoslynAotGetHandle(controlVtbl), guid.__RoslynAotGetHandle(controlVtbl), bytes.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.PragmaChecksumDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -4237,7 +4489,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_PragmaWarningDirectiveTrivia_d13c7747(disableOrRestoreKeyword.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_PragmaWarningDirectiveTrivia_0536f786(disableOrRestoreKeyword.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.PragmaWarningDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -4271,7 +4523,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxTrivia PreprocessingMessage(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_PreprocessingMessage(text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return CodeAnalysis.SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.PrimaryConstructorBaseTypeSyntax PrimaryConstructorBaseType(Syntax.TypeSyntax type, Syntax.ArgumentListSyntax argumentList)
@@ -4303,7 +4559,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.PropertyDeclarationSyntax PropertyDeclaration(Syntax.TypeSyntax type, string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_PropertyDeclaration_f4357e81(@type.__RoslynAotGetHandle(controlVtbl), identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.PropertyDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.PropertyDeclarationSyntax PropertyDeclaration(SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, Syntax.TypeSyntax type, Syntax.ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier, SyntaxToken identifier, Syntax.AccessorListSyntax? accessorList, Syntax.ArrowExpressionClauseSyntax? expressionBody, Syntax.EqualsValueClauseSyntax? initializer, SyntaxToken semicolonToken)
@@ -4401,7 +4661,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.QueryContinuationSyntax QueryContinuation(string identifier, Syntax.QueryBodySyntax body)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_QueryContinuation_4451151d(identifier, body.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.QueryContinuationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.QueryExpressionSyntax QueryExpression(Syntax.FromClauseSyntax fromClause, Syntax.QueryBodySyntax body)
@@ -4461,7 +4725,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.RecordDeclarationSyntax RecordDeclaration(SyntaxKind kind, SyntaxToken keyword, string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_RecordDeclaration_e0eb73b3((ushort)kind, keyword.__RoslynAotGetHandle(controlVtbl), identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.RecordDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.RecordDeclarationSyntax RecordDeclaration(SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, SyntaxToken keyword, SyntaxToken identifier, Syntax.TypeParameterListSyntax? typeParameterList, Syntax.ParameterListSyntax? parameterList, Syntax.BaseListSyntax? baseList, SyntaxList<Syntax.TypeParameterConstraintClauseSyntax> constraintClauses, SyntaxList<Syntax.MemberDeclarationSyntax> members)
@@ -4485,7 +4753,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.RecordDeclarationSyntax RecordDeclaration(SyntaxToken keyword, string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_RecordDeclaration_ba553879(keyword.__RoslynAotGetHandle(controlVtbl), identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.RecordDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.RecursivePatternSyntax RecursivePattern()
@@ -4510,7 +4782,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_ReferenceDirectiveTrivia_06223e87(hashToken.__RoslynAotGetHandle(controlVtbl), referenceKeyword.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_ReferenceDirectiveTrivia_a0def3d3(hashToken.__RoslynAotGetHandle(controlVtbl), referenceKeyword.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.ReferenceDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -4519,7 +4791,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_ReferenceDirectiveTrivia_3c5c73fb(@file.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_ReferenceDirectiveTrivia_fbcdba9d(@file.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.ReferenceDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -4627,7 +4899,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_RegionDirectiveTrivia_487e2c49(hashToken.__RoslynAotGetHandle(controlVtbl), regionKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_RegionDirectiveTrivia_4891c983(hashToken.__RoslynAotGetHandle(controlVtbl), regionKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.RegionDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -4636,7 +4908,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_RegionDirectiveTrivia_96ec88de(isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_RegionDirectiveTrivia_8126daf5(isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.RegionDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -4748,7 +5020,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_ShebangDirectiveTrivia_8a3ca08c(hashToken.__RoslynAotGetHandle(controlVtbl), exclamationToken.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_ShebangDirectiveTrivia_28b5a279(hashToken.__RoslynAotGetHandle(controlVtbl), exclamationToken.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.ShebangDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -4757,7 +5029,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_ShebangDirectiveTrivia_c8023795(isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_ShebangDirectiveTrivia_3ac23759(isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.ShebangDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -5004,7 +5276,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.StructDeclarationSyntax StructDeclaration(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_StructDeclaration_5ec30038(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.StructDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.SubpatternSyntax Subpattern(Syntax.BaseExpressionColonSyntax? expressionColon, Syntax.PatternSyntax pattern)
@@ -5125,7 +5401,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxTrivia SyntaxTrivia(SyntaxKind kind, string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_SyntaxTrivia((ushort)kind, text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return CodeAnalysis.SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.ThisExpressionSyntax ThisExpression()
@@ -5212,7 +5492,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxToken Token(SyntaxTriviaList leading, SyntaxKind kind, string text, string valueText, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Token_79542370(leading.__RoslynAotGetHandle(controlVtbl), (ushort)kind, text, valueText, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxTokenList TokenList()
@@ -5387,7 +5671,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.TypeDeclarationSyntax TypeDeclaration(SyntaxKind kind, string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_TypeDeclaration_2158e151((ushort)kind, identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.TypeDeclarationSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.TypeOfExpressionSyntax TypeOfExpression(Syntax.TypeSyntax type)
@@ -5424,7 +5712,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.TypeParameterSyntax TypeParameter(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_TypeParameter_7512704f(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.TypeParameterSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.TypeParameterConstraintClauseSyntax TypeParameterConstraintClause(Syntax.IdentifierNameSyntax name, SeparatedSyntaxList<Syntax.TypeParameterConstraintSyntax> constraints)
@@ -5448,7 +5740,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.TypeParameterConstraintClauseSyntax TypeParameterConstraintClause(string name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_TypeParameterConstraintClause_789d5b19(name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.TypeParameterConstraintClauseSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.TypeParameterListSyntax TypeParameterList(SeparatedSyntaxList<Syntax.TypeParameterSyntax> parameters = default)
@@ -5492,7 +5788,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_UndefDirectiveTrivia_2abcc17b(hashToken.__RoslynAotGetHandle(controlVtbl), undefKeyword.__RoslynAotGetHandle(controlVtbl), name.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_UndefDirectiveTrivia_33880b67(hashToken.__RoslynAotGetHandle(controlVtbl), undefKeyword.__RoslynAotGetHandle(controlVtbl), name.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.UndefDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -5501,14 +5797,18 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_UndefDirectiveTrivia_feed15ea(name.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_UndefDirectiveTrivia_c7c73cdb(name.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.UndefDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.UndefDirectiveTriviaSyntax UndefDirectiveTrivia(string name, bool isActive)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_UndefDirectiveTrivia_01828906(name, isActive ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.UndefDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82567")]
@@ -5709,7 +6009,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.VariableDeclaratorSyntax VariableDeclarator(string identifier)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_VariableDeclarator_ff56785b(identifier, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.VariableDeclaratorSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.VarPatternSyntax VarPattern(Syntax.VariableDesignationSyntax designation)
@@ -5732,14 +6036,18 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxToken VerbatimIdentifier(SyntaxTriviaList leading, string text, string valueText, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_VerbatimIdentifier(leading.__RoslynAotGetHandle(controlVtbl), text, valueText, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.WarningDirectiveTriviaSyntax WarningDirectiveTrivia(SyntaxToken hashToken, SyntaxToken warningKeyword, SyntaxToken endOfDirectiveToken, bool isActive)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_WarningDirectiveTrivia_f04b983e(hashToken.__RoslynAotGetHandle(controlVtbl), warningKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_WarningDirectiveTrivia_9a7e049e(hashToken.__RoslynAotGetHandle(controlVtbl), warningKeyword.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.WarningDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -5748,7 +6056,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_WarningDirectiveTrivia_94632c7a(isActive ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_WarningDirectiveTrivia_3bb11cc2(isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.WarningDirectiveTriviaSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -5826,7 +6134,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxTrivia Whitespace(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_Whitespace_a6cabd8c(text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return CodeAnalysis.SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82210")]
@@ -6013,17 +6325,29 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlEmptyElementSyntax XmlEmptyElement(string localName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlEmptyElement_48a7b8d2(localName, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlEmptyElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken XmlEntity(SyntaxTriviaList leading, string text, string value, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlEntity(leading.__RoslynAotGetHandle(controlVtbl), text, value, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlExampleElement(params Syntax.XmlNodeSyntax[] content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlExampleElement_4628ed13(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(content, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlExampleElement(SyntaxList<Syntax.XmlNodeSyntax> content)
@@ -6033,7 +6357,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlElementSyntax XmlExceptionElement(Syntax.CrefSyntax cref, params Syntax.XmlNodeSyntax[] content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlExceptionElement_eab7853a(cref.__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(content, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlExceptionElement(Syntax.CrefSyntax cref, SyntaxList<Syntax.XmlNodeSyntax> content)
@@ -6071,7 +6399,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlNameSyntax XmlName(string localName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlName_2c9ca495(localName, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlNameSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlNameAttributeSyntax XmlNameAttribute(Syntax.XmlNameSyntax name, SyntaxToken startQuoteToken, Syntax.IdentifierNameSyntax identifier, SyntaxToken endQuoteToken)
@@ -6094,17 +6426,29 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlNameAttributeSyntax XmlNameAttribute(Syntax.XmlNameSyntax name, SyntaxToken startQuoteToken, string identifier, SyntaxToken endQuoteToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlNameAttribute_c8c974b2(name.__RoslynAotGetHandle(controlVtbl), startQuoteToken.__RoslynAotGetHandle(controlVtbl), identifier, endQuoteToken.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlNameAttributeSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlNameAttributeSyntax XmlNameAttribute(string parameterName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlNameAttribute_973abefe(parameterName, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlNameAttributeSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlTextSyntax XmlNewLine(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlNewLine(text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlTextSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlEmptyElementSyntax XmlNullKeywordElement()
@@ -6118,7 +6462,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlElementSyntax XmlParaElement(params Syntax.XmlNodeSyntax[] content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlParaElement_5e38bc46(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(content, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlParaElement(SyntaxList<Syntax.XmlNodeSyntax> content)
@@ -6128,7 +6476,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlElementSyntax XmlParamElement(string parameterName, params Syntax.XmlNodeSyntax[] content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlParamElement_a56b0fc3(parameterName, global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(content, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlParamElement(string parameterName, SyntaxList<Syntax.XmlNodeSyntax> content)
@@ -6138,12 +6490,20 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlEmptyElementSyntax XmlParamRefElement(string parameterName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlParamRefElement(parameterName, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlEmptyElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlPermissionElement(Syntax.CrefSyntax cref, params Syntax.XmlNodeSyntax[] content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlPermissionElement_3a5ae1df(cref.__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(content, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlPermissionElement(Syntax.CrefSyntax cref, SyntaxList<Syntax.XmlNodeSyntax> content)
@@ -6153,7 +6513,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlElementSyntax XmlPlaceholderElement(params Syntax.XmlNodeSyntax[] content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlPlaceholderElement_c7870512(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(content, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlPlaceholderElement(SyntaxList<Syntax.XmlNodeSyntax> content)
@@ -6181,7 +6545,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlPrefixSyntax XmlPrefix(string prefix)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlPrefix_1dad6b85(prefix, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlPrefixSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlEmptyElementSyntax XmlPreliminaryElement()
@@ -6222,7 +6590,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlElementSyntax XmlRemarksElement(params Syntax.XmlNodeSyntax[] content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlRemarksElement_b8b40718(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(content, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlRemarksElement(SyntaxList<Syntax.XmlNodeSyntax> content)
@@ -6232,7 +6604,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlElementSyntax XmlReturnsElement(params Syntax.XmlNodeSyntax[] content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlReturnsElement_b6c0216e(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(content, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlReturnsElement(SyntaxList<Syntax.XmlNodeSyntax> content)
@@ -6265,7 +6641,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlElementSyntax XmlSummaryElement(params Syntax.XmlNodeSyntax[] content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlSummaryElement_6afb54c4(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(content, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlSummaryElement(SyntaxList<Syntax.XmlNodeSyntax> content)
@@ -6298,7 +6678,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlTextSyntax XmlText(string value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlText_78fb4be1(value, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlTextSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlTextAttributeSyntax XmlTextAttribute(Syntax.XmlNameSyntax name, SyntaxKind quoteKind, SyntaxTokenList textTokens)
@@ -6339,7 +6723,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlTextAttributeSyntax XmlTextAttribute(string name, SyntaxKind quoteKind, SyntaxTokenList textTokens)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlTextAttribute_1e1963d4(name, (ushort)quoteKind, textTokens.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlTextAttributeSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlTextAttributeSyntax XmlTextAttribute(string name, params SyntaxToken[] textTokens)
@@ -6349,37 +6737,65 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Syntax.XmlTextAttributeSyntax XmlTextAttribute(string name, string value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlTextAttribute_72ea5676(name, value, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlTextAttributeSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken XmlTextLiteral(SyntaxTriviaList leading, string text, string value, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlTextLiteral_96cb4289(leading.__RoslynAotGetHandle(controlVtbl), text, value, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken XmlTextLiteral(string text, string value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlTextLiteral_9d1f7f60(text, value, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken XmlTextLiteral(string value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlTextLiteral_78d049b2(value, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken XmlTextNewLine(SyntaxTriviaList leading, string text, string value, SyntaxTriviaList trailing)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlTextNewLine_3a2ffe0d(leading.__RoslynAotGetHandle(controlVtbl), text, value, trailing.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken XmlTextNewLine(string text, bool continueXmlDocumentationComment)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlTextNewLine_bdfdb0ff(text, continueXmlDocumentationComment ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken XmlTextNewLine(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlTextNewLine_61e75e15(text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlEmptyElementSyntax XmlThreadSafetyElement()
@@ -6395,14 +6811,18 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
-            int status = vtbl.SyntaxFactory_XmlThreadSafetyElement_79254635(isStatic ? 1 : 0, isInstance ? 1 : 0, out long result);
+            int status = vtbl.SyntaxFactory_XmlThreadSafetyElement_7dea980c(isStatic ? 1 : 0, isInstance ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return Syntax.XmlEmptyElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlValueElement(params Syntax.XmlNodeSyntax[] content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_XmlValueElement_def71933(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(content, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.XmlElementSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.XmlElementSyntax XmlValueElement(SyntaxList<Syntax.XmlNodeSyntax> content)

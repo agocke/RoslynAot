@@ -22,10 +22,51 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IAnalyzerConfigOptionsVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.AnalyzerConfigOptions_get_Keys(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadStringCollection(controlVtbl, result);
             }
         }
 
         public abstract bool TryGetValue(string key, out string? value);
+        internal AnalyzerConfigOptions()
+        {
+        }
+
+        private global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;
+        private global::RoslynAot.Abi.IAnalyzerConfigOptionsVtbl? __roslynAotVtbl;
+        private long __roslynAotHandle;
+        internal AnalyzerConfigOptions(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.IAnalyzerConfigOptionsVtbl vtbl, long handle)
+        {
+            __roslynAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __roslynAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __roslynAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::RoslynAot.Abi.IAnalyzerConfigOptionsVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __roslynAotHandle;
+        }
+
+        private sealed partial class __RoslynAotProxy : AnalyzerConfigOptions
+        {
+            internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.IAnalyzerConfigOptionsVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+            {
+            }
+
+            public override bool TryGetValue(string key, out string? value)
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
+
+        internal static AnalyzerConfigOptions __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAnalyzerConfigOptionsVtbl(controlVtbl), handle);
     }
 }

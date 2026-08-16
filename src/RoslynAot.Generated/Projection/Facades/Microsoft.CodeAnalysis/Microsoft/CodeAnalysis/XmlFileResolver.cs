@@ -12,7 +12,13 @@ namespace Microsoft.CodeAnalysis
     {
         public XmlFileResolver(string? baseDirectory)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IXmlFileResolverTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetXmlFileResolverTypeVtbl(controlVtbl);
+            int status = vtbl.XmlFileResolver_ctor(baseDirectory, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            __roslynAotControlVtbl = controlVtbl;
+            __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetXmlFileResolverVtbl(controlVtbl);
+            __roslynAotHandle = result;
         }
 
         public string? BaseDirectory
@@ -64,7 +70,10 @@ namespace Microsoft.CodeAnalysis
 
         public override string? ResolveReference(string path, string? baseFilePath)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IXmlFileResolverVtbl vtbl = __RoslynAotGetVtbl();
+            long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.XmlFileResolver_ResolveReference(__roslynAotReceiver, path, baseFilePath, buffer, bufferLength, out requiredLength));
         }
 
         internal XmlFileResolver()

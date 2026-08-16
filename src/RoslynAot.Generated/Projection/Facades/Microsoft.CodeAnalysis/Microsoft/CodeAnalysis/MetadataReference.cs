@@ -54,7 +54,11 @@ namespace Microsoft.CodeAnalysis
 
         public static PortableExecutableReference CreateFromFile(string path, MetadataReferenceProperties properties = default, DocumentationProvider? documentation = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IMetadataReferenceTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetMetadataReferenceTypeVtbl(controlVtbl);
+            int status = vtbl.MetadataReference_CreateFromFile(path, properties.__RoslynAotGetHandle(controlVtbl), documentation is null ? 0L : documentation.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return PortableExecutableReference.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static PortableExecutableReference CreateFromImage(System.Collections.Generic.IEnumerable<byte> peImage, MetadataReferenceProperties properties = default, DocumentationProvider? documentation = null, string? filePath = null)

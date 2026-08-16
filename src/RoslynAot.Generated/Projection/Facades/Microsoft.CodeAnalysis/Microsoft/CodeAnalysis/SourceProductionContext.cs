@@ -22,12 +22,18 @@ namespace Microsoft.CodeAnalysis
 
         public readonly void AddSource(string hintName, Text.SourceText sourceText)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISourceProductionContextVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SourceProductionContext_AddSource_f84fb514(__RoslynAotGetHandle(controlVtbl), hintName, sourceText.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public readonly void AddSource(string hintName, string source)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISourceProductionContextVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SourceProductionContext_AddSource_39bc7c69(__RoslynAotGetHandle(controlVtbl), hintName, source);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public readonly void ReportDiagnostic(Diagnostic diagnostic)

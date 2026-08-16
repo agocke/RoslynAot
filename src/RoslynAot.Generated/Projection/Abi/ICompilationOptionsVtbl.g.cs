@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d57bea6f-18e3-548b-8a4d-5616856bd32b")]
+[Guid("5634dc3e-9ef4-5258-a789-0082cb79dd7d")]
 public partial interface ICompilationOptionsVtbl
 {
 
@@ -37,6 +37,20 @@ public partial interface ICompilationOptionsVtbl
     );
 
     [PreserveSig]
+    int CompilationOptions_WithCryptoKeyContainer(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string cryptoKeyContainer,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithCryptoKeyFile(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string cryptoKeyFile,
+        out long result
+    );
+
+    [PreserveSig]
     int CompilationOptions_WithDeterministic(
         long receiver,
         int deterministic,
@@ -51,6 +65,13 @@ public partial interface ICompilationOptionsVtbl
     );
 
     [PreserveSig]
+    int CompilationOptions_WithMainTypeName(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string mainTypeName,
+        out long result
+    );
+
+    [PreserveSig]
     int CompilationOptions_WithMetadataImportOptions(
         long receiver,
         byte value,
@@ -61,6 +82,13 @@ public partial interface ICompilationOptionsVtbl
     int CompilationOptions_WithMetadataReferenceResolver(
         long receiver,
         long resolver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithModuleName(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string moduleName,
         out long result
     );
 
@@ -103,6 +131,13 @@ public partial interface ICompilationOptionsVtbl
     int CompilationOptions_WithReportSuppressedDiagnostics(
         long receiver,
         int value,
+        out long result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_WithScriptClassName(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string scriptClassName,
         out long result
     );
 

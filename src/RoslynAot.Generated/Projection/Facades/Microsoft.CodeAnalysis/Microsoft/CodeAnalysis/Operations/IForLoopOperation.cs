@@ -10,12 +10,63 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface IForLoopOperation : ILoopOperation, IOperation
     {
-        System.Collections.Immutable.ImmutableArray<IOperation> AtLoopBottom { get; }
+        System.Collections.Immutable.ImmutableArray<IOperation> AtLoopBottom
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIForLoopOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IForLoopOperation_get_AtLoopBottom(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IOperation>(controlVtbl, result, static (controlVtbl, handle) => IOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
 
-        System.Collections.Immutable.ImmutableArray<IOperation> Before { get; }
+        System.Collections.Immutable.ImmutableArray<IOperation> Before
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIForLoopOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IForLoopOperation_get_Before(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IOperation>(controlVtbl, result, static (controlVtbl, handle) => IOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
 
-        IOperation? Condition { get; }
+        IOperation? Condition
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIForLoopOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IForLoopOperation_get_Condition(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        System.Collections.Immutable.ImmutableArray<ILocalSymbol> ConditionLocals { get; }
+        System.Collections.Immutable.ImmutableArray<ILocalSymbol> ConditionLocals
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIForLoopOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IForLoopOperation_get_ConditionLocals(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ILocalSymbol>(controlVtbl, result, static (controlVtbl, handle) => ILocalSymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIForLoopOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIForLoopOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IForLoopOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IForLoopOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("160617cb-3e8f-58df-bcd1-2f4194064cd4")]
+        internal partial interface __RoslynAotImplementation : IForLoopOperation
+        {
+        }
     }
 }

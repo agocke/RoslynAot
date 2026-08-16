@@ -145,7 +145,7 @@ namespace Microsoft.CodeAnalysis
                 return ReferenceEquals(this, other);
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IDiagnosticDescriptorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.DiagnosticDescriptor_Equals_7497f57f(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.DiagnosticDescriptor_Equals_efbe4d0d(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

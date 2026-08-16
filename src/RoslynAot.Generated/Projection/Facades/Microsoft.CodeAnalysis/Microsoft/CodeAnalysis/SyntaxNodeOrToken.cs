@@ -223,7 +223,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxNodeOrToken_Equals_1ae3035a(__RoslynAotGetHandle(controlVtbl), other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.SyntaxNodeOrToken_Equals_da6a78cc(__RoslynAotGetHandle(controlVtbl), other.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -240,12 +240,20 @@ namespace Microsoft.CodeAnalysis
 
         public readonly System.Collections.Generic.IEnumerable<SyntaxAnnotation> GetAnnotations(string annotationKind)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SyntaxNodeOrToken_GetAnnotations_77a27a49(__RoslynAotGetHandle(controlVtbl), annotationKind, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<SyntaxAnnotation>(controlVtbl, result, static (controlVtbl, handle) => SyntaxAnnotation.__RoslynAotCreateProxy(controlVtbl, handle));
         }
 
         public readonly System.Collections.Generic.IEnumerable<Diagnostic> GetDiagnostics()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SyntaxNodeOrToken_GetDiagnostics(__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle));
         }
 
         public static int GetFirstChildIndexSpanningPosition(SyntaxNode node, int position)
@@ -327,7 +335,11 @@ namespace Microsoft.CodeAnalysis
 
         public readonly bool HasAnnotations(string annotationKind)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SyntaxNodeOrToken_HasAnnotations_47e77cab(__RoslynAotGetHandle(controlVtbl), annotationKind, out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public readonly bool IsEquivalentTo(SyntaxNodeOrToken other)
@@ -394,7 +406,11 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxNodeOrToken WithAdditionalAnnotations(params SyntaxAnnotation[] annotations)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SyntaxNodeOrToken_WithAdditionalAnnotations_8b8d5e4a(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(annotations, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public readonly SyntaxNodeOrToken WithAdditionalAnnotations(System.Collections.Generic.IEnumerable<SyntaxAnnotation> annotations)
@@ -414,7 +430,11 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxNodeOrToken WithoutAnnotations(params SyntaxAnnotation[] annotations)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SyntaxNodeOrToken_WithoutAnnotations_ce80e751(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(annotations, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public readonly SyntaxNodeOrToken WithoutAnnotations(System.Collections.Generic.IEnumerable<SyntaxAnnotation> annotations)
@@ -424,7 +444,11 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxNodeOrToken WithoutAnnotations(string annotationKind)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISyntaxNodeOrTokenVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SyntaxNodeOrToken_WithoutAnnotations_747bc66f(__RoslynAotGetHandle(controlVtbl), annotationKind, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public readonly SyntaxNodeOrToken WithTrailingTrivia(params SyntaxTrivia[] trivia)

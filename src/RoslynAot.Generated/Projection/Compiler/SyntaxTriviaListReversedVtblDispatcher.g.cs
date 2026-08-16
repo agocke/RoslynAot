@@ -23,7 +23,7 @@ internal sealed partial class SyntaxTriviaListReversedVtblDispatcher : ISyntaxTr
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxTriviaList_Reversed_Equals_998c05e7(
+    public int SyntaxTriviaList_Reversed_Equals_51d98215(
         long receiver,
         long other,
         out int result)

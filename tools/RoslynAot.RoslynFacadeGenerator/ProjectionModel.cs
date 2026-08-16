@@ -24,6 +24,9 @@ internal enum AbiTypeKind
     Boolean,
     Enum,
     Utf16String,
+    StringCollection,
+    ObjectCollection,
+    ObjectArray,
     ObjectHandle,
     ValueHandle,
     NullableHandle,
@@ -58,9 +61,24 @@ internal sealed record AbiTypePlan(
             TypeArguments.Length: 1
         } nullable
             ? nullable.TypeArguments[0] as INamedTypeSymbol
+            : Kind == AbiTypeKind.ObjectArray &&
+                SourceType is IArrayTypeSymbol
+                {
+                    ElementType: INamedTypeSymbol elementType
+                }
+                ? elementType
             : IsHandle
                 ? SourceType as INamedTypeSymbol
                 : null;
+
+    public INamedTypeSymbol? CollectionElementType =>
+        Kind == AbiTypeKind.ObjectCollection &&
+        SourceType is INamedTypeSymbol
+        {
+            TypeArguments: [INamedTypeSymbol elementType]
+        }
+            ? elementType
+            : null;
 
     public string InventoryName =>
         IsSupported
@@ -143,7 +161,8 @@ internal sealed class MemberProjection
 
 internal sealed class ProjectionModel
 {
-    private readonly Dictionary<ISymbol, MemberProjection> _members;
+    private readonly Dictionary<string, MemberProjection>
+        _membersBySignature;
     private readonly HashSet<INamedTypeSymbol> _proxyTypes;
     private readonly Dictionary<INamedTypeSymbol, VtblProjection>
         _instanceVtbls;
@@ -170,9 +189,9 @@ internal sealed class ProjectionModel
                 vtbl.FacadeType,
                 vtbl);
         }
-        _members = members.ToDictionary(
-            member => member.Symbol,
-            SymbolEqualityComparer.Default);
+        _membersBySignature = members.ToDictionary(
+            member => member.CanonicalSignature,
+            StringComparer.Ordinal);
 
         string identityInput = string.Join(
             "\n",
@@ -235,7 +254,9 @@ internal sealed class ProjectionModel
     public bool TryGetMember(
         ISymbol symbol,
         out MemberProjection projection) =>
-        _members.TryGetValue(symbol, out projection!);
+        _membersBySignature.TryGetValue(
+            CanonicalSignatureBuilder.GetMemberSignature(symbol),
+            out projection!);
 
     public bool RequiresProxy(INamedTypeSymbol type) =>
         _proxyTypes.Contains(type);
@@ -244,9 +265,14 @@ internal sealed class ProjectionModel
         => _proxyTypes.Contains(type) &&
             IsDynamicInterfaceProxyCandidate(type);
 
-    private static bool IsDynamicInterfaceProxyCandidate(
+    internal static bool IsDynamicInterfaceProxyCandidate(
         INamedTypeSymbol type)
     {
+        if (type.TypeKind == TypeKind.Interface)
+        {
+            return !type.IsGenericType;
+        }
+
         if (type.TypeKind != TypeKind.Class ||
             IsAnalyzerLocalClass(type) ||
             type.InstanceConstructors.Any(
@@ -277,7 +303,8 @@ internal sealed class ProjectionModel
             "Microsoft.CodeAnalysis.LocalizableResourceString" or
             "Microsoft.CodeAnalysis.DiagnosticDescriptor" or
             "Microsoft.CodeAnalysis.Diagnostic" or
-            "Microsoft.CodeAnalysis.Location";
+            "Microsoft.CodeAnalysis.Location" or
+            "Microsoft.CodeAnalysis.SymbolEqualityComparer";
 
     public VtblProjection GetInstanceVtbl(
         INamedTypeSymbol type) =>
@@ -470,6 +497,27 @@ internal sealed class ProjectionModel
                         method.ReturnType,
                         method.ReturnNullableAnnotation,
                         AbiTypePosition.Return);
+        if (returnValue.Kind == AbiTypeKind.ObjectHandle &&
+            (method.GetReturnTypeAttributes().Any(attribute =>
+                    attribute.AttributeClass?.ToDisplayString() ==
+                    "System.Diagnostics.CodeAnalysis.MaybeNullAttribute") ||
+                method is
+                {
+                    Name: "get_ContainingSymbol",
+                    ContainingType.Name: "ISymbol",
+                    ContainingType.ContainingNamespace:
+                    {
+                        Name: "CodeAnalysis",
+                        ContainingNamespace:
+                        {
+                            Name: "Microsoft",
+                            ContainingNamespace.IsGlobalNamespace: true
+                        }
+                    }
+                }))
+        {
+            returnValue = returnValue with { IsNullable = true };
+        }
 
         string? unsupportedReason = ValidateOperation(
             method,
@@ -576,8 +624,8 @@ internal sealed class ProjectionModel
             return attributeReason;
         }
 
-        if (method.ContainingType.TypeKind == TypeKind.Interface ||
-            method.IsAbstract &&
+        if ((method.ContainingType.TypeKind == TypeKind.Interface ||
+            method.IsAbstract) &&
             !IsDynamicInterfaceProxyCandidate(method.ContainingType))
         {
             return "Declaration-only members have no facade implementation body.";
@@ -624,6 +672,12 @@ internal sealed class ProjectionModel
         {
             return $"Return type is unsupported: " +
                 returnValue.UnsupportedReason;
+        }
+
+        if (returnValue.Kind == AbiTypeKind.ObjectCollection &&
+            method.Name == "GetTypeMembers")
+        {
+            return "GetTypeMembers overload projection is not supported.";
         }
 
         if (strategy == ProjectionStrategy.Constructor &&
@@ -700,6 +754,7 @@ internal sealed class ProjectionModel
             }
 
             AddProxyType(call.ReturnValue.RemoteType);
+            AddProxyType(call.ReturnValue.CollectionElementType);
         }
 
         INamedTypeSymbol[] polymorphicReturnTypes =
@@ -739,11 +794,15 @@ internal sealed class ProjectionModel
         {
             if (type is null ||
                 !assemblyNames.Contains(type.ContainingAssembly.Name) ||
-                type.TypeKind is not (TypeKind.Class or TypeKind.Struct) ||
+                type.TypeKind is not (
+                    TypeKind.Class or
+                    TypeKind.Struct or
+                    TypeKind.Interface) ||
                 type.IsStatic ||
                 type.IsGenericType ||
                 type.IsRefLikeType ||
-                HasVisibleInstanceFields(type))
+                HasVisibleInstanceFields(type) &&
+                    !IsDynamicInterfaceProxyCandidate(type))
             {
                 return;
             }
@@ -1212,8 +1271,22 @@ internal sealed class AbiTypeClassifier
                 : Supported(AbiTypeKind.Enum, enumAbiType, type);
         }
 
-        if (type is IArrayTypeSymbol)
+        if (type is IArrayTypeSymbol arrayType)
         {
+            AbiTypePlan elementPlan = Classify(
+                arrayType.ElementType,
+                arrayType.ElementNullableAnnotation,
+                AbiTypePosition.Parameter);
+            if (position == AbiTypePosition.Parameter &&
+                arrayType.Rank == 1 &&
+                elementPlan.Kind == AbiTypeKind.ObjectHandle)
+            {
+                return Supported(
+                    AbiTypeKind.ObjectArray,
+                    "long",
+                    type);
+            }
+
             return Unsupported(type, "Arrays are not supported.");
         }
 
@@ -1231,16 +1304,12 @@ internal sealed class AbiTypeClassifier
 
         if (type.SpecialType == SpecialType.System_String)
         {
-            return position == AbiTypePosition.Return
-                ? new AbiTypePlan(
-                    AbiTypeKind.Utf16String,
-                    "string",
-                    type,
-                    nullableAnnotation == NullableAnnotation.Annotated,
-                    UnsupportedReason: null)
-                : Unsupported(
-                    type,
-                    "String parameters are not supported.");
+            return new AbiTypePlan(
+                AbiTypeKind.Utf16String,
+                "string",
+                type,
+                nullableAnnotation == NullableAnnotation.Annotated,
+                UnsupportedReason: null);
         }
 
         if (type is ITypeParameterSymbol)
@@ -1279,6 +1348,35 @@ internal sealed class AbiTypeClassifier
 
         if (namedType.IsGenericType)
         {
+            if (position == AbiTypePosition.Return &&
+                namedType.TypeArguments is [ITypeSymbol elementType])
+            {
+                if (elementType.SpecialType == SpecialType.System_String &&
+                    IsSupportedCollectionInterface(namedType))
+                {
+                    return Supported(
+                        AbiTypeKind.StringCollection,
+                        "long",
+                        type);
+                }
+
+                AbiTypePlan elementPlan = Classify(
+                    elementType,
+                    elementType.NullableAnnotation,
+                    AbiTypePosition.Return);
+                if (elementPlan.Kind == AbiTypeKind.ObjectHandle &&
+                    (IsEnumerableInterface(namedType) ||
+                        IsProxyableObjectImmutableArray(
+                            namedType,
+                            elementType)))
+                {
+                    return Supported(
+                        AbiTypeKind.ObjectCollection,
+                        "long",
+                        type);
+                }
+            }
+
             return Unsupported(
                 type,
                 "Generic substitutions are not supported.");
@@ -1294,12 +1392,16 @@ internal sealed class AbiTypeClassifier
 
         if (namedType.TypeKind == TypeKind.Interface)
         {
-            return Unsupported(
+            return new AbiTypePlan(
+                AbiTypeKind.ObjectHandle,
+                "long",
                 type,
-                "Facade interface proxies are not implemented.");
+                nullableAnnotation == NullableAnnotation.Annotated,
+                UnsupportedReason: null);
         }
 
-        if (HasExternallyVisibleInstanceFields(namedType))
+        if (HasExternallyVisibleInstanceFields(namedType) &&
+            !ProjectionModel.IsDynamicInterfaceProxyCandidate(namedType))
         {
             return Unsupported(
                 type,
@@ -1359,6 +1461,84 @@ internal sealed class AbiTypeClassifier
 
         return false;
     }
+
+    private static bool IsSupportedCollectionInterface(
+        INamedTypeSymbol type) =>
+        IsEnumerableInterface(type) ||
+        type.OriginalDefinition is
+        {
+            Name: "ICollection",
+            Arity: 1,
+            ContainingNamespace:
+            {
+                Name: "Generic",
+                ContainingNamespace:
+                {
+                    Name: "Collections",
+                    ContainingNamespace:
+                    {
+                        Name: "System",
+                        ContainingNamespace.IsGlobalNamespace: true
+                    }
+                }
+            }
+        };
+
+    private static bool IsProxyableObjectImmutableArray(
+        INamedTypeSymbol type,
+        ITypeSymbol elementType) =>
+        IsImmutableArray(type) &&
+        elementType is INamedTypeSymbol elementNamedType &&
+        (ProjectionModel.IsDynamicInterfaceProxyCandidate(
+            elementNamedType) ||
+            CanonicalSignatureBuilder.GetMetadataTypeName(
+                elementNamedType) ==
+            "Microsoft.CodeAnalysis.AttributeData");
+
+    private static bool IsImmutableArray(
+        ITypeSymbol type) =>
+        type is INamedTypeSymbol
+        {
+            OriginalDefinition:
+            {
+            Name: "ImmutableArray",
+            Arity: 1,
+            ContainingNamespace:
+            {
+                Name: "Immutable",
+                ContainingNamespace:
+                {
+                    Name: "Collections",
+                    ContainingNamespace:
+                    {
+                        Name: "System",
+                        ContainingNamespace.IsGlobalNamespace: true
+                    }
+                }
+            }
+            }
+        };
+
+    private static bool IsEnumerableInterface(
+        INamedTypeSymbol type) =>
+        type.OriginalDefinition is
+        {
+            Name: "IEnumerable",
+            Arity: 1,
+            ContainingNamespace:
+            {
+                Name: "Generic",
+                ContainingNamespace:
+                {
+                    Name: "Collections",
+                    ContainingNamespace:
+                    {
+                        Name: "System",
+                        ContainingNamespace.IsGlobalNamespace: true
+                    }
+                }
+            }
+        };
 
     private static AbiTypePlan Supported(
         AbiTypeKind kind,

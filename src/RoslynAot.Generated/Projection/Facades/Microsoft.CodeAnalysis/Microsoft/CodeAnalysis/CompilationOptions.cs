@@ -526,12 +526,20 @@ namespace Microsoft.CodeAnalysis
 
         public CompilationOptions WithCryptoKeyContainer(string? cryptoKeyContainer)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithCryptoKeyContainer(__RoslynAotGetHandle(controlVtbl), cryptoKeyContainer, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithCryptoKeyFile(string? cryptoKeyFile)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithCryptoKeyFile(__RoslynAotGetHandle(controlVtbl), cryptoKeyFile, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithCryptoPublicKey(System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey)
@@ -564,7 +572,11 @@ namespace Microsoft.CodeAnalysis
 
         public CompilationOptions WithMainTypeName(string? mainTypeName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithMainTypeName(__RoslynAotGetHandle(controlVtbl), mainTypeName, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithMetadataImportOptions(MetadataImportOptions value)
@@ -587,7 +599,11 @@ namespace Microsoft.CodeAnalysis
 
         public CompilationOptions WithModuleName(string? moduleName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithModuleName(__RoslynAotGetHandle(controlVtbl), moduleName, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithOptimizationLevel(OptimizationLevel value)
@@ -646,7 +662,11 @@ namespace Microsoft.CodeAnalysis
 
         public CompilationOptions WithScriptClassName(string scriptClassName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CompilationOptions_WithScriptClassName(__RoslynAotGetHandle(controlVtbl), scriptClassName, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public CompilationOptions WithSourceReferenceResolver(SourceReferenceResolver? resolver)

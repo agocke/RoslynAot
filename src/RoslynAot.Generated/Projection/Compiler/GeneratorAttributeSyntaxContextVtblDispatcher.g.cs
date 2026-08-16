@@ -23,6 +23,23 @@ internal sealed partial class GeneratorAttributeSyntaxContextVtblDispatcher : IG
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int GeneratorAttributeSyntaxContext_get_Attributes(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorAttributeSyntaxContext>(receiver).Attributes).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int GeneratorAttributeSyntaxContext_get_SemanticModel(
         long receiver,
         out long result)
@@ -49,6 +66,23 @@ internal sealed partial class GeneratorAttributeSyntaxContextVtblDispatcher : IG
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorAttributeSyntaxContext>(receiver).TargetNode);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int GeneratorAttributeSyntaxContext_get_TargetSymbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorAttributeSyntaxContext>(receiver).TargetSymbol);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

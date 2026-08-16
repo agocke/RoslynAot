@@ -10,6 +10,27 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
 {
     public partial interface IStaticLocalInitializationSemaphoreOperation : IOperation
     {
-        ILocalSymbol Local { get; }
+        ILocalSymbol Local
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIStaticLocalInitializationSemaphoreOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IStaticLocalInitializationSemaphoreOperation_get_Local(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ILocalSymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIStaticLocalInitializationSemaphoreOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIStaticLocalInitializationSemaphoreOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IStaticLocalInitializationSemaphoreOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IStaticLocalInitializationSemaphoreOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("ae52fdee-502c-5519-861f-b6363f43aad7")]
+        internal partial interface __RoslynAotImplementation : IStaticLocalInitializationSemaphoreOperation
+        {
+        }
     }
 }

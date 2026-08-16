@@ -123,6 +123,191 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         }
     }
 
+    public unsafe int CreateObjectCollection(
+        nint handles,
+        int count,
+        out long result)
+    {
+        result = default;
+        try
+        {
+            if (count < 0 ||
+                (count != 0 && handles == 0))
+            {
+                throw new ArgumentException(
+                    "The object collection handle buffer is invalid.");
+            }
+
+            var values = new object[count];
+            var source = new ReadOnlySpan<long>((void*)handles, count);
+            for (int index = 0; index < values.Length; index++)
+            {
+                values[index] = _objects.GetObject(source[index]);
+            }
+
+            result = _objects.AddObject(values);
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
+    public int GetCollectionCount(
+        long handle,
+        out int count)
+    {
+        count = default;
+        try
+        {
+            count = _objects.GetObject<Array>(handle).Length;
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
+    public int GetObjectCollectionItem(
+        long handle,
+        int index,
+        out long result)
+    {
+        result = default;
+        try
+        {
+            Array values = _objects.GetObject<Array>(handle);
+            object value = values.GetValue(index) ??
+                throw new InvalidOperationException(
+                    "The Roslyn collection contains null.");
+            result = _objects.AddObject(value);
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
+    public unsafe int CopyStringCollectionItemUtf16(
+        long handle,
+        int index,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        requiredLength = default;
+        try
+        {
+            if (bufferLength < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(bufferLength));
+            }
+
+            string value = _objects.GetObject<string[]>(handle)[index];
+            requiredLength = value.Length;
+            if (buffer == 0)
+            {
+                return RoslynAbi.Success;
+            }
+
+            if (bufferLength < requiredLength)
+            {
+                throw new ArgumentException(
+                    "The UTF-16 result buffer is too small.",
+                    nameof(bufferLength));
+            }
+
+            value.AsSpan().CopyTo(
+                new Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
+    public int GetWellKnownObject(
+        RoslynWellKnownObject kind,
+        out long result)
+    {
+        result = default;
+        try
+        {
+            object value = kind switch
+            {
+                RoslynWellKnownObject.SymbolEqualityComparerDefault =>
+                    global::Microsoft.CodeAnalysis.SymbolEqualityComparer.Default,
+                RoslynWellKnownObject.SymbolEqualityComparerIncludeNullability =>
+                    global::Microsoft.CodeAnalysis.SymbolEqualityComparer.IncludeNullability,
+                _ => throw new ArgumentOutOfRangeException(nameof(kind)),
+            };
+            result = _objects.AddObject(value);
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
+    public int SymbolEqualityComparerEquals(
+        RoslynWellKnownObject kind,
+        long x,
+        long y,
+        out int result)
+    {
+        result = default;
+        try
+        {
+            global::Microsoft.CodeAnalysis.SymbolEqualityComparer comparer =
+                GetSymbolEqualityComparer(kind);
+            result = comparer.Equals(
+                _objects.GetObject<global::Microsoft.CodeAnalysis.ISymbol>(x),
+                _objects.GetObject<global::Microsoft.CodeAnalysis.ISymbol>(y))
+                ? 1
+                : 0;
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
+    public int SymbolEqualityComparerGetHashCode(
+        RoslynWellKnownObject kind,
+        long symbol,
+        out int result)
+    {
+        result = default;
+        try
+        {
+            result = GetSymbolEqualityComparer(kind).GetHashCode(
+                _objects.GetObject<global::Microsoft.CodeAnalysis.ISymbol>(
+                    symbol));
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
+    private static global::Microsoft.CodeAnalysis.SymbolEqualityComparer
+        GetSymbolEqualityComparer(RoslynWellKnownObject kind) =>
+        kind switch
+        {
+            RoslynWellKnownObject.SymbolEqualityComparerDefault =>
+                global::Microsoft.CodeAnalysis.SymbolEqualityComparer.Default,
+            RoslynWellKnownObject.SymbolEqualityComparerIncludeNullability =>
+                global::Microsoft.CodeAnalysis.SymbolEqualityComparer.IncludeNullability,
+            _ => throw new ArgumentOutOfRangeException(nameof(kind)),
+        };
+
     public unsafe int CopyLastErrorUtf16(
         nint buffer,
         int bufferLength,

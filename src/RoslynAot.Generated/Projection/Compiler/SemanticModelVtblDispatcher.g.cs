@@ -41,6 +41,160 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         }
     }
 
+    public int SemanticModel_IsAccessible(
+        long receiver,
+        int position,
+        long symbol,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).IsAccessible(position, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ISymbol>(symbol)) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_IsEventUsableAsField(
+        long receiver,
+        int position,
+        long eventSymbol,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).IsEventUsableAsField(position, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IEventSymbol>(eventSymbol)) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_LookupBaseMembers(
+        long receiver,
+        int position,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).LookupBaseMembers(position, name)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_LookupLabels(
+        long receiver,
+        int position,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).LookupLabels(position, name)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_LookupNamespacesAndTypes(
+        long receiver,
+        int position,
+        long container,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).LookupNamespacesAndTypes(position, container == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.INamespaceOrTypeSymbol>(container), name)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_LookupStaticMembers(
+        long receiver,
+        int position,
+        long container,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).LookupStaticMembers(position, container == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.INamespaceOrTypeSymbol>(container), name)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_LookupSymbols(
+        long receiver,
+        int position,
+        long container,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int includeReducedExtensionMethods,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).LookupSymbols(position, container == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.INamespaceOrTypeSymbol>(container), name, includeReducedExtensionMethods != 0)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SemanticModel_get_IgnoresAccessibility(
         long receiver,
         out int result)

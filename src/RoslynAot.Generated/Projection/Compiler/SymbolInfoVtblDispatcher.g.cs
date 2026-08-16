@@ -23,7 +23,7 @@ internal sealed partial class SymbolInfoVtblDispatcher : ISymbolInfoVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SymbolInfo_Equals_450dbb25(
+    public int SymbolInfo_Equals_0bba06e1(
         long receiver,
         long other,
         out int result)
@@ -67,6 +67,40 @@ internal sealed partial class SymbolInfoVtblDispatcher : ISymbolInfoVtbl
         try
         {
             result = (int)_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SymbolInfo>(receiver).CandidateReason;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolInfo_get_CandidateSymbols(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SymbolInfo>(receiver).CandidateSymbols).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolInfo_get_Symbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SymbolInfo>(receiver).Symbol);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

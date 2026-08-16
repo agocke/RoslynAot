@@ -8,20 +8,35 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    public sealed partial class AnalyzerConfig
+    public partial interface AnalyzerConfig
     {
-        internal AnalyzerConfig()
-        {
-        }
-
         public static AnalyzerConfig Parse(Text.SourceText text, string? pathToFile)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IAnalyzerConfigTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAnalyzerConfigTypeVtbl(controlVtbl);
+            int status = vtbl.AnalyzerConfig_Parse_e1723f3c(text.__RoslynAotGetHandle(controlVtbl), pathToFile, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static AnalyzerConfig Parse(string text, string? pathToFile)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IAnalyzerConfigTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAnalyzerConfigTypeVtbl(controlVtbl);
+            int status = vtbl.AnalyzerConfig_Parse_e2a01c56(text, pathToFile, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IAnalyzerConfigVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAnalyzerConfigVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static AnalyzerConfig __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AnalyzerConfig)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("1871888c-9b10-539a-bab9-272244ccf09d")]
+        internal partial interface __RoslynAotImplementation : AnalyzerConfig
+        {
         }
     }
 }

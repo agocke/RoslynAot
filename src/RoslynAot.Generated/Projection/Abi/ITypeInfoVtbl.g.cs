@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("cbc09013-61d7-585e-b335-da6a125ae9c2")]
+[Guid("5d3d43a8-eadf-59a0-8433-b3c734bc8f63")]
 public partial interface ITypeInfoVtbl
 {
 
     [PreserveSig]
-    int TypeInfo_Equals_ed067506(
+    int TypeInfo_Equals_5437b522(
         long receiver,
         long other,
         out int result
@@ -36,7 +36,19 @@ public partial interface ITypeInfoVtbl
     );
 
     [PreserveSig]
+    int TypeInfo_get_ConvertedType(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int TypeInfo_get_Nullability(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int TypeInfo_get_Type(
         long receiver,
         out long result
     );

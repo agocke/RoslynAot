@@ -12,9 +12,16 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("89d7745c-cc3d-5632-9899-58cb6e9c6060")]
+[Guid("9de30877-c705-5103-8319-2045397ea6e3")]
 public partial interface IMemberDeclarationSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
+
+    [PreserveSig]
+    int MemberDeclarationSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
 
     [PreserveSig]
     int MemberDeclarationSyntax_WithModifiers(

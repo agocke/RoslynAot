@@ -23,7 +23,25 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SourceFileResolver_Equals_2690b0f9(
+    public int SourceReferenceResolver_ReadText(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string resolvedPath,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SourceReferenceResolver>(receiver).ReadText(resolvedPath));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SourceFileResolver_Equals_0526a366(
         long receiver,
         long other,
         out int result)
@@ -58,6 +76,60 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         }
     }
 
+    public unsafe int SourceFileResolver_NormalizePath(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string baseFilePath,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SourceFileResolver>(receiver).NormalizePath(path, baseFilePath);
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public unsafe int SourceFileResolver_ResolveReference(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string baseFilePath,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SourceFileResolver>(receiver).ResolveReference(path, baseFilePath);
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int SourceFileResolver_get_BaseDirectory(
         long receiver,
         nint buffer,
@@ -69,12 +141,12 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SourceFileResolver>(receiver).BaseDirectory;
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SourceFileResolver>(receiver).BaseDirectory;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

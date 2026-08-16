@@ -10,10 +10,51 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface IVariableDeclarationOperation : IOperation
     {
-        System.Collections.Immutable.ImmutableArray<IVariableDeclaratorOperation> Declarators { get; }
+        System.Collections.Immutable.ImmutableArray<IVariableDeclaratorOperation> Declarators
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIVariableDeclarationOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IVariableDeclarationOperation_get_Declarators(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IVariableDeclaratorOperation>(controlVtbl, result, static (controlVtbl, handle) => IVariableDeclaratorOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
 
-        System.Collections.Immutable.ImmutableArray<IOperation> IgnoredDimensions { get; }
+        System.Collections.Immutable.ImmutableArray<IOperation> IgnoredDimensions
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIVariableDeclarationOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IVariableDeclarationOperation_get_IgnoredDimensions(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IOperation>(controlVtbl, result, static (controlVtbl, handle) => IOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
 
-        IVariableInitializerOperation? Initializer { get; }
+        IVariableInitializerOperation? Initializer
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIVariableDeclarationOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IVariableDeclarationOperation_get_Initializer(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : IVariableInitializerOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIVariableDeclarationOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIVariableDeclarationOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IVariableDeclarationOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IVariableDeclarationOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("c0901a2e-9b95-531f-a4e9-d5299cc21e7b")]
+        internal partial interface __RoslynAotImplementation : IVariableDeclarationOperation
+        {
+        }
     }
 }

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("275e59c3-4f5d-51c1-a846-79f07e9bf200")]
+[Guid("bd53f88d-d8a9-5bdb-ae16-3dc804230bc0")]
 public partial interface ISymbolDisplayPartVtbl
 {
 
@@ -28,5 +28,11 @@ public partial interface ISymbolDisplayPartVtbl
     int SymbolDisplayPart_get_Kind(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int SymbolDisplayPart_get_Symbol(
+        long receiver,
+        out long result
     );
 }

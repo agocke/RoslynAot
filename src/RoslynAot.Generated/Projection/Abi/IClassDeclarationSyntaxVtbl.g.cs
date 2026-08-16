@@ -12,14 +12,56 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("837b7eba-b579-5fb6-838b-f44becc4b264")]
+[Guid("e01200e4-ed0e-58e2-846b-5bf947541e99")]
 public partial interface IClassDeclarationSyntaxVtbl : ITypeDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int ClassDeclarationSyntax_Accept_f0fa6c81(
+    int ClassDeclarationSyntax_Accept_920c9ccb(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int ClassDeclarationSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ClassDeclarationSyntax_AddBaseListTypes(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ClassDeclarationSyntax_AddConstraintClauses(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ClassDeclarationSyntax_AddMembers(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ClassDeclarationSyntax_AddParameterListParameters(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ClassDeclarationSyntax_AddTypeParameterListParameters(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

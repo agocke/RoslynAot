@@ -8,18 +8,17 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    public abstract partial class Compilation
+    public partial interface Compilation
     {
-        internal Compilation()
-        {
-        }
-
-        protected readonly System.Collections.Generic.IReadOnlyDictionary<string, string> _features;
         public IAssemblySymbol Assembly
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_Assembly(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IAssemblySymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -27,26 +26,102 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.Compilation_get_AssemblyName(__roslynAotReceiver, buffer, bufferLength, out requiredLength));
+            }
+        }
+
+        protected IAssemblySymbol CommonAssembly
+        {
+            get
+            {
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
             }
         }
 
-        protected abstract IAssemblySymbol CommonAssembly { get; }
-        protected abstract ITypeSymbol CommonDynamicType { get; }
-        protected abstract INamespaceSymbol CommonGlobalNamespace { get; }
-        protected abstract INamedTypeSymbol CommonObjectType { get; }
-        protected abstract CompilationOptions CommonOptions { get; }
-        protected abstract INamedTypeSymbol? CommonScriptClass { get; }
-        protected abstract ITypeSymbol? CommonScriptGlobalsType { get; }
-        protected abstract IModuleSymbol CommonSourceModule { get; }
-        protected internal abstract System.Collections.Immutable.ImmutableArray<SyntaxTree> CommonSyntaxTrees { get; }
-        public abstract System.Collections.Immutable.ImmutableArray<MetadataReference> DirectiveReferences { get; }
+        protected ITypeSymbol CommonDynamicType
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
+
+        protected INamespaceSymbol CommonGlobalNamespace
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
+
+        protected INamedTypeSymbol CommonObjectType
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
+
+        protected CompilationOptions CommonOptions
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
+
+        protected INamedTypeSymbol? CommonScriptClass
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
+
+        protected ITypeSymbol? CommonScriptGlobalsType
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
+
+        protected IModuleSymbol CommonSourceModule
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
+
+        protected internal System.Collections.Immutable.ImmutableArray<SyntaxTree> CommonSyntaxTrees
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
+
+        public System.Collections.Immutable.ImmutableArray<MetadataReference> DirectiveReferences
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
 
         public ITypeSymbol DynamicType
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_DynamicType(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ITypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -62,18 +137,46 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_GlobalNamespace(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return INamespaceSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
-        public abstract bool IsCaseSensitive { get; }
-        public abstract string Language { get; }
+        public bool IsCaseSensitive
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_IsCaseSensitive(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
+
+        public string Language
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.Compilation_get_Language(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
+            }
+        }
 
         public INamedTypeSymbol ObjectType
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_ObjectType(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -81,17 +184,35 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_Options(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return CompilationOptions.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
-        public abstract System.Collections.Generic.IEnumerable<AssemblyIdentity> ReferencedAssemblyNames { get; }
+        public System.Collections.Generic.IEnumerable<AssemblyIdentity> ReferencedAssemblyNames
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_ReferencedAssemblyNames(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<AssemblyIdentity>(controlVtbl, result, static (controlVtbl, handle) => AssemblyIdentity.__RoslynAotCreateProxy(controlVtbl, handle));
+            }
+        }
 
         public System.Collections.Generic.IEnumerable<MetadataReference> References
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_References(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<MetadataReference>(controlVtbl, result, static (controlVtbl, handle) => MetadataReference.__RoslynAotCreateProxy(controlVtbl, handle));
             }
         }
 
@@ -99,7 +220,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_ScriptClass(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -107,7 +232,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_ScriptCompilationInfo(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : ScriptCompilationInfo.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -115,7 +244,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_SourceModule(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IModuleSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -123,13 +256,21 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Compilation_get_SyntaxTrees(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<SyntaxTree>(controlVtbl, result, static (controlVtbl, handle) => SyntaxTree.__RoslynAotCreateProxy(controlVtbl, handle));
             }
         }
 
         public Compilation AddReferences(params MetadataReference[] references)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_AddReferences_d8b5bb13(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(references, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public Compilation AddReferences(System.Collections.Generic.IEnumerable<MetadataReference> references)
@@ -139,7 +280,11 @@ namespace Microsoft.CodeAnalysis
 
         public Compilation AddSyntaxTrees(params SyntaxTree[] trees)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_AddSyntaxTrees_a5e5d20b(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(trees, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public Compilation AddSyntaxTrees(System.Collections.Generic.IEnumerable<SyntaxTree> trees)
@@ -147,7 +292,11 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        protected abstract void AppendDefaultVersionResource(System.IO.Stream resourceStream);
+        protected void AppendDefaultVersionResource(System.IO.Stream resourceStream)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
         protected static void CheckTupleElementLocations(int cardinality, System.Collections.Immutable.ImmutableArray<Location?> elementLocations)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
@@ -163,50 +312,182 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        public abstract Operations.CommonConversion ClassifyCommonConversion(ITypeSymbol source, ITypeSymbol destination);
+        public Operations.CommonConversion ClassifyCommonConversion(ITypeSymbol source, ITypeSymbol destination)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_ClassifyCommonConversion(__RoslynAotGetHandle(controlVtbl), source.__RoslynAotGetHandle(controlVtbl), destination.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Operations.CommonConversion.__RoslynAotCreateProxy(controlVtbl, result);
+        }
+
         public Compilation Clone()
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_Clone(__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
+        }
+
+        protected Compilation CommonAddSyntaxTrees(System.Collections.Generic.IEnumerable<SyntaxTree> trees)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        protected abstract Compilation CommonAddSyntaxTrees(System.Collections.Generic.IEnumerable<SyntaxTree> trees);
         protected INamedTypeSymbol? CommonBindScriptClass()
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        protected abstract Compilation CommonClone();
-        protected abstract bool CommonContainsSyntaxTree(SyntaxTree? syntaxTree);
-        protected abstract INamedTypeSymbol CommonCreateAnonymousTypeSymbol(System.Collections.Immutable.ImmutableArray<ITypeSymbol> memberTypes, System.Collections.Immutable.ImmutableArray<string> memberNames, System.Collections.Immutable.ImmutableArray<Location> memberLocations, System.Collections.Immutable.ImmutableArray<bool> memberIsReadOnly, System.Collections.Immutable.ImmutableArray<NullableAnnotation> memberNullableAnnotations);
-        protected abstract IArrayTypeSymbol CommonCreateArrayTypeSymbol(ITypeSymbol elementType, int rank, NullableAnnotation elementNullableAnnotation);
-        protected abstract IMethodSymbol CommonCreateBuiltinOperator(string name, ITypeSymbol returnType, ITypeSymbol leftType, ITypeSymbol rightType);
-        protected abstract IMethodSymbol CommonCreateBuiltinOperator(string name, ITypeSymbol returnType, ITypeSymbol operandType);
-        protected abstract INamespaceSymbol CommonCreateErrorNamespaceSymbol(INamespaceSymbol container, string name);
-        protected abstract INamedTypeSymbol CommonCreateErrorTypeSymbol(INamespaceOrTypeSymbol? container, string name, int arity);
-        protected abstract IFunctionPointerTypeSymbol CommonCreateFunctionPointerTypeSymbol(ITypeSymbol returnType, RefKind returnRefKind, System.Collections.Immutable.ImmutableArray<ITypeSymbol> parameterTypes, System.Collections.Immutable.ImmutableArray<RefKind> parameterRefKinds, System.Reflection.Metadata.SignatureCallingConvention callingConvention, System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> callingConventionTypes);
-        protected abstract INamedTypeSymbol CommonCreateNativeIntegerTypeSymbol(bool signed);
-        protected abstract IPointerTypeSymbol CommonCreatePointerTypeSymbol(ITypeSymbol elementType);
-        protected abstract IPreprocessingSymbol CommonCreatePreprocessingSymbol(string name);
-        protected abstract INamedTypeSymbol CommonCreateTupleTypeSymbol(INamedTypeSymbol underlyingType, System.Collections.Immutable.ImmutableArray<string?> elementNames, System.Collections.Immutable.ImmutableArray<Location?> elementLocations, System.Collections.Immutable.ImmutableArray<NullableAnnotation> elementNullableAnnotations);
-        protected abstract INamedTypeSymbol CommonCreateTupleTypeSymbol(System.Collections.Immutable.ImmutableArray<ITypeSymbol> elementTypes, System.Collections.Immutable.ImmutableArray<string?> elementNames, System.Collections.Immutable.ImmutableArray<Location?> elementLocations, System.Collections.Immutable.ImmutableArray<NullableAnnotation> elementNullableAnnotations);
-        protected abstract ISymbol? CommonGetAssemblyOrModuleSymbol(MetadataReference reference);
-        protected abstract INamespaceSymbol? CommonGetCompilationNamespace(INamespaceSymbol namespaceSymbol);
-        protected abstract IMethodSymbol? CommonGetEntryPoint(System.Threading.CancellationToken cancellationToken);
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL001", UrlFormat = "https://github.com/dotnet/roslyn/issues/70609")]
-        protected abstract SemanticModel CommonGetSemanticModel(SyntaxTree syntaxTree, SemanticModelOptions options);
-        protected abstract INamedTypeSymbol? CommonGetTypeByMetadataName(string metadataName);
-        protected abstract Compilation CommonRemoveAllSyntaxTrees();
-        protected abstract Compilation CommonRemoveSyntaxTrees(System.Collections.Generic.IEnumerable<SyntaxTree> trees);
-        protected abstract Compilation CommonReplaceSyntaxTree(SyntaxTree oldTree, SyntaxTree newTree);
-        protected abstract Compilation CommonWithAssemblyName(string? outputName);
-        protected abstract Compilation CommonWithOptions(CompilationOptions options);
-        protected abstract Compilation CommonWithReferences(System.Collections.Generic.IEnumerable<MetadataReference> newReferences);
-        protected abstract Compilation CommonWithScriptCompilationInfo(ScriptCompilationInfo? info);
-        public abstract bool ContainsSymbolsWithName(System.Func<string, bool> predicate, SymbolFilter filter = SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default);
-        public abstract bool ContainsSymbolsWithName(string name, SymbolFilter filter = SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default);
-        public bool ContainsSyntaxTree(SyntaxTree syntaxTree)
+        protected Compilation CommonClone()
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected bool CommonContainsSyntaxTree(SyntaxTree? syntaxTree)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected INamedTypeSymbol CommonCreateAnonymousTypeSymbol(System.Collections.Immutable.ImmutableArray<ITypeSymbol> memberTypes, System.Collections.Immutable.ImmutableArray<string> memberNames, System.Collections.Immutable.ImmutableArray<Location> memberLocations, System.Collections.Immutable.ImmutableArray<bool> memberIsReadOnly, System.Collections.Immutable.ImmutableArray<NullableAnnotation> memberNullableAnnotations)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected IArrayTypeSymbol CommonCreateArrayTypeSymbol(ITypeSymbol elementType, int rank, NullableAnnotation elementNullableAnnotation)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected IMethodSymbol CommonCreateBuiltinOperator(string name, ITypeSymbol returnType, ITypeSymbol leftType, ITypeSymbol rightType)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected IMethodSymbol CommonCreateBuiltinOperator(string name, ITypeSymbol returnType, ITypeSymbol operandType)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected INamespaceSymbol CommonCreateErrorNamespaceSymbol(INamespaceSymbol container, string name)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected INamedTypeSymbol CommonCreateErrorTypeSymbol(INamespaceOrTypeSymbol? container, string name, int arity)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected IFunctionPointerTypeSymbol CommonCreateFunctionPointerTypeSymbol(ITypeSymbol returnType, RefKind returnRefKind, System.Collections.Immutable.ImmutableArray<ITypeSymbol> parameterTypes, System.Collections.Immutable.ImmutableArray<RefKind> parameterRefKinds, System.Reflection.Metadata.SignatureCallingConvention callingConvention, System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> callingConventionTypes)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected INamedTypeSymbol CommonCreateNativeIntegerTypeSymbol(bool signed)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected IPointerTypeSymbol CommonCreatePointerTypeSymbol(ITypeSymbol elementType)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected IPreprocessingSymbol CommonCreatePreprocessingSymbol(string name)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected INamedTypeSymbol CommonCreateTupleTypeSymbol(INamedTypeSymbol underlyingType, System.Collections.Immutable.ImmutableArray<string?> elementNames, System.Collections.Immutable.ImmutableArray<Location?> elementLocations, System.Collections.Immutable.ImmutableArray<NullableAnnotation> elementNullableAnnotations)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected INamedTypeSymbol CommonCreateTupleTypeSymbol(System.Collections.Immutable.ImmutableArray<ITypeSymbol> elementTypes, System.Collections.Immutable.ImmutableArray<string?> elementNames, System.Collections.Immutable.ImmutableArray<Location?> elementLocations, System.Collections.Immutable.ImmutableArray<NullableAnnotation> elementNullableAnnotations)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected ISymbol? CommonGetAssemblyOrModuleSymbol(MetadataReference reference)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected INamespaceSymbol? CommonGetCompilationNamespace(INamespaceSymbol namespaceSymbol)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected IMethodSymbol? CommonGetEntryPoint(System.Threading.CancellationToken cancellationToken)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL001", UrlFormat = "https://github.com/dotnet/roslyn/issues/70609")]
+        protected SemanticModel CommonGetSemanticModel(SyntaxTree syntaxTree, SemanticModelOptions options)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected INamedTypeSymbol? CommonGetTypeByMetadataName(string metadataName)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected Compilation CommonRemoveAllSyntaxTrees()
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected Compilation CommonRemoveSyntaxTrees(System.Collections.Generic.IEnumerable<SyntaxTree> trees)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected Compilation CommonReplaceSyntaxTree(SyntaxTree oldTree, SyntaxTree newTree)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected Compilation CommonWithAssemblyName(string? outputName)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected Compilation CommonWithOptions(CompilationOptions options)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected Compilation CommonWithReferences(System.Collections.Generic.IEnumerable<MetadataReference> newReferences)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        protected Compilation CommonWithScriptCompilationInfo(ScriptCompilationInfo? info)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        public bool ContainsSymbolsWithName(System.Func<string, bool> predicate, SymbolFilter filter = SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        public bool ContainsSymbolsWithName(string name, SymbolFilter filter = SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        public bool ContainsSyntaxTree(SyntaxTree syntaxTree)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_ContainsSyntaxTree(__RoslynAotGetHandle(controlVtbl), syntaxTree.__RoslynAotGetHandle(controlVtbl), out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public INamedTypeSymbol CreateAnonymousTypeSymbol(System.Collections.Immutable.ImmutableArray<ITypeSymbol> memberTypes, System.Collections.Immutable.ImmutableArray<string> memberNames, System.Collections.Immutable.ImmutableArray<bool> memberIsReadOnly = default, System.Collections.Immutable.ImmutableArray<Location> memberLocations = default, System.Collections.Immutable.ImmutableArray<NullableAnnotation> memberNullableAnnotations = default)
@@ -221,22 +502,38 @@ namespace Microsoft.CodeAnalysis
 
         public IArrayTypeSymbol CreateArrayTypeSymbol(ITypeSymbol elementType, int rank = 1, NullableAnnotation elementNullableAnnotation = NullableAnnotation.None)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_CreateArrayTypeSymbol_609a345e(__RoslynAotGetHandle(controlVtbl), elementType.__RoslynAotGetHandle(controlVtbl), rank, (byte)elementNullableAnnotation, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return IArrayTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public IArrayTypeSymbol CreateArrayTypeSymbol(ITypeSymbol elementType, int rank)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_CreateArrayTypeSymbol_ec0aa042(__RoslynAotGetHandle(controlVtbl), elementType.__RoslynAotGetHandle(controlVtbl), rank, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return IArrayTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public IMethodSymbol CreateBuiltinOperator(string name, ITypeSymbol returnType, ITypeSymbol leftType, ITypeSymbol rightType)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_CreateBuiltinOperator_9815643d(__RoslynAotGetHandle(controlVtbl), name, returnType.__RoslynAotGetHandle(controlVtbl), leftType.__RoslynAotGetHandle(controlVtbl), rightType.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public IMethodSymbol CreateBuiltinOperator(string name, ITypeSymbol returnType, ITypeSymbol operandType)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_CreateBuiltinOperator_66ea5f95(__RoslynAotGetHandle(controlVtbl), name, returnType.__RoslynAotGetHandle(controlVtbl), operandType.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public System.IO.Stream CreateDefaultWin32Resources(bool versionResource, bool noManifest, System.IO.Stream? manifestContents, System.IO.Stream? iconInIcoFormat)
@@ -246,12 +543,20 @@ namespace Microsoft.CodeAnalysis
 
         public INamespaceSymbol CreateErrorNamespaceSymbol(INamespaceSymbol container, string name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_CreateErrorNamespaceSymbol(__RoslynAotGetHandle(controlVtbl), container.__RoslynAotGetHandle(controlVtbl), name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return INamespaceSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public INamedTypeSymbol CreateErrorTypeSymbol(INamespaceOrTypeSymbol? container, string name, int arity)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_CreateErrorTypeSymbol(__RoslynAotGetHandle(controlVtbl), container is null ? 0L : container.__RoslynAotGetHandle(controlVtbl), name, arity, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public IFunctionPointerTypeSymbol CreateFunctionPointerTypeSymbol(ITypeSymbol returnType, RefKind returnRefKind, System.Collections.Immutable.ImmutableArray<ITypeSymbol> parameterTypes, System.Collections.Immutable.ImmutableArray<RefKind> parameterRefKinds, System.Reflection.Metadata.SignatureCallingConvention callingConvention = System.Reflection.Metadata.SignatureCallingConvention.Default, System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> callingConventionTypes = default)
@@ -261,17 +566,29 @@ namespace Microsoft.CodeAnalysis
 
         public INamedTypeSymbol CreateNativeIntegerTypeSymbol(bool signed)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_CreateNativeIntegerTypeSymbol(__RoslynAotGetHandle(controlVtbl), signed ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public IPointerTypeSymbol CreatePointerTypeSymbol(ITypeSymbol pointedAtType)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_CreatePointerTypeSymbol(__RoslynAotGetHandle(controlVtbl), pointedAtType.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return IPointerTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public IPreprocessingSymbol CreatePreprocessingSymbol(string name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_CreatePreprocessingSymbol(__RoslynAotGetHandle(controlVtbl), name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return IPreprocessingSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public INamedTypeSymbol CreateTupleTypeSymbol(INamedTypeSymbol underlyingType, System.Collections.Immutable.ImmutableArray<string?> elementNames = default, System.Collections.Immutable.ImmutableArray<Location?> elementLocations = default, System.Collections.Immutable.ImmutableArray<NullableAnnotation> elementNullableAnnotations = default)
@@ -340,16 +657,32 @@ namespace Microsoft.CodeAnalysis
 
         public ISymbol? GetAssemblyOrModuleSymbol(MetadataReference reference)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_GetAssemblyOrModuleSymbol(__RoslynAotGetHandle(controlVtbl), reference.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public INamespaceSymbol? GetCompilationNamespace(INamespaceSymbol namespaceSymbol)
         {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_GetCompilationNamespace(__RoslynAotGetHandle(controlVtbl), namespaceSymbol.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : INamespaceSymbol.__RoslynAotCreateProxy(controlVtbl, result);
+        }
+
+        public System.Collections.Immutable.ImmutableArray<Diagnostic> GetDeclarationDiagnostics(System.Threading.CancellationToken cancellationToken = default)
+        {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        public abstract System.Collections.Immutable.ImmutableArray<Diagnostic> GetDeclarationDiagnostics(System.Threading.CancellationToken cancellationToken = default);
-        public abstract System.Collections.Immutable.ImmutableArray<Diagnostic> GetDiagnostics(System.Threading.CancellationToken cancellationToken = default);
+        public System.Collections.Immutable.ImmutableArray<Diagnostic> GetDiagnostics(System.Threading.CancellationToken cancellationToken = default)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
         public IMethodSymbol? GetEntryPoint(System.Threading.CancellationToken cancellationToken)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
@@ -357,11 +690,23 @@ namespace Microsoft.CodeAnalysis
 
         public MetadataReference? GetMetadataReference(IAssemblySymbol assemblySymbol)
         {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_GetMetadataReference(__RoslynAotGetHandle(controlVtbl), assemblySymbol.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : MetadataReference.__RoslynAotCreateProxy(controlVtbl, result);
+        }
+
+        public System.Collections.Immutable.ImmutableArray<Diagnostic> GetMethodBodyDiagnostics(System.Threading.CancellationToken cancellationToken = default)
+        {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        public abstract System.Collections.Immutable.ImmutableArray<Diagnostic> GetMethodBodyDiagnostics(System.Threading.CancellationToken cancellationToken = default);
-        public abstract System.Collections.Immutable.ImmutableArray<Diagnostic> GetParseDiagnostics(System.Threading.CancellationToken cancellationToken = default);
+        public System.Collections.Immutable.ImmutableArray<Diagnostic> GetParseDiagnostics(System.Threading.CancellationToken cancellationToken = default)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
         public static string? GetRequiredLanguageVersion(Diagnostic diagnostic)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
@@ -377,24 +722,48 @@ namespace Microsoft.CodeAnalysis
 
         public SemanticModel GetSemanticModel(SyntaxTree syntaxTree, bool ignoreAccessibility = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_GetSemanticModel_7a930c8d(__RoslynAotGetHandle(controlVtbl), syntaxTree.__RoslynAotGetHandle(controlVtbl), ignoreAccessibility ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SemanticModel.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public INamedTypeSymbol GetSpecialType(SpecialType specialType)
         {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_GetSpecialType(__RoslynAotGetHandle(controlVtbl), (sbyte)specialType, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
+        }
+
+        public System.Collections.Generic.IEnumerable<ISymbol> GetSymbolsWithName(System.Func<string, bool> predicate, SymbolFilter filter = SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default)
+        {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        public abstract System.Collections.Generic.IEnumerable<ISymbol> GetSymbolsWithName(System.Func<string, bool> predicate, SymbolFilter filter = SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default);
-        public abstract System.Collections.Generic.IEnumerable<ISymbol> GetSymbolsWithName(string name, SymbolFilter filter = SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default);
-        public INamedTypeSymbol? GetTypeByMetadataName(string fullyQualifiedMetadataName)
+        public System.Collections.Generic.IEnumerable<ISymbol> GetSymbolsWithName(string name, SymbolFilter filter = SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        public INamedTypeSymbol? GetTypeByMetadataName(string fullyQualifiedMetadataName)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_GetTypeByMetadataName(__RoslynAotGetHandle(controlVtbl), fullyQualifiedMetadataName, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypesByMetadataName(string fullyQualifiedMetadataName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_GetTypesByMetadataName(__RoslynAotGetHandle(controlVtbl), fullyQualifiedMetadataName, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<INamedTypeSymbol>(controlVtbl, result, static (controlVtbl, handle) => INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public System.Collections.Immutable.ImmutableArray<AssemblyIdentity> GetUnreferencedAssemblyIdentities(Diagnostic diagnostic)
@@ -402,30 +771,54 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        public abstract System.Collections.Immutable.ImmutableArray<MetadataReference> GetUsedAssemblyReferences(System.Threading.CancellationToken cancellationToken = default);
-        public bool HasImplicitConversion(ITypeSymbol? fromType, ITypeSymbol? toType)
+        public System.Collections.Immutable.ImmutableArray<MetadataReference> GetUsedAssemblyReferences(System.Threading.CancellationToken cancellationToken = default)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        public bool HasImplicitConversion(ITypeSymbol? fromType, ITypeSymbol? toType)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_HasImplicitConversion(__RoslynAotGetHandle(controlVtbl), fromType is null ? 0L : fromType.__RoslynAotGetHandle(controlVtbl), toType is null ? 0L : toType.__RoslynAotGetHandle(controlVtbl), out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public bool IsSymbolAccessibleWithin(ISymbol symbol, ISymbol within, ITypeSymbol? throughType = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_IsSymbolAccessibleWithin(__RoslynAotGetHandle(controlVtbl), symbol.__RoslynAotGetHandle(controlVtbl), within.__RoslynAotGetHandle(controlVtbl), throughType is null ? 0L : throughType.__RoslynAotGetHandle(controlVtbl), out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public Compilation RemoveAllReferences()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_RemoveAllReferences(__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public Compilation RemoveAllSyntaxTrees()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_RemoveAllSyntaxTrees(__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public Compilation RemoveReferences(params MetadataReference[] references)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_RemoveReferences_23d005fe(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(references, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public Compilation RemoveReferences(System.Collections.Generic.IEnumerable<MetadataReference> references)
@@ -435,7 +828,11 @@ namespace Microsoft.CodeAnalysis
 
         public Compilation RemoveSyntaxTrees(params SyntaxTree[] trees)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_RemoveSyntaxTrees_2da6617e(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(trees, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public Compilation RemoveSyntaxTrees(System.Collections.Generic.IEnumerable<SyntaxTree> trees)
@@ -445,17 +842,29 @@ namespace Microsoft.CodeAnalysis
 
         public Compilation ReplaceReference(MetadataReference oldReference, MetadataReference? newReference)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_ReplaceReference(__RoslynAotGetHandle(controlVtbl), oldReference.__RoslynAotGetHandle(controlVtbl), newReference is null ? 0L : newReference.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public Compilation ReplaceSyntaxTree(SyntaxTree oldTree, SyntaxTree newTree)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_ReplaceSyntaxTree(__RoslynAotGetHandle(controlVtbl), oldTree.__RoslynAotGetHandle(controlVtbl), newTree.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public bool SupportsRuntimeCapability(RuntimeCapability capability)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_SupportsRuntimeCapability(__RoslynAotGetHandle(controlVtbl), (int)capability, out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         protected static System.Collections.Generic.IReadOnlyDictionary<string, string> SyntaxTreeCommonFeatures(System.Collections.Generic.IEnumerable<SyntaxTree> trees)
@@ -463,20 +872,36 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        public abstract CompilationReference ToMetadataReference(System.Collections.Immutable.ImmutableArray<string> aliases = default, bool embedInteropTypes = false);
-        public Compilation WithAssemblyName(string? assemblyName)
+        public CompilationReference ToMetadataReference(System.Collections.Immutable.ImmutableArray<string> aliases = default, bool embedInteropTypes = false)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        public Compilation WithAssemblyName(string? assemblyName)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_WithAssemblyName(__RoslynAotGetHandle(controlVtbl), assemblyName, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public Compilation WithOptions(CompilationOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_WithOptions(__RoslynAotGetHandle(controlVtbl), options.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public Compilation WithReferences(params MetadataReference[] newReferences)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_WithReferences_cac2bd12(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(newReferences, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public Compilation WithReferences(System.Collections.Generic.IEnumerable<MetadataReference> newReferences)
@@ -486,7 +911,22 @@ namespace Microsoft.CodeAnalysis
 
         public Compilation WithScriptCompilationInfo(ScriptCompilationInfo? info)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Compilation_WithScriptCompilationInfo(__RoslynAotGetHandle(controlVtbl), info is null ? 0L : info.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.ICompilationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCompilationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static Compilation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (Compilation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("3613c2d5-53f4-505d-baef-02ef5be397cb")]
+        internal partial interface __RoslynAotImplementation : Compilation
+        {
         }
     }
 }

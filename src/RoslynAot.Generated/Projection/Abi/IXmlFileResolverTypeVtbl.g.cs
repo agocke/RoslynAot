@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("71fb2045-7f43-572c-874b-f79bbaa07de0")]
+[Guid("a2f642ff-0805-50f1-8e21-1e2810df346d")]
 public partial interface IXmlFileResolverTypeVtbl
 {
+
+    [PreserveSig]
+    int XmlFileResolver_ctor(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string baseDirectory,
+        out long result
+    );
 
     [PreserveSig]
     int XmlFileResolver_get_Default(

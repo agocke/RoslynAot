@@ -23,7 +23,7 @@ internal sealed partial class TypeInfoVtblDispatcher : ITypeInfoVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int TypeInfo_Equals_ed067506(
+    public int TypeInfo_Equals_5437b522(
         long receiver,
         long other,
         out int result)
@@ -75,6 +75,23 @@ internal sealed partial class TypeInfoVtblDispatcher : ITypeInfoVtbl
         }
     }
 
+    public int TypeInfo_get_ConvertedType(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.TypeInfo>(receiver).ConvertedType);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int TypeInfo_get_Nullability(
         long receiver,
         out long result)
@@ -84,6 +101,23 @@ internal sealed partial class TypeInfoVtblDispatcher : ITypeInfoVtbl
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.TypeInfo>(receiver).Nullability);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int TypeInfo_get_Type(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.TypeInfo>(receiver).Type);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

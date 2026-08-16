@@ -23,6 +23,41 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int OperationBlockStartAnalysisContext_GetControlFlowGraph(
+        long receiver,
+        long operationBlock,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext>(receiver).GetControlFlowGraph(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IOperation>(operationBlock)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int OperationBlockStartAnalysisContext_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int OperationBlockStartAnalysisContext_get_FilterSpan(
         long receiver,
         out long result)
@@ -74,6 +109,23 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         }
     }
 
+    public int OperationBlockStartAnalysisContext_get_OperationBlocks(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext>(receiver).OperationBlocks).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int OperationBlockStartAnalysisContext_get_Options(
         long receiver,
         out long result)
@@ -83,6 +135,23 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext>(receiver).Options);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int OperationBlockStartAnalysisContext_get_OwningSymbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext>(receiver).OwningSymbol);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

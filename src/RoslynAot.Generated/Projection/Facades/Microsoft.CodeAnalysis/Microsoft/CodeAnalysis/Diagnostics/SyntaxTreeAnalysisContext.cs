@@ -76,6 +76,8 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public readonly void ReportDiagnostic(Diagnostic diagnostic)
         {
+            if (__RoslynAotTryReportLocal(diagnostic))
+                return;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxTreeAnalysisContextVtbl vtbl = __RoslynAotGetVtbl();
             int status = vtbl.SyntaxTreeAnalysisContext_ReportDiagnostic(__RoslynAotGetHandle(controlVtbl), diagnostic.__RoslynAotGetHandle(controlVtbl));

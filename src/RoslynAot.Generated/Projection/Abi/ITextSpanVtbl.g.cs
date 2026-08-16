@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7f60daef-349f-5e2c-94d2-615ef688830a")]
+[Guid("e9d191b0-6c2f-5366-80f0-24efbf5000e6")]
 public partial interface ITextSpanVtbl
 {
 
@@ -24,21 +24,21 @@ public partial interface ITextSpanVtbl
     );
 
     [PreserveSig]
-    int TextSpan_Contains_280d6f3d(
+    int TextSpan_Contains_2e872998(
         long receiver,
         long span,
         out int result
     );
 
     [PreserveSig]
-    int TextSpan_Contains_6dd56088(
+    int TextSpan_Contains_d84c8203(
         long receiver,
         int position,
         out int result
     );
 
     [PreserveSig]
-    int TextSpan_Equals_f0c3d453(
+    int TextSpan_Equals_12df1233(
         long receiver,
         long other,
         out int result
@@ -58,14 +58,14 @@ public partial interface ITextSpanVtbl
     );
 
     [PreserveSig]
-    int TextSpan_IntersectsWith_a6c6b98b(
+    int TextSpan_IntersectsWith_886d4b45(
         long receiver,
         long span,
         out int result
     );
 
     [PreserveSig]
-    int TextSpan_IntersectsWith_173790fd(
+    int TextSpan_IntersectsWith_c7246f52(
         long receiver,
         int position,
         out int result

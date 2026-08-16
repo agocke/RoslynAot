@@ -39,4 +39,21 @@ internal sealed partial class ImportedNamespaceOrTypeVtblDispatcher : IImportedN
             return _owner.SetError(exception);
         }
     }
+
+    public int ImportedNamespaceOrType_get_NamespaceOrType(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.ImportedNamespaceOrType>(receiver).NamespaceOrType);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

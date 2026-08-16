@@ -26,7 +26,11 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IControlFlowBranchVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ControlFlowBranch_get_EnteringRegions(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ControlFlowRegion>(controlVtbl, result, static (controlVtbl, handle) => ControlFlowRegion.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -34,7 +38,11 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IControlFlowBranchVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ControlFlowBranch_get_FinallyRegions(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ControlFlowRegion>(controlVtbl, result, static (controlVtbl, handle) => ControlFlowRegion.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -54,7 +62,11 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IControlFlowBranchVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ControlFlowBranch_get_LeavingRegions(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ControlFlowRegion>(controlVtbl, result, static (controlVtbl, handle) => ControlFlowRegion.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -88,7 +100,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static ControlFlowBranch __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ControlFlowBranch)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("c628d2a5-c2d6-5240-a70b-8c4c3811305c")]
+        [System.Runtime.InteropServices.Guid("97dfafe2-6369-5dd0-90a1-35657555841c")]
         internal partial interface __RoslynAotImplementation : ControlFlowBranch
         {
         }

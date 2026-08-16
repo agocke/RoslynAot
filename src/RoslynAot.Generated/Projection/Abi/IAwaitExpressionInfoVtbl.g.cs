@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fe1d20ba-eb0a-59f2-b5c0-ce1cec7cc0ff")]
+[Guid("d685a7da-374d-5e53-bb5b-ae82f4365c80")]
 public partial interface IAwaitExpressionInfoVtbl
 {
 
     [PreserveSig]
-    int AwaitExpressionInfo_Equals_ebfc1f36(
+    int AwaitExpressionInfo_Equals_88f8f46b(
         long receiver,
         long other,
         out int result
@@ -30,8 +30,32 @@ public partial interface IAwaitExpressionInfoVtbl
     );
 
     [PreserveSig]
+    int AwaitExpressionInfo_get_GetAwaiterMethod(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int AwaitExpressionInfo_get_GetResultMethod(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int AwaitExpressionInfo_get_IsCompletedProperty(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int AwaitExpressionInfo_get_IsDynamic(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int AwaitExpressionInfo_get_RuntimeAwaitMethod(
+        long receiver,
+        out long result
     );
 }

@@ -12,9 +12,23 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d7f6d2ed-ece8-5638-9f4a-e97556d60773")]
+[Guid("005ba2c3-fba5-5c96-9c84-7579a3965c6b")]
 public partial interface IBaseFieldDeclarationSyntaxVtbl : IMemberDeclarationSyntaxVtbl
 {
+
+    [PreserveSig]
+    int BaseFieldDeclarationSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int BaseFieldDeclarationSyntax_AddDeclarationVariables(
+        long receiver,
+        long items,
+        out long result
+    );
 
     [PreserveSig]
     int BaseFieldDeclarationSyntax_WithDeclaration(

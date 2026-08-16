@@ -51,7 +51,9 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         [System.Runtime.CompilerServices.OverloadResolutionPriority(-1)]
         public void RegisterOperationAction(System.Action<OperationAnalysisContext> action, params OperationKind[] operationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            System.ArgumentNullException.ThrowIfNull(action);
+            System.ArgumentNullException.ThrowIfNull(operationKinds);
+            RegisterOperationAction(action, System.Collections.Immutable.ImmutableArray.CreateRange(operationKinds));
         }
 
         public virtual void RegisterOperationAction(System.Action<OperationAnalysisContext> action, params System.Collections.Immutable.ImmutableArray<OperationKind> operationKinds)
@@ -73,7 +75,9 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         [System.Runtime.CompilerServices.OverloadResolutionPriority(-1)]
         public void RegisterSymbolAction(System.Action<SymbolAnalysisContext> action, params SymbolKind[] symbolKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            System.ArgumentNullException.ThrowIfNull(action);
+            System.ArgumentNullException.ThrowIfNull(symbolKinds);
+            RegisterSymbolAction(action, System.Collections.Immutable.ImmutableArray.CreateRange(symbolKinds));
         }
 
         public abstract void RegisterSymbolAction(System.Action<SymbolAnalysisContext> action, params System.Collections.Immutable.ImmutableArray<SymbolKind> symbolKinds);

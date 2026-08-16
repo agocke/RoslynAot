@@ -23,6 +23,23 @@ internal sealed partial class AssemblyMetadataTypeVtblDispatcher : IAssemblyMeta
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int AssemblyMetadata_CreateFromFile(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.AssemblyMetadata.CreateFromFile(path));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int AssemblyMetadata_Create_7ba6a262(
         long @module,
         out long result)
@@ -32,6 +49,23 @@ internal sealed partial class AssemblyMetadataTypeVtblDispatcher : IAssemblyMeta
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.AssemblyMetadata.Create(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ModuleMetadata>(@module)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AssemblyMetadata_Create_f1a4ccc3(
+        long modules,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.AssemblyMetadata.Create(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(modules), static value => (global::Microsoft.CodeAnalysis.ModuleMetadata)value)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

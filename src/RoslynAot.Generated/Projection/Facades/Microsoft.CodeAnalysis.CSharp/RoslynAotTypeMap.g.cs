@@ -13,8 +13,14 @@
     typeof(global::Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser),
     typeof(global::Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.__RoslynAotImplementation))]
 [assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
+    typeof(global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation),
+    typeof(global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation.__RoslynAotImplementation))]
+[assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
     typeof(global::Microsoft.CodeAnalysis.CSharp.CSharpGeneratorDriver),
     typeof(global::Microsoft.CodeAnalysis.CSharp.CSharpGeneratorDriver.__RoslynAotImplementation))]
+[assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
+    typeof(global::Microsoft.CodeAnalysis.CSharp.CSharpScriptCompilationInfo),
+    typeof(global::Microsoft.CodeAnalysis.CSharp.CSharpScriptCompilationInfo.__RoslynAotImplementation))]
 [assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
     typeof(global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode),
     typeof(global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.__RoslynAotImplementation))]

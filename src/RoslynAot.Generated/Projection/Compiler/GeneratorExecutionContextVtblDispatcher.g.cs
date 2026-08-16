@@ -23,6 +23,40 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int GeneratorExecutionContext_AddSource_2e11c25b(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
+        long sourceText)
+    {
+
+        try
+        {
+            _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorExecutionContext>(receiver).AddSource(hintName, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(sourceText));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int GeneratorExecutionContext_AddSource_b81ae2db(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)
+    {
+
+        try
+        {
+            _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorExecutionContext>(receiver).AddSource(hintName, source);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int GeneratorExecutionContext_ReportDiagnostic(
         long receiver,
         long diagnostic)
@@ -56,6 +90,23 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         }
     }
 
+    public int GeneratorExecutionContext_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorExecutionContext>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int GeneratorExecutionContext_get_ParseOptions(
         long receiver,
         out long result)
@@ -65,6 +116,40 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorExecutionContext>(receiver).ParseOptions);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int GeneratorExecutionContext_get_SyntaxContextReceiver(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorExecutionContext>(receiver).SyntaxContextReceiver);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int GeneratorExecutionContext_get_SyntaxReceiver(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorExecutionContext>(receiver).SyntaxReceiver);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

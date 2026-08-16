@@ -12,14 +12,35 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d79a88d7-71da-5ba0-afc5-81e50f669c0e")]
+[Guid("ab14c64e-ffee-5dc7-b35e-f597e4e580c4")]
 public partial interface IUnsafeStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int UnsafeStatementSyntax_Accept_2fdefafc(
+    int UnsafeStatementSyntax_Accept_02a8af1d(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int UnsafeStatementSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int UnsafeStatementSyntax_AddBlockAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int UnsafeStatementSyntax_AddBlockStatements(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

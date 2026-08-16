@@ -232,7 +232,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpCompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpCompilationOptions_Equals_ce33b5ac(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.CSharpCompilationOptions_Equals_0865511e(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -271,12 +271,20 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public new CSharpCompilationOptions WithCryptoKeyContainer(string? name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilationOptions_WithCryptoKeyContainer(__RoslynAotGetHandle(controlVtbl), name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public new CSharpCompilationOptions WithCryptoKeyFile(string? path)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilationOptions_WithCryptoKeyFile(__RoslynAotGetHandle(controlVtbl), path, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public new CSharpCompilationOptions WithCryptoPublicKey(System.Collections.Immutable.ImmutableArray<byte> value)
@@ -309,7 +317,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public new CSharpCompilationOptions WithMainTypeName(string? name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilationOptions_WithMainTypeName(__RoslynAotGetHandle(controlVtbl), name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public new CSharpCompilationOptions WithMetadataImportOptions(MetadataImportOptions value)
@@ -332,7 +344,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public new CSharpCompilationOptions WithModuleName(string? moduleName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilationOptions_WithModuleName(__RoslynAotGetHandle(controlVtbl), moduleName, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public CSharpCompilationOptions WithNullableContextOptions(NullableContextOptions options)
@@ -400,7 +416,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public new CSharpCompilationOptions WithScriptClassName(string? name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilationOptions_WithScriptClassName(__RoslynAotGetHandle(controlVtbl), name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public new CSharpCompilationOptions WithSourceReferenceResolver(SourceReferenceResolver? resolver)

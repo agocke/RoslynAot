@@ -23,7 +23,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int AssemblyIdentity_Equals_8ec1fb2f(
+    public int AssemblyIdentity_Equals_71b8bace(
         long receiver,
         long obj,
         out int result)
@@ -53,12 +53,12 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(receiver).GetDisplayName(fullKey != 0);
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(receiver).GetDisplayName(fullKey != 0);
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -95,12 +95,12 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(receiver).ToString();
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(receiver).ToString();
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -137,12 +137,12 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(receiver).CultureName;
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(receiver).CultureName;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -230,12 +230,12 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(receiver).Name;
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(receiver).Name;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

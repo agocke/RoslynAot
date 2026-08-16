@@ -548,22 +548,36 @@ namespace Microsoft.CodeAnalysis
 
         public string GetOutputFilePath(string outputFileName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICommandLineArgumentsVtbl vtbl = __RoslynAotGetVtbl();
+            long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CommandLineArguments_GetOutputFilePath(__roslynAotReceiver, outputFileName, buffer, bufferLength, out requiredLength))!;
         }
 
         public string GetPdbFilePath(string outputFileName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICommandLineArgumentsVtbl vtbl = __RoslynAotGetVtbl();
+            long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CommandLineArguments_GetPdbFilePath(__roslynAotReceiver, outputFileName, buffer, bufferLength, out requiredLength))!;
         }
 
         public System.Collections.Generic.IEnumerable<Diagnostics.AnalyzerReference> ResolveAnalyzerReferences(IAnalyzerAssemblyLoader analyzerLoader)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICommandLineArgumentsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CommandLineArguments_ResolveAnalyzerReferences(__RoslynAotGetHandle(controlVtbl), analyzerLoader.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostics.AnalyzerReference>(controlVtbl, result, static (controlVtbl, handle) => Diagnostics.AnalyzerReference.__RoslynAotCreateProxy(controlVtbl, handle));
         }
 
         public System.Collections.Generic.IEnumerable<MetadataReference> ResolveMetadataReferences(MetadataReferenceResolver metadataResolver)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICommandLineArgumentsVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CommandLineArguments_ResolveMetadataReferences(__RoslynAotGetHandle(controlVtbl), metadataResolver.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<MetadataReference>(controlVtbl, result, static (controlVtbl, handle) => MetadataReference.__RoslynAotCreateProxy(controlVtbl, handle));
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
@@ -572,7 +586,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static CommandLineArguments __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CommandLineArguments)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("c1e18efe-309a-55eb-a393-8c4d541af19a")]
+        [System.Runtime.InteropServices.Guid("8e5f02ee-c34e-5e5f-aaa6-8a07c876b051")]
         internal partial interface __RoslynAotImplementation : CommandLineArguments
         {
         }

@@ -40,6 +40,23 @@ internal sealed partial class IOperationOperationListReversedVtblDispatcher : II
         }
     }
 
+    public int IOperation_OperationList_Reversed_ToImmutableArray(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.IOperation.OperationList.Reversed>(receiver).ToImmutableArray()).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int IOperation_OperationList_Reversed_get_Count(
         long receiver,
         out int result)

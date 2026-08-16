@@ -12,13 +12,25 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("2207558e-fddd-58c5-8ca1-6636d79b5d7a")]
+[Guid("b5adbd2a-266f-5545-ac7a-adc3e8142464")]
 public partial interface IAssemblyMetadataTypeVtbl
 {
 
     [PreserveSig]
+    int AssemblyMetadata_CreateFromFile(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        out long result
+    );
+
+    [PreserveSig]
     int AssemblyMetadata_Create_7ba6a262(
         long @module,
+        out long result
+    );
+
+    [PreserveSig]
+    int AssemblyMetadata_Create_f1a4ccc3(
+        long modules,
         out long result
     );
 }

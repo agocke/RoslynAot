@@ -11,10 +11,47 @@ namespace Microsoft.CodeAnalysis.Operations
     public partial interface ICollectionExpressionOperation : IOperation
     {
         [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82210")]
-        System.Collections.Immutable.ImmutableArray<IOperation> ConstructArguments { get; }
+        System.Collections.Immutable.ImmutableArray<IOperation> ConstructArguments
+        {
+            get
+            {
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            }
+        }
 
-        IMethodSymbol? ConstructMethod { get; }
+        IMethodSymbol? ConstructMethod
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IICollectionExpressionOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ICollectionExpressionOperation_get_ConstructMethod(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        System.Collections.Immutable.ImmutableArray<IOperation> Elements { get; }
+        System.Collections.Immutable.ImmutableArray<IOperation> Elements
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IICollectionExpressionOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ICollectionExpressionOperation_get_Elements(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IOperation>(controlVtbl, result, static (controlVtbl, handle) => IOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IICollectionExpressionOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetICollectionExpressionOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static ICollectionExpressionOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ICollectionExpressionOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("f2358aee-905e-5d4e-afd3-db46e274d4f4")]
+        internal partial interface __RoslynAotImplementation : ICollectionExpressionOperation
+        {
+        }
     }
 }

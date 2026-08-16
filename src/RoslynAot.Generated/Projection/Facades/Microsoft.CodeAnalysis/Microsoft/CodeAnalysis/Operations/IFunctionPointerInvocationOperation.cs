@@ -10,8 +10,39 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface IFunctionPointerInvocationOperation : IOperation
     {
-        System.Collections.Immutable.ImmutableArray<IArgumentOperation> Arguments { get; }
+        System.Collections.Immutable.ImmutableArray<IArgumentOperation> Arguments
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIFunctionPointerInvocationOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IFunctionPointerInvocationOperation_get_Arguments(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IArgumentOperation>(controlVtbl, result, static (controlVtbl, handle) => IArgumentOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
 
-        IOperation Target { get; }
+        IOperation Target
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIFunctionPointerInvocationOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IFunctionPointerInvocationOperation_get_Target(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIFunctionPointerInvocationOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIFunctionPointerInvocationOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IFunctionPointerInvocationOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IFunctionPointerInvocationOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("7af7e918-efe8-54c9-ace0-ab03f6413e87")]
+        internal partial interface __RoslynAotImplementation : IFunctionPointerInvocationOperation
+        {
+        }
     }
 }

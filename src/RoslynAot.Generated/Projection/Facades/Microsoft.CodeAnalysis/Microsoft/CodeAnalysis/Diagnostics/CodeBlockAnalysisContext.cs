@@ -90,7 +90,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICodeBlockAnalysisContextVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.CodeBlockAnalysisContext_get_OwningSymbol(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 

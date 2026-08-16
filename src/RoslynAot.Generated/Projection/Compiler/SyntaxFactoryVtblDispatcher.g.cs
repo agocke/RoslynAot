@@ -95,6 +95,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_AliasQualifiedName_676d1ea7(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string @alias,
+        long name,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.AliasQualifiedName(@alias, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax>(name)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_AnonymousMethodExpression_7e091fc5(
         out long result)
     {
@@ -243,7 +261,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_8a50f3bc(
+    public int SyntaxFactory_AreEquivalent_9c9d8b17(
         long oldNode,
         long newNode,
         int topLevel,
@@ -262,7 +280,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_8f4e5d46(
+    public int SyntaxFactory_AreEquivalent_bd564b8d(
         long oldToken,
         long newToken,
         out int result)
@@ -280,7 +298,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_0a50461c(
+    public int SyntaxFactory_AreEquivalent_8ec4abec(
         long oldList,
         long newList,
         out int result)
@@ -298,7 +316,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_1ac1069e(
+    public int SyntaxFactory_AreEquivalent_e1a3ea7d(
         long oldTree,
         long newTree,
         int topLevel,
@@ -639,7 +657,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BadDirectiveTrivia_a8fbbc2d(
+    public int SyntaxFactory_BadDirectiveTrivia_84324a8d(
         long hashToken,
         long identifier,
         long endOfDirectiveToken,
@@ -659,7 +677,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BadDirectiveTrivia_3bc7f48e(
+    public int SyntaxFactory_BadDirectiveTrivia_2228d676(
         long identifier,
         int isActive,
         out long result)
@@ -669,6 +687,25 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.BadDirectiveTrivia(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier), isActive != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_BadToken(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.BadToken(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -780,6 +817,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.BinaryPattern((global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)kind, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax>(left), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(operatorToken), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax>(right)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Block_b7d63557(
+        long statements,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Block(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(statements), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax)value)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -1211,6 +1265,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_ClassDeclaration_e4c63470(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ClassDeclaration(identifier));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_ClassOrStructConstraint_30316c74(
         ushort kind,
         out long result)
@@ -1257,6 +1328,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ClassOrStructConstraint((global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)kind, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(classOrStructKeyword), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(questionToken)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Comment(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Comment(text));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -1419,6 +1507,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ConstructorDeclaration(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ConstructorDeclaration_2a3e37bf(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ConstructorDeclaration(identifier));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -1824,7 +1929,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefineDirectiveTrivia_b1a88fae(
+    public int SyntaxFactory_DefineDirectiveTrivia_8e573ff8(
         long hashToken,
         long defineKeyword,
         long name,
@@ -1845,7 +1950,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefineDirectiveTrivia_16e54fa5(
+    public int SyntaxFactory_DefineDirectiveTrivia_ad64892e(
         long name,
         int isActive,
         out long result)
@@ -1855,6 +1960,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.DefineDirectiveTrivia(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(name), isActive != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_DefineDirectiveTrivia_a143126a(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int isActive,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.DefineDirectiveTrivia(name, isActive != 0));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -1881,6 +2004,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_DelegateDeclaration_29ed81b1(
+        long returnType,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.DelegateDeclaration(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax>(returnType), identifier));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_DestructorDeclaration_d85fa21e(
         long identifier,
         out long result)
@@ -1890,6 +2031,40 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.DestructorDeclaration(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_DestructorDeclaration_dfda7aba(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.DestructorDeclaration(identifier));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_DisabledText(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.DisabledText(text));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -2005,6 +2180,74 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_DocumentationCommentExterior(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.DocumentationCommentExterior(text));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_DocumentationComment(
+        long content,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.DocumentationComment(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(content), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ElasticEndOfLine(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ElasticEndOfLine(text));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ElasticWhitespace(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ElasticWhitespace(text));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_ElementAccessExpression_b9f9618a(
         long expression,
         out long result)
@@ -2073,7 +2316,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElifDirectiveTrivia_9830e5d6(
+    public int SyntaxFactory_ElifDirectiveTrivia_bc00d35f(
         long condition,
         int isActive,
         int branchTaken,
@@ -2093,7 +2336,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElifDirectiveTrivia_20995b17(
+    public int SyntaxFactory_ElifDirectiveTrivia_f739be66(
         long hashToken,
         long elifKeyword,
         long condition,
@@ -2151,7 +2394,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElseDirectiveTrivia_b02992d0(
+    public int SyntaxFactory_ElseDirectiveTrivia_efa6c61f(
         long hashToken,
         long elseKeyword,
         long endOfDirectiveToken,
@@ -2172,7 +2415,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElseDirectiveTrivia_e6a72d37(
+    public int SyntaxFactory_ElseDirectiveTrivia_adfb54ee(
         int isActive,
         int branchTaken,
         out long result)
@@ -2223,7 +2466,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndIfDirectiveTrivia_fa3e3836(
+    public int SyntaxFactory_EndIfDirectiveTrivia_35d3b427(
         long hashToken,
         long endIfKeyword,
         long endOfDirectiveToken,
@@ -2243,7 +2486,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndIfDirectiveTrivia_8cdf69e6(
+    public int SyntaxFactory_EndIfDirectiveTrivia_05820434(
         int isActive,
         out long result)
     {
@@ -2260,7 +2503,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndRegionDirectiveTrivia_32326fcd(
+    public int SyntaxFactory_EndOfLine_bd61063f(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.EndOfLine(text));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_EndRegionDirectiveTrivia_8cb345f3(
         long hashToken,
         long endRegionKeyword,
         long endOfDirectiveToken,
@@ -2280,7 +2540,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndRegionDirectiveTrivia_e000cecd(
+    public int SyntaxFactory_EndRegionDirectiveTrivia_563b1839(
         int isActive,
         out long result)
     {
@@ -2314,6 +2574,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_EnumDeclaration_3d22b0a6(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.EnumDeclaration(identifier));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_EnumMemberDeclaration_fa4fd90a(
         long identifier,
         out long result)
@@ -2323,6 +2600,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.EnumMemberDeclaration(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_EnumMemberDeclaration_45cf10c4(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.EnumMemberDeclaration(identifier));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -2366,7 +2660,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ErrorDirectiveTrivia_2ba9f271(
+    public int SyntaxFactory_ErrorDirectiveTrivia_923268c6(
         long hashToken,
         long errorKeyword,
         long endOfDirectiveToken,
@@ -2386,7 +2680,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ErrorDirectiveTrivia_9ad9a2b3(
+    public int SyntaxFactory_ErrorDirectiveTrivia_fa8ea42f(
         int isActive,
         out long result)
     {
@@ -2413,6 +2707,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.EventDeclaration(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax>(@type), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_EventDeclaration_5bf84844(
+        long @type,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.EventDeclaration(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax>(@type), identifier));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -2653,6 +2965,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_ExternAliasDirective_e6798a5b(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ExternAliasDirective(identifier));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_FieldDeclaration_d0de5803(
         long declaration,
         out long result)
@@ -2806,6 +3135,26 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ForEachStatement(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax>(@type), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax>(statement)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ForEachStatement_fb29ba27(
+        long @type,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        long expression,
+        long statement,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ForEachStatement(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax>(@type), identifier, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax>(statement)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -3004,6 +3353,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_FromClause_5cd6995a(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        long expression,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.FromClause(identifier, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_FunctionPointerCallingConvention_e1cd1fd7(
         long managedOrUnmanagedKeyword,
         out long result)
@@ -3154,6 +3521,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.GenericName(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeArgumentListSyntax>(typeArgumentList)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_GenericName_a4836e6b(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.GenericName(identifier));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -3326,7 +3710,81 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IfDirectiveTrivia_9f75639f(
+    public int SyntaxFactory_IdentifierName_107ab883(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.IdentifierName(name));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Identifier_ef4fb5bd(
+        long leading,
+        ushort contextualKind,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string valueText,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Identifier(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), (global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)contextualKind, text, valueText, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Identifier_765e232a(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Identifier(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Identifier_87486ce7(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Identifier(text));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_IfDirectiveTrivia_f53270a3(
         long condition,
         int isActive,
         int branchTaken,
@@ -3346,7 +3804,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IfDirectiveTrivia_f7d936d7(
+    public int SyntaxFactory_IfDirectiveTrivia_7c1d75d4(
         long hashToken,
         long ifKeyword,
         long condition,
@@ -3428,7 +3886,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IgnoredDirectiveTrivia_f31d449a(
+    public int SyntaxFactory_IgnoredDirectiveTrivia_8148eacb(
         long hashToken,
         long colonToken,
         long content,
@@ -3449,7 +3907,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IgnoredDirectiveTrivia_f5117a95(
+    public int SyntaxFactory_IgnoredDirectiveTrivia_966bfd54(
         long content,
         int isActive,
         out long result)
@@ -3467,7 +3925,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IgnoredDirectiveTrivia_d0f8664e(
+    public int SyntaxFactory_IgnoredDirectiveTrivia_48c5e272(
         int isActive,
         out long result)
     {
@@ -3741,6 +4199,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.InterfaceDeclaration(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_InterfaceDeclaration_4da18fa5(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.InterfaceDeclaration(identifier));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -4084,6 +4559,26 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_JoinClause_3a3a73ad(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        long inExpression,
+        long leftExpression,
+        long rightExpression,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.JoinClause(identifier, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(inExpression), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(leftExpression), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(rightExpression)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_JoinIntoClause_df29d447(
         long identifier,
         out long result)
@@ -4111,6 +4606,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.JoinIntoClause(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(intoKeyword), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_JoinIntoClause_ea4e2f6b(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.JoinIntoClause(identifier));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -4156,6 +4668,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_LabeledStatement_f136d906(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        long statement,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.LabeledStatement(identifier, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax>(statement)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_LetClause_f1d9527d(
         long identifier,
         long expression,
@@ -4186,6 +4716,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.LetClause(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(letKeyword), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(equalsToken), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_LetClause_2be80288(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        long expression,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.LetClause(identifier, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -4233,7 +4781,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineDirectiveTrivia_05aeb8c7(
+    public int SyntaxFactory_LineDirectiveTrivia_798e4d07(
         long hashToken,
         long lineKeyword,
         long line,
@@ -4255,7 +4803,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineDirectiveTrivia_9742422c(
+    public int SyntaxFactory_LineDirectiveTrivia_96cb65da(
         long line,
         long @file,
         int isActive,
@@ -4274,7 +4822,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineDirectiveTrivia_709e40f1(
+    public int SyntaxFactory_LineDirectiveTrivia_05074ed7(
         long line,
         int isActive,
         out long result)
@@ -4292,7 +4840,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineSpanDirectiveTrivia_4601f005(
+    public int SyntaxFactory_LineSpanDirectiveTrivia_39be7ccb(
         long start,
         long end,
         long characterOffset,
@@ -4313,7 +4861,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineSpanDirectiveTrivia_b305809c(
+    public int SyntaxFactory_LineSpanDirectiveTrivia_19806900(
         long start,
         long end,
         long @file,
@@ -4333,7 +4881,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineSpanDirectiveTrivia_25ea7575(
+    public int SyntaxFactory_LineSpanDirectiveTrivia_09831802(
         long hashToken,
         long lineKeyword,
         long start,
@@ -4393,7 +4941,127 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_3c3141d7(
+    public int SyntaxFactory_Literal_373a0c37(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        ushort value,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, (char)value, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_11601674(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int value,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, value, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_2fdd3b83(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        long value,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, value, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_1c163345(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, value, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_066efbc3(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        uint value,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, value, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_939b6309(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        ulong value,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, value, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_a98c34ee(
         ushort value,
         out long result)
     {
@@ -4410,7 +5078,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_520347e6(
+    public int SyntaxFactory_Literal_19e93521(
         int value,
         out long result)
     {
@@ -4427,7 +5095,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_6ac4189e(
+    public int SyntaxFactory_Literal_a8464eb0(
         long value,
         out long result)
     {
@@ -4444,7 +5112,132 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_13fe7b01(
+    public int SyntaxFactory_Literal_67e9870a(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_693358a2(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        ushort value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(text, (char)value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_48aee82e(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(text, value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_fbff282e(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        long value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(text, value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_7c89a6a9(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(text, value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_fb9d97e6(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        uint value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(text, value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_d39c8cd1(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        ulong value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Literal(text, value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Literal_f1120869(
         uint value,
         out long result)
     {
@@ -4461,7 +5254,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_07c320ce(
+    public int SyntaxFactory_Literal_e4a783f1(
         ulong value,
         out long result)
     {
@@ -4478,7 +5271,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LoadDirectiveTrivia_3e438b68(
+    public int SyntaxFactory_LoadDirectiveTrivia_a842d31e(
         long hashToken,
         long loadKeyword,
         long @file,
@@ -4499,7 +5292,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LoadDirectiveTrivia_3ea8dd20(
+    public int SyntaxFactory_LoadDirectiveTrivia_f00d00bd(
         long @file,
         int isActive,
         out long result)
@@ -4602,6 +5395,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.LocalFunctionStatement(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax>(returnType), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_LocalFunctionStatement_68de7937(
+        long returnType,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.LocalFunctionStatement(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax>(returnType), identifier));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -4778,6 +5589,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_MethodDeclaration_29ce1e38(
+        long returnType,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.MethodDeclaration(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax>(returnType), identifier));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_MissingToken_a57e339f(
         ushort kind,
         out long result)
@@ -4849,6 +5678,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_NameColon_d80fbd3d(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.NameColon(name));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_NameEquals_36623bf8(
         long name,
         out long result)
@@ -4876,6 +5722,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.NameEquals(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax>(name), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(equalsToken)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_NameEquals_766eb0fe(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.NameEquals(name));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -4952,7 +5815,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NullableDirectiveTrivia_1102f025(
+    public int SyntaxFactory_NullableDirectiveTrivia_1a2a9b07(
         long hashToken,
         long nullableKeyword,
         long settingToken,
@@ -4974,7 +5837,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NullableDirectiveTrivia_eacba423(
+    public int SyntaxFactory_NullableDirectiveTrivia_f3d034dc(
         long settingToken,
         long targetToken,
         int isActive,
@@ -4993,7 +5856,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NullableDirectiveTrivia_82e614e6(
+    public int SyntaxFactory_NullableDirectiveTrivia_8ac3e534(
         long settingToken,
         int isActive,
         out long result)
@@ -5538,6 +6401,297 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_ParseArgumentList(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        long options,
+        int consumeFullText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseArgumentList(text, offset, options == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(options), consumeFullText != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseAttributeArgumentList(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        long options,
+        int consumeFullText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseAttributeArgumentList(text, offset, options == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(options), consumeFullText != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseBracketedArgumentList(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        long options,
+        int consumeFullText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseBracketedArgumentList(text, offset, options == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(options), consumeFullText != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseBracketedParameterList(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        long options,
+        int consumeFullText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseBracketedParameterList(text, offset, options == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(options), consumeFullText != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseCompilationUnit(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        long options,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseCompilationUnit(text, offset, options == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpParseOptions>(options)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseExpression(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        long options,
+        int consumeFullText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseExpression(text, offset, options == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(options), consumeFullText != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseLeadingTrivia(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseLeadingTrivia(text, offset));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseMemberDeclaration(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        long options,
+        int consumeFullText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseMemberDeclaration(text, offset, options == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(options), consumeFullText != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseName(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        int consumeFullText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseName(text, offset, consumeFullText != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseParameterList(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        long options,
+        int consumeFullText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseParameterList(text, offset, options == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(options), consumeFullText != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseStatement(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        long options,
+        int consumeFullText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseStatement(text, offset, options == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(options), consumeFullText != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseToken(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseToken(text, offset));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseTrailingTrivia(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseTrailingTrivia(text, offset));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseTypeName_a4c0cfad(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        long options,
+        int consumeFullText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseTypeName(text, offset, options == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(options), consumeFullText != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_ParseTypeName_4b33a9dc(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int offset,
+        int consumeFullText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseTypeName(text, offset, consumeFullText != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_PointerType_4346c24f(
         long elementType,
         out long result)
@@ -5610,7 +6764,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_b35fe09f(
+    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_4cf3019f(
         long hashToken,
         long pragmaKeyword,
         long checksumKeyword,
@@ -5634,7 +6788,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_059a8866(
+    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_b6ae3539(
         long @file,
         long guid,
         long bytes,
@@ -5654,7 +6808,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PragmaWarningDirectiveTrivia_d13c7747(
+    public int SyntaxFactory_PragmaWarningDirectiveTrivia_0536f786(
         long disableOrRestoreKeyword,
         int isActive,
         out long result)
@@ -5726,6 +6880,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_PreprocessingMessage(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.PreprocessingMessage(text));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_PrimaryConstructorBaseType_ad6f26c8(
         long @type,
         out long result)
@@ -5771,6 +6942,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.PropertyDeclaration(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax>(@type), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_PropertyDeclaration_f4357e81(
+        long @type,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.PropertyDeclaration(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax>(@type), identifier));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -5907,6 +7096,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_QueryContinuation_4451151d(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        long body,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.QueryContinuation(identifier, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.QueryBodySyntax>(body)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_QueryExpression(
         long fromClause,
         long body,
@@ -5997,6 +7204,25 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_RecordDeclaration_e0eb73b3(
+        ushort kind,
+        long keyword,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.RecordDeclaration((global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)kind, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(keyword), identifier));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_RecordDeclaration_79eedee7(
         long keyword,
         long identifier,
@@ -6007,6 +7233,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.RecordDeclaration(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(keyword), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_RecordDeclaration_ba553879(
+        long keyword,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.RecordDeclaration(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(keyword), identifier));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -6251,7 +7495,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ReferenceDirectiveTrivia_06223e87(
+    public int SyntaxFactory_ReferenceDirectiveTrivia_a0def3d3(
         long hashToken,
         long referenceKeyword,
         long @file,
@@ -6272,7 +7516,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ReferenceDirectiveTrivia_3c5c73fb(
+    public int SyntaxFactory_ReferenceDirectiveTrivia_fbcdba9d(
         long @file,
         int isActive,
         out long result)
@@ -6290,7 +7534,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RegionDirectiveTrivia_487e2c49(
+    public int SyntaxFactory_RegionDirectiveTrivia_4891c983(
         long hashToken,
         long regionKeyword,
         long endOfDirectiveToken,
@@ -6310,7 +7554,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RegionDirectiveTrivia_96ec88de(
+    public int SyntaxFactory_RegionDirectiveTrivia_8126daf5(
         int isActive,
         out long result)
     {
@@ -6451,7 +7695,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ShebangDirectiveTrivia_8a3ca08c(
+    public int SyntaxFactory_ShebangDirectiveTrivia_28b5a279(
         long hashToken,
         long exclamationToken,
         long endOfDirectiveToken,
@@ -6471,7 +7715,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ShebangDirectiveTrivia_c8023795(
+    public int SyntaxFactory_ShebangDirectiveTrivia_3ac23759(
         int isActive,
         out long result)
     {
@@ -6887,6 +8131,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_StructDeclaration_5ec30038(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.StructDeclaration(identifier));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_Subpattern_e1aa8583(
         long expressionColon,
         long pattern,
@@ -7039,6 +8300,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.SwitchStatement(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_SyntaxTrivia(
+        ushort kind,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.SyntaxTrivia((global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)kind, text));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -7220,6 +8499,27 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_Token_79542370(
+        long leading,
+        ushort kind,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string valueText,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Token(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), (global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)kind, text, valueText, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_TriviaList_05ccf7a6(
         out long result)
     {
@@ -7357,6 +8657,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_TypeDeclaration_2158e151(
+        ushort kind,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.TypeDeclaration((global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)kind, identifier));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_TypeOfExpression_7c99c858(
         long @type,
         out long result)
@@ -7411,6 +8729,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_TypeParameterConstraintClause_789d5b19(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.TypeParameterConstraintClause(name));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_TypeParameter_58f40bad(
         long identifier,
         out long result)
@@ -7420,6 +8755,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.TypeParameter(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(identifier)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_TypeParameter_7512704f(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.TypeParameter(identifier));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -7480,7 +8832,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UndefDirectiveTrivia_2abcc17b(
+    public int SyntaxFactory_UndefDirectiveTrivia_33880b67(
         long hashToken,
         long undefKeyword,
         long name,
@@ -7501,7 +8853,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UndefDirectiveTrivia_feed15ea(
+    public int SyntaxFactory_UndefDirectiveTrivia_c7c73cdb(
         long name,
         int isActive,
         out long result)
@@ -7511,6 +8863,24 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.UndefDirectiveTrivia(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(name), isActive != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_UndefDirectiveTrivia_01828906(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int isActive,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.UndefDirectiveTrivia(name, isActive != 0));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -7878,7 +9248,44 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WarningDirectiveTrivia_f04b983e(
+    public int SyntaxFactory_VariableDeclarator_ff56785b(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.VariableDeclarator(identifier));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_VerbatimIdentifier(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string valueText,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.VerbatimIdentifier(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, valueText, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_WarningDirectiveTrivia_9a7e049e(
         long hashToken,
         long warningKeyword,
         long endOfDirectiveToken,
@@ -7898,7 +9305,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WarningDirectiveTrivia_94632c7a(
+    public int SyntaxFactory_WarningDirectiveTrivia_3bb11cc2(
         int isActive,
         out long result)
     {
@@ -8016,6 +9423,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.WhileStatement(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(whileKeyword), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(openParenToken), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(condition), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(closeParenToken), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax>(statement)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_Whitespace_a6cabd8c(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.Whitespace(text));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -8297,6 +9721,78 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_XmlEmptyElement_48a7b8d2(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string localName,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlEmptyElement(localName));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlEntity(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlEntity(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, value, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlExampleElement_4628ed13(
+        long content,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlExampleElement(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(content), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlExceptionElement_eab7853a(
+        long cref,
+        long content,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlExceptionElement(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CrefSyntax>(cref), global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(content), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_XmlNameAttribute_5dac925d(
         long name,
         long startQuoteToken,
@@ -8330,6 +9826,43 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlNameAttribute(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax>(name), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(equalsToken), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(startQuoteToken), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax>(identifier), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(endQuoteToken)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlNameAttribute_c8c974b2(
+        long name,
+        long startQuoteToken,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
+        long endQuoteToken,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlNameAttribute(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax>(name), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(startQuoteToken), identifier, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(endQuoteToken)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlNameAttribute_973abefe(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string parameterName,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlNameAttribute(parameterName));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -8373,6 +9906,40 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_XmlName_2c9ca495(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string localName,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlName(localName));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlNewLine(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlNewLine(text));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_XmlNullKeywordElement(
         out long result)
     {
@@ -8381,6 +9948,93 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlNullKeywordElement());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlParaElement_5e38bc46(
+        long content,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlParaElement(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(content), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlParamElement_a56b0fc3(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string parameterName,
+        long content,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlParamElement(parameterName, global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(content), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlParamRefElement(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string parameterName,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlParamRefElement(parameterName));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlPermissionElement_3a5ae1df(
+        long cref,
+        long content,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlPermissionElement(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CrefSyntax>(cref), global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(content), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlPlaceholderElement_c7870512(
+        long content,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlPlaceholderElement(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(content), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax)value)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -8416,6 +10070,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlPrefix(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(prefix), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(colonToken)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlPrefix_1dad6b85(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string prefix,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlPrefix(prefix));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -8495,6 +10166,40 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_XmlRemarksElement_b8b40718(
+        long content,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlRemarksElement(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(content), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlReturnsElement_b6c0216e(
+        long content,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlReturnsElement(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(content), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_XmlSeeAlsoElement_acf84c18(
         long cref,
         out long result)
@@ -8521,6 +10226,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlSeeElement(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.CrefSyntax>(cref)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlSummaryElement_6afb54c4(
+        long content,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlSummaryElement(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(content), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax)value)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -8608,6 +10330,153 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_XmlTextAttribute_1e1963d4(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        ushort quoteKind,
+        long textTokens,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlTextAttribute(name, (global::Microsoft.CodeAnalysis.CSharp.SyntaxKind)quoteKind, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTokenList>(textTokens)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlTextAttribute_72ea5676(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlTextAttribute(name, value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlTextLiteral_96cb4289(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlTextLiteral(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, value, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlTextLiteral_78d049b2(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlTextLiteral(value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlTextLiteral_9d1f7f60(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlTextLiteral(text, value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlTextNewLine_3a2ffe0d(
+        long leading,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        long trailing,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlTextNewLine(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(leading), text, value, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(trailing)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlTextNewLine_61e75e15(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlTextNewLine(text));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlTextNewLine_bdfdb0ff(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        int continueXmlDocumentationComment,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlTextNewLine(text, continueXmlDocumentationComment != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_XmlText_a03eafd7(
         out long result)
     {
@@ -8641,6 +10510,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_XmlText_78fb4be1(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlText(value));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_XmlThreadSafetyElement_541681b8(
         out long result)
     {
@@ -8657,7 +10543,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlThreadSafetyElement_79254635(
+    public int SyntaxFactory_XmlThreadSafetyElement_7dea980c(
         int isStatic,
         int isInstance,
         out long result)
@@ -8667,6 +10553,23 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         try
         {
             result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlThreadSafetyElement(isStatic != 0, isInstance != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxFactory_XmlValueElement_def71933(
+        long content,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.XmlValueElement(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(content), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax)value)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

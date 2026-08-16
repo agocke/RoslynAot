@@ -12,13 +12,55 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fd9c06a2-d716-52d8-911c-285689971cd7")]
+[Guid("8e36320b-a6e1-5164-b02e-bcfad4b7270a")]
 public partial interface ICaseInsensitiveComparisonVtbl
 {
 
     [PreserveSig]
-    int CaseInsensitiveComparison_ToLower_8c71e35e(
+    int CaseInsensitiveComparison_Compare_3d2e1712(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string left,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
+        out int result
+    );
+
+    [PreserveSig]
+    int CaseInsensitiveComparison_EndsWith(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string possibleEnd,
+        out int result
+    );
+
+    [PreserveSig]
+    int CaseInsensitiveComparison_Equals_063a4d6c(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string left,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
+        out int result
+    );
+
+    [PreserveSig]
+    int CaseInsensitiveComparison_GetHashCode(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        out int result
+    );
+
+    [PreserveSig]
+    int CaseInsensitiveComparison_StartsWith(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string possibleStart,
+        out int result
+    );
+
+    [PreserveSig]
+    int CaseInsensitiveComparison_ToLower_cf8aebcb(
         ushort c,
         out ushort result
+    );
+
+    [PreserveSig]
+    int CaseInsensitiveComparison_ToLower_ce114a20(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
     );
 }

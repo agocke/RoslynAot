@@ -12,14 +12,56 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("5991aa84-2c47-5998-bf70-237b747007db")]
+[Guid("bc3ed05f-fa35-5149-bccb-f07052135e99")]
 public partial interface IMethodDeclarationSyntaxVtbl : IBaseMethodDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int MethodDeclarationSyntax_Accept_0b503ab0(
+    int MethodDeclarationSyntax_Accept_99ea0e1e(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int MethodDeclarationSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int MethodDeclarationSyntax_AddBodyAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int MethodDeclarationSyntax_AddBodyStatements(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int MethodDeclarationSyntax_AddConstraintClauses(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int MethodDeclarationSyntax_AddParameterListParameters(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int MethodDeclarationSyntax_AddTypeParameterListParameters(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

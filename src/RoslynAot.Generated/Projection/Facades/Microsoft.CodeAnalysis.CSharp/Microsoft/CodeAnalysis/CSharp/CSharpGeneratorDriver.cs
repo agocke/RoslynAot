@@ -12,12 +12,20 @@ namespace Microsoft.CodeAnalysis.CSharp
     {
         public static CSharpGeneratorDriver Create(params IIncrementalGenerator[] incrementalGenerators)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpGeneratorDriverTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpGeneratorDriverTypeVtbl(controlVtbl);
+            int status = vtbl.CSharpGeneratorDriver_Create_e323a1e2(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(incrementalGenerators, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static CSharpGeneratorDriver Create(params ISourceGenerator[] generators)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpGeneratorDriverTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpGeneratorDriverTypeVtbl(controlVtbl);
+            int status = vtbl.CSharpGeneratorDriver_Create_2c97a384(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(generators, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static CSharpGeneratorDriver Create(System.Collections.Generic.IEnumerable<ISourceGenerator> generators, System.Collections.Generic.IEnumerable<AdditionalText>? additionalTexts = null, CSharpParseOptions? parseOptions = null, Diagnostics.AnalyzerConfigOptionsProvider? optionsProvider = null, GeneratorDriverOptions driverOptions = default)

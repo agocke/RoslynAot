@@ -56,6 +56,23 @@ internal sealed partial class AdditionalFileAnalysisContextVtblDispatcher : IAdd
         }
     }
 
+    public int AdditionalFileAnalysisContext_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.AdditionalFileAnalysisContext>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int AdditionalFileAnalysisContext_get_FilterSpan(
         long receiver,
         out long result)

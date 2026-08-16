@@ -10,12 +10,63 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface IInterpolatedStringHandlerCreationOperation : IOperation
     {
-        IOperation Content { get; }
+        IOperation Content
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIInterpolatedStringHandlerCreationOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IInterpolatedStringHandlerCreationOperation_get_Content(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        bool HandlerAppendCallsReturnBool { get; }
+        bool HandlerAppendCallsReturnBool
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIInterpolatedStringHandlerCreationOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IInterpolatedStringHandlerCreationOperation_get_HandlerAppendCallsReturnBool(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
 
-        IOperation HandlerCreation { get; }
+        IOperation HandlerCreation
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIInterpolatedStringHandlerCreationOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IInterpolatedStringHandlerCreationOperation_get_HandlerCreation(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        bool HandlerCreationHasSuccessParameter { get; }
+        bool HandlerCreationHasSuccessParameter
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIInterpolatedStringHandlerCreationOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IInterpolatedStringHandlerCreationOperation_get_HandlerCreationHasSuccessParameter(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIInterpolatedStringHandlerCreationOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIInterpolatedStringHandlerCreationOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IInterpolatedStringHandlerCreationOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IInterpolatedStringHandlerCreationOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("b3084db6-258f-50db-8768-570e41ef1c92")]
+        internal partial interface __RoslynAotImplementation : IInterpolatedStringHandlerCreationOperation
+        {
+        }
     }
 }

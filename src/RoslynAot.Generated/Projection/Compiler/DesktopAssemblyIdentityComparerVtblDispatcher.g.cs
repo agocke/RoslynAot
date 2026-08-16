@@ -42,7 +42,7 @@ internal sealed partial class DesktopAssemblyIdentityComparerVtblDispatcher : ID
         }
     }
 
-    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_0539a3af(
+    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_f6795a64(
         long receiver,
         long reference,
         long definition,
@@ -53,6 +53,25 @@ internal sealed partial class DesktopAssemblyIdentityComparerVtblDispatcher : ID
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentityComparer>(receiver).ReferenceMatchesDefinition(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(reference), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(definition)) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_3356f219(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string referenceDisplayName,
+        long definition,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentityComparer>(receiver).ReferenceMatchesDefinition(referenceDisplayName, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyIdentity>(definition)) ? 1 : 0;
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("37f044a1-782a-58bc-bc0a-d1e76c4c1ec7")]
+[Guid("33f92003-fafd-514a-8a6e-8e63e7db3aa7")]
 public partial interface ICommandLineAnalyzerReferenceVtbl
 {
 
     [PreserveSig]
-    int CommandLineAnalyzerReference_Equals_25a0bc00(
+    int CommandLineAnalyzerReference_Equals_be622433(
         long receiver,
         long other,
         out int result

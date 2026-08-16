@@ -40,6 +40,40 @@ internal sealed partial class ControlFlowBranchVtblDispatcher : IControlFlowBran
         }
     }
 
+    public int ControlFlowBranch_get_EnteringRegions(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch>(receiver).EnteringRegions).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowBranch_get_FinallyRegions(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch>(receiver).FinallyRegions).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ControlFlowBranch_get_IsConditionalSuccessor(
         long receiver,
         out int result)
@@ -49,6 +83,23 @@ internal sealed partial class ControlFlowBranchVtblDispatcher : IControlFlowBran
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch>(receiver).IsConditionalSuccessor ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowBranch_get_LeavingRegions(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch>(receiver).LeavingRegions).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

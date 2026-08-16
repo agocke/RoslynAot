@@ -7,7 +7,7 @@ internal sealed class RoslynHandleTable
 
     private static int s_nextInteropId;
 
-    private readonly object _gate = new();
+    private readonly Lock _gate = new();
     private readonly List<Entry> _entries = [];
     private readonly Stack<int> _freeSlots = [];
     private readonly ushort _interopId = GetNextInteropId();

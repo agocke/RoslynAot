@@ -51,14 +51,18 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAssemblyIdentityComparerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AssemblyIdentityComparer_ReferenceMatchesDefinition_0539a3af(__RoslynAotGetHandle(controlVtbl), reference.__RoslynAotGetHandle(controlVtbl), definition.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.AssemblyIdentityComparer_ReferenceMatchesDefinition_f6795a64(__RoslynAotGetHandle(controlVtbl), reference.__RoslynAotGetHandle(controlVtbl), definition.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public bool ReferenceMatchesDefinition(string referenceDisplayName, AssemblyIdentity definition)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IAssemblyIdentityComparerVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.AssemblyIdentityComparer_ReferenceMatchesDefinition_3356f219(__RoslynAotGetHandle(controlVtbl), referenceDisplayName, definition.__RoslynAotGetHandle(controlVtbl), out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public enum ComparisonResult
@@ -74,7 +78,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static AssemblyIdentityComparer __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AssemblyIdentityComparer)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("2b8f3a83-e553-5251-bb45-16dfe413937b")]
+        [System.Runtime.InteropServices.Guid("80c97557-22e9-5715-9d8c-5adbfc87d857")]
         internal partial interface __RoslynAotImplementation : AssemblyIdentityComparer
         {
         }

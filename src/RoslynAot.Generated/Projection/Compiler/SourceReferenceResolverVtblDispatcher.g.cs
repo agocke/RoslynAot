@@ -22,4 +22,22 @@ internal sealed partial class SourceReferenceResolverVtblDispatcher : ISourceRef
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
+
+    public int SourceReferenceResolver_ReadText(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string resolvedPath,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SourceReferenceResolver>(receiver).ReadText(resolvedPath));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

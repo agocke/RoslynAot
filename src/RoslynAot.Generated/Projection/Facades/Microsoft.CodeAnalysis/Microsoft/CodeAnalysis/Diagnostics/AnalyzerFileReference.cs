@@ -12,14 +12,24 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     {
         public AnalyzerFileReference(string fullPath, IAnalyzerAssemblyLoader assemblyLoader)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IAnalyzerFileReferenceTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAnalyzerFileReferenceTypeVtbl(controlVtbl);
+            int status = vtbl.AnalyzerFileReference_ctor(fullPath, assemblyLoader.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            __roslynAotControlVtbl = controlVtbl;
+            __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAnalyzerFileReferenceVtbl(controlVtbl);
+            __roslynAotHandle = result;
         }
 
         public IAnalyzerAssemblyLoader AssemblyLoader
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IAnalyzerFileReferenceVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.AnalyzerFileReference_get_AssemblyLoader(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IAnalyzerAssemblyLoader.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -70,7 +80,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAnalyzerFileReferenceVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AnalyzerFileReference_Equals_4d319b66(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.AnalyzerFileReference_Equals_d1a10423(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -79,7 +89,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAnalyzerFileReferenceVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AnalyzerFileReference_Equals_a165dbf5(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.AnalyzerFileReference_Equals_7d1397c4(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -112,12 +122,20 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public override System.Collections.Immutable.ImmutableArray<ISourceGenerator> GetGenerators(string language)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IAnalyzerFileReferenceVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.AnalyzerFileReference_GetGenerators_b4f5b94f(__RoslynAotGetHandle(controlVtbl), language, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISourceGenerator>(controlVtbl, result, static (controlVtbl, handle) => ISourceGenerator.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public override System.Collections.Immutable.ImmutableArray<ISourceGenerator> GetGeneratorsForAllLanguages()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IAnalyzerFileReferenceVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.AnalyzerFileReference_GetGeneratorsForAllLanguages(__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISourceGenerator>(controlVtbl, result, static (controlVtbl, handle) => ISourceGenerator.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public override int GetHashCode()

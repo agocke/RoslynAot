@@ -48,7 +48,11 @@ namespace Microsoft.CodeAnalysis
 
         public static EmbeddedText FromSource(string filePath, Text.SourceText text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IEmbeddedTextTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetEmbeddedTextTypeVtbl(controlVtbl);
+            int status = vtbl.EmbeddedText_FromSource(filePath, text.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static EmbeddedText FromStream(string filePath, System.IO.Stream stream, Text.SourceHashAlgorithm checksumAlgorithm = Text.SourceHashAlgorithm.Sha1)
@@ -62,7 +66,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static EmbeddedText __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (EmbeddedText)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("13d73e74-88b4-5f87-8c21-fff9b880b13c")]
+        [System.Runtime.InteropServices.Guid("051c765f-0b6c-59d4-bc5a-beaa1b31113d")]
         internal partial interface __RoslynAotImplementation : EmbeddedText
         {
         }

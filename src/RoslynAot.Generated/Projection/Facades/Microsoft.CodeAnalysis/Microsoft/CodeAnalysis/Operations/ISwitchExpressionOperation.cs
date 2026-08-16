@@ -10,10 +10,51 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface ISwitchExpressionOperation : IOperation
     {
-        System.Collections.Immutable.ImmutableArray<ISwitchExpressionArmOperation> Arms { get; }
+        System.Collections.Immutable.ImmutableArray<ISwitchExpressionArmOperation> Arms
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IISwitchExpressionOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ISwitchExpressionOperation_get_Arms(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISwitchExpressionArmOperation>(controlVtbl, result, static (controlVtbl, handle) => ISwitchExpressionArmOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
 
-        bool IsExhaustive { get; }
+        bool IsExhaustive
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IISwitchExpressionOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ISwitchExpressionOperation_get_IsExhaustive(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
 
-        IOperation Value { get; }
+        IOperation Value
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IISwitchExpressionOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ISwitchExpressionOperation_get_Value(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IISwitchExpressionOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetISwitchExpressionOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static ISwitchExpressionOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ISwitchExpressionOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("5f2eb9e8-ffae-563b-aaa0-1b040d9eefcd")]
+        internal partial interface __RoslynAotImplementation : ISwitchExpressionOperation
+        {
+        }
     }
 }

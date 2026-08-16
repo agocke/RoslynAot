@@ -28,7 +28,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IOperationBlockStartAnalysisContextVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.OperationBlockStartAnalysisContext_get_Compilation(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return Compilation.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -72,7 +76,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IOperationBlockStartAnalysisContextVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.OperationBlockStartAnalysisContext_get_OperationBlocks(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IOperation>(controlVtbl, result, static (controlVtbl, handle) => IOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -92,19 +100,29 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IOperationBlockStartAnalysisContextVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.OperationBlockStartAnalysisContext_get_OwningSymbol(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
         public FlowAnalysis.ControlFlowGraph GetControlFlowGraph(IOperation operationBlock)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationBlockStartAnalysisContextVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationBlockStartAnalysisContext_GetControlFlowGraph(__RoslynAotGetHandle(controlVtbl), operationBlock.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return FlowAnalysis.ControlFlowGraph.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         [System.Runtime.CompilerServices.OverloadResolutionPriority(-1)]
         public void RegisterOperationAction(System.Action<OperationAnalysisContext> action, params OperationKind[] operationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            System.ArgumentNullException.ThrowIfNull(action);
+            System.ArgumentNullException.ThrowIfNull(operationKinds);
+            RegisterOperationAction(action, System.Collections.Immutable.ImmutableArray.CreateRange(operationKinds));
         }
 
         public abstract void RegisterOperationAction(System.Action<OperationAnalysisContext> action, params System.Collections.Immutable.ImmutableArray<OperationKind> operationKinds);

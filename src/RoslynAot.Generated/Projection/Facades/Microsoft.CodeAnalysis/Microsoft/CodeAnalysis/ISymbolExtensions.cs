@@ -12,7 +12,11 @@ namespace Microsoft.CodeAnalysis
     {
         public static IMethodSymbol? GetConstructedReducedFrom(this IMethodSymbol method)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IISymbolExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetISymbolExtensionsVtbl(controlVtbl);
+            int status = vtbl.ISymbolExtensions_GetConstructedReducedFrom(@method.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
     }
 }

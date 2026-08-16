@@ -5,9 +5,9 @@ namespace RoslynAot.Abi;
 
 public static unsafe class AnalyzerAbi
 {
-    public const uint Version = 5;
+    public const uint Version = 7;
     public const string GetAnalyzerModuleEntryPoint =
-        "roslyn_aot_get_analyzer_module_v5";
+        "roslyn_aot_get_analyzer_module_v7";
 
     public const int Success = 0;
     public const int InvalidArgument = unchecked((int)0x80070057);
@@ -45,6 +45,19 @@ public enum AnalyzerDescriptorField
     HelpLinkUri,
 }
 
+public enum AnalyzerActionKind
+{
+    CompilationStart,
+    Compilation,
+    SyntaxNode,
+    Operation,
+    Symbol,
+    OperationBlock,
+    OperationBlockStart,
+    SymbolStart,
+    SyntaxTree,
+}
+
 [GeneratedComInterface]
 [Guid("d9e72345-0901-49d5-b1e4-cdedb34e07ab")]
 public partial interface IAnalyzerModule
@@ -60,7 +73,7 @@ public partial interface IAnalyzerModule
 }
 
 [GeneratedComInterface]
-[Guid("d3d4c4ab-e589-4aa6-a23d-713c1782cebf")]
+[Guid("bded23fa-3a9e-4dd6-b7c2-b0c57602fdc1")]
 public partial interface IAnalyzerTransport
 {
     [PreserveSig]
@@ -89,11 +102,18 @@ public partial interface IAnalyzerTransport
     int Initialize(nint host, nint roslynInterop);
 
     [PreserveSig]
-    int InvokeSyntaxNodeAction(
+    int InvokeAction(
         int actionId,
+        AnalyzerActionKind actionKind,
         nint host,
         nint roslynInterop,
-        long nodeHandle);
+        long contextHandle);
+
+    [PreserveSig]
+    int CopyLastErrorUtf16(
+        nint buffer,
+        int bufferLength,
+        out int requiredLength);
 }
 
 [GeneratedComInterface]
@@ -104,8 +124,16 @@ public partial interface IAnalyzerHost
     int GetVersion(out uint version);
 
     [PreserveSig]
-    int RegisterSyntaxNodeAction(int actionId, int rawKind);
+    int RegisterAction(
+        int actionId,
+        AnalyzerActionKind actionKind,
+        int argument);
 
     [PreserveSig]
-    int ReportDiagnostic(int descriptorIndex, int start, int length);
+    int ReportDiagnostic(
+        int descriptorIndex,
+        int start,
+        int length,
+        nint message,
+        int messageLength);
 }

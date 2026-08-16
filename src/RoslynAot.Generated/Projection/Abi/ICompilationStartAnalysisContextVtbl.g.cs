@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7d4fb1b7-5046-50a3-a8f5-54f4b9416c3e")]
+[Guid("5fd32764-b6bf-5469-891f-7f596db40e07")]
 public partial interface ICompilationStartAnalysisContextVtbl
 {
+
+    [PreserveSig]
+    int CompilationStartAnalysisContext_get_Compilation(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int CompilationStartAnalysisContext_get_Options(

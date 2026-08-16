@@ -25,12 +25,20 @@ namespace Microsoft.CodeAnalysis
 
         public static int Compare(string left, string right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
+            int status = vtbl.CaseInsensitiveComparison_Compare_3d2e1712(left, right, out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result;
         }
 
         public static bool EndsWith(string value, string possibleEnd)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
+            int status = vtbl.CaseInsensitiveComparison_EndsWith(value, possibleEnd, out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public static bool Equals(System.ReadOnlySpan<char> left, System.ReadOnlySpan<char> right)
@@ -40,31 +48,45 @@ namespace Microsoft.CodeAnalysis
 
         public static bool Equals(string left, string right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
+            int status = vtbl.CaseInsensitiveComparison_Equals_063a4d6c(left, right, out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public static int GetHashCode(string value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
+            int status = vtbl.CaseInsensitiveComparison_GetHashCode(value, out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result;
         }
 
         public static bool StartsWith(string value, string possibleStart)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
+            int status = vtbl.CaseInsensitiveComparison_StartsWith(value, possibleStart, out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public static char ToLower(char c)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
-            int status = vtbl.CaseInsensitiveComparison_ToLower_8c71e35e((ushort)c, out ushort result);
+            int status = vtbl.CaseInsensitiveComparison_ToLower_cf8aebcb((ushort)c, out ushort result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return (char)result;
         }
 
         public static string? ToLower(string? value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CaseInsensitiveComparison_ToLower_ce114a20(value, buffer, bufferLength, out requiredLength));
         }
 
         public static void ToLower(System.Text.StringBuilder builder)

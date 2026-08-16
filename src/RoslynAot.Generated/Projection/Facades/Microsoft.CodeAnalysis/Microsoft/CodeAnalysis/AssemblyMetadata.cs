@@ -39,7 +39,11 @@ namespace Microsoft.CodeAnalysis
         [System.Runtime.CompilerServices.OverloadResolutionPriority(-1)]
         public static AssemblyMetadata Create(params ModuleMetadata[] modules)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IAssemblyMetadataTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAssemblyMetadataTypeVtbl(controlVtbl);
+            int status = vtbl.AssemblyMetadata_Create_f1a4ccc3(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(modules, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static AssemblyMetadata Create(System.Collections.Generic.IEnumerable<ModuleMetadata> modules)
@@ -54,7 +58,11 @@ namespace Microsoft.CodeAnalysis
 
         public static AssemblyMetadata CreateFromFile(string path)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IAssemblyMetadataTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAssemblyMetadataTypeVtbl(controlVtbl);
+            int status = vtbl.AssemblyMetadata_CreateFromFile(path, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static AssemblyMetadata CreateFromImage(System.Collections.Generic.IEnumerable<byte> peImage)
@@ -87,7 +95,11 @@ namespace Microsoft.CodeAnalysis
 
         public System.Collections.Immutable.ImmutableArray<ModuleMetadata> GetModules()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IAssemblyMetadataVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.AssemblyMetadata_GetModules(__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ModuleMetadata>(controlVtbl, result, static (controlVtbl, handle) => ModuleMetadata.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public PortableExecutableReference GetReference(DocumentationProvider? documentation = null, System.Collections.Immutable.ImmutableArray<string> aliases = default, bool embedInteropTypes = false, string? filePath = null, string? display = null)
@@ -101,7 +113,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static AssemblyMetadata __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AssemblyMetadata)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f4e001da-527b-58bd-8fba-fbd7d0c98bee")]
+        [System.Runtime.InteropServices.Guid("99d31728-189f-57c5-9048-ffcae78eab21")]
         internal partial interface __RoslynAotImplementation : AssemblyMetadata
         {
         }

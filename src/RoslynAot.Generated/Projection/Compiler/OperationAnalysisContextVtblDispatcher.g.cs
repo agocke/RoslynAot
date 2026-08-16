@@ -56,6 +56,40 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         }
     }
 
+    public int OperationAnalysisContext_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int OperationAnalysisContext_get_ContainingSymbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext>(receiver).ContainingSymbol);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int OperationAnalysisContext_get_FilterSpan(
         long receiver,
         out long result)
@@ -99,6 +133,23 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext>(receiver).IsGeneratedCode ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int OperationAnalysisContext_get_Operation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext>(receiver).Operation);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

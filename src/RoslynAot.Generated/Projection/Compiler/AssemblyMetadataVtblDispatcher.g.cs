@@ -104,6 +104,23 @@ internal sealed partial class AssemblyMetadataVtblDispatcher : IAssemblyMetadata
         }
     }
 
+    public int AssemblyMetadata_GetModules(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AssemblyMetadata>(receiver).GetModules()).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int AssemblyMetadata_get_Kind(
         long receiver,
         out byte result)

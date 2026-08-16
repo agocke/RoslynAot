@@ -23,7 +23,7 @@ internal sealed partial class SyntaxTokenListTypeVtblDispatcher : ISyntaxTokenLi
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxTokenList_ctor_c350cef3(
+    public int SyntaxTokenList_ctor_20fda59a(
         long token,
         out long result)
     {

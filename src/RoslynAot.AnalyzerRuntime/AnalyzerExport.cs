@@ -102,10 +102,10 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
     private DiagnosticAnalyzer? _analyzer;
     private ImmutableArray<DiagnosticDescriptor> _descriptors;
     private Dictionary<DiagnosticDescriptor, int>? _descriptorIndexes;
-    private readonly Dictionary<int, Action<SyntaxNodeAnalysisContext>> _syntaxActions =
-        [];
+    private readonly Dictionary<int, AnalyzerActionEntry> _actions = [];
     private IRoslynControlVtbl? _roslynControlVtbl;
     private int _nextActionId;
+    private readonly ThreadLocal<string?> _lastError = new();
 
     public AnalyzerTransport(Func<DiagnosticAnalyzer> analyzerFactory)
     {
@@ -188,79 +188,153 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
 
     public int Initialize(nint hostPointer, nint roslynInteropPointer)
     {
-        DiagnosticAnalyzer analyzer =
-            EnsureAnalyzer(roslynInteropPointer);
-        if (!TryGetHost(hostPointer, out IAnalyzerHost host) ||
-            !TryGetRoslynControlVtbl(
-                roslynInteropPointer,
-                out IRoslynControlVtbl controlVtbl))
+        _lastError.Value = null;
+        try
         {
-            return AnalyzerAbi.IncompatibleVersion;
-        }
+            DiagnosticAnalyzer analyzer =
+                EnsureAnalyzer(roslynInteropPointer);
+            if (!TryGetHost(hostPointer, out IAnalyzerHost host) ||
+                !TryGetRoslynControlVtbl(
+                    roslynInteropPointer,
+                    out IRoslynControlVtbl controlVtbl))
+            {
+                return AnalyzerAbi.IncompatibleVersion;
+            }
 
-        using (RoslynFacadeRuntime.Enter(controlVtbl))
-        {
-            analyzer.Initialize(
-                AnalyzerFacadeFactory.CreateAnalysisContext(
-                    (action, rawKinds) =>
-                    {
-                        int result = RegisterSyntaxNodeAction(
-                            host,
-                            action,
-                            rawKinds);
-                        if (result != AnalyzerAbi.Success)
+            using (RoslynFacadeRuntime.Enter(controlVtbl))
+            {
+                analyzer.Initialize(
+                    AnalyzerActionFacadeFactory.CreateAnalysisContext(
+                        (actionKind, action, arguments) =>
                         {
-                            throw new InvalidOperationException(
-                                $"Registering an analyzer action failed with 0x{result:x8}.");
-                        }
-                    }));
-        }
+                            int result = RegisterAction(
+                                host,
+                                actionKind,
+                                action,
+                                arguments);
+                            if (result != AnalyzerAbi.Success)
+                            {
+                                throw new InvalidOperationException(
+                                    $"Registering an analyzer action failed with 0x{result:x8}.");
+                            }
+                        }));
+            }
 
-        GC.KeepAlive(host);
-        return AnalyzerAbi.Success;
+            GC.KeepAlive(host);
+            return AnalyzerAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            _lastError.Value = exception.ToString();
+            ReportFailure("initialization", exception);
+            return exception.HResult;
+        }
     }
 
-    public int InvokeSyntaxNodeAction(
+    public int InvokeAction(
         int actionId,
+        AnalyzerActionKind actionKind,
         nint hostPointer,
         nint roslynInteropPointer,
-        long nodeHandle)
+        long contextHandle)
     {
-        if (!_syntaxActions.TryGetValue(actionId, out var action) ||
-            !TryGetHost(hostPointer, out IAnalyzerHost host) ||
-            !TryGetRoslynControlVtbl(
-                roslynInteropPointer,
-                out IRoslynControlVtbl controlVtbl))
+        _lastError.Value = null;
+        try
+        {
+            if (!_actions.TryGetValue(actionId, out AnalyzerActionEntry? entry) ||
+                entry is null ||
+                entry.Kind != actionKind ||
+                !TryGetHost(hostPointer, out IAnalyzerHost host) ||
+                !TryGetRoslynControlVtbl(
+                    roslynInteropPointer,
+                    out IRoslynControlVtbl controlVtbl))
+            {
+                return AnalyzerAbi.InvalidArgument;
+            }
+
+            object context = AnalyzerActionFacadeFactory.CreateActionContext(
+                actionKind,
+                controlVtbl,
+                contextHandle,
+                (nestedKind, action, arguments) =>
+                {
+                    int result = RegisterAction(
+                        host,
+                        nestedKind,
+                        action,
+                        arguments);
+                    if (result != AnalyzerAbi.Success)
+                    {
+                        throw new InvalidOperationException(
+                            $"Registering an analyzer action failed with 0x{result:x8}.");
+                    }
+                },
+                diagnostic => ReportDiagnostic(host, diagnostic));
+            using (RoslynFacadeRuntime.Enter(controlVtbl))
+            {
+                InvokeAction(entry.Action, actionKind, context);
+            }
+
+            GC.KeepAlive(host);
+            return AnalyzerAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            _lastError.Value = exception.ToString();
+            ReportFailure($"{actionKind} action", exception);
+            return exception.HResult;
+        }
+    }
+
+    public int CopyLastErrorUtf16(
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        if (bufferLength < 0)
+        {
+            requiredLength = 0;
+            return AnalyzerAbi.InvalidArgument;
+        }
+
+        string value = _lastError.Value ?? string.Empty;
+        requiredLength = value.Length;
+        if (buffer == 0)
+        {
+            return AnalyzerAbi.Success;
+        }
+
+        if (bufferLength < requiredLength)
         {
             return AnalyzerAbi.InvalidArgument;
         }
 
-        SyntaxNode node = RoslynProxyFactory.CreateSyntaxNode(
-            controlVtbl,
-            nodeHandle);
-        SyntaxNodeAnalysisContext context =
-            AnalyzerFacadeFactory.CreateSyntaxNodeAnalysisContext(
-            node,
-            diagnostic => ReportDiagnostic(host, diagnostic));
-        using (RoslynFacadeRuntime.Enter(controlVtbl))
-        {
-            action(context);
-        }
-
-        GC.KeepAlive(host);
+        value.AsSpan().CopyTo(
+            new Span<char>((void*)buffer, bufferLength));
         return AnalyzerAbi.Success;
     }
 
-    private int RegisterSyntaxNodeAction(
+    private int RegisterAction(
         IAnalyzerHost host,
-        Action<SyntaxNodeAnalysisContext> action,
-        int[] rawKinds)
+        AnalyzerActionKind actionKind,
+        object action,
+        int[] arguments)
     {
         int actionId = _nextActionId++;
-        _syntaxActions.Add(actionId, action);
-        foreach (int rawKind in rawKinds)
+        _actions.Add(
+            actionId,
+            new AnalyzerActionEntry(actionKind, action));
+        if (arguments.Length == 0)
         {
-            int result = host.RegisterSyntaxNodeAction(actionId, rawKind);
+            return host.RegisterAction(actionId, actionKind, 0);
+        }
+
+        foreach (int argument in arguments)
+        {
+            int result = host.RegisterAction(
+                actionId,
+                actionKind,
+                argument);
             if (result != AnalyzerAbi.Success)
             {
                 return result;
@@ -283,10 +357,21 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
                 "The diagnostic descriptor is not in SupportedDiagnostics.");
         }
 
-        int result = host.ReportDiagnostic(
-            descriptorIndex,
-            diagnostic.Location.SourceSpan.Start,
-            diagnostic.Location.SourceSpan.Length);
+        string message = diagnostic.GetMessage();
+        int result;
+        unsafe
+        {
+            fixed (char* messagePointer = message)
+            {
+                result = host.ReportDiagnostic(
+                    descriptorIndex,
+                    diagnostic.Location.SourceSpan.Start,
+                    diagnostic.Location.SourceSpan.Length,
+                    (nint)messagePointer,
+                    message.Length);
+            }
+        }
+
         if (result != AnalyzerAbi.Success)
         {
             throw new InvalidOperationException(
@@ -398,6 +483,69 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
 
         descriptor = _descriptors[descriptorIndex];
         return true;
+    }
+
+    private static void InvokeAction(
+        object action,
+        AnalyzerActionKind actionKind,
+        object context)
+    {
+        switch (actionKind)
+        {
+            case AnalyzerActionKind.CompilationStart:
+                ((Action<CompilationStartAnalysisContext>)action)(
+                    (CompilationStartAnalysisContext)context);
+                break;
+            case AnalyzerActionKind.Compilation:
+                ((Action<CompilationAnalysisContext>)action)(
+                    (CompilationAnalysisContext)context);
+                break;
+            case AnalyzerActionKind.SyntaxNode:
+                ((Action<SyntaxNodeAnalysisContext>)action)(
+                    (SyntaxNodeAnalysisContext)context);
+                break;
+            case AnalyzerActionKind.Operation:
+                ((Action<OperationAnalysisContext>)action)(
+                    (OperationAnalysisContext)context);
+                break;
+            case AnalyzerActionKind.Symbol:
+                ((Action<SymbolAnalysisContext>)action)(
+                    (SymbolAnalysisContext)context);
+                break;
+            case AnalyzerActionKind.OperationBlock:
+                ((Action<OperationBlockAnalysisContext>)action)(
+                    (OperationBlockAnalysisContext)context);
+                break;
+            case AnalyzerActionKind.OperationBlockStart:
+                ((Action<OperationBlockStartAnalysisContext>)action)(
+                    (OperationBlockStartAnalysisContext)context);
+                break;
+            case AnalyzerActionKind.SymbolStart:
+                ((Action<SymbolStartAnalysisContext>)action)(
+                    (SymbolStartAnalysisContext)context);
+                break;
+            case AnalyzerActionKind.SyntaxTree:
+                ((Action<SyntaxTreeAnalysisContext>)action)(
+                    (SyntaxTreeAnalysisContext)context);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(actionKind));
+        }
+    }
+
+    private sealed record AnalyzerActionEntry(
+        AnalyzerActionKind Kind,
+        object Action);
+
+    private void ReportFailure(string operation, Exception exception)
+    {
+        string analyzerName =
+            _analyzer?.GetType().FullName ??
+            _analyzerFactory.Method.DeclaringType?.FullName ??
+            "<unknown>";
+        Console.Error.WriteLine(
+            $"RoslynAot analyzer '{analyzerName}' failed during {operation}:");
+        Console.Error.WriteLine(exception);
     }
 
 }

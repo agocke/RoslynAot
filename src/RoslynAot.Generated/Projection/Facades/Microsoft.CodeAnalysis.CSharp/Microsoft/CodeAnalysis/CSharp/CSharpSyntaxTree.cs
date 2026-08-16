@@ -67,22 +67,38 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public override System.Collections.Generic.IEnumerable<Diagnostic> GetDiagnostics(SyntaxNode node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpSyntaxTreeVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpSyntaxTree_GetDiagnostics_b35085d2(__RoslynAotGetHandle(controlVtbl), node.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle));
         }
 
         public override System.Collections.Generic.IEnumerable<Diagnostic> GetDiagnostics(SyntaxNodeOrToken nodeOrToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpSyntaxTreeVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpSyntaxTree_GetDiagnostics_db33a7fc(__RoslynAotGetHandle(controlVtbl), nodeOrToken.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle));
         }
 
         public override System.Collections.Generic.IEnumerable<Diagnostic> GetDiagnostics(SyntaxToken token)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpSyntaxTreeVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpSyntaxTree_GetDiagnostics_a32bb911(__RoslynAotGetHandle(controlVtbl), token.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle));
         }
 
         public override System.Collections.Generic.IEnumerable<Diagnostic> GetDiagnostics(SyntaxTrivia trivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpSyntaxTreeVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpSyntaxTree_GetDiagnostics_b125d313(__RoslynAotGetHandle(controlVtbl), trivia.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle));
         }
 
         public override System.Collections.Generic.IEnumerable<Diagnostic> GetDiagnostics(System.Threading.CancellationToken cancellationToken = default)

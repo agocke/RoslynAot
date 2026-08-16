@@ -23,6 +23,23 @@ internal sealed partial class SymbolStartAnalysisContextVtblDispatcher : ISymbol
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int SymbolStartAnalysisContext_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.SymbolStartAnalysisContext>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SymbolStartAnalysisContext_get_FilterSpan(
         long receiver,
         out long result)
@@ -83,6 +100,23 @@ internal sealed partial class SymbolStartAnalysisContextVtblDispatcher : ISymbol
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.SymbolStartAnalysisContext>(receiver).Options);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SymbolStartAnalysisContext_get_Symbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.SymbolStartAnalysisContext>(receiver).Symbol);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

@@ -52,7 +52,11 @@ namespace Microsoft.CodeAnalysis
 
         public static ModuleMetadata CreateFromFile(string path)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IModuleMetadataTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetModuleMetadataTypeVtbl(controlVtbl);
+            int status = vtbl.ModuleMetadata_CreateFromFile(path, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ModuleMetadata CreateFromImage(System.Collections.Generic.IEnumerable<byte> peImage)
@@ -115,7 +119,11 @@ namespace Microsoft.CodeAnalysis
 
         public PortableExecutableReference GetReference(DocumentationProvider? documentation = null, string? filePath = null, string? display = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IModuleMetadataVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.ModuleMetadata_GetReference(__RoslynAotGetHandle(controlVtbl), documentation is null ? 0L : documentation.__RoslynAotGetHandle(controlVtbl), filePath, display, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return PortableExecutableReference.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
@@ -124,7 +132,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static ModuleMetadata __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ModuleMetadata)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("adfe224a-f595-53e9-8685-26ff7577bf23")]
+        [System.Runtime.InteropServices.Guid("95e8172f-747c-50e5-9976-1708f5761ba3")]
         internal partial interface __RoslynAotImplementation : ModuleMetadata
         {
         }

@@ -23,7 +23,7 @@ internal sealed partial class ConversionVtblDispatcher : IConversionVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int Conversion_Equals_acba79f2(
+    public int Conversion_Equals_59c1bd24(
         long receiver,
         long other,
         out int result)
@@ -86,12 +86,29 @@ internal sealed partial class ConversionVtblDispatcher : IConversionVtbl
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.Conversion>(receiver).ToString();
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.Conversion>(receiver).ToString();
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Conversion_get_ConstrainedToType(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.Conversion>(receiver).ConstrainedToType);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -619,6 +636,23 @@ internal sealed partial class ConversionVtblDispatcher : IConversionVtbl
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.Conversion>(receiver).IsUserDefined ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Conversion_get_MethodSymbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.Conversion>(receiver).MethodSymbol);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

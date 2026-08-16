@@ -10,7 +10,28 @@ namespace Microsoft.CodeAnalysis
 {
     public partial interface IAnalyzerAssemblyLoader
     {
-        void AddDependencyLocation(string fullPath);
-        System.Reflection.Assembly LoadFromPath(string fullPath);
+        void AddDependencyLocation(string fullPath)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IIAnalyzerAssemblyLoaderVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.IAnalyzerAssemblyLoader_AddDependencyLocation(__RoslynAotGetHandle(controlVtbl), fullPath);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+        }
+
+        System.Reflection.Assembly LoadFromPath(string fullPath)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIAnalyzerAssemblyLoaderVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIAnalyzerAssemblyLoaderVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IAnalyzerAssemblyLoader __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IAnalyzerAssemblyLoader)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("31226cb3-f3fd-5f44-a845-acaad58d9d36")]
+        internal partial interface __RoslynAotImplementation : IAnalyzerAssemblyLoader
+        {
+        }
     }
 }

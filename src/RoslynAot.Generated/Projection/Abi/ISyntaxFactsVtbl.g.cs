@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("994dabf9-f2bd-52ea-9aa7-d378c28b5962")]
+[Guid("6bd5f0ee-2701-50b8-bc96-7da5cc61bc05")]
 public partial interface ISyntaxFactsVtbl
 {
 
@@ -47,14 +47,32 @@ public partial interface ISyntaxFactsVtbl
     );
 
     [PreserveSig]
+    int SyntaxFacts_GetContextualKeywordKind(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out ushort result
+    );
+
+    [PreserveSig]
     int SyntaxFacts_GetInstanceExpression(
         ushort token,
         out ushort result
     );
 
     [PreserveSig]
+    int SyntaxFacts_GetKeywordKind(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out ushort result
+    );
+
+    [PreserveSig]
     int SyntaxFacts_GetLiteralExpression(
         ushort token,
+        out ushort result
+    );
+
+    [PreserveSig]
+    int SyntaxFacts_GetOperatorKind(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string operatorMetadataName,
         out ushort result
     );
 
@@ -71,6 +89,12 @@ public partial interface ISyntaxFactsVtbl
     );
 
     [PreserveSig]
+    int SyntaxFacts_GetPreprocessorKeywordKind(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
+        out ushort result
+    );
+
+    [PreserveSig]
     int SyntaxFacts_GetPrimaryFunction(
         ushort keyword,
         out ushort result
@@ -83,7 +107,7 @@ public partial interface ISyntaxFactsVtbl
     );
 
     [PreserveSig]
-    int SyntaxFacts_GetText_96c87d32(
+    int SyntaxFacts_GetText_ff43e5c0(
         ushort kind,
         nint buffer,
         int bufferLength,
@@ -91,7 +115,7 @@ public partial interface ISyntaxFactsVtbl
     );
 
     [PreserveSig]
-    int SyntaxFacts_GetText_4c6897c1(
+    int SyntaxFacts_GetText_4c5209e5(
         int accessibility,
         nint buffer,
         int bufferLength,
@@ -179,6 +203,12 @@ public partial interface ISyntaxFactsVtbl
     [PreserveSig]
     int SyntaxFacts_IsBinaryExpression(
         ushort token,
+        out int result
+    );
+
+    [PreserveSig]
+    int SyntaxFacts_IsCheckedOperator(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string operatorMetadataName,
         out int result
     );
 
@@ -393,6 +423,12 @@ public partial interface ISyntaxFactsVtbl
     );
 
     [PreserveSig]
+    int SyntaxFacts_IsReservedTupleElementName(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string elementName,
+        out int result
+    );
+
+    [PreserveSig]
     int SyntaxFacts_IsTrivia(
         ushort kind,
         out int result
@@ -419,6 +455,12 @@ public partial interface ISyntaxFactsVtbl
     [PreserveSig]
     int SyntaxFacts_IsUnaryOperatorDeclarationToken(
         ushort token,
+        out int result
+    );
+
+    [PreserveSig]
+    int SyntaxFacts_IsValidIdentifier(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out int result
     );
 

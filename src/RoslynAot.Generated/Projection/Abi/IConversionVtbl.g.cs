@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("674d132a-6003-5363-ac97-be3992a559f3")]
+[Guid("4d3e776b-eb30-5b03-badd-98781ba58bc6")]
 public partial interface IConversionVtbl
 {
 
     [PreserveSig]
-    int Conversion_Equals_acba79f2(
+    int Conversion_Equals_59c1bd24(
         long receiver,
         long other,
         out int result
@@ -41,6 +41,12 @@ public partial interface IConversionVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int Conversion_get_ConstrainedToType(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]
@@ -227,5 +233,11 @@ public partial interface IConversionVtbl
     int Conversion_get_IsUserDefined(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int Conversion_get_MethodSymbol(
+        long receiver,
+        out long result
     );
 }

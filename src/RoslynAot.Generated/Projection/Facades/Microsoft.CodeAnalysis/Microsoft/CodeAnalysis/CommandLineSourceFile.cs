@@ -15,12 +15,26 @@ namespace Microsoft.CodeAnalysis
         private readonly int _dummyPrimitive;
         public CommandLineSourceFile(string path, bool isScript, bool isInputRedirected)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            this = default;
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICommandLineSourceFileTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileTypeVtbl(controlVtbl);
+            int status = vtbl.CommandLineSourceFile_ctor_15beefef(path, isScript ? 1 : 0, isInputRedirected ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            __roslynAotControlVtbl = controlVtbl;
+            __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileVtbl(controlVtbl);
+            __roslynAotHandle = result;
         }
 
         public CommandLineSourceFile(string path, bool isScript)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            this = default;
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICommandLineSourceFileTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileTypeVtbl(controlVtbl);
+            int status = vtbl.CommandLineSourceFile_ctor_2a378a1e(path, isScript ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            __roslynAotControlVtbl = controlVtbl;
+            __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileVtbl(controlVtbl);
+            __roslynAotHandle = result;
         }
 
         public bool IsInputRedirected

@@ -23,6 +23,40 @@ internal sealed partial class SourceProductionContextVtblDispatcher : ISourcePro
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int SourceProductionContext_AddSource_f84fb514(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
+        long sourceText)
+    {
+
+        try
+        {
+            _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SourceProductionContext>(receiver).AddSource(hintName, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(sourceText));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SourceProductionContext_AddSource_39bc7c69(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)
+    {
+
+        try
+        {
+            _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SourceProductionContext>(receiver).AddSource(hintName, source);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SourceProductionContext_ReportDiagnostic(
         long receiver,
         long diagnostic)

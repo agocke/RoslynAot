@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7abda4be-057a-5331-95cf-2b637d080ede")]
+[Guid("3070a93a-3f1d-5c44-af59-a72d49ccde83")]
 public partial interface IForEachStatementInfoVtbl
 {
 
     [PreserveSig]
-    int ForEachStatementInfo_Equals_c22decb1(
+    int ForEachStatementInfo_Equals_7023b721(
         long receiver,
         long other,
         out int result
@@ -36,13 +36,37 @@ public partial interface IForEachStatementInfoVtbl
     );
 
     [PreserveSig]
+    int ForEachStatementInfo_get_CurrentProperty(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int ForEachStatementInfo_get_DisposeAwaitableInfo(
         long receiver,
         out long result
     );
 
     [PreserveSig]
+    int ForEachStatementInfo_get_DisposeMethod(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int ForEachStatementInfo_get_ElementConversion(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ForEachStatementInfo_get_ElementType(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ForEachStatementInfo_get_GetEnumeratorMethod(
         long receiver,
         out long result
     );
@@ -55,6 +79,12 @@ public partial interface IForEachStatementInfoVtbl
 
     [PreserveSig]
     int ForEachStatementInfo_get_MoveNextAwaitableInfo(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ForEachStatementInfo_get_MoveNextMethod(
         long receiver,
         out long result
     );

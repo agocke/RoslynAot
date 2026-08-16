@@ -14,16 +14,50 @@ namespace Microsoft.CodeAnalysis
         {
         }
 
-        public static readonly SymbolEqualityComparer Default = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.UnsupportedStaticField<SymbolEqualityComparer>("Static Roslyn field 'Microsoft.CodeAnalysis.SymbolEqualityComparer.Default' is not implemented by RoslynAot.");
-        public static readonly SymbolEqualityComparer IncludeNullability = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.UnsupportedStaticField<SymbolEqualityComparer>("Static Roslyn field 'Microsoft.CodeAnalysis.SymbolEqualityComparer.IncludeNullability' is not implemented by RoslynAot.");
+        public static readonly SymbolEqualityComparer Default = SymbolEqualityComparer.__RoslynAotCreateLocal(global::RoslynAot.Abi.RoslynWellKnownObject.SymbolEqualityComparerDefault);
+        public static readonly SymbolEqualityComparer IncludeNullability = SymbolEqualityComparer.__RoslynAotCreateLocal(global::RoslynAot.Abi.RoslynWellKnownObject.SymbolEqualityComparerIncludeNullability);
         public bool Equals(ISymbol? x, ISymbol? y)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            if (x is null)
+                return y is null;
+            if (y is null)
+                return false;
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = x.__RoslynAotGetControlVtbl();
+            int status = controlVtbl.SymbolEqualityComparerEquals(__RoslynAotKind, x.__RoslynAotGetHandle(controlVtbl), y.__RoslynAotGetHandle(controlVtbl), out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public int GetHashCode(ISymbol? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            if (obj is null)
+                return 0;
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = obj.__RoslynAotGetControlVtbl();
+            int status = controlVtbl.SymbolEqualityComparerGetHashCode(__RoslynAotKind, obj.__RoslynAotGetHandle(controlVtbl), out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result;
         }
+
+        private global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;
+        private global::RoslynAot.Abi.ISymbolEqualityComparerVtbl? __roslynAotVtbl;
+        private long __roslynAotHandle;
+        internal SymbolEqualityComparer(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.ISymbolEqualityComparerVtbl vtbl, long handle)
+        {
+            __roslynAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __roslynAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __roslynAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::RoslynAot.Abi.ISymbolEqualityComparerVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __roslynAotHandle;
+        }
+
+        internal static SymbolEqualityComparer __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new SymbolEqualityComparer(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSymbolEqualityComparerVtbl(controlVtbl), handle);
     }
 }

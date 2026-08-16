@@ -63,7 +63,11 @@ namespace Microsoft.CodeAnalysis
 
         public static IAliasSymbol? GetSpeculativeAliasInfo(this SemanticModel semanticModel, int position, SyntaxNode nameSyntax, SpeculativeBindingOption bindingOption)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IModelExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetModelExtensionsVtbl(controlVtbl);
+            int status = vtbl.ModelExtensions_GetSpeculativeAliasInfo(semanticModel.__RoslynAotGetHandle(controlVtbl), position, nameSyntax.__RoslynAotGetHandle(controlVtbl), (int)bindingOption, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IAliasSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SymbolInfo GetSpeculativeSymbolInfo(this SemanticModel semanticModel, int position, SyntaxNode expression, SpeculativeBindingOption bindingOption)

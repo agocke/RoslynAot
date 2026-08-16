@@ -10,14 +10,72 @@ namespace Microsoft.CodeAnalysis
 {
     public partial interface INamespaceOrTypeSymbol : ISymbol, System.IEquatable<ISymbol?>
     {
-        bool IsNamespace { get; }
+        bool IsNamespace
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IINamespaceOrTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.INamespaceOrTypeSymbol_get_IsNamespace(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
 
-        bool IsType { get; }
+        bool IsType
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IINamespaceOrTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.INamespaceOrTypeSymbol_get_IsType(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
 
-        System.Collections.Immutable.ImmutableArray<ISymbol> GetMembers();
-        System.Collections.Immutable.ImmutableArray<ISymbol> GetMembers(string name);
-        System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers();
-        System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers(string name, int arity);
-        System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers(string name);
+        System.Collections.Immutable.ImmutableArray<ISymbol> GetMembers()
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IINamespaceOrTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.INamespaceOrTypeSymbol_GetMembers_af2000d5(__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
+        }
+
+        System.Collections.Immutable.ImmutableArray<ISymbol> GetMembers(string name)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IINamespaceOrTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.INamespaceOrTypeSymbol_GetMembers_bd8ab2dd(__RoslynAotGetHandle(controlVtbl), name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
+        }
+
+        System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers()
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers(string name, int arity)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers(string name)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IINamespaceOrTypeSymbolVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetINamespaceOrTypeSymbolVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static INamespaceOrTypeSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (INamespaceOrTypeSymbol)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("8bf01212-8424-5ce9-b8f7-df3dae64e546")]
+        internal partial interface __RoslynAotImplementation : INamespaceOrTypeSymbol
+        {
+        }
     }
 }

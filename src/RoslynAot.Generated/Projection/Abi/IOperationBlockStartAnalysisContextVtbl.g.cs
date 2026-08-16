@@ -12,9 +12,22 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("049eaf7d-08f9-5b98-b2c2-0bdf9ea49ad3")]
+[Guid("bbf0c61e-fdea-5d2c-9b37-846b1011bec1")]
 public partial interface IOperationBlockStartAnalysisContextVtbl
 {
+
+    [PreserveSig]
+    int OperationBlockStartAnalysisContext_GetControlFlowGraph(
+        long receiver,
+        long operationBlock,
+        out long result
+    );
+
+    [PreserveSig]
+    int OperationBlockStartAnalysisContext_get_Compilation(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int OperationBlockStartAnalysisContext_get_FilterSpan(
@@ -35,7 +48,19 @@ public partial interface IOperationBlockStartAnalysisContextVtbl
     );
 
     [PreserveSig]
+    int OperationBlockStartAnalysisContext_get_OperationBlocks(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int OperationBlockStartAnalysisContext_get_Options(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int OperationBlockStartAnalysisContext_get_OwningSymbol(
         long receiver,
         out long result
     );

@@ -23,7 +23,7 @@ internal sealed partial class PreprocessingSymbolInfoVtblDispatcher : IPreproces
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int PreprocessingSymbolInfo_Equals_988876f5(
+    public int PreprocessingSymbolInfo_Equals_09e19fe9(
         long receiver,
         long other,
         out int result)
@@ -67,6 +67,23 @@ internal sealed partial class PreprocessingSymbolInfoVtblDispatcher : IPreproces
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.PreprocessingSymbolInfo>(receiver).IsDefined ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int PreprocessingSymbolInfo_get_Symbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.PreprocessingSymbolInfo>(receiver).Symbol);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

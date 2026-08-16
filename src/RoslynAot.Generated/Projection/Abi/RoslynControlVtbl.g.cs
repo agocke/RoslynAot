@@ -19,9 +19,9 @@ public static unsafe class RoslynAbi
     public const int Unsupported = unchecked((int)0x80131515);
     public const int Failure = unchecked((int)0x80004005);
 
-    public const string ManifestIdentity = "7c9995c003fa950bd6a321dc29c5a38776e9faf5401ce6f2186df7eb71f523d9";
-    public const long ManifestIdentityLow = 834848199969970556L;
-    public const long ManifestIdentityHigh = -8672871673807920170L;
+    public const string ManifestIdentity = "8a0e5056298f8fb5121bf0a0f1503ed17a10fb7028eb376b35e6c1ca977ff9a9";
+    public const long ManifestIdentityLow = -5363911223470453110L;
+    public const long ManifestIdentityHigh = -3369166472509121774L;
 
     public static uint Release(nint instance)
     {
@@ -46,8 +46,14 @@ public enum RoslynRemoteErrorKind
     Failure,
 }
 
+public enum RoslynWellKnownObject
+{
+    SymbolEqualityComparerDefault,
+    SymbolEqualityComparerIncludeNullability,
+}
+
 [GeneratedComInterface]
-[Guid("3c3c2fe6-4ce7-517c-b264-63350d98698e")]
+[Guid("7d26e69e-8fd6-55e3-8372-ddb51dd51bcf")]
 public partial interface IRoslynControlVtbl
 {
     [PreserveSig]
@@ -81,4 +87,47 @@ public partial interface IRoslynControlVtbl
         long vtblIdLow,
         long vtblIdHigh,
         out int isType);
+
+    [PreserveSig]
+    int CreateObjectCollection(
+        nint handles,
+        int count,
+        out long result);
+
+    [PreserveSig]
+    int GetCollectionCount(
+        long handle,
+        out int count);
+
+    [PreserveSig]
+    int GetObjectCollectionItem(
+        long handle,
+        int index,
+        out long result);
+
+    [PreserveSig]
+    int CopyStringCollectionItemUtf16(
+        long handle,
+        int index,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength);
+
+    [PreserveSig]
+    int GetWellKnownObject(
+        RoslynWellKnownObject kind,
+        out long result);
+
+    [PreserveSig]
+    int SymbolEqualityComparerEquals(
+        RoslynWellKnownObject kind,
+        long x,
+        long y,
+        out int result);
+
+    [PreserveSig]
+    int SymbolEqualityComparerGetHashCode(
+        RoslynWellKnownObject kind,
+        long symbol,
+        out int result);
 }

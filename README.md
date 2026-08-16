@@ -9,6 +9,10 @@ objects never cross the module boundary.
 See [ROADMAP.md](ROADMAP.md) for the package goal, completion criteria, and
 remaining product work.
 
+The cross-runtime compatibility problems that must be solved for arbitrary
+analyzers are listed in the
+[analyzer remoting problem inventory](docs/ANALYZER-REMOTING-PROBLEMS.md).
+
 Engineering details are documented with their owning components:
 
 - [Native ABI and marshalling semantics](src/RoslynAot.Abi/README.md)

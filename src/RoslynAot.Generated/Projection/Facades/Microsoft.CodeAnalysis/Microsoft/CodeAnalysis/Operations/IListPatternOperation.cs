@@ -10,12 +10,63 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface IListPatternOperation : IPatternOperation, IOperation
     {
-        ISymbol? DeclaredSymbol { get; }
+        ISymbol? DeclaredSymbol
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIListPatternOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IListPatternOperation_get_DeclaredSymbol(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        ISymbol? IndexerSymbol { get; }
+        ISymbol? IndexerSymbol
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIListPatternOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IListPatternOperation_get_IndexerSymbol(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        ISymbol? LengthSymbol { get; }
+        ISymbol? LengthSymbol
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIListPatternOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IListPatternOperation_get_LengthSymbol(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        System.Collections.Immutable.ImmutableArray<IPatternOperation> Patterns { get; }
+        System.Collections.Immutable.ImmutableArray<IPatternOperation> Patterns
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIListPatternOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IListPatternOperation_get_Patterns(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IPatternOperation>(controlVtbl, result, static (controlVtbl, handle) => IPatternOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIListPatternOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIListPatternOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IListPatternOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IListPatternOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("1339316a-a048-507d-bde8-2e7d0a742326")]
+        internal partial interface __RoslynAotImplementation : IListPatternOperation
+        {
+        }
     }
 }

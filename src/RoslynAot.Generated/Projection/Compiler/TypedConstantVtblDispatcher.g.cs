@@ -23,7 +23,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int TypedConstant_Equals_c2d410e2(
+    public int TypedConstant_Equals_7de14614(
         long receiver,
         long other,
         out int result)
@@ -84,6 +84,23 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         try
         {
             result = (int)_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.TypedConstant>(receiver).Kind;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int TypedConstant_get_Type(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.TypedConstant>(receiver).Type);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

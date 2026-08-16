@@ -23,6 +23,57 @@ internal sealed partial class ControlFlowGraphVtblDispatcher : IControlFlowGraph
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int ControlFlowGraph_get_Blocks(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph>(receiver).Blocks).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowGraph_get_LocalFunctions(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph>(receiver).LocalFunctions).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowGraph_get_OriginalOperation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph>(receiver).OriginalOperation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ControlFlowGraph_get_Parent(
         long receiver,
         out long result)

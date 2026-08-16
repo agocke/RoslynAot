@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("498f9a11-5f74-500d-9e83-c4837a306a4b")]
+[Guid("93b9bd79-70c5-5472-b33d-9d331d2a06cc")]
 public partial interface IEmitOptionsVtbl
 {
 
     [PreserveSig]
-    int EmitOptions_Equals_6cab27c9(
+    int EmitOptions_Equals_33e44ed3(
         long receiver,
         long other,
         out int result
@@ -68,6 +68,27 @@ public partial interface IEmitOptionsVtbl
     int EmitOptions_WithIncludePrivateMembers(
         long receiver,
         int value,
+        out long result
+    );
+
+    [PreserveSig]
+    int EmitOptions_WithOutputNameOverride(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string outputName,
+        out long result
+    );
+
+    [PreserveSig]
+    int EmitOptions_WithPdbFilePath(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        out long result
+    );
+
+    [PreserveSig]
+    int EmitOptions_WithRuntimeMetadataVersion(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string version,
         out long result
     );
 

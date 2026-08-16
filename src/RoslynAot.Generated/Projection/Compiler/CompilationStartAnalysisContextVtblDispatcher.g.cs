@@ -23,6 +23,23 @@ internal sealed partial class CompilationStartAnalysisContextVtblDispatcher : IC
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int CompilationStartAnalysisContext_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.CompilationStartAnalysisContext>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CompilationStartAnalysisContext_get_Options(
         long receiver,
         out long result)

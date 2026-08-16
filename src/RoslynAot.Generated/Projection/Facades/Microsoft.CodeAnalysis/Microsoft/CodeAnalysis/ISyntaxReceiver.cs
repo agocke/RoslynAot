@@ -10,6 +10,23 @@ namespace Microsoft.CodeAnalysis
 {
     public partial interface ISyntaxReceiver
     {
-        void OnVisitSyntaxNode(SyntaxNode syntaxNode);
+        void OnVisitSyntaxNode(SyntaxNode syntaxNode)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IISyntaxReceiverVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.ISyntaxReceiver_OnVisitSyntaxNode(__RoslynAotGetHandle(controlVtbl), syntaxNode.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IISyntaxReceiverVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetISyntaxReceiverVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static ISyntaxReceiver __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ISyntaxReceiver)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("749b3f29-00c0-538f-a627-7ca597cf4927")]
+        internal partial interface __RoslynAotImplementation : ISyntaxReceiver
+        {
+        }
     }
 }

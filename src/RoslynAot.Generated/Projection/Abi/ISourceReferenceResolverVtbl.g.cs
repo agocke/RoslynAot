@@ -12,7 +12,14 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c124db5a-2ef4-50f8-88c1-93db339a83d1")]
+[Guid("d7edcdfd-f866-5961-9f51-01a1d3ceeb64")]
 public partial interface ISourceReferenceResolverVtbl
 {
+
+    [PreserveSig]
+    int SourceReferenceResolver_ReadText(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string resolvedPath,
+        out long result
+    );
 }

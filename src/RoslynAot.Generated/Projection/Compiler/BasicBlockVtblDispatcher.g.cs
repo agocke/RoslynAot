@@ -23,6 +23,23 @@ internal sealed partial class BasicBlockVtblDispatcher : IBasicBlockVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int BasicBlock_get_BranchValue(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock>(receiver).BranchValue);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int BasicBlock_get_ConditionKind(
         long receiver,
         out int result)
@@ -125,6 +142,23 @@ internal sealed partial class BasicBlockVtblDispatcher : IBasicBlockVtbl
         }
     }
 
+    public int BasicBlock_get_Operations(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock>(receiver).Operations).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int BasicBlock_get_Ordinal(
         long receiver,
         out int result)
@@ -134,6 +168,23 @@ internal sealed partial class BasicBlockVtblDispatcher : IBasicBlockVtbl
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock>(receiver).Ordinal;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int BasicBlock_get_Predecessors(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock>(receiver).Predecessors).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

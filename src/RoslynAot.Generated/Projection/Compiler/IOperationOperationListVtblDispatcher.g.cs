@@ -40,6 +40,23 @@ internal sealed partial class IOperationOperationListVtblDispatcher : IIOperatio
         }
     }
 
+    public int IOperation_OperationList_First(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.IOperation.OperationList>(receiver).First());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int IOperation_OperationList_GetEnumerator(
         long receiver,
         out long result)
@@ -57,6 +74,23 @@ internal sealed partial class IOperationOperationListVtblDispatcher : IIOperatio
         }
     }
 
+    public int IOperation_OperationList_Last(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.IOperation.OperationList>(receiver).Last());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int IOperation_OperationList_Reverse(
         long receiver,
         out long result)
@@ -66,6 +100,23 @@ internal sealed partial class IOperationOperationListVtblDispatcher : IIOperatio
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.IOperation.OperationList>(receiver).Reverse());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int IOperation_OperationList_ToImmutableArray(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.IOperation.OperationList>(receiver).ToImmutableArray()).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

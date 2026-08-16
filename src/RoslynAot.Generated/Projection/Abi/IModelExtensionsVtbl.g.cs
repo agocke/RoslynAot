@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e6815da9-7e63-5494-8dbd-64b500c9f102")]
+[Guid("fce1912b-67a6-5866-a459-4b1e66cf8d83")]
 public partial interface IModelExtensionsVtbl
 {
 
@@ -43,6 +43,15 @@ public partial interface IModelExtensionsVtbl
         long semanticModel,
         long firstStatement,
         long lastStatement,
+        out long result
+    );
+
+    [PreserveSig]
+    int ModelExtensions_GetSpeculativeAliasInfo(
+        long semanticModel,
+        int position,
+        long nameSyntax,
+        int bindingOption,
         out long result
     );
 

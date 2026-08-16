@@ -23,7 +23,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int ForEachStatementInfo_Equals_c22decb1(
+    public int ForEachStatementInfo_Equals_7023b721(
         long receiver,
         long other,
         out int result)
@@ -75,6 +75,23 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         }
     }
 
+    public int ForEachStatementInfo_get_CurrentProperty(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo>(receiver).CurrentProperty);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ForEachStatementInfo_get_DisposeAwaitableInfo(
         long receiver,
         out long result)
@@ -92,6 +109,23 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         }
     }
 
+    public int ForEachStatementInfo_get_DisposeMethod(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo>(receiver).DisposeMethod);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ForEachStatementInfo_get_ElementConversion(
         long receiver,
         out long result)
@@ -101,6 +135,40 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo>(receiver).ElementConversion);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ForEachStatementInfo_get_ElementType(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo>(receiver).ElementType);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ForEachStatementInfo_get_GetEnumeratorMethod(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo>(receiver).GetEnumeratorMethod);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -135,6 +203,23 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo>(receiver).MoveNextAwaitableInfo);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ForEachStatementInfo_get_MoveNextMethod(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo>(receiver).MoveNextMethod);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

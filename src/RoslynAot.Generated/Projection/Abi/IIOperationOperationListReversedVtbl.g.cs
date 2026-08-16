@@ -12,12 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("cf993a58-9164-5d40-8067-44e0a654a731")]
+[Guid("6695c09d-84cd-52cd-8f6d-76bb915f2874")]
 public partial interface IIOperationOperationListReversedVtbl
 {
 
     [PreserveSig]
     int IOperation_OperationList_Reversed_GetEnumerator(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int IOperation_OperationList_Reversed_ToImmutableArray(
         long receiver,
         out long result
     );

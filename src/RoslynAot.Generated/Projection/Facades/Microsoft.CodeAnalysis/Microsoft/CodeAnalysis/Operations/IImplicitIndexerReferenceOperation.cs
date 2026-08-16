@@ -10,12 +10,63 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface IImplicitIndexerReferenceOperation : IOperation
     {
-        IOperation Argument { get; }
+        IOperation Argument
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIImplicitIndexerReferenceOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IImplicitIndexerReferenceOperation_get_Argument(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        ISymbol IndexerSymbol { get; }
+        ISymbol IndexerSymbol
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIImplicitIndexerReferenceOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IImplicitIndexerReferenceOperation_get_IndexerSymbol(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        IOperation Instance { get; }
+        IOperation Instance
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIImplicitIndexerReferenceOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IImplicitIndexerReferenceOperation_get_Instance(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        ISymbol LengthSymbol { get; }
+        ISymbol LengthSymbol
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIImplicitIndexerReferenceOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IImplicitIndexerReferenceOperation_get_LengthSymbol(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIImplicitIndexerReferenceOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIImplicitIndexerReferenceOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IImplicitIndexerReferenceOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IImplicitIndexerReferenceOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("010a45c7-3577-52bb-bfd5-e366e48fbe4f")]
+        internal partial interface __RoslynAotImplementation : IImplicitIndexerReferenceOperation
+        {
+        }
     }
 }

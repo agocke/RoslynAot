@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("98bbf1aa-322e-54cc-9f63-2e73c2dd7ef8")]
+[Guid("8ced7bf1-e533-58f5-82ba-8360abcdc2a1")]
 public partial interface IGeneratorAttributeSyntaxContextVtbl
 {
+
+    [PreserveSig]
+    int GeneratorAttributeSyntaxContext_get_Attributes(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int GeneratorAttributeSyntaxContext_get_SemanticModel(
@@ -24,6 +30,12 @@ public partial interface IGeneratorAttributeSyntaxContextVtbl
 
     [PreserveSig]
     int GeneratorAttributeSyntaxContext_get_TargetNode(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int GeneratorAttributeSyntaxContext_get_TargetSymbol(
         long receiver,
         out long result
     );

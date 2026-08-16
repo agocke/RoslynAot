@@ -14,7 +14,14 @@ namespace Microsoft.CodeAnalysis
         private readonly int _dummyPrimitive;
         public SymbolDisplayPart(SymbolDisplayPartKind kind, ISymbol? symbol, string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            this = default;
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISymbolDisplayPartTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayPartTypeVtbl(controlVtbl);
+            int status = vtbl.SymbolDisplayPart_ctor((int)kind, symbol is null ? 0L : symbol.__RoslynAotGetHandle(controlVtbl), text, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            __roslynAotControlVtbl = controlVtbl;
+            __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayPartVtbl(controlVtbl);
+            __roslynAotHandle = result;
         }
 
         public SymbolDisplayPartKind Kind
@@ -33,7 +40,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ISymbolDisplayPartVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.SymbolDisplayPart_get_Symbol(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 

@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IQueryExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.QueryExpressionSyntax_Accept_3fdb8489(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.QueryExpressionSyntax_Accept_61d94930(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -49,7 +49,11 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public QueryExpressionSyntax AddBodyClauses(params QueryClauseSyntax[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IQueryExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.QueryExpressionSyntax_AddBodyClauses(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(items, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public QueryExpressionSyntax Update(FromClauseSyntax fromClause, QueryBodySyntax body)
@@ -85,7 +89,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static QueryExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (QueryExpressionSyntax)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("fe142a7e-3ed9-54a6-b857-e1b6469f3269")]
+        [System.Runtime.InteropServices.Guid("31dce0dd-c621-52c4-a9d8-a616a84843aa")]
         internal partial interface __RoslynAotImplementation : QueryExpressionSyntax
         {
         }

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ee229e93-9e6e-511a-8a41-71943a0a13bb")]
+[Guid("055b682c-b62c-5cc9-a4d1-7a25ae8e05ea")]
 public partial interface ICaptureIdVtbl
 {
 
     [PreserveSig]
-    int CaptureId_Equals_6784afca(
+    int CaptureId_Equals_b73fa5f3(
         long receiver,
         long other,
         out int result

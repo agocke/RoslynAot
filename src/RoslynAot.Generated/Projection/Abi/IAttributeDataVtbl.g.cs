@@ -12,12 +12,24 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ffcb54ca-06e8-5259-9075-31def37e98a0")]
+[Guid("a646c74b-1dbd-562e-9e15-5bb682a40047")]
 public partial interface IAttributeDataVtbl
 {
 
     [PreserveSig]
     int AttributeData_get_ApplicationSyntaxReference(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int AttributeData_get_AttributeClass(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int AttributeData_get_AttributeConstructor(
         long receiver,
         out long result
     );

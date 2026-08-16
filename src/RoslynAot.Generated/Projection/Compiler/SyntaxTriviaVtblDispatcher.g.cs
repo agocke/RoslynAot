@@ -41,7 +41,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         }
     }
 
-    public int SyntaxTrivia_Equals_193a4eaf(
+    public int SyntaxTrivia_Equals_2b043e58(
         long receiver,
         long other,
         out int result)
@@ -51,6 +51,41 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).Equals(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(other)) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTrivia_GetAnnotations_f7cb97d7(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).GetAnnotations(annotationKind)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTrivia_GetDiagnostics(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).GetDiagnostics()).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -128,6 +163,24 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         }
     }
 
+    public int SyntaxTrivia_HasAnnotations_fe346173(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).HasAnnotations(annotationKind) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxTrivia_IsEquivalentTo(
         long receiver,
         long trivia,
@@ -174,12 +227,12 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).ToFullString();
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).ToFullString();
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -199,12 +252,66 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).ToString();
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).ToString();
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTrivia_WithAdditionalAnnotations_cdddfe2a(
+        long receiver,
+        long annotations,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).WithAdditionalAnnotations(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(annotations), static value => (global::Microsoft.CodeAnalysis.SyntaxAnnotation)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTrivia_WithoutAnnotations_0be5e032(
+        long receiver,
+        long annotations,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).WithoutAnnotations(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(annotations), static value => (global::Microsoft.CodeAnalysis.SyntaxAnnotation)value)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTrivia_WithoutAnnotations_691a35c6(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).WithoutAnnotations(annotationKind));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -292,12 +399,12 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).Language;
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(receiver).Language;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

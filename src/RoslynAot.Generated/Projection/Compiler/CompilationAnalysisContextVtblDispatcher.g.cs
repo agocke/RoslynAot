@@ -39,6 +39,23 @@ internal sealed partial class CompilationAnalysisContextVtblDispatcher : ICompil
         }
     }
 
+    public int CompilationAnalysisContext_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.CompilationAnalysisContext>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CompilationAnalysisContext_get_Options(
         long receiver,
         out long result)

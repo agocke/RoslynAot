@@ -281,6 +281,101 @@ public static unsafe class RoslynFacadeRuntime
         return result;
     }
 
+    public static string[] ReadStringCollection(
+        IRoslynControlVtbl controlVtbl,
+        long handle)
+    {
+        int status = controlVtbl.GetCollectionCount(
+            handle,
+            out int count);
+        ThrowIfFailed(controlVtbl, status);
+        if (count < 0)
+        {
+            throw new InvalidOperationException(
+                "The remote collection length is invalid.");
+        }
+
+        var result = new string[count];
+        for (int index = 0; index < result.Length; index++)
+        {
+            int itemIndex = index;
+            result[index] = ReadUtf16String(
+                controlVtbl,
+                (nint buffer, int bufferLength, out int requiredLength) =>
+                    controlVtbl.CopyStringCollectionItemUtf16(
+                        handle,
+                        itemIndex,
+                        buffer,
+                        bufferLength,
+                        out requiredLength)) ??
+                throw new InvalidOperationException(
+                    "The remote string collection contains null.");
+        }
+
+        return result;
+    }
+
+    public static long CreateObjectCollectionHandle(
+        IRoslynControlVtbl controlVtbl,
+        long[] handles)
+    {
+        ArgumentNullException.ThrowIfNull(handles);
+        long result;
+        fixed (long* buffer = handles)
+        {
+            int status = controlVtbl.CreateObjectCollection(
+                (nint)buffer,
+                handles.Length,
+                out result);
+            ThrowIfFailed(controlVtbl, status);
+        }
+
+        return result;
+    }
+
+    public static T[] ReadObjectCollection<T>(
+        IRoslynControlVtbl controlVtbl,
+        long handle,
+        Func<IRoslynControlVtbl, long, T> createProxy)
+    {
+        ArgumentNullException.ThrowIfNull(createProxy);
+        int status = controlVtbl.GetCollectionCount(
+            handle,
+            out int count);
+        ThrowIfFailed(controlVtbl, status);
+        if (count < 0)
+        {
+            throw new InvalidOperationException(
+                "The remote collection length is invalid.");
+        }
+
+        var result = new T[count];
+        for (int index = 0; index < result.Length; index++)
+        {
+            status = controlVtbl.GetObjectCollectionItem(
+                handle,
+                index,
+                out long itemHandle);
+            ThrowIfFailed(controlVtbl, status);
+            result[index] = createProxy(controlVtbl, itemHandle);
+        }
+
+        return result;
+    }
+
+    public static T GetWellKnownObject<T>(
+        RoslynWellKnownObject kind,
+        Func<IRoslynControlVtbl, long, T> createProxy)
+    {
+        ArgumentNullException.ThrowIfNull(createProxy);
+        IRoslynControlVtbl controlVtbl = GetCurrentControlVtbl();
+        int status = controlVtbl.GetWellKnownObject(
+            kind,
+            out long handle);
+        ThrowIfFailed(controlVtbl, status);
+        return createProxy(controlVtbl, handle);
+    }
+
     private sealed class Scope(IRoslynControlVtbl? previous) : IDisposable
     {
         private IRoslynControlVtbl? _previous = previous;

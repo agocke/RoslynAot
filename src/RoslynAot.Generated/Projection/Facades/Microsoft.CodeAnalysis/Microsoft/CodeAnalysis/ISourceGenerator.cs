@@ -11,8 +11,26 @@ namespace Microsoft.CodeAnalysis
     public partial interface ISourceGenerator
     {
         [System.Obsolete("ISourceGenerator is deprecated and should not be implemented. Please implement IIncrementalGenerator instead. See https://github.com/dotnet/roslyn/blob/main/docs/features/incremental-generators.md.")]
-        void Execute(GeneratorExecutionContext context);
+        void Execute(GeneratorExecutionContext context)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
         [System.Obsolete("ISourceGenerator is deprecated and should not be implemented. Please implement IIncrementalGenerator instead. See https://github.com/dotnet/roslyn/blob/main/docs/features/incremental-generators.md.")]
-        void Initialize(GeneratorInitializationContext context);
+        void Initialize(GeneratorInitializationContext context)
+        {
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IISourceGeneratorVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetISourceGeneratorVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static ISourceGenerator __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ISourceGenerator)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("f6d831ae-649e-5627-9ac4-db84329f379c")]
+        internal partial interface __RoslynAotImplementation : ISourceGenerator
+        {
+        }
     }
 }

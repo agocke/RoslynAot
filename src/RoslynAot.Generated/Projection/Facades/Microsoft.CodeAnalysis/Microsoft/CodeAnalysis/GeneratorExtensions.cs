@@ -12,12 +12,20 @@ namespace Microsoft.CodeAnalysis
     {
         public static IIncrementalGenerator AsIncrementalGenerator(this ISourceGenerator sourceGenerator)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IGeneratorExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorExtensionsVtbl(controlVtbl);
+            int status = vtbl.GeneratorExtensions_AsIncrementalGenerator(sourceGenerator.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return IIncrementalGenerator.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ISourceGenerator AsSourceGenerator(this IIncrementalGenerator incrementalGenerator)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IGeneratorExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorExtensionsVtbl(controlVtbl);
+            int status = vtbl.GeneratorExtensions_AsSourceGenerator(incrementalGenerator.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return ISourceGenerator.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static System.Type GetGeneratorType(this IIncrementalGenerator generator)

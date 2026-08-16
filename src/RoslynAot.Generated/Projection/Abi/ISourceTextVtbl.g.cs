@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("406b71a8-76e2-54aa-8732-7bb57a0859fd")]
+[Guid("2a28fd59-823a-5092-b05f-ce440dde44d8")]
 public partial interface ISourceTextVtbl
 {
 
@@ -31,14 +31,31 @@ public partial interface ISourceTextVtbl
     );
 
     [PreserveSig]
-    int SourceText_GetSubText_3c347ab9(
+    int SourceText_GetSubText_0a5021cf(
         long receiver,
         int start,
         out long result
     );
 
     [PreserveSig]
-    int SourceText_ToString_36435385(
+    int SourceText_Replace_9ca925ce(
+        long receiver,
+        long span,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string newText,
+        out long result
+    );
+
+    [PreserveSig]
+    int SourceText_Replace_bb00caac(
+        long receiver,
+        int start,
+        int length,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string newText,
+        out long result
+    );
+
+    [PreserveSig]
+    int SourceText_ToString_98b75795(
         long receiver,
         nint buffer,
         int bufferLength,
@@ -46,7 +63,7 @@ public partial interface ISourceTextVtbl
     );
 
     [PreserveSig]
-    int SourceText_ToString_b3c549ee(
+    int SourceText_ToString_cf373e4b(
         long receiver,
         long span,
         nint buffer,

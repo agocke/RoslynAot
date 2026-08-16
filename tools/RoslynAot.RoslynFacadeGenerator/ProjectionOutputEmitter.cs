@@ -172,6 +172,12 @@ internal static class ProjectionOutputEmitter
             Failure,
         }
 
+        public enum RoslynWellKnownObject
+        {
+            SymbolEqualityComparerDefault,
+            SymbolEqualityComparerIncludeNullability,
+        }
+
         [GeneratedComInterface]
         [Guid("{{model.ControlVtblId:D}}")]
         public partial interface IRoslynControlVtbl
@@ -207,6 +213,49 @@ internal static class ProjectionOutputEmitter
                 long vtblIdLow,
                 long vtblIdHigh,
                 out int isType);
+
+            [PreserveSig]
+            int CreateObjectCollection(
+                nint handles,
+                int count,
+                out long result);
+
+            [PreserveSig]
+            int GetCollectionCount(
+                long handle,
+                out int count);
+
+            [PreserveSig]
+            int GetObjectCollectionItem(
+                long handle,
+                int index,
+                out long result);
+
+            [PreserveSig]
+            int CopyStringCollectionItemUtf16(
+                long handle,
+                int index,
+                nint buffer,
+                int bufferLength,
+                out int requiredLength);
+
+            [PreserveSig]
+            int GetWellKnownObject(
+                RoslynWellKnownObject kind,
+                out long result);
+
+            [PreserveSig]
+            int SymbolEqualityComparerEquals(
+                RoslynWellKnownObject kind,
+                long x,
+                long y,
+                out int result);
+
+            [PreserveSig]
+            int SymbolEqualityComparerGetHashCode(
+                RoslynWellKnownObject kind,
+                long symbol,
+                out int result);
         }
         """;
 
@@ -365,7 +414,9 @@ internal static class ProjectionOutputEmitter
             .Where(
                 vtbl =>
                     !vtbl.IsTypeVtbl &&
-                    vtbl.FacadeType.TypeKind == TypeKind.Class &&
+                    vtbl.FacadeType.TypeKind is
+                        TypeKind.Class or
+                        TypeKind.Interface &&
                     IsExternallyReferenceable(vtbl.FacadeType))
             .OrderByDescending(
                 vtbl => GetInheritanceDepth(vtbl.FacadeType))
@@ -519,16 +570,16 @@ internal static class ProjectionOutputEmitter
         {
             yield return
                 "if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));";
-            yield return $"string? value = {invocation};";
+            yield return $"string? __roslynAotValue = {invocation};";
             yield return
-                "if (value is null) { requiredLength = -1; return RoslynAbi.Success; }";
+                "if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }";
             yield return
-                "requiredLength = value.Length;";
+                "requiredLength = __roslynAotValue.Length;";
             yield return "if (buffer == 0) return RoslynAbi.Success;";
             yield return
                 "if (bufferLength < requiredLength) throw new global::System.ArgumentException(\"The UTF-16 result buffer is too small.\", nameof(bufferLength));";
             yield return
-                "value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));";
+                "__roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));";
             yield break;
         }
 
@@ -551,6 +602,16 @@ internal static class ProjectionOutputEmitter
                 break;
             case AbiTypeKind.Integral:
                 yield return $"result = {invocation};";
+                break;
+            case AbiTypeKind.StringCollection:
+                yield return
+                    $"result = _owner.Objects.AddObject(" +
+                    $"global::System.Linq.Enumerable.ToArray({invocation}));";
+                break;
+            case AbiTypeKind.ObjectCollection:
+                yield return
+                    $"result = _owner.Objects.AddObject(" +
+                    $"global::System.Linq.Enumerable.Cast<object>({invocation}).ToArray());";
                 break;
             case AbiTypeKind.ObjectHandle:
                 yield return operation.ReturnValue.IsNullable
@@ -648,6 +709,11 @@ internal static class ProjectionOutputEmitter
             AbiTypeKind.NullableHandle =>
                 $"{name} == 0 ? null : " +
                 $"_owner.Objects.GetValue<{GetSourceType(parameter.AbiType.RemoteType!)}>({name})",
+            AbiTypeKind.ObjectArray =>
+                $"global::System.Array.ConvertAll(" +
+                $"_owner.Objects.GetObject<object[]>({name}), " +
+                $"static value => ({GetSourceType(((IArrayTypeSymbol)parameter.Symbol.Type).ElementType)})value)",
+            AbiTypeKind.Utf16String => name,
             _ => throw new InvalidOperationException(
                 $"Unsupported compiler argument '{parameter.Symbol}'."),
         };
@@ -664,8 +730,13 @@ internal static class ProjectionOutputEmitter
         }
 
         parameters.AddRange(operation.Parameters.Select(parameter =>
-            $"{parameter.AbiType.AbiType} " +
-            CSharpName.EscapeIdentifier(parameter.Symbol.Name)));
+            parameter.AbiType.Kind == AbiTypeKind.Utf16String
+                ? "[global::System.Runtime.InteropServices.Marshalling.MarshalUsing(" +
+                    "typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] " +
+                    "string " +
+                    CSharpName.EscapeIdentifier(parameter.Symbol.Name)
+                : $"{parameter.AbiType.AbiType} " +
+                    CSharpName.EscapeIdentifier(parameter.Symbol.Name)));
 
         if (operation.ReturnValue.Kind == AbiTypeKind.Utf16String)
         {
@@ -957,6 +1028,101 @@ internal static class ProjectionOutputEmitter
                 }
 
                 return result;
+            }
+
+            public static string[] ReadStringCollection(
+                IRoslynControlVtbl controlVtbl,
+                long handle)
+            {
+                int status = controlVtbl.GetCollectionCount(
+                    handle,
+                    out int count);
+                ThrowIfFailed(controlVtbl, status);
+                if (count < 0)
+                {
+                    throw new InvalidOperationException(
+                        "The remote collection length is invalid.");
+                }
+
+                var result = new string[count];
+                for (int index = 0; index < result.Length; index++)
+                {
+                    int itemIndex = index;
+                    result[index] = ReadUtf16String(
+                        controlVtbl,
+                        (nint buffer, int bufferLength, out int requiredLength) =>
+                            controlVtbl.CopyStringCollectionItemUtf16(
+                                handle,
+                                itemIndex,
+                                buffer,
+                                bufferLength,
+                                out requiredLength)) ??
+                        throw new InvalidOperationException(
+                            "The remote string collection contains null.");
+                }
+
+                return result;
+            }
+
+            public static long CreateObjectCollectionHandle(
+                IRoslynControlVtbl controlVtbl,
+                long[] handles)
+            {
+                ArgumentNullException.ThrowIfNull(handles);
+                long result;
+                fixed (long* buffer = handles)
+                {
+                    int status = controlVtbl.CreateObjectCollection(
+                        (nint)buffer,
+                        handles.Length,
+                        out result);
+                    ThrowIfFailed(controlVtbl, status);
+                }
+
+                return result;
+            }
+
+            public static T[] ReadObjectCollection<T>(
+                IRoslynControlVtbl controlVtbl,
+                long handle,
+                Func<IRoslynControlVtbl, long, T> createProxy)
+            {
+                ArgumentNullException.ThrowIfNull(createProxy);
+                int status = controlVtbl.GetCollectionCount(
+                    handle,
+                    out int count);
+                ThrowIfFailed(controlVtbl, status);
+                if (count < 0)
+                {
+                    throw new InvalidOperationException(
+                        "The remote collection length is invalid.");
+                }
+
+                var result = new T[count];
+                for (int index = 0; index < result.Length; index++)
+                {
+                    status = controlVtbl.GetObjectCollectionItem(
+                        handle,
+                        index,
+                        out long itemHandle);
+                    ThrowIfFailed(controlVtbl, status);
+                    result[index] = createProxy(controlVtbl, itemHandle);
+                }
+
+                return result;
+            }
+
+            public static T GetWellKnownObject<T>(
+                RoslynWellKnownObject kind,
+                Func<IRoslynControlVtbl, long, T> createProxy)
+            {
+                ArgumentNullException.ThrowIfNull(createProxy);
+                IRoslynControlVtbl controlVtbl = GetCurrentControlVtbl();
+                int status = controlVtbl.GetWellKnownObject(
+                    kind,
+                    out long handle);
+                ThrowIfFailed(controlVtbl, status);
+                return createProxy(controlVtbl, handle);
             }
 
             private sealed class Scope(IRoslynControlVtbl? previous) : IDisposable

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("a238ba1e-1929-5e4a-b8a2-6343c3fc6335")]
+[Guid("e54146bc-c53c-5d67-a8a4-cc0dcaee1de6")]
 public partial interface IIOperationOperationListVtbl
 {
 
@@ -23,13 +23,31 @@ public partial interface IIOperationOperationListVtbl
     );
 
     [PreserveSig]
+    int IOperation_OperationList_First(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int IOperation_OperationList_GetEnumerator(
         long receiver,
         out long result
     );
 
     [PreserveSig]
+    int IOperation_OperationList_Last(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int IOperation_OperationList_Reverse(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int IOperation_OperationList_ToImmutableArray(
         long receiver,
         out long result
     );

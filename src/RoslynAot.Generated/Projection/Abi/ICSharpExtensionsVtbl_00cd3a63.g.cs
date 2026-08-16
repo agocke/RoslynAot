@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0ae608f5-c7c0-5c48-8183-7cc5046db841")]
+[Guid("365d8225-96fa-5954-8f84-82f5c92bfa2d")]
 public partial interface ICSharpExtensionsVtbl_00cd3a63
 {
 
@@ -68,6 +68,33 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
+    int CSharpExtensions_ClassifyConversion_fca6ff01(
+        long compilation,
+        long source,
+        long destination,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_ClassifyConversion_50e9dbc8(
+        long semanticModel,
+        long expression,
+        long destination,
+        int isExplicitInSource,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_ClassifyConversion_8095b793(
+        long semanticModel,
+        int position,
+        long expression,
+        long destination,
+        int isExplicitInSource,
+        out long result
+    );
+
+    [PreserveSig]
     int CSharpExtensions_GetAwaitExpressionInfo_92b4f83b(
         long semanticModel,
         long awaitExpression,
@@ -89,6 +116,12 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
+    int CSharpExtensions_GetConversion_f5b5a25f(
+        long conversionExpression,
+        out long result
+    );
+
+    [PreserveSig]
     int CSharpExtensions_GetDeconstructionInfo_5fc2d6fb(
         long semanticModel,
         long assignment,
@@ -99,6 +132,12 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     int CSharpExtensions_GetDeconstructionInfo_e9dc1cb8(
         long semanticModel,
         long @foreach,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetElementConversion(
+        long spread,
         out long result
     );
 
@@ -117,11 +156,32 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
+    int CSharpExtensions_GetInConversion(
+        long compoundAssignment,
+        out long result
+    );
+
+    [PreserveSig]
     int CSharpExtensions_GetInterceptsLocationAttributeSyntax(
         long location,
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetOutConversion(
+        long compoundAssignment,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetSpeculativeAliasInfo(
+        long semanticModel,
+        int position,
+        long nameSyntax,
+        int bindingOption,
+        out long result
     );
 
     [PreserveSig]
@@ -134,7 +194,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_2c643751(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_659e741c(
         long semanticModel,
         int position,
         long attribute,
@@ -142,7 +202,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_94a2bcee(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_f7e912d6(
         long semanticModel,
         int position,
         long constructorInitializer,
@@ -150,7 +210,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_0f8f0756(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_b76c036c(
         long semanticModel,
         int position,
         long expression,
@@ -159,7 +219,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_b8de0754(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_464d6dae(
         long semanticModel,
         int position,
         long expression,
@@ -168,7 +228,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_ebe2f354(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_e19af2ab(
         long semanticModel,
         int position,
         long constructorInitializer,

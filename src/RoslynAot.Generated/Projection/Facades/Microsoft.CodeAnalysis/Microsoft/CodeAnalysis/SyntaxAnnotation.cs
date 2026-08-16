@@ -15,7 +15,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxAnnotationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationTypeVtbl(controlVtbl);
-            int status = vtbl.SyntaxAnnotation_ctor_706a5ffb(out long result);
+            int status = vtbl.SyntaxAnnotation_ctor_3d9c3533(out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationVtbl(controlVtbl);
@@ -24,12 +24,24 @@ namespace Microsoft.CodeAnalysis
 
         public SyntaxAnnotation(string? kind, string? data)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxAnnotationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationTypeVtbl(controlVtbl);
+            int status = vtbl.SyntaxAnnotation_ctor_649fee3b(kind, data, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            __roslynAotControlVtbl = controlVtbl;
+            __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationVtbl(controlVtbl);
+            __roslynAotHandle = result;
         }
 
         public SyntaxAnnotation(string? kind)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxAnnotationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationTypeVtbl(controlVtbl);
+            int status = vtbl.SyntaxAnnotation_ctor_0d8b8281(kind, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            __roslynAotControlVtbl = controlVtbl;
+            __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationVtbl(controlVtbl);
+            __roslynAotHandle = result;
         }
 
         public string? Data
@@ -70,7 +82,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxAnnotationVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxAnnotation_Equals_ae21757d(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.SyntaxAnnotation_Equals_96059184(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("8ffcdd28-c192-577a-b5c3-818990943f55")]
+[Guid("4606a6be-4fa2-5c01-8cbf-aec50beb0568")]
 public partial interface ICodeBlockAnalysisContextVtbl
 {
 
@@ -48,6 +48,12 @@ public partial interface ICodeBlockAnalysisContextVtbl
 
     [PreserveSig]
     int CodeBlockAnalysisContext_get_Options(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CodeBlockAnalysisContext_get_OwningSymbol(
         long receiver,
         out long result
     );

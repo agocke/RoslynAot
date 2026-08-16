@@ -12,14 +12,42 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ceb96fc8-acaa-5d26-b6a9-364120228518")]
+[Guid("24d8e3e5-c575-54f3-8747-417d3bdac8d5")]
 public partial interface IParenthesizedLambdaExpressionSyntaxVtbl : ILambdaExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int ParenthesizedLambdaExpressionSyntax_Accept_4241d1d7(
+    int ParenthesizedLambdaExpressionSyntax_Accept_a7e7299d(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int ParenthesizedLambdaExpressionSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ParenthesizedLambdaExpressionSyntax_AddBlockAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ParenthesizedLambdaExpressionSyntax_AddBlockStatements(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int ParenthesizedLambdaExpressionSyntax_AddParameterListParameters(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

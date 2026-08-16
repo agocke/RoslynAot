@@ -12,14 +12,42 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("685cbbec-d99e-590e-986b-c890ee508216")]
+[Guid("b3916555-fe8d-57e4-9b77-d9218c07df73")]
 public partial interface ISimpleLambdaExpressionSyntaxVtbl : ILambdaExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int SimpleLambdaExpressionSyntax_Accept_83282f5c(
+    int SimpleLambdaExpressionSyntax_Accept_97736934(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int SimpleLambdaExpressionSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int SimpleLambdaExpressionSyntax_AddBlockAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int SimpleLambdaExpressionSyntax_AddBlockStatements(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int SimpleLambdaExpressionSyntax_AddParameterAttributeLists(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

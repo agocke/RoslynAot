@@ -12,7 +12,13 @@ namespace Microsoft.CodeAnalysis
     {
         public RuleSetInclude(string includePath, ReportDiagnostic action)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IRuleSetIncludeTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuleSetIncludeTypeVtbl(controlVtbl);
+            int status = vtbl.RuleSetInclude_ctor(includePath, (int)action, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            __roslynAotControlVtbl = controlVtbl;
+            __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuleSetIncludeVtbl(controlVtbl);
+            __roslynAotHandle = result;
         }
 
         public ReportDiagnostic Action

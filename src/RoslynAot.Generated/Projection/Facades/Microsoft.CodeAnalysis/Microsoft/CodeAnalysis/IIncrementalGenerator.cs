@@ -10,6 +10,23 @@ namespace Microsoft.CodeAnalysis
 {
     public partial interface IIncrementalGenerator
     {
-        void Initialize(IncrementalGeneratorInitializationContext context);
+        void Initialize(IncrementalGeneratorInitializationContext context)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IIIncrementalGeneratorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.IIncrementalGenerator_Initialize(__RoslynAotGetHandle(controlVtbl), context.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIIncrementalGeneratorVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIIncrementalGeneratorVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IIncrementalGenerator __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IIncrementalGenerator)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("c17e3740-412e-55cd-ba93-8a8e741047df")]
+        internal partial interface __RoslynAotImplementation : IIncrementalGenerator
+        {
+        }
     }
 }

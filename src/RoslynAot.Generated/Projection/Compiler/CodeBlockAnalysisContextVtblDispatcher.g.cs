@@ -124,6 +124,23 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         }
     }
 
+    public int CodeBlockAnalysisContext_get_OwningSymbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.CodeBlockAnalysisContext>(receiver).OwningSymbol);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CodeBlockAnalysisContext_get_SemanticModel(
         long receiver,
         out long result)

@@ -107,11 +107,13 @@ builds, caching is incomplete, and only Linux has been validated.
 
 ### Analyzer compatibility
 
-- Add the registration kinds required by the analyzers already present in the
-  whole-assembly test module.
-- Expand syntax, semantic, symbol, operation, options, additional-file, and
-  diagnostic transport according to observed analyzer requirements.
-- Add safe handle lifetime management for larger compilations.
+- Implement the ownership, identity, runtime-type, recursive-value, callback,
+  diagnostic, and lifetime capabilities in the
+  [analyzer remoting problem inventory](docs/ANALYZER-REMOTING-PROBLEMS.md).
+- Generate analyzer-facing Roslyn transport from composable type-shape rules
+  rather than onboarding APIs one member at a time.
+- Exercise every analyzer callback and major Roslyn API family used by
+  representative analyzer assemblies.
 - Preserve analyzer failures as explicit build diagnostics rather than crashes
   or silent omissions.
 - Detect analyzers that cannot run through the native path and apply the
@@ -156,6 +158,10 @@ the product roadmap. The
 [C# compiler](src/CscAot/README.md), and
 [Roslyn facade generator](tools/RoslynAot.RoslynFacadeGenerator/README.md)
 document their own engineering semantics.
+
+The architectural compatibility problems discovered while expanding the C#
+NetAnalyzers module are tracked in the
+[analyzer remoting problem inventory](docs/ANALYZER-REMOTING-PROBLEMS.md).
 
 ## Non-goals
 

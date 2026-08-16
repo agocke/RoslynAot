@@ -6,8 +6,19 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Text;
 
+[assembly: System.Runtime.InteropServices.TypeMapAssociation<
+    RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
+        typeof(IEquatable<ISymbol?>),
+        typeof(ISymbol.__RoslynAotImplementation))]
+
 namespace Microsoft.CodeAnalysis
 {
+
+public partial interface ISymbol
+{
+    bool IEquatable<ISymbol?>.Equals(ISymbol? other) =>
+        SymbolEqualityComparer.Default.Equals(this, other);
+}
 
 public abstract partial class LocalizableString
 {
@@ -280,15 +291,32 @@ public abstract partial class Diagnostic
         new AnalyzerLocalDiagnostic(
             descriptor,
             location ?? Location.__RoslynAotCreateNone(),
+            Array.Empty<Location>(),
+            ImmutableDictionary<string, string?>.Empty,
+            messageArgs ?? []);
+
+    internal static Diagnostic __RoslynAotCreateLocal(
+        DiagnosticDescriptor descriptor,
+        Location? location,
+        IEnumerable<Location>? additionalLocations,
+        ImmutableDictionary<string, string?>? properties,
+        object?[]? messageArgs) =>
+        new AnalyzerLocalDiagnostic(
+            descriptor,
+            location ?? Location.__RoslynAotCreateNone(),
+            additionalLocations?.ToArray() ?? [],
+            properties ?? ImmutableDictionary<string, string?>.Empty,
             messageArgs ?? []);
 
     private sealed class AnalyzerLocalDiagnostic(
         DiagnosticDescriptor descriptor,
         Location location,
+        IReadOnlyList<Location> additionalLocations,
+        ImmutableDictionary<string, string?> properties,
         object?[] messageArgs) : Diagnostic
     {
         public override IReadOnlyList<Location> AdditionalLocations =>
-            Array.Empty<Location>();
+            additionalLocations;
         public override DiagnosticSeverity DefaultSeverity =>
             descriptor.__RoslynAotLocalDefaultSeverity;
         public override DiagnosticDescriptor Descriptor => descriptor;
@@ -296,7 +324,7 @@ public abstract partial class Diagnostic
         public override bool IsSuppressed => false;
         public override Location Location => location;
         public override ImmutableDictionary<string, string?> Properties =>
-            ImmutableDictionary<string, string?>.Empty;
+            properties;
         public override DiagnosticSeverity Severity =>
             descriptor.__RoslynAotLocalDefaultSeverity;
         public override int WarningLevel => 1;
@@ -320,6 +348,9 @@ public abstract partial class Diagnostic
 
 public abstract partial class Location
 {
+    internal bool __RoslynAotIsLocal =>
+        this is AnalyzerLocalLocation;
+
     internal static Location __RoslynAotCreateLocal(TextSpan sourceSpan) =>
         new AnalyzerLocalLocation(
             LocationKind.SourceFile,
@@ -355,6 +386,23 @@ public abstract partial class Location
         public override int GetHashCode() =>
             System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(this);
     }
+}
+
+public sealed partial class SymbolEqualityComparer
+{
+    private RoslynWellKnownObject? __roslynAotKind;
+
+    internal RoslynWellKnownObject __RoslynAotKind =>
+        __roslynAotKind ??
+        throw new InvalidOperationException(
+            "The symbol equality comparer kind is unavailable.");
+
+    internal static SymbolEqualityComparer __RoslynAotCreateLocal(
+        RoslynWellKnownObject kind) =>
+        new()
+        {
+            __roslynAotKind = kind,
+        };
 }
 
 }

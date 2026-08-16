@@ -126,7 +126,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAssemblyIdentityVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AssemblyIdentity_Equals_8ec1fb2f(__RoslynAotGetHandle(controlVtbl), obj is null ? 0L : obj.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.AssemblyIdentity_Equals_71b8bace(__RoslynAotGetHandle(controlVtbl), obj is null ? 0L : obj.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

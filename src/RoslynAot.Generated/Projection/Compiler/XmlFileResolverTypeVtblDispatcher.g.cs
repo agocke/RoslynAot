@@ -23,6 +23,23 @@ internal sealed partial class XmlFileResolverTypeVtblDispatcher : IXmlFileResolv
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int XmlFileResolver_ctor(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string baseDirectory,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(new global::Microsoft.CodeAnalysis.XmlFileResolver(baseDirectory));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int XmlFileResolver_get_Default(
         out long result)
     {

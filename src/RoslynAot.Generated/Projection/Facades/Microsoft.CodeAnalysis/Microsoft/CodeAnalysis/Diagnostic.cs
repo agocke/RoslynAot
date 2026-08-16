@@ -61,7 +61,7 @@ namespace Microsoft.CodeAnalysis
 
         public static Diagnostic Create(DiagnosticDescriptor descriptor, Location? location, System.Collections.Generic.IEnumerable<Location>? additionalLocations, System.Collections.Immutable.ImmutableDictionary<string, string?>? properties, params object? []? messageArgs)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            return __RoslynAotCreateLocal(descriptor, location, additionalLocations, properties, messageArgs);
         }
 
         public static Diagnostic Create(DiagnosticDescriptor descriptor, Location? location, System.Collections.Generic.IEnumerable<Location>? additionalLocations, params object? []? messageArgs)
@@ -99,7 +99,11 @@ namespace Microsoft.CodeAnalysis
         public abstract string GetMessage(System.IFormatProvider? formatProvider = null);
         public Diagnostics.SuppressionInfo? GetSuppressionInfo(Compilation compilation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.Diagnostic_GetSuppressionInfo(__RoslynAotGetHandle(controlVtbl), compilation.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : Diagnostics.SuppressionInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         string System.IFormattable.ToString(string? ignored, System.IFormatProvider? formatProvider)

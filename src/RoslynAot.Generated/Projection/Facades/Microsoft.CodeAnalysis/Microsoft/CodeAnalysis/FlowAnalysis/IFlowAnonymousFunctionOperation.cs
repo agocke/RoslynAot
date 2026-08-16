@@ -10,6 +10,27 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
 {
     public partial interface IFlowAnonymousFunctionOperation : IOperation
     {
-        IMethodSymbol Symbol { get; }
+        IMethodSymbol Symbol
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIFlowAnonymousFunctionOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IFlowAnonymousFunctionOperation_get_Symbol(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIFlowAnonymousFunctionOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIFlowAnonymousFunctionOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IFlowAnonymousFunctionOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IFlowAnonymousFunctionOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("68d89409-398a-5cad-946a-48efec67c0bd")]
+        internal partial interface __RoslynAotImplementation : IFlowAnonymousFunctionOperation
+        {
+        }
     }
 }

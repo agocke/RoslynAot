@@ -23,6 +23,42 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int SyntaxNode_AncestorsAndSelf(
+        long receiver,
+        int ascendOutOfTrivia,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).AncestorsAndSelf(ascendOutOfTrivia != 0)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNode_Ancestors(
+        long receiver,
+        int ascendOutOfTrivia,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).Ancestors(ascendOutOfTrivia != 0)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxNode_ChildNodesAndTokens(
         long receiver,
         out long result)
@@ -32,6 +68,23 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).ChildNodesAndTokens());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNode_ChildNodes(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).ChildNodes()).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -133,7 +186,7 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         }
     }
 
-    public int SyntaxNode_FindTrivia_77d2dcea(
+    public int SyntaxNode_FindTrivia_7588035c(
         long receiver,
         int position,
         int findInsideTrivia,
@@ -144,6 +197,77 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).FindTrivia(position, findInsideTrivia != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNode_GetAnnotatedNodes_223b42b6(
+        long receiver,
+        long syntaxAnnotation,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).GetAnnotatedNodes(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxAnnotation>(syntaxAnnotation))).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNode_GetAnnotatedNodes_36edd4af(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).GetAnnotatedNodes(annotationKind)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNode_GetAnnotations_c30fad37(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).GetAnnotations(annotationKind)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNode_GetDiagnostics(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).GetDiagnostics()).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -280,7 +404,25 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_8d5726aa(
+    public int SyntaxNode_HasAnnotations_009f2ccb(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).HasAnnotations(annotationKind) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNode_IsEquivalentTo_8ad911b9(
         long receiver,
         long other,
         out int result)
@@ -298,7 +440,7 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_99548ef5(
+    public int SyntaxNode_IsEquivalentTo_80af97ca(
         long receiver,
         long node,
         int topLevel,
@@ -363,12 +505,12 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).ToFullString();
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).ToFullString();
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -388,12 +530,12 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).ToString();
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).ToString();
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -583,12 +725,12 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).Language;
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(receiver).Language;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -699,7 +841,7 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         }
     }
 
-    public int CSharpSyntaxNode_Accept_e101478d(
+    public int CSharpSyntaxNode_Accept_1363d360(
         long receiver,
         long visitor)
     {
@@ -734,7 +876,7 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         }
     }
 
-    public int CSharpSyntaxNode_FindTrivia_59a4cbf4(
+    public int CSharpSyntaxNode_FindTrivia_34d44bc3(
         long receiver,
         int position,
         int findInsideTrivia,
@@ -745,6 +887,23 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode>(receiver).FindTrivia(position, findInsideTrivia != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpSyntaxNode_GetDiagnostics(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode>(receiver).GetDiagnostics()).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -874,12 +1033,12 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode>(receiver).Language;
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode>(receiver).Language;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -888,7 +1047,7 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         }
     }
 
-    public int ConstructorInitializerSyntax_Accept_cb078a56(
+    public int ConstructorInitializerSyntax_Accept_d8f3bf69(
         long receiver,
         long visitor)
     {
@@ -896,6 +1055,24 @@ internal sealed partial class ConstructorInitializerSyntaxVtblDispatcher : ICons
         try
         {
             _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorInitializerSyntax>(receiver).Accept(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor>(visitor));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ConstructorInitializerSyntax_AddArgumentListArguments(
+        long receiver,
+        long items,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorInitializerSyntax>(receiver).AddArgumentListArguments(global::System.Array.ConvertAll(_owner.Objects.GetObject<object[]>(items), static value => (global::Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax)value)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

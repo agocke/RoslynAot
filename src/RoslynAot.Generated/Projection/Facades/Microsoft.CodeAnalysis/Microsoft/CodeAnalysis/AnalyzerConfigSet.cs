@@ -36,7 +36,11 @@ namespace Microsoft.CodeAnalysis
 
         public AnalyzerConfigOptionsResult GetOptionsForSourcePath(string sourcePath)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IAnalyzerConfigSetVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.AnalyzerConfigSet_GetOptionsForSourcePath(__RoslynAotGetHandle(controlVtbl), sourcePath, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return AnalyzerConfigOptionsResult.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
@@ -45,7 +49,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static AnalyzerConfigSet __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AnalyzerConfigSet)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("6d3f1f81-67c5-5de8-beef-0bec54b09bfd")]
+        [System.Runtime.InteropServices.Guid("6fa6b2a5-c1f1-5d4f-b69a-a42e0c03773b")]
         internal partial interface __RoslynAotImplementation : AnalyzerConfigSet
         {
         }

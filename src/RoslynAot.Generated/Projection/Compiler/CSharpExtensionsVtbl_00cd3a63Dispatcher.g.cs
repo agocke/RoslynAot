@@ -151,6 +151,66 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
+    public int CSharpExtensions_ClassifyConversion_fca6ff01(
+        long compilation,
+        long source,
+        long destination,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.ClassifyConversion(compilation == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(compilation), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ITypeSymbol>(source), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ITypeSymbol>(destination)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpExtensions_ClassifyConversion_50e9dbc8(
+        long semanticModel,
+        long expression,
+        long destination,
+        int isExplicitInSource,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.ClassifyConversion(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ITypeSymbol>(destination), isExplicitInSource != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpExtensions_ClassifyConversion_8095b793(
+        long semanticModel,
+        int position,
+        long expression,
+        long destination,
+        int isExplicitInSource,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.ClassifyConversion(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), position, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>(expression), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ITypeSymbol>(destination), isExplicitInSource != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CSharpExtensions_GetAwaitExpressionInfo_92b4f83b(
         long semanticModel,
         long awaitExpression,
@@ -205,6 +265,23 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
+    public int CSharpExtensions_GetConversion_f5b5a25f(
+        long conversionExpression,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetConversion(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Operations.IConversionOperation>(conversionExpression)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CSharpExtensions_GetDeconstructionInfo_5fc2d6fb(
         long semanticModel,
         long assignment,
@@ -233,6 +310,23 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         try
         {
             result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetDeconstructionInfo(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.ForEachVariableStatementSyntax>(@foreach)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpExtensions_GetElementConversion(
+        long spread,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetElementConversion(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Operations.ISpreadOperation>(spread)));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -277,6 +371,23 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
+    public int CSharpExtensions_GetInConversion(
+        long compoundAssignment,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetInConversion(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Operations.ICompoundAssignmentOperation>(compoundAssignment)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int CSharpExtensions_GetInterceptsLocationAttributeSyntax(
         long location,
         nint buffer,
@@ -288,12 +399,49 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetInterceptsLocationAttributeSyntax(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation>(location));
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetInterceptsLocationAttributeSyntax(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation>(location));
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpExtensions_GetOutConversion(
+        long compoundAssignment,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetOutConversion(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Operations.ICompoundAssignmentOperation>(compoundAssignment)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpExtensions_GetSpeculativeAliasInfo(
+        long semanticModel,
+        int position,
+        long nameSyntax,
+        int bindingOption,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetSpeculativeAliasInfo(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), position, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax>(nameSyntax), (global::Microsoft.CodeAnalysis.SpeculativeBindingOption)bindingOption));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -322,7 +470,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_2c643751(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_659e741c(
         long semanticModel,
         int position,
         long attribute,
@@ -341,7 +489,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_94a2bcee(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_f7e912d6(
         long semanticModel,
         int position,
         long constructorInitializer,
@@ -360,7 +508,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_0f8f0756(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_b76c036c(
         long semanticModel,
         int position,
         long expression,
@@ -380,7 +528,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_b8de0754(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_464d6dae(
         long semanticModel,
         int position,
         long expression,
@@ -400,7 +548,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_ebe2f354(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_e19af2ab(
         long semanticModel,
         int position,
         long constructorInitializer,

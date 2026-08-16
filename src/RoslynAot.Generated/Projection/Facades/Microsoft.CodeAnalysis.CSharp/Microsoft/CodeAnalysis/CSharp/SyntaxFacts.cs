@@ -65,7 +65,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxKind GetContextualKeywordKind(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactsVtbl(controlVtbl);
+            int status = vtbl.SyntaxFacts_GetContextualKeywordKind(text, out ushort result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return (SyntaxKind)result;
         }
 
         public static System.Collections.Generic.IEnumerable<SyntaxKind> GetContextualKeywordKinds()
@@ -84,7 +88,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxKind GetKeywordKind(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactsVtbl(controlVtbl);
+            int status = vtbl.SyntaxFacts_GetKeywordKind(text, out ushort result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return (SyntaxKind)result;
         }
 
         public static System.Collections.Generic.IEnumerable<SyntaxKind> GetKeywordKinds()
@@ -103,7 +111,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxKind GetOperatorKind(string operatorMetadataName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactsVtbl(controlVtbl);
+            int status = vtbl.SyntaxFacts_GetOperatorKind(operatorMetadataName, out ushort result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return (SyntaxKind)result;
         }
 
         public static SyntaxKind GetPostfixUnaryExpression(SyntaxKind token)
@@ -126,7 +138,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxKind GetPreprocessorKeywordKind(string text)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactsVtbl(controlVtbl);
+            int status = vtbl.SyntaxFacts_GetPreprocessorKeywordKind(text, out ushort result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return (SyntaxKind)result;
         }
 
         public static System.Collections.Generic.IEnumerable<SyntaxKind> GetPreprocessorKeywordKinds()
@@ -166,14 +182,14 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactsVtbl(controlVtbl);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxFacts_GetText_4c6897c1((int)accessibility, buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxFacts_GetText_4c5209e5((int)accessibility, buffer, bufferLength, out requiredLength))!;
         }
 
         public static string GetText(SyntaxKind kind)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactsVtbl(controlVtbl);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxFacts_GetText_96c87d32((ushort)kind, buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxFacts_GetText_ff43e5c0((ushort)kind, buffer, bufferLength, out requiredLength))!;
         }
 
         public static SyntaxKind GetTypeDeclarationKind(SyntaxKind kind)
@@ -304,7 +320,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static bool IsCheckedOperator(string operatorMetadataName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactsVtbl(controlVtbl);
+            int status = vtbl.SyntaxFacts_IsCheckedOperator(operatorMetadataName, out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public static bool IsContextualKeyword(SyntaxKind kind)
@@ -630,7 +650,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static bool IsReservedTupleElementName(string elementName)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactsVtbl(controlVtbl);
+            int status = vtbl.SyntaxFacts_IsReservedTupleElementName(elementName, out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public static bool IsTrivia(SyntaxKind kind)
@@ -680,7 +704,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static bool IsValidIdentifier(string? name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactsVtbl(controlVtbl);
+            int status = vtbl.SyntaxFacts_IsValidIdentifier(name, out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public static bool IsWhitespace(char ch)

@@ -102,7 +102,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static DllImportData __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (DllImportData)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f170fb9a-88f6-541e-a92a-6a3e4c22ca64")]
+        [System.Runtime.InteropServices.Guid("61287bfe-f194-5cb0-9918-22c1d3e44b58")]
         internal partial interface __RoslynAotImplementation : DllImportData
         {
         }

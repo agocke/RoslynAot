@@ -16,7 +16,11 @@ namespace Microsoft.CodeAnalysis
         public abstract System.IO.Stream OpenRead(string resolvedPath);
         public virtual Text.SourceText ReadText(string resolvedPath)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISourceReferenceResolverVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SourceReferenceResolver_ReadText(__RoslynAotGetHandle(controlVtbl), resolvedPath, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Text.SourceText.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public abstract string? ResolveReference(string path, string? baseFilePath);

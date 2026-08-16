@@ -23,7 +23,7 @@ internal sealed partial class CaptureIdVtblDispatcher : ICaptureIdVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CaptureId_Equals_6784afca(
+    public int CaptureId_Equals_b73fa5f3(
         long receiver,
         long other,
         out int result)

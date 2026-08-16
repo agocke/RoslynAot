@@ -39,4 +39,38 @@ internal sealed partial class AttributeDataVtblDispatcher : IAttributeDataVtbl
             return _owner.SetError(exception);
         }
     }
+
+    public int AttributeData_get_AttributeClass(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AttributeData>(receiver).AttributeClass);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AttributeData_get_AttributeConstructor(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AttributeData>(receiver).AttributeConstructor);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

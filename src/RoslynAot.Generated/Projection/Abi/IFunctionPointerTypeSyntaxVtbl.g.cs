@@ -12,14 +12,21 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7b8a0642-c23f-59ff-bd40-a06efe301d5c")]
+[Guid("66cf0012-aa03-506d-a1fb-d3c7aa273fd3")]
 public partial interface IFunctionPointerTypeSyntaxVtbl : ITypeSyntaxVtbl
 {
 
     [PreserveSig]
-    int FunctionPointerTypeSyntax_Accept_3e65bc03(
+    int FunctionPointerTypeSyntax_Accept_3e82b3c4(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int FunctionPointerTypeSyntax_AddParameterListParameters(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

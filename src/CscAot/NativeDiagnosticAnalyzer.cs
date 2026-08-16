@@ -118,20 +118,52 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
                 _transport.Initialize(hostPointer, interopPointer));
     }
 
-    internal void InvokeSyntaxNodeAction(
+    internal void InvokeAction(
         int actionId,
-        SyntaxNodeAnalysisContext context)
+        AnalyzerActionKind actionKind,
+        object context)
     {
         var host = new CompilerAnalyzerHost(this, context);
-        long nodeHandle = _roslynInterop.AddObject(context.Node);
+        long contextHandle = actionKind switch
+        {
+            AnalyzerActionKind.CompilationStart =>
+                _roslynInterop.AddObject(
+                    (CompilationStartAnalysisContext)context),
+            AnalyzerActionKind.Compilation =>
+                _roslynInterop.Objects.AddValue(
+                    (CompilationAnalysisContext)context),
+            AnalyzerActionKind.SyntaxNode =>
+                _roslynInterop.Objects.AddValue(
+                    (SyntaxNodeAnalysisContext)context),
+            AnalyzerActionKind.Operation =>
+                _roslynInterop.Objects.AddValue(
+                    (OperationAnalysisContext)context),
+            AnalyzerActionKind.Symbol =>
+                _roslynInterop.Objects.AddValue(
+                    (SymbolAnalysisContext)context),
+            AnalyzerActionKind.OperationBlock =>
+                _roslynInterop.Objects.AddValue(
+                    (OperationBlockAnalysisContext)context),
+            AnalyzerActionKind.OperationBlockStart =>
+                _roslynInterop.AddObject(
+                    (OperationBlockStartAnalysisContext)context),
+            AnalyzerActionKind.SymbolStart =>
+                _roslynInterop.AddObject(
+                    (SymbolStartAnalysisContext)context),
+            AnalyzerActionKind.SyntaxTree =>
+                _roslynInterop.Objects.AddValue(
+                    (SyntaxTreeAnalysisContext)context),
+            _ => throw new ArgumentOutOfRangeException(nameof(actionKind)),
+        };
         InvokeWithHost(
             host,
             (hostPointer, interopPointer) =>
-                _transport.InvokeSyntaxNodeAction(
+                _transport.InvokeAction(
                 actionId,
+                actionKind,
                 hostPointer,
                 interopPointer,
-                nodeHandle));
+                contextHandle));
     }
 
     internal bool TryGetDescriptor(
@@ -261,7 +293,20 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
                 CreateComInterfaceFlags.None);
         try
         {
-            ThrowIfFailed(invoke(hostPointer, interopPointer));
+            int result = invoke(hostPointer, interopPointer);
+            if (result != AnalyzerAbi.Success)
+            {
+                string diagnosticIds = string.Join(
+                    ", ",
+                    SupportedDiagnostics.Select(
+                        static descriptor => descriptor.Id));
+                string analyzerError = ReadLastAnalyzerError();
+                throw new InvalidOperationException(
+                    $"Analyzer transport operation for [{diagnosticIds}] failed with 0x{result:x8}." +
+                    (analyzerError.Length == 0
+                        ? string.Empty
+                        : $"{Environment.NewLine}{analyzerError}"));
+            }
             GC.KeepAlive(host);
             GC.KeepAlive(_roslynInterop);
         }
@@ -270,6 +315,34 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
             AnalyzerAbi.Release(interopPointer);
             AnalyzerAbi.Release(hostPointer);
         }
+    }
+
+    private string ReadLastAnalyzerError()
+    {
+        ThrowIfFailed(
+            _transport.CopyLastErrorUtf16(
+                0,
+                0,
+                out int charCount));
+        return string.Create(
+            charCount,
+            _transport,
+            static (buffer, transport) =>
+            {
+                fixed (char* bufferPointer = buffer)
+                {
+                    ThrowIfFailed(
+                        transport.CopyLastErrorUtf16(
+                            (nint)bufferPointer,
+                            buffer.Length,
+                            out int copiedCharCount));
+                    if (copiedCharCount != buffer.Length)
+                    {
+                        throw new InvalidOperationException(
+                            "The analyzer failure text changed while being copied.");
+                    }
+                }
+            });
     }
 
     private static void ThrowIfFailed(int result)
@@ -286,25 +359,22 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
 internal sealed partial class CompilerAnalyzerHost : IAnalyzerHost
 {
     private readonly NativeDiagnosticAnalyzer _analyzer;
-    private readonly AnalysisContext? _analysisContext;
-    private readonly SyntaxNodeAnalysisContext _syntaxContext;
-    private readonly bool _hasSyntaxContext;
+    private readonly object _context;
 
     public CompilerAnalyzerHost(
         NativeDiagnosticAnalyzer analyzer,
         AnalysisContext analysisContext)
     {
         _analyzer = analyzer;
-        _analysisContext = analysisContext;
+        _context = analysisContext;
     }
 
     public CompilerAnalyzerHost(
         NativeDiagnosticAnalyzer analyzer,
-        SyntaxNodeAnalysisContext syntaxContext)
+        object context)
     {
         _analyzer = analyzer;
-        _syntaxContext = syntaxContext;
-        _hasSyntaxContext = true;
+        _context = context;
     }
 
     public int GetVersion(out uint version)
@@ -313,41 +383,352 @@ internal sealed partial class CompilerAnalyzerHost : IAnalyzerHost
         return AnalyzerAbi.Success;
     }
 
-    public int RegisterSyntaxNodeAction(int actionId, int rawKind)
+    public int RegisterAction(
+        int actionId,
+        AnalyzerActionKind actionKind,
+        int argument)
     {
-        if (_analysisContext is null)
+        try
+        {
+            return _context switch
+            {
+                AnalysisContext context =>
+                    RegisterAction(
+                        context,
+                        actionId,
+                        actionKind,
+                        argument),
+                CompilationStartAnalysisContext context =>
+                    RegisterAction(
+                        context,
+                        actionId,
+                        actionKind,
+                        argument),
+                OperationBlockStartAnalysisContext context =>
+                    RegisterAction(
+                        context,
+                        actionId,
+                        actionKind,
+                        argument),
+                SymbolStartAnalysisContext context =>
+                    RegisterAction(
+                        context,
+                        actionId,
+                        actionKind,
+                        argument),
+                _ => AnalyzerAbi.InvalidArgument,
+            };
+        }
+        catch (ArgumentException)
         {
             return AnalyzerAbi.InvalidArgument;
         }
-
-        _analysisContext.RegisterSyntaxNodeAction(
-            context => _analyzer.InvokeSyntaxNodeAction(
-                actionId,
-                context),
-            (SyntaxKind)rawKind);
-        return AnalyzerAbi.Success;
     }
 
-    public int ReportDiagnostic(
+    public unsafe int ReportDiagnostic(
         int descriptorIndex,
         int start,
-        int length)
+        int length,
+        nint message,
+        int messageLength)
     {
-        if (!_hasSyntaxContext ||
-            !_analyzer.TryGetDescriptor(
+        if (!_analyzer.TryGetDescriptor(
                 descriptorIndex,
                 out DiagnosticDescriptor descriptor) ||
             start < 0 ||
-            length < 0)
+            length < 0 ||
+            messageLength < 0 ||
+            (message == 0 && messageLength != 0))
         {
             return AnalyzerAbi.InvalidArgument;
         }
 
-        Location location = Location.Create(
-            _syntaxContext.Node.SyntaxTree,
-            new TextSpan(start, length));
-        _syntaxContext.ReportDiagnostic(
-            Diagnostic.Create(descriptor, location));
+        SyntaxTree? tree = GetSourceTree();
+        Location location = tree is null
+            ? Location.None
+            : Location.Create(tree, new TextSpan(start, length));
+        string diagnosticMessage = messageLength == 0
+            ? string.Empty
+            : new string((char*)message, 0, messageLength);
+        Diagnostic diagnostic =
+            new NativeAnalyzerDiagnostic(
+                descriptor,
+                location,
+                diagnosticMessage);
+        switch (_context)
+        {
+            case CompilationAnalysisContext context:
+                context.ReportDiagnostic(diagnostic);
+                break;
+            case SyntaxNodeAnalysisContext context:
+                context.ReportDiagnostic(diagnostic);
+                break;
+            case OperationAnalysisContext context:
+                context.ReportDiagnostic(diagnostic);
+                break;
+            case SymbolAnalysisContext context:
+                context.ReportDiagnostic(diagnostic);
+                break;
+            case OperationBlockAnalysisContext context:
+                context.ReportDiagnostic(diagnostic);
+                break;
+            case SyntaxTreeAnalysisContext context:
+                context.ReportDiagnostic(diagnostic);
+                break;
+            default:
+                return AnalyzerAbi.InvalidArgument;
+        }
+
         return AnalyzerAbi.Success;
     }
+
+    private int RegisterAction(
+        AnalysisContext context,
+        int actionId,
+        AnalyzerActionKind actionKind,
+        int argument)
+    {
+        switch (actionKind)
+        {
+            case AnalyzerActionKind.CompilationStart:
+                context.RegisterCompilationStartAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            case AnalyzerActionKind.Compilation:
+                context.RegisterCompilationAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            case AnalyzerActionKind.SyntaxNode:
+                context.RegisterSyntaxNodeAction(
+                    value => Invoke(actionId, actionKind, value),
+                    (SyntaxKind)argument);
+                break;
+            case AnalyzerActionKind.Operation:
+                context.RegisterOperationAction(
+                    value => Invoke(actionId, actionKind, value),
+                    (OperationKind)argument);
+                break;
+            case AnalyzerActionKind.Symbol:
+                context.RegisterSymbolAction(
+                    value => Invoke(actionId, actionKind, value),
+                    (SymbolKind)argument);
+                break;
+            case AnalyzerActionKind.OperationBlock:
+                context.RegisterOperationBlockAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            case AnalyzerActionKind.OperationBlockStart:
+                context.RegisterOperationBlockStartAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            case AnalyzerActionKind.SymbolStart:
+                context.RegisterSymbolStartAction(
+                    value => Invoke(actionId, actionKind, value),
+                    (SymbolKind)argument);
+                break;
+            case AnalyzerActionKind.SyntaxTree:
+                context.RegisterSyntaxTreeAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            default:
+                return AnalyzerAbi.InvalidArgument;
+        }
+
+        return AnalyzerAbi.Success;
+    }
+
+    private int RegisterAction(
+        CompilationStartAnalysisContext context,
+        int actionId,
+        AnalyzerActionKind actionKind,
+        int argument)
+    {
+        switch (actionKind)
+        {
+            case AnalyzerActionKind.Compilation:
+                context.RegisterCompilationEndAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            case AnalyzerActionKind.SyntaxNode:
+                context.RegisterSyntaxNodeAction(
+                    value => Invoke(actionId, actionKind, value),
+                    (SyntaxKind)argument);
+                break;
+            case AnalyzerActionKind.Operation:
+                context.RegisterOperationAction(
+                    value => Invoke(actionId, actionKind, value),
+                    (OperationKind)argument);
+                break;
+            case AnalyzerActionKind.Symbol:
+                context.RegisterSymbolAction(
+                    value => Invoke(actionId, actionKind, value),
+                    (SymbolKind)argument);
+                break;
+            case AnalyzerActionKind.OperationBlock:
+                context.RegisterOperationBlockAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            case AnalyzerActionKind.OperationBlockStart:
+                context.RegisterOperationBlockStartAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            case AnalyzerActionKind.SymbolStart:
+                context.RegisterSymbolStartAction(
+                    value => Invoke(actionId, actionKind, value),
+                    (SymbolKind)argument);
+                break;
+            case AnalyzerActionKind.SyntaxTree:
+                context.RegisterSyntaxTreeAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            default:
+                return AnalyzerAbi.InvalidArgument;
+        }
+
+        return AnalyzerAbi.Success;
+    }
+
+    private int RegisterAction(
+        OperationBlockStartAnalysisContext context,
+        int actionId,
+        AnalyzerActionKind actionKind,
+        int argument)
+    {
+        switch (actionKind)
+        {
+            case AnalyzerActionKind.Operation:
+                context.RegisterOperationAction(
+                    value => Invoke(actionId, actionKind, value),
+                    (OperationKind)argument);
+                break;
+            case AnalyzerActionKind.OperationBlock:
+                context.RegisterOperationBlockEndAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            default:
+                return AnalyzerAbi.InvalidArgument;
+        }
+
+        return AnalyzerAbi.Success;
+    }
+
+    private int RegisterAction(
+        SymbolStartAnalysisContext context,
+        int actionId,
+        AnalyzerActionKind actionKind,
+        int argument)
+    {
+        switch (actionKind)
+        {
+            case AnalyzerActionKind.SyntaxNode:
+                context.RegisterSyntaxNodeAction(
+                    value => Invoke(actionId, actionKind, value),
+                    (SyntaxKind)argument);
+                break;
+            case AnalyzerActionKind.Operation:
+                context.RegisterOperationAction(
+                    value => Invoke(actionId, actionKind, value),
+                    (OperationKind)argument);
+                break;
+            case AnalyzerActionKind.Symbol:
+                context.RegisterSymbolEndAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            case AnalyzerActionKind.OperationBlock:
+                context.RegisterOperationBlockAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            case AnalyzerActionKind.OperationBlockStart:
+                context.RegisterOperationBlockStartAction(
+                    value => Invoke(actionId, actionKind, value));
+                break;
+            default:
+                return AnalyzerAbi.InvalidArgument;
+        }
+
+        return AnalyzerAbi.Success;
+    }
+
+    private void Invoke(
+        int actionId,
+        AnalyzerActionKind actionKind,
+        object context) =>
+        _analyzer.InvokeAction(actionId, actionKind, context);
+
+    private SyntaxTree? GetSourceTree() =>
+        _context switch
+        {
+            SyntaxNodeAnalysisContext context =>
+                context.Node.SyntaxTree,
+            OperationAnalysisContext context =>
+                context.Operation.Syntax.SyntaxTree,
+            SymbolAnalysisContext context =>
+                context.Symbol.Locations.FirstOrDefault(
+                    static location => location.IsInSource)?.SourceTree,
+            OperationBlockAnalysisContext context =>
+                context.OperationBlocks.IsDefaultOrEmpty
+                    ? null
+                    : context.OperationBlocks[0].Syntax.SyntaxTree,
+            SyntaxTreeAnalysisContext context =>
+                context.Tree,
+            _ => null,
+        };
+}
+
+internal sealed class NativeAnalyzerDiagnostic(
+    DiagnosticDescriptor descriptor,
+    Location location,
+    string message,
+    DiagnosticSeverity? effectiveSeverity = null,
+    bool isSuppressed = false) : Diagnostic
+{
+    public override IReadOnlyList<Location> AdditionalLocations =>
+        Array.Empty<Location>();
+    public override DiagnosticSeverity DefaultSeverity =>
+        descriptor.DefaultSeverity;
+    public override DiagnosticDescriptor Descriptor => descriptor;
+    public override string Id => descriptor.Id;
+    public override bool IsSuppressed => isSuppressed;
+    public override Location Location => location;
+    public override ImmutableDictionary<string, string?> Properties =>
+        ImmutableDictionary<string, string?>.Empty;
+    public override DiagnosticSeverity Severity =>
+        effectiveSeverity ?? descriptor.DefaultSeverity;
+    public override int WarningLevel =>
+        Severity == DiagnosticSeverity.Error ? 0 : 1;
+
+    public override bool Equals(Diagnostic? obj) =>
+        ReferenceEquals(this, obj);
+
+    public override int GetHashCode() =>
+        RuntimeHelpers.GetHashCode(this);
+
+    public override string GetMessage(
+        IFormatProvider? formatProvider = null) =>
+        message;
+
+    internal override Diagnostic WithLocation(Location newLocation) =>
+        new NativeAnalyzerDiagnostic(
+            descriptor,
+            newLocation,
+            message,
+            effectiveSeverity,
+            isSuppressed);
+
+    internal override Diagnostic WithSeverity(
+        DiagnosticSeverity severity) =>
+        new NativeAnalyzerDiagnostic(
+            descriptor,
+            location,
+            message,
+            severity,
+            isSuppressed);
+
+    internal override Diagnostic WithIsSuppressed(bool isSuppressed) =>
+        new NativeAnalyzerDiagnostic(
+            descriptor,
+            location,
+            message,
+            effectiveSeverity,
+            isSuppressed);
 }

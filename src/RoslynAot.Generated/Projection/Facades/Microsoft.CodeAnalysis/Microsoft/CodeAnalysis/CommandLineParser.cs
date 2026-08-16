@@ -38,7 +38,11 @@ namespace Microsoft.CodeAnalysis
 
         public static System.Collections.Generic.IEnumerable<string> SplitCommandLineIntoArguments(string commandLine, bool removeHashComments)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICommandLineParserTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineParserTypeVtbl(controlVtbl);
+            int status = vtbl.CommandLineParser_SplitCommandLineIntoArguments(commandLine, removeHashComments ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadStringCollection(controlVtbl, result);
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;

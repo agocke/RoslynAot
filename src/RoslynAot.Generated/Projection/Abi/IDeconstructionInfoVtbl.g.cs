@@ -12,12 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("a87da739-33cf-5d70-ba2a-585a3cbc0699")]
+[Guid("50fd8c61-09b0-5f9d-b244-d8d46c592fea")]
 public partial interface IDeconstructionInfoVtbl
 {
 
     [PreserveSig]
     int DeconstructionInfo_get_Conversion(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DeconstructionInfo_get_Method(
         long receiver,
         out long result
     );

@@ -12,9 +12,23 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4f07156d-9f4e-5b19-bdb8-1dbb63acefdc")]
+[Guid("821eef36-eb9c-5078-944a-c1a7811b43d3")]
 public partial interface IAnonymousFunctionExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
+
+    [PreserveSig]
+    int AnonymousFunctionExpressionSyntax_AddBlockAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int AnonymousFunctionExpressionSyntax_AddBlockStatements(
+        long receiver,
+        long items,
+        out long result
+    );
 
     [PreserveSig]
     int AnonymousFunctionExpressionSyntax_WithAsyncKeyword(

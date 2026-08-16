@@ -12,14 +12,28 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("2893b51d-f9c4-515f-bf9f-7588d82ac707")]
+[Guid("9b695b24-9527-57d5-9e29-0035e6aaee4a")]
 public partial interface ILocalDeclarationStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int LocalDeclarationStatementSyntax_Accept_64598d74(
+    int LocalDeclarationStatementSyntax_Accept_00bfc510(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int LocalDeclarationStatementSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int LocalDeclarationStatementSyntax_AddDeclarationVariables(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

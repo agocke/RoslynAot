@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c628d2a5-c2d6-5240-a70b-8c4c3811305c")]
+[Guid("97dfafe2-6369-5dd0-90a1-35657555841c")]
 public partial interface IControlFlowBranchVtbl
 {
 
@@ -23,9 +23,27 @@ public partial interface IControlFlowBranchVtbl
     );
 
     [PreserveSig]
+    int ControlFlowBranch_get_EnteringRegions(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ControlFlowBranch_get_FinallyRegions(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int ControlFlowBranch_get_IsConditionalSuccessor(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int ControlFlowBranch_get_LeavingRegions(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]

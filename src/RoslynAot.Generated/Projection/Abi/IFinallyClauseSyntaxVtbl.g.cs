@@ -12,14 +12,28 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("9169ebb3-b224-5651-968c-5268bd964e04")]
+[Guid("c5fe607b-b776-519e-bfed-e41b5364a46d")]
 public partial interface IFinallyClauseSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int FinallyClauseSyntax_Accept_705b2b5d(
+    int FinallyClauseSyntax_Accept_c563ca04(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int FinallyClauseSyntax_AddBlockAttributeLists(
+        long receiver,
+        long items,
+        out long result
+    );
+
+    [PreserveSig]
+    int FinallyClauseSyntax_AddBlockStatements(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

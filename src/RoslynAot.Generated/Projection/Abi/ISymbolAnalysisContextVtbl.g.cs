@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("68b09228-c2ac-5bc9-9358-25ac90641e3e")]
+[Guid("7c7b5ce4-55d3-5166-b0b4-25ce78958640")]
 public partial interface ISymbolAnalysisContextVtbl
 {
 
@@ -20,6 +20,12 @@ public partial interface ISymbolAnalysisContextVtbl
     int SymbolAnalysisContext_ReportDiagnostic(
         long receiver,
         long diagnostic
+    );
+
+    [PreserveSig]
+    int SymbolAnalysisContext_get_Compilation(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]
@@ -42,6 +48,12 @@ public partial interface ISymbolAnalysisContextVtbl
 
     [PreserveSig]
     int SymbolAnalysisContext_get_Options(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SymbolAnalysisContext_get_Symbol(
         long receiver,
         out long result
     );

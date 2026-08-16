@@ -14,7 +14,14 @@ namespace Microsoft.CodeAnalysis.Emit
         private readonly int _dummyPrimitive;
         public RuntimeRudeEdit(string message, int errorCode)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            this = default;
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IRuntimeRudeEditTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuntimeRudeEditTypeVtbl(controlVtbl);
+            int status = vtbl.RuntimeRudeEdit_ctor_145923f8(message, errorCode, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            __roslynAotControlVtbl = controlVtbl;
+            __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuntimeRudeEditVtbl(controlVtbl);
+            __roslynAotHandle = result;
         }
 
         [System.Obsolete("Specify errorCode")]

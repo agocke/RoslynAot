@@ -79,7 +79,11 @@ namespace Microsoft.CodeAnalysis
 
         public GeneratorDriver RunGenerators(Compilation compilation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IGeneratorDriverVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.GeneratorDriver_RunGenerators_652ab369(__RoslynAotGetHandle(controlVtbl), compilation.__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public GeneratorDriver RunGeneratorsAndUpdateCompilation(Compilation compilation, out Compilation outputCompilation, out System.Collections.Immutable.ImmutableArray<Diagnostic> diagnostics, System.Threading.CancellationToken cancellationToken = default)
@@ -111,7 +115,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static GeneratorDriver __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (GeneratorDriver)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("9fcf0081-b97d-570b-ae01-4c7847f68456")]
+        [System.Runtime.InteropServices.Guid("2fb5248c-fe07-5ec5-9abb-8088dbc3fff7")]
         internal partial interface __RoslynAotImplementation : GeneratorDriver
         {
         }

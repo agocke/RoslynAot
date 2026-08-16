@@ -66,7 +66,11 @@ namespace Microsoft.CodeAnalysis
 
         public static RuleSet LoadEffectiveRuleSetFromFile(string filePath)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IRuleSetTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuleSetTypeVtbl(controlVtbl);
+            int status = vtbl.RuleSet_LoadEffectiveRuleSetFromFile(filePath, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public RuleSet? WithEffectiveAction(ReportDiagnostic action)

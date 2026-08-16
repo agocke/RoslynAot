@@ -23,7 +23,96 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CaseInsensitiveComparison_ToLower_8c71e35e(
+    public int CaseInsensitiveComparison_Compare_3d2e1712(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string left,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = global::Microsoft.CodeAnalysis.CaseInsensitiveComparison.Compare(left, right);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CaseInsensitiveComparison_EndsWith(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string possibleEnd,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = global::Microsoft.CodeAnalysis.CaseInsensitiveComparison.EndsWith(value, possibleEnd) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CaseInsensitiveComparison_Equals_063a4d6c(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string left,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = global::Microsoft.CodeAnalysis.CaseInsensitiveComparison.Equals(left, right) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CaseInsensitiveComparison_GetHashCode(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = global::Microsoft.CodeAnalysis.CaseInsensitiveComparison.GetHashCode(value);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CaseInsensitiveComparison_StartsWith(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string possibleStart,
+        out int result)
+    {
+        result = default;
+
+        try
+        {
+            result = global::Microsoft.CodeAnalysis.CaseInsensitiveComparison.StartsWith(value, possibleStart) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CaseInsensitiveComparison_ToLower_cf8aebcb(
         ushort c,
         out ushort result)
     {
@@ -32,6 +121,31 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         try
         {
             result = (ushort)global::Microsoft.CodeAnalysis.CaseInsensitiveComparison.ToLower((char)c);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public unsafe int CaseInsensitiveComparison_ToLower_ce114a20(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? __roslynAotValue = global::Microsoft.CodeAnalysis.CaseInsensitiveComparison.ToLower(value);
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

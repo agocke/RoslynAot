@@ -10,8 +10,39 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
 {
     public partial interface IFlowCaptureReferenceOperation : IOperation
     {
-        CaptureId Id { get; }
+        CaptureId Id
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIFlowCaptureReferenceOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IFlowCaptureReferenceOperation_get_Id(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return CaptureId.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        bool IsInitialization { get; }
+        bool IsInitialization
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIFlowCaptureReferenceOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IFlowCaptureReferenceOperation_get_IsInitialization(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIFlowCaptureReferenceOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIFlowCaptureReferenceOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IFlowCaptureReferenceOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IFlowCaptureReferenceOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("d1e05405-395d-5bf1-8bf2-291e959d389d")]
+        internal partial interface __RoslynAotImplementation : IFlowCaptureReferenceOperation
+        {
+        }
     }
 }

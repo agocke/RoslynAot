@@ -14,7 +14,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.SemanticModel_get_Compilation(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return Compilation.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -127,43 +131,71 @@ namespace Microsoft.CodeAnalysis
         protected abstract TypeInfo GetTypeInfoCore(SyntaxNode node, System.Threading.CancellationToken cancellationToken = default);
         public bool IsAccessible(int position, ISymbol symbol)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SemanticModel_IsAccessible(__RoslynAotGetHandle(controlVtbl), position, symbol.__RoslynAotGetHandle(controlVtbl), out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         protected abstract bool IsAccessibleCore(int position, ISymbol symbol);
         public bool IsEventUsableAsField(int position, IEventSymbol eventSymbol)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SemanticModel_IsEventUsableAsField(__RoslynAotGetHandle(controlVtbl), position, eventSymbol.__RoslynAotGetHandle(controlVtbl), out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         protected abstract bool IsEventUsableAsFieldCore(int position, IEventSymbol eventSymbol);
         public System.Collections.Immutable.ImmutableArray<ISymbol> LookupBaseMembers(int position, string? name = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SemanticModel_LookupBaseMembers(__RoslynAotGetHandle(controlVtbl), position, name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         protected abstract System.Collections.Immutable.ImmutableArray<ISymbol> LookupBaseMembersCore(int position, string? name);
         public System.Collections.Immutable.ImmutableArray<ISymbol> LookupLabels(int position, string? name = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SemanticModel_LookupLabels(__RoslynAotGetHandle(controlVtbl), position, name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         protected abstract System.Collections.Immutable.ImmutableArray<ISymbol> LookupLabelsCore(int position, string? name);
         public System.Collections.Immutable.ImmutableArray<ISymbol> LookupNamespacesAndTypes(int position, INamespaceOrTypeSymbol? container = null, string? name = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SemanticModel_LookupNamespacesAndTypes(__RoslynAotGetHandle(controlVtbl), position, container is null ? 0L : container.__RoslynAotGetHandle(controlVtbl), name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         protected abstract System.Collections.Immutable.ImmutableArray<ISymbol> LookupNamespacesAndTypesCore(int position, INamespaceOrTypeSymbol? container, string? name);
         public System.Collections.Immutable.ImmutableArray<ISymbol> LookupStaticMembers(int position, INamespaceOrTypeSymbol? container = null, string? name = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SemanticModel_LookupStaticMembers(__RoslynAotGetHandle(controlVtbl), position, container is null ? 0L : container.__RoslynAotGetHandle(controlVtbl), name, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         protected abstract System.Collections.Immutable.ImmutableArray<ISymbol> LookupStaticMembersCore(int position, INamespaceOrTypeSymbol? container, string? name);
         public System.Collections.Immutable.ImmutableArray<ISymbol> LookupSymbols(int position, INamespaceOrTypeSymbol? container = null, string? name = null, bool includeReducedExtensionMethods = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SemanticModel_LookupSymbols(__RoslynAotGetHandle(controlVtbl), position, container is null ? 0L : container.__RoslynAotGetHandle(controlVtbl), name, includeReducedExtensionMethods ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         protected abstract System.Collections.Immutable.ImmutableArray<ISymbol> LookupSymbolsCore(int position, INamespaceOrTypeSymbol? container, string? name, bool includeReducedExtensionMethods);

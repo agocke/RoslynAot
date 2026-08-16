@@ -23,6 +23,24 @@ internal sealed partial class AnalyzerConfigSetVtblDispatcher : IAnalyzerConfigS
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int AnalyzerConfigSet_GetOptionsForSourcePath(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string sourcePath,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AnalyzerConfigSet>(receiver).GetOptionsForSourcePath(sourcePath));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int AnalyzerConfigSet_get_GlobalConfigOptions(
         long receiver,
         out long result)

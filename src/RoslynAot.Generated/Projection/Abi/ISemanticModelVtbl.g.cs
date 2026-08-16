@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("464ea5fc-3f83-5520-847b-036b9f0aa195")]
+[Guid("9c336c3f-8e08-5c4e-8f69-de69289b22a9")]
 public partial interface ISemanticModelVtbl
 {
 
@@ -20,6 +20,72 @@ public partial interface ISemanticModelVtbl
     int SemanticModel_GetPreprocessingSymbolInfo(
         long receiver,
         long nameSyntax,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_IsAccessible(
+        long receiver,
+        int position,
+        long symbol,
+        out int result
+    );
+
+    [PreserveSig]
+    int SemanticModel_IsEventUsableAsField(
+        long receiver,
+        int position,
+        long eventSymbol,
+        out int result
+    );
+
+    [PreserveSig]
+    int SemanticModel_LookupBaseMembers(
+        long receiver,
+        int position,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_LookupLabels(
+        long receiver,
+        int position,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_LookupNamespacesAndTypes(
+        long receiver,
+        int position,
+        long container,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_LookupStaticMembers(
+        long receiver,
+        int position,
+        long container,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_LookupSymbols(
+        long receiver,
+        int position,
+        long container,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int includeReducedExtensionMethods,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_get_Compilation(
+        long receiver,
         out long result
     );
 

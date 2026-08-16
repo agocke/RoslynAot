@@ -57,6 +57,23 @@ internal sealed partial class SuppressionAnalysisContextVtblDispatcher : ISuppre
         }
     }
 
+    public int SuppressionAnalysisContext_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SuppressionAnalysisContext>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SuppressionAnalysisContext_get_Options(
         long receiver,
         out long result)

@@ -12,12 +12,32 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("bbaf8691-872b-53ed-9c52-204d10f56f2e")]
+[Guid("ba36659b-e594-5b9a-95a6-b774f3eec6d7")]
 public partial interface ISyntaxNodeVtbl
 {
 
     [PreserveSig]
+    int SyntaxNode_AncestorsAndSelf(
+        long receiver,
+        int ascendOutOfTrivia,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNode_Ancestors(
+        long receiver,
+        int ascendOutOfTrivia,
+        out long result
+    );
+
+    [PreserveSig]
     int SyntaxNode_ChildNodesAndTokens(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNode_ChildNodes(
         long receiver,
         out long result
     );
@@ -61,10 +81,37 @@ public partial interface ISyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int SyntaxNode_FindTrivia_77d2dcea(
+    int SyntaxNode_FindTrivia_7588035c(
         long receiver,
         int position,
         int findInsideTrivia,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNode_GetAnnotatedNodes_223b42b6(
+        long receiver,
+        long syntaxAnnotation,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNode_GetAnnotatedNodes_36edd4af(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNode_GetAnnotations_c30fad37(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxNode_GetDiagnostics(
+        long receiver,
         out long result
     );
 
@@ -120,14 +167,21 @@ public partial interface ISyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int SyntaxNode_IsEquivalentTo_8d5726aa(
+    int SyntaxNode_HasAnnotations_009f2ccb(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out int result
+    );
+
+    [PreserveSig]
+    int SyntaxNode_IsEquivalentTo_8ad911b9(
         long receiver,
         long other,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxNode_IsEquivalentTo_99548ef5(
+    int SyntaxNode_IsEquivalentTo_80af97ca(
         long receiver,
         long node,
         int topLevel,

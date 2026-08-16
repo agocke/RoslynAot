@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1b59a1e3-afba-5890-bc99-d9a562ec5790")]
+[Guid("d88c3b8e-f768-59ea-a7e7-7f69f86fdc1f")]
 public partial interface ISyntaxTriviaVtbl
 {
 
@@ -24,10 +24,23 @@ public partial interface ISyntaxTriviaVtbl
     );
 
     [PreserveSig]
-    int SyntaxTrivia_Equals_193a4eaf(
+    int SyntaxTrivia_Equals_2b043e58(
         long receiver,
         long other,
         out int result
+    );
+
+    [PreserveSig]
+    int SyntaxTrivia_GetAnnotations_f7cb97d7(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTrivia_GetDiagnostics(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]
@@ -52,6 +65,13 @@ public partial interface ISyntaxTriviaVtbl
     int SyntaxTrivia_HasAnnotation(
         long receiver,
         long annotation,
+        out int result
+    );
+
+    [PreserveSig]
+    int SyntaxTrivia_HasAnnotations_fe346173(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result
     );
 
@@ -82,6 +102,27 @@ public partial interface ISyntaxTriviaVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int SyntaxTrivia_WithAdditionalAnnotations_cdddfe2a(
+        long receiver,
+        long annotations,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTrivia_WithoutAnnotations_0be5e032(
+        long receiver,
+        long annotations,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTrivia_WithoutAnnotations_691a35c6(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
+        out long result
     );
 
     [PreserveSig]

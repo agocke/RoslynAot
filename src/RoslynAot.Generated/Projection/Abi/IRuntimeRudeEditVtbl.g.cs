@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f921095f-8e6c-5e59-af66-650bc284e01c")]
+[Guid("84494b29-18eb-5ed1-8307-2387207df0c3")]
 public partial interface IRuntimeRudeEditVtbl
 {
 

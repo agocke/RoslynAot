@@ -96,7 +96,11 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public new CommonForEachStatementSyntax AddAttributeLists(params AttributeListSyntax[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICommonForEachStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CommonForEachStatementSyntax_AddAttributeLists(__RoslynAotGetHandle(controlVtbl), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(items, item => item.__RoslynAotGetHandle(controlVtbl))), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public new CommonForEachStatementSyntax WithAttributeLists(SyntaxList<AttributeListSyntax> attributeLists)
@@ -173,7 +177,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static CommonForEachStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CommonForEachStatementSyntax)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("1ae82275-d491-5f26-bafe-58decc28fe29")]
+        [System.Runtime.InteropServices.Guid("b9f39602-96de-560a-8766-d4689c3e27ba")]
         internal partial interface __RoslynAotImplementation : CommonForEachStatementSyntax
         {
         }

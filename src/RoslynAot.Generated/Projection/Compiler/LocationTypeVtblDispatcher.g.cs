@@ -41,6 +41,46 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
         }
     }
 
+    public int Location_Create_b3d99f7b(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string filePath,
+        long textSpan,
+        long lineSpan,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.Location.Create(filePath, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(textSpan), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.LinePositionSpan>(lineSpan)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Location_Create_bc32e9c1(
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string filePath,
+        long textSpan,
+        long lineSpan,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string mappedFilePath,
+        long mappedLineSpan,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.Location.Create(filePath, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(textSpan), _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.LinePositionSpan>(lineSpan), mappedFilePath, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.LinePositionSpan>(mappedLineSpan)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int Location_get_None(
         out long result)
     {

@@ -97,6 +97,26 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         }
     }
 
+    public int ModelExtensions_GetSpeculativeAliasInfo(
+        long semanticModel,
+        int position,
+        long nameSyntax,
+        int bindingOption,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.ModelExtensions.GetSpeculativeAliasInfo(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), position, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(nameSyntax), (global::Microsoft.CodeAnalysis.SpeculativeBindingOption)bindingOption));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ModelExtensions_GetSpeculativeSymbolInfo(
         long semanticModel,
         int position,

@@ -12,14 +12,21 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("686877e2-ff8d-5102-9e52-c7efdc206de2")]
+[Guid("8306a703-8da5-58d1-8d34-722ab755fa5d")]
 public partial interface IXmlElementStartTagSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int XmlElementStartTagSyntax_Accept_453793da(
+    int XmlElementStartTagSyntax_Accept_35d10a5c(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int XmlElementStartTagSyntax_AddAttributes(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]

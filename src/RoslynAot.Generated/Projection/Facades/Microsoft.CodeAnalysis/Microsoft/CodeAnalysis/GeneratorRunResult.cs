@@ -40,7 +40,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IGeneratorRunResultVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.GeneratorRunResult_get_Generator(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return ISourceGenerator.__RoslynAotCreateProxy(controlVtbl, result);
             }
         }
 
@@ -68,5 +72,44 @@ namespace Microsoft.CodeAnalysis
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
             }
         }
+
+        private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;
+        private readonly global::RoslynAot.Abi.IGeneratorRunResultVtbl? __roslynAotVtbl;
+        private readonly long __roslynAotHandle;
+        internal GeneratorRunResult(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.IGeneratorRunResultVtbl vtbl, long handle)
+        {
+            this = default;
+            __roslynAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __roslynAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __roslynAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::RoslynAot.Abi.IGeneratorRunResultVtbl __RoslynAotGetVtbl()
+        {
+            if (__roslynAotVtbl is not null)
+                return __roslynAotVtbl;
+            if (__roslynAotHandle == 0)
+                return global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorRunResultVtbl(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl());
+            throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        }
+
+        internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl()
+        {
+            if (__roslynAotControlVtbl is not null)
+                return __roslynAotControlVtbl;
+            if (__roslynAotHandle == 0)
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        }
+
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __roslynAotHandle;
+        }
+
+        internal static GeneratorRunResult __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new GeneratorRunResult(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorRunResultVtbl(controlVtbl), handle);
     }
 }

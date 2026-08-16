@@ -12,22 +12,38 @@ namespace Microsoft.CodeAnalysis.CSharp
     {
         public static SyntaxToken NormalizeWhitespace(this SyntaxToken token, string indentation, bool elasticTrivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_d73600b7(token.__RoslynAotGetHandle(controlVtbl), indentation, elasticTrivia ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxToken NormalizeWhitespace(this SyntaxToken token, string indentation = "    ", string eol = "\r\n", bool elasticTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_4993d000(token.__RoslynAotGetHandle(controlVtbl), indentation, eol, elasticTrivia ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxTriviaList NormalizeWhitespace(this SyntaxTriviaList list, string indentation, bool elasticTrivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_9e0b1964(list.__RoslynAotGetHandle(controlVtbl), indentation, elasticTrivia ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxTriviaList.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxTriviaList NormalizeWhitespace(this SyntaxTriviaList list, string indentation = "    ", string eol = "\r\n", bool elasticTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_08ea7961(list.__RoslynAotGetHandle(controlVtbl), indentation, eol, elasticTrivia ? 1 : 0, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxTriviaList.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxTriviaList ToSyntaxTriviaList(this System.Collections.Generic.IEnumerable<SyntaxTrivia> sequence)

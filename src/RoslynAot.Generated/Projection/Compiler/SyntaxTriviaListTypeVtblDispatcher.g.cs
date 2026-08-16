@@ -23,7 +23,7 @@ internal sealed partial class SyntaxTriviaListTypeVtblDispatcher : ISyntaxTrivia
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxTriviaList_ctor_476e443c(
+    public int SyntaxTriviaList_ctor_d4e3748a(
         long trivia,
         out long result)
     {

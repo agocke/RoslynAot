@@ -23,6 +23,84 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int SyntaxExtensions_NormalizeWhitespace_d73600b7(
+        long token,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
+        int elasticTrivia,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(token), indentation, elasticTrivia != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxExtensions_NormalizeWhitespace_4993d000(
+        long token,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string eol,
+        int elasticTrivia,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(token), indentation, eol, elasticTrivia != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxExtensions_NormalizeWhitespace_9e0b1964(
+        long list,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
+        int elasticTrivia,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(list), indentation, elasticTrivia != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxExtensions_NormalizeWhitespace_08ea7961(
+        long list,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string eol,
+        int elasticTrivia,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTriviaList>(list), indentation, eol, elasticTrivia != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxExtensions_WithIdentifier(
         long simpleName,
         long identifier,

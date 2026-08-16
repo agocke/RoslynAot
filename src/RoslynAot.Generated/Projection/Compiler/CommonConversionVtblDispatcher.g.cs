@@ -23,6 +23,23 @@ internal sealed partial class CommonConversionVtblDispatcher : ICommonConversion
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int CommonConversion_get_ConstrainedToType(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Operations.CommonConversion>(receiver).ConstrainedToType);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CommonConversion_get_Exists(
         long receiver,
         out int result)
@@ -134,6 +151,23 @@ internal sealed partial class CommonConversionVtblDispatcher : ICommonConversion
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Operations.CommonConversion>(receiver).IsUserDefined ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CommonConversion_get_MethodSymbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Operations.CommonConversion>(receiver).MethodSymbol);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

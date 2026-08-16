@@ -39,6 +39,40 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         }
     }
 
+    public int SyntaxNodeAnalysisContext_get_Compilation(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext>(receiver).Compilation);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxNodeAnalysisContext_get_ContainingSymbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext>(receiver).ContainingSymbol);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxNodeAnalysisContext_get_FilterSpan(
         long receiver,
         out long result)

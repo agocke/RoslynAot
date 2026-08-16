@@ -26,7 +26,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IOmittedTypeArgumentSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OmittedTypeArgumentSyntax_Accept_8be38538(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.OmittedTypeArgumentSyntax_Accept_7c9bb891(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -59,7 +59,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static OmittedTypeArgumentSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (OmittedTypeArgumentSyntax)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("3fb1f0d2-0625-5d12-b78c-4c31661847a3")]
+        [System.Runtime.InteropServices.Guid("3e96f6c3-133a-5b90-a37d-fe141917f4c0")]
         internal partial interface __RoslynAotImplementation : OmittedTypeArgumentSyntax
         {
         }

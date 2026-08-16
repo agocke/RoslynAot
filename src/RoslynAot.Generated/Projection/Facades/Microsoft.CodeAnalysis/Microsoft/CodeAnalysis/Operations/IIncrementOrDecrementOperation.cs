@@ -10,16 +10,87 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface IIncrementOrDecrementOperation : IOperation
     {
-        ITypeSymbol? ConstrainedToType { get; }
+        ITypeSymbol? ConstrainedToType
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIIncrementOrDecrementOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IIncrementOrDecrementOperation_get_ConstrainedToType(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : ITypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        bool IsChecked { get; }
+        bool IsChecked
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIIncrementOrDecrementOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IIncrementOrDecrementOperation_get_IsChecked(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
 
-        bool IsLifted { get; }
+        bool IsLifted
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIIncrementOrDecrementOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IIncrementOrDecrementOperation_get_IsLifted(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
 
-        bool IsPostfix { get; }
+        bool IsPostfix
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIIncrementOrDecrementOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IIncrementOrDecrementOperation_get_IsPostfix(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
+            }
+        }
 
-        IMethodSymbol? OperatorMethod { get; }
+        IMethodSymbol? OperatorMethod
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIIncrementOrDecrementOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IIncrementOrDecrementOperation_get_OperatorMethod(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result == 0 ? null : IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
 
-        IOperation Target { get; }
+        IOperation Target
+        {
+            get
+            {
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IIIncrementOrDecrementOperationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.IIncrementOrDecrementOperation_get_Target(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return IOperation.__RoslynAotCreateProxy(controlVtbl, result);
+            }
+        }
+
+        private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
+        public global::RoslynAot.Abi.IIIncrementOrDecrementOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIIncrementOrDecrementOperationVtbl(__RoslynAotGetControlVtbl());
+        public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
+        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        internal static IIncrementOrDecrementOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IIncrementOrDecrementOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
+        [System.Runtime.InteropServices.Guid("33d45a1d-2e8a-5d39-9da0-67c41c651e52")]
+        internal partial interface __RoslynAotImplementation : IIncrementOrDecrementOperation
+        {
+        }
     }
 }

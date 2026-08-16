@@ -23,7 +23,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SemanticEdit_Equals_927c4ffc(
+    public int SemanticEdit_Equals_8de8069d(
         long receiver,
         long other,
         out int result)
@@ -84,6 +84,40 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         try
         {
             result = (int)_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Emit.SemanticEdit>(receiver).Kind;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticEdit_get_NewSymbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Emit.SemanticEdit>(receiver).NewSymbol);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticEdit_get_OldSymbol(
+        long receiver,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Emit.SemanticEdit>(receiver).OldSymbol);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

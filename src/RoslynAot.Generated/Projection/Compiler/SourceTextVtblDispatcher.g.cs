@@ -59,7 +59,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         }
     }
 
-    public int SourceText_GetSubText_3c347ab9(
+    public int SourceText_GetSubText_0a5021cf(
         long receiver,
         int start,
         out long result)
@@ -77,7 +77,46 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         }
     }
 
-    public unsafe int SourceText_ToString_36435385(
+    public int SourceText_Replace_9ca925ce(
+        long receiver,
+        long span,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string newText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).Replace(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span), newText));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SourceText_Replace_bb00caac(
+        long receiver,
+        int start,
+        int length,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string newText,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).Replace(start, length, newText));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public unsafe int SourceText_ToString_98b75795(
         long receiver,
         nint buffer,
         int bufferLength,
@@ -88,12 +127,12 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).ToString();
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).ToString();
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -102,7 +141,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         }
     }
 
-    public unsafe int SourceText_ToString_b3c549ee(
+    public unsafe int SourceText_ToString_cf373e4b(
         long receiver,
         long span,
         nint buffer,
@@ -114,12 +153,12 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         try
         {
             if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
-            string? value = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).ToString(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span));
-            if (value is null) { requiredLength = -1; return RoslynAbi.Success; }
-            requiredLength = value.Length;
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).ToString(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span));
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
-            value.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

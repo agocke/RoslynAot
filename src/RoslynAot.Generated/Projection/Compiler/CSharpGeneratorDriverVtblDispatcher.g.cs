@@ -76,6 +76,24 @@ internal sealed partial class CSharpGeneratorDriverVtblDispatcher : ICSharpGener
         }
     }
 
+    public int GeneratorDriver_RunGenerators_652ab369(
+        long receiver,
+        long compilation,
+        out long result)
+    {
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.GeneratorDriver>(receiver).RunGenerators(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(compilation)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int GeneratorDriver_WithUpdatedAnalyzerConfigOptions(
         long receiver,
         long newOptions,

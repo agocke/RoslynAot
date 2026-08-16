@@ -12,97 +12,154 @@ namespace Microsoft.CodeAnalysis.Operations
     {
         public virtual void DefaultVisit(IOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_DefaultVisit_c2a55eed(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void Visit(IOperation? operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_Visit_e729b59a(__RoslynAotGetHandle(controlVtbl), operation is null ? 0L : operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitAddressOf(IAddressOfOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitAddressOf_b2aacfe2(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitAnonymousFunction(IAnonymousFunctionOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitAnonymousFunction_226f56c9(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitAnonymousObjectCreation(IAnonymousObjectCreationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitAnonymousObjectCreation_aabfb646(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitArgument(IArgumentOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitArgument_dbe3c1c6(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitArrayCreation(IArrayCreationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitArrayCreation_fb7f5c8c(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitArrayElementReference(IArrayElementReferenceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitArrayElementReference_e1dd797b(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitArrayInitializer(IArrayInitializerOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitArrayInitializer_67b47dfc(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitAttribute(IAttributeOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitAttribute_4b8f6a1e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitAwait(IAwaitOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitAwait_09b2beab(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitBinaryOperator(IBinaryOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitBinaryOperator_72fdcd6b(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitBinaryPattern(IBinaryPatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitBinaryPattern_4c428672(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitBlock(IBlockOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitBlock_594e3313(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitBranch(IBranchOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitBranch_4a0ec986(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitCatchClause(ICatchClauseOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitCatchClause_0ac16495(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitCaughtException(FlowAnalysis.ICaughtExceptionOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitCaughtException_a9293857(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitCoalesce(ICoalesceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitCoalesce_90384c85(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitCoalesceAssignment(ICoalesceAssignmentOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitCoalesceAssignment_20650f89(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         [System.Obsolete("ICollectionElementInitializerOperation has been replaced with IInvocationOperation and IDynamicInvocationOperation", true)]
@@ -113,7 +170,10 @@ namespace Microsoft.CodeAnalysis.Operations
 
         public virtual void VisitCollectionExpression(ICollectionExpressionOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitCollectionExpression_ed834661(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82210")]
@@ -124,542 +184,899 @@ namespace Microsoft.CodeAnalysis.Operations
 
         public virtual void VisitCompoundAssignment(ICompoundAssignmentOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitCompoundAssignment_0aac1187(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitConditional(IConditionalOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitConditional_7a4f6c28(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitConditionalAccess(IConditionalAccessOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitConditionalAccess_61a36d9b(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitConditionalAccessInstance(IConditionalAccessInstanceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitConditionalAccessInstance_11e35ecf(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitConstantPattern(IConstantPatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitConstantPattern_81c38f5e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitConstructorBodyOperation(IConstructorBodyOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitConstructorBodyOperation_fa2f31a3(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitConversion(IConversionOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitConversion_4f3e84f6(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDeclarationExpression(IDeclarationExpressionOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDeclarationExpression_1c50a06a(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDeclarationPattern(IDeclarationPatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDeclarationPattern_3b1ad117(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDeconstructionAssignment(IDeconstructionAssignmentOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDeconstructionAssignment_5714be7d(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDefaultCaseClause(IDefaultCaseClauseOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDefaultCaseClause_e3250421(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDefaultValue(IDefaultValueOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDefaultValue_80ca0733(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDelegateCreation(IDelegateCreationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDelegateCreation_af9d6acf(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDiscardOperation(IDiscardOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDiscardOperation_3d83cd05(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDiscardPattern(IDiscardPatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDiscardPattern_1f448991(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDynamicIndexerAccess(IDynamicIndexerAccessOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDynamicIndexerAccess_007adc69(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDynamicInvocation(IDynamicInvocationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDynamicInvocation_662b520a(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDynamicMemberReference(IDynamicMemberReferenceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDynamicMemberReference_58ddac80(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitDynamicObjectCreation(IDynamicObjectCreationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitDynamicObjectCreation_78101d45(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitEmpty(IEmptyOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitEmpty_251af8be(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitEnd(IEndOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitEnd_63655966(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitEventAssignment(IEventAssignmentOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitEventAssignment_104dc547(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitEventReference(IEventReferenceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitEventReference_4a6b6576(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitExpressionStatement(IExpressionStatementOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitExpressionStatement_8707dcc0(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitFieldInitializer(IFieldInitializerOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitFieldInitializer_dcd2e181(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitFieldReference(IFieldReferenceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitFieldReference_c39a4cec(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitFlowAnonymousFunction(FlowAnalysis.IFlowAnonymousFunctionOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitFlowAnonymousFunction_e25da9af(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitFlowCapture(FlowAnalysis.IFlowCaptureOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitFlowCapture_a85e7b4d(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitFlowCaptureReference(FlowAnalysis.IFlowCaptureReferenceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitFlowCaptureReference_02f4eccd(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitForEachLoop(IForEachLoopOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitForEachLoop_60c04e62(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitForLoop(IForLoopOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitForLoop_60b7a045(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitForToLoop(IForToLoopOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitForToLoop_08c40f0d(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitFunctionPointerInvocation(IFunctionPointerInvocationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitFunctionPointerInvocation_ec3d6c0d(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitImplicitIndexerReference(IImplicitIndexerReferenceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitImplicitIndexerReference_879639f8(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitIncrementOrDecrement(IIncrementOrDecrementOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitIncrementOrDecrement_2ff976d4(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitInlineArrayAccess(IInlineArrayAccessOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitInlineArrayAccess_d773cb53(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitInstanceReference(IInstanceReferenceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitInstanceReference_ca10162a(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitInterpolatedString(IInterpolatedStringOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitInterpolatedString_a1ce486d(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitInterpolatedStringAddition(IInterpolatedStringAdditionOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitInterpolatedStringAddition_a9e082de(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitInterpolatedStringAppend(IInterpolatedStringAppendOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitInterpolatedStringAppend_76f5200b(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitInterpolatedStringHandlerArgumentPlaceholder(IInterpolatedStringHandlerArgumentPlaceholderOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitInterpolatedStringHandlerArgumentPlaceholder_38bff37f(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitInterpolatedStringHandlerCreation(IInterpolatedStringHandlerCreationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitInterpolatedStringHandlerCreation_feb7df0d(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitInterpolatedStringText(IInterpolatedStringTextOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitInterpolatedStringText_cd56fdcf(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitInterpolation(IInterpolationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitInterpolation_d54fc59a(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitInvalid(IInvalidOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitInvalid_26aa57d7(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitInvocation(IInvocationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitInvocation_71d71846(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitIsNull(FlowAnalysis.IIsNullOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitIsNull_6a777345(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitIsPattern(IIsPatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitIsPattern_2260d719(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitIsType(IIsTypeOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitIsType_3824154b(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitLabeled(ILabeledOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitLabeled_2eb0d1d1(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitListPattern(IListPatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitListPattern_4bb48b8f(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitLiteral(ILiteralOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitLiteral_b758c9ce(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitLocalFunction(ILocalFunctionOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitLocalFunction_bcd654ec(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitLocalReference(ILocalReferenceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitLocalReference_9e4f686e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitLock(ILockOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitLock_da6db66c(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitMemberInitializer(IMemberInitializerOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitMemberInitializer_52fa257c(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitMethodBodyOperation(IMethodBodyOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitMethodBodyOperation_fbeef611(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitMethodReference(IMethodReferenceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitMethodReference_bf2e47ea(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitNameOf(INameOfOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitNameOf_9474ef6c(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitNegatedPattern(INegatedPatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitNegatedPattern_25825747(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitObjectCreation(IObjectCreationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitObjectCreation_4b809a76(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitObjectOrCollectionInitializer(IObjectOrCollectionInitializerOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitObjectOrCollectionInitializer_33723e80(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitOmittedArgument(IOmittedArgumentOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitOmittedArgument_3a1dba50(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitParameterInitializer(IParameterInitializerOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitParameterInitializer_36ddf9fa(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitParameterReference(IParameterReferenceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitParameterReference_fb5f1e53(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitParenthesized(IParenthesizedOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitParenthesized_2ff1ad61(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitPatternCaseClause(IPatternCaseClauseOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitPatternCaseClause_7276ffd2(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitPropertyInitializer(IPropertyInitializerOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitPropertyInitializer_a0fa3d9e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitPropertyReference(IPropertyReferenceOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitPropertyReference_4ebb7ab8(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitPropertySubpattern(IPropertySubpatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitPropertySubpattern_34adb3d6(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitRaiseEvent(IRaiseEventOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitRaiseEvent_14ff81ff(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitRangeCaseClause(IRangeCaseClauseOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitRangeCaseClause_7768c5c7(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitRangeOperation(IRangeOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitRangeOperation_fe5707c0(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitRecursivePattern(IRecursivePatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitRecursivePattern_0b274580(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitReDim(IReDimOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitReDim_e0b6f05f(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitReDimClause(IReDimClauseOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitReDimClause_f6276525(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitRelationalCaseClause(IRelationalCaseClauseOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitRelationalCaseClause_d3140876(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitRelationalPattern(IRelationalPatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitRelationalPattern_dea87174(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitReturn(IReturnOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitReturn_19b78f44(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitSimpleAssignment(ISimpleAssignmentOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitSimpleAssignment_f7592112(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitSingleValueCaseClause(ISingleValueCaseClauseOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitSingleValueCaseClause_ea3e9c69(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitSizeOf(ISizeOfOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitSizeOf_c1a0bb8c(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitSlicePattern(ISlicePatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitSlicePattern_4affbbf4(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitSpread(ISpreadOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitSpread_b5ec9fcc(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitStaticLocalInitializationSemaphore(FlowAnalysis.IStaticLocalInitializationSemaphoreOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitStaticLocalInitializationSemaphore_66851970(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitStop(IStopOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitStop_753b2ef7(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitSwitch(ISwitchOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitSwitch_d00ed321(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitSwitchCase(ISwitchCaseOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitSwitchCase_db0a22db(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitSwitchExpression(ISwitchExpressionOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitSwitchExpression_fdc6ce5a(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitSwitchExpressionArm(ISwitchExpressionArmOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitSwitchExpressionArm_7b1a6ab3(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitThrow(IThrowOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitThrow_580c8b50(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitTranslatedQuery(ITranslatedQueryOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitTranslatedQuery_4d02a4c7(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitTry(ITryOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitTry_97a12a78(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitTuple(ITupleOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitTuple_fb258748(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitTupleBinaryOperator(ITupleBinaryOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitTupleBinaryOperator_1159fcfc(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitTypeOf(ITypeOfOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitTypeOf_fac9fd01(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitTypeParameterObjectCreation(ITypeParameterObjectCreationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitTypeParameterObjectCreation_9066bb15(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitTypePattern(ITypePatternOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitTypePattern_eb25c781(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitUnaryOperator(IUnaryOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitUnaryOperator_cc8f96f2(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitUsing(IUsingOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitUsing_3a9835c2(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitUsingDeclaration(IUsingDeclarationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitUsingDeclaration_66b31d83(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitUtf8String(IUtf8StringOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitUtf8String_c45f09a7(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitVariableDeclaration(IVariableDeclarationOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitVariableDeclaration_9c63f45f(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitVariableDeclarationGroup(IVariableDeclarationGroupOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitVariableDeclarationGroup_9c86a22f(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitVariableDeclarator(IVariableDeclaratorOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitVariableDeclarator_8ce8e4bb(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitVariableInitializer(IVariableInitializerOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitVariableInitializer_46c0c500(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitWhileLoop(IWhileLoopOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitWhileLoop_d391f453(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void VisitWith(IWithOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.OperationVisitor_VisitWith_0c1ec6f4(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
+
+        internal OperationVisitor()
+        {
+        }
+
+        private global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;
+        private global::RoslynAot.Abi.IOperationVisitorVtbl? __roslynAotVtbl;
+        private long __roslynAotHandle;
+        internal OperationVisitor(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.IOperationVisitorVtbl vtbl, long handle)
+        {
+            __roslynAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __roslynAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __roslynAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::RoslynAot.Abi.IOperationVisitorVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __roslynAotHandle;
+        }
+
+        private sealed partial class __RoslynAotProxy : OperationVisitor
+        {
+            internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.IOperationVisitorVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+            {
+            }
+        }
+
+        internal static OperationVisitor __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetOperationVisitorVtbl(controlVtbl), handle);
     }
 }

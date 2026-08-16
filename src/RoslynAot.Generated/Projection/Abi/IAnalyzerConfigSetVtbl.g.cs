@@ -12,9 +12,16 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("6d3f1f81-67c5-5de8-beef-0bec54b09bfd")]
+[Guid("6fa6b2a5-c1f1-5d4f-b69a-a42e0c03773b")]
 public partial interface IAnalyzerConfigSetVtbl
 {
+
+    [PreserveSig]
+    int AnalyzerConfigSet_GetOptionsForSourcePath(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string sourcePath,
+        out long result
+    );
 
     [PreserveSig]
     int AnalyzerConfigSet_get_GlobalConfigOptions(

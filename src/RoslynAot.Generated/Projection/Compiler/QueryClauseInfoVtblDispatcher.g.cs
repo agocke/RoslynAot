@@ -23,7 +23,7 @@ internal sealed partial class QueryClauseInfoVtblDispatcher : IQueryClauseInfoVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int QueryClauseInfo_Equals_960e0ade(
+    public int QueryClauseInfo_Equals_df746049(
         long receiver,
         long other,
         out int result)

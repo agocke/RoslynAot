@@ -12,14 +12,21 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("88e27b98-4616-5e49-9fc4-d2bdba17097c")]
+[Guid("1f5d4dcf-1a84-5145-868e-00d7916750d6")]
 public partial interface IIncompleteMemberSyntaxVtbl : IMemberDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int IncompleteMemberSyntax_Accept_007326c6(
+    int IncompleteMemberSyntax_Accept_a8c905b1(
         long receiver,
         long visitor
+    );
+
+    [PreserveSig]
+    int IncompleteMemberSyntax_AddAttributeLists(
+        long receiver,
+        long items,
+        out long result
     );
 
     [PreserveSig]
