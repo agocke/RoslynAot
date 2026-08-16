@@ -130,4 +130,11 @@ public partial interface IRoslynControlVtbl
         RoslynWellKnownObject kind,
         long symbol,
         out int result);
+
+    [PreserveSig]
+    int CopyObjectToStringUtf16(
+        long handle,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength);
 }

@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
 using RoslynAot.Abi;
@@ -308,6 +309,45 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
             _ => throw new ArgumentOutOfRangeException(nameof(kind)),
         };
 
+    public unsafe int CopyObjectToStringUtf16(
+        long handle,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        requiredLength = default;
+        try
+        {
+            if (bufferLength < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(bufferLength));
+            }
+
+            string value = _objects.GetObject(handle).ToString() ??
+                string.Empty;
+            requiredLength = value.Length;
+            if (buffer == 0)
+            {
+                return RoslynAbi.Success;
+            }
+
+            if (bufferLength < requiredLength)
+            {
+                throw new ArgumentException(
+                    "The UTF-16 result buffer is too small.",
+                    nameof(bufferLength));
+            }
+
+            value.AsSpan().CopyTo(
+                new Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
     public unsafe int CopyLastErrorUtf16(
         nint buffer,
         int bufferLength,
@@ -343,7 +383,9 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         return RoslynAbi.Success;
     }
 
-    internal int SetError(Exception exception)
+    internal int SetError(
+        Exception exception,
+        [CallerMemberName] string memberName = "")
     {
         RoslynRemoteErrorKind kind;
         int status;
@@ -371,7 +413,10 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
                 break;
         }
 
-        _lastError.Value = new RemoteError(kind, exception.Message);
+        string message = string.IsNullOrEmpty(memberName)
+            ? exception.Message
+            : $"IRoslynControlVtbl.{memberName}: {exception.Message}";
+        _lastError.Value = new RemoteError(kind, message);
 
         return status;
     }

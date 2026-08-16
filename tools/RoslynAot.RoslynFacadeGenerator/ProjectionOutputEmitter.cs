@@ -256,6 +256,13 @@ internal static class ProjectionOutputEmitter
                 RoslynWellKnownObject kind,
                 long symbol,
                 out int result);
+
+            [PreserveSig]
+            int CopyObjectToStringUtf16(
+                long handle,
+                nint buffer,
+                int bufferLength,
+                out int requiredLength);
         }
         """;
 
@@ -796,6 +803,16 @@ internal static class ProjectionOutputEmitter
 
                 return Handle;
             }
+
+            public override string ToString() =>
+                RoslynFacadeRuntime.ReadUtf16String(
+                    ControlVtbl,
+                    (nint buffer, int bufferLength, out int requiredLength) =>
+                        ControlVtbl.CopyObjectToStringUtf16(
+                            Handle,
+                            buffer,
+                            bufferLength,
+                            out requiredLength)) ?? string.Empty;
 
             public bool IsInterfaceImplemented(
                 RuntimeTypeHandle interfaceType,

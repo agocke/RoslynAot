@@ -225,7 +225,7 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
         }
         catch (Exception exception)
         {
-            _lastError.Value = exception.ToString();
+            _lastError.Value = FormatFailure("initialization", exception);
             ReportFailure("initialization", exception);
             return exception.HResult;
         }
@@ -280,7 +280,7 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
         }
         catch (Exception exception)
         {
-            _lastError.Value = exception.ToString();
+            _lastError.Value = FormatFailure($"{actionKind} action", exception);
             ReportFailure($"{actionKind} action", exception);
             return exception.HResult;
         }
@@ -537,15 +537,18 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
         AnalyzerActionKind Kind,
         object Action);
 
-    private void ReportFailure(string operation, Exception exception)
+    private void ReportFailure(string operation, Exception exception) =>
+        Console.Error.WriteLine(FormatFailure(operation, exception));
+
+    private string FormatFailure(string operation, Exception exception)
     {
         string analyzerName =
             _analyzer?.GetType().FullName ??
             _analyzerFactory.Method.DeclaringType?.FullName ??
             "<unknown>";
-        Console.Error.WriteLine(
-            $"RoslynAot analyzer '{analyzerName}' failed during {operation}:");
-        Console.Error.WriteLine(exception);
+        return
+            $"RoslynAot analyzer '{analyzerName}' failed during {operation}:" +
+            Environment.NewLine + exception;
     }
 
 }

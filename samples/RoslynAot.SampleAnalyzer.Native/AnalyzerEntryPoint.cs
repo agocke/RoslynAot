@@ -13,7 +13,7 @@ namespace RoslynAot.SampleAnalyzer.Native;
 public static class AnalyzerEntryPoint
 {
     private static readonly AnalyzerExport s_export =
-        new(new BadClassNameAnalyzer());
+        new(new BadClassNameAnalyzer(), new ThrowingAnalyzer());
 
     [UnmanagedCallersOnly(
         EntryPoint = AnalyzerExport.EntryPoint,

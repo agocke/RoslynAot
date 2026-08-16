@@ -48,6 +48,16 @@ public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
         return Handle;
     }
 
+    public override string ToString() =>
+        RoslynFacadeRuntime.ReadUtf16String(
+            ControlVtbl,
+            (nint buffer, int bufferLength, out int requiredLength) =>
+                ControlVtbl.CopyObjectToStringUtf16(
+                    Handle,
+                    buffer,
+                    bufferLength,
+                    out requiredLength)) ?? string.Empty;
+
     public bool IsInterfaceImplemented(
         RuntimeTypeHandle interfaceType,
         bool throwIfNotImplemented)

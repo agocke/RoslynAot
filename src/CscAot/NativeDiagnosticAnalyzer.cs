@@ -15,6 +15,19 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
     private static readonly StrategyBasedComWrappers s_comWrappers = new();
     private static readonly List<nint> s_loadedLibraries = [];
 
+    // Temporary Step 1 instrumentation; remove once the differential harness
+    // provides coverage reporting.
+    internal static readonly bool TraceEnabled =
+        Environment.GetEnvironmentVariable("ROSLYNAOT_TRACE") == "1";
+
+    internal static void Trace(string message)
+    {
+        if (TraceEnabled)
+        {
+            Console.Error.WriteLine($"[roslynaot] {message}");
+        }
+    }
+
     private readonly IAnalyzerTransport _transport;
     private readonly RoslynInterop _roslynInterop = new();
 
@@ -111,11 +124,13 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
 
     public override void Initialize(AnalysisContext context)
     {
+        Trace($"Initialize [{string.Join(", ", SupportedDiagnostics.Select(static d => d.Id))}]");
         var host = new CompilerAnalyzerHost(this, context);
         InvokeWithHost(
             host,
             (hostPointer, interopPointer) =>
                 _transport.Initialize(hostPointer, interopPointer));
+        Trace("Initialize completed");
     }
 
     internal void InvokeAction(
@@ -388,6 +403,8 @@ internal sealed partial class CompilerAnalyzerHost : IAnalyzerHost
         AnalyzerActionKind actionKind,
         int argument)
     {
+        NativeDiagnosticAnalyzer.Trace(
+            $"RegisterAction id={actionId} kind={actionKind} arg={argument} context={_context.GetType().Name}");
         try
         {
             return _context switch
@@ -432,6 +449,8 @@ internal sealed partial class CompilerAnalyzerHost : IAnalyzerHost
         nint message,
         int messageLength)
     {
+        NativeDiagnosticAnalyzer.Trace(
+            $"ReportDiagnostic index={descriptorIndex} span=[{start},{length}) context={_context.GetType().Name}");
         if (!_analyzer.TryGetDescriptor(
                 descriptorIndex,
                 out DiagnosticDescriptor descriptor) ||
@@ -652,8 +671,12 @@ internal sealed partial class CompilerAnalyzerHost : IAnalyzerHost
     private void Invoke(
         int actionId,
         AnalyzerActionKind actionKind,
-        object context) =>
+        object context)
+    {
+        NativeDiagnosticAnalyzer.Trace(
+            $"Invoke id={actionId} kind={actionKind} context={context.GetType().Name}");
         _analyzer.InvokeAction(actionId, actionKind, context);
+    }
 
     private SyntaxTree? GetSourceTree() =>
         _context switch
