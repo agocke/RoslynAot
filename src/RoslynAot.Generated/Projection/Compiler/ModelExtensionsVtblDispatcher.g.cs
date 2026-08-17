@@ -28,7 +28,7 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(934);
+        RoslynCallCounters.Record(937);
         result = default;
 
         try
@@ -48,7 +48,7 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         long lastStatement,
         out long result)
     {
-        RoslynCallCounters.Record(935);
+        RoslynCallCounters.Record(938);
         result = default;
 
         try
@@ -67,7 +67,7 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         long statementOrExpression,
         out long result)
     {
-        RoslynCallCounters.Record(936);
+        RoslynCallCounters.Record(939);
         result = default;
 
         try
@@ -87,7 +87,7 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         long lastStatement,
         out long result)
     {
-        RoslynCallCounters.Record(937);
+        RoslynCallCounters.Record(940);
         result = default;
 
         try
@@ -108,7 +108,7 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(938);
+        RoslynCallCounters.Record(941);
         result = default;
 
         try
@@ -129,7 +129,7 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(939);
+        RoslynCallCounters.Record(942);
         result = default;
 
         try
@@ -150,7 +150,7 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(940);
+        RoslynCallCounters.Record(943);
         result = default;
 
         try

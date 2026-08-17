@@ -27,7 +27,7 @@ internal sealed partial class GeneratorDriverVtblDispatcher : IGeneratorDriverVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(569);
+        RoslynCallCounters.Record(572);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class GeneratorDriverVtblDispatcher : IGeneratorDriverVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(570);
+        RoslynCallCounters.Record(573);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class GeneratorDriverVtblDispatcher : IGeneratorDriverVt
         long newText,
         out long result)
     {
-        RoslynCallCounters.Record(571);
+        RoslynCallCounters.Record(574);
         result = default;
 
         try
@@ -84,7 +84,7 @@ internal sealed partial class GeneratorDriverVtblDispatcher : IGeneratorDriverVt
         long compilation,
         out long result)
     {
-        RoslynCallCounters.Record(572);
+        RoslynCallCounters.Record(575);
         result = default;
 
         try
@@ -103,7 +103,7 @@ internal sealed partial class GeneratorDriverVtblDispatcher : IGeneratorDriverVt
         long newOptions,
         out long result)
     {
-        RoslynCallCounters.Record(573);
+        RoslynCallCounters.Record(576);
         result = default;
 
         try
@@ -122,7 +122,7 @@ internal sealed partial class GeneratorDriverVtblDispatcher : IGeneratorDriverVt
         long newOptions,
         out long result)
     {
-        RoslynCallCounters.Record(574);
+        RoslynCallCounters.Record(577);
         result = default;
 
         try

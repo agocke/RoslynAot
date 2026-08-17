@@ -19,7 +19,7 @@ namespace RoslynAot.Csc;
 /// </summary>
 internal static class RoslynCallCounters
 {
-    public const int MemberCount = 5820;
+    public const int MemberCount = 5823;
 
     private static readonly long[] s_counts = new long[MemberCount];
 
@@ -362,6 +362,7 @@ internal static class RoslynCallCounters
         "Microsoft.CodeAnalysis.Diagnostics.DiagnosticSuppressor.ReportSuppressions",
         "Microsoft.CodeAnalysis.Diagnostics.DiagnosticSuppressor.get_SupportedDiagnostics",
         "Microsoft.CodeAnalysis.Diagnostics.DiagnosticSuppressor.get_SupportedSuppressions",
+        "Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext.GetControlFlowGraph",
         "Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext.ReportDiagnostic",
         "Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext.get_Compilation",
         "Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext.get_ContainingSymbol",
@@ -370,6 +371,7 @@ internal static class RoslynCallCounters
         "Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext.get_IsGeneratedCode",
         "Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext.get_Operation",
         "Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext.get_Options",
+        "Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext.GetControlFlowGraph",
         "Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext.ReportDiagnostic",
         "Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext.get_Compilation",
         "Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext.get_FilterSpan",
@@ -378,6 +380,7 @@ internal static class RoslynCallCounters
         "Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext.get_OperationBlocks",
         "Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext.get_Options",
         "Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext.get_OwningSymbol",
+        "Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext.GetControlFlowGraph",
         "Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext.get_Compilation",
         "Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext.get_FilterSpan",
         "Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext.get_FilterTree",

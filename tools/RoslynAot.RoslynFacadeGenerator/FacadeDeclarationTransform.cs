@@ -952,7 +952,10 @@ internal sealed class FacadeDeclarationTransform
             MethodDeclarationSyntax rewritten =
                 (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
             return rewritten
-                .WithModifiers(RewriteModifiers(node.Modifiers))
+                .WithModifiers(
+                    SealGenericMethod(
+                        RewriteModifiers(node.Modifiers),
+                        node))
                 .WithConstraintClauses(
                     SyntaxFactory.List(
                         rewritten.ConstraintClauses
@@ -995,6 +998,35 @@ internal sealed class FacadeDeclarationTransform
             ((ConversionOperatorDeclarationSyntax)base
                 .VisitConversionOperatorDeclaration(node)!)
                 .WithModifiers(RewriteModifiers(node.Modifiers));
+
+        /// <summary>
+        /// Makes a generic interface method non-virtual, which is what keeps it
+        /// off the generic virtual dispatch path.
+        /// </summary>
+        /// <remarks>
+        /// A generic virtual method cannot be dispatched through
+        /// <c>IDynamicInterfaceCastable</c>: the runtime looks for a GVM slot
+        /// mapping on the concrete target, <c>RoslynObjectProxy</c> does not
+        /// statically implement the interface, and the type loader *fails
+        /// fast* — killing the compiler and every other analyzer's diagnostics
+        /// rather than raising AD0001. Sealing the member means the call
+        /// resolves directly to this body instead, so the same unsupported
+        /// member throws an exception an analyzer host can catch.
+        ///
+        /// This is safe precisely because no generic method is projected today
+        /// — they are all unsupported and all carry a throwing body. Giving one
+        /// a real implementation means giving it a statically implemented shim
+        /// on the proxy to forward to; see docs/GENERIC-VIRTUAL-DISPATCH.md.
+        /// </remarks>
+        private static SyntaxTokenList SealGenericMethod(
+            SyntaxTokenList modifiers,
+            MethodDeclarationSyntax declaration) =>
+            declaration.TypeParameterList is { Parameters.Count: > 0 } &&
+            declaration.Body is not null &&
+            !modifiers.Any(SyntaxKind.StaticKeyword)
+                ? modifiers.Add(
+                    SyntaxFactory.Token(SyntaxKind.SealedKeyword))
+                : modifiers;
 
         private static SyntaxTokenList RewriteModifiers(
             SyntaxTokenList modifiers) =>

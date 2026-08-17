@@ -28,7 +28,7 @@ internal sealed partial class CaptureIdVtblDispatcher : ICaptureIdVtbl
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(532);
+        RoslynCallCounters.Record(535);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class CaptureIdVtblDispatcher : ICaptureIdVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(533);
+        RoslynCallCounters.Record(536);
         result = default;
 
         try

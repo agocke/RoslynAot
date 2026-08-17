@@ -28,7 +28,7 @@ internal sealed partial class SourceProductionContextVtblDispatcher : ISourcePro
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         long sourceText)
     {
-        RoslynCallCounters.Record(1436);
+        RoslynCallCounters.Record(1439);
 
         try
         {
@@ -46,7 +46,7 @@ internal sealed partial class SourceProductionContextVtblDispatcher : ISourcePro
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)
     {
-        RoslynCallCounters.Record(1437);
+        RoslynCallCounters.Record(1440);
 
         try
         {
@@ -63,7 +63,7 @@ internal sealed partial class SourceProductionContextVtblDispatcher : ISourcePro
         long receiver,
         long diagnostic)
     {
-        RoslynCallCounters.Record(1438);
+        RoslynCallCounters.Record(1441);
 
         try
         {

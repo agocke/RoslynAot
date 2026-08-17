@@ -28,7 +28,7 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
         long textSpan,
         out long result)
     {
-        RoslynCallCounters.Record(904);
+        RoslynCallCounters.Record(907);
         result = default;
 
         try
@@ -48,7 +48,7 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
         long lineSpan,
         out long result)
     {
-        RoslynCallCounters.Record(905);
+        RoslynCallCounters.Record(908);
         result = default;
 
         try
@@ -70,7 +70,7 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
         long mappedLineSpan,
         out long result)
     {
-        RoslynCallCounters.Record(906);
+        RoslynCallCounters.Record(909);
         result = default;
 
         try
@@ -87,7 +87,7 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
     public int Location_get_None(
         out long result)
     {
-        RoslynCallCounters.Record(915);
+        RoslynCallCounters.Record(918);
         result = default;
 
         try

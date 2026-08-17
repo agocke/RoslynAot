@@ -27,7 +27,7 @@ internal sealed partial class IFieldInitializerOperationVtblDispatcher : IIField
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1054);
+        RoslynCallCounters.Record(1057);
         result = default;
 
         try

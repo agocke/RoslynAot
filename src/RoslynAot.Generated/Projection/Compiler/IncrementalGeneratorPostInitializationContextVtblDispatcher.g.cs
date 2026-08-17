@@ -26,7 +26,7 @@ internal sealed partial class IncrementalGeneratorPostInitializationContextVtblD
     public int IncrementalGeneratorPostInitializationContext_AddEmbeddedAttributeDefinition(
         long receiver)
     {
-        RoslynCallCounters.Record(891);
+        RoslynCallCounters.Record(894);
 
         try
         {
@@ -44,7 +44,7 @@ internal sealed partial class IncrementalGeneratorPostInitializationContextVtblD
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         long sourceText)
     {
-        RoslynCallCounters.Record(892);
+        RoslynCallCounters.Record(895);
 
         try
         {
@@ -62,7 +62,7 @@ internal sealed partial class IncrementalGeneratorPostInitializationContextVtblD
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)
     {
-        RoslynCallCounters.Record(893);
+        RoslynCallCounters.Record(896);
 
         try
         {

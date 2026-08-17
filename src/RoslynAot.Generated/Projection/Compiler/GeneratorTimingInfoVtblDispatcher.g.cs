@@ -27,7 +27,7 @@ internal sealed partial class GeneratorTimingInfoVtblDispatcher : IGeneratorTimi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(595);
+        RoslynCallCounters.Record(598);
         result = default;
 
         try

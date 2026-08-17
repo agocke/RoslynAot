@@ -27,7 +27,7 @@ internal sealed partial class StrongNameProviderVtblDispatcher : IStrongNameProv
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1443);
+        RoslynCallCounters.Record(1446);
         result = default;
 
         try

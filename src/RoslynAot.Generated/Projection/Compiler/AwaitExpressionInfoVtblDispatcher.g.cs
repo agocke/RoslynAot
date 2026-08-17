@@ -28,7 +28,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1877);
+        RoslynCallCounters.Record(1880);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1878);
+        RoslynCallCounters.Record(1881);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1879);
+        RoslynCallCounters.Record(1882);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1880);
+        RoslynCallCounters.Record(1883);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1881);
+        RoslynCallCounters.Record(1884);
         result = default;
 
         try
@@ -118,7 +118,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1882);
+        RoslynCallCounters.Record(1885);
         result = default;
 
         try
@@ -136,7 +136,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1883);
+        RoslynCallCounters.Record(1886);
         result = default;
 
         try

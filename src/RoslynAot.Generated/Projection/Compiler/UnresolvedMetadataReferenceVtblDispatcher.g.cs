@@ -28,7 +28,7 @@ internal sealed partial class UnresolvedMetadataReferenceVtblDispatcher : IUnres
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(923);
+        RoslynCallCounters.Record(926);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class UnresolvedMetadataReferenceVtblDispatcher : IUnres
         long properties,
         out long result)
     {
-        RoslynCallCounters.Record(924);
+        RoslynCallCounters.Record(927);
         result = default;
 
         try
@@ -67,7 +67,7 @@ internal sealed partial class UnresolvedMetadataReferenceVtblDispatcher : IUnres
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(925);
+        RoslynCallCounters.Record(928);
         requiredLength = default;
 
         try
@@ -91,7 +91,7 @@ internal sealed partial class UnresolvedMetadataReferenceVtblDispatcher : IUnres
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(926);
+        RoslynCallCounters.Record(929);
         result = default;
 
         try
@@ -111,7 +111,7 @@ internal sealed partial class UnresolvedMetadataReferenceVtblDispatcher : IUnres
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1868);
+        RoslynCallCounters.Record(1871);
         requiredLength = default;
 
         try
@@ -137,7 +137,7 @@ internal sealed partial class UnresolvedMetadataReferenceVtblDispatcher : IUnres
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1869);
+        RoslynCallCounters.Record(1872);
         requiredLength = default;
 
         try

@@ -77,7 +77,7 @@
         "case": "CA1309/Basic",
         "actionKind": "OperationBlock",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext.GetControlFlowGraph"
+        "failingMember": "Microsoft.CodeAnalysis.FlowAnalysis.DataFlow.DataFlowOperationVisitor\u00604.VisitCore"
       }
     },
     {

@@ -27,7 +27,7 @@ internal sealed partial class IParameterReferenceOperationVtblDispatcher : IIPar
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1144);
+        RoslynCallCounters.Record(1147);
         result = default;
 
         try

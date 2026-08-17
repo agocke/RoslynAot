@@ -29,7 +29,7 @@ internal sealed partial class ErrorLogOptionsVtblDispatcher : IErrorLogOptionsVt
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(509);
+        RoslynCallCounters.Record(512);
         requiredLength = default;
 
         try
@@ -53,7 +53,7 @@ internal sealed partial class ErrorLogOptionsVtblDispatcher : IErrorLogOptionsVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(510);
+        RoslynCallCounters.Record(513);
         result = default;
 
         try

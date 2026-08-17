@@ -28,7 +28,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1863);
+        RoslynCallCounters.Record(1866);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1864);
+        RoslynCallCounters.Record(1867);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1865);
+        RoslynCallCounters.Record(1868);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1866);
+        RoslynCallCounters.Record(1869);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1867);
+        RoslynCallCounters.Record(1870);
         result = default;
 
         try

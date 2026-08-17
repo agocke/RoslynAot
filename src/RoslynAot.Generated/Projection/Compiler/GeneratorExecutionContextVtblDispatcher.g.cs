@@ -28,7 +28,7 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         long sourceText)
     {
-        RoslynCallCounters.Record(577);
+        RoslynCallCounters.Record(580);
 
         try
         {
@@ -46,7 +46,7 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)
     {
-        RoslynCallCounters.Record(578);
+        RoslynCallCounters.Record(581);
 
         try
         {
@@ -63,7 +63,7 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         long receiver,
         long diagnostic)
     {
-        RoslynCallCounters.Record(579);
+        RoslynCallCounters.Record(582);
 
         try
         {
@@ -80,7 +80,7 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(580);
+        RoslynCallCounters.Record(583);
         result = default;
 
         try
@@ -98,7 +98,7 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(581);
+        RoslynCallCounters.Record(584);
         result = default;
 
         try
@@ -116,7 +116,7 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(582);
+        RoslynCallCounters.Record(585);
         result = default;
 
         try
@@ -134,7 +134,7 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(583);
+        RoslynCallCounters.Record(586);
         result = default;
 
         try
@@ -152,7 +152,7 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(584);
+        RoslynCallCounters.Record(587);
         result = default;
 
         try
@@ -170,7 +170,7 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(585);
+        RoslynCallCounters.Record(588);
         result = default;
 
         try

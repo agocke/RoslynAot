@@ -27,7 +27,7 @@ internal sealed partial class IInlineArrayAccessOperationVtblDispatcher : IIInli
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1083);
+        RoslynCallCounters.Record(1086);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IInlineArrayAccessOperationVtblDispatcher : IIInli
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1084);
+        RoslynCallCounters.Record(1087);
         result = default;
 
         try

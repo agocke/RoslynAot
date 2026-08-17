@@ -28,7 +28,7 @@ internal sealed partial class LocalizableStringVtblDispatcher : ILocalizableStri
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(901);
+        RoslynCallCounters.Record(904);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class LocalizableStringVtblDispatcher : ILocalizableStri
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(902);
+        RoslynCallCounters.Record(905);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class LocalizableStringVtblDispatcher : ILocalizableStri
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(903);
+        RoslynCallCounters.Record(906);
         requiredLength = default;
 
         try

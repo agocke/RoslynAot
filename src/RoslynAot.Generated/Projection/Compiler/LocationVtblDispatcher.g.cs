@@ -27,7 +27,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(907);
+        RoslynCallCounters.Record(910);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(908);
+        RoslynCallCounters.Record(911);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(909);
+        RoslynCallCounters.Record(912);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(910);
+        RoslynCallCounters.Record(913);
         requiredLength = default;
 
         try
@@ -107,7 +107,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(911);
+        RoslynCallCounters.Record(914);
         result = default;
 
         try
@@ -125,7 +125,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(912);
+        RoslynCallCounters.Record(915);
         result = default;
 
         try
@@ -143,7 +143,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(913);
+        RoslynCallCounters.Record(916);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(914);
+        RoslynCallCounters.Record(917);
         result = default;
 
         try
@@ -179,7 +179,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(916);
+        RoslynCallCounters.Record(919);
         result = default;
 
         try
@@ -197,7 +197,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(917);
+        RoslynCallCounters.Record(920);
         result = default;
 
         try

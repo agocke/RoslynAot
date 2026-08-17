@@ -27,7 +27,7 @@ internal sealed partial class ISwitchExpressionArmOperationVtblDispatcher : IISw
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1189);
+        RoslynCallCounters.Record(1192);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ISwitchExpressionArmOperationVtblDispatcher : IISw
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1190);
+        RoslynCallCounters.Record(1193);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class ISwitchExpressionArmOperationVtblDispatcher : IISw
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1191);
+        RoslynCallCounters.Record(1194);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class ISwitchExpressionArmOperationVtblDispatcher : IISw
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1192);
+        RoslynCallCounters.Record(1195);
         result = default;
 
         try

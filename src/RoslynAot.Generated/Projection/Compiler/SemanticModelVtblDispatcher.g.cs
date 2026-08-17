@@ -28,7 +28,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         int position,
         out int result)
     {
-        RoslynCallCounters.Record(1414);
+        RoslynCallCounters.Record(1417);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long nameSyntax,
         out long result)
     {
-        RoslynCallCounters.Record(1415);
+        RoslynCallCounters.Record(1418);
         result = default;
 
         try
@@ -67,7 +67,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long symbol,
         out int result)
     {
-        RoslynCallCounters.Record(1416);
+        RoslynCallCounters.Record(1419);
         result = default;
 
         try
@@ -87,7 +87,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long eventSymbol,
         out int result)
     {
-        RoslynCallCounters.Record(1417);
+        RoslynCallCounters.Record(1420);
         result = default;
 
         try
@@ -107,7 +107,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(1418);
+        RoslynCallCounters.Record(1421);
         result = default;
 
         try
@@ -127,7 +127,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(1419);
+        RoslynCallCounters.Record(1422);
         result = default;
 
         try
@@ -148,7 +148,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(1420);
+        RoslynCallCounters.Record(1423);
         result = default;
 
         try
@@ -169,7 +169,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(1421);
+        RoslynCallCounters.Record(1424);
         result = default;
 
         try
@@ -191,7 +191,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         int includeReducedExtensionMethods,
         out long result)
     {
-        RoslynCallCounters.Record(1422);
+        RoslynCallCounters.Record(1425);
         result = default;
 
         try
@@ -209,7 +209,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1423);
+        RoslynCallCounters.Record(1426);
         result = default;
 
         try
@@ -227,7 +227,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1424);
+        RoslynCallCounters.Record(1427);
         result = default;
 
         try
@@ -245,7 +245,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1425);
+        RoslynCallCounters.Record(1428);
         result = default;
 
         try
@@ -265,7 +265,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1426);
+        RoslynCallCounters.Record(1429);
         requiredLength = default;
 
         try
@@ -289,7 +289,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1427);
+        RoslynCallCounters.Record(1430);
         result = default;
 
         try
@@ -307,7 +307,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1428);
+        RoslynCallCounters.Record(1431);
         result = default;
 
         try
@@ -325,7 +325,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1429);
+        RoslynCallCounters.Record(1432);
         result = default;
 
         try

@@ -27,7 +27,7 @@ internal sealed partial class IFlowCaptureReferenceOperationVtblDispatcher : IIF
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(557);
+        RoslynCallCounters.Record(560);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IFlowCaptureReferenceOperationVtblDispatcher : IIF
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(558);
+        RoslynCallCounters.Record(561);
         result = default;
 
         try

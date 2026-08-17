@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("30668f7e-49e8-5687-987c-cec6c1b6814d")]
+[Guid("3ab59492-9f53-5211-9487-f538dae14ab5")]
 public partial interface IOperationAnalysisContextVtbl
 {
+
+    [PreserveSig]
+    int OperationAnalysisContext_GetControlFlowGraph(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int OperationAnalysisContext_ReportDiagnostic(

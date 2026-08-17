@@ -37,7 +37,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
-        public TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
+        public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
@@ -179,7 +179,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        protected internal SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode>? nodes = null, System.Func<TNode, TNode, SyntaxNode>? computeReplacementNode = null, System.Collections.Generic.IEnumerable<SyntaxToken>? tokens = null, System.Func<SyntaxToken, SyntaxToken, SyntaxToken>? computeReplacementToken = null, System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia = null, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia>? computeReplacementTrivia = null)
+        protected internal sealed SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode>? nodes = null, System.Func<TNode, TNode, SyntaxNode>? computeReplacementNode = null, System.Collections.Generic.IEnumerable<SyntaxToken>? tokens = null, System.Func<SyntaxToken, SyntaxToken, SyntaxToken>? computeReplacementToken = null, System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia = null, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia>? computeReplacementTrivia = null)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }

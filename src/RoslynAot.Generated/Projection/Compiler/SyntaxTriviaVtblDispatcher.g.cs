@@ -28,7 +28,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long trivia,
         out long result)
     {
-        RoslynCallCounters.Record(1724);
+        RoslynCallCounters.Record(1727);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1725);
+        RoslynCallCounters.Record(1728);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1726);
+        RoslynCallCounters.Record(1729);
         result = default;
 
         try
@@ -84,7 +84,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1727);
+        RoslynCallCounters.Record(1730);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1728);
+        RoslynCallCounters.Record(1731);
         result = default;
 
         try
@@ -120,7 +120,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1729);
+        RoslynCallCounters.Record(1732);
         result = default;
 
         try
@@ -138,7 +138,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1730);
+        RoslynCallCounters.Record(1733);
         result = default;
 
         try
@@ -157,7 +157,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1731);
+        RoslynCallCounters.Record(1734);
         result = default;
 
         try
@@ -176,7 +176,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1732);
+        RoslynCallCounters.Record(1735);
         result = default;
 
         try
@@ -195,7 +195,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long trivia,
         out int result)
     {
-        RoslynCallCounters.Record(1733);
+        RoslynCallCounters.Record(1736);
         result = default;
 
         try
@@ -213,7 +213,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1734);
+        RoslynCallCounters.Record(1737);
         result = default;
 
         try
@@ -233,7 +233,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1735);
+        RoslynCallCounters.Record(1738);
         requiredLength = default;
 
         try
@@ -259,7 +259,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1736);
+        RoslynCallCounters.Record(1739);
         requiredLength = default;
 
         try
@@ -284,7 +284,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long annotations,
         out long result)
     {
-        RoslynCallCounters.Record(1737);
+        RoslynCallCounters.Record(1740);
         result = default;
 
         try
@@ -303,7 +303,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long annotations,
         out long result)
     {
-        RoslynCallCounters.Record(1738);
+        RoslynCallCounters.Record(1741);
         result = default;
 
         try
@@ -322,7 +322,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1739);
+        RoslynCallCounters.Record(1742);
         result = default;
 
         try
@@ -340,7 +340,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1740);
+        RoslynCallCounters.Record(1743);
         result = default;
 
         try
@@ -358,7 +358,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1741);
+        RoslynCallCounters.Record(1744);
         result = default;
 
         try
@@ -376,7 +376,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1742);
+        RoslynCallCounters.Record(1745);
         result = default;
 
         try
@@ -394,7 +394,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1743);
+        RoslynCallCounters.Record(1746);
         result = default;
 
         try
@@ -414,7 +414,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1744);
+        RoslynCallCounters.Record(1747);
         requiredLength = default;
 
         try
@@ -438,7 +438,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1745);
+        RoslynCallCounters.Record(1748);
         result = default;
 
         try
@@ -456,7 +456,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1746);
+        RoslynCallCounters.Record(1749);
         result = default;
 
         try
@@ -474,7 +474,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1747);
+        RoslynCallCounters.Record(1750);
         result = default;
 
         try
@@ -492,7 +492,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1748);
+        RoslynCallCounters.Record(1751);
         result = default;
 
         try
@@ -510,7 +510,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1749);
+        RoslynCallCounters.Record(1752);
         result = default;
 
         try

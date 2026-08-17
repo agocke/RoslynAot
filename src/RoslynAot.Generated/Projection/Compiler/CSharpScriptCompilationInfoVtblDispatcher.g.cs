@@ -28,7 +28,7 @@ internal sealed partial class CSharpScriptCompilationInfoVtblDispatcher : ICShar
         long compilation,
         out long result)
     {
-        RoslynCallCounters.Record(1412);
+        RoslynCallCounters.Record(1415);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class CSharpScriptCompilationInfoVtblDispatcher : ICShar
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1413);
+        RoslynCallCounters.Record(1416);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class CSharpScriptCompilationInfoVtblDispatcher : ICShar
         long compilation,
         out long result)
     {
-        RoslynCallCounters.Record(1998);
+        RoslynCallCounters.Record(2001);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class CSharpScriptCompilationInfoVtblDispatcher : ICShar
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1999);
+        RoslynCallCounters.Record(2002);
         result = default;
 
         try

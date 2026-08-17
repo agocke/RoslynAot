@@ -3844,8 +3844,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IOperationAnalysisContextVtbl>(
             controlVtbl,
-            6235033470711009150L,
-            5584945956296490136L);
+            5913682965530252434L,
+            -5383242077193271404L);
     }
 
     public static IOperationBlockAnalysisContextVtbl GetOperationBlockAnalysisContextVtbl(
@@ -3854,8 +3854,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IOperationBlockAnalysisContextVtbl>(
             controlVtbl,
-            6452479603312682371L,
-            -8450142970622460004L);
+            5811725125295821111L,
+            -8588416451904067137L);
     }
 
     public static IOperationBlockStartAnalysisContextVtbl GetOperationBlockStartAnalysisContextVtbl(
@@ -3864,8 +3864,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IOperationBlockStartAnalysisContextVtbl>(
             controlVtbl,
-            6303699228016849098L,
-            -2913702716235477114L);
+            6714020329119860254L,
+            -4486129416593459301L);
     }
 
     public static ISemanticModelAnalysisContextVtbl GetSemanticModelAnalysisContextVtbl(

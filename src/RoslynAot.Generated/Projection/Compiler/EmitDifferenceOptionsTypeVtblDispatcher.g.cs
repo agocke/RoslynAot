@@ -26,7 +26,7 @@ internal sealed partial class EmitDifferenceOptionsTypeVtblDispatcher : IEmitDif
     public int EmitDifferenceOptions_ctor(
         out long result)
     {
-        RoslynCallCounters.Record(467);
+        RoslynCallCounters.Record(470);
         result = default;
 
         try

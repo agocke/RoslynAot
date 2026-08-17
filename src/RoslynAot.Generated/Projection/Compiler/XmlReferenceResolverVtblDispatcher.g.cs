@@ -27,7 +27,7 @@ internal sealed partial class XmlReferenceResolverVtblDispatcher : IXmlReference
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1875);
+        RoslynCallCounters.Record(1878);
         result = default;
 
         try
@@ -49,7 +49,7 @@ internal sealed partial class XmlReferenceResolverVtblDispatcher : IXmlReference
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1876);
+        RoslynCallCounters.Record(1879);
         requiredLength = default;
 
         try

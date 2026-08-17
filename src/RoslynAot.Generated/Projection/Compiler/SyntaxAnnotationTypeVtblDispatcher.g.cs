@@ -26,7 +26,7 @@ internal sealed partial class SyntaxAnnotationTypeVtblDispatcher : ISyntaxAnnota
     public int SyntaxAnnotation_ctor_3d9c3533(
         out long result)
     {
-        RoslynCallCounters.Record(1531);
+        RoslynCallCounters.Record(1534);
         result = default;
 
         try
@@ -44,7 +44,7 @@ internal sealed partial class SyntaxAnnotationTypeVtblDispatcher : ISyntaxAnnota
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string kind,
         out long result)
     {
-        RoslynCallCounters.Record(1532);
+        RoslynCallCounters.Record(1535);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class SyntaxAnnotationTypeVtblDispatcher : ISyntaxAnnota
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string data,
         out long result)
     {
-        RoslynCallCounters.Record(1533);
+        RoslynCallCounters.Record(1536);
         result = default;
 
         try
@@ -80,7 +80,7 @@ internal sealed partial class SyntaxAnnotationTypeVtblDispatcher : ISyntaxAnnota
     public int SyntaxAnnotation_get_ElasticAnnotation(
         out long result)
     {
-        RoslynCallCounters.Record(1537);
+        RoslynCallCounters.Record(1540);
         result = default;
 
         try

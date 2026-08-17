@@ -27,7 +27,7 @@ internal sealed partial class IFunctionPointerTypeSymbolVtblDispatcher : IIFunct
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(649);
+        RoslynCallCounters.Record(652);
         result = default;
 
         try

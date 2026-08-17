@@ -26,7 +26,7 @@ internal sealed partial class SourceFileResolverTypeVtblDispatcher : ISourceFile
     public int SourceFileResolver_get_Default(
         out long result)
     {
-        RoslynCallCounters.Record(1435);
+        RoslynCallCounters.Record(1438);
         result = default;
 
         try

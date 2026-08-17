@@ -27,7 +27,7 @@ internal sealed partial class IThrowOperationVtblDispatcher : IIThrowOperationVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1202);
+        RoslynCallCounters.Record(1205);
         result = default;
 
         try

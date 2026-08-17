@@ -27,7 +27,7 @@ internal sealed partial class DllImportDataVtblDispatcher : IDllImportDataVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(449);
+        RoslynCallCounters.Record(452);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class DllImportDataVtblDispatcher : IDllImportDataVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(450);
+        RoslynCallCounters.Record(453);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class DllImportDataVtblDispatcher : IDllImportDataVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(451);
+        RoslynCallCounters.Record(454);
         requiredLength = default;
 
         try
@@ -89,7 +89,7 @@ internal sealed partial class DllImportDataVtblDispatcher : IDllImportDataVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(452);
+        RoslynCallCounters.Record(455);
         result = default;
 
         try
@@ -109,7 +109,7 @@ internal sealed partial class DllImportDataVtblDispatcher : IDllImportDataVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(453);
+        RoslynCallCounters.Record(456);
         requiredLength = default;
 
         try
@@ -133,7 +133,7 @@ internal sealed partial class DllImportDataVtblDispatcher : IDllImportDataVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(454);
+        RoslynCallCounters.Record(457);
         result = default;
 
         try

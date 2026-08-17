@@ -130,7 +130,7 @@ namespace Microsoft.CodeAnalysis
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
-        TResult? Accept<TArgument, TResult>(Operations.OperationVisitor<TArgument, TResult> visitor, TArgument argument)
+        sealed TResult? Accept<TArgument, TResult>(Operations.OperationVisitor<TArgument, TResult> visitor, TArgument argument)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }

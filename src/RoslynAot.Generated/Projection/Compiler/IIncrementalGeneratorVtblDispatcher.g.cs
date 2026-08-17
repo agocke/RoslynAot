@@ -27,7 +27,7 @@ internal sealed partial class IIncrementalGeneratorVtblDispatcher : IIIncrementa
         long receiver,
         long context)
     {
-        RoslynCallCounters.Record(652);
+        RoslynCallCounters.Record(655);
 
         try
         {

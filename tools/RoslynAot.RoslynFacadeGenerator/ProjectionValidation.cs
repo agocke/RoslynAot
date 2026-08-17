@@ -16,6 +16,7 @@ internal static class ProjectionValidation
         ValidateCanonicalIds(model, failures);
         ValidateOverrides(model, failures);
         ValidateOwnership(model, failures);
+        ValidateGenericVirtualDispatch(model, failures);
         ValidateAbiSymmetry(model, failures);
         ValidateFactoryCoverage(model, failures);
 
@@ -134,6 +135,46 @@ internal static class ProjectionValidation
                     "but has a proxy factory, so a compiler-side instance " +
                     "could reach the analyzer as a handle.");
             }
+        }
+    }
+
+    /// <summary>
+    /// A generic method on a dynamic-interface-proxied type must not be
+    /// dispatched virtually.
+    /// </summary>
+    /// <remarks>
+    /// NativeAOT resolves a generic virtual method through a slot mapping on
+    /// the concrete target type. <c>RoslynObjectProxy</c> does not statically
+    /// implement the projected interfaces, so there is nothing to find and the
+    /// type loader *fails fast* — killing the compiler and losing every other
+    /// analyzer's diagnostics, below any frame that could catch it.
+    ///
+    /// The emitter seals these members so the call resolves directly to the
+    /// facade body instead. This check exists because the failure mode of
+    /// getting it wrong is the worst one available: not a diagnostic, not an
+    /// exception, but a dead compiler. A supported generic call would mean
+    /// something intends to dispatch it, which needs a statically implemented
+    /// shim on the proxy first — see docs/GENERIC-VIRTUAL-DISPATCH.md.
+    /// </remarks>
+    private static void ValidateGenericVirtualDispatch(
+        ProjectionModel model,
+        List<string> failures)
+    {
+        foreach (ProjectedCall call in model.Calls)
+        {
+            if (!call.IsSupported ||
+                !call.Symbol.IsGenericMethod ||
+                call.Symbol.ContainingType is not INamedTypeSymbol type ||
+                !model.UsesDynamicInterfaceProxy(type))
+            {
+                continue;
+            }
+
+            failures.Add(
+                $"Generic call '{call.CanonicalId}' is supported on a " +
+                "dynamic-interface proxy, which NativeAOT cannot dispatch " +
+                "without a statically implemented shim; reaching it would " +
+                "terminate the compiler.");
         }
     }
 

@@ -27,7 +27,7 @@ internal sealed partial class ControlFlowGraphVtblDispatcher : IControlFlowGraph
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(541);
+        RoslynCallCounters.Record(544);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ControlFlowGraphVtblDispatcher : IControlFlowGraph
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(542);
+        RoslynCallCounters.Record(545);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class ControlFlowGraphVtblDispatcher : IControlFlowGraph
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(543);
+        RoslynCallCounters.Record(546);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class ControlFlowGraphVtblDispatcher : IControlFlowGraph
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(544);
+        RoslynCallCounters.Record(547);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class ControlFlowGraphVtblDispatcher : IControlFlowGraph
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(545);
+        RoslynCallCounters.Record(548);
         result = default;
 
         try

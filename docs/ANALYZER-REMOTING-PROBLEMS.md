@@ -434,11 +434,25 @@ facade does declare the member with a `PlatformNotSupportedException` body — i
 is simply never reached. `IOperation.Accept(OperationVisitor)`, the non-generic
 overload, dispatches normally.
 
-Mitigated for now by withdrawing the members that hand an analyzer a
-`ControlFlowGraph`, which is the route into dataflow analysis; the failure is
-then a reported unsupported member. The general fix belongs to Step 8: any
-generic virtual method on a proxied type needs a dispatch path, or the model
-needs to refuse to project the types that declare them.
+**Status (2026-08-17): the process-kill half is closed.** Generic methods on
+facade interfaces are emitted `sealed`, which makes them non-virtual, so the
+call resolves directly to the facade body and never consults a GVM slot
+mapping. Reaching one now raises a catchable `PlatformNotSupportedException`
+that surfaces as `AD0001` naming the member. Verified end-to-end: `CA1508`
+reaches dataflow analysis, calls `IOperation.Accept<TArgument, TResult>` at the
+same `DataFlowOperationVisitor.VisitCore` frame that previously killed the
+compiler, and the compilation completes. The `GetControlFlowGraph` members
+withdrawn as a tourniquet are restored.
+
+`ProjectionValidation` now refuses to generate a *supported* generic call on a
+dynamic-interface proxy, since that would mean something intends to dispatch it
+virtually.
+
+**What remains** is making these members work rather than throw. That needs a
+statically implemented shim on the proxy for ILC to build real GVM slots
+against — demonstrated to work for reference and struct instantiations alike,
+including through prebuilt analyzer IL. Seven signatures cover the whole
+surface. See [generic virtual dispatch](GENERIC-VIRTUAL-DISPATCH.md).
 
 ## Architectural conclusion
 

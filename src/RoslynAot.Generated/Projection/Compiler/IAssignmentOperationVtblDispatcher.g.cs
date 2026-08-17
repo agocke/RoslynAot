@@ -27,7 +27,7 @@ internal sealed partial class IAssignmentOperationVtblDispatcher : IIAssignmentO
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(980);
+        RoslynCallCounters.Record(983);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IAssignmentOperationVtblDispatcher : IIAssignmentO
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(981);
+        RoslynCallCounters.Record(984);
         result = default;
 
         try

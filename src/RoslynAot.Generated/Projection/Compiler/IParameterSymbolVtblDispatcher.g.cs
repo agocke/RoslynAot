@@ -27,7 +27,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(775);
+        RoslynCallCounters.Record(778);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(776);
+        RoslynCallCounters.Record(779);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(777);
+        RoslynCallCounters.Record(780);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(778);
+        RoslynCallCounters.Record(781);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(779);
+        RoslynCallCounters.Record(782);
         result = default;
 
         try
@@ -117,7 +117,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(780);
+        RoslynCallCounters.Record(783);
         result = default;
 
         try
@@ -135,7 +135,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(781);
+        RoslynCallCounters.Record(784);
         result = default;
 
         try
@@ -153,7 +153,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(782);
+        RoslynCallCounters.Record(785);
         result = default;
 
         try
@@ -171,7 +171,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(783);
+        RoslynCallCounters.Record(786);
         result = default;
 
         try
@@ -189,7 +189,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(784);
+        RoslynCallCounters.Record(787);
         result = default;
 
         try
@@ -207,7 +207,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(785);
+        RoslynCallCounters.Record(788);
         result = default;
 
         try
@@ -225,7 +225,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(786);
+        RoslynCallCounters.Record(789);
         result = default;
 
         try
@@ -243,7 +243,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(787);
+        RoslynCallCounters.Record(790);
         result = default;
 
         try
@@ -261,7 +261,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(788);
+        RoslynCallCounters.Record(791);
         result = default;
 
         try
@@ -279,7 +279,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(789);
+        RoslynCallCounters.Record(792);
         result = default;
 
         try

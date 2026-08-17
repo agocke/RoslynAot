@@ -112,7 +112,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        public TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
+        public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }

@@ -28,7 +28,7 @@ internal sealed partial class ScriptCompilationInfoVtblDispatcher : IScriptCompi
         long compilation,
         out long result)
     {
-        RoslynCallCounters.Record(1412);
+        RoslynCallCounters.Record(1415);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class ScriptCompilationInfoVtblDispatcher : IScriptCompi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1413);
+        RoslynCallCounters.Record(1416);
         result = default;
 
         try

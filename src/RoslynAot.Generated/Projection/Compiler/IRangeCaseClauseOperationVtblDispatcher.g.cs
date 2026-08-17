@@ -27,7 +27,7 @@ internal sealed partial class IRangeCaseClauseOperationVtblDispatcher : IIRangeC
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1158);
+        RoslynCallCounters.Record(1161);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IRangeCaseClauseOperationVtblDispatcher : IIRangeC
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1159);
+        RoslynCallCounters.Record(1162);
         result = default;
 
         try

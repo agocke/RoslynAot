@@ -28,7 +28,7 @@ internal sealed partial class GeneratorPostInitializationContextVtblDispatcher :
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         long sourceText)
     {
-        RoslynCallCounters.Record(589);
+        RoslynCallCounters.Record(592);
 
         try
         {
@@ -46,7 +46,7 @@ internal sealed partial class GeneratorPostInitializationContextVtblDispatcher :
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)
     {
-        RoslynCallCounters.Record(590);
+        RoslynCallCounters.Record(593);
 
         try
         {

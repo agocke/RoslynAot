@@ -676,21 +676,32 @@ elements first (`ImmutableArray<TextSpan>`), then structs with reference fields,
 then `TypedConstant` and `SyntaxToken` sequences. Anything outside the set fails
 at analyzer preparation with a named diagnostic.
 
-**Generic virtual methods are the urgent part of this step, not the tidy part.**
-A generic virtual or interface method on a proxied type cannot be dispatched
-through `IDynamicInterfaceCastable`, and NativeAOT's type loader *fails fast*
-rather than throwing — killing the compiler process and every other analyzer's
-diagnostics with it. `IOperation.Accept<TArgument, TResult>` is the live case;
-Step 3 had to withdraw `GetControlFlowGraph` to keep the corpus from reaching
-it. Problem 21 has the detail. Either such methods get a dispatch path, or the
-model must refuse to project the types that declare them — but the current
-state, where the member exists and reaching it is fatal, is the worst of the
-three.
+**Generic virtual dispatch has been separated out and half-solved.** A generic
+virtual method on a proxied type cannot be dispatched through
+`IDynamicInterfaceCastable`; NativeAOT's type loader *fails fast* rather than
+throwing, killing the compiler and every other analyzer's diagnostics. That is
+no longer reachable: these members are emitted `sealed`, so they are
+non-virtual, resolve directly to the facade body, and raise a catchable
+exception instead. `GetControlFlowGraph`, withdrawn as a tourniquet in Step 3,
+is restored.
+
+What remains for this step is making them *work*. Two distinct pieces:
+
+- **Dispatch** needs a statically implemented shim on the proxy for ILC to build
+  real GVM slots against. Seven signatures cover the whole surface, and the
+  mechanism is verified for reference and struct instantiations alike.
+- **Marshalling** is the separate problem: a generic member whose type argument
+  must be *represented* in the transport cannot be resolved reflectively —
+  `MakeGenericMethod` and `MakeGenericType` do not work for struct
+  instantiations under NativeAOT — so those need reference-erasure, boxing the
+  value so one shared implementation serves every instantiation.
+
+See [generic virtual dispatch](GENERIC-VIRTUAL-DISPATCH.md).
 
 **Exit:** the declared-unsupported set contains no public analyzer-facing member
 that the corpus reaches, and no reachable member can terminate the compiler.
 
-**Closes:** the rest of 1, the transport half of 5, and 21.
+**Closes:** the rest of 1, the transport half of 5, and the rest of 21.
 
 ---
 

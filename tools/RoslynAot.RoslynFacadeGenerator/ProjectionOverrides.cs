@@ -537,18 +537,6 @@ internal static class ProjectionOverrides
             ],
             RemoteFallback: true),
 
-        ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext.GetControlFlowGraph~Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph"] = new(
-            ControlFlowGraphReason,
-            Strategy: ProjectionStrategy.Unsupported),
-
-        ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext.GetControlFlowGraph(Microsoft.CodeAnalysis.IOperation)~Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph"] = new(
-            ControlFlowGraphReason,
-            Strategy: ProjectionStrategy.Unsupported),
-
-        ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext.GetControlFlowGraph(Microsoft.CodeAnalysis.IOperation)~Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph"] = new(
-            ControlFlowGraphReason,
-            Strategy: ProjectionStrategy.Unsupported),
-
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Location.get_Kind~Microsoft.CodeAnalysis.LocationKind"] = new(
             LocationDualReason,
             LocalStatements:
@@ -748,17 +736,6 @@ internal static class ProjectionOverrides
             GetTypeMembersReason,
             Strategy: ProjectionStrategy.Unsupported),
     };
-
-    private const string ControlFlowGraphReason =
-        "Handing an analyzer a control flow graph leads into the analyzer " +
-        "utilities' dataflow analysis, which visits operations through " +
-        "IOperation.Accept<TArgument, TResult>. NativeAOT cannot resolve a " +
-        "generic virtual method through an IDynamicInterfaceCastable proxy: " +
-        "the type loader fails fast and terminates the compiler process " +
-        "rather than raising AD0001, taking every other analyzer's " +
-        "diagnostics with it. Withdrawn so the failure is a reported " +
-        "unsupported member instead of a dead compiler. Restore it when " +
-        "Step 8 gives generic virtual methods a dispatch path.";
 
     private const string LocationDualReason =
         "Location is dual: one type, two states. A location the analyzer " +

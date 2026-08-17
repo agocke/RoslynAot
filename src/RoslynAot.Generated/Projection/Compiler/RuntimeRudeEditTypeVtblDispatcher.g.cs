@@ -28,7 +28,7 @@ internal sealed partial class RuntimeRudeEditTypeVtblDispatcher : IRuntimeRudeEd
         int errorCode,
         out long result)
     {
-        RoslynCallCounters.Record(498);
+        RoslynCallCounters.Record(501);
         result = default;
 
         try

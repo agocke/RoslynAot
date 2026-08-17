@@ -27,7 +27,7 @@ internal sealed partial class IInterpolatedStringHandlerArgumentPlaceholderOpera
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1089);
+        RoslynCallCounters.Record(1092);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IInterpolatedStringHandlerArgumentPlaceholderOpera
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1090);
+        RoslynCallCounters.Record(1093);
         result = default;
 
         try

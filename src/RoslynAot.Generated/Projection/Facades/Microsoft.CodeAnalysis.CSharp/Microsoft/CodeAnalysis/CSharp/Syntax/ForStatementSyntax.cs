@@ -138,7 +138,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
-        public TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
+        public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }

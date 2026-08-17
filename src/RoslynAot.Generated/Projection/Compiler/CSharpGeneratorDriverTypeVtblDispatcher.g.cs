@@ -27,7 +27,7 @@ internal sealed partial class CSharpGeneratorDriverTypeVtblDispatcher : ICSharpG
         long incrementalGenerators,
         out long result)
     {
-        RoslynCallCounters.Record(1985);
+        RoslynCallCounters.Record(1988);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class CSharpGeneratorDriverTypeVtblDispatcher : ICSharpG
         long generators,
         out long result)
     {
-        RoslynCallCounters.Record(1986);
+        RoslynCallCounters.Record(1989);
         result = default;
 
         try

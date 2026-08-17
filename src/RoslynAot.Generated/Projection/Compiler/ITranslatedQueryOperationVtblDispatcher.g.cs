@@ -27,7 +27,7 @@ internal sealed partial class ITranslatedQueryOperationVtblDispatcher : IITransl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1203);
+        RoslynCallCounters.Record(1206);
         result = default;
 
         try

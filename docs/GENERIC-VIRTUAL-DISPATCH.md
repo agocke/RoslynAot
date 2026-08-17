@@ -142,61 +142,67 @@ do, so it is the one thing that needs handling around it.
 ## The mechanism that works
 
 `IDynamicInterfaceCastable` is half-implemented for this purpose: it carries
-ordinary interface dispatch but not generic virtual dispatch. The surface that
-needs generic dispatch therefore has to be **statically shimmed** onto the proxy
-so ILC builds real GVM slots for it.
+ordinary interface dispatch but not generic virtual dispatch. The fix is to keep
+the member off the virtual dispatch path entirely.
 
-A second experiment confirms this works, and that the shim is far cheaper than
-one-proxy-per-type. A proxy that statically implements *only* the
-GVM-declaring base interface, while every other interface still arrives through
-`IDynamicInterfaceCastable`:
+### What does not work: removing the re-declaration
+
+The facade re-declares `Accept<TResult>` on each of the 251 syntax node
+interfaces, because Roslyn's classes each `override` it. In an interface a
+re-declaration is a *new slot* that hides the base's, so the obvious move is to
+stop emitting it and let the base's declaration be inherited — then one shim on
+the declaring type serves the hierarchy.
+
+**This breaks binding.** Tested with the real arrangement — an "analyzer"
+compiled once against a class-shaped reference assembly, never recompiled, then
+bound to an interface-shaped facade:
 
 ```
-plain ok                                    <- DIM, still works
-other ok                                    <- DIM on a second interface
-[dispatched Object/String] via IThing       <- GVM through a DIM-served interface
-[dispatched Object/Int32]  via IThing       <- struct type argument
-[dispatched Int32/String]  via IThing       <- struct type argument
-[dispatched Object/String] via IOther       <- second DIM-served interface
-[dispatched Object/String] via IBase        <- direct
+MissingMethodException: Method not found: '!!0 Lib.Derived.Accept(Int32)'
+```
+
+A prebuilt memberref to `Derived::Accept` does not resolve to an inherited
+interface member. The per-interface re-declaration is load-bearing and has to
+stay.
+
+### What works: seal the member
+
+A `sealed` interface member is non-virtual, so the call resolves directly to its
+body and never consults a GVM slot mapping. Same test arrangement, prebuilt
+analyzer IL:
+
+```
+CAUGHT: not implemented by RoslynAot
+process survived
 exit=0
 ```
 
-Three properties make this the design rather than a workaround:
+That is the whole fix for the safety problem, and it is one modifier. Every
+generic member on every one of the 252 types stops being able to kill the
+compiler and starts raising an ordinary catchable exception that surfaces as
+`AD0001`. It is safe precisely because no generic method is projected today —
+they are all unsupported and all already carry a throwing body.
 
-- **Derived interfaces inherit the fix.** `IThing` and `IOther` were served by
-  `IDynamicInterfaceCastable` and still dispatched their inherited generic
-  method correctly. The shim goes on the base that *declares* the generic
-  member, not on all 252 types that expose it.
-- **Struct instantiations work.** ILC generates the specialized bodies because
-  it can see the call sites — and it can, because the analyzer assembly is
-  compiled into the same NativeAOT module as the facade. The closed world is
-  automatic; no instantiation scanning, and no reliance on `MakeGenericMethod`,
-  which would not work for struct arguments anyway.
-- **Trimming is preserved.** Rooting a small number of declaring interfaces is
-  not rooting a concrete proxy per type.
+### What works for real implementations: a statically implemented shim
 
-### Where the generic dispatch should land
+Sealing makes the member survivable; it does not make it work. To give one a
+real body, the proxy needs to statically implement something the sealed body can
+forward to, so ILC builds real GVM slots for it. Verified:
 
-For the `Accept` family the answer is that it should not cross the boundary at
-all. Roslyn's `node.Accept(visitor)` is `visitor.VisitClassDeclaration(this)` —
-the visitor is analyzer-owned, so the proxy can dispatch on its own kind to the
-visitor's method entirely analyzer-side, and `TResult` never touches the wire.
+```
+[shim String] [shim Int32] ref='' val='0'
+exit=0
+```
 
-That leaves genuine ABI-crossing generics — members whose type argument has to
-be *represented* in the transport — as a separate and smaller problem.
-Reference-erasing those, so one shared implementation serves every
-instantiation, is the right treatment and belongs with the Step 8 wire work
-rather than here.
+— including the struct instantiation, through prebuilt analyzer IL, with every
+other interface still arriving via `IDynamicInterfaceCastable`.
 
-### Rejected alternatives
-
-| Option | Why not |
-|---|---|
-| A concrete class proxy per GVM-declaring type | Roots 252 types' surface into every module, abandoning trimming, and the shim achieves the same dispatch for a fraction of the cost |
-| Remove the generic member from the facade | The analyzer's IL references it; the assembly would not bind |
-| Scan for a closed instantiation set and root each one | Killed by experiment: the failing instantiation was already rooted and directly visible to ILC. Rooting is not what is missing |
-| Refuse to project types declaring generic virtual methods | Withdraws the syntax tree, which is most of what analyzers do. Retained only as the narrow mitigation now in place |
+One constraint shapes the shim: `RoslynObjectProxy` lives in the runtime facade
+assembly, which the language-specific facades reference, so a shim signature
+cannot name `CSharpSyntaxVisitor<TResult>` without a circular reference. The
+facade-typed parameters therefore have to be **erased to `object`** — the same
+reference-erasure that generic *marshalling* needs, arrived at from a different
+direction.
 
 ## Size of the shim set
 
@@ -213,14 +219,9 @@ method signatures**:
 | 1 | `FirstAncestorOrSelf<TNode>(...)` | `SyntaxNode` |
 | 1 | `FirstAncestorOrSelf<TNode, TArg>(...)` | `SyntaxNode` |
 
-One prerequisite makes the 251 collapse to one. The facade currently
-**re-declares** `Accept<TResult>` on each derived syntax node interface, because
-Roslyn's classes each `override` it. In an interface a re-declaration is a new
-slot that hides the base's, so a shim on `CSharpSyntaxNode` would not cover
-`ClassDeclarationSyntax.Accept<TResult>`. An interface has no need to restate an
-inherited member, so the generator should stop emitting overrides of generic
-virtual members on derived facade interfaces — after which one shim on the
-declaring type serves the whole hierarchy.
+Seven is the number of *shims* required, not the number of declarations. The
+251 re-declarations stay — removing them breaks binding, as above — but each is
+sealed and forwards, so they all funnel into one shim per signature.
 
 ## Open questions
 
@@ -245,13 +246,22 @@ declaring type serves the whole hierarchy.
    shared implementation serves every instantiation — rather than a shim. That
    belongs with the Step 8 wire work.
 
-## Current mitigation
+## Status
 
-Migration Step 3 withdrew the three `GetControlFlowGraph` members, which are
-the route into the analyzer utilities' dataflow analysis and the only observed
-path to a GVM call. That converts the process kill into an `AD0001` naming
-`GetControlFlowGraph`, at the cost of the rules that need a control flow graph.
+**Sealing is implemented.** Generic methods on facade interfaces are emitted
+`sealed`, so the process-kill class is closed: reaching one now raises a
+catchable `PlatformNotSupportedException` that surfaces as `AD0001` naming the
+member. `ProjectionValidation` refuses to generate a *supported* generic call on
+a dynamic-interface proxy, because that would mean something intends to dispatch
+it virtually — which needs a shim first.
 
-This is a tourniquet, not a fix. It closes the one path the corpus reaches; it
-does nothing about the other 251 types, and the corpus reaching a second path
-is a matter of the burn-down improving.
+With the failure survivable, the three `GetControlFlowGraph` members withdrawn
+by migration Step 3 are restored. Analyzers that use dataflow analysis now fail
+on a named member instead of taking the compiler down.
+
+**Shims are not implemented.** The seven signatures still throw. Implementing
+them is what would make the syntax visitor family actually work, and for the
+`Accept` family the body need not cross the boundary at all: Roslyn's
+`node.Accept(visitor)` is `visitor.VisitClassDeclaration(this)`, so the proxy can
+dispatch on its own kind to an analyzer-owned visitor with no crossing and
+`TResult` never touching the wire.

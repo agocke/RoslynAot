@@ -27,7 +27,7 @@ internal sealed partial class SyntaxWalkerVtblDispatcher : ISyntaxWalkerVtbl
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(1777);
+        RoslynCallCounters.Record(1780);
 
         try
         {

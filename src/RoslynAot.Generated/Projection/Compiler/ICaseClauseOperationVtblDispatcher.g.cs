@@ -27,7 +27,7 @@ internal sealed partial class ICaseClauseOperationVtblDispatcher : IICaseClauseO
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(999);
+        RoslynCallCounters.Record(1002);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ICaseClauseOperationVtblDispatcher : IICaseClauseO
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1000);
+        RoslynCallCounters.Record(1003);
         result = default;
 
         try

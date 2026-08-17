@@ -28,7 +28,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(513);
+        RoslynCallCounters.Record(516);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(514);
+        RoslynCallCounters.Record(517);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(515);
+        RoslynCallCounters.Record(518);
         requiredLength = default;
 
         try
@@ -90,7 +90,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(516);
+        RoslynCallCounters.Record(519);
         result = default;
 
         try
@@ -108,7 +108,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(517);
+        RoslynCallCounters.Record(520);
         result = default;
 
         try
@@ -126,7 +126,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(518);
+        RoslynCallCounters.Record(521);
         result = default;
 
         try
@@ -146,7 +146,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(519);
+        RoslynCallCounters.Record(522);
         requiredLength = default;
 
         try
@@ -170,7 +170,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(520);
+        RoslynCallCounters.Record(523);
         result = default;
 
         try
@@ -188,7 +188,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(521);
+        RoslynCallCounters.Record(524);
         result = default;
 
         try

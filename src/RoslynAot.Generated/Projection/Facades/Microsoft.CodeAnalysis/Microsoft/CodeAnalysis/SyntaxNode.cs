@@ -297,7 +297,7 @@ namespace Microsoft.CodeAnalysis
             return result != 0;
         }
 
-        public T? CopyAnnotationsTo<T>(T? node)
+        public sealed T? CopyAnnotationsTo<T>(T? node)
             where T : SyntaxNode
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
@@ -415,13 +415,13 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        public TNode? FirstAncestorOrSelf<TNode>(System.Func<TNode, bool>? predicate = null, bool ascendOutOfTrivia = true)
+        public sealed TNode? FirstAncestorOrSelf<TNode>(System.Func<TNode, bool>? predicate = null, bool ascendOutOfTrivia = true)
             where TNode : SyntaxNode
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        public TNode? FirstAncestorOrSelf<TNode, TArg>(System.Func<TNode, TArg, bool> predicate, TArg argument, bool ascendOutOfTrivia = true)
+        public sealed TNode? FirstAncestorOrSelf<TNode, TArg>(System.Func<TNode, TArg, bool> predicate, TArg argument, bool ascendOutOfTrivia = true)
             where TNode : SyntaxNode
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
@@ -540,13 +540,13 @@ namespace Microsoft.CodeAnalysis
             return Location.__RoslynAotCreateLocal(Span);
         }
 
-        protected T? GetRed<T>(ref T? field, int slot)
+        protected sealed T? GetRed<T>(ref T? field, int slot)
             where T : SyntaxNode
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        protected T? GetRedAtZero<T>(ref T? field)
+        protected sealed T? GetRedAtZero<T>(ref T? field)
             where T : SyntaxNode
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
@@ -664,7 +664,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        protected internal SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode>? nodes = null, System.Func<TNode, TNode, SyntaxNode>? computeReplacementNode = null, System.Collections.Generic.IEnumerable<SyntaxToken>? tokens = null, System.Func<SyntaxToken, SyntaxToken, SyntaxToken>? computeReplacementToken = null, System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia = null, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia>? computeReplacementTrivia = null)
+        protected internal sealed SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode>? nodes = null, System.Func<TNode, TNode, SyntaxNode>? computeReplacementNode = null, System.Collections.Generic.IEnumerable<SyntaxToken>? tokens = null, System.Func<SyntaxToken, SyntaxToken, SyntaxToken>? computeReplacementToken = null, System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia = null, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia>? computeReplacementTrivia = null)
             where TNode : SyntaxNode
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");

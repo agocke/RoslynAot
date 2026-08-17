@@ -27,7 +27,7 @@ internal sealed partial class MetadataReferenceResolverVtblDispatcher : IMetadat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(930);
+        RoslynCallCounters.Record(933);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class MetadataReferenceResolverVtblDispatcher : IMetadat
         long referenceIdentity,
         out long result)
     {
-        RoslynCallCounters.Record(931);
+        RoslynCallCounters.Record(934);
         result = default;
 
         try
@@ -68,7 +68,7 @@ internal sealed partial class MetadataReferenceResolverVtblDispatcher : IMetadat
         long properties,
         out long result)
     {
-        RoslynCallCounters.Record(932);
+        RoslynCallCounters.Record(935);
         result = default;
 
         try
@@ -86,7 +86,7 @@ internal sealed partial class MetadataReferenceResolverVtblDispatcher : IMetadat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(933);
+        RoslynCallCounters.Record(936);
         result = default;
 
         try

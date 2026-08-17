@@ -29,7 +29,7 @@ internal sealed partial class SymbolDisplayPartTypeVtblDispatcher : ISymbolDispl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(1501);
+        RoslynCallCounters.Record(1504);
         result = default;
 
         try

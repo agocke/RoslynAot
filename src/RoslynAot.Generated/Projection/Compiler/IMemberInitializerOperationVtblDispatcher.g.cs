@@ -27,7 +27,7 @@ internal sealed partial class IMemberInitializerOperationVtblDispatcher : IIMemb
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1128);
+        RoslynCallCounters.Record(1131);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IMemberInitializerOperationVtblDispatcher : IIMemb
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1129);
+        RoslynCallCounters.Record(1132);
         result = default;
 
         try
