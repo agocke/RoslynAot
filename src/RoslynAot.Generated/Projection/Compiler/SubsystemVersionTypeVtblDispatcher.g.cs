@@ -28,6 +28,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
         int minor,
         out long result)
     {
+        RoslynCallCounters.Record(1345);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_None(
         out long result)
     {
+        RoslynCallCounters.Record(1352);
         result = default;
 
         try
@@ -60,6 +62,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_Windows2000(
         out long result)
     {
+        RoslynCallCounters.Record(1353);
         result = default;
 
         try
@@ -76,6 +79,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_Windows7(
         out long result)
     {
+        RoslynCallCounters.Record(1354);
         result = default;
 
         try
@@ -92,6 +96,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_Windows8(
         out long result)
     {
+        RoslynCallCounters.Record(1355);
         result = default;
 
         try
@@ -108,6 +113,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_WindowsVista(
         out long result)
     {
+        RoslynCallCounters.Record(1356);
         result = default;
 
         try
@@ -124,6 +130,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_WindowsXP(
         out long result)
     {
+        RoslynCallCounters.Record(1357);
         result = default;
 
         try

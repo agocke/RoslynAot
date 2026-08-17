@@ -28,6 +28,7 @@ internal sealed partial class QueryClauseInfoVtblDispatcher : IQueryClauseInfoVt
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(2464);
         result = default;
 
         try
@@ -45,6 +46,7 @@ internal sealed partial class QueryClauseInfoVtblDispatcher : IQueryClauseInfoVt
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(2465);
         result = default;
 
         try
@@ -62,6 +64,7 @@ internal sealed partial class QueryClauseInfoVtblDispatcher : IQueryClauseInfoVt
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(2466);
         result = default;
 
         try
@@ -79,6 +82,7 @@ internal sealed partial class QueryClauseInfoVtblDispatcher : IQueryClauseInfoVt
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(2467);
         result = default;
 
         try

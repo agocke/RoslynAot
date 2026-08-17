@@ -28,6 +28,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
         out int result)
     {
+        RoslynCallCounters.Record(28);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string possibleEnd,
         out int result)
     {
+        RoslynCallCounters.Record(29);
         result = default;
 
         try
@@ -64,6 +66,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
         out int result)
     {
+        RoslynCallCounters.Record(30);
         result = default;
 
         try
@@ -81,6 +84,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out int result)
     {
+        RoslynCallCounters.Record(31);
         result = default;
 
         try
@@ -99,6 +103,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string possibleStart,
         out int result)
     {
+        RoslynCallCounters.Record(32);
         result = default;
 
         try
@@ -116,6 +121,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         ushort c,
         out ushort result)
     {
+        RoslynCallCounters.Record(33);
         result = default;
 
         try
@@ -135,6 +141,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(34);
         requiredLength = default;
 
         try

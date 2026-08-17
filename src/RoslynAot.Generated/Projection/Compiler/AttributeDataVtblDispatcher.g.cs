@@ -27,6 +27,7 @@ internal sealed partial class AttributeDataVtblDispatcher : IAttributeDataVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(25);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class AttributeDataVtblDispatcher : IAttributeDataVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(26);
         result = default;
 
         try
@@ -61,6 +63,7 @@ internal sealed partial class AttributeDataVtblDispatcher : IAttributeDataVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(27);
         result = default;
 
         try

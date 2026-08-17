@@ -27,6 +27,7 @@ internal sealed partial class IArgumentOperationVtblDispatcher : IIArgumentOpera
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(885);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class IArgumentOperationVtblDispatcher : IIArgumentOpera
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(886);
         result = default;
 
         try
@@ -61,6 +63,7 @@ internal sealed partial class IArgumentOperationVtblDispatcher : IIArgumentOpera
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(887);
         result = default;
 
         try
@@ -78,6 +81,7 @@ internal sealed partial class IArgumentOperationVtblDispatcher : IIArgumentOpera
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(888);
         result = default;
 
         try
@@ -95,6 +99,7 @@ internal sealed partial class IArgumentOperationVtblDispatcher : IIArgumentOpera
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(889);
         result = default;
 
         try

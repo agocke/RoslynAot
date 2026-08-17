@@ -27,6 +27,7 @@ internal sealed partial class ITypePatternOperationVtblDispatcher : IITypePatter
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1130);
         result = default;
 
         try

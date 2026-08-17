@@ -27,6 +27,7 @@ internal sealed partial class IRangeOperationVtblDispatcher : IIRangeOperationVt
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1075);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class IRangeOperationVtblDispatcher : IIRangeOperationVt
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1076);
         result = default;
 
         try
@@ -61,6 +63,7 @@ internal sealed partial class IRangeOperationVtblDispatcher : IIRangeOperationVt
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1077);
         result = default;
 
         try
@@ -78,6 +81,7 @@ internal sealed partial class IRangeOperationVtblDispatcher : IIRangeOperationVt
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1078);
         result = default;
 
         try

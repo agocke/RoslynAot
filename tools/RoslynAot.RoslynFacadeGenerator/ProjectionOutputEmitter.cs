@@ -23,6 +23,8 @@ internal static class ProjectionOutputEmitter
         WriteGeneratedFile(
             Path.Combine(abiDirectory, "RoslynControlVtbl.g.cs"),
             EmitAbiMetadata(model));
+        IReadOnlyDictionary<string, int> callOrdinals =
+            GetCallCounterOrdinals(model);
         foreach (VtblProjection vtbl in model.Vtbls)
         {
             WriteGeneratedFile(
@@ -34,8 +36,13 @@ internal static class ProjectionOutputEmitter
                 Path.Combine(
                     compilerDirectory,
                     $"{GetDispatcherClassName(vtbl)}.g.cs"),
-                EmitCompilerDispatcher(vtbl));
+                EmitCompilerDispatcher(vtbl, callOrdinals));
         }
+        WriteGeneratedFile(
+            Path.Combine(
+                compilerDirectory,
+                "RoslynCallCounters.g.cs"),
+            EmitCallCounters(model, callOrdinals));
         WriteGeneratedFile(
             Path.Combine(
                 compilerDirectory,
@@ -312,7 +319,107 @@ internal static class ProjectionOutputEmitter
         return builder.ToString();
     }
 
-    private static string EmitCompilerDispatcher(VtblProjection vtbl)
+    /// <summary>
+    /// Assigns each distinct projected Roslyn member a stable counter slot.
+    /// Keyed on canonical signature, not generated name: a member inherited
+    /// into several vtbls is emitted as several dispatcher methods but is one
+    /// Roslyn member, and the coverage metric is about members.
+    /// </summary>
+    private static IReadOnlyDictionary<string, int> GetCallCounterOrdinals(
+        ProjectionModel model)
+    {
+        var ordinals = new Dictionary<string, int>(StringComparer.Ordinal);
+        foreach (string signature in model.Vtbls
+            .SelectMany(GetDispatcherMembers)
+            .Select(operation => operation.CanonicalSignature)
+            .Distinct(StringComparer.Ordinal)
+            .OrderBy(signature => signature, StringComparer.Ordinal))
+        {
+            ordinals[signature] = ordinals.Count;
+        }
+
+        return ordinals;
+    }
+
+    private static string EmitCallCounters(
+        ProjectionModel model,
+        IReadOnlyDictionary<string, int> ordinals)
+    {
+        ProjectedCall[] members = model.Vtbls
+            .SelectMany(GetDispatcherMembers)
+            .GroupBy(
+                operation => operation.CanonicalSignature,
+                StringComparer.Ordinal)
+            .Select(group => group.First())
+            .OrderBy(
+                operation => ordinals[operation.CanonicalSignature])
+            .ToArray();
+
+        var builder = new StringBuilder();
+        builder.AppendLine("#nullable enable");
+        builder.AppendLine("using System.Threading;");
+        builder.AppendLine();
+        builder.AppendLine("namespace RoslynAot.Csc;");
+        builder.AppendLine();
+        builder.AppendLine("/// <summary>");
+        builder.AppendLine(
+            "/// Per-member call counts at the projection boundary. Counting is");
+        builder.AppendLine(
+            "/// unconditional - one interlocked increment against a preallocated");
+        builder.AppendLine(
+            "/// slot, negligible beside the round trip it measures - so a count of");
+        builder.AppendLine(
+            "/// zero always means 'never called' rather than 'not instrumented'.");
+        builder.AppendLine("/// </summary>");
+        builder.AppendLine("internal static class RoslynCallCounters");
+        builder.AppendLine("{");
+        builder.AppendLine(
+            $"    public const int MemberCount = {members.Length};");
+        builder.AppendLine();
+        builder.AppendLine(
+            "    private static readonly long[] s_counts = new long[MemberCount];");
+        builder.AppendLine();
+        builder.AppendLine("    public static readonly string[] MemberNames =");
+        builder.AppendLine("    [");
+        foreach (ProjectedCall operation in members)
+        {
+            builder.AppendLine(
+                $"        {Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(GetCounterName(operation), quote: true)},");
+        }
+
+        builder.AppendLine("    ];");
+        builder.AppendLine();
+        builder.AppendLine("    public static void Record(int ordinal) =>");
+        builder.AppendLine(
+            "        Interlocked.Increment(ref s_counts[ordinal]);");
+        builder.AppendLine();
+        builder.AppendLine("    public static long[] Snapshot()");
+        builder.AppendLine("    {");
+        builder.AppendLine("        var snapshot = new long[MemberCount];");
+        builder.AppendLine(
+            "        for (int index = 0; index < snapshot.Length; index++)");
+        builder.AppendLine("        {");
+        builder.AppendLine(
+            "            snapshot[index] = Interlocked.Read(ref s_counts[index]);");
+        builder.AppendLine("        }");
+        builder.AppendLine();
+        builder.AppendLine("        return snapshot;");
+        builder.AppendLine("    }");
+        builder.AppendLine("}");
+        return builder.ToString();
+    }
+
+    /// <summary>
+    /// The member name shape the differential harness already parses out of
+    /// AD0001 stack frames, so coverage rows and burn-down reasons join.
+    /// </summary>
+    private static string GetCounterName(ProjectedCall operation) =>
+        $"{operation.Symbol.ContainingType.ToDisplayString()}." +
+        $"{operation.Symbol.Name}";
+
+    private static string EmitCompilerDispatcher(
+        VtblProjection vtbl,
+        IReadOnlyDictionary<string, int> ordinals)
     {
         var builder = new StringBuilder();
         builder.AppendLine("#nullable enable");
@@ -337,7 +444,10 @@ internal static class ProjectionOutputEmitter
 
         foreach (ProjectedCall operation in GetDispatcherMembers(vtbl))
         {
-            EmitCompilerMethod(builder, operation);
+            EmitCompilerMethod(
+                builder,
+                operation,
+                ordinals[operation.CanonicalSignature]);
         }
 
         builder.AppendLine("}");
@@ -505,7 +615,8 @@ internal static class ProjectionOutputEmitter
 
     private static void EmitCompilerMethod(
         StringBuilder builder,
-        ProjectedCall operation)
+        ProjectedCall operation,
+        int counterOrdinal)
     {
         builder.AppendLine();
         builder.AppendLine(
@@ -519,6 +630,10 @@ internal static class ProjectionOutputEmitter
         }
 
         builder.AppendLine("    {");
+
+        // Counted before the try, so a member that always throws still reports
+        // as called. Coverage answers "was it reached", not "did it succeed".
+        builder.AppendLine($"        RoslynCallCounters.Record({counterOrdinal});");
         if (operation.ReturnValue.Kind == AbiTypeKind.Utf16String)
         {
             builder.AppendLine("        requiredLength = default;");

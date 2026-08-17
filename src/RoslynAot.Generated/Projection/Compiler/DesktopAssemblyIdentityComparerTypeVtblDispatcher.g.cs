@@ -26,6 +26,7 @@ internal sealed partial class DesktopAssemblyIdentityComparerTypeVtblDispatcher 
     public int DesktopAssemblyIdentityComparer_get_Default(
         out long result)
     {
+        RoslynCallCounters.Record(205);
         result = default;
 
         try

@@ -27,6 +27,7 @@ internal sealed partial class DiagnosticAnalyzerVtblDispatcher : IDiagnosticAnal
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(272);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class DiagnosticAnalyzerVtblDispatcher : IDiagnosticAnal
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(273);
         requiredLength = default;
 
         try

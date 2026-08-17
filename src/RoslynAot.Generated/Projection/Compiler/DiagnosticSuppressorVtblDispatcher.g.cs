@@ -27,6 +27,7 @@ internal sealed partial class DiagnosticSuppressorVtblDispatcher : IDiagnosticSu
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(272);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class DiagnosticSuppressorVtblDispatcher : IDiagnosticSu
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(273);
         requiredLength = default;
 
         try
@@ -69,6 +71,7 @@ internal sealed partial class DiagnosticSuppressorVtblDispatcher : IDiagnosticSu
         long receiver,
         long context)
     {
+        RoslynCallCounters.Record(274);
 
         try
         {

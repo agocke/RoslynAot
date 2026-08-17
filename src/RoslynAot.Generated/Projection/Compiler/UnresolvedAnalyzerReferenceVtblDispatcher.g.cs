@@ -27,6 +27,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(250);
         result = default;
 
         try
@@ -45,6 +46,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)
     {
+        RoslynCallCounters.Record(251);
         result = default;
 
         try
@@ -64,6 +66,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(252);
         requiredLength = default;
 
         try
@@ -89,6 +92,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(385);
         requiredLength = default;
 
         try
@@ -114,6 +118,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(386);
         requiredLength = default;
 
         try

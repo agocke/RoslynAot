@@ -27,6 +27,7 @@ internal sealed partial class ISourceAssemblySymbolVtblDispatcher : IISourceAsse
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(735);
         result = default;
 
         try

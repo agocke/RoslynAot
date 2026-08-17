@@ -27,6 +27,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(482);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(483);
         result = default;
 
         try
@@ -61,6 +63,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(484);
         result = default;
 
         try
@@ -78,6 +81,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(485);
         result = default;
 
         try
@@ -95,6 +99,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(486);
         result = default;
 
         try
@@ -112,6 +117,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(487);
         result = default;
 
         try
@@ -129,6 +135,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(488);
         result = default;
 
         try
@@ -146,6 +153,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(489);
         result = default;
 
         try

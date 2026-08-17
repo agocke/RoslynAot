@@ -29,6 +29,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1609);
         requiredLength = default;
 
         try
@@ -52,6 +53,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1610);
         result = default;
 
         try
@@ -70,6 +72,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long node,
         out long result)
     {
+        RoslynCallCounters.Record(2143);
         result = default;
 
         try
@@ -88,6 +91,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long nodeOrToken,
         out long result)
     {
+        RoslynCallCounters.Record(2144);
         result = default;
 
         try
@@ -106,6 +110,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long token,
         out long result)
     {
+        RoslynCallCounters.Record(2145);
         result = default;
 
         try
@@ -124,6 +129,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long trivia,
         out long result)
     {
+        RoslynCallCounters.Record(2146);
         result = default;
 
         try
@@ -142,6 +148,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long span,
         out long result)
     {
+        RoslynCallCounters.Record(2147);
         result = default;
 
         try
@@ -159,6 +166,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(2148);
         result = default;
 
         try
@@ -178,6 +186,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         int topLevel,
         out int result)
     {
+        RoslynCallCounters.Record(2149);
         result = default;
 
         try
@@ -196,6 +205,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long newText,
         out long result)
     {
+        RoslynCallCounters.Record(2150);
         result = default;
 
         try

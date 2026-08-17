@@ -27,6 +27,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         long visitor)
     {
+        RoslynCallCounters.Record(691);
 
         try
         {
@@ -43,6 +44,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(692);
         result = default;
 
         try
@@ -60,6 +62,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(693);
         result = default;
 
         try
@@ -77,6 +80,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(694);
         result = default;
 
         try
@@ -96,6 +100,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(695);
         requiredLength = default;
 
         try
@@ -119,6 +124,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(696);
         result = default;
 
         try
@@ -136,6 +142,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(697);
         result = default;
 
         try
@@ -153,6 +160,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(698);
         result = default;
 
         try
@@ -170,6 +178,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(699);
         result = default;
 
         try

@@ -28,6 +28,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int ascendOutOfTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1442);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int ascendOutOfTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1443);
         result = default;
 
         try
@@ -63,6 +65,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1444);
         result = default;
 
         try
@@ -80,6 +83,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1445);
         result = default;
 
         try
@@ -98,6 +102,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int position,
         out long result)
     {
+        RoslynCallCounters.Record(1446);
         result = default;
 
         try
@@ -116,6 +121,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int rawKind,
         out int result)
     {
+        RoslynCallCounters.Record(1447);
         result = default;
 
         try
@@ -134,6 +140,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long node,
         out int result)
     {
+        RoslynCallCounters.Record(1448);
         result = default;
 
         try
@@ -154,6 +161,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int getInnermostNodeForTie,
         out long result)
     {
+        RoslynCallCounters.Record(1449);
         result = default;
 
         try
@@ -173,6 +181,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1450);
         result = default;
 
         try
@@ -192,6 +201,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1451);
         result = default;
 
         try
@@ -210,6 +220,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long syntaxAnnotation,
         out long result)
     {
+        RoslynCallCounters.Record(1452);
         result = default;
 
         try
@@ -228,6 +239,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
+        RoslynCallCounters.Record(1453);
         result = default;
 
         try
@@ -246,6 +258,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
+        RoslynCallCounters.Record(1454);
         result = default;
 
         try
@@ -263,6 +276,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1455);
         result = default;
 
         try
@@ -284,6 +298,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1456);
         result = default;
 
         try
@@ -305,6 +320,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1457);
         result = default;
 
         try
@@ -322,6 +338,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1458);
         result = default;
 
         try
@@ -339,6 +356,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1459);
         result = default;
 
         try
@@ -356,6 +374,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1460);
         result = default;
 
         try
@@ -373,6 +392,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1461);
         result = default;
 
         try
@@ -391,6 +411,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long annotation,
         out int result)
     {
+        RoslynCallCounters.Record(1462);
         result = default;
 
         try
@@ -409,6 +430,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
+        RoslynCallCounters.Record(1463);
         result = default;
 
         try
@@ -427,6 +449,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(1464);
         result = default;
 
         try
@@ -446,6 +469,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int topLevel,
         out int result)
     {
+        RoslynCallCounters.Record(1465);
         result = default;
 
         try
@@ -464,6 +488,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(1466);
         result = default;
 
         try
@@ -481,6 +506,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1467);
         result = default;
 
         try
@@ -500,6 +526,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1468);
         requiredLength = default;
 
         try
@@ -525,6 +552,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1469);
         requiredLength = default;
 
         try
@@ -548,6 +576,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1470);
         result = default;
 
         try
@@ -565,6 +594,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1471);
         result = default;
 
         try
@@ -582,6 +612,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1472);
         result = default;
 
         try
@@ -599,6 +630,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1473);
         result = default;
 
         try
@@ -616,6 +648,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1474);
         result = default;
 
         try
@@ -633,6 +666,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1475);
         result = default;
 
         try
@@ -650,6 +684,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1476);
         result = default;
 
         try
@@ -667,6 +702,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1477);
         result = default;
 
         try
@@ -684,6 +720,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1478);
         result = default;
 
         try
@@ -701,6 +738,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1479);
         result = default;
 
         try
@@ -720,6 +758,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1480);
         requiredLength = default;
 
         try
@@ -743,6 +782,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1481);
         result = default;
 
         try
@@ -760,6 +800,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1482);
         result = default;
 
         try
@@ -777,6 +818,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1483);
         result = default;
 
         try
@@ -794,6 +836,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1484);
         result = default;
 
         try
@@ -811,6 +854,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1485);
         result = default;
 
         try
@@ -828,6 +872,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1486);
         result = default;
 
         try
@@ -845,6 +890,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         long visitor)
     {
+        RoslynCallCounters.Record(1877);
 
         try
         {
@@ -863,6 +909,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1878);
         result = default;
 
         try
@@ -882,6 +929,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1879);
         result = default;
 
         try
@@ -899,6 +947,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1880);
         result = default;
 
         try
@@ -920,6 +969,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1881);
         result = default;
 
         try
@@ -941,6 +991,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1882);
         result = default;
 
         try
@@ -958,6 +1009,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1883);
         result = default;
 
         try
@@ -975,6 +1027,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1884);
         result = default;
 
         try
@@ -992,6 +1045,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1885);
         result = default;
 
         try
@@ -1009,6 +1063,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out ushort result)
     {
+        RoslynCallCounters.Record(1886);
         result = default;
 
         try
@@ -1028,6 +1083,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1887);
         requiredLength = default;
 
         try
@@ -1052,6 +1108,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long items,
         out long result)
     {
+        RoslynCallCounters.Record(4551);
         result = default;
 
         try
@@ -1069,6 +1126,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         long visitor)
     {
+        RoslynCallCounters.Record(4855);
 
         try
         {
@@ -1086,6 +1144,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long items,
         out long result)
     {
+        RoslynCallCounters.Record(4856);
         result = default;
 
         try
@@ -1108,6 +1167,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long statement,
         out long result)
     {
+        RoslynCallCounters.Record(4857);
         result = default;
 
         try
@@ -1126,6 +1186,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long closeParenToken,
         out long result)
     {
+        RoslynCallCounters.Record(4858);
         result = default;
 
         try
@@ -1144,6 +1205,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long condition,
         out long result)
     {
+        RoslynCallCounters.Record(4859);
         result = default;
 
         try
@@ -1162,6 +1224,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long openParenToken,
         out long result)
     {
+        RoslynCallCounters.Record(4860);
         result = default;
 
         try
@@ -1180,6 +1243,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long statement,
         out long result)
     {
+        RoslynCallCounters.Record(4861);
         result = default;
 
         try
@@ -1198,6 +1262,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long whileKeyword,
         out long result)
     {
+        RoslynCallCounters.Record(4862);
         result = default;
 
         try
@@ -1215,6 +1280,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(4863);
         result = default;
 
         try
@@ -1232,6 +1298,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(4864);
         result = default;
 
         try
@@ -1249,6 +1316,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(4865);
         result = default;
 
         try
@@ -1266,6 +1334,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(4866);
         result = default;
 
         try
@@ -1283,6 +1352,7 @@ internal sealed partial class WhileStatementSyntaxVtblDispatcher : IWhileStateme
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(4867);
         result = default;
 
         try

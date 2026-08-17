@@ -30,6 +30,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(2468);
         requiredLength = default;
 
         try
@@ -56,6 +57,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(2469);
         requiredLength = default;
 
         try
@@ -82,6 +84,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(2470);
         requiredLength = default;
 
         try
@@ -109,6 +112,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(2471);
         requiredLength = default;
 
         try
@@ -136,6 +140,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(2472);
         requiredLength = default;
 
         try
@@ -164,6 +169,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(2473);
         requiredLength = default;
 
         try
@@ -193,6 +199,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(2474);
         requiredLength = default;
 
         try
@@ -222,6 +229,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(2475);
         requiredLength = default;
 
         try

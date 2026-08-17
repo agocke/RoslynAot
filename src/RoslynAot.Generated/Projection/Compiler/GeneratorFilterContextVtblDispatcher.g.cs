@@ -27,6 +27,7 @@ internal sealed partial class GeneratorFilterContextVtblDispatcher : IGeneratorF
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(521);
         result = default;
 
         try

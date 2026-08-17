@@ -27,6 +27,7 @@ internal sealed partial class LanguageVersionFactsVtblDispatcher : ILanguageVers
         int version,
         out int result)
     {
+        RoslynCallCounters.Record(2462);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class LanguageVersionFactsVtblDispatcher : ILanguageVers
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(2463);
         requiredLength = default;
 
         try

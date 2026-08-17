@@ -28,6 +28,7 @@ internal sealed partial class EmbeddedTextTypeVtblDispatcher : IEmbeddedTextType
         long text,
         out long result)
     {
+        RoslynCallCounters.Record(400);
         result = default;
 
         try

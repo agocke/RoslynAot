@@ -28,6 +28,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(211);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         long compilationOptions,
         out int result)
     {
+        RoslynCallCounters.Record(212);
         result = default;
 
         try
@@ -63,6 +65,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(213);
         result = default;
 
         try
@@ -82,6 +85,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(214);
         requiredLength = default;
 
         try
@@ -105,6 +109,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(215);
         result = default;
 
         try
@@ -122,6 +127,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(216);
         result = default;
 
         try
@@ -139,6 +145,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(217);
         result = default;
 
         try
@@ -158,6 +165,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(218);
         requiredLength = default;
 
         try
@@ -183,6 +191,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(219);
         requiredLength = default;
 
         try
@@ -206,6 +215,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(220);
         result = default;
 
         try
@@ -223,6 +233,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(221);
         result = default;
 
         try
@@ -240,6 +251,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(222);
         result = default;
 
         try

@@ -27,6 +27,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         long diagnostic)
     {
+        RoslynCallCounters.Record(253);
 
         try
         {
@@ -43,6 +44,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(254);
         result = default;
 
         try
@@ -60,6 +62,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(255);
         result = default;
 
         try
@@ -77,6 +80,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(256);
         result = default;
 
         try
@@ -94,6 +98,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(257);
         result = default;
 
         try
@@ -111,6 +116,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(258);
         result = default;
 
         try
@@ -128,6 +134,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(259);
         result = default;
 
         try
@@ -145,6 +152,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(260);
         result = default;
 
         try

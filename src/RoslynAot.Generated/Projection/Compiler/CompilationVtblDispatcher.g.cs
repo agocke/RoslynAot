@@ -28,6 +28,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long references,
         out long result)
     {
+        RoslynCallCounters.Record(106);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long trees,
         out long result)
     {
+        RoslynCallCounters.Record(107);
         result = default;
 
         try
@@ -65,6 +67,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long destination,
         out long result)
     {
+        RoslynCallCounters.Record(108);
         result = default;
 
         try
@@ -82,6 +85,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(109);
         result = default;
 
         try
@@ -100,6 +104,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long syntaxTree,
         out int result)
     {
+        RoslynCallCounters.Record(110);
         result = default;
 
         try
@@ -119,6 +124,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         int rank,
         out long result)
     {
+        RoslynCallCounters.Record(111);
         result = default;
 
         try
@@ -139,6 +145,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         byte elementNullableAnnotation,
         out long result)
     {
+        RoslynCallCounters.Record(112);
         result = default;
 
         try
@@ -159,6 +166,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long operandType,
         out long result)
     {
+        RoslynCallCounters.Record(113);
         result = default;
 
         try
@@ -180,6 +188,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long rightType,
         out long result)
     {
+        RoslynCallCounters.Record(114);
         result = default;
 
         try
@@ -199,6 +208,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
+        RoslynCallCounters.Record(115);
         result = default;
 
         try
@@ -219,6 +229,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         int arity,
         out long result)
     {
+        RoslynCallCounters.Record(116);
         result = default;
 
         try
@@ -237,6 +248,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         int signed,
         out long result)
     {
+        RoslynCallCounters.Record(117);
         result = default;
 
         try
@@ -255,6 +267,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long pointedAtType,
         out long result)
     {
+        RoslynCallCounters.Record(118);
         result = default;
 
         try
@@ -273,6 +286,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
+        RoslynCallCounters.Record(119);
         result = default;
 
         try
@@ -291,6 +305,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long reference,
         out long result)
     {
+        RoslynCallCounters.Record(120);
         result = default;
 
         try
@@ -309,6 +324,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long namespaceSymbol,
         out long result)
     {
+        RoslynCallCounters.Record(121);
         result = default;
 
         try
@@ -327,6 +343,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long assemblySymbol,
         out long result)
     {
+        RoslynCallCounters.Record(122);
         result = default;
 
         try
@@ -346,6 +363,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         int ignoreAccessibility,
         out long result)
     {
+        RoslynCallCounters.Record(124);
         result = default;
 
         try
@@ -364,6 +382,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         sbyte specialType,
         out long result)
     {
+        RoslynCallCounters.Record(125);
         result = default;
 
         try
@@ -382,6 +401,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string fullyQualifiedMetadataName,
         out long result)
     {
+        RoslynCallCounters.Record(126);
         result = default;
 
         try
@@ -400,6 +420,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string fullyQualifiedMetadataName,
         out long result)
     {
+        RoslynCallCounters.Record(127);
         result = default;
 
         try
@@ -419,6 +440,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long toType,
         out int result)
     {
+        RoslynCallCounters.Record(128);
         result = default;
 
         try
@@ -439,6 +461,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long throughType,
         out int result)
     {
+        RoslynCallCounters.Record(129);
         result = default;
 
         try
@@ -456,6 +479,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(130);
         result = default;
 
         try
@@ -473,6 +497,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(131);
         result = default;
 
         try
@@ -491,6 +516,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long references,
         out long result)
     {
+        RoslynCallCounters.Record(132);
         result = default;
 
         try
@@ -509,6 +535,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long trees,
         out long result)
     {
+        RoslynCallCounters.Record(133);
         result = default;
 
         try
@@ -528,6 +555,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long newReference,
         out long result)
     {
+        RoslynCallCounters.Record(134);
         result = default;
 
         try
@@ -547,6 +575,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long newTree,
         out long result)
     {
+        RoslynCallCounters.Record(135);
         result = default;
 
         try
@@ -565,6 +594,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         int capability,
         out int result)
     {
+        RoslynCallCounters.Record(136);
         result = default;
 
         try
@@ -583,6 +613,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string assemblyName,
         out long result)
     {
+        RoslynCallCounters.Record(137);
         result = default;
 
         try
@@ -601,6 +632,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long options,
         out long result)
     {
+        RoslynCallCounters.Record(138);
         result = default;
 
         try
@@ -619,6 +651,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long newReferences,
         out long result)
     {
+        RoslynCallCounters.Record(139);
         result = default;
 
         try
@@ -637,6 +670,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long info,
         out long result)
     {
+        RoslynCallCounters.Record(140);
         result = default;
 
         try
@@ -656,6 +690,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(141);
         requiredLength = default;
 
         try
@@ -679,6 +714,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(142);
         result = default;
 
         try
@@ -696,6 +732,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(143);
         result = default;
 
         try
@@ -713,6 +750,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(144);
         result = default;
 
         try
@@ -730,6 +768,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(145);
         result = default;
 
         try
@@ -749,6 +788,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(146);
         requiredLength = default;
 
         try
@@ -772,6 +812,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(147);
         result = default;
 
         try
@@ -789,6 +830,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(148);
         result = default;
 
         try
@@ -806,6 +848,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(149);
         result = default;
 
         try
@@ -823,6 +866,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(150);
         result = default;
 
         try
@@ -840,6 +884,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(151);
         result = default;
 
         try
@@ -857,6 +902,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(152);
         result = default;
 
         try
@@ -874,6 +920,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(153);
         result = default;
 
         try
@@ -891,6 +938,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(154);
         result = default;
 
         try

@@ -28,6 +28,7 @@ internal sealed partial class SuppressionVtblDispatcher : ISuppressionVtbl
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(308);
         result = default;
 
         try
@@ -45,6 +46,7 @@ internal sealed partial class SuppressionVtblDispatcher : ISuppressionVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(309);
         result = default;
 
         try
@@ -62,6 +64,7 @@ internal sealed partial class SuppressionVtblDispatcher : ISuppressionVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(310);
         result = default;
 
         try
@@ -79,6 +82,7 @@ internal sealed partial class SuppressionVtblDispatcher : ISuppressionVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(311);
         result = default;
 
         try

@@ -27,6 +27,7 @@ internal sealed partial class GeneratorExtensionsVtblDispatcher : IGeneratorExte
         long sourceGenerator,
         out long result)
     {
+        RoslynCallCounters.Record(519);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class GeneratorExtensionsVtblDispatcher : IGeneratorExte
         long incrementalGenerator,
         out long result)
     {
+        RoslynCallCounters.Record(520);
         result = default;
 
         try

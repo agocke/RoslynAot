@@ -27,6 +27,7 @@ internal sealed partial class SyntaxTokenParserResultVtblDispatcher : ISyntaxTok
         long receiver,
         out ushort result)
     {
+        RoslynCallCounters.Record(5678);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class SyntaxTokenParserResultVtblDispatcher : ISyntaxTok
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(5679);
         result = default;
 
         try

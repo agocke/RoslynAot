@@ -27,6 +27,7 @@ internal sealed partial class AnalyzerConfigOptionsVtblDispatcher : IAnalyzerCon
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(232);
         result = default;
 
         try

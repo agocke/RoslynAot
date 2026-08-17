@@ -27,6 +27,7 @@ internal sealed partial class SyntaxTreeAnalysisContextVtblDispatcher : ISyntaxT
         long receiver,
         long diagnostic)
     {
+        RoslynCallCounters.Record(340);
 
         try
         {
@@ -43,6 +44,7 @@ internal sealed partial class SyntaxTreeAnalysisContextVtblDispatcher : ISyntaxT
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(341);
         result = default;
 
         try
@@ -60,6 +62,7 @@ internal sealed partial class SyntaxTreeAnalysisContextVtblDispatcher : ISyntaxT
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(342);
         result = default;
 
         try
@@ -77,6 +80,7 @@ internal sealed partial class SyntaxTreeAnalysisContextVtblDispatcher : ISyntaxT
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(343);
         result = default;
 
         try
@@ -94,6 +98,7 @@ internal sealed partial class SyntaxTreeAnalysisContextVtblDispatcher : ISyntaxT
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(344);
         result = default;
 
         try

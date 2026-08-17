@@ -27,6 +27,7 @@ internal sealed partial class ImportedNamespaceOrTypeVtblDispatcher : IImportedN
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(805);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class ImportedNamespaceOrTypeVtblDispatcher : IImportedN
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(806);
         result = default;
 
         try

@@ -29,6 +29,7 @@ internal sealed partial class SyntaxTreeVtblDispatcher : ISyntaxTreeVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1609);
         requiredLength = default;
 
         try
@@ -52,6 +53,7 @@ internal sealed partial class SyntaxTreeVtblDispatcher : ISyntaxTreeVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1610);
         result = default;
 
         try

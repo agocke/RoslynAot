@@ -28,6 +28,7 @@ internal sealed partial class SuppressionAnalysisContextVtblDispatcher : ISuppre
         long syntaxTree,
         out long result)
     {
+        RoslynCallCounters.Record(312);
         result = default;
 
         try
@@ -45,6 +46,7 @@ internal sealed partial class SuppressionAnalysisContextVtblDispatcher : ISuppre
         long receiver,
         long suppression)
     {
+        RoslynCallCounters.Record(313);
 
         try
         {
@@ -61,6 +63,7 @@ internal sealed partial class SuppressionAnalysisContextVtblDispatcher : ISuppre
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(314);
         result = default;
 
         try
@@ -78,6 +81,7 @@ internal sealed partial class SuppressionAnalysisContextVtblDispatcher : ISuppre
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(315);
         result = default;
 
         try

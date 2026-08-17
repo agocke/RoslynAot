@@ -28,6 +28,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(1679);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         long span,
         out long result)
     {
+        RoslynCallCounters.Record(1680);
         result = default;
 
         try
@@ -64,6 +66,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         int start,
         out long result)
     {
+        RoslynCallCounters.Record(1681);
         result = default;
 
         try
@@ -83,6 +86,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string newText,
         out long result)
     {
+        RoslynCallCounters.Record(1682);
         result = default;
 
         try
@@ -103,6 +107,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string newText,
         out long result)
     {
+        RoslynCallCounters.Record(1683);
         result = default;
 
         try
@@ -122,6 +127,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1684);
         requiredLength = default;
 
         try
@@ -148,6 +154,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1685);
         requiredLength = default;
 
         try
@@ -171,6 +178,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1686);
         result = default;
 
         try
@@ -188,6 +196,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1687);
         result = default;
 
         try
@@ -205,6 +214,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1688);
         result = default;
 
         try
@@ -222,6 +232,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1689);
         result = default;
 
         try

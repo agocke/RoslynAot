@@ -27,6 +27,7 @@ internal sealed partial class IBinaryPatternOperationVtblDispatcher : IIBinaryPa
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(907);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class IBinaryPatternOperationVtblDispatcher : IIBinaryPa
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(908);
         result = default;
 
         try
@@ -61,6 +63,7 @@ internal sealed partial class IBinaryPatternOperationVtblDispatcher : IIBinaryPa
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(909);
         result = default;
 
         try

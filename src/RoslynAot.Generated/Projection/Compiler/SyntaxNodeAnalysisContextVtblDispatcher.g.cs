@@ -27,6 +27,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         long diagnostic)
     {
+        RoslynCallCounters.Record(331);
 
         try
         {
@@ -43,6 +44,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(332);
         result = default;
 
         try
@@ -60,6 +62,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(333);
         result = default;
 
         try
@@ -77,6 +80,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(334);
         result = default;
 
         try
@@ -94,6 +98,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(335);
         result = default;
 
         try
@@ -111,6 +116,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(336);
         result = default;
 
         try
@@ -128,6 +134,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(337);
         result = default;
 
         try
@@ -145,6 +152,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(338);
         result = default;
 
         try
@@ -162,6 +170,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(339);
         result = default;
 
         try

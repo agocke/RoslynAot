@@ -28,6 +28,7 @@ internal sealed partial class TextChangeRangeTypeVtblDispatcher : ITextChangeRan
         int newLength,
         out long result)
     {
+        RoslynCallCounters.Record(1698);
         result = default;
 
         try

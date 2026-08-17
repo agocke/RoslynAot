@@ -23,6 +23,9 @@ internal sealed class HarnessReport
     [JsonPropertyName("coverageLedger")]
     public List<string> CoverageLedger { get; set; } = [];
 
+    [JsonPropertyName("coverage")]
+    public CoverageReport Coverage { get; set; } = new();
+
     [JsonPropertyName("cases")]
     public List<ReportCase> Cases { get; set; } = [];
 
@@ -171,6 +174,10 @@ internal static class ReportWriter
             CoverageLedger = coverageLedger
                 .OrderBy(id => id, StringComparer.Ordinal)
                 .ToList(),
+            Coverage = CallCoverage.Aggregate(
+                caseEvaluations
+                    .Select(e => e.NativeResult.CallCountPath)
+                    .OfType<string>()),
             Cases = caseEvaluations.Select(e => new ReportCase
             {
                 Name = e.Case.Name,
@@ -275,6 +282,42 @@ internal static class ReportWriter
         {
             writer.WriteLine(
                 $"| {field.Field} | {field.ManagedResultCount} | {field.Reason} |");
+        }
+
+        if (report.Coverage.ProjectedMemberCount > 0)
+        {
+            CoverageReport coverage = report.Coverage;
+            writer.WriteLine();
+            writer.WriteLine("## Boundary call coverage");
+            writer.WriteLine();
+            writer.WriteLine(
+                $"The corpus reaches **{coverage.CalledMemberCount} of " +
+                $"{coverage.ProjectedMemberCount}** projected members " +
+                $"({coverage.TotalCalls} calls). Counted compiler-side, per " +
+                "dispatcher, before the call is attempted — a member that " +
+                "always throws still counts as reached.");
+            writer.WriteLine();
+            writer.WriteLine(
+                "This is the coverage metric and the profile input: round " +
+                "trips per member rank which projections are worth " +
+                "optimizing, and a member at zero across the whole corpus is " +
+                "one the corpus does not yet exercise.");
+            writer.WriteLine();
+            writer.WriteLine("| Calls | Cases | Member |");
+            writer.WriteLine("|---|---|---|");
+            foreach (CoverageMember member in coverage.Members.Take(30))
+            {
+                writer.WriteLine(
+                    $"| {member.Calls} | {member.Cases} | `{member.Member}` |");
+            }
+
+            if (coverage.Members.Count > 30)
+            {
+                writer.WriteLine();
+                writer.WriteLine(
+                    $"{coverage.Members.Count - 30} further called member(s) " +
+                    "in `report.json`.");
+            }
         }
 
         if (report.CoverageLedger.Count > 0)

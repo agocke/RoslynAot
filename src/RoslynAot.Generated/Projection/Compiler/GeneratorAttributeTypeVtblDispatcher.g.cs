@@ -26,6 +26,7 @@ internal sealed partial class GeneratorAttributeTypeVtblDispatcher : IGeneratorA
     public int GeneratorAttribute_ctor_9efc917d(
         out long result)
     {
+        RoslynCallCounters.Record(500);
         result = default;
 
         try

@@ -27,6 +27,7 @@ internal sealed partial class EmitResultVtblDispatcher : IEmitResultVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(433);
         result = default;
 
         try

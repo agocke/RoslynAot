@@ -28,6 +28,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int ascendOutOfTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1442);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int ascendOutOfTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1443);
         result = default;
 
         try
@@ -63,6 +65,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1444);
         result = default;
 
         try
@@ -80,6 +83,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1445);
         result = default;
 
         try
@@ -98,6 +102,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int position,
         out long result)
     {
+        RoslynCallCounters.Record(1446);
         result = default;
 
         try
@@ -116,6 +121,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int rawKind,
         out int result)
     {
+        RoslynCallCounters.Record(1447);
         result = default;
 
         try
@@ -134,6 +140,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long node,
         out int result)
     {
+        RoslynCallCounters.Record(1448);
         result = default;
 
         try
@@ -154,6 +161,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int getInnermostNodeForTie,
         out long result)
     {
+        RoslynCallCounters.Record(1449);
         result = default;
 
         try
@@ -173,6 +181,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1450);
         result = default;
 
         try
@@ -192,6 +201,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1451);
         result = default;
 
         try
@@ -210,6 +220,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long syntaxAnnotation,
         out long result)
     {
+        RoslynCallCounters.Record(1452);
         result = default;
 
         try
@@ -228,6 +239,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
+        RoslynCallCounters.Record(1453);
         result = default;
 
         try
@@ -246,6 +258,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
+        RoslynCallCounters.Record(1454);
         result = default;
 
         try
@@ -263,6 +276,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1455);
         result = default;
 
         try
@@ -284,6 +298,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1456);
         result = default;
 
         try
@@ -305,6 +320,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1457);
         result = default;
 
         try
@@ -322,6 +338,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1458);
         result = default;
 
         try
@@ -339,6 +356,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1459);
         result = default;
 
         try
@@ -356,6 +374,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1460);
         result = default;
 
         try
@@ -373,6 +392,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1461);
         result = default;
 
         try
@@ -391,6 +411,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long annotation,
         out int result)
     {
+        RoslynCallCounters.Record(1462);
         result = default;
 
         try
@@ -409,6 +430,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
+        RoslynCallCounters.Record(1463);
         result = default;
 
         try
@@ -427,6 +449,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(1464);
         result = default;
 
         try
@@ -446,6 +469,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int topLevel,
         out int result)
     {
+        RoslynCallCounters.Record(1465);
         result = default;
 
         try
@@ -464,6 +488,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(1466);
         result = default;
 
         try
@@ -481,6 +506,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1467);
         result = default;
 
         try
@@ -500,6 +526,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1468);
         requiredLength = default;
 
         try
@@ -525,6 +552,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1469);
         requiredLength = default;
 
         try
@@ -548,6 +576,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1470);
         result = default;
 
         try
@@ -565,6 +594,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1471);
         result = default;
 
         try
@@ -582,6 +612,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1472);
         result = default;
 
         try
@@ -599,6 +630,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1473);
         result = default;
 
         try
@@ -616,6 +648,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1474);
         result = default;
 
         try
@@ -633,6 +666,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1475);
         result = default;
 
         try
@@ -650,6 +684,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1476);
         result = default;
 
         try
@@ -667,6 +702,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1477);
         result = default;
 
         try
@@ -684,6 +720,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1478);
         result = default;
 
         try
@@ -701,6 +738,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1479);
         result = default;
 
         try
@@ -720,6 +758,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1480);
         requiredLength = default;
 
         try
@@ -743,6 +782,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1481);
         result = default;
 
         try
@@ -760,6 +800,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1482);
         result = default;
 
         try
@@ -777,6 +818,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1483);
         result = default;
 
         try
@@ -794,6 +836,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1484);
         result = default;
 
         try
@@ -811,6 +854,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1485);
         result = default;
 
         try
@@ -828,6 +872,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1486);
         result = default;
 
         try
@@ -845,6 +890,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         long visitor)
     {
+        RoslynCallCounters.Record(1877);
 
         try
         {
@@ -863,6 +909,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1878);
         result = default;
 
         try
@@ -882,6 +929,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1879);
         result = default;
 
         try
@@ -899,6 +947,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1880);
         result = default;
 
         try
@@ -920,6 +969,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1881);
         result = default;
 
         try
@@ -941,6 +991,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1882);
         result = default;
 
         try
@@ -958,6 +1009,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1883);
         result = default;
 
         try
@@ -975,6 +1027,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1884);
         result = default;
 
         try
@@ -992,6 +1045,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1885);
         result = default;
 
         try
@@ -1009,6 +1063,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out ushort result)
     {
+        RoslynCallCounters.Record(1886);
         result = default;
 
         try
@@ -1028,6 +1083,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1887);
         requiredLength = default;
 
         try
@@ -1051,6 +1107,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(4577);
         result = default;
 
         try
@@ -1069,6 +1126,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long endOfDirectiveToken,
         out long result)
     {
+        RoslynCallCounters.Record(3137);
         result = default;
 
         try
@@ -1087,6 +1145,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long hashToken,
         out long result)
     {
+        RoslynCallCounters.Record(3138);
         result = default;
 
         try
@@ -1104,6 +1163,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3139);
         result = default;
 
         try
@@ -1121,6 +1181,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3140);
         result = default;
 
         try
@@ -1138,6 +1199,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3141);
         result = default;
 
         try
@@ -1155,6 +1217,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(3142);
         result = default;
 
         try
@@ -1173,6 +1236,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long endOfDirectiveToken,
         out long result)
     {
+        RoslynCallCounters.Record(2773);
         result = default;
 
         try
@@ -1191,6 +1255,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long hashToken,
         out long result)
     {
+        RoslynCallCounters.Record(2774);
         result = default;
 
         try
@@ -1208,6 +1273,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(2775);
         result = default;
 
         try
@@ -1226,6 +1292,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long condition,
         out long result)
     {
+        RoslynCallCounters.Record(2930);
         result = default;
 
         try
@@ -1243,6 +1310,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(2931);
         result = default;
 
         try
@@ -1260,6 +1328,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(2932);
         result = default;
 
         try
@@ -1277,6 +1346,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         long visitor)
     {
+        RoslynCallCounters.Record(3184);
 
         try
         {
@@ -1300,6 +1370,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int conditionValue,
         out long result)
     {
+        RoslynCallCounters.Record(3185);
         result = default;
 
         try
@@ -1318,6 +1389,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int branchTaken,
         out long result)
     {
+        RoslynCallCounters.Record(3186);
         result = default;
 
         try
@@ -1336,6 +1408,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int conditionValue,
         out long result)
     {
+        RoslynCallCounters.Record(3187);
         result = default;
 
         try
@@ -1354,6 +1427,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long condition,
         out long result)
     {
+        RoslynCallCounters.Record(3188);
         result = default;
 
         try
@@ -1372,6 +1446,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long elifKeyword,
         out long result)
     {
+        RoslynCallCounters.Record(3189);
         result = default;
 
         try
@@ -1390,6 +1465,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long endOfDirectiveToken,
         out long result)
     {
+        RoslynCallCounters.Record(3190);
         result = default;
 
         try
@@ -1408,6 +1484,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long hashToken,
         out long result)
     {
+        RoslynCallCounters.Record(3191);
         result = default;
 
         try
@@ -1426,6 +1503,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         int isActive,
         out long result)
     {
+        RoslynCallCounters.Record(3192);
         result = default;
 
         try
@@ -1443,6 +1521,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(3193);
         result = default;
 
         try
@@ -1460,6 +1539,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(3194);
         result = default;
 
         try
@@ -1477,6 +1557,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3195);
         result = default;
 
         try
@@ -1494,6 +1575,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3196);
         result = default;
 
         try
@@ -1511,6 +1593,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3197);
         result = default;
 
         try
@@ -1528,6 +1611,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3198);
         result = default;
 
         try
@@ -1545,6 +1629,7 @@ internal sealed partial class ElifDirectiveTriviaSyntaxVtblDispatcher : IElifDir
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(3199);
         result = default;
 
         try

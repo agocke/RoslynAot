@@ -28,6 +28,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
+        RoslynCallCounters.Record(5687);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
+        RoslynCallCounters.Record(5688);
         result = default;
 
         try
@@ -64,6 +66,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
+        RoslynCallCounters.Record(5689);
         result = default;
 
         try
@@ -82,6 +85,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
+        RoslynCallCounters.Record(5690);
         result = default;
 
         try
@@ -100,6 +104,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
+        RoslynCallCounters.Record(5691);
         result = default;
 
         try
@@ -118,6 +123,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
+        RoslynCallCounters.Record(5692);
         result = default;
 
         try
@@ -136,6 +142,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
+        RoslynCallCounters.Record(5693);
         result = default;
 
         try
@@ -154,6 +161,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
+        RoslynCallCounters.Record(5694);
         result = default;
 
         try
@@ -172,6 +180,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
+        RoslynCallCounters.Record(5695);
         result = default;
 
         try

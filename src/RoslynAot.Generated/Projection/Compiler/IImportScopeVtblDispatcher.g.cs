@@ -27,6 +27,7 @@ internal sealed partial class IImportScopeVtblDispatcher : IIImportScopeVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(579);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class IImportScopeVtblDispatcher : IIImportScopeVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(580);
         result = default;
 
         try

@@ -28,6 +28,7 @@ internal sealed partial class TextLineTypeVtblDispatcher : ITextLineTypeVtbl
         long span,
         out long result)
     {
+        RoslynCallCounters.Record(1705);
         result = default;
 
         try

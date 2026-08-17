@@ -28,6 +28,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long operationBlock,
         out long result)
     {
+        RoslynCallCounters.Record(293);
         result = default;
 
         try
@@ -45,6 +46,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(294);
         result = default;
 
         try
@@ -62,6 +64,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(295);
         result = default;
 
         try
@@ -79,6 +82,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(296);
         result = default;
 
         try
@@ -96,6 +100,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(297);
         result = default;
 
         try
@@ -113,6 +118,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(298);
         result = default;
 
         try
@@ -130,6 +136,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(299);
         result = default;
 
         try
@@ -147,6 +154,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(300);
         result = default;
 
         try

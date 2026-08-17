@@ -27,6 +27,7 @@ internal sealed partial class AnalyzerLoadFailureEventArgsVtblDispatcher : IAnal
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(245);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class AnalyzerLoadFailureEventArgsVtblDispatcher : IAnal
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(246);
         requiredLength = default;
 
         try
@@ -71,6 +73,7 @@ internal sealed partial class AnalyzerLoadFailureEventArgsVtblDispatcher : IAnal
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(247);
         requiredLength = default;
 
         try

@@ -27,6 +27,7 @@ internal sealed partial class ISwitchExpressionOperationVtblDispatcher : IISwitc
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1108);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class ISwitchExpressionOperationVtblDispatcher : IISwitc
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1109);
         result = default;
 
         try
@@ -61,6 +63,7 @@ internal sealed partial class ISwitchExpressionOperationVtblDispatcher : IISwitc
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1110);
         result = default;
 
         try

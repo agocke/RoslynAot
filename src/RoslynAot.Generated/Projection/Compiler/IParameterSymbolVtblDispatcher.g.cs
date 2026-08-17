@@ -27,6 +27,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(700);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(701);
         result = default;
 
         try
@@ -61,6 +63,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(702);
         result = default;
 
         try
@@ -78,6 +81,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(703);
         result = default;
 
         try
@@ -95,6 +99,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(704);
         result = default;
 
         try
@@ -112,6 +117,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(705);
         result = default;
 
         try
@@ -129,6 +135,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(706);
         result = default;
 
         try
@@ -146,6 +153,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out byte result)
     {
+        RoslynCallCounters.Record(707);
         result = default;
 
         try
@@ -163,6 +171,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(708);
         result = default;
 
         try
@@ -180,6 +189,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(709);
         result = default;
 
         try
@@ -197,6 +207,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out byte result)
     {
+        RoslynCallCounters.Record(710);
         result = default;
 
         try
@@ -214,6 +225,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out byte result)
     {
+        RoslynCallCounters.Record(711);
         result = default;
 
         try
@@ -231,6 +243,7 @@ internal sealed partial class IParameterSymbolVtblDispatcher : IIParameterSymbol
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(712);
         result = default;
 
         try

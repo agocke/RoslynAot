@@ -29,6 +29,7 @@ internal sealed partial class CompilationTypeVtblDispatcher : ICompilationTypeVt
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(123);
         requiredLength = default;
 
         try

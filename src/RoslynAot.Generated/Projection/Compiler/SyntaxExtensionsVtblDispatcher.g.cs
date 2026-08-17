@@ -29,6 +29,7 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         int elasticTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(5005);
         result = default;
 
         try
@@ -49,6 +50,7 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         int elasticTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(5006);
         result = default;
 
         try
@@ -68,6 +70,7 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         int elasticTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(5007);
         result = default;
 
         try
@@ -88,6 +91,7 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         int elasticTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(5008);
         result = default;
 
         try
@@ -106,6 +110,7 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         long identifier,
         out long result)
     {
+        RoslynCallCounters.Record(5009);
         result = default;
 
         try

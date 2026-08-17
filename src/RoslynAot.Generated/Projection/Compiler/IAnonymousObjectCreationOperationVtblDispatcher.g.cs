@@ -27,6 +27,7 @@ internal sealed partial class IAnonymousObjectCreationOperationVtblDispatcher : 
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(884);
         result = default;
 
         try

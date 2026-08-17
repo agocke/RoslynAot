@@ -28,6 +28,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int ascendOutOfTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1442);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int ascendOutOfTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1443);
         result = default;
 
         try
@@ -63,6 +65,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1444);
         result = default;
 
         try
@@ -80,6 +83,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1445);
         result = default;
 
         try
@@ -98,6 +102,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int position,
         out long result)
     {
+        RoslynCallCounters.Record(1446);
         result = default;
 
         try
@@ -116,6 +121,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int rawKind,
         out int result)
     {
+        RoslynCallCounters.Record(1447);
         result = default;
 
         try
@@ -134,6 +140,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long node,
         out int result)
     {
+        RoslynCallCounters.Record(1448);
         result = default;
 
         try
@@ -154,6 +161,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int getInnermostNodeForTie,
         out long result)
     {
+        RoslynCallCounters.Record(1449);
         result = default;
 
         try
@@ -173,6 +181,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1450);
         result = default;
 
         try
@@ -192,6 +201,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1451);
         result = default;
 
         try
@@ -210,6 +220,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long syntaxAnnotation,
         out long result)
     {
+        RoslynCallCounters.Record(1452);
         result = default;
 
         try
@@ -228,6 +239,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
+        RoslynCallCounters.Record(1453);
         result = default;
 
         try
@@ -246,6 +258,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
+        RoslynCallCounters.Record(1454);
         result = default;
 
         try
@@ -263,6 +276,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1455);
         result = default;
 
         try
@@ -284,6 +298,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1456);
         result = default;
 
         try
@@ -305,6 +320,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1457);
         result = default;
 
         try
@@ -322,6 +338,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1458);
         result = default;
 
         try
@@ -339,6 +356,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1459);
         result = default;
 
         try
@@ -356,6 +374,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1460);
         result = default;
 
         try
@@ -373,6 +392,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1461);
         result = default;
 
         try
@@ -391,6 +411,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long annotation,
         out int result)
     {
+        RoslynCallCounters.Record(1462);
         result = default;
 
         try
@@ -409,6 +430,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
+        RoslynCallCounters.Record(1463);
         result = default;
 
         try
@@ -427,6 +449,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(1464);
         result = default;
 
         try
@@ -446,6 +469,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int topLevel,
         out int result)
     {
+        RoslynCallCounters.Record(1465);
         result = default;
 
         try
@@ -464,6 +488,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(1466);
         result = default;
 
         try
@@ -481,6 +506,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1467);
         result = default;
 
         try
@@ -500,6 +526,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1468);
         requiredLength = default;
 
         try
@@ -525,6 +552,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1469);
         requiredLength = default;
 
         try
@@ -548,6 +576,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1470);
         result = default;
 
         try
@@ -565,6 +594,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1471);
         result = default;
 
         try
@@ -582,6 +612,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1472);
         result = default;
 
         try
@@ -599,6 +630,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1473);
         result = default;
 
         try
@@ -616,6 +648,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1474);
         result = default;
 
         try
@@ -633,6 +666,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1475);
         result = default;
 
         try
@@ -650,6 +684,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1476);
         result = default;
 
         try
@@ -667,6 +702,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1477);
         result = default;
 
         try
@@ -684,6 +720,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1478);
         result = default;
 
         try
@@ -701,6 +738,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1479);
         result = default;
 
         try
@@ -720,6 +758,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1480);
         requiredLength = default;
 
         try
@@ -743,6 +782,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1481);
         result = default;
 
         try
@@ -760,6 +800,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1482);
         result = default;
 
         try
@@ -777,6 +818,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1483);
         result = default;
 
         try
@@ -794,6 +836,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1484);
         result = default;
 
         try
@@ -811,6 +854,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1485);
         result = default;
 
         try
@@ -828,6 +872,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1486);
         result = default;
 
         try
@@ -845,6 +890,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         long visitor)
     {
+        RoslynCallCounters.Record(1877);
 
         try
         {
@@ -863,6 +909,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1878);
         result = default;
 
         try
@@ -882,6 +929,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int findInsideTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1879);
         result = default;
 
         try
@@ -899,6 +947,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1880);
         result = default;
 
         try
@@ -920,6 +969,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1881);
         result = default;
 
         try
@@ -941,6 +991,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int includeDocumentationComments,
         out long result)
     {
+        RoslynCallCounters.Record(1882);
         result = default;
 
         try
@@ -958,6 +1009,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1883);
         result = default;
 
         try
@@ -975,6 +1027,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1884);
         result = default;
 
         try
@@ -992,6 +1045,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1885);
         result = default;
 
         try
@@ -1009,6 +1063,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out ushort result)
     {
+        RoslynCallCounters.Record(1886);
         result = default;
 
         try
@@ -1028,6 +1083,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1887);
         requiredLength = default;
 
         try
@@ -1051,6 +1107,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(4577);
         result = default;
 
         try
@@ -1069,6 +1126,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long endOfDirectiveToken,
         out long result)
     {
+        RoslynCallCounters.Record(3137);
         result = default;
 
         try
@@ -1087,6 +1145,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long hashToken,
         out long result)
     {
+        RoslynCallCounters.Record(3138);
         result = default;
 
         try
@@ -1104,6 +1163,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3139);
         result = default;
 
         try
@@ -1121,6 +1181,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3140);
         result = default;
 
         try
@@ -1138,6 +1199,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3141);
         result = default;
 
         try
@@ -1155,6 +1217,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(3142);
         result = default;
 
         try
@@ -1173,6 +1236,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long endOfDirectiveToken,
         out long result)
     {
+        RoslynCallCounters.Record(3862);
         result = default;
 
         try
@@ -1191,6 +1255,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long @file,
         out long result)
     {
+        RoslynCallCounters.Record(3863);
         result = default;
 
         try
@@ -1209,6 +1274,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long hashToken,
         out long result)
     {
+        RoslynCallCounters.Record(3864);
         result = default;
 
         try
@@ -1227,6 +1293,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long lineKeyword,
         out long result)
     {
+        RoslynCallCounters.Record(3865);
         result = default;
 
         try
@@ -1244,6 +1311,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3866);
         result = default;
 
         try
@@ -1261,6 +1329,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3867);
         result = default;
 
         try
@@ -1278,6 +1347,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         long visitor)
     {
+        RoslynCallCounters.Record(3868);
 
         try
         {
@@ -1303,6 +1373,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int isActive,
         out long result)
     {
+        RoslynCallCounters.Record(3869);
         result = default;
 
         try
@@ -1321,6 +1392,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long characterOffset,
         out long result)
     {
+        RoslynCallCounters.Record(3870);
         result = default;
 
         try
@@ -1339,6 +1411,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long endOfDirectiveToken,
         out long result)
     {
+        RoslynCallCounters.Record(3871);
         result = default;
 
         try
@@ -1357,6 +1430,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long end,
         out long result)
     {
+        RoslynCallCounters.Record(3872);
         result = default;
 
         try
@@ -1375,6 +1449,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long @file,
         out long result)
     {
+        RoslynCallCounters.Record(3873);
         result = default;
 
         try
@@ -1393,6 +1468,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long hashToken,
         out long result)
     {
+        RoslynCallCounters.Record(3874);
         result = default;
 
         try
@@ -1411,6 +1487,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         int isActive,
         out long result)
     {
+        RoslynCallCounters.Record(3875);
         result = default;
 
         try
@@ -1429,6 +1506,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long lineKeyword,
         out long result)
     {
+        RoslynCallCounters.Record(3876);
         result = default;
 
         try
@@ -1447,6 +1525,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long minusToken,
         out long result)
     {
+        RoslynCallCounters.Record(3877);
         result = default;
 
         try
@@ -1465,6 +1544,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long start,
         out long result)
     {
+        RoslynCallCounters.Record(3878);
         result = default;
 
         try
@@ -1482,6 +1562,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3879);
         result = default;
 
         try
@@ -1499,6 +1580,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3880);
         result = default;
 
         try
@@ -1516,6 +1598,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3881);
         result = default;
 
         try
@@ -1533,6 +1616,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3882);
         result = default;
 
         try
@@ -1550,6 +1634,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3883);
         result = default;
 
         try
@@ -1567,6 +1652,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(3884);
         result = default;
 
         try
@@ -1584,6 +1670,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3885);
         result = default;
 
         try
@@ -1601,6 +1688,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3886);
         result = default;
 
         try
@@ -1618,6 +1706,7 @@ internal sealed partial class LineSpanDirectiveTriviaSyntaxVtblDispatcher : ILin
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(3887);
         result = default;
 
         try

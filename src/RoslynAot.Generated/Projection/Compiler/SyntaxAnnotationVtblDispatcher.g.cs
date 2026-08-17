@@ -28,6 +28,7 @@ internal sealed partial class SyntaxAnnotationVtblDispatcher : ISyntaxAnnotation
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(1437);
         result = default;
 
         try
@@ -45,6 +46,7 @@ internal sealed partial class SyntaxAnnotationVtblDispatcher : ISyntaxAnnotation
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1438);
         result = default;
 
         try
@@ -64,6 +66,7 @@ internal sealed partial class SyntaxAnnotationVtblDispatcher : ISyntaxAnnotation
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1439);
         requiredLength = default;
 
         try
@@ -89,6 +92,7 @@ internal sealed partial class SyntaxAnnotationVtblDispatcher : ISyntaxAnnotation
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1441);
         requiredLength = default;
 
         try

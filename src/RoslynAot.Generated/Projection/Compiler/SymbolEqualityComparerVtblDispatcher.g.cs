@@ -29,6 +29,7 @@ internal sealed partial class SymbolEqualityComparerVtblDispatcher : ISymbolEqua
         long y,
         out int result)
     {
+        RoslynCallCounters.Record(1406);
         result = default;
 
         try
@@ -47,6 +48,7 @@ internal sealed partial class SymbolEqualityComparerVtblDispatcher : ISymbolEqua
         long obj,
         out int result)
     {
+        RoslynCallCounters.Record(1407);
         result = default;
 
         try

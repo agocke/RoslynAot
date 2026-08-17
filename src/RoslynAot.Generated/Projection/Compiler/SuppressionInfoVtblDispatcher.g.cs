@@ -27,6 +27,7 @@ internal sealed partial class SuppressionInfoVtblDispatcher : ISuppressionInfoVt
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(316);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class SuppressionInfoVtblDispatcher : ISuppressionInfoVt
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(317);
         requiredLength = default;
 
         try

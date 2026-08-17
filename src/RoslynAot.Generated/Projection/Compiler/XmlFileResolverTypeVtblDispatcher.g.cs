@@ -27,6 +27,7 @@ internal sealed partial class XmlFileResolverTypeVtblDispatcher : IXmlFileResolv
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string baseDirectory,
         out long result)
     {
+        RoslynCallCounters.Record(1751);
         result = default;
 
         try
@@ -43,6 +44,7 @@ internal sealed partial class XmlFileResolverTypeVtblDispatcher : IXmlFileResolv
     public int XmlFileResolver_get_Default(
         out long result)
     {
+        RoslynCallCounters.Record(1755);
         result = default;
 
         try

@@ -27,6 +27,7 @@ internal sealed partial class ISyntaxContextReceiverVtblDispatcher : IISyntaxCon
         long receiver,
         long context)
     {
+        RoslynCallCounters.Record(766);
 
         try
         {

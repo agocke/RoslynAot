@@ -27,6 +27,7 @@ internal sealed partial class RuleSetTypeVtblDispatcher : IRuleSetTypeVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string filePath,
         out long result)
     {
+        RoslynCallCounters.Record(1313);
         result = default;
 
         try

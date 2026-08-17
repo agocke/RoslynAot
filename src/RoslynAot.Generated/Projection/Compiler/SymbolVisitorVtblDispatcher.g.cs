@@ -27,6 +27,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1413);
 
         try
         {
@@ -43,6 +44,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1414);
 
         try
         {
@@ -59,6 +61,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1415);
 
         try
         {
@@ -75,6 +78,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1416);
 
         try
         {
@@ -91,6 +95,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1417);
 
         try
         {
@@ -107,6 +112,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1418);
 
         try
         {
@@ -123,6 +129,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1419);
 
         try
         {
@@ -139,6 +146,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1420);
 
         try
         {
@@ -155,6 +163,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1421);
 
         try
         {
@@ -171,6 +180,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1422);
 
         try
         {
@@ -187,6 +197,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1423);
 
         try
         {
@@ -203,6 +214,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1424);
 
         try
         {
@@ -219,6 +231,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1425);
 
         try
         {
@@ -235,6 +248,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1426);
 
         try
         {
@@ -251,6 +265,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1427);
 
         try
         {
@@ -267,6 +282,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1428);
 
         try
         {
@@ -283,6 +299,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1429);
 
         try
         {
@@ -299,6 +316,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1430);
 
         try
         {
@@ -315,6 +333,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1431);
 
         try
         {
@@ -331,6 +350,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1432);
 
         try
         {
@@ -347,6 +367,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         long receiver,
         long symbol)
     {
+        RoslynCallCounters.Record(1433);
 
         try
         {

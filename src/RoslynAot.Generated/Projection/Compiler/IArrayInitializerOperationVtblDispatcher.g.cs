@@ -27,6 +27,7 @@ internal sealed partial class IArrayInitializerOperationVtblDispatcher : IIArray
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(894);
         result = default;
 
         try

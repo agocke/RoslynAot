@@ -29,6 +29,7 @@ internal sealed partial class MetadataReferenceTypeVtblDispatcher : IMetadataRef
         long documentation,
         out long result)
     {
+        RoslynCallCounters.Record(839);
         result = default;
 
         try

@@ -28,6 +28,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(449);
         result = default;
 
         try
@@ -45,6 +46,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(450);
         result = default;
 
         try
@@ -64,6 +66,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(451);
         requiredLength = default;
 
         try
@@ -87,6 +90,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(452);
         result = default;
 
         try
@@ -104,6 +108,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(453);
         result = default;
 
         try
@@ -121,6 +126,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(454);
         result = default;
 
         try
@@ -140,6 +146,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(455);
         requiredLength = default;
 
         try
@@ -163,6 +170,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(456);
         result = default;
 
         try
@@ -180,6 +188,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(457);
         result = default;
 
         try

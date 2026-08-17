@@ -27,6 +27,7 @@ internal sealed partial class SyntaxTokenListTypeVtblDispatcher : ISyntaxTokenLi
         long token,
         out long result)
     {
+        RoslynCallCounters.Record(1588);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class SyntaxTokenListTypeVtblDispatcher : ISyntaxTokenLi
         long token,
         out long result)
     {
+        RoslynCallCounters.Record(1591);
         result = default;
 
         try

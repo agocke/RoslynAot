@@ -28,6 +28,7 @@ internal sealed partial class NullabilityInfoVtblDispatcher : INullabilityInfoVt
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(862);
         result = default;
 
         try
@@ -45,6 +46,7 @@ internal sealed partial class NullabilityInfoVtblDispatcher : INullabilityInfoVt
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(863);
         result = default;
 
         try
@@ -62,6 +64,7 @@ internal sealed partial class NullabilityInfoVtblDispatcher : INullabilityInfoVt
         long receiver,
         out byte result)
     {
+        RoslynCallCounters.Record(864);
         result = default;
 
         try
@@ -79,6 +82,7 @@ internal sealed partial class NullabilityInfoVtblDispatcher : INullabilityInfoVt
         long receiver,
         out byte result)
     {
+        RoslynCallCounters.Record(865);
         result = default;
 
         try

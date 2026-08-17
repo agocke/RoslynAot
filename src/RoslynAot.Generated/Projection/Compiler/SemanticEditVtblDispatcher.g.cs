@@ -28,6 +28,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(437);
         result = default;
 
         try
@@ -45,6 +46,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(438);
         result = default;
 
         try
@@ -62,6 +64,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(439);
         result = default;
 
         try
@@ -79,6 +82,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(440);
         result = default;
 
         try
@@ -96,6 +100,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(441);
         result = default;
 
         try
@@ -113,6 +118,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(442);
         result = default;
 
         try
@@ -130,6 +136,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(443);
         result = default;
 
         try

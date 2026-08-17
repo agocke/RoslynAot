@@ -27,6 +27,7 @@ internal sealed partial class SyntaxTokenListReversedTypeVtblDispatcher : ISynta
         long list,
         out long result)
     {
+        RoslynCallCounters.Record(1584);
         result = default;
 
         try

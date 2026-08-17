@@ -29,6 +29,7 @@ internal sealed partial class AssemblyIdentityComparerVtblDispatcher : IAssembly
         long definition,
         out int result)
     {
+        RoslynCallCounters.Record(15);
         result = default;
 
         try
@@ -48,6 +49,7 @@ internal sealed partial class AssemblyIdentityComparerVtblDispatcher : IAssembly
         long definition,
         out int result)
     {
+        RoslynCallCounters.Record(16);
         result = default;
 
         try
@@ -67,6 +69,7 @@ internal sealed partial class AssemblyIdentityComparerVtblDispatcher : IAssembly
         long definition,
         out int result)
     {
+        RoslynCallCounters.Record(17);
         result = default;
 
         try

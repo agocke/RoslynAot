@@ -27,6 +27,7 @@ internal sealed partial class IStaticLocalInitializationSemaphoreOperationVtblDi
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(496);
         result = default;
 
         try

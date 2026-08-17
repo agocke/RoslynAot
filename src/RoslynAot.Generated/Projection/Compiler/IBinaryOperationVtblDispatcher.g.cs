@@ -27,6 +27,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(899);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(900);
         result = default;
 
         try
@@ -61,6 +63,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(901);
         result = default;
 
         try
@@ -78,6 +81,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(902);
         result = default;
 
         try
@@ -95,6 +99,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(903);
         result = default;
 
         try
@@ -112,6 +117,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(904);
         result = default;
 
         try
@@ -129,6 +135,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(905);
         result = default;
 
         try
@@ -146,6 +153,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(906);
         result = default;
 
         try

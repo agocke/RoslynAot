@@ -27,6 +27,7 @@ internal sealed partial class ImportedXmlNamespaceVtblDispatcher : IImportedXmlN
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(807);
         result = default;
 
         try
@@ -46,6 +47,7 @@ internal sealed partial class ImportedXmlNamespaceVtblDispatcher : IImportedXmlN
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(808);
         requiredLength = default;
 
         try

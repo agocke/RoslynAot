@@ -28,6 +28,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(814);
         result = default;
 
         try
@@ -45,6 +46,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(815);
         result = default;
 
         try
@@ -64,6 +66,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(816);
         requiredLength = default;
 
         try
@@ -87,6 +90,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(817);
         result = default;
 
         try
@@ -104,6 +108,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(818);
         result = default;
 
         try
@@ -121,6 +126,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(819);
         result = default;
 
         try

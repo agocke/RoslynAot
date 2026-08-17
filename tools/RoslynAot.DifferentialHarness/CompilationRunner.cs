@@ -17,7 +17,8 @@ internal sealed record CompilationResult(
     string SarifPath,
     string StdOutPath,
     string StdErrPath,
-    string OutputAssemblyPath)
+    string OutputAssemblyPath,
+    string? CallCountPath)
 {
     public bool SarifProduced => File.Exists(SarifPath);
 }
@@ -112,6 +113,16 @@ internal sealed class CompilationRunner(
         startInfo.Environment["DOTNET_CLI_UI_LANGUAGE"] = "en-US";
         startInfo.Environment["DOTNET_NOLOGO"] = "1";
 
+        // Only the native side crosses the projection boundary, so only it has
+        // per-member counts to report.
+        string? callCountPath = side == CompilationSide.Native
+            ? Path.Combine(outputDirectory, "call-counts.json")
+            : null;
+        if (callCountPath is not null)
+        {
+            startInfo.Environment["ROSLYNAOT_CALL_COUNTS"] = callCountPath;
+        }
+
         using Process process = Process.Start(startInfo) ??
             throw new HarnessEnvironmentException(
                 $"Could not start '{fileName}' for case '{corpusCase.Name}'.");
@@ -145,7 +156,8 @@ internal sealed class CompilationRunner(
             sarifPath,
             stdOutPath,
             stdErrPath,
-            outputAssemblyPath);
+            outputAssemblyPath,
+            callCountPath);
     }
 
     private static void TryKill(Process process)

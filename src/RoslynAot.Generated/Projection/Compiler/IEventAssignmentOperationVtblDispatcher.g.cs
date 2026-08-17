@@ -27,6 +27,7 @@ internal sealed partial class IEventAssignmentOperationVtblDispatcher : IIEventA
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(964);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class IEventAssignmentOperationVtblDispatcher : IIEventA
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(965);
         result = default;
 
         try
@@ -61,6 +63,7 @@ internal sealed partial class IEventAssignmentOperationVtblDispatcher : IIEventA
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(966);
         result = default;
 
         try

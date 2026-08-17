@@ -25,6 +25,13 @@ internal static class Program
             sdkDir: baseDirectory,
             tempDir: Path.GetTempPath());
 
-        return RoslynAotCSharpCompiler.Run(args, buildPaths, Console.Out);
+        try
+        {
+            return RoslynAotCSharpCompiler.Run(args, buildPaths, Console.Out);
+        }
+        finally
+        {
+            RoslynCallCountReport.WriteIfRequested();
+        }
     }
 }

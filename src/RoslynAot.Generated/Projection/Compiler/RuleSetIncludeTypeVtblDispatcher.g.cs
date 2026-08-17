@@ -28,6 +28,7 @@ internal sealed partial class RuleSetIncludeTypeVtblDispatcher : IRuleSetInclude
         int action,
         out long result)
     {
+        RoslynCallCounters.Record(1317);
         result = default;
 
         try

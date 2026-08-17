@@ -27,6 +27,7 @@ internal sealed partial class AnalysisContextVtblDispatcher : IAnalysisContextVt
         long receiver,
         int analysisMode)
     {
+        RoslynCallCounters.Record(229);
 
         try
         {
@@ -42,6 +43,7 @@ internal sealed partial class AnalysisContextVtblDispatcher : IAnalysisContextVt
     public int AnalysisContext_EnableConcurrentExecution(
         long receiver)
     {
+        RoslynCallCounters.Record(230);
 
         try
         {
@@ -58,6 +60,7 @@ internal sealed partial class AnalysisContextVtblDispatcher : IAnalysisContextVt
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(231);
         result = default;
 
         try

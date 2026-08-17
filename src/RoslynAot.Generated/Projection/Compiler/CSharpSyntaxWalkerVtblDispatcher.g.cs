@@ -27,6 +27,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2151);
 
         try
         {
@@ -43,6 +44,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2152);
 
         try
         {
@@ -59,6 +61,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2153);
 
         try
         {
@@ -75,6 +78,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2154);
 
         try
         {
@@ -91,6 +95,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2155);
 
         try
         {
@@ -107,6 +112,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2156);
 
         try
         {
@@ -123,6 +129,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2157);
 
         try
         {
@@ -139,6 +146,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2158);
 
         try
         {
@@ -155,6 +163,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2159);
 
         try
         {
@@ -171,6 +180,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2160);
 
         try
         {
@@ -187,6 +197,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2161);
 
         try
         {
@@ -203,6 +214,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2162);
 
         try
         {
@@ -219,6 +231,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2163);
 
         try
         {
@@ -235,6 +248,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2164);
 
         try
         {
@@ -251,6 +265,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2165);
 
         try
         {
@@ -267,6 +282,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2166);
 
         try
         {
@@ -283,6 +299,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2167);
 
         try
         {
@@ -299,6 +316,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2168);
 
         try
         {
@@ -315,6 +333,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2169);
 
         try
         {
@@ -331,6 +350,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2170);
 
         try
         {
@@ -347,6 +367,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2171);
 
         try
         {
@@ -363,6 +384,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2172);
 
         try
         {
@@ -379,6 +401,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2173);
 
         try
         {
@@ -395,6 +418,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2174);
 
         try
         {
@@ -411,6 +435,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2175);
 
         try
         {
@@ -427,6 +452,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2176);
 
         try
         {
@@ -443,6 +469,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2177);
 
         try
         {
@@ -459,6 +486,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2178);
 
         try
         {
@@ -475,6 +503,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2179);
 
         try
         {
@@ -491,6 +520,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2180);
 
         try
         {
@@ -507,6 +537,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2181);
 
         try
         {
@@ -523,6 +554,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2182);
 
         try
         {
@@ -539,6 +571,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2183);
 
         try
         {
@@ -555,6 +588,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2184);
 
         try
         {
@@ -571,6 +605,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2185);
 
         try
         {
@@ -587,6 +622,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2186);
 
         try
         {
@@ -603,6 +639,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2187);
 
         try
         {
@@ -619,6 +656,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2188);
 
         try
         {
@@ -635,6 +673,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2189);
 
         try
         {
@@ -651,6 +690,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2190);
 
         try
         {
@@ -667,6 +707,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2191);
 
         try
         {
@@ -683,6 +724,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2192);
 
         try
         {
@@ -699,6 +741,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2193);
 
         try
         {
@@ -715,6 +758,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2194);
 
         try
         {
@@ -731,6 +775,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2195);
 
         try
         {
@@ -747,6 +792,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2196);
 
         try
         {
@@ -763,6 +809,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2197);
 
         try
         {
@@ -779,6 +826,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2198);
 
         try
         {
@@ -795,6 +843,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2199);
 
         try
         {
@@ -811,6 +860,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2200);
 
         try
         {
@@ -827,6 +877,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2201);
 
         try
         {
@@ -843,6 +894,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2202);
 
         try
         {
@@ -859,6 +911,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2203);
 
         try
         {
@@ -875,6 +928,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2204);
 
         try
         {
@@ -891,6 +945,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2205);
 
         try
         {
@@ -907,6 +962,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2206);
 
         try
         {
@@ -923,6 +979,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2207);
 
         try
         {
@@ -939,6 +996,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2208);
 
         try
         {
@@ -955,6 +1013,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2209);
 
         try
         {
@@ -971,6 +1030,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2210);
 
         try
         {
@@ -987,6 +1047,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2211);
 
         try
         {
@@ -1003,6 +1064,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2212);
 
         try
         {
@@ -1019,6 +1081,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2213);
 
         try
         {
@@ -1035,6 +1098,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2214);
 
         try
         {
@@ -1051,6 +1115,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2215);
 
         try
         {
@@ -1067,6 +1132,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2216);
 
         try
         {
@@ -1083,6 +1149,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2217);
 
         try
         {
@@ -1099,6 +1166,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2218);
 
         try
         {
@@ -1115,6 +1183,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2219);
 
         try
         {
@@ -1131,6 +1200,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2220);
 
         try
         {
@@ -1147,6 +1217,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2221);
 
         try
         {
@@ -1163,6 +1234,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2222);
 
         try
         {
@@ -1179,6 +1251,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2223);
 
         try
         {
@@ -1195,6 +1268,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2224);
 
         try
         {
@@ -1211,6 +1285,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2225);
 
         try
         {
@@ -1227,6 +1302,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2226);
 
         try
         {
@@ -1243,6 +1319,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2227);
 
         try
         {
@@ -1259,6 +1336,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2228);
 
         try
         {
@@ -1275,6 +1353,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2229);
 
         try
         {
@@ -1291,6 +1370,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2230);
 
         try
         {
@@ -1307,6 +1387,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2231);
 
         try
         {
@@ -1323,6 +1404,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2232);
 
         try
         {
@@ -1339,6 +1421,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2233);
 
         try
         {
@@ -1355,6 +1438,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2234);
 
         try
         {
@@ -1371,6 +1455,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2235);
 
         try
         {
@@ -1387,6 +1472,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2236);
 
         try
         {
@@ -1403,6 +1489,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2237);
 
         try
         {
@@ -1419,6 +1506,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2238);
 
         try
         {
@@ -1435,6 +1523,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2239);
 
         try
         {
@@ -1451,6 +1540,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2240);
 
         try
         {
@@ -1467,6 +1557,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2241);
 
         try
         {
@@ -1483,6 +1574,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2242);
 
         try
         {
@@ -1499,6 +1591,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2243);
 
         try
         {
@@ -1515,6 +1608,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2244);
 
         try
         {
@@ -1531,6 +1625,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2245);
 
         try
         {
@@ -1547,6 +1642,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2246);
 
         try
         {
@@ -1563,6 +1659,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2247);
 
         try
         {
@@ -1579,6 +1676,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2248);
 
         try
         {
@@ -1595,6 +1693,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2249);
 
         try
         {
@@ -1611,6 +1710,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2250);
 
         try
         {
@@ -1627,6 +1727,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2251);
 
         try
         {
@@ -1643,6 +1744,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2252);
 
         try
         {
@@ -1659,6 +1761,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2253);
 
         try
         {
@@ -1675,6 +1778,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2254);
 
         try
         {
@@ -1691,6 +1795,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2255);
 
         try
         {
@@ -1707,6 +1812,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2256);
 
         try
         {
@@ -1723,6 +1829,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2257);
 
         try
         {
@@ -1739,6 +1846,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2258);
 
         try
         {
@@ -1755,6 +1863,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2259);
 
         try
         {
@@ -1771,6 +1880,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2260);
 
         try
         {
@@ -1787,6 +1897,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2261);
 
         try
         {
@@ -1803,6 +1914,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2262);
 
         try
         {
@@ -1819,6 +1931,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2263);
 
         try
         {
@@ -1835,6 +1948,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2264);
 
         try
         {
@@ -1851,6 +1965,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2265);
 
         try
         {
@@ -1867,6 +1982,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2266);
 
         try
         {
@@ -1883,6 +1999,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2267);
 
         try
         {
@@ -1899,6 +2016,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2268);
 
         try
         {
@@ -1915,6 +2033,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2269);
 
         try
         {
@@ -1931,6 +2050,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2270);
 
         try
         {
@@ -1947,6 +2067,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2271);
 
         try
         {
@@ -1963,6 +2084,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2272);
 
         try
         {
@@ -1979,6 +2101,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2273);
 
         try
         {
@@ -1995,6 +2118,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2274);
 
         try
         {
@@ -2011,6 +2135,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2275);
 
         try
         {
@@ -2027,6 +2152,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2276);
 
         try
         {
@@ -2043,6 +2169,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2277);
 
         try
         {
@@ -2059,6 +2186,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2278);
 
         try
         {
@@ -2075,6 +2203,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2279);
 
         try
         {
@@ -2091,6 +2220,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2280);
 
         try
         {
@@ -2107,6 +2237,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2281);
 
         try
         {
@@ -2123,6 +2254,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2282);
 
         try
         {
@@ -2139,6 +2271,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2283);
 
         try
         {
@@ -2155,6 +2288,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2284);
 
         try
         {
@@ -2171,6 +2305,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2285);
 
         try
         {
@@ -2187,6 +2322,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2286);
 
         try
         {
@@ -2203,6 +2339,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2287);
 
         try
         {
@@ -2219,6 +2356,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2288);
 
         try
         {
@@ -2235,6 +2373,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2289);
 
         try
         {
@@ -2251,6 +2390,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2290);
 
         try
         {
@@ -2267,6 +2407,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2291);
 
         try
         {
@@ -2283,6 +2424,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2292);
 
         try
         {
@@ -2299,6 +2441,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2293);
 
         try
         {
@@ -2315,6 +2458,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2294);
 
         try
         {
@@ -2331,6 +2475,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2295);
 
         try
         {
@@ -2347,6 +2492,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2296);
 
         try
         {
@@ -2363,6 +2509,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2297);
 
         try
         {
@@ -2379,6 +2526,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2298);
 
         try
         {
@@ -2395,6 +2543,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2299);
 
         try
         {
@@ -2411,6 +2560,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2300);
 
         try
         {
@@ -2427,6 +2577,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2301);
 
         try
         {
@@ -2443,6 +2594,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2302);
 
         try
         {
@@ -2459,6 +2611,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2303);
 
         try
         {
@@ -2475,6 +2628,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2304);
 
         try
         {
@@ -2491,6 +2645,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2305);
 
         try
         {
@@ -2507,6 +2662,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2306);
 
         try
         {
@@ -2523,6 +2679,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2307);
 
         try
         {
@@ -2539,6 +2696,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2308);
 
         try
         {
@@ -2555,6 +2713,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2309);
 
         try
         {
@@ -2571,6 +2730,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2310);
 
         try
         {
@@ -2587,6 +2747,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2311);
 
         try
         {
@@ -2603,6 +2764,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2312);
 
         try
         {
@@ -2619,6 +2781,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2313);
 
         try
         {
@@ -2635,6 +2798,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2314);
 
         try
         {
@@ -2651,6 +2815,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2315);
 
         try
         {
@@ -2667,6 +2832,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2316);
 
         try
         {
@@ -2683,6 +2849,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2317);
 
         try
         {
@@ -2699,6 +2866,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2318);
 
         try
         {
@@ -2715,6 +2883,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2319);
 
         try
         {
@@ -2731,6 +2900,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2320);
 
         try
         {
@@ -2747,6 +2917,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2321);
 
         try
         {
@@ -2763,6 +2934,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2322);
 
         try
         {
@@ -2779,6 +2951,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2323);
 
         try
         {
@@ -2795,6 +2968,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2324);
 
         try
         {
@@ -2811,6 +2985,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2325);
 
         try
         {
@@ -2827,6 +3002,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2326);
 
         try
         {
@@ -2843,6 +3019,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2327);
 
         try
         {
@@ -2859,6 +3036,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2328);
 
         try
         {
@@ -2875,6 +3053,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2329);
 
         try
         {
@@ -2891,6 +3070,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2330);
 
         try
         {
@@ -2907,6 +3087,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2331);
 
         try
         {
@@ -2923,6 +3104,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2332);
 
         try
         {
@@ -2939,6 +3121,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2333);
 
         try
         {
@@ -2955,6 +3138,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2334);
 
         try
         {
@@ -2971,6 +3155,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2335);
 
         try
         {
@@ -2987,6 +3172,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2336);
 
         try
         {
@@ -3003,6 +3189,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2337);
 
         try
         {
@@ -3019,6 +3206,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2338);
 
         try
         {
@@ -3035,6 +3223,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2339);
 
         try
         {
@@ -3051,6 +3240,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2340);
 
         try
         {
@@ -3067,6 +3257,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2341);
 
         try
         {
@@ -3083,6 +3274,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2342);
 
         try
         {
@@ -3099,6 +3291,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2343);
 
         try
         {
@@ -3115,6 +3308,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2344);
 
         try
         {
@@ -3131,6 +3325,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2345);
 
         try
         {
@@ -3147,6 +3342,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2346);
 
         try
         {
@@ -3163,6 +3359,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2347);
 
         try
         {
@@ -3179,6 +3376,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2348);
 
         try
         {
@@ -3195,6 +3393,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2349);
 
         try
         {
@@ -3211,6 +3410,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2350);
 
         try
         {
@@ -3227,6 +3427,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2351);
 
         try
         {
@@ -3243,6 +3444,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2352);
 
         try
         {
@@ -3259,6 +3461,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2353);
 
         try
         {
@@ -3275,6 +3478,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2354);
 
         try
         {
@@ -3291,6 +3495,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2355);
 
         try
         {
@@ -3307,6 +3512,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2356);
 
         try
         {
@@ -3323,6 +3529,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2357);
 
         try
         {
@@ -3339,6 +3546,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2358);
 
         try
         {
@@ -3355,6 +3563,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2359);
 
         try
         {
@@ -3371,6 +3580,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2360);
 
         try
         {
@@ -3387,6 +3597,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2361);
 
         try
         {
@@ -3403,6 +3614,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2362);
 
         try
         {
@@ -3419,6 +3631,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2363);
 
         try
         {
@@ -3435,6 +3648,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2364);
 
         try
         {
@@ -3451,6 +3665,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2365);
 
         try
         {
@@ -3467,6 +3682,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2366);
 
         try
         {
@@ -3483,6 +3699,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2367);
 
         try
         {
@@ -3499,6 +3716,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2368);
 
         try
         {
@@ -3515,6 +3733,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2369);
 
         try
         {
@@ -3531,6 +3750,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2370);
 
         try
         {
@@ -3547,6 +3767,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2371);
 
         try
         {
@@ -3563,6 +3784,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2372);
 
         try
         {
@@ -3579,6 +3801,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2373);
 
         try
         {
@@ -3595,6 +3818,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2374);
 
         try
         {
@@ -3611,6 +3835,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2375);
 
         try
         {
@@ -3627,6 +3852,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2376);
 
         try
         {
@@ -3643,6 +3869,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2377);
 
         try
         {
@@ -3659,6 +3886,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2378);
 
         try
         {
@@ -3675,6 +3903,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2379);
 
         try
         {
@@ -3691,6 +3920,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2380);
 
         try
         {
@@ -3707,6 +3937,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2381);
 
         try
         {
@@ -3723,6 +3954,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2382);
 
         try
         {
@@ -3739,6 +3971,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2383);
 
         try
         {
@@ -3755,6 +3988,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2384);
 
         try
         {
@@ -3771,6 +4005,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2385);
 
         try
         {
@@ -3787,6 +4022,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2386);
 
         try
         {
@@ -3803,6 +4039,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2387);
 
         try
         {
@@ -3819,6 +4056,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2388);
 
         try
         {
@@ -3835,6 +4073,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2389);
 
         try
         {
@@ -3851,6 +4090,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2390);
 
         try
         {
@@ -3867,6 +4107,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2391);
 
         try
         {
@@ -3883,6 +4124,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2392);
 
         try
         {
@@ -3899,6 +4141,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2393);
 
         try
         {
@@ -3915,6 +4158,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2394);
 
         try
         {
@@ -3931,6 +4175,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2395);
 
         try
         {
@@ -3947,6 +4192,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2396);
 
         try
         {
@@ -3963,6 +4209,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2397);
 
         try
         {
@@ -3979,6 +4226,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2398);
 
         try
         {
@@ -3995,6 +4243,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2399);
 
         try
         {
@@ -4011,6 +4260,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2400);
 
         try
         {
@@ -4027,6 +4277,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long token)
     {
+        RoslynCallCounters.Record(2401);
 
         try
         {
@@ -4043,6 +4294,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long token)
     {
+        RoslynCallCounters.Record(2402);
 
         try
         {
@@ -4059,6 +4311,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long token)
     {
+        RoslynCallCounters.Record(2403);
 
         try
         {
@@ -4075,6 +4328,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long trivia)
     {
+        RoslynCallCounters.Record(2404);
 
         try
         {
@@ -4091,6 +4345,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         long receiver,
         long node)
     {
+        RoslynCallCounters.Record(2405);
 
         try
         {

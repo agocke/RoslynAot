@@ -27,6 +27,7 @@ internal sealed partial class ISimpleAssignmentOperationVtblDispatcher : IISimpl
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1093);
         result = default;
 
         try

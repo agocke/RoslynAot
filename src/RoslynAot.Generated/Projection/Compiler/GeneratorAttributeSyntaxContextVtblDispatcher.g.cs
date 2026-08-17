@@ -27,6 +27,7 @@ internal sealed partial class GeneratorAttributeSyntaxContextVtblDispatcher : IG
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(501);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class GeneratorAttributeSyntaxContextVtblDispatcher : IG
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(502);
         result = default;
 
         try
@@ -61,6 +63,7 @@ internal sealed partial class GeneratorAttributeSyntaxContextVtblDispatcher : IG
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(503);
         result = default;
 
         try
@@ -78,6 +81,7 @@ internal sealed partial class GeneratorAttributeSyntaxContextVtblDispatcher : IG
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(504);
         result = default;
 
         try

@@ -29,6 +29,7 @@ internal sealed partial class FileLinePositionSpanTypeVtblDispatcher : IFileLine
         long end,
         out long result)
     {
+        RoslynCallCounters.Record(447);
         result = default;
 
         try
@@ -47,6 +48,7 @@ internal sealed partial class FileLinePositionSpanTypeVtblDispatcher : IFileLine
         long span,
         out long result)
     {
+        RoslynCallCounters.Record(448);
         result = default;
 
         try

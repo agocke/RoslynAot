@@ -95,8 +95,16 @@ be watched from the first step rather than the step that breaks them.
 - Stand up the differential harness: run the CA corpus managed and native, diff
   diagnostics on **id, severity, span, message, properties, and additional
   locations**. An id-set comparison would have passed CA1200.
+  - **Amended when built.** `ReportDiagnostic` carries descriptor, span, and
+    preformatted message only, and `NativeAnalyzerDiagnostic` hardcodes
+    `Properties` and `AdditionalLocations` empty, so comparing those two fields
+    would not measure a bridge defect — it would restate a known ABI limit 125
+    times. They are instead **declared and counted** in `report.md` as an
+    explicit blind spot, and compared once Step 6 widens the ABI. The four
+    fields that are compared still catch CA1200, which failed on severity.
 - Add a per-member call counter at the boundary. Nearly free, and it doubles as
   the coverage metric and the profile input for every deferral decision later.
+  - **Done.** See "Boundary call coverage" below.
 - Record native module size, ILC time, and retained type count per corpus
   analyzer. Establishes the trimming baseline before anything can regress it.
 
@@ -172,6 +180,38 @@ runs far enough to reach one. The ranking is now:
 `ISymbol.DeclaringSyntaxReferences` doubled from 3 to 6 because the four
 newly-unblocked analyzers reach it. The two members at the top now account for
 13 of the 26 failures.
+
+### Boundary call coverage (2026-08-16)
+
+The per-member call counter is in. Counting is compiler-side and
+unconditional — one interlocked increment per dispatcher call — so a zero is
+always "never called", never "not instrumented". `ROSLYNAOT_CALL_COUNTS`
+makes `csc-aot` write the counts; the harness sets it per case and aggregates
+into `report.json`.
+
+First measurement over the 34-case corpus: **158 of 5303 projected members are
+reached, across 1,294,513 calls.** The distribution is far more lopsided than
+the failure ranking:
+
+| Share of all calls | Member |
+|---|---|
+| 68.8% | `IAssemblySymbol.NamespaceNames` |
+| 6.7% | `ISymbol.Name` |
+| 6.5% | `IMethodSymbol.Parameters` |
+| 5.3% | `IAssemblySymbol.GetTypeByMetadataName` |
+| 4.2% | `IParameterSymbol.Type` |
+
+`IAssemblySymbol.NamespaceNames` alone is over two thirds of all boundary
+traffic, and it returns a string collection on every call — `WellKnownTypeProvider`
+uses it to pre-filter metadata name lookups. That is one member, in one
+consumer, and it dominates everything else combined. It is the first thing any
+performance work should look at, and it was invisible before this counter.
+
+Two caveats on the number. Control-vtbl operations are not counted — they are
+hand-written rather than generated, so `ObjectEquals` and `ObjectGetHashCode`
+traffic from the identity fix above does not appear here. And 158 of 5303 is a
+statement about what this corpus reaches, not about what the projection needs:
+the denominator is every member the generator emits a dispatcher for.
 
 ---
 

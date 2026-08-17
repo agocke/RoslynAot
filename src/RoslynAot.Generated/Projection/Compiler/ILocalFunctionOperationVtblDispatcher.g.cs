@@ -27,6 +27,7 @@ internal sealed partial class ILocalFunctionOperationVtblDispatcher : IILocalFun
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1031);
         result = default;
 
         try
@@ -44,6 +45,7 @@ internal sealed partial class ILocalFunctionOperationVtblDispatcher : IILocalFun
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1032);
         result = default;
 
         try
@@ -61,6 +63,7 @@ internal sealed partial class ILocalFunctionOperationVtblDispatcher : IILocalFun
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1033);
         result = default;
 
         try

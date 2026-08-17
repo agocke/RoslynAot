@@ -27,6 +27,7 @@ internal sealed partial class CommandLineAnalyzerReferenceTypeVtblDispatcher : I
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         out long result)
     {
+        RoslynCallCounters.Record(47);
         result = default;
 
         try

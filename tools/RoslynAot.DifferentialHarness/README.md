@@ -54,6 +54,29 @@ If either string's shape changes, parsing degrades to a raw-text reason
 with `ParseFailed = true` rather than dropping the failure - watch for
 that flag at the top of `report.md` after touching either file.
 
+## Boundary call coverage
+
+The native compiler counts every projection dispatcher call, keyed on the
+Roslyn member. Counting is unconditional and compiler-side: one
+interlocked increment against a preallocated slot, negligible beside the
+round trip it measures, so a zero always means "never called" rather than
+"not instrumented". Overload slots are summed under one display name.
+
+Setting `ROSLYNAOT_CALL_COUNTS=<path>` makes `csc-aot` write the counts as
+JSON on exit; the harness sets it per case and aggregates. The result is
+the `coverage` section of `report.json` and a table in `report.md`.
+
+Counts are taken *before* the call is attempted, so a member that always
+throws still reports as reached — coverage answers "did the corpus get
+here", not "did it work". The member names match the shape
+`AnalyzerFailureParser` extracts from AD0001 frames, so coverage rows and
+burn-down reasons join on the same key.
+
+Only the native side is instrumented; managed Roslyn has no boundary to
+cross. Control-vtbl operations (`ObjectEquals`, `CopyObjectToStringUtf16`,
+and the rest of `RoslynInterop`) are **not** counted yet — they are
+hand-written rather than generated, so they carry no ordinal.
+
 ## Burn-down statuses
 
 - **Pass**: the rule produced at least one managed diagnostic somewhere

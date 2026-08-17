@@ -37,6 +37,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
         int miscellaneousOptions,
         out long result)
     {
+        RoslynCallCounters.Record(1365);
         result = default;
 
         try
@@ -53,6 +54,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_CSharpErrorMessageFormat(
         out long result)
     {
+        RoslynCallCounters.Record(1385);
         result = default;
 
         try
@@ -69,6 +71,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_CSharpShortErrorMessageFormat(
         out long result)
     {
+        RoslynCallCounters.Record(1386);
         result = default;
 
         try
@@ -85,6 +88,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_FullyQualifiedFormat(
         out long result)
     {
+        RoslynCallCounters.Record(1389);
         result = default;
 
         try
@@ -101,6 +105,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_MinimallyQualifiedFormat(
         out long result)
     {
+        RoslynCallCounters.Record(1395);
         result = default;
 
         try
@@ -117,6 +122,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_VisualBasicErrorMessageFormat(
         out long result)
     {
+        RoslynCallCounters.Record(1400);
         result = default;
 
         try
@@ -133,6 +139,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_VisualBasicShortErrorMessageFormat(
         out long result)
     {
+        RoslynCallCounters.Record(1401);
         result = default;
 
         try

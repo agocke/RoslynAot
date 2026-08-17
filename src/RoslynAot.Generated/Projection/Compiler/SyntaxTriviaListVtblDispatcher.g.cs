@@ -28,6 +28,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long trivia,
         out long result)
     {
+        RoslynCallCounters.Record(1642);
         result = default;
 
         try
@@ -45,6 +46,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1643);
         result = default;
 
         try
@@ -63,6 +65,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         int index,
         out long result)
     {
+        RoslynCallCounters.Record(1645);
         result = default;
 
         try
@@ -81,6 +84,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(1646);
         result = default;
 
         try
@@ -98,6 +102,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1647);
         result = default;
 
         try
@@ -115,6 +120,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1648);
         result = default;
 
         try
@@ -132,6 +138,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1649);
         result = default;
 
         try
@@ -150,6 +157,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long triviaInList,
         out int result)
     {
+        RoslynCallCounters.Record(1650);
         result = default;
 
         try
@@ -169,6 +177,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long trivia,
         out long result)
     {
+        RoslynCallCounters.Record(1651);
         result = default;
 
         try
@@ -186,6 +195,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1652);
         result = default;
 
         try
@@ -204,6 +214,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         int index,
         out long result)
     {
+        RoslynCallCounters.Record(1653);
         result = default;
 
         try
@@ -222,6 +233,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long triviaInList,
         out long result)
     {
+        RoslynCallCounters.Record(1654);
         result = default;
 
         try
@@ -241,6 +253,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long newTrivia,
         out long result)
     {
+        RoslynCallCounters.Record(1655);
         result = default;
 
         try
@@ -258,6 +271,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1656);
         result = default;
 
         try
@@ -277,6 +291,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1657);
         requiredLength = default;
 
         try
@@ -302,6 +317,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(1658);
         requiredLength = default;
 
         try
@@ -325,6 +341,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long receiver,
         out int result)
     {
+        RoslynCallCounters.Record(1659);
         result = default;
 
         try
@@ -342,6 +359,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1661);
         result = default;
 
         try
@@ -360,6 +378,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         int index,
         out long result)
     {
+        RoslynCallCounters.Record(1662);
         result = default;
 
         try
@@ -377,6 +396,7 @@ internal sealed partial class SyntaxTriviaListVtblDispatcher : ISyntaxTriviaList
         long receiver,
         out long result)
     {
+        RoslynCallCounters.Record(1663);
         result = default;
 
         try

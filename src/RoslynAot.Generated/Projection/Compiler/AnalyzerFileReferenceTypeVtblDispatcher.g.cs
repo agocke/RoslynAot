@@ -28,6 +28,7 @@ internal sealed partial class AnalyzerFileReferenceTypeVtblDispatcher : IAnalyze
         long assemblyLoader,
         out long result)
     {
+        RoslynCallCounters.Record(233);
         result = default;
 
         try

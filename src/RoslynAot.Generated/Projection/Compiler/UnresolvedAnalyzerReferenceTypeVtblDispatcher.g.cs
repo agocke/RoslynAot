@@ -27,6 +27,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceTypeVtblDispatcher : IU
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string unresolvedPath,
         out long result)
     {
+        RoslynCallCounters.Record(384);
         result = default;
 
         try
