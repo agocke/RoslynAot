@@ -87,13 +87,17 @@ and the ordered plan to close them are in the
 [analyzer remoting migration plan](docs/ANALYZER-REMOTING-MIGRATION.md).
 
 The harness has also earned its keep beyond counting. It caught a defect that
-**terminates the compiler process** rather than reporting a failure: a generic
+**terminated the compiler process** rather than reporting a failure: a generic
 virtual method on a proxied type cannot be dispatched through
 `IDynamicInterfaceCastable`, and NativeAOT fails fast in the type loader where
 nothing can catch it. Two passing rules went red because an unrelated analyzer
-reached that path in the same process. It is the only failure class that
-destroys other analyzers' results, and it was two passing rules away from
-shipping unnoticed. See problem 21.
+reached that path in the same process — the only failure class that destroys
+*other* analyzers' results, and it was two passing rules away from shipping
+unnoticed.
+
+That is now fixed: those members are emitted `sealed`, which makes them
+non-virtual, so reaching one raises an ordinary `AD0001` and the compilation
+completes. Making them work rather than throw is Step 8. See problem 21.
 
 The prototype is not yet a transparent package integration. Analyzer transport
 coverage is still limited, native analyzer preparation is not wired into normal
@@ -168,23 +172,26 @@ builds, caching is incomplete, and only Linux has been validated.
    package's MSBuild targets.
 2. Replace managed analyzer items with the resulting native modules and run a
    complete project build through the package.
-3. Give generic virtual methods a dispatch path, ahead of identity. This is the
-   one failure class that kills the compiler instead of reporting, it cannot be
-   worked around reflectively — `MakeGenericMethod` over a struct type argument
-   does not work under NativeAOT — and it already forced `GetControlFlowGraph`
-   to be withdrawn. It is pulled out of migration Step 8 because the rest of
-   that step is transport work behind the wire grammar, while this is a
-   proxy-representation question that may be answerable on its own.
-4. Then work the rest of the differential burn-down in the order the migration
-   plan sets out: ownership is done, identity is next. The ranked blocking
-   members are the measurement that says which work pays.
-5. Add incremental inputs, outputs, and a content-addressed native artifact
+3. Work the differential burn-down in the order the migration plan sets out:
+   ownership is done, identity is next. The ranked blocking members are the
+   measurement that says which work pays.
+
+   Generic virtual dispatch was briefly pulled ahead of identity because it
+   killed the compiler rather than reporting. That is fixed — those members are
+   sealed, so reaching one raises `AD0001` — and the remaining half, giving them
+   a statically implemented shim so they *work* rather than throw, is ordinary
+   Step 8 generics work with no claim on priority. Note that generic
+   **marshalling** is a separate problem from dispatch: a type argument that
+   must be represented in the transport cannot be resolved reflectively, since
+   `MakeGenericMethod` and `MakeGenericType` do not work for struct
+   instantiations under NativeAOT.
+4. Add incremental inputs, outputs, and a content-addressed native artifact
    cache.
-6. Expand compiler and analyzer equivalence tests before enabling the native
+5. Expand compiler and analyzer equivalence tests before enabling the native
    path by default. The differential harness is the mechanism; widening it
    means growing the corpus and, at migration Step 6, comparing the diagnostic
    fields the ABI cannot yet carry.
-7. Validate the same packaged workflow on Windows and macOS.
+6. Validate the same packaged workflow on Windows and macOS.
 
 ## Core implementation constraint
 
