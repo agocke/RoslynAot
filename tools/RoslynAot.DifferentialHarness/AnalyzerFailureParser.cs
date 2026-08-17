@@ -49,7 +49,7 @@ internal static partial class AnalyzerFailureParser
                 !member.StartsWith("RoslynAot.Csc.", StringComparison.Ordinal) &&
                 !member.StartsWith("Microsoft.CodeAnalysis.Diagnostics.AnalyzerExecutor", StringComparison.Ordinal))
             {
-                failingMember = member;
+                failingMember = NormalizeMember(member);
                 break;
             }
         }
@@ -66,6 +66,24 @@ internal static partial class AnalyzerFailureParser
             parseFailed,
             ad0001Message);
     }
+
+    /// <summary>
+    /// Strips the generated proxy class out of a frame, so the burn-down names
+    /// the Roslyn member an analyzer called rather than the facade's
+    /// implementation of it. A remoted abstract member's body lives in the
+    /// proxy, so without this the same member reads as
+    /// <c>SyntaxReference.__RoslynAotProxy.GetSyntax</c> or
+    /// <c>SyntaxReference.GetSyntax</c> depending on how it was projected.
+    /// Generated <em>members</em> such as <c>__RoslynAotGetControlVtbl</c> are
+    /// deliberately left alone: naming one is the finding.
+    /// </summary>
+    private static string NormalizeMember(string member) =>
+        member
+            .Replace(".__RoslynAotProxy.", ".", StringComparison.Ordinal)
+            .Replace(
+                ".__RoslynAotImplementation.",
+                ".",
+                StringComparison.Ordinal);
 
     [GeneratedRegex(@"operation for \[(?<ids>[^\]]*)\] failed with 0x[0-9a-f]{8}\.")]
     private static partial Regex RuleIdsPattern();
