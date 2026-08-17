@@ -96,56 +96,48 @@ Only one instantiation has been observed failing so far because only one
 analyzer has reached that far. The exposure is much larger than the
 observation.
 
-## Is `IDynamicInterfaceCastable` the right foundation at all?
+## Should `IDynamicInterfaceCastable` be retired instead?
 
-Probably not, and this is the more important question than how to patch it.
+It was worth asking, because `IDynamicInterfaceCastable` is a COM-shaped
+mechanism for discovering an object's interfaces at runtime, and our type graph
+is fully known when the facade is generated. On the face of it we pay for late
+binding we do not need.
 
-`IDynamicInterfaceCastable` exists for COM-shaped problems: an `IUnknown`
-arrives, and which interfaces it supports is discovered at runtime. That is not
-our situation. The facade is generated, the type graph is fully known when it is
-generated, and the analyzer assembly is compiled into the *same* ILC invocation
-as the facade. We are paying for late binding we do not structurally need.
+**Measurement says no.** Benchmarked under NativeAOT on a trivial interface
+member, 20M calls per configuration, best of three rounds:
 
-The costs are not hypothetical:
+| Case | ns/call |
+|---|---|
+| `IDynamicInterfaceCastable`, one proxy type — as deployed | **1.98** |
+| `IDynamicInterfaceCastable`, two proxy types | 1.78 |
+| Concrete class, monomorphic call site | 3.15 |
+| Concrete class, polymorphic call site | 3.15 |
 
-- **Generic virtual dispatch is not implemented on that path**, which is this
-  entire document.
-- **Every cross-boundary interface call pays dispatch overhead.** The frame
-  directly above the failfast in the original stack is
-  `CachedInterfaceDispatch.RhpCidResolve_Worker` — the cache-miss path taken on
-  ordinary calls too. For a compiler this is on the hot path.
-- It is a second-class mechanism generally, and the runtime treats it as one.
+Dynamic interface dispatch is about **1.2 ns/call faster**, not slower, and
+call-site polymorphism does not move either number. The likely reason is that
+the single default-interface-method body inlines into the resolved dispatch
+target while the concrete class keeps a real virtual call — but whatever the
+cause, the direction is not in doubt.
 
-**The reason it is there** is worth stating precisely, because it is what has to
-be solved to remove it: a handle typed `ISymbol` must be castable to
-`INamedTypeSymbol` later. One `RoslynObjectProxy` serving every interface makes
-that free. Concrete proxy classes make it a materialization problem — creating
-the *right* class requires a runtime TypeId-to-constructor mapping, and an
-exhaustive table over every shape id is exactly the rooting hazard the
-[migration plan](ANALYZER-REMOTING-MIGRATION.md) names for this step.
+`CachedInterfaceDispatch.RhpCidResolve_Worker` appearing in the failfast stack
+is the cache-*miss* path. It is not what steady-state calls take, and reading a
+cost off that stack frame was simply wrong.
 
-So generic virtual dispatch and Step 4's runtime-type problem are the same
-question: **how do you materialize a proxy for a compiler object whose
-most-derived type is only known at runtime?** Step 4 already sketches the
-answer — "type map; walk the shape lattice to the nearest *retained* factory."
-If that works, `IDynamicInterfaceCastable` can go, GVM dispatch is fixed as a
-side effect, per-call overhead drops, and the shims below become unnecessary
-rather than load-bearing.
+For scale: the whole 34-case differential corpus makes 1,296,285 boundary calls.
+The entire dispatch difference across all of it is **about 1.6 ms**, in
+`IDynamicInterfaceCastable`'s favour.
 
-### The fork
+**Conclusion: `IDynamicInterfaceCastable` stays.** There is no performance case
+for removing it, and the capability it provides is real — a handle typed
+`ISymbol` must be castable to `INamedTypeSymbol` later, which one proxy type
+gives for free. A concrete-proxy design would have to solve that by
+materializing the right class from a runtime shape id, walking the shape lattice
+to the nearest retained factory, and that is strictly more machinery for a
+slower result.
 
-| | Tactical: shim the GVMs | Strategic: retire IDIC |
-|---|---|---|
-| Cost | Seven shims | Shape-lattice factory, then re-proxy everything |
-| Fixes GVM | Yes | Yes, as a side effect |
-| Fixes dispatch overhead | No | Yes |
-| Trimming risk | Low | The thing it can break |
-| Durability | Thrown away if IDIC is retired | Work needed for Step 4 regardless |
-
-The tactical path is worth taking only if the syntax visitor family is needed
-before Step 4 lands. The burn-down does not currently name `Accept` — the one
-path that reached it, `GetControlFlowGraph`, is withdrawn — so there is no
-measured demand forcing the tactical fix first.
+That makes the shims below the **durable** fix rather than a stopgap: generic
+virtual dispatch is the one thing `IDynamicInterfaceCastable` genuinely does not
+do, so it is the one thing that needs handling around it.
 
 ## The mechanism that works
 
@@ -231,18 +223,27 @@ virtual members on derived facade interfaces — after which one shim on the
 declaring type serves the whole hierarchy.
 
 ## Open questions
-2. **Does the kind-based local dispatch stay trimmable?** A switch over every
+
+1. **Does the kind-based local dispatch stay trimmable?** A switch over every
    syntax kind is an exhaustive table, which is the hazard the migration plan
    names. It is only reachable when an analyzer calls `Accept`, but that needs
    confirming against the module baseline rather than assuming.
-3. **What happens when a shim is missing?** A member that needs a shim and does
+2. **What happens when a shim is missing?** A member that needs a shim and does
    not have one is a process kill, not a diagnostic. Generation should be able
    to detect a projected generic virtual member with no shim and refuse, the
    way `ProjectionValidation` already refuses other structural mistakes.
-4. **Is containment worth pursuing independently?** Nothing in-process can
+3. **Is containment worth pursuing independently?** Nothing in-process can
    catch a `FailFast`. Isolating analyzer execution is a much larger change,
    but it is the only thing that makes this class survivable rather than
-   merely avoidable.
+   merely avoidable. Worth keeping on the list precisely because the shim
+   approach is only as good as its coverage.
+4. **Do other generic shapes need marshalling, not just dispatch?** Generic
+   virtual *dispatch* is fixed by shimming. A generic member whose type
+   argument must be **represented** in the transport is a different problem:
+   `MakeGenericType`/`MakeGenericMethod` do not work for struct instantiations
+   under NativeAOT, so those need reference-erasure — boxing the value so one
+   shared implementation serves every instantiation — rather than a shim. That
+   belongs with the Step 8 wire work.
 
 ## Current mitigation
 
