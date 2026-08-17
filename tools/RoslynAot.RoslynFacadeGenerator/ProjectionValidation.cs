@@ -15,6 +15,7 @@ internal static class ProjectionValidation
         var failures = new List<string>();
         ValidateCanonicalIds(model, failures);
         ValidateOverrides(model, failures);
+        ValidateOwnership(model, failures);
         ValidateAbiSymmetry(model, failures);
         ValidateFactoryCoverage(model, failures);
 
@@ -94,6 +95,45 @@ internal static class ProjectionValidation
             .OrderBy(id => id, StringComparer.Ordinal))
         {
             failures.Add($"Closure root '{id}' matches no type.");
+        }
+
+        var memberIds = model.Members
+            .Select(member => member.CanonicalId)
+            .ToHashSet(StringComparer.Ordinal);
+        foreach (string id in ProjectionOverrides.FieldInitializerIds
+            .Where(id => !memberIds.Contains(id))
+            .OrderBy(id => id, StringComparer.Ordinal))
+        {
+            failures.Add($"Field initializer '{id}' matches no member.");
+        }
+    }
+
+    /// <summary>
+    /// Ownership is what says whether an instance may cross as a handle, so a
+    /// type whose ownership and transport disagree is exactly the "local object
+    /// executing remote members" defect, caught before it is emitted.
+    /// </summary>
+    private static void ValidateOwnership(
+        ProjectionModel model,
+        List<string> failures)
+    {
+        foreach (TypeProjection type in model.Types)
+        {
+            if (string.IsNullOrWhiteSpace(type.OwnershipReason))
+            {
+                failures.Add(
+                    $"Type '{type.CanonicalId}' has ownership " +
+                    $"'{type.Ownership}' with no reason.");
+            }
+
+            if (type.RequiresProxy &&
+                !ProjectionTypeOwnership.CanCrossAsHandle(type.Ownership))
+            {
+                failures.Add(
+                    $"Type '{type.CanonicalId}' is owned '{type.Ownership}' " +
+                    "but has a proxy factory, so a compiler-side instance " +
+                    "could reach the analyzer as a handle.");
+            }
         }
     }
 

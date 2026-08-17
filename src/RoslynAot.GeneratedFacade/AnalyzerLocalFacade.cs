@@ -284,16 +284,57 @@ public sealed partial class DiagnosticDescriptor
 
 public abstract partial class Diagnostic
 {
+    private DiagnosticDescriptor? __roslynAotLocalDescriptor;
+    private Location? __roslynAotLocalLocation;
+    private IReadOnlyList<Location> __roslynAotLocalAdditionalLocations = [];
+    private ImmutableDictionary<string, string?> __roslynAotLocalProperties =
+        ImmutableDictionary<string, string?>.Empty;
+    private object?[] __roslynAotLocalMessageArgs = [];
+
+    /// <summary>
+    /// The discriminator. A diagnostic the analyzer built has no handle and no
+    /// vtbl, so the absence of the control vtbl is the state itself rather
+    /// than a test against a second type.
+    /// </summary>
+    internal bool __RoslynAotIsLocal => __roslynAotControlVtbl is null;
+
+    internal DiagnosticDescriptor __RoslynAotLocalDescriptor =>
+        __roslynAotLocalDescriptor ??
+        throw new InvalidOperationException(
+            "The diagnostic is not analyzer-owned.");
+
+    internal Location __RoslynAotLocalLocation =>
+        __roslynAotLocalLocation ?? Location.__RoslynAotCreateNone();
+
+    internal IReadOnlyList<Location> __RoslynAotLocalAdditionalLocations =>
+        __roslynAotLocalAdditionalLocations;
+
+    internal ImmutableDictionary<string, string?> __RoslynAotLocalProperties =>
+        __roslynAotLocalProperties;
+
+    internal string __RoslynAotGetLocalMessage(
+        IFormatProvider? formatProvider)
+    {
+        string format = __RoslynAotLocalDescriptor.__RoslynAotGetLocalString(
+            AnalyzerDescriptorField.MessageFormat);
+        return __roslynAotLocalMessageArgs.Length == 0
+            ? format
+            : string.Format(
+                formatProvider,
+                format,
+                __roslynAotLocalMessageArgs);
+    }
+
     internal static Diagnostic __RoslynAotCreateLocal(
         DiagnosticDescriptor descriptor,
         Location? location,
         object?[]? messageArgs) =>
-        new AnalyzerLocalDiagnostic(
+        __RoslynAotCreateLocal(
             descriptor,
-            location ?? Location.__RoslynAotCreateNone(),
-            Array.Empty<Location>(),
-            ImmutableDictionary<string, string?>.Empty,
-            messageArgs ?? []);
+            location,
+            additionalLocations: null,
+            properties: null,
+            messageArgs);
 
     internal static Diagnostic __RoslynAotCreateLocal(
         DiagnosticDescriptor descriptor,
@@ -301,58 +342,55 @@ public abstract partial class Diagnostic
         IEnumerable<Location>? additionalLocations,
         ImmutableDictionary<string, string?>? properties,
         object?[]? messageArgs) =>
-        new AnalyzerLocalDiagnostic(
-            descriptor,
+        new __RoslynAotProxy(
+            descriptor ??
+                throw new ArgumentNullException(nameof(descriptor)),
             location ?? Location.__RoslynAotCreateNone(),
             additionalLocations?.ToArray() ?? [],
             properties ?? ImmutableDictionary<string, string?>.Empty,
             messageArgs ?? []);
 
-    private sealed class AnalyzerLocalDiagnostic(
-        DiagnosticDescriptor descriptor,
-        Location location,
-        IReadOnlyList<Location> additionalLocations,
-        ImmutableDictionary<string, string?> properties,
-        object?[] messageArgs) : Diagnostic
+    private sealed partial class __RoslynAotProxy
     {
-        public override IReadOnlyList<Location> AdditionalLocations =>
-            additionalLocations;
-        public override DiagnosticSeverity DefaultSeverity =>
-            descriptor.__RoslynAotLocalDefaultSeverity;
-        public override DiagnosticDescriptor Descriptor => descriptor;
-        public override string Id => descriptor.__RoslynAotLocalId;
-        public override bool IsSuppressed => false;
-        public override Location Location => location;
-        public override ImmutableDictionary<string, string?> Properties =>
-            properties;
-        public override DiagnosticSeverity Severity =>
-            descriptor.__RoslynAotLocalDefaultSeverity;
-        public override int WarningLevel => 1;
-
-        public override bool Equals(Diagnostic? obj) =>
-            ReferenceEquals(this, obj);
-
-        public override int GetHashCode() =>
-            System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(this);
-
-        public override string GetMessage(IFormatProvider? formatProvider = null)
+        internal __RoslynAotProxy(
+            DiagnosticDescriptor descriptor,
+            Location location,
+            IReadOnlyList<Location> additionalLocations,
+            ImmutableDictionary<string, string?> properties,
+            object?[] messageArgs)
         {
-            string format = descriptor.__RoslynAotGetLocalString(
-                AnalyzerDescriptorField.MessageFormat);
-            return messageArgs.Length == 0
-                ? format
-                : string.Format(formatProvider, format, messageArgs);
+            __roslynAotLocalDescriptor = descriptor;
+            __roslynAotLocalLocation = location;
+            __roslynAotLocalAdditionalLocations = additionalLocations;
+            __roslynAotLocalProperties = properties;
+            __roslynAotLocalMessageArgs = messageArgs;
         }
     }
 }
 
 public abstract partial class Location
 {
-    internal bool __RoslynAotIsLocal =>
-        this is AnalyzerLocalLocation;
+    private LocationKind __roslynAotLocalKind;
+    private SyntaxTree? __roslynAotLocalSourceTree;
+    private TextSpan __roslynAotLocalSourceSpan;
+
+    /// <summary>
+    /// The discriminator. A location the analyzer built has no handle and no
+    /// vtbl, so the absence of the control vtbl is the state itself rather
+    /// than a test against a second type.
+    /// </summary>
+    internal bool __RoslynAotIsLocal => __roslynAotControlVtbl is null;
+
+    internal LocationKind __RoslynAotLocalKind => __roslynAotLocalKind;
+
+    internal SyntaxTree? __RoslynAotLocalSourceTree =>
+        __roslynAotLocalSourceTree;
+
+    internal TextSpan __RoslynAotLocalSourceSpan =>
+        __roslynAotLocalSourceSpan;
 
     internal static Location __RoslynAotCreateLocal(TextSpan sourceSpan) =>
-        new AnalyzerLocalLocation(
+        new __RoslynAotProxy(
             LocationKind.SourceFile,
             sourceTree: null,
             sourceSpan);
@@ -360,31 +398,36 @@ public abstract partial class Location
     internal static Location __RoslynAotCreateLocal(
         SyntaxTree sourceTree,
         TextSpan sourceSpan) =>
-        new AnalyzerLocalLocation(
+        new __RoslynAotProxy(
             LocationKind.SourceFile,
             sourceTree,
             sourceSpan);
 
-    internal static Location __RoslynAotCreateNone() =>
-        new AnalyzerLocalLocation(
+    /// <summary>
+    /// One instance, so that the <c>Location.None</c> an analyzer reads and the
+    /// one a locally built diagnostic defaults to are the same object. They
+    /// were previously a compiler handle and a fresh local object, which no
+    /// comparison could reconcile.
+    /// </summary>
+    internal static Location __RoslynAotCreateNone() => s_none;
+
+    private static readonly Location s_none =
+        new __RoslynAotProxy(
             LocationKind.None,
             sourceTree: null,
             default);
 
-    private sealed class AnalyzerLocalLocation(
-        LocationKind kind,
-        SyntaxTree? sourceTree,
-        TextSpan sourceSpan) : Location
+    private sealed partial class __RoslynAotProxy
     {
-        public override LocationKind Kind => kind;
-        public override TextSpan SourceSpan => sourceSpan;
-        public override SyntaxTree? SourceTree => sourceTree;
-
-        public override bool Equals(object? obj) =>
-            ReferenceEquals(this, obj);
-
-        public override int GetHashCode() =>
-            System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(this);
+        internal __RoslynAotProxy(
+            LocationKind kind,
+            SyntaxTree? sourceTree,
+            TextSpan sourceSpan)
+        {
+            __roslynAotLocalKind = kind;
+            __roslynAotLocalSourceTree = sourceTree;
+            __roslynAotLocalSourceSpan = sourceSpan;
+        }
     }
 }
 

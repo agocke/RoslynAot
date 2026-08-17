@@ -1498,10 +1498,8 @@ internal static class ProjectionOutputEmitter
             writer.WriteString("canonicalId", type.CanonicalId);
             writer.WriteString("shape", type.Shape);
             writer.WriteString("ownership", type.Ownership.ToString());
-            if (type.OwnershipReason is not null)
-            {
-                writer.WriteString("ownershipReason", type.OwnershipReason);
-            }
+            writer.WriteBoolean("ownershipDeclared", type.OwnershipDeclared);
+            writer.WriteString("ownershipReason", type.OwnershipReason);
 
             writer.WriteBoolean("reachable", type.IsReachable);
             if (type.ReachedBy is not null)
@@ -1652,7 +1650,7 @@ internal static class ProjectionOutputEmitter
         builder.AppendLine($"types={model.Types.Count}");
         builder.AppendLine(
             "declaredOwnership=" +
-            model.Types.Count(type => type.OwnershipReason is not null));
+            model.Types.Count(type => type.OwnershipDeclared));
         builder.AppendLine(
             $"reachableTypes={model.Types.Count(type => type.IsReachable)}");
         builder.AppendLine(
@@ -1665,9 +1663,9 @@ internal static class ProjectionOutputEmitter
         {
             builder.Append("TYPE ownership=");
             builder.Append(type.Ownership);
-            builder.Append(type.OwnershipReason is null
-                ? " (derived)"
-                : " (declared)");
+            builder.Append(type.OwnershipDeclared
+                ? " (declared)"
+                : " (derived)");
             builder.Append(" shape=");
             builder.Append(type.Shape);
             builder.Append(" proxy=");

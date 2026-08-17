@@ -531,17 +531,46 @@ Three tables carry the deliberate deviations, and each entry needs a reason:
 
 | Table | Keyed by | Holds |
 |---|---|---|
-| `ProjectionOverrides` | member canonical id | A replaced strategy, a corrected return nullability, or an analyzer-side body |
+| `ProjectionOverrides` | member canonical id | A replaced strategy, a corrected return nullability, an analyzer-side body, or an analyzer-side field initializer |
 | `ProjectionTypeOwnership` | type canonical id | Which side owns a type's state, where it differs from the derived default |
 | `ProjectionClosure` | type canonical id | The analyzer-facing roots the reachability walk starts from |
 
+### Ownership decides what may cross
+
+Every type carries one of five ownership classes — Remote, Value, Local, Dual,
+Facade — and a reason for it, either from a declared entry or from a named
+derivation rule. Ownership is not a label: it is what `ProjectionTypeOwnership.
+CanCrossAsHandle` answers, and that single answer gates the ABI classifier, the
+proxy collector, and which types get a proxy factory at all. Before this, the
+same question was asked three different ways — an `IsAnalyzerLocalClass` name
+list, a hardcoded `AttributeData` metadata name, and an implicit assumption in
+the classifier that every facade type was compiler-owned — and the three could
+disagree without anything noticing.
+
+The concrete consequence of getting it wrong is a **local object holding a
+remote vtbl**: an analyzer-constructed instance whose members try to dispatch
+over a handle that was never issued. `ProjectionValidation` now makes that
+unrepresentable rather than merely unlikely.
+
+### Declaration-only members
+
+An abstract member has no body at the class level, so a projection that only
+ever emitted class-level bodies had to declare every abstract member
+unsupported. That is why a compiler-owned `Diagnostic` could not report its own
+`Id`. A proxied abstract class does have somewhere to put a remoting body — the
+generated `__RoslynAotProxy` override — so `CanHostFacadeBody` decides this
+rather than the shape of the declaration. Protected members stay unsupported
+regardless: the compiler cannot dispatch to them from outside.
+
 `ProjectionValidation` runs on every model construction and refuses to generate
-on: a duplicated canonical id; a table entry matching no member or type; a
-supported call in zero or several vtbl slots, or in one that disagrees with what
-the call records; an unsupported call occupying a slot; two slots sharing a name
-within a vtbl; or a type crossing as a handle with no proxy factory to receive
-it. A table entry that matches nothing is the specific failure the older
-name-matched rules could not report: the deviation simply stopped applying.
+on: a duplicated canonical id; a table entry matching no member or type; a type
+with no ownership reason; a type whose ownership forbids crossing that
+nonetheless has a proxy factory; a supported call in zero or several vtbl slots,
+or in one that disagrees with what the call records; an unsupported call
+occupying a slot; two slots sharing a name within a vtbl; or a type crossing as
+a handle with no proxy factory to receive it. A table entry that matches nothing
+is the specific failure the older name-matched rules could not report: the
+deviation simply stopped applying.
 
 ## Cases requiring explicit treatment
 

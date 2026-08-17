@@ -65,7 +65,7 @@ internal static class ProjectionClosure
         IReadOnlyList<TypeProjection> types,
         IReadOnlyList<ProjectedCall> calls)
     {
-        var byType = types.ToDictionary(
+        var byType = types.ToDictionary<TypeProjection, INamedTypeSymbol>(
             type => type.Symbol,
             SymbolEqualityComparer.Default);
         // Every call, not only the supported ones: reachability describes what

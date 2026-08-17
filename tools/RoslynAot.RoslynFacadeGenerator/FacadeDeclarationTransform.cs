@@ -485,31 +485,12 @@ internal sealed class FacadeDeclarationTransform
     }
 
     private static ExpressionSyntax? GetWellKnownFieldInitializer(
-        IFieldSymbol symbol)
-    {
-        if (symbol.ContainingType.ToDisplayString() !=
-            "Microsoft.CodeAnalysis.SymbolEqualityComparer")
-        {
-            return null;
-        }
-
-        string? kind = symbol.Name switch
-        {
-            "Default" => "SymbolEqualityComparerDefault",
-            "IncludeNullability" =>
-                "SymbolEqualityComparerIncludeNullability",
-            _ => null,
-        };
-        if (kind is null)
-        {
-            return null;
-        }
-
-        return SyntaxFactory.ParseExpression(
-            "SymbolEqualityComparer.__RoslynAotCreateLocal(" +
-            "global::RoslynAot.Abi.RoslynWellKnownObject." +
-            $"{kind})");
-    }
+        IFieldSymbol symbol) =>
+        ProjectionOverrides.TryGetFieldInitializer(
+            CanonicalSignatureBuilder.GetCanonicalId(symbol),
+            out string initializer)
+            ? SyntaxFactory.ParseExpression(initializer)
+            : null;
 
     private IEnumerable<ISymbol> GetAbstractMembers(INamedTypeSymbol type)
     {
@@ -587,20 +568,28 @@ internal sealed class FacadeDeclarationTransform
                     _syntaxGenerator,
                     symbol,
                     _symbolFilter);
+        // The override is the only place an abstract member's remoting body can
+        // live, so the model has to be consulted here rather than assumed
+        // empty. GetBody falls back to the unsupported body on its own.
+        MemberProjection? projection =
+            _model.TryGetMember(symbol, out MemberProjection found)
+                ? found
+                : null;
         return declaration switch
         {
             MethodDeclarationSyntax method =>
                 RewriteProxyMethod(
                     method,
-                    (IMethodSymbol)symbol),
+                    (IMethodSymbol)symbol,
+                    projection),
             PropertyDeclarationSyntax property =>
-                RewriteProxyProperty(property),
+                RewriteProxyProperty(property, projection),
             IndexerDeclarationSyntax indexer =>
-                RewriteProxyIndexer(indexer),
+                RewriteProxyIndexer(indexer, projection),
             EventDeclarationSyntax @event =>
-                RewriteProxyEvent(@event),
+                RewriteProxyEvent(@event, projection),
             EventFieldDeclarationSyntax eventField =>
-                RewriteProxyEventField(eventField),
+                RewriteProxyEventField(eventField, projection),
             _ => throw new InvalidOperationException(
                 $"Unsupported abstract proxy member '{symbol}'."),
         };
@@ -608,7 +597,8 @@ internal sealed class FacadeDeclarationTransform
 
     private static MethodDeclarationSyntax RewriteProxyMethod(
         MethodDeclarationSyntax declaration,
-        IMethodSymbol symbol)
+        IMethodSymbol symbol,
+        MemberProjection? projection)
     {
         SyntaxList<TypeParameterConstraintClauseSyntax> constraints =
             SyntaxFactory.List(
@@ -627,7 +617,7 @@ internal sealed class FacadeDeclarationTransform
             .WithConstraintClauses(constraints)
             .WithExpressionBody(null)
             .WithSemicolonToken(default)
-            .WithBody(GetUnsupportedBody());
+            .WithBody(GetBody(projection?.Calls.SingleOrDefault()));
     }
 
     private static TypeParameterConstraintClauseSyntax
@@ -643,7 +633,8 @@ internal sealed class FacadeDeclarationTransform
     }
 
     private static PropertyDeclarationSyntax RewriteProxyProperty(
-        PropertyDeclarationSyntax declaration)
+        PropertyDeclarationSyntax declaration,
+        MemberProjection? projection)
     {
         if (declaration.AccessorList is null)
         {
@@ -657,15 +648,14 @@ internal sealed class FacadeDeclarationTransform
             .WithAccessorList(
                 declaration.AccessorList.WithAccessors(
                     SyntaxFactory.List(
-                        declaration.AccessorList.Accessors.Select(
-                            accessor => accessor
-                                .WithBody(GetUnsupportedBody())
-                                .WithExpressionBody(null)
-                                .WithSemicolonToken(default)))));
+                        RewriteAccessors(
+                            declaration.AccessorList.Accessors,
+                            projection))));
     }
 
     private static IndexerDeclarationSyntax RewriteProxyIndexer(
-        IndexerDeclarationSyntax declaration)
+        IndexerDeclarationSyntax declaration,
+        MemberProjection? projection)
     {
         if (declaration.AccessorList is null)
         {
@@ -679,15 +669,14 @@ internal sealed class FacadeDeclarationTransform
             .WithAccessorList(
                 declaration.AccessorList.WithAccessors(
                     SyntaxFactory.List(
-                        declaration.AccessorList.Accessors.Select(
-                            accessor => accessor
-                                .WithBody(GetUnsupportedBody())
-                                .WithExpressionBody(null)
-                                .WithSemicolonToken(default)))));
+                        RewriteAccessors(
+                            declaration.AccessorList.Accessors,
+                            projection))));
     }
 
     private static EventDeclarationSyntax RewriteProxyEvent(
-        EventDeclarationSyntax declaration)
+        EventDeclarationSyntax declaration,
+        MemberProjection? projection)
     {
         if (declaration.AccessorList is null)
         {
@@ -699,15 +688,14 @@ internal sealed class FacadeDeclarationTransform
             .WithAccessorList(
                 declaration.AccessorList.WithAccessors(
                     SyntaxFactory.List(
-                        declaration.AccessorList.Accessors.Select(
-                            accessor => accessor
-                                .WithBody(GetUnsupportedBody())
-                                .WithExpressionBody(null)
-                                .WithSemicolonToken(default)))));
+                        RewriteAccessors(
+                            declaration.AccessorList.Accessors,
+                            projection))));
     }
 
     private static EventDeclarationSyntax RewriteProxyEventField(
-        EventFieldDeclarationSyntax declaration)
+        EventFieldDeclarationSyntax declaration,
+        MemberProjection? projection)
     {
         VariableDeclaratorSyntax variable =
             declaration.Declaration.Variables.Single();
@@ -895,7 +883,7 @@ internal sealed class FacadeDeclarationTransform
 
     private static SyntaxList<AccessorDeclarationSyntax> RewriteAccessors(
         SyntaxList<AccessorDeclarationSyntax> accessors,
-        MemberProjection projection)
+        MemberProjection? projection)
     {
         var rewritten = new List<AccessorDeclarationSyntax>(accessors.Count);
         foreach (AccessorDeclarationSyntax accessor in accessors)
@@ -909,7 +897,7 @@ internal sealed class FacadeDeclarationTransform
                 SyntaxKind.RemoveAccessorDeclaration => MethodKind.EventRemove,
                 _ => MethodKind.Ordinary,
             };
-            ProjectedCall? operation = projection.Calls
+            ProjectedCall? operation = projection?.Calls
                 .FirstOrDefault(candidate =>
                     candidate.Symbol.MethodKind == methodKind);
 

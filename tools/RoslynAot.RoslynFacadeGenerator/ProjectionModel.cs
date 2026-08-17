@@ -191,10 +191,16 @@ internal sealed class TypeProjection
     public required TypeOwnership Ownership { get; init; }
 
     /// <summary>
-    /// Null when the ownership was derived rather than declared. Step 3 makes
-    /// every type carry a declared one.
+    /// Why the type has that ownership. Always present: a declared entry
+    /// supplies it, and each derivation rule names itself.
     /// </summary>
-    public required string? OwnershipReason { get; init; }
+    public required string OwnershipReason { get; init; }
+
+    /// <summary>
+    /// Whether the ownership was declared rather than derived. Reported so the
+    /// six deviations stay visible against the 657 that follow the rule.
+    /// </summary>
+    public required bool OwnershipDeclared { get; init; }
 
     public required string Shape { get; init; }
 
@@ -249,7 +255,7 @@ internal sealed class ProjectionModel
         _membersBySignature = members.ToDictionary(
             member => member.CanonicalSignature,
             StringComparer.Ordinal);
-        Types = CreateTypes(proxyTypes, vtbls);
+        Types = CreateTypes(proxyTypes, vtbls, calls);
         ProjectionClosure.Compute(Types, calls);
         _typesBySymbol = Types.ToDictionary(
             type => (ISymbol)type.Symbol,
@@ -326,14 +332,22 @@ internal sealed class ProjectionModel
             CanonicalSignatureBuilder.GetMemberSignature(symbol),
             out projection!);
 
+    /// <summary>
+    /// The projected type universe. Seeded from the calls as well as the
+    /// proxies and vtbls, because a type whose every member is unsupported —
+    /// or which is analyzer-local and so has no proxy at all — is still a type
+    /// the model has to be able to state an ownership for.
+    /// </summary>
     private static IReadOnlyList<TypeProjection> CreateTypes(
         HashSet<INamedTypeSymbol> proxyTypes,
-        IReadOnlyList<VtblProjection> vtbls)
+        IReadOnlyList<VtblProjection> vtbls,
+        IReadOnlyList<ProjectedCall> calls)
     {
         var byType = new Dictionary<INamedTypeSymbol, TypeProjection>(
             SymbolEqualityComparer.Default);
         foreach (INamedTypeSymbol type in proxyTypes
-            .Concat(vtbls.Select(vtbl => vtbl.FacadeType)))
+            .Concat(vtbls.Select(vtbl => vtbl.FacadeType))
+            .Concat(calls.Select(call => call.Symbol.ContainingType)))
         {
             if (byType.ContainsKey(type))
             {
@@ -342,23 +356,22 @@ internal sealed class ProjectionModel
 
             string canonicalId =
                 CanonicalSignatureBuilder.GetCanonicalId(type);
-            bool declared = ProjectionTypeOwnership.TryGet(
-                canonicalId,
-                out TypeOwnershipEntry entry);
+            bool requiresProxy = proxyTypes.Contains(type);
+            (TypeOwnershipEntry entry, bool declared) =
+                ProjectionTypeOwnership.Get(type, canonicalId, requiresProxy);
             byType.Add(
                 type,
                 new TypeProjection
                 {
                     Symbol = type,
                     CanonicalId = canonicalId,
-                    Ownership = declared
-                        ? entry.Ownership
-                        : DeriveOwnership(type, proxyTypes),
-                    OwnershipReason = declared ? entry.Reason : null,
+                    Ownership = entry.Ownership,
+                    OwnershipReason = entry.Reason,
+                    OwnershipDeclared = declared,
                     Shape = GetShape(type),
-                    RequiresProxy = proxyTypes.Contains(type),
+                    RequiresProxy = requiresProxy,
                     UsesDynamicInterfaceProxy =
-                        proxyTypes.Contains(type) &&
+                        requiresProxy &&
                         IsDynamicInterfaceProxyCandidate(type),
                 });
         }
@@ -383,19 +396,6 @@ internal sealed class ProjectionModel
                 StringComparer.Ordinal),
         ];
     }
-
-    /// <summary>
-    /// The default when no ownership is declared. Derivation is a Step 2
-    /// convenience, not the end state: Step 3 requires every type to declare.
-    /// </summary>
-    private static TypeOwnership DeriveOwnership(
-        INamedTypeSymbol type,
-        HashSet<INamedTypeSymbol> proxyTypes) =>
-        type.IsStatic
-            ? TypeOwnership.Facade
-            : type.IsValueType && proxyTypes.Contains(type)
-                ? TypeOwnership.Value
-                : TypeOwnership.Remote;
 
     private static string GetShape(INamedTypeSymbol type) =>
         type.TypeKind switch
@@ -461,6 +461,48 @@ internal sealed class ProjectionModel
             baseType.SpecialType == SpecialType.System_Object ||
             IsDynamicInterfaceProxyCandidate(baseType);
     }
+
+    /// <summary>
+    /// Whether a declaration-only member of this type has anywhere to put a
+    /// remoting body. An abstract member has none at the class level, but a
+    /// proxied abstract class has one in its generated proxy's override.
+    /// Answering "no" for those left every abstract member of a compiler-owned
+    /// type throwing, which is how a proxied <c>Diagnostic</c> came to be
+    /// unable to report its own <c>Id</c>.
+    /// </summary>
+    private static bool CanHostFacadeBody(INamedTypeSymbol type) =>
+        IsDynamicInterfaceProxyCandidate(type) ||
+        type is { TypeKind: TypeKind.Class, IsAbstract: true } &&
+            CanBeProxied(type);
+
+    /// <summary>
+    /// Whether a proxy over a handle can be generated for the type at all. The
+    /// proxy collector and the members that depend on a proxy existing have to
+    /// agree on this, so it is one predicate rather than two.
+    /// </summary>
+    internal static bool CanBeProxied(INamedTypeSymbol type) =>
+        !type.IsStatic &&
+        !type.IsGenericType &&
+        !type.IsRefLikeType &&
+        type.TypeKind is
+            TypeKind.Class or
+            TypeKind.Struct or
+            TypeKind.Interface &&
+        !(HasVisibleInstanceFields(type) &&
+            !IsDynamicInterfaceProxyCandidate(type)) &&
+        CanCrossAsHandle(type);
+
+    /// <summary>
+    /// Whether an instance may arrive from the compiler as a handle. Consulted
+    /// before the model exists, so it reads the declared table directly: every
+    /// derived ownership except Facade can cross, and Facade means static,
+    /// which every caller already excludes on its own.
+    /// </summary>
+    internal static bool CanCrossAsHandle(INamedTypeSymbol type) =>
+        !ProjectionTypeOwnership.TryGet(
+            CanonicalSignatureBuilder.GetCanonicalId(type),
+            out TypeOwnershipEntry entry) ||
+        ProjectionTypeOwnership.CanCrossAsHandle(entry.Ownership);
 
     /// <summary>
     /// A type the analyzer can hold without a handle, so it cannot be reached
@@ -786,7 +828,7 @@ internal sealed class ProjectionModel
 
         if ((method.ContainingType.TypeKind == TypeKind.Interface ||
             method.IsAbstract) &&
-            !IsDynamicInterfaceProxyCandidate(method.ContainingType))
+            !CanHostFacadeBody(method.ContainingType))
         {
             return "Declaration-only members have no facade implementation body.";
         }
@@ -946,17 +988,12 @@ internal sealed class ProjectionModel
 
         void AddProxyType(INamedTypeSymbol? type)
         {
+            // CanBeProxied carries the ownership check: a Local type given a
+            // proxy factory is the exact "local object executing remote
+            // members" defect this step exists to make unrepresentable.
             if (type is null ||
                 !assemblyNames.Contains(type.ContainingAssembly.Name) ||
-                type.TypeKind is not (
-                    TypeKind.Class or
-                    TypeKind.Struct or
-                    TypeKind.Interface) ||
-                type.IsStatic ||
-                type.IsGenericType ||
-                type.IsRefLikeType ||
-                HasVisibleInstanceFields(type) &&
-                    !IsDynamicInterfaceProxyCandidate(type))
+                !CanBeProxied(type))
             {
                 return;
             }
@@ -1544,6 +1581,14 @@ internal sealed class AbiTypeClassifier
                 "The type is not part of a generated facade assembly.");
         }
 
+        if (!ProjectionModel.CanCrossAsHandle(namedType))
+        {
+            return Unsupported(
+                type,
+                "The type is analyzer-owned, so no compiler-side instance of " +
+                "it exists to take a handle to.");
+        }
+
         if (namedType.TypeKind == TypeKind.Interface)
         {
             return new AbiTypePlan(
@@ -1638,16 +1683,21 @@ internal sealed class AbiTypeClassifier
             }
         };
 
+    /// <summary>
+    /// The question is whether each element can be rebuilt from a handle, and
+    /// that is exactly what <see cref="ProjectionModel.CanBeProxied"/> answers.
+    /// Asking for a dynamic-interface proxy specifically was too narrow — it
+    /// excluded every class with a generated proxy subclass, which is why
+    /// <c>AttributeData</c> had to be readmitted here by metadata name and why
+    /// <c>ImmutableArray&lt;Location&gt;</c> and
+    /// <c>ImmutableArray&lt;SyntaxReference&gt;</c> did not cross at all.
+    /// </summary>
     private static bool IsProxyableObjectImmutableArray(
         INamedTypeSymbol type,
         ITypeSymbol elementType) =>
         IsImmutableArray(type) &&
         elementType is INamedTypeSymbol elementNamedType &&
-        (ProjectionModel.IsDynamicInterfaceProxyCandidate(
-            elementNamedType) ||
-            CanonicalSignatureBuilder.GetMetadataTypeName(
-                elementNamedType) ==
-            "Microsoft.CodeAnalysis.AttributeData");
+        ProjectionModel.CanBeProxied(elementNamedType);
 
     private static bool IsImmutableArray(
         ITypeSymbol type) =>

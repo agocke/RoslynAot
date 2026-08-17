@@ -1,9 +1,10 @@
+using Microsoft.CodeAnalysis;
+
 namespace RoslynAot.RoslynFacadeGenerator;
 
 /// <summary>
-/// Which side of the boundary owns a projected type's state. The migration plan
-/// requires this as a per-type model field; today only the deviations from the
-/// derived default are declared, and Step 3 makes it mandatory for every type.
+/// Which side of the boundary owns a projected type's state, and therefore how
+/// an instance of it is allowed to cross.
 /// </summary>
 internal enum TypeOwnership
 {
@@ -28,10 +29,15 @@ internal sealed record TypeOwnershipEntry(
     string Reason);
 
 /// <summary>
-/// Declared ownership, keyed by canonical type id. This was a list of six type
-/// names inside the model, which meant the distinction the whole projection
-/// turns on could not be read anywhere, reported anywhere, or given a reason.
+/// Ownership for every projected type: declared where the derivation would be
+/// wrong, derived by a named rule otherwise. Both paths produce a reason, so no
+/// type in the model carries an ownership class nobody can account for.
 /// </summary>
+/// <remarks>
+/// This was six type names inside the model, which meant the distinction the
+/// whole projection turns on could not be read anywhere, reported anywhere, or
+/// given a reason.
+/// </remarks>
 internal static class ProjectionTypeOwnership
 {
     private static readonly IReadOnlyDictionary<string, TypeOwnershipEntry>
@@ -77,4 +83,70 @@ internal static class ProjectionTypeOwnership
         string canonicalId,
         out TypeOwnershipEntry entry) =>
         s_entries.TryGetValue(canonicalId, out entry!);
+
+    /// <summary>
+    /// The ownership of a type, and whether it was declared above or derived.
+    /// Derivation is not a placeholder for a missing declaration: for the 657
+    /// types that are plainly compiler-owned it is the correct answer, and
+    /// writing them out by hand would bury the six that actually differ.
+    /// </summary>
+    public static (TypeOwnershipEntry Entry, bool Declared) Get(
+        INamedTypeSymbol type,
+        string canonicalId,
+        bool requiresProxy)
+    {
+        if (TryGet(canonicalId, out TypeOwnershipEntry declared))
+        {
+            return (declared, true);
+        }
+
+        if (type.IsStatic)
+        {
+            return (
+                new TypeOwnershipEntry(
+                    TypeOwnership.Facade,
+                    "Derived: a static class has no instances, so only its " +
+                    "type vtbl crosses."),
+                false);
+        }
+
+        if (!requiresProxy)
+        {
+            // Compiler-owned all the same — but saying it "crosses as a
+            // handle" would be a claim the model cannot back, because nothing
+            // supported hands one over.
+            return (
+                new TypeOwnershipEntry(
+                    TypeOwnership.Remote,
+                    "Derived: compiler-owned, but no instance crosses today " +
+                    "because every member that would hand one over is " +
+                    "unsupported."),
+                false);
+        }
+
+        return type.IsValueType
+            ? (
+                new TypeOwnershipEntry(
+                    TypeOwnership.Value,
+                    "Derived: a compiler-side value the analyzer reads " +
+                    "through a handle to the compiler's copy."),
+                false)
+            : (
+                new TypeOwnershipEntry(
+                    TypeOwnership.Remote,
+                    "Derived: the compiler constructs it and the analyzer " +
+                    "only ever holds a handle."),
+                false);
+    }
+
+    /// <summary>
+    /// Whether an instance of the type can arrive from the compiler as a
+    /// handle. This is the question the ABI classifier and the proxy collector
+    /// actually need, and it belongs here rather than in either of them.
+    /// </summary>
+    public static bool CanCrossAsHandle(TypeOwnership ownership) =>
+        ownership is
+            TypeOwnership.Remote or
+            TypeOwnership.Value or
+            TypeOwnership.Dual;
 }
