@@ -18,6 +18,20 @@
     <_GeneratedEntryPoint>$(BaseIntermediateOutputPath)generated/AnalyzerEntryPoint.g.cs</_GeneratedEntryPoint>
   </PropertyGroup>
 
+  <!--
+    RoslynAotAnalyzers restricts the module to a semicolon-separated list of
+    analyzer metadata names. Empty (the default) links every C# analyzer in the
+    assembly. eng/measure-modules.sh sets it to build one module per analyzer
+    for the per-analyzer size baseline.
+  -->
+  <ItemGroup>
+    <_RoslynAotAnalyzer Include="$(RoslynAotAnalyzers)" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <_AnalyzerFilterArguments>@(_RoslynAotAnalyzer->'--analyzer &quot;%(Identity)&quot;', ' ')</_AnalyzerFilterArguments>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="../../src/RoslynAot.AnalyzerRuntime/RoslynAot.AnalyzerRuntime.csproj" />
     <ProjectReference Include="../../tools/RoslynAot.RoslynFacadeGenerator/RoslynAot.RoslynFacadeGenerator.csproj"
@@ -34,12 +48,18 @@
     <Compile Include="$(_GeneratedEntryPoint)" />
   </ItemGroup>
 
+  <!--
+    Deliberately not Inputs/Outputs incremental. Timestamp incrementality
+    cannot see RoslynAotAnalyzers, so a build following a filtered one would
+    reuse the previous filter's entry point and silently produce a module with
+    the wrong analyzers in it. The generator writes only when the content
+    changes, so running it every build costs one process and still leaves the
+    compile incremental.
+  -->
   <Target Name="GenerateAnalyzerEntryPoint"
           BeforeTargets="CoreCompile"
-          DependsOnTargets="ResolveProjectReferences"
-          Inputs="$(_GeneratorPath);$(_AnalyzerAssembly);$(_SdkAnalyzerDirectory)/Microsoft.CodeAnalysis.NetAnalyzers.dll"
-          Outputs="$(_GeneratedEntryPoint)">
-    <Exec Command="dotnet &quot;$(_GeneratorPath)&quot; generate-analyzer-entrypoint --output &quot;$(_GeneratedEntryPoint)&quot; --namespace &quot;RoslynAot.CSharpNetAnalyzers.Native&quot; --language &quot;C#&quot; --reference &quot;$(_SdkAnalyzerDirectory)&quot; --reference &quot;$(_SdkRoslynDirectory)&quot; &quot;$(_AnalyzerAssembly)&quot;" />
+          DependsOnTargets="ResolveProjectReferences">
+    <Exec Command="dotnet &quot;$(_GeneratorPath)&quot; generate-analyzer-entrypoint --output &quot;$(_GeneratedEntryPoint)&quot; --namespace &quot;RoslynAot.CSharpNetAnalyzers.Native&quot; --language &quot;C#&quot; --reference &quot;$(_SdkAnalyzerDirectory)&quot; --reference &quot;$(_SdkRoslynDirectory)&quot; $(_AnalyzerFilterArguments) &quot;$(_AnalyzerAssembly)&quot;" />
   </Target>
 
 </Project>

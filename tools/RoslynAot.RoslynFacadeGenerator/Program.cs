@@ -36,10 +36,12 @@ internal static class Program
     private static int GenerateAnalyzerEntryPoint(string[] args)
     {
         var referencePaths = new List<string>();
+        var analyzers = new List<string>();
         string? outputPath = null;
         string? generatedNamespace = null;
         string? language = null;
         string? assemblyPath = null;
+        bool listOnly = false;
 
         for (int index = 0; index < args.Length; index++)
         {
@@ -57,10 +59,17 @@ internal static class Program
                 case "--reference" when index + 1 < args.Length:
                     referencePaths.Add(args[++index]);
                     break;
+                case "--analyzer" when index + 1 < args.Length:
+                    analyzers.Add(args[++index]);
+                    break;
+                case "--list":
+                    listOnly = true;
+                    break;
                 case "--output":
                 case "--namespace":
                 case "--language":
                 case "--reference":
+                case "--analyzer":
                     throw new ArgumentException(
                         $"Missing value for '{args[index]}'.");
                 case string when assemblyPath is null:
@@ -72,10 +81,25 @@ internal static class Program
             }
         }
 
-        if (assemblyPath is null ||
-            outputPath is null ||
-            generatedNamespace is null ||
-            language is null)
+        if (assemblyPath is null || language is null)
+        {
+            return PrintUsageAndFail();
+        }
+
+        if (listOnly)
+        {
+            foreach (string name in AnalyzerEntryPointSourceGenerator.List(
+                assemblyPath,
+                referencePaths,
+                language))
+            {
+                Console.WriteLine(name);
+            }
+
+            return 0;
+        }
+
+        if (outputPath is null || generatedNamespace is null)
         {
             return PrintUsageAndFail();
         }
@@ -85,7 +109,8 @@ internal static class Program
             referencePaths,
             outputPath,
             generatedNamespace,
-            language);
+            language,
+            analyzers.Count == 0 ? null : analyzers);
         return 0;
     }
 
@@ -201,7 +226,12 @@ internal static class Program
                 [--reference <path>] <assembly> [<assembly> ...]
               RoslynAot.RoslynFacadeGenerator generate-analyzer-entrypoint
                 --output <file> --namespace <namespace> --language <language>
-                [--reference <path>] <analyzer-assembly>
+                [--reference <path>] [--analyzer <metadata-name>]
+                <analyzer-assembly>
+
+              RoslynAot.RoslynFacadeGenerator generate-analyzer-entrypoint
+                --list --language <language> [--reference <path>]
+                <analyzer-assembly>
 
             The inspect command reports the public and protected API surface that
             will be used as input to facade and COM projection generation.
@@ -214,7 +244,11 @@ internal static class Program
             The generate-analyzer-entrypoint command discovers every concrete
             DiagnosticAnalyzer for the selected language and writes a NativeAOT
             module bootstrap that instantiates them without runtime assembly
-            scanning.
+            scanning. Repeat --analyzer to restrict the module to named
+            analyzers, which is how the per-analyzer size matrix builds one
+            module per analyzer; a name that matches nothing is an error rather
+            than a silently smaller module. --list prints the discovered names
+            instead of generating, so a build matrix can enumerate them.
             """);
     }
 

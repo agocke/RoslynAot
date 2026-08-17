@@ -107,6 +107,11 @@ be watched from the first step rather than the step that breaks them.
   - **Done.** See "Boundary call coverage" below.
 - Record native module size, ILC time, and retained type count per corpus
   analyzer. Establishes the trimming baseline before anything can regress it.
+  - **Done.** `eng/measure-modules.sh` builds one module per analyzer;
+    `eng/module-baseline.json` ratchets size and retained counts. Times are
+    measured and reported but deliberately kept out of the baseline — they are
+    nondeterministic, and a baseline that churns every run stops being read.
+    See "Per-analyzer module baseline" below.
 
 **Exit:** a burn-down list — for every corpus analyzer, either "passes" or a
 named member and reason. Current true pass rate known for the first time, and a
@@ -212,6 +217,50 @@ hand-written rather than generated, so `ObjectEquals` and `ObjectGetHashCode`
 traffic from the identity fix above does not appear here. And 158 of 5303 is a
 statement about what this corpus reaches, not about what the projection needs:
 the denominator is every member the generator emits a dispatcher for.
+
+### Per-analyzer module baseline (2026-08-16)
+
+`eng/measure-modules.sh` builds one NativeAOT module per analyzer — 43 of them,
+plus the whole-assembly module — via a new `--analyzer` filter on the entry
+point generator, and records size, retained type count, and ILC time.
+`eng/module-baseline.json` ratchets the first three; times stay out of it,
+because they are nondeterministic and a baseline that churns every run stops
+being read. Two independent full runs produced byte-identical sizes and counts.
+
+| Module | Size | Retained types | ILC ms |
+|---|---|---|---|
+| all 43 analyzers | 9,384,848 | 20,738 | 12,511 |
+| `CSharpAvoidMultipleEnumerationsAnalyzer` | 6,154,528 | 15,524 | 9,027 |
+| `CSharpAvoidDeadConditionalCode` | 5,422,112 | 13,406 | 7,994 |
+| … 11 analyzers at the floor | 2,593,376 | 2,716 | ~2,500 |
+
+Three things fall out of this immediately.
+
+**There is a hard floor of 2,593,376 bytes / 2,716 types**, and eleven analyzers
+sit exactly on it. That is the shared cost — facade, analyzer runtime, and the
+Roslyn surface every module links regardless — so those eleven analyzers
+contribute nothing measurable of their own. Any per-analyzer size target has to
+be stated net of this floor, and lowering the floor helps every module at once.
+
+**One analyzer is 65.6% of the full module by itself.**
+`CSharpAvoidMultipleEnumerations` alone is 6.15 MB of the 9.38 MB total, and it
+and `CSharpAvoidDeadConditionalCode` are the only two that break 5 MB. Both are
+dataflow analyzers, which is also where the projection's remaining failures
+cluster. Cost and difficulty are concentrated in the same place.
+
+**Modules share almost everything.** The 43 single-analyzer modules sum to
+151.8 MB against a combined module of 9.4 MB — a 16× difference. Per-analyzer
+modules are a measurement device, not a shipping strategy; whatever ships has to
+amortize the floor across analyzers.
+
+Building this also surfaced a live defect in the module project.
+`GenerateAnalyzerEntryPoint` was `Inputs`/`Outputs` incremental on file
+timestamps, which cannot see the analyzer filter — so the first ordinary
+publish after any filtered build silently reused the previous filter's entry
+point and produced a module containing the wrong analyzers. It was caught
+because the differential harness then reported an empty rule catalog, but
+nothing would have caught a wrong-but-non-empty module. The target now always
+runs the generator, which writes only when the content changes.
 
 ---
 

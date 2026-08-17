@@ -106,6 +106,37 @@ fussier to trigger than their documentation suggests. The burn-down
 aggregates per rule ID across the whole corpus, so a case that trips
 several rules counts for all of them.
 
+## Per-analyzer module measurement
+
+`bash eng/measure-modules.sh` (harness verb `modules`) builds one
+NativeAOT module per analyzer plus the whole-assembly module, and records
+each one's size, retained type count, and ILC time. This is the trimming
+baseline migration Step 1 asks for, established before anything can
+regress it.
+
+Single-analyzer modules come from `-p:RoslynAotAnalyzers=<metadata name>`
+on `samples/RoslynAot.CSharpNetAnalyzers.Native`, which forwards
+`--analyzer` to the entry point generator. A filter naming an analyzer
+that does not exist is an error rather than a silently smaller module,
+which would otherwise read as a size win.
+
+Retained counts come from the `.mstat` ILC emits under
+`-p:IlcGenerateMstatFile=true`. `MstatReader` walks the IL of the file's
+per-table methods and counts `ldtoken` rows; it walks instructions rather
+than scanning bytes because a `0xD0` inside an `ldc.i4` operand would
+otherwise count as a row, and it throws rather than guessing if it meets
+an opcode the encoding is not supposed to contain.
+
+**Sizes and retained counts are ratcheted; times are not.** Wall-clock
+numbers are nondeterministic, and a baseline that churns on every run
+stops being read — so `eng/module-baseline.json` holds only size and the
+two counts, while ILC and publish times appear in `modules.md` as
+information. An ILC time of zero means the incremental build skipped
+`IlcCompile`, not that it was instant.
+
+The run publishes 40+ NativeAOT modules sequentially and takes tens of
+minutes, so it is deliberately not part of `validate-differential.sh`.
+
 ## Updating the baseline
 
 After a deliberate behavior change, run with `--update-baseline` and

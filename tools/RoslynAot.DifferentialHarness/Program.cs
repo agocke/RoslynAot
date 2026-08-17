@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace RoslynAot.DifferentialHarness;
 
 internal static class Program
@@ -21,6 +23,7 @@ internal static class Program
             {
                 "inventory" => RunInventory(ParseOptions(args[1..])),
                 "run" => RunDifferential(ParseOptions(args[1..])),
+                "modules" => RunModules(ParseOptions(args[1..])),
                 "-h" or "--help" => PrintUsageAndSucceed(),
                 _ => PrintUsageAndFail(),
             };
@@ -30,6 +33,86 @@ internal static class Program
             Console.Error.WriteLine($"error: {exception.Message}");
             return ExitEnvironmentError;
         }
+    }
+
+    private static int RunModules(HarnessOptions options)
+    {
+        HarnessEnvironment environment = HarnessEnvironment.Resolve(options);
+        string outputDirectory = Path.Combine(
+            ResolveOutputDirectory(environment, options), "modules");
+        IReadOnlyList<ModuleMeasurementResult> results = ModuleRunner.Run(
+            environment,
+            outputDirectory,
+            options.Filter);
+
+        string[] failures = results
+            .Where(result => result.Failure is not null)
+            .Select(result => $"{result.Module}: {result.Failure}")
+            .ToArray();
+        foreach (string failure in failures)
+        {
+            Console.Error.WriteLine($"error: {failure}");
+        }
+
+        Console.WriteLine($"Module report written to {outputDirectory}.");
+        if (failures.Length > 0)
+        {
+            return ExitEnvironmentError;
+        }
+
+        string baselinePath = Path.Combine(
+            environment.RepoRoot, "eng", "module-baseline.json");
+        ModuleBaseline observed = ModuleRunner.ToBaseline(results);
+        if (options.UpdateBaseline)
+        {
+            File.WriteAllText(
+                baselinePath,
+                JsonSerializer.Serialize(
+                    observed,
+                    ModuleJsonContext.Default.ModuleBaseline) + "\n");
+            Console.WriteLine($"Baseline written to {baselinePath}.");
+            return ExitMatch;
+        }
+
+        // A filtered run measures a subset, so comparing it against the whole
+        // baseline would report every unmeasured module as missing.
+        if (options.Filter is not null)
+        {
+            Console.WriteLine(
+                "Filtered run: skipping the baseline comparison.");
+            return ExitMatch;
+        }
+
+        if (!File.Exists(baselinePath))
+        {
+            Console.Error.WriteLine(
+                $"error: no module baseline at '{baselinePath}'. Run with " +
+                "--update-baseline to create it.");
+            return ExitEnvironmentError;
+        }
+
+        ModuleBaseline baseline = JsonSerializer.Deserialize(
+            File.ReadAllText(baselinePath),
+            ModuleJsonContext.Default.ModuleBaseline) ??
+            throw new HarnessEnvironmentException(
+                $"'{baselinePath}' could not be read.");
+        IReadOnlyList<string> differences =
+            ModuleRunner.Compare(baseline, observed);
+        if (differences.Count == 0)
+        {
+            Console.WriteLine("Module baseline: Match");
+            return ExitMatch;
+        }
+
+        foreach (string difference in differences)
+        {
+            Console.WriteLine($"CHANGED: {difference}");
+        }
+
+        Console.WriteLine(
+            "Module baseline changed. Review the numbers and rerun with " +
+            "--update-baseline if the change is intended.");
+        return ExitStale;
     }
 
     private static int RunInventory(HarnessOptions options)
@@ -414,15 +497,26 @@ internal static class Program
                   Publish (unless --no-publish), run the corpus through
                   both compilers, compare, and check the baseline.
 
+              modules [options]
+                  Build one NativeAOT module per analyzer plus the
+                  whole-assembly module, and record size, retained type
+                  count, and ILC time against eng/module-baseline.json.
+                  Publishes 40+ modules sequentially; takes tens of
+                  minutes. --filter measures a subset and skips the
+                  baseline comparison.
+
             Options:
               --no-publish                Skip 'dotnet publish' for the
                                            native compiler and module.
               --no-ledger                 Skip the coverage ledger.
-              --update-baseline           Overwrite eng/differential-baseline.json
-                                           with this run's burn-down.
-              --filter <id|id*>           Only run rules matching this ID
-                                           or prefix. Disables the baseline
-                                           check.
+              --update-baseline           Overwrite the verb's baseline
+                                           (differential-baseline.json for
+                                           'run', module-baseline.json for
+                                           'modules') with this run.
+              --filter <id|id*>           'run': only rules matching this ID
+                                           or prefix. 'modules': only
+                                           analyzers whose name contains it.
+                                           Disables the baseline check.
               --timeout-seconds <n>       Per-compilation timeout (default 120).
               --output <dir>              Output directory (default
                                            artifacts/differential).

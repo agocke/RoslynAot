@@ -10,12 +10,80 @@ internal static class AnalyzerEntryPointSourceGenerator
     private const string DiagnosticAnalyzerAttributeTypeName =
         "Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzerAttribute";
 
+    /// <summary>
+    /// Lists the analyzer metadata names an entry point would instantiate,
+    /// so a build matrix can enumerate them without loading the assembly
+    /// itself. Same discovery as <see cref="Generate"/>.
+    /// </summary>
+    public static IReadOnlyList<string> List(
+        string assemblyPath,
+        IEnumerable<string> referencePaths,
+        string language)
+    {
+        using MetadataLoadContext loadContext = CreateLoadContext(
+            assemblyPath,
+            referencePaths,
+            out Assembly assembly);
+        return Discover(assembly, language, analyzerFilter: null)
+            .Select(type => type.MetadataName)
+            .ToArray();
+    }
+
     public static void Generate(
         string assemblyPath,
         IEnumerable<string> referencePaths,
         string outputPath,
         string generatedNamespace,
-        string language)
+        string language,
+        IReadOnlyCollection<string>? analyzerFilter = null)
+    {
+        using MetadataLoadContext loadContext = CreateLoadContext(
+            assemblyPath,
+            referencePaths,
+            out Assembly assembly);
+        AnalyzerType[] analyzers =
+            Discover(assembly, language, analyzerFilter);
+        if (analyzers.Length == 0)
+        {
+            throw new InvalidOperationException(
+                analyzerFilter is null
+                    ? $"Assembly '{assembly.FullName}' contains no diagnostic analyzers for language '{language}'."
+                    : $"Assembly '{assembly.FullName}' contains no diagnostic analyzers for language '{language}' matching the requested filter.");
+        }
+
+        if (analyzerFilter is not null)
+        {
+            // A misspelled type would otherwise silently produce a module with
+            // fewer analyzers than asked for, which a size measurement would
+            // then report as a spurious win.
+            var found = analyzers
+                .Select(type => type.MetadataName)
+                .ToHashSet(StringComparer.Ordinal);
+            string[] missing = analyzerFilter
+                .Where(name => !found.Contains(name))
+                .OrderBy(name => name, StringComparer.Ordinal)
+                .ToArray();
+            if (missing.Length > 0)
+            {
+                throw new InvalidOperationException(
+                    $"Assembly '{assembly.FullName}' has no analyzer for " +
+                    $"language '{language}' named: {string.Join(", ", missing)}.");
+            }
+        }
+
+        string source = GenerateSource(
+            assembly.GetName().Name ??
+                throw new InvalidOperationException(
+                    "The analyzer assembly has no simple name."),
+            generatedNamespace,
+            analyzers);
+        WriteIfChanged(Path.GetFullPath(outputPath), source);
+    }
+
+    private static MetadataLoadContext CreateLoadContext(
+        string assemblyPath,
+        IEnumerable<string> referencePaths,
+        out Assembly assembly)
     {
         string fullAssemblyPath = Path.GetFullPath(assemblyPath);
         if (!File.Exists(fullAssemblyPath))
@@ -28,11 +96,17 @@ internal static class AnalyzerEntryPointSourceGenerator
         string[] resolverPaths = CreateResolverPaths(
             fullAssemblyPath,
             referencePaths);
-        using var loadContext = new MetadataLoadContext(
+        var loadContext = new MetadataLoadContext(
             new PathAssemblyResolver(resolverPaths));
-        Assembly assembly =
-            loadContext.LoadFromAssemblyPath(fullAssemblyPath);
-        AnalyzerType[] analyzers = assembly
+        assembly = loadContext.LoadFromAssemblyPath(fullAssemblyPath);
+        return loadContext;
+    }
+
+    private static AnalyzerType[] Discover(
+        Assembly assembly,
+        string language,
+        IReadOnlyCollection<string>? analyzerFilter) =>
+        assembly
             .GetTypes()
             .Where(type =>
                 !type.IsAbstract &&
@@ -40,22 +114,11 @@ internal static class AnalyzerEntryPointSourceGenerator
                 IsDiagnosticAnalyzer(type) &&
                 SupportsLanguage(type, language))
             .Select(CreateAnalyzerType)
+            .Where(type =>
+                analyzerFilter is null ||
+                analyzerFilter.Contains(type.MetadataName))
             .OrderBy(type => type.MetadataName, StringComparer.Ordinal)
             .ToArray();
-        if (analyzers.Length == 0)
-        {
-            throw new InvalidOperationException(
-                $"Assembly '{assembly.FullName}' contains no diagnostic analyzers for language '{language}'.");
-        }
-
-        string source = GenerateSource(
-            assembly.GetName().Name ??
-                throw new InvalidOperationException(
-                    "The analyzer assembly has no simple name."),
-            generatedNamespace,
-            analyzers);
-        WriteIfChanged(Path.GetFullPath(outputPath), source);
-    }
 
     private static string[] CreateResolverPaths(
         string assemblyPath,
