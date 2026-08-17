@@ -79,11 +79,21 @@ it: per-member boundary call counts, and per-analyzer module size, ILC time,
 and retained type count.
 
 The honest headline from that measurement: of the module's 37 rules,
-**8 pass, 26 fail against a named unimplemented member, and 3 are not yet
+**9 pass, 25 fail against a named unimplemented member, and 3 are not yet
 exercised by the corpus**. The failures concentrate — `IOperation.ConstantValue`
-blocks 7 rules and `ISymbol.DeclaringSyntaxReferences` blocks 6, so two members
-account for half of them. Details and the ordered plan to close them are in the
+blocks 7 rules and `SyntaxReference.GetSyntax` blocks 6, so two members account
+for half of them. Roughly half of all failures are rooted in generics. Details
+and the ordered plan to close them are in the
 [analyzer remoting migration plan](docs/ANALYZER-REMOTING-MIGRATION.md).
+
+The harness has also earned its keep beyond counting. It caught a defect that
+**terminates the compiler process** rather than reporting a failure: a generic
+virtual method on a proxied type cannot be dispatched through
+`IDynamicInterfaceCastable`, and NativeAOT fails fast in the type loader where
+nothing can catch it. Two passing rules went red because an unrelated analyzer
+reached that path in the same process. It is the only failure class that
+destroys other analyzers' results, and it was two passing rules away from
+shipping unnoticed. See problem 21.
 
 The prototype is not yet a transparent package integration. Analyzer transport
 coverage is still limited, native analyzer preparation is not wired into normal
@@ -158,17 +168,23 @@ builds, caching is incomplete, and only Linux has been validated.
    package's MSBuild targets.
 2. Replace managed analyzer items with the resulting native modules and run a
    complete project build through the package.
-3. Work the differential burn-down down, in the order the migration plan sets
-   out: ownership, then identity, now that the projection model underneath them
-   is in place. The ranked blocking members are the measurement that says which
-   work pays.
-4. Add incremental inputs, outputs, and a content-addressed native artifact
+3. Give generic virtual methods a dispatch path, ahead of identity. This is the
+   one failure class that kills the compiler instead of reporting, it cannot be
+   worked around reflectively — `MakeGenericMethod` over a struct type argument
+   does not work under NativeAOT — and it already forced `GetControlFlowGraph`
+   to be withdrawn. It is pulled out of migration Step 8 because the rest of
+   that step is transport work behind the wire grammar, while this is a
+   proxy-representation question that may be answerable on its own.
+4. Then work the rest of the differential burn-down in the order the migration
+   plan sets out: ownership is done, identity is next. The ranked blocking
+   members are the measurement that says which work pays.
+5. Add incremental inputs, outputs, and a content-addressed native artifact
    cache.
-5. Expand compiler and analyzer equivalence tests before enabling the native
+6. Expand compiler and analyzer equivalence tests before enabling the native
    path by default. The differential harness is the mechanism; widening it
    means growing the corpus and, at migration Step 6, comparing the diagnostic
    fields the ABI cannot yet carry.
-6. Validate the same packaged workflow on Windows and macOS.
+7. Validate the same packaged workflow on Windows and macOS.
 
 ## Core implementation constraint
 

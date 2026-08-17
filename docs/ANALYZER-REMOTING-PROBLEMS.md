@@ -106,6 +106,14 @@ Mixing these representations caused local objects to execute generated remote
 members without a control vtable. Every projected type needs defined ownership,
 construction, and local-versus-remote behavior.
 
+**Status (2026-08-17): closed.** All 700 projected types carry an ownership
+class and a reason, and ownership is now the single predicate deciding whether
+an instance may cross as a handle — consulted by the ABI classifier, the proxy
+collector, and proxy-factory emission alike. A type whose ownership forbids
+crossing can no longer be given a proxy factory, which is the specific shape the
+"local object executing remote members" failure took; `ProjectionValidation`
+rejects it. It found two live instances the moment it was added.
+
 ### 5. The ABI needs a recursive transport type system
 
 The current transport grew one shape at a time. Arbitrary analyzer support
@@ -190,6 +198,17 @@ facades must dispatch each comparison through the symbols’ active compiler
 identity. `ISymbol.Equals` overloads must use the supplied comparer rather than
 trying to marshal the comparer as a compiler object.
 
+**Status (2026-08-17): partly closed.** The comparers are analyzer-local
+singletons carrying only a kind tag, and the type can no longer be given a proxy
+factory, so marshalling one as a compiler object is now unrepresentable rather
+than merely avoided. `ISymbol.Equals(ISymbol, SymbolEqualityComparer)` delegates
+to the comparer, and that overload is now *classified* unsupported for the right
+reason — the comparer is analyzer-owned, so no handle to it exists — instead of
+occupying a vtbl slot nothing could implement. Analyzer-local object identity is
+settled for the Dual types, which fall back to reference equality when either
+side is local. What remains is remote object identity itself: two handles to the
+same compiler object are still two unequal facades, which is Step 4.
+
 ### 10. Null and default values are part of the contract
 
 Metadata nullability does not fully describe runtime behavior.
@@ -255,6 +274,14 @@ Examples include:
 
 Each such type needs local semantics, serialization into a compiler operation,
 or an explicit compiler-side construction operation.
+
+**Status (2026-08-17): partially closed.** `Diagnostic`, `Location`, and
+`DiagnosticDescriptor` now have one runtime type each holding both states, with
+every member dispatching on a discriminator rather than assuming a handle;
+`Location.None` is a shared analyzer-side singleton. `SymbolDisplayFormat` and
+`SyntaxAnnotation` remain compiler-owned deliberately — see Step 3 in the
+migration plan — and `SourceText` is not yet projected. What crossing *back*
+still cannot express is a diagnostic's full state, which is problem 14.
 
 ### 14. Diagnostic transport must preserve full semantics
 
@@ -375,6 +402,43 @@ assembly loading.
 Roslyn transport failures and analyzer NativeAOT incompatibility must produce
 different, actionable diagnostics and participate in the project’s fallback
 policy.
+
+### 21. Generic virtual methods terminate the process rather than failing
+
+Discovered 2026-08-17, during migration Step 3. A generic virtual or interface
+method on a proxied type cannot be dispatched through
+`IDynamicInterfaceCastable`: NativeAOT's type loader cannot construct the slot
+for an instantiation it did not see, and it **fails fast** rather than throwing.
+
+```
+Process terminated. Generic virtual method pointer lookup failure.
+Declaring type: Microsoft.CodeAnalysis.IOperation
+Target type: RoslynAot.RoslynFacade.RoslynObjectProxy
+Method name: Accept
+Instantiation: System.Object, PointsToAbstractValue
+```
+
+This is categorically worse than every other failure in this inventory. A
+failing member raises `AD0001` and the compilation continues; this kills the
+compiler process, so **every other analyzer's diagnostics are lost too**. Two
+passing rules were observed going to `CompilerCrash` because an unrelated
+analyzer reached this path in the same process.
+
+It also cannot be caught. The failure happens inside the runtime type loader
+before any managed frame the bridge controls, so no `try`/`catch` and no
+per-analyzer isolation in the current process model can contain it.
+
+The specific trigger is `IOperation.Accept<TArgument, TResult>`, which the
+analyzer utilities' dataflow analysis calls for every visited operation. The
+facade does declare the member with a `PlatformNotSupportedException` body — it
+is simply never reached. `IOperation.Accept(OperationVisitor)`, the non-generic
+overload, dispatches normally.
+
+Mitigated for now by withdrawing the members that hand an analyzer a
+`ControlFlowGraph`, which is the route into dataflow analysis; the failure is
+then a reported unsupported member. The general fix belongs to Step 8: any
+generic virtual method on a proxied type needs a dispatch path, or the model
+needs to refuse to project the types that declare them.
 
 ## Architectural conclusion
 

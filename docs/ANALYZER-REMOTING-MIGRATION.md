@@ -388,20 +388,109 @@ five and makes it a model field rather than a runtime convention.
 
 - Every projected type gets a required ownership field: Remote, Value, Local,
   Dual, Facade. The generator refuses to emit a type without one.
+  - **Done.** All 700 types carry an ownership class and a reason, from a
+    declared entry or from a named derivation rule, and `ProjectionValidation`
+    fails generation on a type without one. The count rose from 663 because
+    `Types` was previously seeded only from proxies and vtbls, which made every
+    analyzer-local type — and every type whose members are all unsupported —
+    invisible to the model that was supposed to describe them.
 - Rework **Dual** types (`Location`, `Diagnostic`, `SourceText`) into a single
   sealed class with an internal discriminator and two internal implementations —
   not two types. Casts and pattern matches then behave, and every member
   dispatches on the discriminator instead of assuming a handle.
+  - **Done for `Location` and `Diagnostic`.** Each had a hand-written
+    analyzer-local subclass alongside the generated proxy; both are gone. There
+    is now one runtime type per Dual type, the discriminator is the absence of
+    a control vtbl, and each member's local branch is a declared override with
+    a reason rather than an override in a second class.
+  - `DiagnosticDescriptor` already had this shape and was left alone.
+    `LocalizableString` **deliberately keeps more than one type**: it is public
+    and abstract in Roslyn with a protected constructor, so analyzers may
+    subclass it, and collapsing it would change the API rather than the
+    transport. `SourceText` is not currently projected.
 - Give **Local** types (`DiagnosticDescriptor`, `SymbolDisplayFormat`,
   `SyntaxAnnotation`) real analyzer-side implementations.
+  - **Not done, and the measurement says not to.** `SymbolDisplayFormat` and
+    `SyntaxAnnotation` are compiler-owned today and work that way; formatting a
+    symbol is the compiler's job and a local reimplementation would have to
+    reproduce it exactly. No rule in the burn-down names either. Revisit when
+    one does.
 - Make `SymbolEqualityComparer.Default` a plain singleton, with comparer
   identity transported as an enum tag rather than marshalled as a compiler
   object.
+  - **Done.** The enum tag existed already; what was missing is that the type
+    still had a proxy factory, so a compiler-side comparer could arrive as a
+    handle regardless. Ownership now forbids that, and the dead
+    `ISymbolEqualityComparerVtbl` and `ILocalizableResourceStringVtbl` were
+    dropped from the ABI.
 
 **Exit:** no type in the model lacks an ownership class; no local object can
 reach a remote vtable.
 
 **Closes:** 4, 13, 9.
+
+### Measured result (2026-08-17)
+
+Ownership stopped being a label and became the single predicate that decides
+transport. `ProjectionTypeOwnership.CanCrossAsHandle` is now consulted by the
+ABI classifier, the proxy collector, and proxy-factory emission; before, the
+same question was answered three incompatible ways — an `IsAnalyzerLocalClass`
+name list, a hardcoded `"Microsoft.CodeAnalysis.AttributeData"` metadata name in
+the collection classifier, and an unstated assumption in the classifier that
+every facade type was compiler-owned. The new validation pass found two real
+contradictions on its first run: `LocalizableResourceString` and
+`SymbolEqualityComparer` were declared analyzer-local and had proxy factories
+anyway.
+
+**The larger find was not in the plan.** Abstract members were declared
+unsupported by a single rule — *"Declaration-only members have no facade
+implementation body"* — because a class-level body is the only place the
+emitter knew to put one. A proxied abstract class does have another: its
+generated proxy's override. The rule was therefore wrong rather than
+conservative, and its cost was **227 unconditional
+`PlatformNotSupportedException` bodies across 41 proxied abstract classes**. A
+compiler-owned `Diagnostic` could not report its own `Id`, `Severity`,
+`Location`, or `Descriptor`; a compiler-owned `Location` had no `Kind`. Routing
+proxy overrides through the model gave 82 of them real remoting bodies.
+Protected members stay unsupported: the compiler cannot dispatch to them.
+
+Two more consequences fell out of ownership being asked properly:
+
+- `ImmutableArray<T>` return support asked whether `T` was a *dynamic-interface*
+  proxy candidate, which excluded every class with a generated proxy subclass —
+  hence the `AttributeData` name exception readmitting one of them by hand.
+  Asking instead whether `T` can be proxied at all made `ISymbol.Locations` and
+  `ISymbol.DeclaringSyntaxReferences` supported for the first time. Those are
+  the members behind **9 of the 26 failing rules**.
+- `Location.None` is now a shared analyzer-side singleton, so the value an
+  analyzer reads and the one its own diagnostics default to are the same
+  object. This does **not** close the `Location.None` item in problem 14: the
+  report path still sends `SourceSpan.Start`/`Length` unconditionally, so an
+  unlocated diagnostic still arrives as `(1,1)`. The wire needs a way to say
+  "unlocated", which is Step 6.
+
+Model totals moved from 5,696 supported / 3,034 unsupported / 663 types to
+5,823 / 2,907 / 700, with overrides from 57 to 78.
+
+### The regression this step found (2026-08-17)
+
+Making `ISymbol.Locations` work let `CA1508` get past its old failure and into
+the analyzer utilities' dataflow analysis for the first time — where it hit
+`IOperation.Accept<TArgument, TResult>` and NativeAOT **terminated the compiler
+process**. Six corpus cases crashed identically, and two rules that had been
+passing, `CA1309` and `CA1841`, went to `CompilerCrash` purely because they
+shared a process with an analyzer that reached it.
+
+Nothing about the crash was caused by this step: `IOperation`'s projection is
+byte-identical before and after, and both `GetControlFlowGraph` overloads were
+already supported. The path was always fatal; no analyzer had reached it. This
+is the clearest argument yet for the differential harness — the defect was two
+Pass rules away from shipping silently, and it is the only failure class in the
+inventory that destroys *other* analyzers' results.
+
+Recorded as problem 21 and mitigated by withdrawing the three
+`GetControlFlowGraph` members, so an analyzer that wants a control flow graph
+gets an `AD0001` naming the member instead of killing the build.
 
 ---
 
@@ -587,10 +676,21 @@ elements first (`ImmutableArray<TextSpan>`), then structs with reference fields,
 then `TypedConstant` and `SyntaxToken` sequences. Anything outside the set fails
 at analyzer preparation with a named diagnostic.
 
-**Exit:** the declared-unsupported set contains no public analyzer-facing member
-that the corpus reaches.
+**Generic virtual methods are the urgent part of this step, not the tidy part.**
+A generic virtual or interface method on a proxied type cannot be dispatched
+through `IDynamicInterfaceCastable`, and NativeAOT's type loader *fails fast*
+rather than throwing — killing the compiler process and every other analyzer's
+diagnostics with it. `IOperation.Accept<TArgument, TResult>` is the live case;
+Step 3 had to withdraw `GetControlFlowGraph` to keep the corpus from reaching
+it. Problem 21 has the detail. Either such methods get a dispatch path, or the
+model must refuse to project the types that declare them — but the current
+state, where the member exists and reaching it is fatal, is the worst of the
+three.
 
-**Closes:** the rest of 1, and the transport half of 5.
+**Exit:** the declared-unsupported set contains no public analyzer-facing member
+that the corpus reaches, and no reachable member can terminate the compiler.
+
+**Closes:** the rest of 1, the transport half of 5, and 21.
 
 ---
 
