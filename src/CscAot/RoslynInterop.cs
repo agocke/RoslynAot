@@ -348,6 +348,40 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         }
     }
 
+    public int ObjectEquals(
+        long handle,
+        long other,
+        out int result)
+    {
+        result = default;
+        try
+        {
+            result = _objects.GetObject(handle).Equals(
+                _objects.GetObject(other))
+                ? 1
+                : 0;
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
+    public int ObjectGetHashCode(long handle, out int result)
+    {
+        result = default;
+        try
+        {
+            result = _objects.GetObject(handle).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
     public unsafe int CopyLastErrorUtf16(
         nint buffer,
         int bufferLength,

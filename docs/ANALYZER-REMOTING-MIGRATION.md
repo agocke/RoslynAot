@@ -133,6 +133,46 @@ for exceptions. It is the same shape as the projected-`ToString` defect fixed in
 `e3bf4e1`, so it should be diagnosed before the ranked member work: a silent
 wrong answer costs more than a loud missing one.
 
+### Silent no-op class diagnosed and closed (2026-08-16)
+
+All six were one defect: `RoslynObjectProxy` did not override `Equals` or
+`GetHashCode`, so two proxies for the same Roslyn object compared unequal and
+hashed differently. Handles are minted per call — `RoslynHandleTable.Add`
+allocates a fresh slot every time — so the proxy's inherited reference equality
+was wrong for every projected object.
+
+That never throws; it just makes lookups miss. `InsecureDeserializationTypeDecider`
+(CA2352–CA2356, CA2362) stores its dangerous types in a plain
+`HashSet<ITypeSymbol>` with the default comparer, so `Contains` returned false
+for `System.Data.DataSet` and the analyzer reported nothing. Analyzers that
+happened to route through `SymbolEqualityComparer.Default` — which the ABI
+already carried — were unaffected, which is why the class was only six rules
+wide and not the whole module.
+
+Fixed by appending `ObjectEquals` and `ObjectGetHashCode` to `IRoslynControlVtbl`
+and overriding both on the proxy, the same shape as the `ToString` fix in
+`e3bf4e1`: an `object` virtual that facade interfaces structurally cannot
+occupy has to be remoted explicitly. **Any remaining `object` virtual is a
+suspect** — that is now two of them found the same way.
+
+Result: **8 pass, 26 fail, 3 not exercised**. `MissingDiagnostic` no longer
+appears anywhere in the burn-down. CA2354 and CA2355 pass outright; CA1851,
+CA1870, CA2352, and CA2353 now fail against a named member, and CA2362 moved
+from `NotExercised` to a named failure because the analyzer declaring it now
+runs far enough to reach one. The ranking is now:
+
+| Rules blocked | Cause |
+|---|---|
+| 7 | `IOperation.ConstantValue` |
+| 6 | `ISymbol.DeclaringSyntaxReferences` |
+| 3 | `ISymbol.Locations` |
+| 2 | `CSharpExtensions.GetDeclaredSymbol` |
+| 1 each | `CompilationStartAnalysisContext.CancellationToken`, `AttributeData.ConstructorArguments`, `VariableDeclarationSyntax.Variables`, `InitializerExpressionSyntax.Expressions`, `ControlFlowGraph.Create`, `OperationWalker` dispatch, two analyzer-internal frames |
+
+`ISymbol.DeclaringSyntaxReferences` doubled from 3 to 6 because the four
+newly-unblocked analyzers reach it. The two members at the top now account for
+13 of the 26 failures.
+
 ---
 
 ## Step 2 — The projection model becomes the source of truth

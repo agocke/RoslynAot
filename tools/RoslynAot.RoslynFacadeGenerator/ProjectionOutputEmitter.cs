@@ -263,6 +263,17 @@ internal static class ProjectionOutputEmitter
                 nint buffer,
                 int bufferLength,
                 out int requiredLength);
+
+            [PreserveSig]
+            int ObjectEquals(
+                long handle,
+                long other,
+                out int result);
+
+            [PreserveSig]
+            int ObjectGetHashCode(
+                long handle,
+                out int result);
         }
         """;
 
@@ -789,6 +800,8 @@ internal static class ProjectionOutputEmitter
                     : throw new ArgumentOutOfRangeException(nameof(handle));
             }
 
+            private int? _hashCode;
+
             public IRoslynControlVtbl ControlVtbl { get; }
 
             private long Handle { get; }
@@ -813,6 +826,48 @@ internal static class ProjectionOutputEmitter
                             buffer,
                             bufferLength,
                             out requiredLength)) ?? string.Empty;
+
+            public override bool Equals(object? other)
+            {
+                if (ReferenceEquals(this, other))
+                {
+                    return true;
+                }
+
+                if (other is not RoslynObjectProxy proxy ||
+                    !ReferenceEquals(ControlVtbl, proxy.ControlVtbl))
+                {
+                    return false;
+                }
+
+                if (Handle == proxy.Handle)
+                {
+                    return true;
+                }
+
+                int status = ControlVtbl.ObjectEquals(
+                    Handle,
+                    proxy.Handle,
+                    out int equal);
+                RoslynFacadeRuntime.ThrowIfFailed(ControlVtbl, status);
+                return equal != 0;
+            }
+
+            public override int GetHashCode()
+            {
+                int? cached = _hashCode;
+                if (cached is null)
+                {
+                    int status = ControlVtbl.ObjectGetHashCode(
+                        Handle,
+                        out int hashCode);
+                    RoslynFacadeRuntime.ThrowIfFailed(ControlVtbl, status);
+                    cached = hashCode;
+                    _hashCode = cached;
+                }
+
+                return cached.GetValueOrDefault();
+            }
 
             public bool IsInterfaceImplemented(
                 RuntimeTypeHandle interfaceType,

@@ -137,4 +137,15 @@ public partial interface IRoslynControlVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength);
+
+    [PreserveSig]
+    int ObjectEquals(
+        long handle,
+        long other,
+        out int result);
+
+    [PreserveSig]
+    int ObjectGetHashCode(
+        long handle,
+        out int result);
 }

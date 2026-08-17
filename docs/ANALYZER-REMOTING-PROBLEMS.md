@@ -54,6 +54,21 @@ Required semantics:
 - Proxy equality and hashing remain stable.
 - Different compiler control identities never accidentally share proxies.
 
+**Partial status (2026-08-16).** The *semantics* are now correct: `ObjectEquals`
+and `ObjectGetHashCode` on `IRoslynControlVtbl` forward `Equals`/`GetHashCode`
+to the compiler-side object, and `RoslynObjectProxy` overrides both. Before
+this, neither was overridden, so proxies fell back to reference equality while
+`RoslynHandleTable.Add` minted a fresh handle per call — every set, dictionary,
+and cache keyed on a projected object silently missed. Measured cost: six rules
+(CA1851, CA1870, CA2352–CA2355) reported nothing at all, because
+`InsecureDeserializationTypeDecider` and friends key on a default-comparer
+`HashSet<ITypeSymbol>`.
+
+Still open, and the reason this problem stays on the list: handles are not
+stable, proxies are not canonical, and nothing is cached across the boundary,
+so equality and hashing are now correct but cost an ABI round trip each. The
+graph-algorithm and cache-locality half of this problem is unaddressed.
+
 ### 3. Runtime types and polymorphism must be preserved
 
 A declared return type is often less specific than the actual Roslyn object.
@@ -244,6 +259,13 @@ Required diagnostic state includes:
 
 Compiler-side `WithSeverity`, `WithLocation`, and `WithIsSuppressed` operations
 must behave like real Roslyn diagnostics.
+
+`Location.None` is one of the states that does not survive today. Observed
+2026-08-16 while probing the silent no-op class: a probe analyzer reporting at
+`Location.None` produced an unlocated diagnostic under managed csc and one
+attributed to `<first source file>(1,1)` under `csc-aot`. No corpus rule
+reports at `Location.None`, so the differential burn-down does not currently
+show it as a `SpanMismatch`.
 
 ### 15. Error reporting must cross the boundary with context
 
