@@ -5,9 +5,9 @@ using System.Text.Json;
 namespace RoslynAot.DifferentialHarness;
 
 /// <summary>
-/// Builds one NativeAOT module per analyzer and records its size, retained
-/// type count, and ILC time — the trimming baseline migration Step 1 asks for,
-/// established before anything can regress it.
+/// Builds NativeAOT modules and records size, retained type count, and ILC
+/// time — the trimming baseline migration Step 1 asks for, established before
+/// anything can regress it.
 /// </summary>
 internal static class ModuleRunner
 {
@@ -23,21 +23,61 @@ internal static class ModuleRunner
         "artifacts/obj/RoslynAot.CSharpNetAnalyzers.Native/" +
         "release_linux-x64/native/roslyn-aot-csharp-net-analyzers.mstat";
 
-    /// <summary>The whole-assembly module, measured alongside the singles.</summary>
+    /// <summary>
+    /// The whole-assembly module: the unit the product actually ships, since a
+    /// user's analyzer package is compiled as one native module per analyzer
+    /// assembly, never one per analyzer type.
+    /// </summary>
     private const string AllAnalyzersModule = "(all analyzers)";
+
+    /// <summary>
+    /// The single-analyzer modules the baseline keeps. A module per analyzer
+    /// type measures a configuration that never ships, and 39 of the 43 builds
+    /// re-measured a number the other four already covered. What a
+    /// single-analyzer module is uniquely good for is sensitivity: a rooting
+    /// regression that moves a 9 MB module by 0.1% moves the floor module by a
+    /// figure you can read. These four span that range; the full sweep stays
+    /// available behind --all-modules for occasional audits.
+    /// </summary>
+    private static readonly (string Analyzer, string Rationale)[] s_representatives =
+    [
+        // The floor. Eleven analyzers tied at exactly this size, so it is the
+        // fixed cost of the facade and ABI with an analyzer that roots nothing
+        // beyond it — the most sensitive canary in the matrix.
+        ("Microsoft.CodeQuality.CSharp.Analyzers.ApiDesignGuidelines." +
+            "CSharpUsePreferredTermsAnalyzer",
+            "floor: fixed facade and ABI cost"),
+
+        // The median single analyzer, and a rule the differential burn-down
+        // tracks (CA2016). Its delta over the floor is one ordinary analyzer's
+        // worth of Roslyn surface.
+        ("Microsoft.NetCore.CSharp.Analyzers.Runtime." +
+            "CSharpForwardCancellationTokenToInvocationsAnalyzer",
+            "median single analyzer (CA2016)"),
+
+        // CA1508: control-flow graphs and dataflow, the surface that forced the
+        // generic virtual dispatch work. Roots roughly five times the floor's
+        // types.
+        ("Microsoft.CodeQuality.CSharp.Analyzers.Maintainability." +
+            "CSharpAvoidDeadConditionalCode",
+            "dataflow and control-flow graphs (CA1508)"),
+
+        // The heaviest single analyzer in the sweep, and the ceiling on what one
+        // analyzer can pull in short of the whole assembly.
+        ("Microsoft.CodeAnalysis.CSharp.NetAnalyzers.Microsoft.CodeQuality." +
+            "Analyzers.QualityGuidelines.CSharpAvoidMultipleEnumerationsAnalyzer",
+            "heaviest single analyzer (CA1851)"),
+    ];
 
     public static IReadOnlyList<ModuleMeasurementResult> Run(
         HarnessEnvironment environment,
         string outputDirectory,
-        string? filter)
+        string? filter,
+        bool allModules)
     {
-        IReadOnlyList<string> analyzers = ListAnalyzers(environment);
-        if (filter is not null)
-        {
-            analyzers = analyzers
-                .Where(name => name.Contains(filter, StringComparison.OrdinalIgnoreCase))
-                .ToArray();
-        }
+        IReadOnlyList<string> available = ListAnalyzers(environment);
+        IReadOnlyList<string> analyzers = SelectAnalyzers(
+            available, filter, allModules);
 
         var measurement = new ModuleMeasurement(
             environment.RepoRoot,
@@ -47,9 +87,9 @@ internal static class ModuleRunner
 
         var results = new List<ModuleMeasurementResult>();
 
-        // Measured first: it is the number every single-analyzer module is
-        // compared against, and the one most likely to fail if the tree is
-        // broken.
+        // Measured first: it is the shipping unit, the number every
+        // single-analyzer module is compared against, and the one most likely
+        // to fail if the tree is broken.
         if (filter is null)
         {
             Console.WriteLine($"Measuring {AllAnalyzersModule} ...");
@@ -90,6 +130,49 @@ internal static class ModuleRunner
                 })
                 .ToList(),
         };
+
+    /// <summary>
+    /// Resolves the analyzers to measure. A representative that no longer
+    /// exists is an error rather than a silent omission: the baseline would
+    /// otherwise shrink by one module and read as an intentional change.
+    /// </summary>
+    private static IReadOnlyList<string> SelectAnalyzers(
+        IReadOnlyList<string> available,
+        string? filter,
+        bool allModules)
+    {
+        if (filter is not null)
+        {
+            return available
+                .Where(name => name.Contains(filter, StringComparison.OrdinalIgnoreCase))
+                .ToArray();
+        }
+
+        if (allModules)
+        {
+            return available;
+        }
+
+        var availableSet = new HashSet<string>(available, StringComparer.Ordinal);
+        string[] missing = s_representatives
+            .Select(representative => representative.Analyzer)
+            .Where(analyzer => !availableSet.Contains(analyzer))
+            .ToArray();
+        if (missing.Length > 0)
+        {
+            throw new HarnessEnvironmentException(
+                "These baseline representatives are no longer present in the " +
+                "analyzer assembly: " + string.Join(", ", missing) +
+                ". Run 'modules --all-modules' to pick replacements spanning " +
+                "the same size range, then update ModuleRunner and the " +
+                "baseline together.");
+        }
+
+        return s_representatives
+            .Select(representative => representative.Analyzer)
+            .OrderBy(analyzer => analyzer, StringComparer.Ordinal)
+            .ToArray();
+    }
 
     private static IReadOnlyList<string> ListAnalyzers(
         HarnessEnvironment environment)
@@ -152,25 +235,37 @@ internal static class ModuleRunner
     private static string WriteMarkdown(
         IReadOnlyList<ModuleMeasurementResult> results)
     {
+        var rationales = s_representatives.ToDictionary(
+            representative => representative.Analyzer,
+            representative => representative.Rationale,
+            StringComparer.Ordinal);
+
         var writer = new StringWriter();
-        writer.WriteLine("# Per-analyzer module baseline");
+        writer.WriteLine("# Module baseline");
         writer.WriteLine();
         writer.WriteLine(
-            "One NativeAOT module per analyzer, plus the whole-assembly " +
-            "module. Size and retained counts are deterministic and are what " +
+            "The whole-assembly module — the unit the product ships — plus a " +
+            "handful of single-analyzer modules kept for sensitivity, since a " +
+            "rooting regression invisible at 9 MB is legible at the floor. " +
+            "Size and retained counts are deterministic and are what " +
             "`eng/module-baseline.json` ratchets; ILC and publish times are " +
             "informational and deliberately excluded from the baseline.");
         writer.WriteLine();
         writer.WriteLine(
-            "| Module | Size (bytes) | Retained types | Retained methods | ILC ms | Publish s |");
-        writer.WriteLine("|---|---|---|---|---|---|");
+            "| Module | Kept for | Size (bytes) | Retained types | " +
+            "Retained methods | ILC ms | Publish s |");
+        writer.WriteLine("|---|---|---|---|---|---|---|");
         foreach (ModuleMeasurementResult result in results
             .OrderByDescending(result => result.SizeBytes))
         {
+            string kept = result.Module == AllAnalyzersModule
+                ? "the shipping unit"
+                : rationales.GetValueOrDefault(result.Module, "audit sweep");
             if (result.Failure is not null)
             {
                 writer.WriteLine(
-                    $"| `{result.Module}` | FAILED | | | | {result.Failure} |");
+                    $"| `{result.Module}` | {kept} | FAILED | | | | " +
+                    $"{result.Failure} |");
                 continue;
             }
 
@@ -180,7 +275,7 @@ internal static class ModuleRunner
                 ? "n/a (incremental)"
                 : result.IlcMilliseconds.ToString();
             writer.WriteLine(
-                $"| `{result.Module}` | {result.SizeBytes} | " +
+                $"| `{result.Module}` | {kept} | {result.SizeBytes} | " +
                 $"{result.RetainedTypeCount} | {result.RetainedMethodCount} | " +
                 $"{ilc} | {result.PublishSeconds} |");
         }

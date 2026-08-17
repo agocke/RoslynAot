@@ -248,6 +248,12 @@ internal sealed class HarnessOptions
 
     public bool UpdateBaseline { get; set; }
 
+    /// <summary>
+    /// 'modules': measure every analyzer rather than the representatives the
+    /// baseline keeps. An audit, not a baseline run.
+    /// </summary>
+    public bool AllModules { get; set; }
+
     public string? Filter { get; set; }
 
     public int TimeoutSeconds { get; set; } = 120;

@@ -75,8 +75,9 @@ Analyzer compatibility is now measured rather than estimated. A differential
 harness (`eng/validate-differential.sh`) compiles a corpus through both the
 managed and native compilers and diffs the diagnostics, producing a per-rule
 burn-down enforced against a checked-in baseline. Two further baselines back
-it: per-member boundary call counts, and per-analyzer module size, ILC time,
-and retained type count.
+it: per-member boundary call counts, and module size, ILC time, and retained
+type count for the whole-assembly module plus four representative
+single-analyzer modules.
 
 The honest headline from that measurement: of the module's 37 rules,
 **9 pass, 25 fail against a named unimplemented member, and 3 are not yet

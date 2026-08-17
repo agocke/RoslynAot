@@ -90,11 +90,21 @@ behavior and produces no diagnostic — bytes are the only signal, so they need 
 be watched from the first step rather than the step that breaks them.
 
 **In place since 2026-08-16.** `eng/module-baseline.json` records size and
-retained counts for all 43 single-analyzer modules plus the combined one, and
-`eng/measure-modules.sh` fails on any change. There is no separate *ceiling*:
-the baseline is exact-match in both directions, which is stricter, and the
-measured floor of 2,593,376 bytes / 2,716 types that 11 analyzers sit on is the
-number a ceiling would have to be expressed against.
+retained counts, and `eng/measure-modules.sh` fails on any change. There is no
+separate *ceiling*: the baseline is exact-match in both directions, which is
+stricter, and the measured floor of 2,593,424 bytes / 2,716 types that 11
+analyzers sit on is the number a ceiling would have to be expressed against.
+
+**Narrowed to five modules on 2026-08-17.** The original baseline held all 43
+single-analyzer modules, which measured a configuration that never ships — the
+product unit is the analyzer *assembly*, so the whole-assembly module is the
+real one — and 39 of the 43 builds re-measured a number four others already
+covered. The baseline now keeps the whole-assembly module plus four singles
+spanning the observed range (floor, median, dataflow, heaviest), which is what
+the sensitivity argument above actually needs: a rooting regression invisible at
+9 MB is legible at the floor. The five reproduced their previous numbers exactly
+when the matrix was cut, and the run went from tens of minutes to under a
+minute. `--all-modules` still sweeps everything as an audit.
 
 ---
 
@@ -130,11 +140,11 @@ first bullet.** Measured results are recorded under this step.
   - **Done.** See "Boundary call coverage" below.
 - Record native module size, ILC time, and retained type count per corpus
   analyzer. Establishes the trimming baseline before anything can regress it.
-  - **Done.** `eng/measure-modules.sh` builds one module per analyzer;
-    `eng/module-baseline.json` ratchets size and retained counts. Times are
-    measured and reported but deliberately kept out of the baseline — they are
-    nondeterministic, and a baseline that churns every run stops being read.
-    See "Per-analyzer module baseline" below.
+  - **Done.** `eng/measure-modules.sh` builds the whole-assembly module plus
+    four representative singles; `eng/module-baseline.json` ratchets size and
+    retained counts. Times are measured and reported but deliberately kept out
+    of the baseline — they are nondeterministic, and a baseline that churns
+    every run stops being read. See "Per-analyzer module baseline" below.
 
 **Exit:** a burn-down list — for every corpus analyzer, either "passes" or a
 named member and reason. Current true pass rate known for the first time, and a
@@ -247,12 +257,18 @@ the denominator is every member the generator emits a dispatcher for.
 
 ### Per-analyzer module baseline (2026-08-16)
 
-`eng/measure-modules.sh` builds one NativeAOT module per analyzer — 43 of them,
+`eng/measure-modules.sh` built one NativeAOT module per analyzer — 43 of them,
 plus the whole-assembly module — via a new `--analyzer` filter on the entry
 point generator, and records size, retained type count, and ILC time.
 `eng/module-baseline.json` ratchets the first three; times stay out of it,
 because they are nondeterministic and a baseline that churns every run stops
 being read. Two independent full runs produced byte-identical sizes and counts.
+
+The findings below come from that full 44-module sweep. It is what justified
+narrowing the *baseline* to five modules the next day — once you know eleven
+analyzers sit exactly on the floor and one analyzer is two-thirds of the
+assembly, rebuilding all 43 every time buys nothing. `--all-modules` reproduces
+this sweep on demand.
 
 | Module | Size | Retained types | ILC ms |
 |---|---|---|---|
@@ -375,8 +391,10 @@ worth recording because they are the shape of mistake this analysis invites:
 **Withdrawing the unreachable set is deferred.** At 8% it is a trimming
 optimization rather than the legibility win the step was after, and it is the
 one change here that alters behavior — everything else regenerated
-byte-identical. It should land with the per-analyzer module matrix as its
-measurement, not folded into a model refactor.
+byte-identical. It should land with the module matrix as its measurement — and
+specifically with an `--all-modules` sweep, since a trimming change is exactly
+the case where the four representatives need re-confirming — not folded into a
+model refactor.
 
 ---
 

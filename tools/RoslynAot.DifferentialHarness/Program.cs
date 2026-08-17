@@ -40,10 +40,21 @@ internal static class Program
         HarnessEnvironment environment = HarnessEnvironment.Resolve(options);
         string outputDirectory = Path.Combine(
             ResolveOutputDirectory(environment, options), "modules");
+        if (options.AllModules && options.UpdateBaseline)
+        {
+            Console.Error.WriteLine(
+                "error: --all-modules cannot be combined with " +
+                "--update-baseline. The baseline is the representative set; " +
+                "the full sweep is an audit, and writing it back would make " +
+                "every later run report 39 modules as missing.");
+            return ExitEnvironmentError;
+        }
+
         IReadOnlyList<ModuleMeasurementResult> results = ModuleRunner.Run(
             environment,
             outputDirectory,
-            options.Filter);
+            options.Filter,
+            options.AllModules);
 
         string[] failures = results
             .Where(result => result.Failure is not null)
@@ -74,12 +85,21 @@ internal static class Program
             return ExitMatch;
         }
 
-        // A filtered run measures a subset, so comparing it against the whole
-        // baseline would report every unmeasured module as missing.
+        // A filtered run measures a subset and the full sweep measures a
+        // superset; either way the comparison would be against a different set
+        // of modules than the baseline holds.
         if (options.Filter is not null)
         {
             Console.WriteLine(
                 "Filtered run: skipping the baseline comparison.");
+            return ExitMatch;
+        }
+
+        if (options.AllModules)
+        {
+            Console.WriteLine(
+                "Full sweep: skipping the baseline comparison. Read " +
+                $"{outputDirectory}/modules.md for the audit.");
             return ExitMatch;
         }
 
@@ -430,6 +450,9 @@ internal static class Program
                 case "--update-baseline":
                     options.UpdateBaseline = true;
                     break;
+                case "--all-modules":
+                    options.AllModules = true;
+                    break;
                 case "--filter":
                     options.Filter = Next();
                     break;
@@ -498,11 +521,11 @@ internal static class Program
                   both compilers, compare, and check the baseline.
 
               modules [options]
-                  Build one NativeAOT module per analyzer plus the
-                  whole-assembly module, and record size, retained type
-                  count, and ILC time against eng/module-baseline.json.
-                  Publishes 40+ modules sequentially; takes tens of
-                  minutes. --filter measures a subset and skips the
+                  Build the whole-assembly NativeAOT module plus a few
+                  single-analyzer modules kept for trimming sensitivity,
+                  and record size, retained type count, and ILC time
+                  against eng/module-baseline.json. Publishes each module
+                  sequentially. --filter measures a subset and skips the
                   baseline comparison.
 
             Options:
@@ -513,6 +536,12 @@ internal static class Program
                                            (differential-baseline.json for
                                            'run', module-baseline.json for
                                            'modules') with this run.
+              --all-modules               'modules': audit sweep over every
+                                           analyzer instead of the
+                                           representatives. Takes tens of
+                                           minutes, skips the baseline
+                                           comparison, and cannot be
+                                           combined with --update-baseline.
               --filter <id|id*>           'run': only rules matching this ID
                                            or prefix. 'modules': only
                                            analyzers whose name contains it.

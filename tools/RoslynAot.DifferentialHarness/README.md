@@ -106,13 +106,34 @@ fussier to trigger than their documentation suggests. The burn-down
 aggregates per rule ID across the whole corpus, so a case that trips
 several rules counts for all of them.
 
-## Per-analyzer module measurement
+## Module measurement
 
-`bash eng/measure-modules.sh` (harness verb `modules`) builds one
-NativeAOT module per analyzer plus the whole-assembly module, and records
-each one's size, retained type count, and ILC time. This is the trimming
-baseline migration Step 1 asks for, established before anything can
-regress it.
+`bash eng/measure-modules.sh` (harness verb `modules`) builds the
+whole-assembly NativeAOT module plus four single-analyzer modules, and
+records each one's size, retained type count, and ILC time. This is the
+trimming baseline migration Step 1 asks for, established before anything
+can regress it.
+
+**The whole-assembly module is the one that matters**, because it is the
+unit the product ships: a user's analyzer package becomes one native
+module per analyzer *assembly*, never one per analyzer type. The
+single-analyzer modules are kept for a different reason — sensitivity. A
+rooting regression that adds a hundred types moves the 9 MB module by
+0.1% and the floor module by a figure a human can read, so the floor is
+the canary the big module cannot be.
+
+The four are chosen to span the observed range: the floor (the fixed
+facade and ABI cost, which eleven analyzers sit exactly on), the median
+single analyzer, one dataflow analyzer, and the heaviest single analyzer.
+`ModuleRunner.s_representatives` names them with a rationale each. A
+representative that disappears from the analyzer assembly is an error,
+not a silently smaller baseline.
+
+`--all-modules` sweeps every analyzer instead. That is an audit — it
+takes tens of minutes, skips the baseline comparison, and refuses
+`--update-baseline` — and its job is to confirm the representatives still
+span the range after a large change. The baseline itself stays the
+representative set.
 
 Single-analyzer modules come from `-p:RoslynAotAnalyzers=<metadata name>`
 on `samples/RoslynAot.CSharpNetAnalyzers.Native`, which forwards
@@ -134,8 +155,8 @@ two counts, while ILC and publish times appear in `modules.md` as
 information. An ILC time of zero means the incremental build skipped
 `IlcCompile`, not that it was instant.
 
-The run publishes 40+ NativeAOT modules sequentially and takes tens of
-minutes, so it is deliberately not part of `validate-differential.sh`.
+The run publishes each module sequentially, so it is deliberately not
+part of `validate-differential.sh`.
 
 ## Updating the baseline
 
