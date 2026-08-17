@@ -104,6 +104,24 @@ deliberately throwing sample analyzer surfaces an `AD0001` diagnostic naming
 the analyzer type, action kind, and exception — without failing the build or
 losing the compiled output.
 
+Run the differential analyzer corpus and check it against the checked-in
+burn-down baseline:
+
+```bash
+bash eng/validate-differential.sh
+```
+
+The command derives its comparable rule set from the native module under
+test (not a hardcoded list), forces every discovered rule to `warning`
+severity, runs `corpus/` through both compilers, and diffs each diagnostic on
+id, severity, span, and message — declaring and counting the fields the
+current ABI cannot yet transport rather than silently ignoring them. Every
+rule is reported `Pass`, `NotExercised`, or `Fail` with a named reason, and
+the result is checked against `eng/differential-baseline.json`, which can
+only shrink deliberately via `--update-baseline`. See
+[tools/RoslynAot.DifferentialHarness/README.md](tools/RoslynAot.DifferentialHarness/README.md)
+for the full design.
+
 ## Package integration
 
 `RoslynAot.Experimental` currently publishes the NativeAOT compiler host before

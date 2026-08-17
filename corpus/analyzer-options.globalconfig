@@ -1,0 +1,6 @@
+# Hand-authored analyzer option keys the SDK normally synthesizes from
+# MSBuild properties (build_property.*, dotnet_code_quality.*) that some
+# CA rules read directly. Prepended into the generated per-rule-severity
+# globalconfig, which supplies its own "is_global = true" header - do not
+# repeat that key here. Starts empty; grow as corpus cases need specific
+# options.

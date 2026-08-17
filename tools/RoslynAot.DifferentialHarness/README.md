@@ -1,0 +1,83 @@
+# Differential analyzer harness
+
+Runs a corpus of C# sources through both managed Roslyn and the
+NativeAOT compiler host (`csc-aot`) with the same native analyzer
+module, diffs the resulting diagnostics, and produces a per-rule
+burn-down against a checked-in baseline (`eng/differential-baseline.json`).
+This is the differential harness required by migration Step 1
+("make failures legible") in `docs/ANALYZER-REMOTING-MIGRATION.md`.
+
+Run it via `bash eng/validate-differential.sh`, or directly:
+
+```bash
+dotnet artifacts/bin/RoslynAot.DifferentialHarness/release/RoslynAot.DifferentialHarness.dll run
+```
+
+`inventory` resolves the toolchain and prints the native module's rule
+catalog and the generated globalconfig without compiling anything.
+`run --help` (or no verb) prints the full option list.
+
+## How scope is derived
+
+The comparable rule-ID set is **not hardcoded** - it comes from probing
+the native module under test (`RuleInventory.ProbeNativeRuleIds`) and
+reading its SARIF rule catalog, which lists every loaded analyzer's
+`SupportedDiagnostics` regardless of enablement. Pointing `--native-module`
+at a different module changes the corpus scope automatically.
+
+Every discovered rule ID is forced to `warning` severity for every case
+on both sides (`GlobalConfigGenerator`) - most CA rules default to a
+severity Roslyn skips analyzer execution for entirely, so without this
+most analyzers never call `Initialize` at all.
+
+## What is and isn't compared
+
+Comparison covers rule id, effective severity, span, and message - the
+four fields `ReportDiagnostic` (`src/RoslynAot.Abi/AnalyzerAbi.cs`) can
+transport today. `Properties`, `AdditionalLocations`, `RelatedLocations`,
+suppression state, and code fixes are declared and **counted** in
+`report.md`/`report.json` rather than silently ignored - they stay
+uncompared until migration Step 6 widens the ABI.
+
+## AD0001 parsing is coupled to two repo-owned strings
+
+`AnalyzerFailureParser` extracts rule ids, analyzer type, action kind,
+exception type, and the first non-runtime stack frame out of the AD0001
+message text. It depends on the exact shape of:
+
+- `src/RoslynAot.AnalyzerRuntime/AnalyzerExport.cs` (`FormatFailure`):
+  `"RoslynAot analyzer '{analyzerName}' failed during {operation}:"`
+- `src/CscAot/NativeDiagnosticAnalyzer.cs` (`InvokeWithHost`):
+  `"Analyzer transport operation for [{diagnosticIds}] failed with 0x{result:x8}."`
+
+If either string's shape changes, parsing degrades to a raw-text reason
+with `ParseFailed = true` rather than dropping the failure - watch for
+that flag at the top of `report.md` after touching either file.
+
+## Burn-down statuses
+
+- **Pass**: the rule produced at least one managed diagnostic somewhere
+  in the corpus, every one matched the native side, and no analyzer
+  named by that rule crashed.
+- **NotExercised**: no managed diagnostic for the rule anywhere in the
+  corpus, and nothing crashed. Not a pass - it means the corpus doesn't
+  yet exercise the rule.
+- **Fail**: otherwise, with a reason. Precedence when multiple
+  conditions apply: CompilerCrash > Timeout > AnalyzerException >
+  MissingDiagnostic > ExtraDiagnostic > SpanMismatch > SeverityMismatch
+  > MessageMismatch.
+
+## Adding a corpus case
+
+Add `corpus/<RuleId>/<CaseName>/<Source>.cs` (see `corpus/CA1812/Basic/`
+for the minimal shape - no `case.json` needed for the common case). An
+optional `case.json` next to the source can declare `rules` (defaults
+to the containing `<RuleId>` directory name) and
+`extraCompilerArguments` for cases that need extra references or
+compiler switches.
+
+## Updating the baseline
+
+After a deliberate behavior change, run with `--update-baseline` and
+review the resulting diff to `eng/differential-baseline.json` like any
+other change - that diff *is* the change under review.
