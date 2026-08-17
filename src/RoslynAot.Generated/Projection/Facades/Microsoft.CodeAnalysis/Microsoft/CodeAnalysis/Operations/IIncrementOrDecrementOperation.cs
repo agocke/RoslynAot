@@ -86,9 +86,9 @@ namespace Microsoft.CodeAnalysis.Operations
         public global::RoslynAot.Abi.IIIncrementOrDecrementOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIIncrementOrDecrementOperationVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
-        internal static IIncrementOrDecrementOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IIncrementOrDecrementOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        internal static IIncrementOrDecrementOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IIncrementOrDecrementOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("33d45a1d-2e8a-5d39-9da0-67c41c651e52")]
+        [System.Runtime.InteropServices.Guid("1064ed3b-4de6-5dff-85e7-b4429a76997f")]
         internal partial interface __RoslynAotImplementation : IIncrementOrDecrementOperation
         {
         }

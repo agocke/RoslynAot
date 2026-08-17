@@ -19,9 +19,9 @@ public static unsafe class RoslynAbi
     public const int Unsupported = unchecked((int)0x80131515);
     public const int Failure = unchecked((int)0x80004005);
 
-    public const string ManifestIdentity = "bd1706b06f3cd8cafde3c56e1aedd8ff8d7f2382615e70e65fbe6606e8e26a39";
-    public const long ManifestIdentityLow = -3830245032686381123L;
-    public const long ManifestIdentityHigh = -10998301285030915L;
+    public const string ManifestIdentity = "cf72b6a7fb9de91ebae18ae3ebf8ddfee70e36a37c399d44e29ab186e0843db1";
+    public const long ManifestIdentityLow = 2227485194887525071L;
+    public const long ManifestIdentityHigh = -81635526204268102L;
 
     public static uint Release(nint instance)
     {

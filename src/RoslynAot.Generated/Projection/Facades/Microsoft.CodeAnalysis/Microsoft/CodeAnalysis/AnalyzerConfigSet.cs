@@ -47,9 +47,9 @@ namespace Microsoft.CodeAnalysis
         public global::RoslynAot.Abi.IAnalyzerConfigSetVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAnalyzerConfigSetVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
-        internal static AnalyzerConfigSet __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AnalyzerConfigSet)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        internal static AnalyzerConfigSet __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AnalyzerConfigSet)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("6fa6b2a5-c1f1-5d4f-b69a-a42e0c03773b")]
+        [System.Runtime.InteropServices.Guid("806a0d3b-0bb2-5d2e-8d5d-949a80ff7040")]
         internal partial interface __RoslynAotImplementation : AnalyzerConfigSet
         {
         }

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ac7d3604-6c6b-541e-8189-c9d57fca53a6")]
+[Guid("97a8cb7f-f267-5104-ac80-1f76a3835fdb")]
 public partial interface ICompilationVtbl
 {
 
@@ -52,7 +52,7 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_CreateArrayTypeSymbol_ec0aa042(
+    int Compilation_CreateArrayTypeSymbol_802ac640(
         long receiver,
         long elementType,
         int rank,
@@ -60,7 +60,7 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_CreateArrayTypeSymbol_609a345e(
+    int Compilation_CreateArrayTypeSymbol_ddad4542(
         long receiver,
         long elementType,
         int rank,
@@ -69,7 +69,7 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_CreateBuiltinOperator_66ea5f95(
+    int Compilation_CreateBuiltinOperator_ac54cb29(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         long returnType,
@@ -78,7 +78,7 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_CreateBuiltinOperator_9815643d(
+    int Compilation_CreateBuiltinOperator_7136aa71(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         long returnType,
@@ -147,7 +147,7 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_GetSemanticModel_7a930c8d(
+    int Compilation_GetSemanticModel_a8a9169c(
         long receiver,
         long syntaxTree,
         int ignoreAccessibility,

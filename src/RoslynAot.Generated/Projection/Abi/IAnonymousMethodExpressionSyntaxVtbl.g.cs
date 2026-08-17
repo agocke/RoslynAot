@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f4f93073-9aa5-5e54-b2b9-91f5bee515b0")]
+[Guid("dd05b37a-a386-54da-a589-10f65605daad")]
 public partial interface IAnonymousMethodExpressionSyntaxVtbl : IAnonymousFunctionExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int AnonymousMethodExpressionSyntax_Accept_28281930(
+    int AnonymousMethodExpressionSyntax_Accept_3507c645(
         long receiver,
         long visitor
     );

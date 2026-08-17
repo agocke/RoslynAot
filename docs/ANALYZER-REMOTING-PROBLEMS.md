@@ -72,10 +72,24 @@ and cache keyed on a projected object silently missed. Measured cost: six rules
 `InsecureDeserializationTypeDecider` and friends key on a default-comparer
 `HashSet<ITypeSymbol>`.
 
-Still open, and the reason this problem stays on the list: handles are not
-stable, proxies are not canonical, and nothing is cached across the boundary,
-so equality and hashing are now correct but cost an ABI round trip each. The
-graph-algorithm and cache-locality half of this problem is unaddressed.
+**Status (2026-08-17): closed.** `RoslynHandleTable.Add` now keeps a reverse
+map (`Dictionary<object, long>`, reference-equality-keyed) and returns the
+existing handle for an object already in the table instead of minting a new
+one; the analyzer side mirrors this with a weak-valued handle→proxy cache
+(`RoslynObjectProxy.GetOrCreate`) so the same handle resolves to the same
+proxy instance. A compiler object shared across several analyzer callbacks —
+a `Compilation`, a `SyntaxTree` — now round-trips to the literal same proxy,
+not merely an equal one, so `Equals` usually short-circuits on
+`ReferenceEquals` before ever crossing the boundary, and reference-keyed
+dictionaries and sets built on the analyzer side work without a comparer.
+Measured on the differential corpus: total boundary calls dropped from
+1,352,763 to 1,141,953 (-15.6%) with the burn-down unchanged, from
+comparisons that no longer need `ObjectEquals`/`ObjectGetHashCode` round
+trips. This closes as part of migration Step 4, alongside retiring
+control-scoped handle identity (problem 16's scoping half) — see the
+migration plan for what stayed out of scope (memoizing immutable
+collection-valued members, and class-hierarchy proxy caching beyond the
+IDIC/interface family).
 
 ### 3. Runtime types and polymorphism must be preserved
 
@@ -336,6 +350,19 @@ The design needs:
 - Reentrant callback support.
 - No static facade state bound accidentally to one compiler identity.
 - Defined behavior across multiple compilations in one process.
+
+**Scoping half closed (2026-08-17).** Migration Step 4 retired control-scoped
+handle identity: `RoslynHandleTable` no longer encodes which table a handle
+came from (there is only one, process-global, shared by every analyzer via
+`RoslynInterop.Shared`), and the "no static facade state bound accidentally to
+one compiler identity" bullet is satisfied by construction rather than by
+convention — there is exactly one compiler identity per process to bind to.
+**Still open:** scoped handle *release*, thread-safe caches under concurrent
+analyzer execution beyond what the two new caches individually guard
+(`RoslynHandleTable._gate` and `RoslynObjectProxy.s_cacheGate` are each
+internally synchronized, but nothing coordinates release across them, because
+v1 never releases), reentrant callback support, and multi-compilation
+behavior in one process.
 
 ### 17. Generator correctness is part of runtime correctness
 

@@ -23,7 +23,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int IOperation_Accept_db2d5f47(
+    public int IOperation_Accept_72e7eb92(
         long receiver,
         long visitor)
     {

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ba36659b-e594-5b9a-95a6-b774f3eec6d7")]
+[Guid("9a26df5c-02cc-5bec-850b-4fdc1aecd92d")]
 public partial interface ISyntaxNodeVtbl
 {
 
@@ -81,7 +81,7 @@ public partial interface ISyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int SyntaxNode_FindTrivia_7588035c(
+    int SyntaxNode_FindTrivia_77d2dcea(
         long receiver,
         int position,
         int findInsideTrivia,
@@ -89,21 +89,21 @@ public partial interface ISyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int SyntaxNode_GetAnnotatedNodes_223b42b6(
+    int SyntaxNode_GetAnnotatedNodes_01e7ee64(
         long receiver,
         long syntaxAnnotation,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxNode_GetAnnotatedNodes_36edd4af(
+    int SyntaxNode_GetAnnotatedNodes_b1864f23(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxNode_GetAnnotations_c30fad37(
+    int SyntaxNode_GetAnnotations_58d1040b(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result
@@ -167,21 +167,21 @@ public partial interface ISyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int SyntaxNode_HasAnnotations_009f2ccb(
+    int SyntaxNode_HasAnnotations_c7b9640f(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxNode_IsEquivalentTo_8ad911b9(
+    int SyntaxNode_IsEquivalentTo_8d5726aa(
         long receiver,
         long other,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxNode_IsEquivalentTo_80af97ca(
+    int SyntaxNode_IsEquivalentTo_99548ef5(
         long receiver,
         long node,
         int topLevel,

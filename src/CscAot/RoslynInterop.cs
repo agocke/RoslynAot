@@ -8,6 +8,23 @@ namespace RoslynAot.Csc;
 [GeneratedComClass]
 internal sealed partial class RoslynInterop : IRoslynControlVtbl
 {
+    /// <summary>
+    /// The one control interop for the whole compiler process. Every analyzer
+    /// registered against every loaded module shares it, which is what
+    /// collapses their handle tables into one (migration Step 4) and makes
+    /// the COM proxy each analyzer module receives for
+    /// <see cref="IRoslynControlVtbl"/> reference-equal across modules loaded
+    /// together: <c>GetOrCreateComInterfaceForObject</c> and
+    /// <c>GetOrCreateObjectForComInstance</c> both cache by object identity,
+    /// so one shared source object yields one native pointer and one managed
+    /// proxy per analyzer module. A compiler-owned object shared across
+    /// several analyzers — a <c>Compilation</c>, a <c>SyntaxTree</c> — then
+    /// resolves to the same proxy wherever it is read from, matching Roslyn's
+    /// own reference-equality guarantees instead of breaking them per
+    /// analyzer.
+    /// </summary>
+    internal static RoslynInterop Shared { get; } = new();
+
     private readonly object _dispatcherGate = new();
     private readonly Dictionary<(long Low, long High), object> _dispatchers = [];
     private readonly StrategyBasedComWrappers _comWrappers = new();

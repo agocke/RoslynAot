@@ -178,7 +178,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_ClassifyConversion_50e9dbc8(
+    public int CSharpExtensions_ClassifyConversion_a6e6c47d(
         long semanticModel,
         long expression,
         long destination,
@@ -199,7 +199,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_ClassifyConversion_8095b793(
+    public int CSharpExtensions_ClassifyConversion_499d0cde(
         long semanticModel,
         int position,
         long expression,
@@ -494,7 +494,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_659e741c(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_2c643751(
         long semanticModel,
         int position,
         long attribute,
@@ -514,7 +514,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_f7e912d6(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_94a2bcee(
         long semanticModel,
         int position,
         long constructorInitializer,
@@ -534,7 +534,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_b76c036c(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_0f8f0756(
         long semanticModel,
         int position,
         long expression,
@@ -555,7 +555,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_464d6dae(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_b8de0754(
         long semanticModel,
         int position,
         long expression,
@@ -576,7 +576,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_e19af2ab(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_ebe2f354(
         long semanticModel,
         int position,
         long constructorInitializer,

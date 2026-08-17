@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("a1e4ff98-fc83-5bbd-9b3f-e8c02dc6eefc")]
+[Guid("4318b3dc-4483-5b99-8fd9-3f3bb0e2e3ac")]
 public partial interface ITextChangeRangeTypeVtbl
 {
 

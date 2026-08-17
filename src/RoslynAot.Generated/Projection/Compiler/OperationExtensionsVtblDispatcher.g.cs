@@ -59,7 +59,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         }
     }
 
-    public unsafe int OperationExtensions_GetArgumentName_5b09bcc2(
+    public unsafe int OperationExtensions_GetArgumentName_c4bcc344(
         long dynamicOperation,
         int index,
         nint buffer,
@@ -86,7 +86,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         }
     }
 
-    public unsafe int OperationExtensions_GetArgumentName_97d38f2a(
+    public unsafe int OperationExtensions_GetArgumentName_4720061f(
         long dynamicOperation,
         int index,
         nint buffer,
@@ -113,7 +113,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         }
     }
 
-    public unsafe int OperationExtensions_GetArgumentName_3ad63196(
+    public unsafe int OperationExtensions_GetArgumentName_46116bff(
         long dynamicOperation,
         int index,
         nint buffer,

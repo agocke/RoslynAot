@@ -39,15 +39,78 @@ public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
 
     private long Handle { get; }
 
-    public long GetHandle(IRoslynControlVtbl controlVtbl)
+    public long GetHandle(IRoslynControlVtbl controlVtbl) => Handle;
+
+    private static readonly Lock s_cacheGate = new();
+    private static readonly Dictionary<long, WeakReference<RoslynObjectProxy>>
+        s_cache = [];
+    private static int s_cacheInsertsSinceSweep;
+    private const int CacheSweepInterval = 4096;
+
+    /// <summary>
+    /// Resolves a handle to the same proxy every time, so a Roslyn
+    /// object read through two different interface accessors (say,
+    /// as <c>ISymbol</c> and later as <c>ITypeSymbol</c>) comes back
+    /// as the literal same instance — correct here because
+    /// <see cref="IDynamicInterfaceCastable"/> lets one proxy answer
+    /// any interface cast dynamically, so unlike the per-declaring-
+    /// type proxies used for class hierarchies, there is nothing
+    /// static-type-specific baked into this object to make distinct
+    /// instances necessary. Weak-valued: the compiler process keeps
+    /// every crossed object alive for good (see the reverse map in
+    /// RoslynHandleTable), but an analyzer module that has moved on
+    /// from a compilation should still be able to reclaim its own
+    /// proxies for it.
+    /// </summary>
+    public static RoslynObjectProxy GetOrCreate(
+        IRoslynControlVtbl controlVtbl,
+        long handle)
     {
-        if (!ReferenceEquals(ControlVtbl, controlVtbl))
+        lock (s_cacheGate)
         {
-            throw new InvalidOperationException(
-                "Roslyn facade values cannot cross control vtbl identities.");
+            if (s_cache.TryGetValue(
+                    handle,
+                    out WeakReference<RoslynObjectProxy>? entry) &&
+                entry.TryGetTarget(out RoslynObjectProxy? existing) &&
+                ReferenceEquals(existing.ControlVtbl, controlVtbl))
+            {
+                return existing;
+            }
+
+            var proxy = new RoslynObjectProxy(controlVtbl, handle);
+            s_cache[handle] = new WeakReference<RoslynObjectProxy>(proxy);
+            if (++s_cacheInsertsSinceSweep >= CacheSweepInterval)
+            {
+                SweepDeadCacheEntries();
+            }
+
+            return proxy;
+        }
+    }
+
+    // Must run under s_cacheGate: bounds the dictionary's own growth
+    // against a long-lived analyzer module, since a dead
+    // WeakReference's entry is otherwise never removed on its own.
+    private static void SweepDeadCacheEntries()
+    {
+        s_cacheInsertsSinceSweep = 0;
+        List<long>? dead = null;
+        foreach (KeyValuePair<long, WeakReference<RoslynObjectProxy>> pair
+            in s_cache)
+        {
+            if (!pair.Value.TryGetTarget(out _))
+            {
+                (dead ??= []).Add(pair.Key);
+            }
         }
 
-        return Handle;
+        if (dead is not null)
+        {
+            foreach (long key in dead)
+            {
+                s_cache.Remove(key);
+            }
+        }
     }
 
     public override string ToString() =>
@@ -62,6 +125,14 @@ public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
 
     public override bool Equals(object? other)
     {
+        // GetOrCreate dedups by handle, so equal handles are usually
+        // already the same instance and return above. This
+        // ControlVtbl check is not the control-scoping migration
+        // Step 4 retired — it survives because handles are no longer
+        // tagged with which table they came from, so it is what
+        // stops two numerically equal handles from two different
+        // live control identities (were that ever to happen) from
+        // comparing equal.
         if (ReferenceEquals(this, other))
         {
             return true;

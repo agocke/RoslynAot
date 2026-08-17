@@ -23,7 +23,7 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int GeneratorExecutionContext_AddSource_2e11c25b(
+    public int GeneratorExecutionContext_AddSource_c68793b7(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         long sourceText)
@@ -41,7 +41,7 @@ internal sealed partial class GeneratorExecutionContextVtblDispatcher : IGenerat
         }
     }
 
-    public int GeneratorExecutionContext_AddSource_b81ae2db(
+    public int GeneratorExecutionContext_AddSource_73587043(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)

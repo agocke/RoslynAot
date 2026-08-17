@@ -23,7 +23,7 @@ internal sealed partial class AnalyzerConfigTypeVtblDispatcher : IAnalyzerConfig
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int AnalyzerConfig_Parse_e1723f3c(
+    public int AnalyzerConfig_Parse_e3f35f9a(
         long text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string pathToFile,
         out long result)
@@ -42,7 +42,7 @@ internal sealed partial class AnalyzerConfigTypeVtblDispatcher : IAnalyzerConfig
         }
     }
 
-    public int AnalyzerConfig_Parse_e2a01c56(
+    public int AnalyzerConfig_Parse_ba446165(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string pathToFile,
         out long result)

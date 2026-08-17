@@ -23,7 +23,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public unsafe int SymbolDisplay_FormatLiteral_8835a55e(
+    public unsafe int SymbolDisplay_FormatLiteral_15828359(
         ushort c,
         int quote,
         nint buffer,
@@ -50,7 +50,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_FormatLiteral_3821a7c3(
+    public unsafe int SymbolDisplay_FormatLiteral_9bbcd1a2(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         int quote,
         nint buffer,
@@ -77,7 +77,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToDisplayString_3b6a487c(
+    public unsafe int SymbolDisplay_ToDisplayString_4f7fdcfa(
         long symbol,
         long format,
         nint buffer,
@@ -104,7 +104,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToDisplayString_7d4ef241(
+    public unsafe int SymbolDisplay_ToDisplayString_30d0480a(
         long symbol,
         byte nullableAnnotation,
         long format,
@@ -132,7 +132,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToDisplayString_d1275e7b(
+    public unsafe int SymbolDisplay_ToDisplayString_e75e5202(
         long symbol,
         byte nullableFlowState,
         long format,
@@ -160,7 +160,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToMinimalDisplayString_43a2ac3d(
+    public unsafe int SymbolDisplay_ToMinimalDisplayString_cc43ae84(
         long symbol,
         long semanticModel,
         int position,
@@ -189,7 +189,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToMinimalDisplayString_e3f2922d(
+    public unsafe int SymbolDisplay_ToMinimalDisplayString_35efd54e(
         long symbol,
         byte nullableAnnotation,
         long semanticModel,
@@ -219,7 +219,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToMinimalDisplayString_ade7e0e1(
+    public unsafe int SymbolDisplay_ToMinimalDisplayString_ac559369(
         long symbol,
         byte nullableFlowState,
         long semanticModel,

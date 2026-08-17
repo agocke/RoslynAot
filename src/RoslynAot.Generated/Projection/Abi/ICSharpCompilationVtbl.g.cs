@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4b6f87bd-1cb9-5c5e-b544-43ba1c23f624")]
+[Guid("f2f55631-db75-5a65-819a-4d06c151a263")]
 public partial interface ICSharpCompilationVtbl : ICompilationVtbl
 {
 
@@ -74,7 +74,7 @@ public partial interface ICSharpCompilationVtbl : ICompilationVtbl
     );
 
     [PreserveSig]
-    int CSharpCompilation_GetSemanticModel_f7b48231(
+    int CSharpCompilation_GetSemanticModel_af50c169(
         long receiver,
         long syntaxTree,
         int ignoreAccessibility,

@@ -27,9 +27,9 @@ namespace Microsoft.CodeAnalysis
         public global::RoslynAot.Abi.IIAnalyzerAssemblyLoaderVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIAnalyzerAssemblyLoaderVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
-        internal static IAnalyzerAssemblyLoader __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IAnalyzerAssemblyLoader)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        internal static IAnalyzerAssemblyLoader __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IAnalyzerAssemblyLoader)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("31226cb3-f3fd-5f44-a845-acaad58d9d36")]
+        [System.Runtime.InteropServices.Guid("c91ca051-c740-55e2-8d9e-f533833e1b5d")]
         internal partial interface __RoslynAotImplementation : IAnalyzerAssemblyLoader
         {
         }

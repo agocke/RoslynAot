@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("21d66127-5f49-578e-a8c4-47666f963496")]
+[Guid("f59f5f13-fda8-5685-96f1-3487f291735c")]
 public partial interface ISymbolDisplayVtbl
 {
 
     [PreserveSig]
-    int SymbolDisplay_FormatLiteral_8835a55e(
+    int SymbolDisplay_FormatLiteral_15828359(
         ushort c,
         int quote,
         nint buffer,
@@ -26,7 +26,7 @@ public partial interface ISymbolDisplayVtbl
     );
 
     [PreserveSig]
-    int SymbolDisplay_FormatLiteral_3821a7c3(
+    int SymbolDisplay_FormatLiteral_9bbcd1a2(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         int quote,
         nint buffer,
@@ -35,7 +35,7 @@ public partial interface ISymbolDisplayVtbl
     );
 
     [PreserveSig]
-    int SymbolDisplay_ToDisplayString_3b6a487c(
+    int SymbolDisplay_ToDisplayString_4f7fdcfa(
         long symbol,
         long format,
         nint buffer,
@@ -44,7 +44,7 @@ public partial interface ISymbolDisplayVtbl
     );
 
     [PreserveSig]
-    int SymbolDisplay_ToDisplayString_7d4ef241(
+    int SymbolDisplay_ToDisplayString_30d0480a(
         long symbol,
         byte nullableAnnotation,
         long format,
@@ -54,7 +54,7 @@ public partial interface ISymbolDisplayVtbl
     );
 
     [PreserveSig]
-    int SymbolDisplay_ToDisplayString_d1275e7b(
+    int SymbolDisplay_ToDisplayString_e75e5202(
         long symbol,
         byte nullableFlowState,
         long format,
@@ -64,7 +64,7 @@ public partial interface ISymbolDisplayVtbl
     );
 
     [PreserveSig]
-    int SymbolDisplay_ToMinimalDisplayString_43a2ac3d(
+    int SymbolDisplay_ToMinimalDisplayString_cc43ae84(
         long symbol,
         long semanticModel,
         int position,
@@ -75,7 +75,7 @@ public partial interface ISymbolDisplayVtbl
     );
 
     [PreserveSig]
-    int SymbolDisplay_ToMinimalDisplayString_e3f2922d(
+    int SymbolDisplay_ToMinimalDisplayString_35efd54e(
         long symbol,
         byte nullableAnnotation,
         long semanticModel,
@@ -87,7 +87,7 @@ public partial interface ISymbolDisplayVtbl
     );
 
     [PreserveSig]
-    int SymbolDisplay_ToMinimalDisplayString_ade7e0e1(
+    int SymbolDisplay_ToMinimalDisplayString_ac559369(
         long symbol,
         byte nullableFlowState,
         long semanticModel,

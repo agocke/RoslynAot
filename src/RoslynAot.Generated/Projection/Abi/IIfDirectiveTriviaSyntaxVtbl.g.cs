@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("5960041f-b9d6-55a2-a849-90a1f48da426")]
+[Guid("848f307b-a317-5f1b-8e59-b76bee13636e")]
 public partial interface IIfDirectiveTriviaSyntaxVtbl : IConditionalDirectiveTriviaSyntaxVtbl
 {
 
     [PreserveSig]
-    int IfDirectiveTriviaSyntax_Accept_43b273d0(
+    int IfDirectiveTriviaSyntax_Accept_3d048ddd(
         long receiver,
         long visitor
     );

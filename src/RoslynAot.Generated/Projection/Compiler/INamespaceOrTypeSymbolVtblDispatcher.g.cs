@@ -41,7 +41,7 @@ internal sealed partial class INamespaceOrTypeSymbolVtblDispatcher : IINamespace
         }
     }
 
-    public int INamespaceOrTypeSymbol_GetMembers_bd8ab2dd(
+    public int INamespaceOrTypeSymbol_GetMembers_ce52371b(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)

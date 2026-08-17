@@ -201,15 +201,14 @@ internal sealed class FacadeDeclarationTransform
                 "global::System.ArgumentOutOfRangeException(nameof(handle)); }"),
             ParseMember(getVtblMember),
             ParseMember(getControlVtblMember),
+            // Migration Step 4 retired control-scoped handle identity: a
+            // handle already means one specific object process-wide, so
+            // there is nothing left to verify by comparing controlVtbl
+            // references here.
             ParseMember(
                 "internal long __RoslynAotGetHandle(" +
-                "global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) { " +
-                "global::RoslynAot.Abi.IRoslynControlVtbl actual = " +
-                "__RoslynAotGetControlVtbl(); " +
-                "if (!global::System.Object.ReferenceEquals(actual, controlVtbl)) " +
-                "throw new global::System.InvalidOperationException(" +
-                "\"Roslyn facade values cannot cross control vtbl identities.\"); " +
-                "return __roslynAotHandle; }"),
+                "global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => " +
+                "__roslynAotHandle;"),
         };
         if (type.TypeKind == TypeKind.Class &&
             !typeDeclaration.Members
@@ -332,9 +331,9 @@ internal sealed class FacadeDeclarationTransform
                     "__RoslynAotCreateProxy(" +
                     "global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, " +
                     "long handle) => " +
-                    $"({fullyQualifiedType})(global::System.Object)new " +
-                    "global::RoslynAot.RoslynFacade.RoslynObjectProxy(" +
-                    "controlVtbl, handle);"),
+                    $"({fullyQualifiedType})(global::System.Object)" +
+                    "global::RoslynAot.RoslynFacade.RoslynObjectProxy." +
+                    "GetOrCreate(controlVtbl, handle);"),
                 ParseMember(
                     "[global::System.Runtime.InteropServices." +
                     "DynamicInterfaceCastableImplementation] " +

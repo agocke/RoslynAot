@@ -23,7 +23,7 @@ internal sealed partial class SuppressionDescriptorTypeVtblDispatcher : ISuppres
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SuppressionDescriptor_ctor_2d6b4f04(
+    public int SuppressionDescriptor_ctor_cd3f1d62(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string id,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string suppressedDiagnosticId,
         long justification,
@@ -43,7 +43,7 @@ internal sealed partial class SuppressionDescriptorTypeVtblDispatcher : ISuppres
         }
     }
 
-    public int SuppressionDescriptor_ctor_c95ad647(
+    public int SuppressionDescriptor_ctor_d9a058e6(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string id,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string suppressedDiagnosticId,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string justification,

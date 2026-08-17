@@ -23,7 +23,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int FileLinePositionSpan_Equals_14f1a837(
+    public int FileLinePositionSpan_Equals_e5b7b4e8(
         long receiver,
         long other,
         out int result)

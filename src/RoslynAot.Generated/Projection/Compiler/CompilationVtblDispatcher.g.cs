@@ -118,7 +118,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_CreateArrayTypeSymbol_ec0aa042(
+    public int Compilation_CreateArrayTypeSymbol_802ac640(
         long receiver,
         long elementType,
         int rank,
@@ -138,7 +138,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_CreateArrayTypeSymbol_609a345e(
+    public int Compilation_CreateArrayTypeSymbol_ddad4542(
         long receiver,
         long elementType,
         int rank,
@@ -159,7 +159,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_CreateBuiltinOperator_66ea5f95(
+    public int Compilation_CreateBuiltinOperator_ac54cb29(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         long returnType,
@@ -180,7 +180,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_CreateBuiltinOperator_9815643d(
+    public int Compilation_CreateBuiltinOperator_7136aa71(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         long returnType,
@@ -357,7 +357,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_GetSemanticModel_7a930c8d(
+    public int Compilation_GetSemanticModel_a8a9169c(
         long receiver,
         long syntaxTree,
         int ignoreAccessibility,

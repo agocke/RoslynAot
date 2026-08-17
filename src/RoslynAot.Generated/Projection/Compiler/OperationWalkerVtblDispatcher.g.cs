@@ -23,7 +23,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int OperationVisitor_DefaultVisit_c2a55eed(
+    public int OperationVisitor_DefaultVisit_e29857e1(
         long receiver,
         long operation)
     {
@@ -40,7 +40,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitAddressOf_b2aacfe2(
+    public int OperationVisitor_VisitAddressOf_164428ba(
         long receiver,
         long operation)
     {
@@ -57,7 +57,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitAnonymousFunction_226f56c9(
+    public int OperationVisitor_VisitAnonymousFunction_f77e4908(
         long receiver,
         long operation)
     {
@@ -74,7 +74,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitAnonymousObjectCreation_aabfb646(
+    public int OperationVisitor_VisitAnonymousObjectCreation_d60508d5(
         long receiver,
         long operation)
     {
@@ -91,7 +91,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitArgument_dbe3c1c6(
+    public int OperationVisitor_VisitArgument_f31a4fc1(
         long receiver,
         long operation)
     {
@@ -108,7 +108,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitArrayCreation_fb7f5c8c(
+    public int OperationVisitor_VisitArrayCreation_6e015dda(
         long receiver,
         long operation)
     {
@@ -125,7 +125,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitArrayElementReference_e1dd797b(
+    public int OperationVisitor_VisitArrayElementReference_92a91978(
         long receiver,
         long operation)
     {
@@ -142,7 +142,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitArrayInitializer_67b47dfc(
+    public int OperationVisitor_VisitArrayInitializer_f31720d1(
         long receiver,
         long operation)
     {
@@ -159,7 +159,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitAttribute_4b8f6a1e(
+    public int OperationVisitor_VisitAttribute_bfbe60f3(
         long receiver,
         long operation)
     {
@@ -176,7 +176,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitAwait_09b2beab(
+    public int OperationVisitor_VisitAwait_6129a319(
         long receiver,
         long operation)
     {
@@ -193,7 +193,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitBinaryOperator_72fdcd6b(
+    public int OperationVisitor_VisitBinaryOperator_f8e6584e(
         long receiver,
         long operation)
     {
@@ -210,7 +210,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitBinaryPattern_4c428672(
+    public int OperationVisitor_VisitBinaryPattern_e1fa3e6b(
         long receiver,
         long operation)
     {
@@ -227,7 +227,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitBlock_594e3313(
+    public int OperationVisitor_VisitBlock_28caac6a(
         long receiver,
         long operation)
     {
@@ -244,7 +244,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitBranch_4a0ec986(
+    public int OperationVisitor_VisitBranch_53800272(
         long receiver,
         long operation)
     {
@@ -261,7 +261,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitCatchClause_0ac16495(
+    public int OperationVisitor_VisitCatchClause_98f8a20b(
         long receiver,
         long operation)
     {
@@ -278,7 +278,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitCaughtException_a9293857(
+    public int OperationVisitor_VisitCaughtException_2ca1ea6b(
         long receiver,
         long operation)
     {
@@ -295,7 +295,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitCoalesceAssignment_20650f89(
+    public int OperationVisitor_VisitCoalesceAssignment_b99e4782(
         long receiver,
         long operation)
     {
@@ -312,7 +312,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitCoalesce_90384c85(
+    public int OperationVisitor_VisitCoalesce_e773e6b3(
         long receiver,
         long operation)
     {
@@ -329,7 +329,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitCollectionExpression_ed834661(
+    public int OperationVisitor_VisitCollectionExpression_9d39ec63(
         long receiver,
         long operation)
     {
@@ -346,7 +346,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitCompoundAssignment_0aac1187(
+    public int OperationVisitor_VisitCompoundAssignment_c68fe9cd(
         long receiver,
         long operation)
     {
@@ -363,7 +363,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitConditionalAccessInstance_11e35ecf(
+    public int OperationVisitor_VisitConditionalAccessInstance_3c159643(
         long receiver,
         long operation)
     {
@@ -380,7 +380,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitConditionalAccess_61a36d9b(
+    public int OperationVisitor_VisitConditionalAccess_c2c11d2b(
         long receiver,
         long operation)
     {
@@ -397,7 +397,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitConditional_7a4f6c28(
+    public int OperationVisitor_VisitConditional_92e252b6(
         long receiver,
         long operation)
     {
@@ -414,7 +414,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitConstantPattern_81c38f5e(
+    public int OperationVisitor_VisitConstantPattern_efed05e8(
         long receiver,
         long operation)
     {
@@ -431,7 +431,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitConstructorBodyOperation_fa2f31a3(
+    public int OperationVisitor_VisitConstructorBodyOperation_6613dd25(
         long receiver,
         long operation)
     {
@@ -448,7 +448,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitConversion_4f3e84f6(
+    public int OperationVisitor_VisitConversion_83a7e324(
         long receiver,
         long operation)
     {
@@ -465,7 +465,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDeclarationExpression_1c50a06a(
+    public int OperationVisitor_VisitDeclarationExpression_72f780cb(
         long receiver,
         long operation)
     {
@@ -482,7 +482,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDeclarationPattern_3b1ad117(
+    public int OperationVisitor_VisitDeclarationPattern_b19cc9ee(
         long receiver,
         long operation)
     {
@@ -499,7 +499,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDeconstructionAssignment_5714be7d(
+    public int OperationVisitor_VisitDeconstructionAssignment_5799f6d1(
         long receiver,
         long operation)
     {
@@ -516,7 +516,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDefaultCaseClause_e3250421(
+    public int OperationVisitor_VisitDefaultCaseClause_0cfb7f53(
         long receiver,
         long operation)
     {
@@ -533,7 +533,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDefaultValue_80ca0733(
+    public int OperationVisitor_VisitDefaultValue_3df4c823(
         long receiver,
         long operation)
     {
@@ -550,7 +550,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDelegateCreation_af9d6acf(
+    public int OperationVisitor_VisitDelegateCreation_42fc83e9(
         long receiver,
         long operation)
     {
@@ -567,7 +567,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDiscardOperation_3d83cd05(
+    public int OperationVisitor_VisitDiscardOperation_ecb44614(
         long receiver,
         long operation)
     {
@@ -584,7 +584,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDiscardPattern_1f448991(
+    public int OperationVisitor_VisitDiscardPattern_fb042769(
         long receiver,
         long operation)
     {
@@ -601,7 +601,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDynamicIndexerAccess_007adc69(
+    public int OperationVisitor_VisitDynamicIndexerAccess_c6293f85(
         long receiver,
         long operation)
     {
@@ -618,7 +618,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDynamicInvocation_662b520a(
+    public int OperationVisitor_VisitDynamicInvocation_92554fa5(
         long receiver,
         long operation)
     {
@@ -635,7 +635,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDynamicMemberReference_58ddac80(
+    public int OperationVisitor_VisitDynamicMemberReference_61c97eff(
         long receiver,
         long operation)
     {
@@ -652,7 +652,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitDynamicObjectCreation_78101d45(
+    public int OperationVisitor_VisitDynamicObjectCreation_b9f347c3(
         long receiver,
         long operation)
     {
@@ -669,7 +669,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitEmpty_251af8be(
+    public int OperationVisitor_VisitEmpty_179a7ec7(
         long receiver,
         long operation)
     {
@@ -686,7 +686,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitEnd_63655966(
+    public int OperationVisitor_VisitEnd_7816047d(
         long receiver,
         long operation)
     {
@@ -703,7 +703,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitEventAssignment_104dc547(
+    public int OperationVisitor_VisitEventAssignment_92185086(
         long receiver,
         long operation)
     {
@@ -720,7 +720,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitEventReference_4a6b6576(
+    public int OperationVisitor_VisitEventReference_671f6948(
         long receiver,
         long operation)
     {
@@ -737,7 +737,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitExpressionStatement_8707dcc0(
+    public int OperationVisitor_VisitExpressionStatement_2d16f50e(
         long receiver,
         long operation)
     {
@@ -754,7 +754,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitFieldInitializer_dcd2e181(
+    public int OperationVisitor_VisitFieldInitializer_27969861(
         long receiver,
         long operation)
     {
@@ -771,7 +771,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitFieldReference_c39a4cec(
+    public int OperationVisitor_VisitFieldReference_f45b6394(
         long receiver,
         long operation)
     {
@@ -788,7 +788,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitFlowAnonymousFunction_e25da9af(
+    public int OperationVisitor_VisitFlowAnonymousFunction_a1642ad1(
         long receiver,
         long operation)
     {
@@ -805,7 +805,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitFlowCaptureReference_02f4eccd(
+    public int OperationVisitor_VisitFlowCaptureReference_f7082d54(
         long receiver,
         long operation)
     {
@@ -822,7 +822,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitFlowCapture_a85e7b4d(
+    public int OperationVisitor_VisitFlowCapture_7b46dfb6(
         long receiver,
         long operation)
     {
@@ -839,7 +839,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitForEachLoop_60c04e62(
+    public int OperationVisitor_VisitForEachLoop_556dab3b(
         long receiver,
         long operation)
     {
@@ -856,7 +856,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitForLoop_60b7a045(
+    public int OperationVisitor_VisitForLoop_c5977019(
         long receiver,
         long operation)
     {
@@ -873,7 +873,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitForToLoop_08c40f0d(
+    public int OperationVisitor_VisitForToLoop_52341cad(
         long receiver,
         long operation)
     {
@@ -890,7 +890,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitFunctionPointerInvocation_ec3d6c0d(
+    public int OperationVisitor_VisitFunctionPointerInvocation_a55ae459(
         long receiver,
         long operation)
     {
@@ -907,7 +907,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitImplicitIndexerReference_879639f8(
+    public int OperationVisitor_VisitImplicitIndexerReference_b35b5ad2(
         long receiver,
         long operation)
     {
@@ -924,7 +924,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitIncrementOrDecrement_2ff976d4(
+    public int OperationVisitor_VisitIncrementOrDecrement_7a5fda31(
         long receiver,
         long operation)
     {
@@ -941,7 +941,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitInlineArrayAccess_d773cb53(
+    public int OperationVisitor_VisitInlineArrayAccess_486a7422(
         long receiver,
         long operation)
     {
@@ -958,7 +958,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitInstanceReference_ca10162a(
+    public int OperationVisitor_VisitInstanceReference_f0c993f2(
         long receiver,
         long operation)
     {
@@ -975,7 +975,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedStringAddition_a9e082de(
+    public int OperationVisitor_VisitInterpolatedStringAddition_c88a8911(
         long receiver,
         long operation)
     {
@@ -992,7 +992,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedStringAppend_76f5200b(
+    public int OperationVisitor_VisitInterpolatedStringAppend_28f7f764(
         long receiver,
         long operation)
     {
@@ -1009,7 +1009,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedStringHandlerArgumentPlaceholder_38bff37f(
+    public int OperationVisitor_VisitInterpolatedStringHandlerArgumentPlaceholder_235e9507(
         long receiver,
         long operation)
     {
@@ -1026,7 +1026,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedStringHandlerCreation_feb7df0d(
+    public int OperationVisitor_VisitInterpolatedStringHandlerCreation_90d42729(
         long receiver,
         long operation)
     {
@@ -1043,7 +1043,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedStringText_cd56fdcf(
+    public int OperationVisitor_VisitInterpolatedStringText_d9bd7906(
         long receiver,
         long operation)
     {
@@ -1060,7 +1060,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedString_a1ce486d(
+    public int OperationVisitor_VisitInterpolatedString_6b08297e(
         long receiver,
         long operation)
     {
@@ -1077,7 +1077,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitInterpolation_d54fc59a(
+    public int OperationVisitor_VisitInterpolation_52e167f5(
         long receiver,
         long operation)
     {
@@ -1094,7 +1094,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitInvalid_26aa57d7(
+    public int OperationVisitor_VisitInvalid_b1fc80ca(
         long receiver,
         long operation)
     {
@@ -1111,7 +1111,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitInvocation_71d71846(
+    public int OperationVisitor_VisitInvocation_05578a4c(
         long receiver,
         long operation)
     {
@@ -1128,7 +1128,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitIsNull_6a777345(
+    public int OperationVisitor_VisitIsNull_c97ab8c2(
         long receiver,
         long operation)
     {
@@ -1145,7 +1145,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitIsPattern_2260d719(
+    public int OperationVisitor_VisitIsPattern_03a5d754(
         long receiver,
         long operation)
     {
@@ -1162,7 +1162,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitIsType_3824154b(
+    public int OperationVisitor_VisitIsType_edc7f8be(
         long receiver,
         long operation)
     {
@@ -1179,7 +1179,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitLabeled_2eb0d1d1(
+    public int OperationVisitor_VisitLabeled_e027d40c(
         long receiver,
         long operation)
     {
@@ -1196,7 +1196,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitListPattern_4bb48b8f(
+    public int OperationVisitor_VisitListPattern_7b1e25e7(
         long receiver,
         long operation)
     {
@@ -1213,7 +1213,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitLiteral_b758c9ce(
+    public int OperationVisitor_VisitLiteral_382a09b7(
         long receiver,
         long operation)
     {
@@ -1230,7 +1230,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitLocalFunction_bcd654ec(
+    public int OperationVisitor_VisitLocalFunction_efb7d219(
         long receiver,
         long operation)
     {
@@ -1247,7 +1247,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitLocalReference_9e4f686e(
+    public int OperationVisitor_VisitLocalReference_d035121e(
         long receiver,
         long operation)
     {
@@ -1264,7 +1264,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitLock_da6db66c(
+    public int OperationVisitor_VisitLock_912c71b0(
         long receiver,
         long operation)
     {
@@ -1281,7 +1281,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitMemberInitializer_52fa257c(
+    public int OperationVisitor_VisitMemberInitializer_e25bde91(
         long receiver,
         long operation)
     {
@@ -1298,7 +1298,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitMethodBodyOperation_fbeef611(
+    public int OperationVisitor_VisitMethodBodyOperation_399b4434(
         long receiver,
         long operation)
     {
@@ -1315,7 +1315,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitMethodReference_bf2e47ea(
+    public int OperationVisitor_VisitMethodReference_dbe55764(
         long receiver,
         long operation)
     {
@@ -1332,7 +1332,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitNameOf_9474ef6c(
+    public int OperationVisitor_VisitNameOf_6eabea12(
         long receiver,
         long operation)
     {
@@ -1349,7 +1349,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitNegatedPattern_25825747(
+    public int OperationVisitor_VisitNegatedPattern_c4c8182f(
         long receiver,
         long operation)
     {
@@ -1366,7 +1366,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitObjectCreation_4b809a76(
+    public int OperationVisitor_VisitObjectCreation_55e28efc(
         long receiver,
         long operation)
     {
@@ -1383,7 +1383,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitObjectOrCollectionInitializer_33723e80(
+    public int OperationVisitor_VisitObjectOrCollectionInitializer_43f4e32d(
         long receiver,
         long operation)
     {
@@ -1400,7 +1400,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitOmittedArgument_3a1dba50(
+    public int OperationVisitor_VisitOmittedArgument_e8aeb880(
         long receiver,
         long operation)
     {
@@ -1417,7 +1417,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitParameterInitializer_36ddf9fa(
+    public int OperationVisitor_VisitParameterInitializer_50e189a2(
         long receiver,
         long operation)
     {
@@ -1434,7 +1434,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitParameterReference_fb5f1e53(
+    public int OperationVisitor_VisitParameterReference_030c6bc7(
         long receiver,
         long operation)
     {
@@ -1451,7 +1451,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitParenthesized_2ff1ad61(
+    public int OperationVisitor_VisitParenthesized_db15577c(
         long receiver,
         long operation)
     {
@@ -1468,7 +1468,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitPatternCaseClause_7276ffd2(
+    public int OperationVisitor_VisitPatternCaseClause_4dbae5be(
         long receiver,
         long operation)
     {
@@ -1485,7 +1485,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitPropertyInitializer_a0fa3d9e(
+    public int OperationVisitor_VisitPropertyInitializer_db5b2e05(
         long receiver,
         long operation)
     {
@@ -1502,7 +1502,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitPropertyReference_4ebb7ab8(
+    public int OperationVisitor_VisitPropertyReference_69778c25(
         long receiver,
         long operation)
     {
@@ -1519,7 +1519,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitPropertySubpattern_34adb3d6(
+    public int OperationVisitor_VisitPropertySubpattern_3d19dc66(
         long receiver,
         long operation)
     {
@@ -1536,7 +1536,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitRaiseEvent_14ff81ff(
+    public int OperationVisitor_VisitRaiseEvent_6c1c10d6(
         long receiver,
         long operation)
     {
@@ -1553,7 +1553,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitRangeCaseClause_7768c5c7(
+    public int OperationVisitor_VisitRangeCaseClause_c0fbe074(
         long receiver,
         long operation)
     {
@@ -1570,7 +1570,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitRangeOperation_fe5707c0(
+    public int OperationVisitor_VisitRangeOperation_5a6b56ad(
         long receiver,
         long operation)
     {
@@ -1587,7 +1587,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitReDimClause_f6276525(
+    public int OperationVisitor_VisitReDimClause_aec444c4(
         long receiver,
         long operation)
     {
@@ -1604,7 +1604,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitReDim_e0b6f05f(
+    public int OperationVisitor_VisitReDim_6cdc3a0a(
         long receiver,
         long operation)
     {
@@ -1621,7 +1621,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitRecursivePattern_0b274580(
+    public int OperationVisitor_VisitRecursivePattern_b4947d8e(
         long receiver,
         long operation)
     {
@@ -1638,7 +1638,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitRelationalCaseClause_d3140876(
+    public int OperationVisitor_VisitRelationalCaseClause_058b9852(
         long receiver,
         long operation)
     {
@@ -1655,7 +1655,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitRelationalPattern_dea87174(
+    public int OperationVisitor_VisitRelationalPattern_ba15b412(
         long receiver,
         long operation)
     {
@@ -1672,7 +1672,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitReturn_19b78f44(
+    public int OperationVisitor_VisitReturn_15065235(
         long receiver,
         long operation)
     {
@@ -1689,7 +1689,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitSimpleAssignment_f7592112(
+    public int OperationVisitor_VisitSimpleAssignment_af9040e6(
         long receiver,
         long operation)
     {
@@ -1706,7 +1706,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitSingleValueCaseClause_ea3e9c69(
+    public int OperationVisitor_VisitSingleValueCaseClause_8a17517e(
         long receiver,
         long operation)
     {
@@ -1723,7 +1723,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitSizeOf_c1a0bb8c(
+    public int OperationVisitor_VisitSizeOf_971b0211(
         long receiver,
         long operation)
     {
@@ -1740,7 +1740,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitSlicePattern_4affbbf4(
+    public int OperationVisitor_VisitSlicePattern_c59f6c7c(
         long receiver,
         long operation)
     {
@@ -1757,7 +1757,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitSpread_b5ec9fcc(
+    public int OperationVisitor_VisitSpread_f2dcd648(
         long receiver,
         long operation)
     {
@@ -1774,7 +1774,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitStaticLocalInitializationSemaphore_66851970(
+    public int OperationVisitor_VisitStaticLocalInitializationSemaphore_d4013b4f(
         long receiver,
         long operation)
     {
@@ -1791,7 +1791,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitStop_753b2ef7(
+    public int OperationVisitor_VisitStop_c9cf57c1(
         long receiver,
         long operation)
     {
@@ -1808,7 +1808,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitSwitchCase_db0a22db(
+    public int OperationVisitor_VisitSwitchCase_aceee7ab(
         long receiver,
         long operation)
     {
@@ -1825,7 +1825,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitSwitchExpressionArm_7b1a6ab3(
+    public int OperationVisitor_VisitSwitchExpressionArm_d34aa767(
         long receiver,
         long operation)
     {
@@ -1842,7 +1842,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitSwitchExpression_fdc6ce5a(
+    public int OperationVisitor_VisitSwitchExpression_5878cc0d(
         long receiver,
         long operation)
     {
@@ -1859,7 +1859,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitSwitch_d00ed321(
+    public int OperationVisitor_VisitSwitch_3003e920(
         long receiver,
         long operation)
     {
@@ -1876,7 +1876,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitThrow_580c8b50(
+    public int OperationVisitor_VisitThrow_786beab1(
         long receiver,
         long operation)
     {
@@ -1893,7 +1893,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitTranslatedQuery_4d02a4c7(
+    public int OperationVisitor_VisitTranslatedQuery_7b137e9f(
         long receiver,
         long operation)
     {
@@ -1910,7 +1910,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitTry_97a12a78(
+    public int OperationVisitor_VisitTry_9f01acaf(
         long receiver,
         long operation)
     {
@@ -1927,7 +1927,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitTupleBinaryOperator_1159fcfc(
+    public int OperationVisitor_VisitTupleBinaryOperator_130560cf(
         long receiver,
         long operation)
     {
@@ -1944,7 +1944,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitTuple_fb258748(
+    public int OperationVisitor_VisitTuple_34d83ef3(
         long receiver,
         long operation)
     {
@@ -1961,7 +1961,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitTypeOf_fac9fd01(
+    public int OperationVisitor_VisitTypeOf_90bf0d2c(
         long receiver,
         long operation)
     {
@@ -1978,7 +1978,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitTypeParameterObjectCreation_9066bb15(
+    public int OperationVisitor_VisitTypeParameterObjectCreation_892dd5b2(
         long receiver,
         long operation)
     {
@@ -1995,7 +1995,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitTypePattern_eb25c781(
+    public int OperationVisitor_VisitTypePattern_d6b56e81(
         long receiver,
         long operation)
     {
@@ -2012,7 +2012,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitUnaryOperator_cc8f96f2(
+    public int OperationVisitor_VisitUnaryOperator_e2fd23ef(
         long receiver,
         long operation)
     {
@@ -2029,7 +2029,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitUsingDeclaration_66b31d83(
+    public int OperationVisitor_VisitUsingDeclaration_a69631c1(
         long receiver,
         long operation)
     {
@@ -2046,7 +2046,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitUsing_3a9835c2(
+    public int OperationVisitor_VisitUsing_85f70ce1(
         long receiver,
         long operation)
     {
@@ -2063,7 +2063,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitUtf8String_c45f09a7(
+    public int OperationVisitor_VisitUtf8String_9adda4bf(
         long receiver,
         long operation)
     {
@@ -2080,7 +2080,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitVariableDeclarationGroup_9c86a22f(
+    public int OperationVisitor_VisitVariableDeclarationGroup_d378db6e(
         long receiver,
         long operation)
     {
@@ -2097,7 +2097,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitVariableDeclaration_9c63f45f(
+    public int OperationVisitor_VisitVariableDeclaration_0040f96e(
         long receiver,
         long operation)
     {
@@ -2114,7 +2114,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitVariableDeclarator_8ce8e4bb(
+    public int OperationVisitor_VisitVariableDeclarator_74a8d945(
         long receiver,
         long operation)
     {
@@ -2131,7 +2131,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitVariableInitializer_46c0c500(
+    public int OperationVisitor_VisitVariableInitializer_fd85660a(
         long receiver,
         long operation)
     {
@@ -2148,7 +2148,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitWhileLoop_d391f453(
+    public int OperationVisitor_VisitWhileLoop_171a0752(
         long receiver,
         long operation)
     {
@@ -2165,7 +2165,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_VisitWith_0c1ec6f4(
+    public int OperationVisitor_VisitWith_5ff37e4a(
         long receiver,
         long operation)
     {
@@ -2182,7 +2182,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationVisitor_Visit_e729b59a(
+    public int OperationVisitor_Visit_b07d2116(
         long receiver,
         long operation)
     {
@@ -2199,7 +2199,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationWalker_DefaultVisit_a65ddb77(
+    public int OperationWalker_DefaultVisit_b9c38140(
         long receiver,
         long operation)
     {
@@ -2216,7 +2216,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         }
     }
 
-    public int OperationWalker_Visit_888c9bf7(
+    public int OperationWalker_Visit_019fc0ce(
         long receiver,
         long operation)
     {

@@ -145,7 +145,7 @@ namespace Microsoft.CodeAnalysis
                 return ReferenceEquals(this, other);
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IDiagnosticDescriptorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.DiagnosticDescriptor_Equals_efbe4d0d(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.DiagnosticDescriptor_Equals_7497f57f(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -191,14 +191,7 @@ namespace Microsoft.CodeAnalysis
 
         internal global::RoslynAot.Abi.IDiagnosticDescriptorVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __roslynAotHandle;
-        }
-
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
         internal static DiagnosticDescriptor __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new DiagnosticDescriptor(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetDiagnosticDescriptorVtbl(controlVtbl), handle);
     }
 }

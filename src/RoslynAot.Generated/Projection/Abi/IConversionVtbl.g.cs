@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4d3e776b-eb30-5b03-badd-98781ba58bc6")]
+[Guid("69cab4bf-c20c-508f-9bc1-799bb53c0dfa")]
 public partial interface IConversionVtbl
 {
 
     [PreserveSig]
-    int Conversion_Equals_59c1bd24(
+    int Conversion_Equals_acba79f2(
         long receiver,
         long other,
         out int result

@@ -48,14 +48,7 @@ namespace Microsoft.CodeAnalysis
 
         internal global::RoslynAot.Abi.IUnresolvedMetadataReferenceVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __roslynAotHandle;
-        }
-
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
         internal static UnresolvedMetadataReference __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new UnresolvedMetadataReference(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetUnresolvedMetadataReferenceVtbl(controlVtbl), handle);
     }
 }

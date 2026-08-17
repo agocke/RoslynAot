@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("125863b9-87a1-5dd9-8b04-32b4f87bffd0")]
+[Guid("679f4cd5-1fc0-5d44-b5f5-4689b54fbc8e")]
 public partial interface IEmitOptionsTypeVtbl
 {
 
     [PreserveSig]
-    int EmitOptions_ctor_48fb2ccd(
+    int EmitOptions_ctor_910d9a8c(
         int metadataOnly,
         int debugInformationFormat,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string pdbFilePath,

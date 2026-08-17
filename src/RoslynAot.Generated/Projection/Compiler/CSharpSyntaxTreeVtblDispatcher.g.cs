@@ -23,7 +23,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxTree_GetDiagnostics_8a5f35b5(
+    public int SyntaxTree_GetDiagnostics_9c96c6b5(
         long receiver,
         long node,
         out long result)
@@ -42,7 +42,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int SyntaxTree_GetDiagnostics_d1e047f8(
+    public int SyntaxTree_GetDiagnostics_9b5e0ed5(
         long receiver,
         long nodeOrToken,
         out long result)
@@ -61,7 +61,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int SyntaxTree_GetDiagnostics_522133bc(
+    public int SyntaxTree_GetDiagnostics_7430056a(
         long receiver,
         long token,
         out long result)
@@ -80,7 +80,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int SyntaxTree_GetDiagnostics_a937dd12(
+    public int SyntaxTree_GetDiagnostics_a57880a1(
         long receiver,
         long trivia,
         out long result)
@@ -339,7 +339,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int CSharpSyntaxTree_GetDiagnostics_b35085d2(
+    public int CSharpSyntaxTree_GetDiagnostics_e0554d29(
         long receiver,
         long node,
         out long result)
@@ -358,7 +358,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int CSharpSyntaxTree_GetDiagnostics_db33a7fc(
+    public int CSharpSyntaxTree_GetDiagnostics_c3bb13c5(
         long receiver,
         long nodeOrToken,
         out long result)
@@ -377,7 +377,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int CSharpSyntaxTree_GetDiagnostics_a32bb911(
+    public int CSharpSyntaxTree_GetDiagnostics_f53ea487(
         long receiver,
         long token,
         out long result)
@@ -396,7 +396,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int CSharpSyntaxTree_GetDiagnostics_b125d313(
+    public int CSharpSyntaxTree_GetDiagnostics_f1636b3b(
         long receiver,
         long trivia,
         out long result)

@@ -174,8 +174,16 @@ builds, caching is incomplete, and only Linux has been validated.
 2. Replace managed analyzer items with the resulting native modules and run a
    complete project build through the package.
 3. Work the differential burn-down in the order the migration plan sets out:
-   ownership is done, identity is next. The ranked blocking members are the
-   measurement that says which work pays.
+   ownership and identity are done, the wire grammar is next. The ranked
+   blocking members are the measurement that says which work pays.
+
+   Identity closed with a smaller footprint than expected: the process now
+   shares one handle table and canonicalizes both handles and proxies by
+   reference, which cut differential-corpus boundary calls 15.6% on its own
+   even before the deferred `IAssemblySymbol.NamespaceNames` memoization
+   (still 65.8% of all traffic) or class-hierarchy proxy caching. The
+   burn-down itself did not move — no rule was blocked on identity — which is
+   the expected result, not a shortfall; see migration Step 4.
 
    Generic virtual dispatch was briefly pulled ahead of identity because it
    killed the compiler rather than reporting. That is fixed — those members are

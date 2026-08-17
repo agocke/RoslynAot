@@ -23,7 +23,7 @@ internal sealed partial class EmitOptionsTypeVtblDispatcher : IEmitOptionsTypeVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int EmitOptions_ctor_48fb2ccd(
+    public int EmitOptions_ctor_910d9a8c(
         int metadataOnly,
         int debugInformationFormat,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string pdbFilePath,

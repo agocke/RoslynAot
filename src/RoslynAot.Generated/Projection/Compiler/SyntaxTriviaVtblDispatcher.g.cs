@@ -42,7 +42,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         }
     }
 
-    public int SyntaxTrivia_Equals_2b043e58(
+    public int SyntaxTrivia_Equals_193a4eaf(
         long receiver,
         long other,
         out int result)
@@ -61,7 +61,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         }
     }
 
-    public int SyntaxTrivia_GetAnnotations_f7cb97d7(
+    public int SyntaxTrivia_GetAnnotations_e2a3de3a(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
@@ -171,7 +171,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         }
     }
 
-    public int SyntaxTrivia_HasAnnotations_fe346173(
+    public int SyntaxTrivia_HasAnnotations_4841d9d0(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
@@ -317,7 +317,7 @@ internal sealed partial class SyntaxTriviaVtblDispatcher : ISyntaxTriviaVtbl
         }
     }
 
-    public int SyntaxTrivia_WithoutAnnotations_691a35c6(
+    public int SyntaxTrivia_WithoutAnnotations_fb97f0c2(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)

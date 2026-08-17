@@ -23,7 +23,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CSharpSyntaxVisitor_DefaultVisit_65eeefd8(
+    public int CSharpSyntaxVisitor_DefaultVisit_ae0b3c67(
         long receiver,
         long node)
     {
@@ -40,7 +40,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAccessorDeclaration_710ab61e(
+    public int CSharpSyntaxVisitor_VisitAccessorDeclaration_15d38887(
         long receiver,
         long node)
     {
@@ -57,7 +57,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAccessorList_7da03ee0(
+    public int CSharpSyntaxVisitor_VisitAccessorList_b9fd21eb(
         long receiver,
         long node)
     {
@@ -74,7 +74,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAliasQualifiedName_67c5df65(
+    public int CSharpSyntaxVisitor_VisitAliasQualifiedName_fe5bf45e(
         long receiver,
         long node)
     {
@@ -91,7 +91,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAllowsConstraintClause_602ba236(
+    public int CSharpSyntaxVisitor_VisitAllowsConstraintClause_f222ec6e(
         long receiver,
         long node)
     {
@@ -108,7 +108,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAnonymousMethodExpression_283faf7e(
+    public int CSharpSyntaxVisitor_VisitAnonymousMethodExpression_30e1b41e(
         long receiver,
         long node)
     {
@@ -125,7 +125,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAnonymousObjectCreationExpression_8c1cbb5f(
+    public int CSharpSyntaxVisitor_VisitAnonymousObjectCreationExpression_3d87ff5b(
         long receiver,
         long node)
     {
@@ -142,7 +142,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAnonymousObjectMemberDeclarator_6472789f(
+    public int CSharpSyntaxVisitor_VisitAnonymousObjectMemberDeclarator_92876121(
         long receiver,
         long node)
     {
@@ -159,7 +159,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArgumentList_e0bb08fd(
+    public int CSharpSyntaxVisitor_VisitArgumentList_a17e7034(
         long receiver,
         long node)
     {
@@ -176,7 +176,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArgument_c80f5b1d(
+    public int CSharpSyntaxVisitor_VisitArgument_792c4010(
         long receiver,
         long node)
     {
@@ -193,7 +193,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArrayCreationExpression_2466f1a0(
+    public int CSharpSyntaxVisitor_VisitArrayCreationExpression_8ddd21cd(
         long receiver,
         long node)
     {
@@ -210,7 +210,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArrayRankSpecifier_613f4d60(
+    public int CSharpSyntaxVisitor_VisitArrayRankSpecifier_e7ee5730(
         long receiver,
         long node)
     {
@@ -227,7 +227,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArrayType_5f7e1fa5(
+    public int CSharpSyntaxVisitor_VisitArrayType_2cb0362f(
         long receiver,
         long node)
     {
@@ -244,7 +244,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArrowExpressionClause_3d87d7eb(
+    public int CSharpSyntaxVisitor_VisitArrowExpressionClause_50e5f4ca(
         long receiver,
         long node)
     {
@@ -261,7 +261,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAssignmentExpression_75fe8ce7(
+    public int CSharpSyntaxVisitor_VisitAssignmentExpression_d67b84a7(
         long receiver,
         long node)
     {
@@ -278,7 +278,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAttributeArgumentList_14486394(
+    public int CSharpSyntaxVisitor_VisitAttributeArgumentList_dbf25f62(
         long receiver,
         long node)
     {
@@ -295,7 +295,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAttributeArgument_f47e45e0(
+    public int CSharpSyntaxVisitor_VisitAttributeArgument_1953d366(
         long receiver,
         long node)
     {
@@ -312,7 +312,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAttributeList_4972e4e0(
+    public int CSharpSyntaxVisitor_VisitAttributeList_07c878c0(
         long receiver,
         long node)
     {
@@ -329,7 +329,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAttributeTargetSpecifier_5abcb9ce(
+    public int CSharpSyntaxVisitor_VisitAttributeTargetSpecifier_47f1058a(
         long receiver,
         long node)
     {
@@ -346,7 +346,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAttribute_e1aa3223(
+    public int CSharpSyntaxVisitor_VisitAttribute_04000905(
         long receiver,
         long node)
     {
@@ -363,7 +363,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAwaitExpression_bc1b254a(
+    public int CSharpSyntaxVisitor_VisitAwaitExpression_128f0bac(
         long receiver,
         long node)
     {
@@ -380,7 +380,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBadDirectiveTrivia_ab4b1458(
+    public int CSharpSyntaxVisitor_VisitBadDirectiveTrivia_ad099b1d(
         long receiver,
         long node)
     {
@@ -397,7 +397,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBaseExpression_baa98463(
+    public int CSharpSyntaxVisitor_VisitBaseExpression_1308c9c0(
         long receiver,
         long node)
     {
@@ -414,7 +414,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBaseList_00782139(
+    public int CSharpSyntaxVisitor_VisitBaseList_fd45e5f9(
         long receiver,
         long node)
     {
@@ -431,7 +431,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBinaryExpression_3c7a595d(
+    public int CSharpSyntaxVisitor_VisitBinaryExpression_3fe5e333(
         long receiver,
         long node)
     {
@@ -448,7 +448,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBinaryPattern_9d4129c0(
+    public int CSharpSyntaxVisitor_VisitBinaryPattern_30286fed(
         long receiver,
         long node)
     {
@@ -465,7 +465,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBlock_8c73a990(
+    public int CSharpSyntaxVisitor_VisitBlock_22e9ef47(
         long receiver,
         long node)
     {
@@ -482,7 +482,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBracketedArgumentList_17687a8f(
+    public int CSharpSyntaxVisitor_VisitBracketedArgumentList_ef14f6ec(
         long receiver,
         long node)
     {
@@ -499,7 +499,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBracketedParameterList_ab86f920(
+    public int CSharpSyntaxVisitor_VisitBracketedParameterList_ddc50967(
         long receiver,
         long node)
     {
@@ -516,7 +516,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBreakStatement_b8603ded(
+    public int CSharpSyntaxVisitor_VisitBreakStatement_fa50a591(
         long receiver,
         long node)
     {
@@ -533,7 +533,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCasePatternSwitchLabel_64361577(
+    public int CSharpSyntaxVisitor_VisitCasePatternSwitchLabel_92b73baa(
         long receiver,
         long node)
     {
@@ -550,7 +550,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCaseSwitchLabel_fbc83a64(
+    public int CSharpSyntaxVisitor_VisitCaseSwitchLabel_ccc40c42(
         long receiver,
         long node)
     {
@@ -567,7 +567,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCastExpression_545d597e(
+    public int CSharpSyntaxVisitor_VisitCastExpression_42eda634(
         long receiver,
         long node)
     {
@@ -584,7 +584,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCatchClause_33da46c0(
+    public int CSharpSyntaxVisitor_VisitCatchClause_0e0e5a2b(
         long receiver,
         long node)
     {
@@ -601,7 +601,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCatchDeclaration_4ff752e1(
+    public int CSharpSyntaxVisitor_VisitCatchDeclaration_3a2d785a(
         long receiver,
         long node)
     {
@@ -618,7 +618,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCatchFilterClause_eb8c487d(
+    public int CSharpSyntaxVisitor_VisitCatchFilterClause_d09c609b(
         long receiver,
         long node)
     {
@@ -635,7 +635,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCheckedExpression_d34da57e(
+    public int CSharpSyntaxVisitor_VisitCheckedExpression_4aeda533(
         long receiver,
         long node)
     {
@@ -652,7 +652,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCheckedStatement_b965e115(
+    public int CSharpSyntaxVisitor_VisitCheckedStatement_7d1ec90b(
         long receiver,
         long node)
     {
@@ -669,7 +669,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitClassDeclaration_df313cf2(
+    public int CSharpSyntaxVisitor_VisitClassDeclaration_fa4e2c93(
         long receiver,
         long node)
     {
@@ -686,7 +686,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitClassOrStructConstraint_e97e6213(
+    public int CSharpSyntaxVisitor_VisitClassOrStructConstraint_514a0484(
         long receiver,
         long node)
     {
@@ -703,7 +703,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCollectionExpression_9f175dda(
+    public int CSharpSyntaxVisitor_VisitCollectionExpression_2d14a83c(
         long receiver,
         long node)
     {
@@ -720,7 +720,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCompilationUnit_39139ac1(
+    public int CSharpSyntaxVisitor_VisitCompilationUnit_01813651(
         long receiver,
         long node)
     {
@@ -737,7 +737,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConditionalAccessExpression_26dbac47(
+    public int CSharpSyntaxVisitor_VisitConditionalAccessExpression_54acf481(
         long receiver,
         long node)
     {
@@ -754,7 +754,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConditionalExpression_ef402333(
+    public int CSharpSyntaxVisitor_VisitConditionalExpression_e7c5b85b(
         long receiver,
         long node)
     {
@@ -771,7 +771,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConstantPattern_7cb416a5(
+    public int CSharpSyntaxVisitor_VisitConstantPattern_bac38db3(
         long receiver,
         long node)
     {
@@ -788,7 +788,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConstructorConstraint_c3a38f49(
+    public int CSharpSyntaxVisitor_VisitConstructorConstraint_9d2c2281(
         long receiver,
         long node)
     {
@@ -805,7 +805,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConstructorDeclaration_33cd45b7(
+    public int CSharpSyntaxVisitor_VisitConstructorDeclaration_5c1847aa(
         long receiver,
         long node)
     {
@@ -822,7 +822,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConstructorInitializer_cd827ef8(
+    public int CSharpSyntaxVisitor_VisitConstructorInitializer_e221c236(
         long receiver,
         long node)
     {
@@ -839,7 +839,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitContinueStatement_6fd7c288(
+    public int CSharpSyntaxVisitor_VisitContinueStatement_88a17af0(
         long receiver,
         long node)
     {
@@ -856,7 +856,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConversionOperatorDeclaration_5fdee61e(
+    public int CSharpSyntaxVisitor_VisitConversionOperatorDeclaration_e1c958b3(
         long receiver,
         long node)
     {
@@ -873,7 +873,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConversionOperatorMemberCref_cc49809d(
+    public int CSharpSyntaxVisitor_VisitConversionOperatorMemberCref_86e27fb7(
         long receiver,
         long node)
     {
@@ -890,7 +890,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCrefBracketedParameterList_d07b9ed5(
+    public int CSharpSyntaxVisitor_VisitCrefBracketedParameterList_a58d3d73(
         long receiver,
         long node)
     {
@@ -907,7 +907,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCrefParameterList_28052a3e(
+    public int CSharpSyntaxVisitor_VisitCrefParameterList_a586dee2(
         long receiver,
         long node)
     {
@@ -924,7 +924,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCrefParameter_ae02ad6d(
+    public int CSharpSyntaxVisitor_VisitCrefParameter_8de36407(
         long receiver,
         long node)
     {
@@ -941,7 +941,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDeclarationExpression_2335f6af(
+    public int CSharpSyntaxVisitor_VisitDeclarationExpression_72c60fb7(
         long receiver,
         long node)
     {
@@ -958,7 +958,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDeclarationPattern_1c134936(
+    public int CSharpSyntaxVisitor_VisitDeclarationPattern_7b20e1ee(
         long receiver,
         long node)
     {
@@ -975,7 +975,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDefaultConstraint_e47dd025(
+    public int CSharpSyntaxVisitor_VisitDefaultConstraint_975b1c00(
         long receiver,
         long node)
     {
@@ -992,7 +992,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDefaultExpression_ddb31582(
+    public int CSharpSyntaxVisitor_VisitDefaultExpression_8d983304(
         long receiver,
         long node)
     {
@@ -1009,7 +1009,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDefaultSwitchLabel_4e497834(
+    public int CSharpSyntaxVisitor_VisitDefaultSwitchLabel_be60cf71(
         long receiver,
         long node)
     {
@@ -1026,7 +1026,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDefineDirectiveTrivia_e6e85f8f(
+    public int CSharpSyntaxVisitor_VisitDefineDirectiveTrivia_df0636c9(
         long receiver,
         long node)
     {
@@ -1043,7 +1043,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDelegateDeclaration_20dd217f(
+    public int CSharpSyntaxVisitor_VisitDelegateDeclaration_c43544f9(
         long receiver,
         long node)
     {
@@ -1060,7 +1060,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDestructorDeclaration_886ad972(
+    public int CSharpSyntaxVisitor_VisitDestructorDeclaration_be09eb90(
         long receiver,
         long node)
     {
@@ -1077,7 +1077,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDiscardDesignation_2c5bd84d(
+    public int CSharpSyntaxVisitor_VisitDiscardDesignation_a8765962(
         long receiver,
         long node)
     {
@@ -1094,7 +1094,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDiscardPattern_8ce08385(
+    public int CSharpSyntaxVisitor_VisitDiscardPattern_c0cd7b33(
         long receiver,
         long node)
     {
@@ -1111,7 +1111,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDoStatement_2beeee0c(
+    public int CSharpSyntaxVisitor_VisitDoStatement_637a80fa(
         long receiver,
         long node)
     {
@@ -1128,7 +1128,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDocumentationCommentTrivia_bff2caf7(
+    public int CSharpSyntaxVisitor_VisitDocumentationCommentTrivia_a1ba0336(
         long receiver,
         long node)
     {
@@ -1145,7 +1145,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitElementAccessExpression_11acbe2c(
+    public int CSharpSyntaxVisitor_VisitElementAccessExpression_9ffee593(
         long receiver,
         long node)
     {
@@ -1162,7 +1162,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitElementBindingExpression_957dc1c8(
+    public int CSharpSyntaxVisitor_VisitElementBindingExpression_d77dbda0(
         long receiver,
         long node)
     {
@@ -1179,7 +1179,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitElifDirectiveTrivia_6edb2a6f(
+    public int CSharpSyntaxVisitor_VisitElifDirectiveTrivia_a5492c75(
         long receiver,
         long node)
     {
@@ -1196,7 +1196,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitElseClause_f069d3e5(
+    public int CSharpSyntaxVisitor_VisitElseClause_ddaf3a8a(
         long receiver,
         long node)
     {
@@ -1213,7 +1213,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitElseDirectiveTrivia_e8bc1e66(
+    public int CSharpSyntaxVisitor_VisitElseDirectiveTrivia_f5866eb7(
         long receiver,
         long node)
     {
@@ -1230,7 +1230,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEmptyStatement_2ddc95a8(
+    public int CSharpSyntaxVisitor_VisitEmptyStatement_adfb3188(
         long receiver,
         long node)
     {
@@ -1247,7 +1247,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEndIfDirectiveTrivia_0ca9b2e1(
+    public int CSharpSyntaxVisitor_VisitEndIfDirectiveTrivia_44286501(
         long receiver,
         long node)
     {
@@ -1264,7 +1264,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEndRegionDirectiveTrivia_7606a9b7(
+    public int CSharpSyntaxVisitor_VisitEndRegionDirectiveTrivia_c8e563f6(
         long receiver,
         long node)
     {
@@ -1281,7 +1281,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEnumDeclaration_914fb41e(
+    public int CSharpSyntaxVisitor_VisitEnumDeclaration_d9117d38(
         long receiver,
         long node)
     {
@@ -1298,7 +1298,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEnumMemberDeclaration_faa81fd0(
+    public int CSharpSyntaxVisitor_VisitEnumMemberDeclaration_6ae6681a(
         long receiver,
         long node)
     {
@@ -1315,7 +1315,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEqualsValueClause_6a5d4c5c(
+    public int CSharpSyntaxVisitor_VisitEqualsValueClause_3f0525d4(
         long receiver,
         long node)
     {
@@ -1332,7 +1332,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitErrorDirectiveTrivia_8de1110f(
+    public int CSharpSyntaxVisitor_VisitErrorDirectiveTrivia_814fb692(
         long receiver,
         long node)
     {
@@ -1349,7 +1349,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEventDeclaration_6f737503(
+    public int CSharpSyntaxVisitor_VisitEventDeclaration_0267a561(
         long receiver,
         long node)
     {
@@ -1366,7 +1366,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEventFieldDeclaration_59f0ee85(
+    public int CSharpSyntaxVisitor_VisitEventFieldDeclaration_8780a630(
         long receiver,
         long node)
     {
@@ -1383,7 +1383,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExplicitInterfaceSpecifier_bbb2f365(
+    public int CSharpSyntaxVisitor_VisitExplicitInterfaceSpecifier_a5043772(
         long receiver,
         long node)
     {
@@ -1400,7 +1400,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExpressionColon_c644fe40(
+    public int CSharpSyntaxVisitor_VisitExpressionColon_bbb4be5c(
         long receiver,
         long node)
     {
@@ -1417,7 +1417,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExpressionElement_66972c84(
+    public int CSharpSyntaxVisitor_VisitExpressionElement_ce6b3f2c(
         long receiver,
         long node)
     {
@@ -1434,7 +1434,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExpressionStatement_6ac6a127(
+    public int CSharpSyntaxVisitor_VisitExpressionStatement_e019467d(
         long receiver,
         long node)
     {
@@ -1451,7 +1451,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExtensionBlockDeclaration_ab371bb2(
+    public int CSharpSyntaxVisitor_VisitExtensionBlockDeclaration_05d5e7da(
         long receiver,
         long node)
     {
@@ -1468,7 +1468,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExtensionMemberCref_5ca327aa(
+    public int CSharpSyntaxVisitor_VisitExtensionMemberCref_35e5daff(
         long receiver,
         long node)
     {
@@ -1485,7 +1485,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExternAliasDirective_d6bfe7c1(
+    public int CSharpSyntaxVisitor_VisitExternAliasDirective_18a9ffbe(
         long receiver,
         long node)
     {
@@ -1502,7 +1502,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFieldDeclaration_97d6532e(
+    public int CSharpSyntaxVisitor_VisitFieldDeclaration_1905db42(
         long receiver,
         long node)
     {
@@ -1519,7 +1519,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFieldExpression_a01f0685(
+    public int CSharpSyntaxVisitor_VisitFieldExpression_b33c52e5(
         long receiver,
         long node)
     {
@@ -1536,7 +1536,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFileScopedNamespaceDeclaration_88ec67a0(
+    public int CSharpSyntaxVisitor_VisitFileScopedNamespaceDeclaration_3964f20f(
         long receiver,
         long node)
     {
@@ -1553,7 +1553,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFinallyClause_0708ef3a(
+    public int CSharpSyntaxVisitor_VisitFinallyClause_007250b0(
         long receiver,
         long node)
     {
@@ -1570,7 +1570,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFixedStatement_46267249(
+    public int CSharpSyntaxVisitor_VisitFixedStatement_00263eb0(
         long receiver,
         long node)
     {
@@ -1587,7 +1587,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitForEachStatement_319e9ed9(
+    public int CSharpSyntaxVisitor_VisitForEachStatement_d77364f0(
         long receiver,
         long node)
     {
@@ -1604,7 +1604,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitForEachVariableStatement_3ee4136f(
+    public int CSharpSyntaxVisitor_VisitForEachVariableStatement_ed2df607(
         long receiver,
         long node)
     {
@@ -1621,7 +1621,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitForStatement_bf8e3f99(
+    public int CSharpSyntaxVisitor_VisitForStatement_371b01ba(
         long receiver,
         long node)
     {
@@ -1638,7 +1638,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFromClause_aad9cd5c(
+    public int CSharpSyntaxVisitor_VisitFromClause_e04f5e2c(
         long receiver,
         long node)
     {
@@ -1655,7 +1655,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerCallingConvention_de6a046c(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerCallingConvention_cf9db9d4(
         long receiver,
         long node)
     {
@@ -1672,7 +1672,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerParameterList_5403c6ca(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerParameterList_4565fd08(
         long receiver,
         long node)
     {
@@ -1689,7 +1689,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerParameter_8dff4867(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerParameter_91c5c6f1(
         long receiver,
         long node)
     {
@@ -1706,7 +1706,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerType_7745a0d0(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerType_87cf9662(
         long receiver,
         long node)
     {
@@ -1723,7 +1723,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConventionList_1166d7a0(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConventionList_daaa8309(
         long receiver,
         long node)
     {
@@ -1740,7 +1740,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConvention_06096a0f(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConvention_af864005(
         long receiver,
         long node)
     {
@@ -1757,7 +1757,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitGenericName_03d90539(
+    public int CSharpSyntaxVisitor_VisitGenericName_ba716826(
         long receiver,
         long node)
     {
@@ -1774,7 +1774,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitGlobalStatement_7676be13(
+    public int CSharpSyntaxVisitor_VisitGlobalStatement_27765632(
         long receiver,
         long node)
     {
@@ -1791,7 +1791,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitGotoStatement_3078fad3(
+    public int CSharpSyntaxVisitor_VisitGotoStatement_30dc7b92(
         long receiver,
         long node)
     {
@@ -1808,7 +1808,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitGroupClause_12d0734b(
+    public int CSharpSyntaxVisitor_VisitGroupClause_45aec9e1(
         long receiver,
         long node)
     {
@@ -1825,7 +1825,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIdentifierName_32028db3(
+    public int CSharpSyntaxVisitor_VisitIdentifierName_86e25be0(
         long receiver,
         long node)
     {
@@ -1842,7 +1842,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIfDirectiveTrivia_68c4b6ea(
+    public int CSharpSyntaxVisitor_VisitIfDirectiveTrivia_48e2706c(
         long receiver,
         long node)
     {
@@ -1859,7 +1859,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIfStatement_a57c2af6(
+    public int CSharpSyntaxVisitor_VisitIfStatement_5c5c3ff1(
         long receiver,
         long node)
     {
@@ -1876,7 +1876,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIgnoredDirectiveTrivia_6a6c21ef(
+    public int CSharpSyntaxVisitor_VisitIgnoredDirectiveTrivia_064599fb(
         long receiver,
         long node)
     {
@@ -1893,7 +1893,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitImplicitArrayCreationExpression_e35be28d(
+    public int CSharpSyntaxVisitor_VisitImplicitArrayCreationExpression_34f81ab7(
         long receiver,
         long node)
     {
@@ -1910,7 +1910,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitImplicitElementAccess_2bc3f06c(
+    public int CSharpSyntaxVisitor_VisitImplicitElementAccess_9b64e1a5(
         long receiver,
         long node)
     {
@@ -1927,7 +1927,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitImplicitObjectCreationExpression_19856184(
+    public int CSharpSyntaxVisitor_VisitImplicitObjectCreationExpression_5a6dbe74(
         long receiver,
         long node)
     {
@@ -1944,7 +1944,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitImplicitStackAllocArrayCreationExpression_b2410ff2(
+    public int CSharpSyntaxVisitor_VisitImplicitStackAllocArrayCreationExpression_de8aaf66(
         long receiver,
         long node)
     {
@@ -1961,7 +1961,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIncompleteMember_054c6faa(
+    public int CSharpSyntaxVisitor_VisitIncompleteMember_0b9642f9(
         long receiver,
         long node)
     {
@@ -1978,7 +1978,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIndexerDeclaration_a13b5339(
+    public int CSharpSyntaxVisitor_VisitIndexerDeclaration_f7ac3b15(
         long receiver,
         long node)
     {
@@ -1995,7 +1995,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIndexerMemberCref_96c75c3c(
+    public int CSharpSyntaxVisitor_VisitIndexerMemberCref_2300fbe8(
         long receiver,
         long node)
     {
@@ -2012,7 +2012,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInitializerExpression_31539dd7(
+    public int CSharpSyntaxVisitor_VisitInitializerExpression_845fe5e5(
         long receiver,
         long node)
     {
@@ -2029,7 +2029,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterfaceDeclaration_18df112d(
+    public int CSharpSyntaxVisitor_VisitInterfaceDeclaration_c5594cd3(
         long receiver,
         long node)
     {
@@ -2046,7 +2046,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterpolatedStringExpression_fe5b5aa7(
+    public int CSharpSyntaxVisitor_VisitInterpolatedStringExpression_1eafedfb(
         long receiver,
         long node)
     {
@@ -2063,7 +2063,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterpolatedStringText_8376c5c8(
+    public int CSharpSyntaxVisitor_VisitInterpolatedStringText_dce2338a(
         long receiver,
         long node)
     {
@@ -2080,7 +2080,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterpolationAlignmentClause_f7675c80(
+    public int CSharpSyntaxVisitor_VisitInterpolationAlignmentClause_b69d1a5c(
         long receiver,
         long node)
     {
@@ -2097,7 +2097,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterpolationFormatClause_66911ffe(
+    public int CSharpSyntaxVisitor_VisitInterpolationFormatClause_1852a074(
         long receiver,
         long node)
     {
@@ -2114,7 +2114,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterpolation_acff0492(
+    public int CSharpSyntaxVisitor_VisitInterpolation_f2ca2d1b(
         long receiver,
         long node)
     {
@@ -2131,7 +2131,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInvocationExpression_003e9c41(
+    public int CSharpSyntaxVisitor_VisitInvocationExpression_763a030b(
         long receiver,
         long node)
     {
@@ -2148,7 +2148,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIsPatternExpression_25da4bb6(
+    public int CSharpSyntaxVisitor_VisitIsPatternExpression_97f88bc9(
         long receiver,
         long node)
     {
@@ -2165,7 +2165,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitJoinClause_5d46039a(
+    public int CSharpSyntaxVisitor_VisitJoinClause_44dc385d(
         long receiver,
         long node)
     {
@@ -2182,7 +2182,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitJoinIntoClause_93c052c9(
+    public int CSharpSyntaxVisitor_VisitJoinIntoClause_6190fc7c(
         long receiver,
         long node)
     {
@@ -2199,7 +2199,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLabeledStatement_b711d806(
+    public int CSharpSyntaxVisitor_VisitLabeledStatement_5a7db1e4(
         long receiver,
         long node)
     {
@@ -2216,7 +2216,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLetClause_67d676f0(
+    public int CSharpSyntaxVisitor_VisitLetClause_3ad403f4(
         long receiver,
         long node)
     {
@@ -2233,7 +2233,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLineDirectivePosition_4fa4ae1d(
+    public int CSharpSyntaxVisitor_VisitLineDirectivePosition_dca28662(
         long receiver,
         long node)
     {
@@ -2250,7 +2250,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLineDirectiveTrivia_b4131445(
+    public int CSharpSyntaxVisitor_VisitLineDirectiveTrivia_5020b88b(
         long receiver,
         long node)
     {
@@ -2267,7 +2267,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLineSpanDirectiveTrivia_4677767e(
+    public int CSharpSyntaxVisitor_VisitLineSpanDirectiveTrivia_d6867f14(
         long receiver,
         long node)
     {
@@ -2284,7 +2284,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitListPattern_9cdbeaa6(
+    public int CSharpSyntaxVisitor_VisitListPattern_9a021370(
         long receiver,
         long node)
     {
@@ -2301,7 +2301,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLiteralExpression_6be0d3bb(
+    public int CSharpSyntaxVisitor_VisitLiteralExpression_c522aba8(
         long receiver,
         long node)
     {
@@ -2318,7 +2318,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLoadDirectiveTrivia_87d6c0bb(
+    public int CSharpSyntaxVisitor_VisitLoadDirectiveTrivia_fc4e0e81(
         long receiver,
         long node)
     {
@@ -2335,7 +2335,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLocalDeclarationStatement_356c7383(
+    public int CSharpSyntaxVisitor_VisitLocalDeclarationStatement_a837e274(
         long receiver,
         long node)
     {
@@ -2352,7 +2352,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLocalFunctionStatement_17c3b2da(
+    public int CSharpSyntaxVisitor_VisitLocalFunctionStatement_cec9866b(
         long receiver,
         long node)
     {
@@ -2369,7 +2369,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLockStatement_3ec4b7a9(
+    public int CSharpSyntaxVisitor_VisitLockStatement_20649c54(
         long receiver,
         long node)
     {
@@ -2386,7 +2386,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitMakeRefExpression_57ba3bc6(
+    public int CSharpSyntaxVisitor_VisitMakeRefExpression_3ecfdc2d(
         long receiver,
         long node)
     {
@@ -2403,7 +2403,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitMemberAccessExpression_f0502b53(
+    public int CSharpSyntaxVisitor_VisitMemberAccessExpression_9a707624(
         long receiver,
         long node)
     {
@@ -2420,7 +2420,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitMemberBindingExpression_e14889e6(
+    public int CSharpSyntaxVisitor_VisitMemberBindingExpression_7d444686(
         long receiver,
         long node)
     {
@@ -2437,7 +2437,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitMethodDeclaration_a9c47905(
+    public int CSharpSyntaxVisitor_VisitMethodDeclaration_3e0b68d8(
         long receiver,
         long node)
     {
@@ -2454,7 +2454,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNameColon_77a6d370(
+    public int CSharpSyntaxVisitor_VisitNameColon_7712f8de(
         long receiver,
         long node)
     {
@@ -2471,7 +2471,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNameEquals_1947217c(
+    public int CSharpSyntaxVisitor_VisitNameEquals_433d4145(
         long receiver,
         long node)
     {
@@ -2488,7 +2488,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNameMemberCref_23470e7a(
+    public int CSharpSyntaxVisitor_VisitNameMemberCref_fc868c41(
         long receiver,
         long node)
     {
@@ -2505,7 +2505,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNamespaceDeclaration_83d872ea(
+    public int CSharpSyntaxVisitor_VisitNamespaceDeclaration_0c1d8b32(
         long receiver,
         long node)
     {
@@ -2522,7 +2522,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNullableDirectiveTrivia_41db716e(
+    public int CSharpSyntaxVisitor_VisitNullableDirectiveTrivia_765ef1c8(
         long receiver,
         long node)
     {
@@ -2539,7 +2539,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNullableType_bdec51e2(
+    public int CSharpSyntaxVisitor_VisitNullableType_24a4c337(
         long receiver,
         long node)
     {
@@ -2556,7 +2556,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitObjectCreationExpression_4b06a09a(
+    public int CSharpSyntaxVisitor_VisitObjectCreationExpression_ae25bcf5(
         long receiver,
         long node)
     {
@@ -2573,7 +2573,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOmittedArraySizeExpression_3d63ef7f(
+    public int CSharpSyntaxVisitor_VisitOmittedArraySizeExpression_f337d471(
         long receiver,
         long node)
     {
@@ -2590,7 +2590,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOmittedTypeArgument_281842ba(
+    public int CSharpSyntaxVisitor_VisitOmittedTypeArgument_60815307(
         long receiver,
         long node)
     {
@@ -2607,7 +2607,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOperatorDeclaration_926f116d(
+    public int CSharpSyntaxVisitor_VisitOperatorDeclaration_5efff785(
         long receiver,
         long node)
     {
@@ -2624,7 +2624,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOperatorMemberCref_9e5dc8c1(
+    public int CSharpSyntaxVisitor_VisitOperatorMemberCref_2aa9544c(
         long receiver,
         long node)
     {
@@ -2641,7 +2641,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOrderByClause_20ec6340(
+    public int CSharpSyntaxVisitor_VisitOrderByClause_623995f3(
         long receiver,
         long node)
     {
@@ -2658,7 +2658,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOrdering_0d6db158(
+    public int CSharpSyntaxVisitor_VisitOrdering_30a46812(
         long receiver,
         long node)
     {
@@ -2675,7 +2675,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParameterList_a6ad3c13(
+    public int CSharpSyntaxVisitor_VisitParameterList_9ce7ca82(
         long receiver,
         long node)
     {
@@ -2692,7 +2692,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParameter_a8f7d5ed(
+    public int CSharpSyntaxVisitor_VisitParameter_64158c4a(
         long receiver,
         long node)
     {
@@ -2709,7 +2709,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParenthesizedExpression_ae4db813(
+    public int CSharpSyntaxVisitor_VisitParenthesizedExpression_bd0bb69e(
         long receiver,
         long node)
     {
@@ -2726,7 +2726,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParenthesizedLambdaExpression_27d91cef(
+    public int CSharpSyntaxVisitor_VisitParenthesizedLambdaExpression_352397d2(
         long receiver,
         long node)
     {
@@ -2743,7 +2743,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParenthesizedPattern_a1b1c741(
+    public int CSharpSyntaxVisitor_VisitParenthesizedPattern_18f2083e(
         long receiver,
         long node)
     {
@@ -2760,7 +2760,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParenthesizedVariableDesignation_092797f1(
+    public int CSharpSyntaxVisitor_VisitParenthesizedVariableDesignation_cbc2d338(
         long receiver,
         long node)
     {
@@ -2777,7 +2777,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPointerType_44cbf3e8(
+    public int CSharpSyntaxVisitor_VisitPointerType_2b4b75cc(
         long receiver,
         long node)
     {
@@ -2794,7 +2794,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPositionalPatternClause_8ad5b653(
+    public int CSharpSyntaxVisitor_VisitPositionalPatternClause_8e1452e9(
         long receiver,
         long node)
     {
@@ -2811,7 +2811,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPostfixUnaryExpression_76b07964(
+    public int CSharpSyntaxVisitor_VisitPostfixUnaryExpression_ff131343(
         long receiver,
         long node)
     {
@@ -2828,7 +2828,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPragmaChecksumDirectiveTrivia_e9647c20(
+    public int CSharpSyntaxVisitor_VisitPragmaChecksumDirectiveTrivia_a6b167f7(
         long receiver,
         long node)
     {
@@ -2845,7 +2845,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPragmaWarningDirectiveTrivia_b8ce9afc(
+    public int CSharpSyntaxVisitor_VisitPragmaWarningDirectiveTrivia_56dc3bec(
         long receiver,
         long node)
     {
@@ -2862,7 +2862,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPredefinedType_81b64cf3(
+    public int CSharpSyntaxVisitor_VisitPredefinedType_523e01d4(
         long receiver,
         long node)
     {
@@ -2879,7 +2879,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPrefixUnaryExpression_ad024191(
+    public int CSharpSyntaxVisitor_VisitPrefixUnaryExpression_c30e4e0e(
         long receiver,
         long node)
     {
@@ -2896,7 +2896,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPrimaryConstructorBaseType_ba8f5b6c(
+    public int CSharpSyntaxVisitor_VisitPrimaryConstructorBaseType_eb96771e(
         long receiver,
         long node)
     {
@@ -2913,7 +2913,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPropertyDeclaration_aa5038c1(
+    public int CSharpSyntaxVisitor_VisitPropertyDeclaration_96cc0e70(
         long receiver,
         long node)
     {
@@ -2930,7 +2930,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPropertyPatternClause_13737144(
+    public int CSharpSyntaxVisitor_VisitPropertyPatternClause_4d36ee09(
         long receiver,
         long node)
     {
@@ -2947,7 +2947,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitQualifiedCref_3f844141(
+    public int CSharpSyntaxVisitor_VisitQualifiedCref_56d1b4e6(
         long receiver,
         long node)
     {
@@ -2964,7 +2964,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitQualifiedName_52c9e5a3(
+    public int CSharpSyntaxVisitor_VisitQualifiedName_20d9cb05(
         long receiver,
         long node)
     {
@@ -2981,7 +2981,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitQueryBody_6b3889aa(
+    public int CSharpSyntaxVisitor_VisitQueryBody_746c218b(
         long receiver,
         long node)
     {
@@ -2998,7 +2998,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitQueryContinuation_7fc3f761(
+    public int CSharpSyntaxVisitor_VisitQueryContinuation_cf937efd(
         long receiver,
         long node)
     {
@@ -3015,7 +3015,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitQueryExpression_646bd142(
+    public int CSharpSyntaxVisitor_VisitQueryExpression_1448243b(
         long receiver,
         long node)
     {
@@ -3032,7 +3032,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRangeExpression_5e050c51(
+    public int CSharpSyntaxVisitor_VisitRangeExpression_42d9d747(
         long receiver,
         long node)
     {
@@ -3049,7 +3049,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRecordDeclaration_c9aa0d40(
+    public int CSharpSyntaxVisitor_VisitRecordDeclaration_166eb550(
         long receiver,
         long node)
     {
@@ -3066,7 +3066,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRecursivePattern_53542704(
+    public int CSharpSyntaxVisitor_VisitRecursivePattern_0f95ef4a(
         long receiver,
         long node)
     {
@@ -3083,7 +3083,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRefExpression_89e3a169(
+    public int CSharpSyntaxVisitor_VisitRefExpression_c498cc93(
         long receiver,
         long node)
     {
@@ -3100,7 +3100,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRefStructConstraint_9b72d02c(
+    public int CSharpSyntaxVisitor_VisitRefStructConstraint_b27aefb1(
         long receiver,
         long node)
     {
@@ -3117,7 +3117,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRefTypeExpression_a5705307(
+    public int CSharpSyntaxVisitor_VisitRefTypeExpression_b2ada09d(
         long receiver,
         long node)
     {
@@ -3134,7 +3134,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRefType_c2c7e237(
+    public int CSharpSyntaxVisitor_VisitRefType_e62b4eb5(
         long receiver,
         long node)
     {
@@ -3151,7 +3151,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRefValueExpression_619add58(
+    public int CSharpSyntaxVisitor_VisitRefValueExpression_20e6f15c(
         long receiver,
         long node)
     {
@@ -3168,7 +3168,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitReferenceDirectiveTrivia_bc6338e0(
+    public int CSharpSyntaxVisitor_VisitReferenceDirectiveTrivia_5aaf7cc1(
         long receiver,
         long node)
     {
@@ -3185,7 +3185,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRegionDirectiveTrivia_372c4be6(
+    public int CSharpSyntaxVisitor_VisitRegionDirectiveTrivia_5bd752d7(
         long receiver,
         long node)
     {
@@ -3202,7 +3202,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRelationalPattern_eed28dd9(
+    public int CSharpSyntaxVisitor_VisitRelationalPattern_041a1eef(
         long receiver,
         long node)
     {
@@ -3219,7 +3219,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitReturnStatement_480830fa(
+    public int CSharpSyntaxVisitor_VisitReturnStatement_22ab3a4a(
         long receiver,
         long node)
     {
@@ -3236,7 +3236,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitScopedType_ec0a5433(
+    public int CSharpSyntaxVisitor_VisitScopedType_3bd7bda0(
         long receiver,
         long node)
     {
@@ -3253,7 +3253,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSelectClause_1d918534(
+    public int CSharpSyntaxVisitor_VisitSelectClause_a6e3407c(
         long receiver,
         long node)
     {
@@ -3270,7 +3270,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitShebangDirectiveTrivia_7d90d8a7(
+    public int CSharpSyntaxVisitor_VisitShebangDirectiveTrivia_4a23d43b(
         long receiver,
         long node)
     {
@@ -3287,7 +3287,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSimpleBaseType_d51406e3(
+    public int CSharpSyntaxVisitor_VisitSimpleBaseType_d132c1a1(
         long receiver,
         long node)
     {
@@ -3304,7 +3304,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSimpleLambdaExpression_facf64fc(
+    public int CSharpSyntaxVisitor_VisitSimpleLambdaExpression_23014a3c(
         long receiver,
         long node)
     {
@@ -3321,7 +3321,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSingleVariableDesignation_23b0d68a(
+    public int CSharpSyntaxVisitor_VisitSingleVariableDesignation_60e85511(
         long receiver,
         long node)
     {
@@ -3338,7 +3338,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSizeOfExpression_13e29ae2(
+    public int CSharpSyntaxVisitor_VisitSizeOfExpression_935e80d9(
         long receiver,
         long node)
     {
@@ -3355,7 +3355,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSkippedTokensTrivia_5612c61c(
+    public int CSharpSyntaxVisitor_VisitSkippedTokensTrivia_f32b150a(
         long receiver,
         long node)
     {
@@ -3372,7 +3372,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSlicePattern_c689a347(
+    public int CSharpSyntaxVisitor_VisitSlicePattern_61bd03dc(
         long receiver,
         long node)
     {
@@ -3389,7 +3389,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSpreadElement_eb85d89f(
+    public int CSharpSyntaxVisitor_VisitSpreadElement_67a03623(
         long receiver,
         long node)
     {
@@ -3406,7 +3406,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitStackAllocArrayCreationExpression_8071f71b(
+    public int CSharpSyntaxVisitor_VisitStackAllocArrayCreationExpression_9a086e6b(
         long receiver,
         long node)
     {
@@ -3423,7 +3423,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitStructDeclaration_ca696bdb(
+    public int CSharpSyntaxVisitor_VisitStructDeclaration_b7987bb1(
         long receiver,
         long node)
     {
@@ -3440,7 +3440,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSubpattern_4fd2c578(
+    public int CSharpSyntaxVisitor_VisitSubpattern_5d3d45a6(
         long receiver,
         long node)
     {
@@ -3457,7 +3457,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSwitchExpressionArm_b043b4f0(
+    public int CSharpSyntaxVisitor_VisitSwitchExpressionArm_62a60f75(
         long receiver,
         long node)
     {
@@ -3474,7 +3474,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSwitchExpression_34bfdfdb(
+    public int CSharpSyntaxVisitor_VisitSwitchExpression_ce6991c3(
         long receiver,
         long node)
     {
@@ -3491,7 +3491,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSwitchSection_e32bde70(
+    public int CSharpSyntaxVisitor_VisitSwitchSection_c0e3c5f7(
         long receiver,
         long node)
     {
@@ -3508,7 +3508,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSwitchStatement_6c5632f0(
+    public int CSharpSyntaxVisitor_VisitSwitchStatement_b165c7c4(
         long receiver,
         long node)
     {
@@ -3525,7 +3525,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitThisExpression_9a51ee6d(
+    public int CSharpSyntaxVisitor_VisitThisExpression_0ebb2cba(
         long receiver,
         long node)
     {
@@ -3542,7 +3542,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitThrowExpression_bc44c9b9(
+    public int CSharpSyntaxVisitor_VisitThrowExpression_d92c9396(
         long receiver,
         long node)
     {
@@ -3559,7 +3559,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitThrowStatement_15daf5e6(
+    public int CSharpSyntaxVisitor_VisitThrowStatement_823b47e1(
         long receiver,
         long node)
     {
@@ -3576,7 +3576,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTryStatement_bbad1f5c(
+    public int CSharpSyntaxVisitor_VisitTryStatement_7e2540c9(
         long receiver,
         long node)
     {
@@ -3593,7 +3593,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTupleElement_473f1fc9(
+    public int CSharpSyntaxVisitor_VisitTupleElement_b55fbaba(
         long receiver,
         long node)
     {
@@ -3610,7 +3610,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTupleExpression_cb905093(
+    public int CSharpSyntaxVisitor_VisitTupleExpression_a3b0fc17(
         long receiver,
         long node)
     {
@@ -3627,7 +3627,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTupleType_3393dc09(
+    public int CSharpSyntaxVisitor_VisitTupleType_3b44c37f(
         long receiver,
         long node)
     {
@@ -3644,7 +3644,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeArgumentList_02aea84f(
+    public int CSharpSyntaxVisitor_VisitTypeArgumentList_a75bda0c(
         long receiver,
         long node)
     {
@@ -3661,7 +3661,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeConstraint_e869a148(
+    public int CSharpSyntaxVisitor_VisitTypeConstraint_55699f1f(
         long receiver,
         long node)
     {
@@ -3678,7 +3678,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeCref_8f958e88(
+    public int CSharpSyntaxVisitor_VisitTypeCref_7bad1a02(
         long receiver,
         long node)
     {
@@ -3695,7 +3695,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeOfExpression_2d4cc270(
+    public int CSharpSyntaxVisitor_VisitTypeOfExpression_0a914de4(
         long receiver,
         long node)
     {
@@ -3712,7 +3712,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeParameterConstraintClause_53af4c2e(
+    public int CSharpSyntaxVisitor_VisitTypeParameterConstraintClause_de6c1619(
         long receiver,
         long node)
     {
@@ -3729,7 +3729,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeParameterList_d603dd28(
+    public int CSharpSyntaxVisitor_VisitTypeParameterList_3403899f(
         long receiver,
         long node)
     {
@@ -3746,7 +3746,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeParameter_7078c800(
+    public int CSharpSyntaxVisitor_VisitTypeParameter_18927372(
         long receiver,
         long node)
     {
@@ -3763,7 +3763,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypePattern_0600799a(
+    public int CSharpSyntaxVisitor_VisitTypePattern_d0e322c5(
         long receiver,
         long node)
     {
@@ -3780,7 +3780,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitUnaryPattern_973455af(
+    public int CSharpSyntaxVisitor_VisitUnaryPattern_8ce1b489(
         long receiver,
         long node)
     {
@@ -3797,7 +3797,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitUndefDirectiveTrivia_a0f5b630(
+    public int CSharpSyntaxVisitor_VisitUndefDirectiveTrivia_9bf72733(
         long receiver,
         long node)
     {
@@ -3814,7 +3814,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitUnsafeStatement_2ec678d1(
+    public int CSharpSyntaxVisitor_VisitUnsafeStatement_81d05914(
         long receiver,
         long node)
     {
@@ -3831,7 +3831,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitUsingDirective_c7f1655a(
+    public int CSharpSyntaxVisitor_VisitUsingDirective_0ffd1939(
         long receiver,
         long node)
     {
@@ -3848,7 +3848,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitUsingStatement_2a57859a(
+    public int CSharpSyntaxVisitor_VisitUsingStatement_25344c1a(
         long receiver,
         long node)
     {
@@ -3865,7 +3865,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitVarPattern_24669a30(
+    public int CSharpSyntaxVisitor_VisitVarPattern_1054162b(
         long receiver,
         long node)
     {
@@ -3882,7 +3882,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitVariableDeclaration_c4d318e8(
+    public int CSharpSyntaxVisitor_VisitVariableDeclaration_8bdd06f4(
         long receiver,
         long node)
     {
@@ -3899,7 +3899,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitVariableDeclarator_986f416c(
+    public int CSharpSyntaxVisitor_VisitVariableDeclarator_4e589429(
         long receiver,
         long node)
     {
@@ -3916,7 +3916,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitWarningDirectiveTrivia_a36ea810(
+    public int CSharpSyntaxVisitor_VisitWarningDirectiveTrivia_a7a25701(
         long receiver,
         long node)
     {
@@ -3933,7 +3933,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitWhenClause_f92896cc(
+    public int CSharpSyntaxVisitor_VisitWhenClause_3630d78c(
         long receiver,
         long node)
     {
@@ -3950,7 +3950,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitWhereClause_d70cf0bd(
+    public int CSharpSyntaxVisitor_VisitWhereClause_98134ece(
         long receiver,
         long node)
     {
@@ -3967,7 +3967,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitWhileStatement_001478eb(
+    public int CSharpSyntaxVisitor_VisitWhileStatement_59913348(
         long receiver,
         long node)
     {
@@ -3984,7 +3984,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitWithExpression_b58a2f13(
+    public int CSharpSyntaxVisitor_VisitWithExpression_96546f9e(
         long receiver,
         long node)
     {
@@ -4001,7 +4001,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlCDataSection_39a5c443(
+    public int CSharpSyntaxVisitor_VisitXmlCDataSection_9ff50ec5(
         long receiver,
         long node)
     {
@@ -4018,7 +4018,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlComment_04d93c6a(
+    public int CSharpSyntaxVisitor_VisitXmlComment_bc8af0fa(
         long receiver,
         long node)
     {
@@ -4035,7 +4035,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlCrefAttribute_0c075f6a(
+    public int CSharpSyntaxVisitor_VisitXmlCrefAttribute_fdf7453e(
         long receiver,
         long node)
     {
@@ -4052,7 +4052,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlElementEndTag_93e2a3a1(
+    public int CSharpSyntaxVisitor_VisitXmlElementEndTag_84bf6280(
         long receiver,
         long node)
     {
@@ -4069,7 +4069,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlElementStartTag_e64663b1(
+    public int CSharpSyntaxVisitor_VisitXmlElementStartTag_67ec8166(
         long receiver,
         long node)
     {
@@ -4086,7 +4086,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlElement_eec9a19b(
+    public int CSharpSyntaxVisitor_VisitXmlElement_947b085c(
         long receiver,
         long node)
     {
@@ -4103,7 +4103,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlEmptyElement_72b08ee7(
+    public int CSharpSyntaxVisitor_VisitXmlEmptyElement_93242c2a(
         long receiver,
         long node)
     {
@@ -4120,7 +4120,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlNameAttribute_7fa0db60(
+    public int CSharpSyntaxVisitor_VisitXmlNameAttribute_51ae205a(
         long receiver,
         long node)
     {
@@ -4137,7 +4137,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlName_3ed53c14(
+    public int CSharpSyntaxVisitor_VisitXmlName_66ab43b7(
         long receiver,
         long node)
     {
@@ -4154,7 +4154,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlPrefix_24c8b333(
+    public int CSharpSyntaxVisitor_VisitXmlPrefix_03834aaf(
         long receiver,
         long node)
     {
@@ -4171,7 +4171,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlProcessingInstruction_e296b966(
+    public int CSharpSyntaxVisitor_VisitXmlProcessingInstruction_ce943f6a(
         long receiver,
         long node)
     {
@@ -4188,7 +4188,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlTextAttribute_0be6a94f(
+    public int CSharpSyntaxVisitor_VisitXmlTextAttribute_c0a7e6a0(
         long receiver,
         long node)
     {
@@ -4205,7 +4205,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlText_f4e057b2(
+    public int CSharpSyntaxVisitor_VisitXmlText_cbc56576(
         long receiver,
         long node)
     {
@@ -4222,7 +4222,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitYieldStatement_29cc64e6(
+    public int CSharpSyntaxVisitor_VisitYieldStatement_9e8a268a(
         long receiver,
         long node)
     {
@@ -4239,7 +4239,7 @@ internal sealed partial class CSharpSyntaxWalkerVtblDispatcher : ICSharpSyntaxWa
         }
     }
 
-    public int CSharpSyntaxVisitor_Visit_6ed5cb48(
+    public int CSharpSyntaxVisitor_Visit_8a42da0a(
         long receiver,
         long node)
     {

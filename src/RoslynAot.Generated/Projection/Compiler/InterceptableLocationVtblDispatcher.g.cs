@@ -23,7 +23,7 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int InterceptableLocation_Equals_0ed02a90(
+    public int InterceptableLocation_Equals_ddbefe89(
         long receiver,
         long other,
         out int result)

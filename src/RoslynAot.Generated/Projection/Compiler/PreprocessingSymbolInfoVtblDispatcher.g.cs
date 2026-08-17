@@ -23,7 +23,7 @@ internal sealed partial class PreprocessingSymbolInfoVtblDispatcher : IPreproces
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int PreprocessingSymbolInfo_Equals_09e19fe9(
+    public int PreprocessingSymbolInfo_Equals_988876f5(
         long receiver,
         long other,
         out int result)

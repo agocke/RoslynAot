@@ -23,7 +23,7 @@ internal sealed partial class SyntaxTreeVtblDispatcher : ISyntaxTreeVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxTree_GetDiagnostics_8a5f35b5(
+    public int SyntaxTree_GetDiagnostics_9c96c6b5(
         long receiver,
         long node,
         out long result)
@@ -42,7 +42,7 @@ internal sealed partial class SyntaxTreeVtblDispatcher : ISyntaxTreeVtbl
         }
     }
 
-    public int SyntaxTree_GetDiagnostics_d1e047f8(
+    public int SyntaxTree_GetDiagnostics_9b5e0ed5(
         long receiver,
         long nodeOrToken,
         out long result)
@@ -61,7 +61,7 @@ internal sealed partial class SyntaxTreeVtblDispatcher : ISyntaxTreeVtbl
         }
     }
 
-    public int SyntaxTree_GetDiagnostics_522133bc(
+    public int SyntaxTree_GetDiagnostics_7430056a(
         long receiver,
         long token,
         out long result)
@@ -80,7 +80,7 @@ internal sealed partial class SyntaxTreeVtblDispatcher : ISyntaxTreeVtbl
         }
     }
 
-    public int SyntaxTree_GetDiagnostics_a937dd12(
+    public int SyntaxTree_GetDiagnostics_a57880a1(
         long receiver,
         long trivia,
         out long result)

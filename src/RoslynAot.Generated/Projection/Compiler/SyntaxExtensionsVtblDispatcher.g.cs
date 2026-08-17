@@ -23,7 +23,7 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxExtensions_NormalizeWhitespace_d73600b7(
+    public int SyntaxExtensions_NormalizeWhitespace_9f59464b(
         long token,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         int elasticTrivia,
@@ -43,7 +43,7 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         }
     }
 
-    public int SyntaxExtensions_NormalizeWhitespace_4993d000(
+    public int SyntaxExtensions_NormalizeWhitespace_799da1df(
         long token,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string eol,
@@ -64,7 +64,7 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         }
     }
 
-    public int SyntaxExtensions_NormalizeWhitespace_9e0b1964(
+    public int SyntaxExtensions_NormalizeWhitespace_682062f5(
         long list,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         int elasticTrivia,
@@ -84,7 +84,7 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         }
     }
 
-    public int SyntaxExtensions_NormalizeWhitespace_08ea7961(
+    public int SyntaxExtensions_NormalizeWhitespace_aec4c5f5(
         long list,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string eol,

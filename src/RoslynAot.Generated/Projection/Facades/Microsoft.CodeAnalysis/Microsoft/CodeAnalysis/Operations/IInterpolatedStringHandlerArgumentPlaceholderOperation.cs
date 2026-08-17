@@ -38,9 +38,9 @@ namespace Microsoft.CodeAnalysis.Operations
         public global::RoslynAot.Abi.IIInterpolatedStringHandlerArgumentPlaceholderOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIInterpolatedStringHandlerArgumentPlaceholderOperationVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
-        internal static IInterpolatedStringHandlerArgumentPlaceholderOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IInterpolatedStringHandlerArgumentPlaceholderOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        internal static IInterpolatedStringHandlerArgumentPlaceholderOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IInterpolatedStringHandlerArgumentPlaceholderOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("ef085de2-5d9a-5ee1-9ef0-468b2756fdec")]
+        [System.Runtime.InteropServices.Guid("669c4d1c-f2e1-5f2e-9acb-3a4f589cc1f3")]
         internal partial interface __RoslynAotImplementation : IInterpolatedStringHandlerArgumentPlaceholderOperation
         {
         }

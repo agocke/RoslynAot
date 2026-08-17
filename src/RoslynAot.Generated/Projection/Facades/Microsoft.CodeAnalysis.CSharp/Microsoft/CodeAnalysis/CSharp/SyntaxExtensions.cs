@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
-            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_d73600b7(token.__RoslynAotGetHandle(controlVtbl), indentation, elasticTrivia ? 1 : 0, out long result);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_9f59464b(token.__RoslynAotGetHandle(controlVtbl), indentation, elasticTrivia ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -23,7 +23,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
-            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_4993d000(token.__RoslynAotGetHandle(controlVtbl), indentation, eol, elasticTrivia ? 1 : 0, out long result);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_799da1df(token.__RoslynAotGetHandle(controlVtbl), indentation, eol, elasticTrivia ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -32,7 +32,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
-            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_9e0b1964(list.__RoslynAotGetHandle(controlVtbl), indentation, elasticTrivia ? 1 : 0, out long result);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_682062f5(list.__RoslynAotGetHandle(controlVtbl), indentation, elasticTrivia ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTriviaList.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -41,7 +41,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
-            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_08ea7961(list.__RoslynAotGetHandle(controlVtbl), indentation, eol, elasticTrivia ? 1 : 0, out long result);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_aec4c5f5(list.__RoslynAotGetHandle(controlVtbl), indentation, eol, elasticTrivia ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTriviaList.__RoslynAotCreateProxy(controlVtbl, result);
         }

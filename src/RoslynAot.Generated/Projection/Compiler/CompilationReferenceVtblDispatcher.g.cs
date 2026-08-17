@@ -105,7 +105,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         }
     }
 
-    public int CompilationReference_Equals_e9a54551(
+    public int CompilationReference_Equals_776ef3ef(
         long receiver,
         long other,
         out int result)

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("6f91c074-5db3-5aae-ae8b-128f3ae2b363")]
+[Guid("0fe31dce-6540-5cd6-a71b-0dfe37468f88")]
 public partial interface ISyntaxTriviaListReversedVtbl
 {
 
     [PreserveSig]
-    int SyntaxTriviaList_Reversed_Equals_51d98215(
+    int SyntaxTriviaList_Reversed_Equals_998c05e7(
         long receiver,
         long other,
         out int result

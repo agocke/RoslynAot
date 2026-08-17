@@ -517,6 +517,75 @@ gets an `AD0001` naming the member instead of killing the build.
 **Goal:** reference equality across the boundary means object identity, and
 casts to derived types work.
 
+**Status (2026-08-17): the identity half is done; runtime-type work is
+unstarted.** Per bullet:
+
+- **Retire control identity — done.** `RoslynInterop.Shared` is now the one
+  control interop for the whole compiler process; `NativeDiagnosticAnalyzer`
+  no longer constructs its own. `RoslynHandleTable` dropped the interop-id
+  component from handle encoding entirely — there is nothing left to encode
+  against, since every analyzer in the process shares the same table.
+  `GetOrCreateComInterfaceForObject`/`GetOrCreateObjectForComInstance` both
+  cache by object identity already, so one shared compiler-side object gives
+  every analyzer type in a module the same `IRoslynControlVtbl` proxy for
+  free — no separate "many analyzers, one control" mechanism was needed.
+- **Reverse map and handle→proxy cache — done.** `RoslynHandleTable.Add` dedups
+  reference-typed objects by identity (`Dictionary<object, long>`,
+  `ReferenceEqualityComparer`); `RoslynObjectProxy.GetOrCreate` mirrors it on
+  the analyzer side with a weak-valued, periodically-swept cache. Scoped to the
+  IDIC/interface family only — one proxy type answers any interface cast
+  dynamically, so a pure handle key is correct there. Class-hierarchy proxies
+  (`SyntaxNode`, `Diagnostic`, `Location`, and similar abstract/concrete
+  facades) are **not** cached by this pass: each declaring type constructs a
+  distinct nested proxy subclass, and unifying identity across, say, a
+  `SyntaxNode`-typed read and a `ClassDeclarationSyntax`-typed read of the same
+  handle needs the same most-derived-construction question problem 3 already
+  defers. Left as a follow-up, not silently dropped.
+- **Cast-time type resolution — untouched, as designed.** `IsObjectType` plus
+  the type map still resolves casts, unchanged.
+- **Collection paths re-adding objects per element — not verified this pass.**
+  Deferred; nothing in this change touches that path, so it is exactly as
+  correct or incorrect as before.
+- **Generate shapes from the public interface hierarchy — not done.** No change
+  this pass; still tracked as open in problem 3.
+- **Memoize immutable collection-valued members (`NamespaceNames`) — not done.**
+  The dominant traffic member is unchanged; see the measured result below for
+  why the call count still moved anyway.
+- **`SymbolEqualityComparer` enum-tag rework — already satisfied.** Step 3 made
+  `SymbolEqualityComparer.Default`/`IncludeNullability` `Local`-owned with
+  field-initializer construction (`ProjectionOverrides.s_fieldInitializers`);
+  there is no remote singleton left to rework.
+- **Per-control registration tables — did not exist to retire.** Inspected:
+  action registration is keyed by an analyzer-instance-local `Dictionary<int,
+  AnalyzerActionEntry>` (`AnalyzerTransport._actions`), never by control
+  identity. This bullet described a design that was not the one built in
+  Step 2/3.
+
+**Measured result (2026-08-17).** Total differential-corpus boundary calls:
+1,352,763 → 1,141,953 (-15.6%), burn-down unchanged at 9 Pass / 25 Fail / 3
+NotExercised (`Verdict: Match`). None of that drop comes from the deferred
+`NamespaceNames` memoization — its own call count fell too (937,215 → 751,365),
+because callers that used to compare non-canonical proxies by value now find
+the same proxy instance and skip the redundant read entirely; it is still
+65.8% of all traffic and the obvious next win. Module baseline: the floor grew
+2,593,424 → 2,601,792 bytes (+0.32%, the fixed cost of `RoslynObjectProxy`'s
+new cache fields, paid once by every module that proxies any interface type),
+while the whole-assembly module *shrank* 9,448,000 → 9,444,368 bytes, because
+removing the now-vacuous control-mismatch check from every class-hierarchy
+facade's `__RoslynAotGetHandle` saves more, per type, than the cache costs
+once — and the shipping module has far more types to spend that saving on than
+the floor does.
+
+**A pre-existing note on regenerating the projection.** Running the generator
+against today's toolchain — even with zero source changes — reassigns every
+vtbl's content-hash-derived GUID relative to what is currently checked in
+(verified: a clean-HEAD regen differs from the committed tree the same way).
+That drift predates this step and is orthogonal to it; it is not evidence of a
+correctness problem, since vtbl ids only need to agree between the ABI headers
+and the compiler dispatcher, which are always regenerated together. It does
+mean this step's regeneration commit carries that unrelated numeric churn
+alongside its actual diff.
+
 ### Retire control identity
 
 The inventory describes handles and proxies keyed on `(control identity,
@@ -589,14 +658,27 @@ here, because Roslyn objects are handles rather than COM objects.
   members are safe to memoize is a model field, so this half lands after Step 2
   even though the identity work above does not need to wait.
 
-**Note on the exit criterion below.** CA1508's live failure is now
-`ISymbol.Locations`, not identity, so it will not verify this step until that
-member is projected. Use a reference-identity probe and the rules currently
-failing on `DeclaringSyntaxReferences` as the signal instead.
+**The exit criterion below was already stale when this step started, and
+stays stale now.** CA1508's live failure moved twice since it was written:
+first to `ISymbol.Locations` (fixed by Step 3), then to
+`DataFlowOperationVisitor\`4.VisitCore` — a GVM, gated on the Step 8 shim, not
+on identity. It will not pass at Step 4 regardless of what this step does. The
+fallback signal named here, rules failing on `DeclaringSyntaxReferences`, is
+also gone: Step 3 projected that member, so those rules now fail on
+`SyntaxReference.GetSyntax` instead. Both were verified with a reference-
+identity probe (`RoslynProjectionValidation`'s dedup assertion) and the
+differential harness instead, per the "measured result" above.
 
-**Exit:** CA1508 passes. `ParseOptions` results cast to `CSharpParseOptions`.
-Roslyn's own dictionaries keyed on operations work unchanged. No control
-identity remains, and the 43 handle tables have become one.
+**Exit (revised):** a reference-identity probe passes — the same object
+crossed twice reuses its handle and its proxy. `ParseOptions` results cast to
+`CSharpParseOptions` (unaffected by this step; already true). Roslyn's own
+dictionaries keyed on operations work unchanged (unverifiable directly until
+`IOperation.ConstantValue` and friends are projected, but the proxy-level
+guarantee this step adds is symbol-agnostic — it holds for whichever type gets
+there first). No control identity remains: one process-wide `RoslynInterop`,
+one `RoslynHandleTable`. The burn-down does not move, by design — see
+"measured result" for why that's the expected outcome, not a failure to reach
+CA1508.
 
 **Expect a large memory improvement** as a side effect: the table stops growing
 with call traffic and starts growing with the object graph.

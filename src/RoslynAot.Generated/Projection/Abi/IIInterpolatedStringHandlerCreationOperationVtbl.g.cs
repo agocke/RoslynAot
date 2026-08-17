@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b3084db6-258f-50db-8768-570e41ef1c92")]
+[Guid("6f57e5ef-c694-529a-94dd-90f2c9f0ae01")]
 public partial interface IIInterpolatedStringHandlerCreationOperationVtbl
 {
 

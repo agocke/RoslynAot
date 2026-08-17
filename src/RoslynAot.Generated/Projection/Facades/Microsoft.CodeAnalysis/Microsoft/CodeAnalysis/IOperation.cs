@@ -126,7 +126,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIOperationVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IOperation_Accept_db2d5f47(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.IOperation_Accept_72e7eb92(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -266,14 +266,7 @@ namespace Microsoft.CodeAnalysis
                     throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
                 }
 
-                internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-                {
-                    global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-                    if (!object.ReferenceEquals(actual, controlVtbl))
-                        throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-                    return __roslynAotHandle;
-                }
-
+                internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
                 internal static Enumerator __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new Enumerator(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIOperationOperationListEnumeratorVtbl(controlVtbl), handle);
             }
 
@@ -372,14 +365,7 @@ namespace Microsoft.CodeAnalysis
                         throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
                     }
 
-                    internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-                    {
-                        global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-                        if (!object.ReferenceEquals(actual, controlVtbl))
-                            throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-                        return __roslynAotHandle;
-                    }
-
+                    internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
                     internal static Enumerator __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new Enumerator(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIOperationOperationListReversedEnumeratorVtbl(controlVtbl), handle);
                 }
 
@@ -412,14 +398,7 @@ namespace Microsoft.CodeAnalysis
                     throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
                 }
 
-                internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-                {
-                    global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-                    if (!object.ReferenceEquals(actual, controlVtbl))
-                        throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-                    return __roslynAotHandle;
-                }
-
+                internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
                 internal static Reversed __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new Reversed(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIOperationOperationListReversedVtbl(controlVtbl), handle);
             }
 
@@ -452,14 +431,7 @@ namespace Microsoft.CodeAnalysis
                 throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
             }
 
-            internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-            {
-                global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-                if (!object.ReferenceEquals(actual, controlVtbl))
-                    throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-                return __roslynAotHandle;
-            }
-
+            internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
             internal static OperationList __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new OperationList(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIOperationOperationListVtbl(controlVtbl), handle);
         }
 
@@ -467,9 +439,9 @@ namespace Microsoft.CodeAnalysis
         public global::RoslynAot.Abi.IIOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIOperationVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
-        internal static IOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IOperation)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        internal static IOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("7e6be383-5eda-5b12-902a-d3df54041d6b")]
+        [System.Runtime.InteropServices.Guid("6e7cbcd1-30a9-5b83-9ddb-07c0135eaa29")]
         internal partial interface __RoslynAotImplementation : IOperation
         {
         }

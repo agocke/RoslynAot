@@ -42,7 +42,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_Equals_c3137714(
+    public int SyntaxToken_Equals_38ba030c(
         long receiver,
         long other,
         out int result)
@@ -61,7 +61,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_GetAnnotations_bc039625(
+    public int SyntaxToken_GetAnnotations_33ced40e(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
@@ -197,7 +197,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_HasAnnotations_14177fd7(
+    public int SyntaxToken_HasAnnotations_2ecdf813(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
@@ -419,7 +419,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_WithoutAnnotations_3d47551d(
+    public int SyntaxToken_WithoutAnnotations_e869934d(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)

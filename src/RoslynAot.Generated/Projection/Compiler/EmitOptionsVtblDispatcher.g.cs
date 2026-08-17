@@ -23,7 +23,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int EmitOptions_Equals_33e44ed3(
+    public int EmitOptions_Equals_6cab27c9(
         long receiver,
         long other,
         out int result)

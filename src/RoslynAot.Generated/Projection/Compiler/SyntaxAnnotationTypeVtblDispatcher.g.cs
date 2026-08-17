@@ -23,7 +23,7 @@ internal sealed partial class SyntaxAnnotationTypeVtblDispatcher : ISyntaxAnnota
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxAnnotation_ctor_3d9c3533(
+    public int SyntaxAnnotation_ctor_706a5ffb(
         out long result)
     {
         RoslynCallCounters.Record(1534);
@@ -40,7 +40,7 @@ internal sealed partial class SyntaxAnnotationTypeVtblDispatcher : ISyntaxAnnota
         }
     }
 
-    public int SyntaxAnnotation_ctor_0d8b8281(
+    public int SyntaxAnnotation_ctor_6d2856e8(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string kind,
         out long result)
     {
@@ -58,7 +58,7 @@ internal sealed partial class SyntaxAnnotationTypeVtblDispatcher : ISyntaxAnnota
         }
     }
 
-    public int SyntaxAnnotation_ctor_649fee3b(
+    public int SyntaxAnnotation_ctor_ca78ae06(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string kind,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string data,
         out long result)

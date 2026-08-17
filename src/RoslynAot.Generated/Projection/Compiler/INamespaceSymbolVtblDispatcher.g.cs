@@ -23,7 +23,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int INamespaceSymbol_GetMembers_0b7a9cb6(
+    public int INamespaceSymbol_GetMembers_b2cc9712(
         long receiver,
         out long result)
     {
@@ -41,7 +41,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         }
     }
 
-    public int INamespaceSymbol_GetMembers_6da4ec2b(
+    public int INamespaceSymbol_GetMembers_943d81e8(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)

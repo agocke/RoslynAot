@@ -29,7 +29,13 @@ internal sealed unsafe class NativeDiagnosticAnalyzer : DiagnosticAnalyzer
     }
 
     private readonly IAnalyzerTransport _transport;
-    private readonly RoslynInterop _roslynInterop = new();
+
+    // Shared across every analyzer, not one per instance: migration Step 4
+    // retired per-analyzer control identity so that an object handed to
+    // several analyzers (a Compilation, a SyntaxTree) resolves to the same
+    // handle and, on the analyzer side, the same proxy. See
+    // RoslynInterop.Shared.
+    private readonly RoslynInterop _roslynInterop = RoslynInterop.Shared;
 
     private NativeDiagnosticAnalyzer(IAnalyzerTransport transport)
     {

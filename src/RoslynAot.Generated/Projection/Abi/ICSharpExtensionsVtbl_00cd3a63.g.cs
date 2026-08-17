@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("365d8225-96fa-5954-8f84-82f5c92bfa2d")]
+[Guid("c1b60234-120f-5bac-93f1-18cd20d52bf1")]
 public partial interface ICSharpExtensionsVtbl_00cd3a63
 {
 
@@ -76,7 +76,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_ClassifyConversion_50e9dbc8(
+    int CSharpExtensions_ClassifyConversion_a6e6c47d(
         long semanticModel,
         long expression,
         long destination,
@@ -85,7 +85,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_ClassifyConversion_8095b793(
+    int CSharpExtensions_ClassifyConversion_499d0cde(
         long semanticModel,
         int position,
         long expression,
@@ -194,7 +194,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_659e741c(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_2c643751(
         long semanticModel,
         int position,
         long attribute,
@@ -202,7 +202,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_f7e912d6(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_94a2bcee(
         long semanticModel,
         int position,
         long constructorInitializer,
@@ -210,7 +210,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_b76c036c(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_0f8f0756(
         long semanticModel,
         int position,
         long expression,
@@ -219,7 +219,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_464d6dae(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_b8de0754(
         long semanticModel,
         int position,
         long expression,
@@ -228,7 +228,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_e19af2ab(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_ebe2f354(
         long semanticModel,
         int position,
         long constructorInitializer,

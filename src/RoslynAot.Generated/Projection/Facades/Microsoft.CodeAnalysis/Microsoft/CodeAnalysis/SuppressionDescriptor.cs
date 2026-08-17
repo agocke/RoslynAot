@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISuppressionDescriptorTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSuppressionDescriptorTypeVtbl(controlVtbl);
-            int status = vtbl.SuppressionDescriptor_ctor_2d6b4f04(id, suppressedDiagnosticId, justification.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.SuppressionDescriptor_ctor_cd3f1d62(id, suppressedDiagnosticId, justification.__RoslynAotGetHandle(controlVtbl), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSuppressionDescriptorVtbl(controlVtbl);
@@ -25,7 +25,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISuppressionDescriptorTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSuppressionDescriptorTypeVtbl(controlVtbl);
-            int status = vtbl.SuppressionDescriptor_ctor_c95ad647(id, suppressedDiagnosticId, justification, out long result);
+            int status = vtbl.SuppressionDescriptor_ctor_d9a058e6(id, suppressedDiagnosticId, justification, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSuppressionDescriptorVtbl(controlVtbl);
@@ -70,7 +70,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISuppressionDescriptorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SuppressionDescriptor_Equals_1172f3e8(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.SuppressionDescriptor_Equals_6d7d7e69(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -105,14 +105,7 @@ namespace Microsoft.CodeAnalysis
 
         internal global::RoslynAot.Abi.ISuppressionDescriptorVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __roslynAotHandle;
-        }
-
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
         internal static SuppressionDescriptor __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new SuppressionDescriptor(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSuppressionDescriptorVtbl(controlVtbl), handle);
     }
 }

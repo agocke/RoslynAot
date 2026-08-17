@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("de424578-63ab-556b-af24-828531f56660")]
+[Guid("b2a67c24-b53f-5c22-a333-0d0591f6cc7e")]
 public partial interface ITupleTypeSyntaxVtbl : ITypeSyntaxVtbl
 {
 
     [PreserveSig]
-    int TupleTypeSyntax_Accept_02767b33(
+    int TupleTypeSyntax_Accept_636dda69(
         long receiver,
         long visitor
     );

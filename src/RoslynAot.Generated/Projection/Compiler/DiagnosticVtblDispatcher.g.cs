@@ -23,7 +23,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int Diagnostic_Equals_9b1492a8(
+    public int Diagnostic_Equals_ce717ce2(
         long receiver,
         long obj,
         out int result)

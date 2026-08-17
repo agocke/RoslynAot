@@ -23,7 +23,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SubsystemVersion_Equals_cca0bf99(
+    public int SubsystemVersion_Equals_c2f4d260(
         long receiver,
         long other,
         out int result)

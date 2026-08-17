@@ -17,7 +17,7 @@ namespace Microsoft.CodeAnalysis.Emit
             this = default;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IRuntimeRudeEditTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuntimeRudeEditTypeVtbl(controlVtbl);
-            int status = vtbl.RuntimeRudeEdit_ctor_145923f8(message, errorCode, out long result);
+            int status = vtbl.RuntimeRudeEdit_ctor_f0820610(message, errorCode, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuntimeRudeEditVtbl(controlVtbl);
@@ -82,14 +82,7 @@ namespace Microsoft.CodeAnalysis.Emit
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __roslynAotHandle;
-        }
-
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
         internal static RuntimeRudeEdit __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new RuntimeRudeEdit(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuntimeRudeEditVtbl(controlVtbl), handle);
     }
 }

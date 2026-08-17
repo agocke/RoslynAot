@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c5fe607b-b776-519e-bfed-e41b5364a46d")]
+[Guid("4b632d5b-d4ad-518f-9abb-7d6e6f06e3c2")]
 public partial interface IFinallyClauseSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int FinallyClauseSyntax_Accept_c563ca04(
+    int FinallyClauseSyntax_Accept_705b2b5d(
         long receiver,
         long visitor
     );

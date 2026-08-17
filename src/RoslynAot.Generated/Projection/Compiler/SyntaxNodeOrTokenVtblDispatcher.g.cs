@@ -77,7 +77,7 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         }
     }
 
-    public int SyntaxNodeOrToken_Equals_da6a78cc(
+    public int SyntaxNodeOrToken_Equals_1ae3035a(
         long receiver,
         long other,
         out int result)
@@ -96,7 +96,7 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         }
     }
 
-    public int SyntaxNodeOrToken_GetAnnotations_77a27a49(
+    public int SyntaxNodeOrToken_GetAnnotations_caa6e658(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
@@ -260,7 +260,7 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         }
     }
 
-    public int SyntaxNodeOrToken_HasAnnotations_47e77cab(
+    public int SyntaxNodeOrToken_HasAnnotations_b26c4330(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
@@ -407,7 +407,7 @@ internal sealed partial class SyntaxNodeOrTokenVtblDispatcher : ISyntaxNodeOrTok
         }
     }
 
-    public int SyntaxNodeOrToken_WithoutAnnotations_747bc66f(
+    public int SyntaxNodeOrToken_WithoutAnnotations_5f35ccca(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)

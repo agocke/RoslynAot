@@ -12,18 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("bb849537-cd55-5611-8d14-d660d7885b32")]
+[Guid("20b855a9-6416-52ec-b183-91ae550f2b7c")]
 public partial interface IOperationWalkerVtbl : IOperationVisitorVtbl
 {
 
     [PreserveSig]
-    int OperationWalker_DefaultVisit_a65ddb77(
+    int OperationWalker_DefaultVisit_b9c38140(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationWalker_Visit_888c9bf7(
+    int OperationWalker_Visit_019fc0ce(
         long receiver,
         long operation
     );

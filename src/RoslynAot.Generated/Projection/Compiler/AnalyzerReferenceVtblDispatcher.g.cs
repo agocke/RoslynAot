@@ -78,7 +78,7 @@ internal sealed partial class AnalyzerReferenceVtblDispatcher : IAnalyzerReferen
         }
     }
 
-    public int AnalyzerReference_GetGenerators_e0637324(
+    public int AnalyzerReference_GetGenerators_a8f136d3(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)

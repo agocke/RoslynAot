@@ -23,7 +23,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SymbolVisitor_DefaultVisit_31499c13(
+    public int SymbolVisitor_DefaultVisit_d281354f(
         long receiver,
         long symbol)
     {
@@ -40,7 +40,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitAlias_54509efe(
+    public int SymbolVisitor_VisitAlias_84c6158b(
         long receiver,
         long symbol)
     {
@@ -57,7 +57,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitArrayType_8d2380dc(
+    public int SymbolVisitor_VisitArrayType_7815ab5f(
         long receiver,
         long symbol)
     {
@@ -74,7 +74,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitAssembly_d5667bab(
+    public int SymbolVisitor_VisitAssembly_7d69a90a(
         long receiver,
         long symbol)
     {
@@ -91,7 +91,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitDiscard_4e7e659c(
+    public int SymbolVisitor_VisitDiscard_1997debd(
         long receiver,
         long symbol)
     {
@@ -108,7 +108,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitDynamicType_3d53be17(
+    public int SymbolVisitor_VisitDynamicType_5fd15c97(
         long receiver,
         long symbol)
     {
@@ -125,7 +125,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitEvent_2d9a7dc9(
+    public int SymbolVisitor_VisitEvent_790ec947(
         long receiver,
         long symbol)
     {
@@ -142,7 +142,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitField_f376e155(
+    public int SymbolVisitor_VisitField_3020f12b(
         long receiver,
         long symbol)
     {
@@ -159,7 +159,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitFunctionPointerType_2658fe25(
+    public int SymbolVisitor_VisitFunctionPointerType_82035c67(
         long receiver,
         long symbol)
     {
@@ -176,7 +176,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitLabel_76e2fe9d(
+    public int SymbolVisitor_VisitLabel_f455e18a(
         long receiver,
         long symbol)
     {
@@ -193,7 +193,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitLocal_6fe1546e(
+    public int SymbolVisitor_VisitLocal_13a52542(
         long receiver,
         long symbol)
     {
@@ -210,7 +210,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitMethod_055a73a0(
+    public int SymbolVisitor_VisitMethod_e3be520f(
         long receiver,
         long symbol)
     {
@@ -227,7 +227,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitModule_6bfa0b25(
+    public int SymbolVisitor_VisitModule_1209bef2(
         long receiver,
         long symbol)
     {
@@ -244,7 +244,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitNamedType_72321756(
+    public int SymbolVisitor_VisitNamedType_8a2a4d2f(
         long receiver,
         long symbol)
     {
@@ -261,7 +261,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitNamespace_a08a3a15(
+    public int SymbolVisitor_VisitNamespace_8cc36cc0(
         long receiver,
         long symbol)
     {
@@ -278,7 +278,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitParameter_b71b9a4e(
+    public int SymbolVisitor_VisitParameter_a7988495(
         long receiver,
         long symbol)
     {
@@ -295,7 +295,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitPointerType_0eaebe0a(
+    public int SymbolVisitor_VisitPointerType_a87aa150(
         long receiver,
         long symbol)
     {
@@ -312,7 +312,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitProperty_a357061c(
+    public int SymbolVisitor_VisitProperty_90561396(
         long receiver,
         long symbol)
     {
@@ -329,7 +329,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitRangeVariable_5dbb75d0(
+    public int SymbolVisitor_VisitRangeVariable_cc61555d(
         long receiver,
         long symbol)
     {
@@ -346,7 +346,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_VisitTypeParameter_4fced5a3(
+    public int SymbolVisitor_VisitTypeParameter_149e82c2(
         long receiver,
         long symbol)
     {
@@ -363,7 +363,7 @@ internal sealed partial class SymbolVisitorVtblDispatcher : ISymbolVisitorVtbl
         }
     }
 
-    public int SymbolVisitor_Visit_567a9d1d(
+    public int SymbolVisitor_Visit_5f3bdc49(
         long receiver,
         long symbol)
     {

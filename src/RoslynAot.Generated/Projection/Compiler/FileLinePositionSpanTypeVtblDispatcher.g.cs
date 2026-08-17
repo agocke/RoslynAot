@@ -23,7 +23,7 @@ internal sealed partial class FileLinePositionSpanTypeVtblDispatcher : IFileLine
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int FileLinePositionSpan_ctor_16042381(
+    public int FileLinePositionSpan_ctor_376e92d9(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         long start,
         long end,
@@ -43,7 +43,7 @@ internal sealed partial class FileLinePositionSpanTypeVtblDispatcher : IFileLine
         }
     }
 
-    public int FileLinePositionSpan_ctor_b779628b(
+    public int FileLinePositionSpan_ctor_ce8e0eb2(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         long span,
         out long result)

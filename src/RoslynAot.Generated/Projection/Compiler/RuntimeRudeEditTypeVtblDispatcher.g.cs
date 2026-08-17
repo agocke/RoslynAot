@@ -23,7 +23,7 @@ internal sealed partial class RuntimeRudeEditTypeVtblDispatcher : IRuntimeRudeEd
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int RuntimeRudeEdit_ctor_145923f8(
+    public int RuntimeRudeEdit_ctor_f0820610(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string message,
         int errorCode,
         out long result)

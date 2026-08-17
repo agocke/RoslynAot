@@ -39,7 +39,7 @@ internal sealed partial class IncrementalGeneratorPostInitializationContextVtblD
         }
     }
 
-    public int IncrementalGeneratorPostInitializationContext_AddSource_ae64cc8a(
+    public int IncrementalGeneratorPostInitializationContext_AddSource_7da845f5(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         long sourceText)
@@ -57,7 +57,7 @@ internal sealed partial class IncrementalGeneratorPostInitializationContextVtblD
         }
     }
 
-    public int IncrementalGeneratorPostInitializationContext_AddSource_6c25deff(
+    public int IncrementalGeneratorPostInitializationContext_AddSource_d5ba85dc(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)

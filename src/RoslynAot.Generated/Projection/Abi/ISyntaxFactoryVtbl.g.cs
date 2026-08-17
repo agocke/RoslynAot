@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("dcf0e78e-3e6f-5283-b9cf-1f77ff97d3fd")]
+[Guid("30aef7e4-1bf6-5ead-9575-bc8147433493")]
 public partial interface ISyntaxFactoryVtbl
 {
 
@@ -45,7 +45,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_AliasQualifiedName_676d1ea7(
+    int SyntaxFactory_AliasQualifiedName_ae103260(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string @alias,
         long name,
         out long result
@@ -112,7 +112,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_AreEquivalent_9c9d8b17(
+    int SyntaxFactory_AreEquivalent_8a50f3bc(
         long oldNode,
         long newNode,
         int topLevel,
@@ -120,21 +120,21 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_AreEquivalent_bd564b8d(
+    int SyntaxFactory_AreEquivalent_8f4e5d46(
         long oldToken,
         long newToken,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxFactory_AreEquivalent_8ec4abec(
+    int SyntaxFactory_AreEquivalent_0a50461c(
         long oldList,
         long newList,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxFactory_AreEquivalent_e1a3ea7d(
+    int SyntaxFactory_AreEquivalent_1ac1069e(
         long oldTree,
         long newTree,
         int topLevel,
@@ -266,7 +266,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_BadDirectiveTrivia_84324a8d(
+    int SyntaxFactory_BadDirectiveTrivia_a8fbbc2d(
         long hashToken,
         long identifier,
         long endOfDirectiveToken,
@@ -275,7 +275,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_BadDirectiveTrivia_2228d676(
+    int SyntaxFactory_BadDirectiveTrivia_3bc7f48e(
         long identifier,
         int isActive,
         out long result
@@ -511,7 +511,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ClassDeclaration_e4c63470(
+    int SyntaxFactory_ClassDeclaration_2dd709de(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -607,7 +607,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ConstructorDeclaration_2a3e37bf(
+    int SyntaxFactory_ConstructorDeclaration_4ba97cbd(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -768,7 +768,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_DefineDirectiveTrivia_8e573ff8(
+    int SyntaxFactory_DefineDirectiveTrivia_b1a88fae(
         long hashToken,
         long defineKeyword,
         long name,
@@ -778,14 +778,14 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_DefineDirectiveTrivia_ad64892e(
+    int SyntaxFactory_DefineDirectiveTrivia_16e54fa5(
         long name,
         int isActive,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_DefineDirectiveTrivia_a143126a(
+    int SyntaxFactory_DefineDirectiveTrivia_5690ff4f(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         int isActive,
         out long result
@@ -799,7 +799,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_DelegateDeclaration_29ed81b1(
+    int SyntaxFactory_DelegateDeclaration_7f8ec955(
         long returnType,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
@@ -812,7 +812,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_DestructorDeclaration_dfda7aba(
+    int SyntaxFactory_DestructorDeclaration_be238a9e(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -913,7 +913,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ElifDirectiveTrivia_bc00d35f(
+    int SyntaxFactory_ElifDirectiveTrivia_9830e5d6(
         long condition,
         int isActive,
         int branchTaken,
@@ -922,7 +922,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ElifDirectiveTrivia_f739be66(
+    int SyntaxFactory_ElifDirectiveTrivia_20995b17(
         long hashToken,
         long elifKeyword,
         long condition,
@@ -947,7 +947,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ElseDirectiveTrivia_efa6c61f(
+    int SyntaxFactory_ElseDirectiveTrivia_b02992d0(
         long hashToken,
         long elseKeyword,
         long endOfDirectiveToken,
@@ -957,7 +957,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ElseDirectiveTrivia_adfb54ee(
+    int SyntaxFactory_ElseDirectiveTrivia_e6a72d37(
         int isActive,
         int branchTaken,
         out long result
@@ -975,7 +975,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_EndIfDirectiveTrivia_35d3b427(
+    int SyntaxFactory_EndIfDirectiveTrivia_fa3e3836(
         long hashToken,
         long endIfKeyword,
         long endOfDirectiveToken,
@@ -984,19 +984,19 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_EndIfDirectiveTrivia_05820434(
+    int SyntaxFactory_EndIfDirectiveTrivia_8cdf69e6(
         int isActive,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_EndOfLine_bd61063f(
+    int SyntaxFactory_EndOfLine_6a4d1e9b(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_EndRegionDirectiveTrivia_8cb345f3(
+    int SyntaxFactory_EndRegionDirectiveTrivia_32326fcd(
         long hashToken,
         long endRegionKeyword,
         long endOfDirectiveToken,
@@ -1005,7 +1005,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_EndRegionDirectiveTrivia_563b1839(
+    int SyntaxFactory_EndRegionDirectiveTrivia_e000cecd(
         int isActive,
         out long result
     );
@@ -1017,7 +1017,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_EnumDeclaration_3d22b0a6(
+    int SyntaxFactory_EnumDeclaration_1955a4c5(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -1029,7 +1029,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_EnumMemberDeclaration_45cf10c4(
+    int SyntaxFactory_EnumMemberDeclaration_8d6067f9(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -1048,7 +1048,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ErrorDirectiveTrivia_923268c6(
+    int SyntaxFactory_ErrorDirectiveTrivia_2ba9f271(
         long hashToken,
         long errorKeyword,
         long endOfDirectiveToken,
@@ -1057,7 +1057,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ErrorDirectiveTrivia_fa8ea42f(
+    int SyntaxFactory_ErrorDirectiveTrivia_9ad9a2b3(
         int isActive,
         out long result
     );
@@ -1070,7 +1070,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_EventDeclaration_5bf84844(
+    int SyntaxFactory_EventDeclaration_0355ebb4(
         long @type,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
@@ -1166,7 +1166,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ExternAliasDirective_e6798a5b(
+    int SyntaxFactory_ExternAliasDirective_102c38d4(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -1234,7 +1234,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ForEachStatement_fb29ba27(
+    int SyntaxFactory_ForEachStatement_f8c0f81f(
         long @type,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long expression,
@@ -1334,7 +1334,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_FromClause_5cd6995a(
+    int SyntaxFactory_FromClause_ee86aba7(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long expression,
         out long result
@@ -1400,7 +1400,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_GenericName_a4836e6b(
+    int SyntaxFactory_GenericName_a02ff1b7(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -1471,13 +1471,13 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_IdentifierName_107ab883(
+    int SyntaxFactory_IdentifierName_e85f92b7(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Identifier_ef4fb5bd(
+    int SyntaxFactory_Identifier_6d050e33(
         long leading,
         ushort contextualKind,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
@@ -1487,7 +1487,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Identifier_765e232a(
+    int SyntaxFactory_Identifier_ef13bb7c(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         long trailing,
@@ -1495,13 +1495,13 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Identifier_87486ce7(
+    int SyntaxFactory_Identifier_bfa64a95(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_IfDirectiveTrivia_f53270a3(
+    int SyntaxFactory_IfDirectiveTrivia_9f75639f(
         long condition,
         int isActive,
         int branchTaken,
@@ -1510,7 +1510,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_IfDirectiveTrivia_7c1d75d4(
+    int SyntaxFactory_IfDirectiveTrivia_f7d936d7(
         long hashToken,
         long ifKeyword,
         long condition,
@@ -1548,7 +1548,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_IgnoredDirectiveTrivia_8148eacb(
+    int SyntaxFactory_IgnoredDirectiveTrivia_f31d449a(
         long hashToken,
         long colonToken,
         long content,
@@ -1558,14 +1558,14 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_IgnoredDirectiveTrivia_966bfd54(
+    int SyntaxFactory_IgnoredDirectiveTrivia_f5117a95(
         long content,
         int isActive,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_IgnoredDirectiveTrivia_48c5e272(
+    int SyntaxFactory_IgnoredDirectiveTrivia_d0f8664e(
         int isActive,
         out long result
     );
@@ -1671,7 +1671,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_InterfaceDeclaration_4da18fa5(
+    int SyntaxFactory_InterfaceDeclaration_b09305ed(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -1814,7 +1814,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_JoinClause_3a3a73ad(
+    int SyntaxFactory_JoinClause_a8297a57(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long inExpression,
         long leftExpression,
@@ -1836,7 +1836,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_JoinIntoClause_ea4e2f6b(
+    int SyntaxFactory_JoinIntoClause_bdcee21c(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -1857,7 +1857,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LabeledStatement_f136d906(
+    int SyntaxFactory_LabeledStatement_21a12f6b(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long statement,
         out long result
@@ -1880,7 +1880,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LetClause_2be80288(
+    int SyntaxFactory_LetClause_3b61e6b4(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long expression,
         out long result
@@ -1904,7 +1904,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineDirectiveTrivia_798e4d07(
+    int SyntaxFactory_LineDirectiveTrivia_05aeb8c7(
         long hashToken,
         long lineKeyword,
         long line,
@@ -1915,7 +1915,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineDirectiveTrivia_96cb65da(
+    int SyntaxFactory_LineDirectiveTrivia_9742422c(
         long line,
         long @file,
         int isActive,
@@ -1923,14 +1923,14 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineDirectiveTrivia_05074ed7(
+    int SyntaxFactory_LineDirectiveTrivia_709e40f1(
         long line,
         int isActive,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineSpanDirectiveTrivia_39be7ccb(
+    int SyntaxFactory_LineSpanDirectiveTrivia_4601f005(
         long start,
         long end,
         long characterOffset,
@@ -1940,7 +1940,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineSpanDirectiveTrivia_19806900(
+    int SyntaxFactory_LineSpanDirectiveTrivia_b305809c(
         long start,
         long end,
         long @file,
@@ -1949,7 +1949,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LineSpanDirectiveTrivia_09831802(
+    int SyntaxFactory_LineSpanDirectiveTrivia_25ea7575(
         long hashToken,
         long lineKeyword,
         long start,
@@ -1976,7 +1976,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_373a0c37(
+    int SyntaxFactory_Literal_baa94a0a(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         ushort value,
@@ -1985,7 +1985,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_11601674(
+    int SyntaxFactory_Literal_01e58b88(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         int value,
@@ -1994,7 +1994,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_2fdd3b83(
+    int SyntaxFactory_Literal_71810514(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         long value,
@@ -2003,7 +2003,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_1c163345(
+    int SyntaxFactory_Literal_32891cea(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
@@ -2012,7 +2012,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_066efbc3(
+    int SyntaxFactory_Literal_124a3665(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         uint value,
@@ -2021,7 +2021,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_939b6309(
+    int SyntaxFactory_Literal_912dd1da(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         ulong value,
@@ -2030,85 +2030,85 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_a98c34ee(
+    int SyntaxFactory_Literal_3c3141d7(
         ushort value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_19e93521(
+    int SyntaxFactory_Literal_520347e6(
         int value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_a8464eb0(
+    int SyntaxFactory_Literal_6ac4189e(
         long value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_67e9870a(
+    int SyntaxFactory_Literal_eeeeee28(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_693358a2(
+    int SyntaxFactory_Literal_ba4044e0(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         ushort value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_48aee82e(
+    int SyntaxFactory_Literal_da07d2fd(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         int value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_fbff282e(
+    int SyntaxFactory_Literal_bce7254a(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         long value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_7c89a6a9(
+    int SyntaxFactory_Literal_e45ee412(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_fb9d97e6(
+    int SyntaxFactory_Literal_ff6f9f5c(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         uint value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_d39c8cd1(
+    int SyntaxFactory_Literal_a33de317(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         ulong value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_f1120869(
+    int SyntaxFactory_Literal_13fe7b01(
         uint value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_Literal_e4a783f1(
+    int SyntaxFactory_Literal_07c320ce(
         ulong value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_LoadDirectiveTrivia_a842d31e(
+    int SyntaxFactory_LoadDirectiveTrivia_3e438b68(
         long hashToken,
         long loadKeyword,
         long @file,
@@ -2118,7 +2118,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LoadDirectiveTrivia_f00d00bd(
+    int SyntaxFactory_LoadDirectiveTrivia_3ea8dd20(
         long @file,
         int isActive,
         out long result
@@ -2163,7 +2163,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_LocalFunctionStatement_68de7937(
+    int SyntaxFactory_LocalFunctionStatement_760326ac(
         long returnType,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
@@ -2239,7 +2239,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_MethodDeclaration_29ce1e38(
+    int SyntaxFactory_MethodDeclaration_5751dda8(
         long returnType,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
@@ -2273,7 +2273,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_NameColon_d80fbd3d(
+    int SyntaxFactory_NameColon_06e8f6f5(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result
     );
@@ -2292,7 +2292,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_NameEquals_766eb0fe(
+    int SyntaxFactory_NameEquals_f5d0c6c8(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result
     );
@@ -2322,7 +2322,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_NullableDirectiveTrivia_1a2a9b07(
+    int SyntaxFactory_NullableDirectiveTrivia_1102f025(
         long hashToken,
         long nullableKeyword,
         long settingToken,
@@ -2333,7 +2333,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_NullableDirectiveTrivia_f3d034dc(
+    int SyntaxFactory_NullableDirectiveTrivia_eacba423(
         long settingToken,
         long targetToken,
         int isActive,
@@ -2341,7 +2341,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_NullableDirectiveTrivia_8ac3e534(
+    int SyntaxFactory_NullableDirectiveTrivia_82e614e6(
         long settingToken,
         int isActive,
         out long result
@@ -2665,7 +2665,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ParseTypeName_a4c0cfad(
+    int SyntaxFactory_ParseTypeName_578c7668(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         int offset,
         long options,
@@ -2674,7 +2674,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ParseTypeName_4b33a9dc(
+    int SyntaxFactory_ParseTypeName_22a82c79(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         int offset,
         int consumeFullText,
@@ -2710,7 +2710,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_PragmaChecksumDirectiveTrivia_4cf3019f(
+    int SyntaxFactory_PragmaChecksumDirectiveTrivia_b35fe09f(
         long hashToken,
         long pragmaKeyword,
         long checksumKeyword,
@@ -2723,7 +2723,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_PragmaChecksumDirectiveTrivia_b6ae3539(
+    int SyntaxFactory_PragmaChecksumDirectiveTrivia_059a8866(
         long @file,
         long guid,
         long bytes,
@@ -2732,7 +2732,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_PragmaWarningDirectiveTrivia_0536f786(
+    int SyntaxFactory_PragmaWarningDirectiveTrivia_d13c7747(
         long disableOrRestoreKeyword,
         int isActive,
         out long result
@@ -2786,7 +2786,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_PropertyDeclaration_f4357e81(
+    int SyntaxFactory_PropertyDeclaration_909bc4cb(
         long @type,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
@@ -2844,7 +2844,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_QueryContinuation_4451151d(
+    int SyntaxFactory_QueryContinuation_bfb05bec(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long body,
         out long result
@@ -2886,7 +2886,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_RecordDeclaration_e0eb73b3(
+    int SyntaxFactory_RecordDeclaration_1359a938(
         ushort kind,
         long keyword,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
@@ -2901,7 +2901,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_RecordDeclaration_ba553879(
+    int SyntaxFactory_RecordDeclaration_434546c1(
         long keyword,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
@@ -3001,7 +3001,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ReferenceDirectiveTrivia_a0def3d3(
+    int SyntaxFactory_ReferenceDirectiveTrivia_06223e87(
         long hashToken,
         long referenceKeyword,
         long @file,
@@ -3011,14 +3011,14 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ReferenceDirectiveTrivia_fbcdba9d(
+    int SyntaxFactory_ReferenceDirectiveTrivia_3c5c73fb(
         long @file,
         int isActive,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_RegionDirectiveTrivia_4891c983(
+    int SyntaxFactory_RegionDirectiveTrivia_487e2c49(
         long hashToken,
         long regionKeyword,
         long endOfDirectiveToken,
@@ -3027,7 +3027,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_RegionDirectiveTrivia_8126daf5(
+    int SyntaxFactory_RegionDirectiveTrivia_96ec88de(
         int isActive,
         out long result
     );
@@ -3080,7 +3080,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ShebangDirectiveTrivia_28b5a279(
+    int SyntaxFactory_ShebangDirectiveTrivia_8a3ca08c(
         long hashToken,
         long exclamationToken,
         long endOfDirectiveToken,
@@ -3089,7 +3089,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_ShebangDirectiveTrivia_3ac23759(
+    int SyntaxFactory_ShebangDirectiveTrivia_c8023795(
         int isActive,
         out long result
     );
@@ -3252,7 +3252,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_StructDeclaration_5ec30038(
+    int SyntaxFactory_StructDeclaration_91bc3a8d(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -3389,7 +3389,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Token_79542370(
+    int SyntaxFactory_Token_3c42f01f(
         long leading,
         ushort kind,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
@@ -3448,7 +3448,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_TypeDeclaration_2158e151(
+    int SyntaxFactory_TypeDeclaration_70caf4c1(
         ushort kind,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
@@ -3476,7 +3476,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_TypeParameterConstraintClause_789d5b19(
+    int SyntaxFactory_TypeParameterConstraintClause_76411f38(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result
     );
@@ -3488,7 +3488,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_TypeParameter_7512704f(
+    int SyntaxFactory_TypeParameter_a13cdadf(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -3513,7 +3513,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_UndefDirectiveTrivia_33880b67(
+    int SyntaxFactory_UndefDirectiveTrivia_2abcc17b(
         long hashToken,
         long undefKeyword,
         long name,
@@ -3523,14 +3523,14 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_UndefDirectiveTrivia_c7c73cdb(
+    int SyntaxFactory_UndefDirectiveTrivia_feed15ea(
         long name,
         int isActive,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_UndefDirectiveTrivia_01828906(
+    int SyntaxFactory_UndefDirectiveTrivia_77165892(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         int isActive,
         out long result
@@ -3687,7 +3687,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_VariableDeclarator_ff56785b(
+    int SyntaxFactory_VariableDeclarator_39fd8f3f(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result
     );
@@ -3702,7 +3702,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_WarningDirectiveTrivia_9a7e049e(
+    int SyntaxFactory_WarningDirectiveTrivia_f04b983e(
         long hashToken,
         long warningKeyword,
         long endOfDirectiveToken,
@@ -3711,7 +3711,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_WarningDirectiveTrivia_3bb11cc2(
+    int SyntaxFactory_WarningDirectiveTrivia_94632c7a(
         int isActive,
         out long result
     );
@@ -3760,7 +3760,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_Whitespace_a6cabd8c(
+    int SyntaxFactory_Whitespace_4f1378de(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result
     );
@@ -3874,7 +3874,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlEmptyElement_48a7b8d2(
+    int SyntaxFactory_XmlEmptyElement_c08c2f99(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string localName,
         out long result
     );
@@ -3921,7 +3921,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlNameAttribute_c8c974b2(
+    int SyntaxFactory_XmlNameAttribute_fa1e9360(
         long name,
         long startQuoteToken,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
@@ -3930,7 +3930,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlNameAttribute_973abefe(
+    int SyntaxFactory_XmlNameAttribute_0502db78(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string parameterName,
         out long result
     );
@@ -3949,7 +3949,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlName_2c9ca495(
+    int SyntaxFactory_XmlName_9215978a(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string localName,
         out long result
     );
@@ -3972,7 +3972,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlParamElement_a56b0fc3(
+    int SyntaxFactory_XmlParamElement_0a921bdf(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string parameterName,
         long content,
         out long result
@@ -4011,7 +4011,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlPrefix_1dad6b85(
+    int SyntaxFactory_XmlPrefix_ea2c0b0a(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string prefix,
         out long result
     );
@@ -4109,7 +4109,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlTextAttribute_1e1963d4(
+    int SyntaxFactory_XmlTextAttribute_c80fc8af(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         ushort quoteKind,
         long textTokens,
@@ -4117,14 +4117,14 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlTextAttribute_72ea5676(
+    int SyntaxFactory_XmlTextAttribute_8875c180(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlTextLiteral_96cb4289(
+    int SyntaxFactory_XmlTextLiteral_ae408b44(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
@@ -4133,20 +4133,20 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlTextLiteral_78d049b2(
+    int SyntaxFactory_XmlTextLiteral_a2bb8196(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlTextLiteral_9d1f7f60(
+    int SyntaxFactory_XmlTextLiteral_80194c3e(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlTextNewLine_3a2ffe0d(
+    int SyntaxFactory_XmlTextNewLine_4699265c(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
@@ -4155,13 +4155,13 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlTextNewLine_61e75e15(
+    int SyntaxFactory_XmlTextNewLine_96540d50(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlTextNewLine_bdfdb0ff(
+    int SyntaxFactory_XmlTextNewLine_b93bbe6e(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         int continueXmlDocumentationComment,
         out long result
@@ -4179,7 +4179,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlText_78fb4be1(
+    int SyntaxFactory_XmlText_0e7e6b37(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result
     );
@@ -4190,7 +4190,7 @@ public partial interface ISyntaxFactoryVtbl
     );
 
     [PreserveSig]
-    int SyntaxFactory_XmlThreadSafetyElement_7dea980c(
+    int SyntaxFactory_XmlThreadSafetyElement_79254635(
         int isStatic,
         int isInstance,
         out long result

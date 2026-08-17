@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1814bf39-074e-5ff2-83db-ff2721745808")]
+[Guid("e6d1c985-1200-5257-a0e5-bcf585b71c80")]
 public partial interface ISyntaxNodeOrTokenVtbl
 {
 
@@ -35,14 +35,14 @@ public partial interface ISyntaxNodeOrTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_Equals_da6a78cc(
+    int SyntaxNodeOrToken_Equals_1ae3035a(
         long receiver,
         long other,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_GetAnnotations_77a27a49(
+    int SyntaxNodeOrToken_GetAnnotations_caa6e658(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result
@@ -98,7 +98,7 @@ public partial interface ISyntaxNodeOrTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_HasAnnotations_47e77cab(
+    int SyntaxNodeOrToken_HasAnnotations_b26c4330(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result
@@ -149,7 +149,7 @@ public partial interface ISyntaxNodeOrTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_WithoutAnnotations_747bc66f(
+    int SyntaxNodeOrToken_WithoutAnnotations_5f35ccca(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result

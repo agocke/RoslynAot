@@ -233,7 +233,7 @@ internal sealed partial class CSharpParseOptionsVtblDispatcher : ICSharpParseOpt
         }
     }
 
-    public int CSharpParseOptions_Equals_faf28257(
+    public int CSharpParseOptions_Equals_51922c40(
         long receiver,
         long other,
         out int result)

@@ -23,7 +23,7 @@ internal sealed partial class SuppressionDescriptorVtblDispatcher : ISuppression
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SuppressionDescriptor_Equals_1172f3e8(
+    public int SuppressionDescriptor_Equals_6d7d7e69(
         long receiver,
         long other,
         out int result)

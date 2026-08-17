@@ -78,7 +78,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         }
     }
 
-    public int AnalyzerReference_GetGenerators_e0637324(
+    public int AnalyzerReference_GetGenerators_a8f136d3(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)
@@ -149,7 +149,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         }
     }
 
-    public int AnalyzerFileReference_Equals_d1a10423(
+    public int AnalyzerFileReference_Equals_4d319b66(
         long receiver,
         long other,
         out int result)
@@ -168,7 +168,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         }
     }
 
-    public int AnalyzerFileReference_Equals_7d1397c4(
+    public int AnalyzerFileReference_Equals_a165dbf5(
         long receiver,
         long other,
         out int result)
@@ -242,7 +242,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         }
     }
 
-    public int AnalyzerFileReference_GetGenerators_b4f5b94f(
+    public int AnalyzerFileReference_GetGenerators_87697947(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)

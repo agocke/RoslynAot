@@ -23,7 +23,7 @@ internal sealed partial class SymbolInfoVtblDispatcher : ISymbolInfoVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SymbolInfo_Equals_0bba06e1(
+    public int SymbolInfo_Equals_450dbb25(
         long receiver,
         long other,
         out int result)

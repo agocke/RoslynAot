@@ -52,15 +52,17 @@ internal static class RoslynProjectionValidation
                 "SyntaxNode.RawKind did not round-trip through the projection.");
         }
 
-        var foreignInterop = new RoslynInterop();
-        var foreignSyntaxNodeVtbl =
-            new SyntaxNodeVtblDispatcher(foreignInterop);
-        if (foreignSyntaxNodeVtbl.SyntaxNode_get_RawKind(
-                rootHandle,
-                out _) != RoslynAbi.InvalidArgument)
+        // Migration Step 4 retired control-scoped handle identity: the
+        // process now has exactly one handle table (RoslynInterop.Shared), so
+        // there is no second interop for a foreign handle to be rejected by.
+        // What identity now guarantees instead is dedup — the same object
+        // crossing twice gets the same handle, which is what the reverse map
+        // in RoslynHandleTable.Add exists for.
+        long rootHandleAgain = interop.AddObject(root);
+        if (rootHandleAgain != rootHandle)
         {
             throw new InvalidOperationException(
-                "A Roslyn handle was accepted by the wrong interop identity.");
+                "The same Roslyn object crossed twice did not reuse its handle.");
         }
 
         AssertSuccess(

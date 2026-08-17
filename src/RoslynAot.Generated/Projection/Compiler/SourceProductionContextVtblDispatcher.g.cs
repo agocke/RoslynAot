@@ -23,7 +23,7 @@ internal sealed partial class SourceProductionContextVtblDispatcher : ISourcePro
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SourceProductionContext_AddSource_f84fb514(
+    public int SourceProductionContext_AddSource_3c2311fa(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         long sourceText)
@@ -41,7 +41,7 @@ internal sealed partial class SourceProductionContextVtblDispatcher : ISourcePro
         }
     }
 
-    public int SourceProductionContext_AddSource_39bc7c69(
+    public int SourceProductionContext_AddSource_94ef099b(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)

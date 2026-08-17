@@ -23,7 +23,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int TypedConstant_Equals_7de14614(
+    public int TypedConstant_Equals_c2d410e2(
         long receiver,
         long other,
         out int result)

@@ -23,7 +23,7 @@ internal sealed partial class CommandLineReferenceVtblDispatcher : ICommandLineR
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CommandLineReference_Equals_e1a066f1(
+    public int CommandLineReference_Equals_e07b61cf(
         long receiver,
         long other,
         out int result)

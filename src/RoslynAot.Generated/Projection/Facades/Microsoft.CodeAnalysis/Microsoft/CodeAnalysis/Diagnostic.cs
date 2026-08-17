@@ -139,14 +139,7 @@ namespace Microsoft.CodeAnalysis
 
         internal global::RoslynAot.Abi.IDiagnosticVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __roslynAotHandle;
-        }
-
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
         private sealed partial class __RoslynAotProxy : Diagnostic
         {
             internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.IDiagnosticVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
@@ -159,7 +152,7 @@ namespace Microsoft.CodeAnalysis
                     return ReferenceEquals(this, obj);
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Diagnostic_Equals_9b1492a8(__RoslynAotGetHandle(controlVtbl), obj is null ? 0L : obj.__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.Diagnostic_Equals_ce717ce2(__RoslynAotGetHandle(controlVtbl), obj is null ? 0L : obj.__RoslynAotGetHandle(controlVtbl), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }

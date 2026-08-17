@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis
             this = default;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICommandLineSourceFileTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileTypeVtbl(controlVtbl);
-            int status = vtbl.CommandLineSourceFile_ctor_15beefef(path, isScript ? 1 : 0, isInputRedirected ? 1 : 0, out long result);
+            int status = vtbl.CommandLineSourceFile_ctor_dfdf1cda(path, isScript ? 1 : 0, isInputRedirected ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileVtbl(controlVtbl);
@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis
             this = default;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICommandLineSourceFileTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileTypeVtbl(controlVtbl);
-            int status = vtbl.CommandLineSourceFile_ctor_2a378a1e(path, isScript ? 1 : 0, out long result);
+            int status = vtbl.CommandLineSourceFile_ctor_566b9c02(path, isScript ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileVtbl(controlVtbl);
@@ -101,14 +101,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __roslynAotHandle;
-        }
-
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
         internal static CommandLineSourceFile __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new CommandLineSourceFile(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileVtbl(controlVtbl), handle);
     }
 }

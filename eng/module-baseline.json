@@ -3,33 +3,33 @@
   "modules": [
     {
       "module": "(all analyzers)",
-      "sizeBytes": 9448000,
-      "retainedTypeCount": 20783,
-      "retainedMethodCount": 23645
+      "sizeBytes": 9444368,
+      "retainedTypeCount": 20814,
+      "retainedMethodCount": 23653
     },
     {
       "module": "Microsoft.CodeAnalysis.CSharp.NetAnalyzers.Microsoft.CodeQuality.Analyzers.QualityGuidelines.CSharpAvoidMultipleEnumerationsAnalyzer",
-      "sizeBytes": 6201056,
-      "retainedTypeCount": 15597,
-      "retainedMethodCount": 13519
+      "sizeBytes": 6205568,
+      "retainedTypeCount": 15628,
+      "retainedMethodCount": 13543
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.ApiDesignGuidelines.CSharpUsePreferredTermsAnalyzer",
-      "sizeBytes": 2593424,
-      "retainedTypeCount": 2716,
-      "retainedMethodCount": 5242
+      "sizeBytes": 2601792,
+      "retainedTypeCount": 2737,
+      "retainedMethodCount": 5270
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpAvoidDeadConditionalCode",
-      "sizeBytes": 5460240,
-      "retainedTypeCount": 13457,
-      "retainedMethodCount": 11503
+      "sizeBytes": 5464592,
+      "retainedTypeCount": 13480,
+      "retainedMethodCount": 11526
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpForwardCancellationTokenToInvocationsAnalyzer",
-      "sizeBytes": 3741120,
-      "retainedTypeCount": 4140,
-      "retainedMethodCount": 8550
+      "sizeBytes": 3749568,
+      "retainedTypeCount": 4162,
+      "retainedMethodCount": 8576
     }
   ]
 }

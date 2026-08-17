@@ -32,7 +32,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIncrementalGeneratorPostInitializationContextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IncrementalGeneratorPostInitializationContext_AddSource_ae64cc8a(__RoslynAotGetHandle(controlVtbl), hintName, sourceText.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.IncrementalGeneratorPostInitializationContext_AddSource_7da845f5(__RoslynAotGetHandle(controlVtbl), hintName, sourceText.__RoslynAotGetHandle(controlVtbl));
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIncrementalGeneratorPostInitializationContextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IncrementalGeneratorPostInitializationContext_AddSource_6c25deff(__RoslynAotGetHandle(controlVtbl), hintName, source);
+            int status = vtbl.IncrementalGeneratorPostInitializationContext_AddSource_d5ba85dc(__RoslynAotGetHandle(controlVtbl), hintName, source);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -73,14 +73,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __roslynAotHandle;
-        }
-
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
         internal static IncrementalGeneratorPostInitializationContext __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new IncrementalGeneratorPostInitializationContext(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIncrementalGeneratorPostInitializationContextVtbl(controlVtbl), handle);
     }
 }

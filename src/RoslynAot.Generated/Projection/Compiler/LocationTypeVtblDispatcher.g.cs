@@ -42,7 +42,7 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
         }
     }
 
-    public int Location_Create_b3d99f7b(
+    public int Location_Create_a6e44ea2(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string filePath,
         long textSpan,
         long lineSpan,
@@ -62,7 +62,7 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
         }
     }
 
-    public int Location_Create_bc32e9c1(
+    public int Location_Create_8a5c1903(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string filePath,
         long textSpan,
         long lineSpan,

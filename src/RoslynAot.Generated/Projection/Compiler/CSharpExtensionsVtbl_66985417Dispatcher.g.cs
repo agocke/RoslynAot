@@ -23,7 +23,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CSharpExtensions_Any_e603017f(
+    public int CSharpExtensions_Any_b082ecfa(
         long list,
         ushort kind,
         out int result)
@@ -42,7 +42,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_Any_5110d232(
+    public int CSharpExtensions_Any_aef0a5fc(
         long list,
         ushort kind,
         out int result)
@@ -80,7 +80,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IndexOf_f0e5c4f8(
+    public int CSharpExtensions_IndexOf_ab8b5d8c(
         long list,
         ushort kind,
         out int result)
@@ -99,7 +99,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IndexOf_cfd6c760(
+    public int CSharpExtensions_IndexOf_06e4c7db(
         long list,
         ushort kind,
         out int result)
@@ -118,7 +118,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IsKind_86c39e5b(
+    public int CSharpExtensions_IsKind_8a92d4f3(
         long node,
         ushort kind,
         out int result)
@@ -137,7 +137,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IsKind_85199867(
+    public int CSharpExtensions_IsKind_5be19b92(
         long nodeOrToken,
         ushort kind,
         out int result)
@@ -156,7 +156,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IsKind_1beff7a3(
+    public int CSharpExtensions_IsKind_129f15c5(
         long token,
         ushort kind,
         out int result)
@@ -175,7 +175,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IsKind_21484bd3(
+    public int CSharpExtensions_IsKind_b3b67b11(
         long trivia,
         ushort kind,
         out int result)

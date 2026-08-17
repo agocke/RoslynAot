@@ -60,7 +60,7 @@ internal sealed partial class SyntaxNodeOrTokenListVtblDispatcher : ISyntaxNodeO
         }
     }
 
-    public int SyntaxNodeOrTokenList_Equals_1700dccb(
+    public int SyntaxNodeOrTokenList_Equals_70f8e904(
         long receiver,
         long other,
         out int result)

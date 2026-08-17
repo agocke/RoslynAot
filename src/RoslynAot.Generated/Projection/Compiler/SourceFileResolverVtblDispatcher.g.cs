@@ -116,7 +116,7 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         }
     }
 
-    public int SourceFileResolver_Equals_0526a366(
+    public int SourceFileResolver_Equals_2690b0f9(
         long receiver,
         long other,
         out int result)

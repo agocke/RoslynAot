@@ -23,7 +23,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int ISymbol_Accept_fee44f0e(
+    public int ISymbol_Accept_85bdf9de(
         long receiver,
         long visitor)
     {

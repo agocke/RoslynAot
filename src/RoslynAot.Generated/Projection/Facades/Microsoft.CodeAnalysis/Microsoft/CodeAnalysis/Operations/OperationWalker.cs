@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.Operations
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IOperationWalkerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationWalker_DefaultVisit_a65ddb77(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.OperationWalker_DefaultVisit_b9c38140(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -22,7 +22,7 @@ namespace Microsoft.CodeAnalysis.Operations
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IOperationWalkerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationWalker_Visit_888c9bf7(__RoslynAotGetHandle(controlVtbl), operation is null ? 0L : operation.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.OperationWalker_Visit_019fc0ce(__RoslynAotGetHandle(controlVtbl), operation is null ? 0L : operation.__RoslynAotGetHandle(controlVtbl));
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -42,14 +42,7 @@ namespace Microsoft.CodeAnalysis.Operations
 
         internal global::RoslynAot.Abi.IOperationWalkerVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-        {
-            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-            if (!object.ReferenceEquals(actual, controlVtbl))
-                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-            return __roslynAotHandle;
-        }
-
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
         private sealed partial class __RoslynAotProxy : OperationWalker
         {
             internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.IOperationWalkerVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)

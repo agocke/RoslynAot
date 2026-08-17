@@ -23,7 +23,7 @@ internal sealed partial class LinePositionSpanVtblDispatcher : ILinePositionSpan
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int LinePositionSpan_Equals_aa41bb1a(
+    public int LinePositionSpan_Equals_bfda8c1e(
         long receiver,
         long other,
         out int result)

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d88c3b8e-f768-59ea-a7e7-7f69f86fdc1f")]
+[Guid("a415f76a-8979-5e1e-9b09-d1dc5a29ff57")]
 public partial interface ISyntaxTriviaVtbl
 {
 
@@ -24,14 +24,14 @@ public partial interface ISyntaxTriviaVtbl
     );
 
     [PreserveSig]
-    int SyntaxTrivia_Equals_2b043e58(
+    int SyntaxTrivia_Equals_193a4eaf(
         long receiver,
         long other,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxTrivia_GetAnnotations_f7cb97d7(
+    int SyntaxTrivia_GetAnnotations_e2a3de3a(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result
@@ -69,7 +69,7 @@ public partial interface ISyntaxTriviaVtbl
     );
 
     [PreserveSig]
-    int SyntaxTrivia_HasAnnotations_fe346173(
+    int SyntaxTrivia_HasAnnotations_4841d9d0(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result
@@ -119,7 +119,7 @@ public partial interface ISyntaxTriviaVtbl
     );
 
     [PreserveSig]
-    int SyntaxTrivia_WithoutAnnotations_691a35c6(
+    int SyntaxTrivia_WithoutAnnotations_fb97f0c2(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result

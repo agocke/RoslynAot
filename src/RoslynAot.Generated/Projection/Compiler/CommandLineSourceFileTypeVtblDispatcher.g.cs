@@ -23,7 +23,7 @@ internal sealed partial class CommandLineSourceFileTypeVtblDispatcher : ICommand
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CommandLineSourceFile_ctor_2a378a1e(
+    public int CommandLineSourceFile_ctor_566b9c02(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         int isScript,
         out long result)
@@ -42,7 +42,7 @@ internal sealed partial class CommandLineSourceFileTypeVtblDispatcher : ICommand
         }
     }
 
-    public int CommandLineSourceFile_ctor_15beefef(
+    public int CommandLineSourceFile_ctor_dfdf1cda(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         int isScript,
         int isInputRedirected,

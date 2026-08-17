@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("67bc6ee4-2cdc-5e0d-9607-daa87b070740")]
+[Guid("c7314c47-9776-5c1a-a197-de6a75e3c011")]
 public partial interface IWhileStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int WhileStatementSyntax_Accept_f857985e(
+    int WhileStatementSyntax_Accept_655b5d2f(
         long receiver,
         long visitor
     );

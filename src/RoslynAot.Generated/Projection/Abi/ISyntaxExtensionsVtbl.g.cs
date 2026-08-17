@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0d4fc5c1-1460-5b42-a16a-b5a2034b55a1")]
+[Guid("302850e3-13e6-54c0-9a9f-20c5ba4662b5")]
 public partial interface ISyntaxExtensionsVtbl
 {
 
     [PreserveSig]
-    int SyntaxExtensions_NormalizeWhitespace_d73600b7(
+    int SyntaxExtensions_NormalizeWhitespace_9f59464b(
         long token,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         int elasticTrivia,
@@ -25,7 +25,7 @@ public partial interface ISyntaxExtensionsVtbl
     );
 
     [PreserveSig]
-    int SyntaxExtensions_NormalizeWhitespace_4993d000(
+    int SyntaxExtensions_NormalizeWhitespace_799da1df(
         long token,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string eol,
@@ -34,7 +34,7 @@ public partial interface ISyntaxExtensionsVtbl
     );
 
     [PreserveSig]
-    int SyntaxExtensions_NormalizeWhitespace_9e0b1964(
+    int SyntaxExtensions_NormalizeWhitespace_682062f5(
         long list,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         int elasticTrivia,
@@ -42,7 +42,7 @@ public partial interface ISyntaxExtensionsVtbl
     );
 
     [PreserveSig]
-    int SyntaxExtensions_NormalizeWhitespace_08ea7961(
+    int SyntaxExtensions_NormalizeWhitespace_aec4c5f5(
         long list,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string eol,

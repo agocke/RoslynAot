@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("8716f920-1a9a-5d20-a94a-c886aa9b404e")]
+[Guid("3c7ea755-e6f8-55d4-bea9-f665aed27a77")]
 public partial interface ISyntaxTokenVtbl
 {
 
@@ -24,14 +24,14 @@ public partial interface ISyntaxTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxToken_Equals_c3137714(
+    int SyntaxToken_Equals_38ba030c(
         long receiver,
         long other,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxToken_GetAnnotations_bc039625(
+    int SyntaxToken_GetAnnotations_33ced40e(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result
@@ -83,7 +83,7 @@ public partial interface ISyntaxTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxToken_HasAnnotations_14177fd7(
+    int SyntaxToken_HasAnnotations_2ecdf813(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result
@@ -161,7 +161,7 @@ public partial interface ISyntaxTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxToken_WithoutAnnotations_3d47551d(
+    int SyntaxToken_WithoutAnnotations_e869934d(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result

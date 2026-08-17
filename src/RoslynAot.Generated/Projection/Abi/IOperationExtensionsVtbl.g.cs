@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("528e0d2b-e3a8-5c34-8095-ea3dc991ed85")]
+[Guid("a61a97e2-6ce6-5c9a-84bf-c6f15b63dcac")]
 public partial interface IOperationExtensionsVtbl
 {
 
@@ -29,7 +29,7 @@ public partial interface IOperationExtensionsVtbl
     );
 
     [PreserveSig]
-    int OperationExtensions_GetArgumentName_5b09bcc2(
+    int OperationExtensions_GetArgumentName_c4bcc344(
         long dynamicOperation,
         int index,
         nint buffer,
@@ -38,7 +38,7 @@ public partial interface IOperationExtensionsVtbl
     );
 
     [PreserveSig]
-    int OperationExtensions_GetArgumentName_97d38f2a(
+    int OperationExtensions_GetArgumentName_4720061f(
         long dynamicOperation,
         int index,
         nint buffer,
@@ -47,7 +47,7 @@ public partial interface IOperationExtensionsVtbl
     );
 
     [PreserveSig]
-    int OperationExtensions_GetArgumentName_3ad63196(
+    int OperationExtensions_GetArgumentName_46116bff(
         long dynamicOperation,
         int index,
         nint buffer,

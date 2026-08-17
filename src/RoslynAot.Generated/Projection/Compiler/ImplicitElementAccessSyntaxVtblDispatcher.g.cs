@@ -195,7 +195,7 @@ internal sealed partial class ImplicitElementAccessSyntaxVtblDispatcher : IImpli
         }
     }
 
-    public int SyntaxNode_FindTrivia_7588035c(
+    public int SyntaxNode_FindTrivia_77d2dcea(
         long receiver,
         int position,
         int findInsideTrivia,
@@ -215,7 +215,7 @@ internal sealed partial class ImplicitElementAccessSyntaxVtblDispatcher : IImpli
         }
     }
 
-    public int SyntaxNode_GetAnnotatedNodes_223b42b6(
+    public int SyntaxNode_GetAnnotatedNodes_01e7ee64(
         long receiver,
         long syntaxAnnotation,
         out long result)
@@ -234,7 +234,7 @@ internal sealed partial class ImplicitElementAccessSyntaxVtblDispatcher : IImpli
         }
     }
 
-    public int SyntaxNode_GetAnnotatedNodes_36edd4af(
+    public int SyntaxNode_GetAnnotatedNodes_b1864f23(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
@@ -253,7 +253,7 @@ internal sealed partial class ImplicitElementAccessSyntaxVtblDispatcher : IImpli
         }
     }
 
-    public int SyntaxNode_GetAnnotations_c30fad37(
+    public int SyntaxNode_GetAnnotations_58d1040b(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
@@ -425,7 +425,7 @@ internal sealed partial class ImplicitElementAccessSyntaxVtblDispatcher : IImpli
         }
     }
 
-    public int SyntaxNode_HasAnnotations_009f2ccb(
+    public int SyntaxNode_HasAnnotations_c7b9640f(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
@@ -444,7 +444,7 @@ internal sealed partial class ImplicitElementAccessSyntaxVtblDispatcher : IImpli
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_8ad911b9(
+    public int SyntaxNode_IsEquivalentTo_8d5726aa(
         long receiver,
         long other,
         out int result)
@@ -463,7 +463,7 @@ internal sealed partial class ImplicitElementAccessSyntaxVtblDispatcher : IImpli
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_80af97ca(
+    public int SyntaxNode_IsEquivalentTo_99548ef5(
         long receiver,
         long node,
         int topLevel,
@@ -886,7 +886,7 @@ internal sealed partial class ImplicitElementAccessSyntaxVtblDispatcher : IImpli
         }
     }
 
-    public int CSharpSyntaxNode_Accept_1363d360(
+    public int CSharpSyntaxNode_Accept_e101478d(
         long receiver,
         long visitor)
     {
@@ -923,7 +923,7 @@ internal sealed partial class ImplicitElementAccessSyntaxVtblDispatcher : IImpli
         }
     }
 
-    public int CSharpSyntaxNode_FindTrivia_34d44bc3(
+    public int CSharpSyntaxNode_FindTrivia_59a4cbf4(
         long receiver,
         int position,
         int findInsideTrivia,
@@ -1103,7 +1103,7 @@ internal sealed partial class ImplicitElementAccessSyntaxVtblDispatcher : IImpli
         }
     }
 
-    public int ImplicitElementAccessSyntax_Accept_c0704249(
+    public int ImplicitElementAccessSyntax_Accept_5c4774ea(
         long receiver,
         long visitor)
     {

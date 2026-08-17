@@ -118,14 +118,7 @@ namespace Microsoft.CodeAnalysis.CSharp
                 throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
             }
 
-            internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
-            {
-                global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
-                if (!object.ReferenceEquals(actual, controlVtbl))
-                    throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
-                return __roslynAotHandle;
-            }
-
+            internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
             internal static Result __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new Result(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxTokenParserResultVtbl(controlVtbl), handle);
         }
 
@@ -133,9 +126,9 @@ namespace Microsoft.CodeAnalysis.CSharp
         public global::RoslynAot.Abi.ISyntaxTokenParserVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxTokenParserVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
-        internal static SyntaxTokenParser __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SyntaxTokenParser)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
+        internal static SyntaxTokenParser __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SyntaxTokenParser)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("851d1a2d-fff7-5bce-8e70-fbc0cb25568f")]
+        [System.Runtime.InteropServices.Guid("ed244468-267a-5950-b688-869ad19791e0")]
         internal partial interface __RoslynAotImplementation : SyntaxTokenParser
         {
         }

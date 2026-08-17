@@ -61,7 +61,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         }
     }
 
-    public int SourceText_GetSubText_0a5021cf(
+    public int SourceText_GetSubText_3c347ab9(
         long receiver,
         int start,
         out long result)
@@ -80,7 +80,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         }
     }
 
-    public int SourceText_Replace_9ca925ce(
+    public int SourceText_Replace_14f7bfb1(
         long receiver,
         long span,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string newText,
@@ -100,7 +100,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         }
     }
 
-    public int SourceText_Replace_bb00caac(
+    public int SourceText_Replace_9540c2f4(
         long receiver,
         int start,
         int length,
@@ -121,7 +121,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         }
     }
 
-    public unsafe int SourceText_ToString_98b75795(
+    public unsafe int SourceText_ToString_36435385(
         long receiver,
         nint buffer,
         int bufferLength,
@@ -147,7 +147,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         }
     }
 
-    public unsafe int SourceText_ToString_cf373e4b(
+    public unsafe int SourceText_ToString_b3c549ee(
         long receiver,
         long span,
         nint buffer,

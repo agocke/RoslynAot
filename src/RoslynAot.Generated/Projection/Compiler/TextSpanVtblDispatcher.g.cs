@@ -42,7 +42,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         }
     }
 
-    public int TextSpan_Contains_2e872998(
+    public int TextSpan_Contains_280d6f3d(
         long receiver,
         long span,
         out int result)
@@ -61,7 +61,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         }
     }
 
-    public int TextSpan_Contains_d84c8203(
+    public int TextSpan_Contains_6dd56088(
         long receiver,
         int position,
         out int result)
@@ -80,7 +80,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         }
     }
 
-    public int TextSpan_Equals_12df1233(
+    public int TextSpan_Equals_f0c3d453(
         long receiver,
         long other,
         out int result)
@@ -136,7 +136,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         }
     }
 
-    public int TextSpan_IntersectsWith_886d4b45(
+    public int TextSpan_IntersectsWith_a6c6b98b(
         long receiver,
         long span,
         out int result)
@@ -155,7 +155,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         }
     }
 
-    public int TextSpan_IntersectsWith_c7246f52(
+    public int TextSpan_IntersectsWith_173790fd(
         long receiver,
         int position,
         out int result)

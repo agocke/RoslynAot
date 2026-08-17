@@ -938,7 +938,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         }
     }
 
-    public int CSharpCompilationOptions_Equals_0865511e(
+    public int CSharpCompilationOptions_Equals_ce33b5ac(
         long receiver,
         long other,
         out int result)

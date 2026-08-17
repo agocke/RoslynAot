@@ -1,16 +1,32 @@
 namespace RoslynAot.Csc;
 
+/// <summary>
+/// One process-global table mapping compiler-owned Roslyn objects to handles.
+/// There is exactly one instance for the whole compiler process — see
+/// <see cref="RoslynInterop.Shared"/> — so a handle never needs to record
+/// which table it came from; migration Step 4 retired that "control identity"
+/// component once every analyzer in the process started sharing this table.
+/// </summary>
 internal sealed class RoslynHandleTable
 {
     private const uint GenerationMask = 0x00ff_ffff;
     private const uint SlotMask = 0x00ff_ffff;
 
-    private static int s_nextInteropId;
-
     private readonly Lock _gate = new();
     private readonly List<Entry> _entries = [];
     private readonly Stack<int> _freeSlots = [];
-    private readonly ushort _interopId = GetNextInteropId();
+
+    // Reference types only: a compiler object that has already crossed keeps
+    // the same handle on every later crossing, so analyzer-side reference
+    // equality reflects Roslyn's own object identity (e.g. a shared
+    // SyntaxTree handed to several analyzers). Context structs added via
+    // AddValue are boxed per call and are never meaningfully "the same
+    // object" twice, so they are not deduplicated. Strong keys are correct
+    // here under the v1 "never release" policy: nothing in this table is
+    // collected before the process exits, so a weak table would only add
+    // overhead without freeing anything sooner.
+    private readonly Dictionary<object, long> _reverseMap =
+        new(ReferenceEqualityComparer.Instance);
 
     public long AddObject<T>(T value)
         where T : class =>
@@ -80,6 +96,7 @@ internal sealed class RoslynHandleTable
             entry.LastDisposedGeneration = entry.Generation;
             entry.Generation = NextGeneration(entry.Generation);
             _freeSlots.Push(slot);
+            _reverseMap.Remove(typedValue);
         }
 
         disposable.Dispose();
@@ -90,6 +107,11 @@ internal sealed class RoslynHandleTable
         ArgumentNullException.ThrowIfNull(value);
         lock (_gate)
         {
+            if (!isValue && _reverseMap.TryGetValue(value, out long existing))
+            {
+                return existing;
+            }
+
             int slot;
             Entry entry;
             if (_freeSlots.TryPop(out slot))
@@ -105,7 +127,13 @@ internal sealed class RoslynHandleTable
 
             entry.Value = value;
             entry.IsValue = isValue;
-            return Encode(slot, entry.Generation);
+            long handle = Encode(slot, entry.Generation);
+            if (!isValue)
+            {
+                _reverseMap.Add(value, handle);
+            }
+
+            return handle;
         }
     }
 
@@ -146,12 +174,10 @@ internal sealed class RoslynHandleTable
         if (encodedSlot > SlotMask)
         {
             throw new InvalidOperationException(
-                "The Roslyn interop identity exhausted its handle slots.");
+                "The Roslyn handle table exhausted its handle slots.");
         }
 
-        return ((long)_interopId << 48) |
-            ((long)(generation & GenerationMask) << 24) |
-            encodedSlot;
+        return ((long)(generation & GenerationMask) << 24) | encodedSlot;
     }
 
     private void Decode(
@@ -159,15 +185,11 @@ internal sealed class RoslynHandleTable
         out int slot,
         out uint generation)
     {
-        ushort interopId = (ushort)((ulong)handle >> 48);
         uint encodedSlot = (uint)((ulong)handle & SlotMask);
         generation = (uint)(((ulong)handle >> 24) & GenerationMask);
-        if (interopId != _interopId ||
-            encodedSlot == 0 ||
-            generation == 0)
+        if (encodedSlot == 0 || generation == 0)
         {
-            throw new ArgumentException(
-                "The Roslyn handle is invalid or belongs to another interop identity.");
+            throw new ArgumentException("The Roslyn handle is invalid.");
         }
 
         slot = checked((int)encodedSlot - 1);
@@ -175,19 +197,6 @@ internal sealed class RoslynHandleTable
 
     private static uint NextGeneration(uint generation) =>
         generation == GenerationMask ? 1 : generation + 1;
-
-    private static ushort GetNextInteropId()
-    {
-        while (true)
-        {
-            ushort interopId =
-                (ushort)Interlocked.Increment(ref s_nextInteropId);
-            if (interopId != 0)
-            {
-                return interopId;
-            }
-        }
-    }
 
     private sealed class Entry
     {

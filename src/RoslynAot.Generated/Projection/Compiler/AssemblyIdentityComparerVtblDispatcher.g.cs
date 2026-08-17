@@ -43,7 +43,7 @@ internal sealed partial class AssemblyIdentityComparerVtblDispatcher : IAssembly
         }
     }
 
-    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_f6795a64(
+    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_0539a3af(
         long receiver,
         long reference,
         long definition,
@@ -63,7 +63,7 @@ internal sealed partial class AssemblyIdentityComparerVtblDispatcher : IAssembly
         }
     }
 
-    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_3356f219(
+    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_af7b523b(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string referenceDisplayName,
         long definition,
