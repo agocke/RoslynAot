@@ -12,7 +12,10 @@ a rewrite.
   and per-type vtbl dispatchers, fetched by `GetVtbl(vtblId)`. Roslyn objects
   cross as signed 64-bit handles, not COM objects.
 - `RoslynHandleTable`: slot + generation, stale-handle rejection, **and no
-  reverse map** — `Add` allocates a fresh slot on every crossing.
+  reverse map** — `Add` allocates a fresh slot on every crossing. Proxy
+  `Equals`/`GetHashCode` forward to the compiler-side object through
+  `ObjectEquals`/`ObjectGetHashCode`, so value equality is correct, but handles
+  and proxies are still not canonical and reference identity does not survive.
 - One `RoslynInterop` per `NativeDiagnosticAnalyzer`, so a 43-analyzer module
   has 43 handle tables and one symbol crossing to all of them yields 43 handles.
 - Control identity is real: handles encode their owning interop, the active
@@ -21,7 +24,12 @@ a rewrite.
 - Trimming via `TypeMapAssociation<RoslynProxyTypeMap>` per facade type, with
   derived types resolved at the cast through `IsObjectType` + the type map.
 - Errors: HRESULT plus a thread-local `CopyLastErrorUtf16` /
-  `RoslynRemoteErrorKind` carrying category and message, no context.
+  `RoslynRemoteErrorKind` carrying category, message, and the failing
+  control-vtbl member name — but as prose in the message, not a structured
+  record.
+- Every generated dispatcher increments a per-member call counter;
+  `ROSLYNAOT_CALL_COUNTS` writes them out. Control-vtbl operations are not
+  counted.
 - Comparers already dispatch through `RoslynWellKnownObject` enum tags.
 - Compatibility: one `ManifestIdentity` hash over the whole projection, plus
   `AnalyzerAbi.Version`, compared for equality.
@@ -81,15 +89,30 @@ a ceiling on a representative small analyzer. A rooting regression changes no
 behavior and produces no diagnostic — bytes are the only signal, so they need to
 be watched from the first step rather than the step that breaks them.
 
+**In place since 2026-08-16.** `eng/module-baseline.json` records size and
+retained counts for all 43 single-analyzer modules plus the combined one, and
+`eng/measure-modules.sh` fails on any change. There is no separate *ceiling*:
+the baseline is exact-match in both directions, which is stricter, and the
+measured floor of 2,593,376 bytes / 2,716 types that 11 analyzers sit on is the
+number a ceiling would have to be expressed against.
+
 ---
 
 ## Step 1 — Make failures legible
+
+**Status: complete (2026-08-16), except the structured `ErrorRecord` — see the
+first bullet.** Measured results are recorded under this step.
 
 **Goal:** every failure names itself. No semantics change.
 
 - Replace HRESULT-only reporting with the structured `ErrorRecord`
   (design §4.5) carried out-of-band alongside the HRESULT. Keep the
   HRESULT; it is fine, it was just never the whole message.
+  - **Partial.** The AD0001 text now names analyzer, action kind, member,
+    exception, and frame, and `SetError` records the failing control-vtbl
+    member — but all of it travels as a formatted string, not a record. The
+    differential harness therefore parses it back out with regexes coupled to
+    two repo-owned format strings. Finish this with the wire grammar in Step 5.
 - Surface every failure as `AD0001` with full text — analyzer type, action kind,
   member name, exception, and frame context.
 - Stand up the differential harness: run the CA corpus managed and native, diff
@@ -120,6 +143,10 @@ size baseline to hold the rest of the migration against.
 **Closes:** 15, and the measurement half of 19.
 
 ### Measured result (2026-08-16)
+
+*Superseded by the two sections below; kept because the ranking it produced is
+what drove the work that followed. Current numbers are 8 pass, 26 fail, 3 not
+exercised.*
 
 First real pass rate, from `eng/differential-baseline.json` over all 37 rule IDs
 in `samples/RoslynAot.CSharpNetAnalyzers.Native`: **6 pass, 27 fail, 4 not
@@ -382,6 +409,20 @@ here, because Roslyn objects are handles rather than COM objects.
 - Generate shapes from the public interface hierarchy with ambient interfaces
   declared per root, so inherited interfaces like `IEquatable<ISymbol>` are on
   the proxy. Add the classifier-totality validation pass.
+- **Memoize immutable collection-valued members on the canonical proxy.** Roslyn
+  returns the same cached object on every get; the facade re-crosses and
+  re-materializes. Measured on the corpus, `IAssemblySymbol.NamespaceNames`
+  alone is 68.8% of all boundary traffic — 890,664 calls, because
+  `WellKnownTypeProvider` prefilters every metadata-name lookup against all 177
+  referenced assemblies' namespace sets, and each get costs `1 + 2N` crossings
+  through `ReadStringCollection`. Memoizing per proxy takes that to 177. Which
+  members are safe to memoize is a model field, so this half lands after Step 2
+  even though the identity work above does not need to wait.
+
+**Note on the exit criterion below.** CA1508's live failure is now
+`ISymbol.Locations`, not identity, so it will not verify this step until that
+member is projected. Use a reference-identity probe and the rules currently
+failing on `DeclaringSyntaxReferences` as the signal instead.
 
 **Exit:** CA1508 passes. `ParseOptions` results cast to `CSharpParseOptions`.
 Roslyn's own dictionaries keyed on operations work unchanged. No control

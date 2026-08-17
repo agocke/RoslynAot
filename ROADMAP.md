@@ -71,6 +71,20 @@ The Linux prototype proves the core path:
 - The simple sample analyzer and the generated multi-analyzer module both
   NativeAOT-publish and expose the expected analyzer count.
 
+Analyzer compatibility is now measured rather than estimated. A differential
+harness (`eng/validate-differential.sh`) compiles a corpus through both the
+managed and native compilers and diffs the diagnostics, producing a per-rule
+burn-down enforced against a checked-in baseline. Two further baselines back
+it: per-member boundary call counts, and per-analyzer module size, ILC time,
+and retained type count.
+
+The honest headline from that measurement: of the module's 37 rules,
+**8 pass, 26 fail against a named unimplemented member, and 3 are not yet
+exercised by the corpus**. The failures concentrate — `IOperation.ConstantValue`
+blocks 7 rules and `ISymbol.DeclaringSyntaxReferences` blocks 6, so two members
+account for half of them. Details and the ordered plan to close them are in the
+[analyzer remoting migration plan](docs/ANALYZER-REMOTING-MIGRATION.md).
+
 The prototype is not yet a transparent package integration. Analyzer transport
 coverage is still limited, native analyzer preparation is not wired into normal
 builds, caching is incomplete, and only Linux has been validated.
@@ -109,13 +123,18 @@ builds, caching is incomplete, and only Linux has been validated.
 
 - Implement the ownership, identity, runtime-type, recursive-value, callback,
   diagnostic, and lifetime capabilities in the
-  [analyzer remoting problem inventory](docs/ANALYZER-REMOTING-PROBLEMS.md).
+  [analyzer remoting problem inventory](docs/ANALYZER-REMOTING-PROBLEMS.md),
+  in the order set out in the
+  [migration plan](docs/ANALYZER-REMOTING-MIGRATION.md).
 - Generate analyzer-facing Roslyn transport from composable type-shape rules
   rather than onboarding APIs one member at a time.
 - Exercise every analyzer callback and major Roslyn API family used by
   representative analyzer assemblies.
 - Preserve analyzer failures as explicit build diagnostics rather than crashes
-  or silent omissions.
+  or silent omissions. Unimplemented members now surface as `AD0001` naming the
+  analyzer and member, but silent wrong answers remain the harder class: two
+  have been found and fixed so far, both `object` virtuals that facade
+  interfaces structurally cannot occupy.
 - Detect analyzers that cannot run through the native path and apply the
   configured failure or fallback policy.
 
@@ -136,12 +155,15 @@ builds, caching is incomplete, and only Linux has been validated.
    package's MSBuild targets.
 2. Replace managed analyzer items with the resulting native modules and run a
    complete project build through the package.
-3. Implement the analyzer registration kinds currently producing `AD0001` in
-   the whole C# NetAnalyzers test.
+3. Work the differential burn-down down, in the order the migration plan sets
+   out: the projection model, ownership, then identity. The ranked blocking
+   members are the measurement that says which work pays.
 4. Add incremental inputs, outputs, and a content-addressed native artifact
    cache.
 5. Expand compiler and analyzer equivalence tests before enabling the native
-   path by default.
+   path by default. The differential harness is the mechanism; widening it
+   means growing the corpus and, at migration Step 6, comparing the diagnostic
+   fields the ABI cannot yet carry.
 6. Validate the same packaged workflow on Windows and macOS.
 
 ## Core implementation constraint
@@ -161,7 +183,13 @@ document their own engineering semantics.
 
 The architectural compatibility problems discovered while expanding the C#
 NetAnalyzers module are tracked in the
-[analyzer remoting problem inventory](docs/ANALYZER-REMOTING-PROBLEMS.md).
+[analyzer remoting problem inventory](docs/ANALYZER-REMOTING-PROBLEMS.md), with
+a target architecture in the
+[design document](docs/ANALYZER-REMOTING-DESIGN.md) and an order of operations
+to reach it in the
+[migration plan](docs/ANALYZER-REMOTING-MIGRATION.md). The
+[differential harness](tools/RoslynAot.DifferentialHarness/README.md) is what
+turns that inventory into a measured list.
 
 ## Non-goals
 
