@@ -293,27 +293,90 @@ runs the generator, which writes only when the content changes.
 
 ## Step 2 — The projection model becomes the source of truth
 
+**Status: complete (2026-08-17), except withdrawing the unreachable set — see
+the closure bullet.**
+
 **Goal:** generator bugs stop being runtime bugs.
 
 - Introduce the model as a checked-in artifact. Per type: ownership, shape,
   nullability overrides. Per member: canonical id, wire signature, support
   status, unsupported reason.
+  - **Done.** `RoslynProjection.json` gained a `types` section (663 entries:
+    shape, ownership, reachability, proxy kind, vtbls) and every member and call
+    gained `canonicalId`; calls also carry `wireSignature`.
+    `ProjectionInventory.txt` carries the same as one line per type and per
+    call. Both were already checked in; what changed is that they now record
+    the model rather than a summary of the emitters' behavior.
 - **Canonical member identity** from `DocumentationCommentId`, hashed. This
   alone makes overload misassociation and the `GetTypeMembers` body class of bug
   unrepresentable rather than fixed case by case.
+  - **Done**, unhashed. `CanonicalSignatureBuilder.GetCanonicalId` returns
+    `[Assembly]M:Ns.Type.Member(Params)~Return` — the assembly prefix because a
+    documentation comment id is only unique within one assembly. It is not
+    hashed: hashing buys nothing while the id never leaves the generator, and a
+    readable key is what makes the override tables reviewable. Hash it when it
+    reaches the wire in Step 5.
 - Migrate existing hand-onboarded members into the model. Every existing
   member-name exception becomes a model entry with a mandatory `reason` field.
   Delete the name-exception path as an onboarding mechanism.
+  - **Done.** 57 entries in `ProjectionOverrides`, each with a reason, plus 6
+    type-ownership entries in `ProjectionTypeOwnership` replacing the six
+    hardcoded type names inside the model. `AnalyzerLocalFacadeEmitter`'s
+    ~400 lines of `method.Name == "..."` matching are gone; it now looks the
+    call up by canonical id. Regenerating produced a **byte-identical** tree
+    apart from the manifest and the identity constant, which is what says the
+    migration moved the rules rather than rewriting them.
 - Compute the transitive closure from analyzer-facing roots and mark everything
   outside it unsupported **with a reason chain**. Expect the declared-unsupported
   set to be large. That is the point.
+  - **Computed and reported; not yet withdrawn.** `ProjectionClosure` walks
+    from 13 declared roots and records the edge each type was reached by, and
+    the model carries `reachable` / `reachedBy`. See the measured result below.
 - Add the generator validation passes that can run now: canonical id uniqueness,
   ABI symmetry, factory coverage.
+  - **Done.** `ProjectionValidation` runs on every model construction and fails
+    generation: canonical id uniqueness across calls and members; every
+    override, ownership entry, and closure root matching a real member or type;
+    every supported call occupying exactly one vtbl slot that agrees with what
+    the call records; no unsupported call in a vtbl; no duplicate slot names
+    within a vtbl; and every type crossing as a handle having a proxy factory.
 
 **Exit:** generator output is a function of the model; no member reaches the ABI
 without a model entry; the unsupported set is explicit and reasoned.
 
 **Closes:** 8, 17, most of 1.
+
+### Measured result (2026-08-17)
+
+663 types, 5,696 supported calls, 3,034 unsupported, 57 overrides, 713 vtbls.
+
+The closure result contradicts what this step predicted. **609 of 663 types are
+reachable from the analyzer-facing roots, leaving 54 unreachable types and 462
+supported calls — 8% of the ABI, not the large set expected.** The unreachable
+set is coherent: source generators and their driver, command-line parsing,
+`RuleSet`, analyzer references and loaders, `CompilationWithAnalyzers`, and the
+diagnostic formatters. Nothing an analyzer holds leads to any of it.
+
+Two corrections were needed before that number meant anything, and both are
+worth recording because they are the shape of mistake this analysis invites:
+
+- The first closure missed **every analysis context type**, because the only
+  edge to `SyntaxNodeAnalysisContext` runs through the `Action<T>` parameter of
+  `RegisterSyntaxNodeAction`, and a delegate has no ABI plan to traverse.
+  Reachability is now read off the C# signature, not the projected one — it
+  describes what an analyzer can reach, not what the ABI carries today.
+- Static classes have no instance for traversal to arrive on, so extension
+  surfaces fell out entirely, `ModelExtensions.GetDeclaredSymbol` among them —
+  a member the burn-down already names as blocking two rules. A static class is
+  now reachable when any of its members mentions a reachable type, which
+  over-approximates deliberately: keeping a member that is never called costs
+  bytes, withdrawing one an analyzer calls costs a diagnostic.
+
+**Withdrawing the unreachable set is deferred.** At 8% it is a trimming
+optimization rather than the legibility win the step was after, and it is the
+one change here that alters behavior — everything else regenerated
+byte-identical. It should land with the per-analyzer module matrix as its
+measurement, not folded into a model refactor.
 
 ---
 

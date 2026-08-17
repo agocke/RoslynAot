@@ -127,7 +127,10 @@ builds, caching is incomplete, and only Linux has been validated.
   in the order set out in the
   [migration plan](docs/ANALYZER-REMOTING-MIGRATION.md).
 - Generate analyzer-facing Roslyn transport from composable type-shape rules
-  rather than onboarding APIs one member at a time.
+  rather than onboarding APIs one member at a time. The projection model is now
+  the source of truth for that: every member is keyed by an assembly-qualified
+  documentation comment id, deviations live in reviewable tables that must each
+  carry a reason, and the generator validates its own output before emitting.
 - Exercise every analyzer callback and major Roslyn API family used by
   representative analyzer assemblies.
 - Preserve analyzer failures as explicit build diagnostics rather than crashes
@@ -156,8 +159,9 @@ builds, caching is incomplete, and only Linux has been validated.
 2. Replace managed analyzer items with the resulting native modules and run a
    complete project build through the package.
 3. Work the differential burn-down down, in the order the migration plan sets
-   out: the projection model, ownership, then identity. The ranked blocking
-   members are the measurement that says which work pays.
+   out: ownership, then identity, now that the projection model underneath them
+   is in place. The ranked blocking members are the measurement that says which
+   work pays.
 4. Add incremental inputs, outputs, and a content-addressed native artifact
    cache.
 5. Expand compiler and analyzer equivalence tests before enabling the native

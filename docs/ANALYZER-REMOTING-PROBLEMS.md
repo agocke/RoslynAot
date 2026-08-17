@@ -37,6 +37,14 @@ Examples encountered:
 The projection generator needs to compute and support this transitive type
 closure rather than onboarding isolated members.
 
+**Measured (2026-08-17, migration Step 2).** The closure now exists in the
+model, and it is larger than this framing suggests: **609 of 663 projected
+types are reachable from the analyzer-facing roots**. The 54 that are not are
+source generators, command-line parsing, `RuleSet`, analyzer references, and
+the diagnostic formatters. So the transitive surface is not a set to be
+narrowed — it is very nearly all of Roslyn, and the work is transporting it,
+not selecting it.
+
 ### 2. Compiler object identity must be canonical
 
 Returning a new analyzer-side proxy for every occurrence of a compiler object
@@ -159,6 +167,13 @@ registration.
 Overloaded members also exposed declaration-to-symbol matching bugs, including
 incorrectly generated `GetTypeMembers` bodies. Generated operations must use
 canonical signatures, not adjacency or name-only matching.
+
+**Partly addressed (2026-08-17, migration Step 2).** Every model entry is keyed
+by canonical id, so a rule can no longer apply to the wrong overload, and the
+three `GetTypeMembers` overloads are now withdrawn by an explicit model entry
+carrying that reason rather than by a name check inside the validator. The
+overloads themselves are still withdrawn, not fixed: that needs overload
+identity to reach the vtbl slot.
 
 ### 9. Equality and hashing have multiple meanings
 
@@ -313,6 +328,14 @@ The generator needs deterministic validation for:
 
 Member-name exceptions should be limited to genuine Roslyn semantic exceptions,
 not used as the normal onboarding mechanism.
+
+**Largely addressed (2026-08-17, migration Step 2).** Members are keyed by an
+assembly-qualified `DocumentationCommentId`, the name-matched rules are gone in
+favour of three tables keyed on that id with mandatory reasons, and
+`ProjectionValidation` fails generation on canonical id collisions, table
+entries matching nothing, vtbl asymmetry, and missing proxy factories. Still
+open from the list above: generic transport instantiations (Step 8) and
+unsupported-reason accuracy, which stays a per-member judgement.
 
 ### 18. ABI and Roslyn-version compatibility must be explicit
 

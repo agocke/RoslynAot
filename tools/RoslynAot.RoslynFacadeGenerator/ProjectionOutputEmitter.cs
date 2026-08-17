@@ -1491,10 +1491,47 @@ internal static class ProjectionOutputEmitter
         }
 
         writer.WriteEndArray();
+        writer.WriteStartArray("types");
+        foreach (TypeProjection type in model.Types)
+        {
+            writer.WriteStartObject();
+            writer.WriteString("canonicalId", type.CanonicalId);
+            writer.WriteString("shape", type.Shape);
+            writer.WriteString("ownership", type.Ownership.ToString());
+            if (type.OwnershipReason is not null)
+            {
+                writer.WriteString("ownershipReason", type.OwnershipReason);
+            }
+
+            writer.WriteBoolean("reachable", type.IsReachable);
+            if (type.ReachedBy is not null)
+            {
+                writer.WriteString("reachedBy", type.ReachedBy);
+            }
+
+            writer.WriteBoolean("requiresProxy", type.RequiresProxy);
+            writer.WriteBoolean(
+                "dynamicInterfaceProxy",
+                type.UsesDynamicInterfaceProxy);
+            if (type.InstanceVtbl is not null)
+            {
+                writer.WriteString("instanceVtbl", type.InstanceVtbl.Name);
+            }
+
+            if (type.TypeVtbl is not null)
+            {
+                writer.WriteString("typeVtbl", type.TypeVtbl.Name);
+            }
+
+            writer.WriteEndObject();
+        }
+
+        writer.WriteEndArray();
         writer.WriteStartArray("members");
         foreach (MemberProjection member in model.Members)
         {
             writer.WriteStartObject();
+            writer.WriteString("canonicalId", member.CanonicalId);
             writer.WriteString("canonicalSignature", member.CanonicalSignature);
             writer.WriteBoolean("supported", member.IsSupported);
             if (member.UnsupportedReason is not null)
@@ -1511,9 +1548,11 @@ internal static class ProjectionOutputEmitter
                     StringComparer.Ordinal))
             {
                 writer.WriteStartObject();
+                writer.WriteString("canonicalId", operation.CanonicalId);
                 writer.WriteString(
                     "canonicalSignature",
                     operation.CanonicalSignature);
+                writer.WriteString("wireSignature", operation.WireSignature);
                 writer.WriteString("generatedName", operation.GeneratedName);
                 writer.WriteBoolean("supported", operation.IsSupported);
                 writer.WriteString(
@@ -1610,6 +1649,43 @@ internal static class ProjectionOutputEmitter
         builder.AppendLine(
             $"overrides={model.Calls.Count(call => call.OverrideReason is not null)}");
         builder.AppendLine($"vtbls={model.Vtbls.Count}");
+        builder.AppendLine($"types={model.Types.Count}");
+        builder.AppendLine(
+            "declaredOwnership=" +
+            model.Types.Count(type => type.OwnershipReason is not null));
+        builder.AppendLine(
+            $"reachableTypes={model.Types.Count(type => type.IsReachable)}");
+        builder.AppendLine(
+            "unreachableCalls=" +
+            model.Calls.Count(call =>
+                call.IsSupported && !model.IsReachable(call)));
+        builder.AppendLine();
+
+        foreach (TypeProjection type in model.Types)
+        {
+            builder.Append("TYPE ownership=");
+            builder.Append(type.Ownership);
+            builder.Append(type.OwnershipReason is null
+                ? " (derived)"
+                : " (declared)");
+            builder.Append(" shape=");
+            builder.Append(type.Shape);
+            builder.Append(" proxy=");
+            builder.Append(type.UsesDynamicInterfaceProxy
+                ? "dynamic"
+                : type.RequiresProxy
+                    ? "yes"
+                    : "no");
+            builder.Append(" instanceVtbl=");
+            builder.Append(type.InstanceVtbl?.Name ?? "none");
+            builder.Append(" typeVtbl=");
+            builder.Append(type.TypeVtbl?.Name ?? "none");
+            builder.Append(" reachedBy=");
+            builder.Append(type.ReachedBy ?? "unreachable");
+            builder.Append(" id=");
+            builder.AppendLine(type.CanonicalId);
+        }
+
         builder.AppendLine();
 
         foreach (ProjectedCall operation in model.Calls)
@@ -1646,8 +1722,10 @@ internal static class ProjectionOutputEmitter
                 builder.Append(operation.OverrideReason);
             }
 
-            builder.Append(" canonical=");
-            builder.AppendLine(operation.CanonicalSignature);
+            builder.Append(" wire=");
+            builder.Append(operation.WireSignature);
+            builder.Append(" id=");
+            builder.AppendLine(operation.CanonicalId);
         }
 
         return builder.ToString();

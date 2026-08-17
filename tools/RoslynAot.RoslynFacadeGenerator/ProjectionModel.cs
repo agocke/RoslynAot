@@ -94,6 +94,13 @@ internal sealed class ProjectedCall
 {
     public required IMethodSymbol Symbol { get; init; }
 
+    /// <summary>
+    /// The model key: an assembly-qualified documentation comment id. Overload
+    /// misassociation is unrepresentable through it, which is the whole reason
+    /// it replaced matching on member names.
+    /// </summary>
+    public required string CanonicalId { get; init; }
+
     public required string CanonicalSignature { get; init; }
 
     public required string BaseName { get; init; }
@@ -123,6 +130,16 @@ internal sealed class ProjectedCall
     public bool IsSupported => Strategy != ProjectionStrategy.Unsupported;
 
     public bool HasReceiver => Receiver is not null;
+
+    /// <summary>
+    /// The shape this call takes on the wire, independent of its C# signature.
+    /// Two calls with the same wire signature are interchangeable to the ABI,
+    /// which is what makes symmetry between the two sides checkable.
+    /// </summary>
+    public string WireSignature =>
+        $"{Receiver?.InventoryName ?? "static"}" +
+        $"({string.Join(",", Parameters.Select(parameter => parameter.AbiType.InventoryName))})" +
+        $"->{ReturnValue.InventoryName}";
 }
 
 internal sealed class VtblProjection
@@ -146,6 +163,8 @@ internal sealed class MemberProjection
 {
     public required ISymbol Symbol { get; init; }
 
+    public required string CanonicalId { get; init; }
+
     public required string CanonicalSignature { get; init; }
 
     public required IReadOnlyList<ProjectedCall> Calls { get; init; }
@@ -159,6 +178,43 @@ internal sealed class MemberProjection
         ?.UnsupportedReason;
 }
 
+/// <summary>
+/// One projected type's model entry: what owns it, what shape it takes, and how
+/// it is reached across the boundary.
+/// </summary>
+internal sealed class TypeProjection
+{
+    public required INamedTypeSymbol Symbol { get; init; }
+
+    public required string CanonicalId { get; init; }
+
+    public required TypeOwnership Ownership { get; init; }
+
+    /// <summary>
+    /// Null when the ownership was derived rather than declared. Step 3 makes
+    /// every type carry a declared one.
+    /// </summary>
+    public required string? OwnershipReason { get; init; }
+
+    public required string Shape { get; init; }
+
+    public required bool RequiresProxy { get; init; }
+
+    public required bool UsesDynamicInterfaceProxy { get; init; }
+
+    public VtblProjection? InstanceVtbl { get; set; }
+
+    public VtblProjection? TypeVtbl { get; set; }
+
+    /// <summary>
+    /// The edge this type was reached by from the analyzer-facing roots, or
+    /// null when nothing an analyzer can hold leads to it.
+    /// </summary>
+    public string? ReachedBy { get; set; }
+
+    public bool IsReachable => ReachedBy is not null;
+}
+
 internal sealed class ProjectionModel
 {
     private readonly Dictionary<string, MemberProjection>
@@ -166,6 +222,7 @@ internal sealed class ProjectionModel
     private readonly HashSet<INamedTypeSymbol> _proxyTypes;
     private readonly Dictionary<INamedTypeSymbol, VtblProjection>
         _instanceVtbls;
+    private readonly Dictionary<ISymbol, TypeProjection> _typesBySymbol;
 
     private ProjectionModel(
         IReadOnlyList<IAssemblySymbol> assemblies,
@@ -192,6 +249,11 @@ internal sealed class ProjectionModel
         _membersBySignature = members.ToDictionary(
             member => member.CanonicalSignature,
             StringComparer.Ordinal);
+        Types = CreateTypes(proxyTypes, vtbls);
+        ProjectionClosure.Compute(Types, calls);
+        _typesBySymbol = Types.ToDictionary(
+            type => (ISymbol)type.Symbol,
+            SymbolEqualityComparer.Default);
 
         string identityInput = string.Join(
             "\n",
@@ -202,18 +264,22 @@ internal sealed class ProjectionModel
                 .Select(assembly => assembly.Identity.ToString())
                 .Concat(calls
                     .OrderBy(
-                        operation => operation.CanonicalSignature,
+                        operation => operation.CanonicalId,
                         StringComparer.Ordinal)
                     .Select(operation =>
-                        $"{operation.CanonicalSignature}|" +
+                        $"{operation.CanonicalId}|" +
                         $"{operation.GeneratedName}|" +
                         $"{operation.Vtbl?.Name}|" +
                         $"{operation.Strategy}|" +
-                        $"{operation.Receiver?.InventoryName}|" +
-                        $"{string.Join(",", operation.Parameters.Select(parameter => parameter.AbiType.InventoryName))}|" +
-                        $"{operation.ReturnValue.InventoryName}|" +
+                        $"{operation.WireSignature}|" +
                         $"{operation.UnsupportedReason}|" +
-                        $"{operation.OverrideReason}")));
+                        $"{operation.OverrideReason}"))
+                .Concat(Types.Select(type =>
+                    $"{type.CanonicalId}|" +
+                    $"{type.Ownership}|" +
+                    $"{type.Shape}|" +
+                    $"{type.RequiresProxy}|" +
+                    $"{type.UsesDynamicInterfaceProxy}")));
         byte[] modelHash =
             SHA256.HashData(Encoding.UTF8.GetBytes(identityInput));
         byte[] hash = SHA256.HashData(
@@ -237,6 +303,8 @@ internal sealed class ProjectionModel
 
     public IReadOnlyList<VtblProjection> Vtbls { get; }
 
+    public IReadOnlyList<TypeProjection> Types { get; }
+
     public string Identity { get; }
 
     public long IdentityLow { get; }
@@ -257,6 +325,104 @@ internal sealed class ProjectionModel
         _membersBySignature.TryGetValue(
             CanonicalSignatureBuilder.GetMemberSignature(symbol),
             out projection!);
+
+    private static IReadOnlyList<TypeProjection> CreateTypes(
+        HashSet<INamedTypeSymbol> proxyTypes,
+        IReadOnlyList<VtblProjection> vtbls)
+    {
+        var byType = new Dictionary<INamedTypeSymbol, TypeProjection>(
+            SymbolEqualityComparer.Default);
+        foreach (INamedTypeSymbol type in proxyTypes
+            .Concat(vtbls.Select(vtbl => vtbl.FacadeType)))
+        {
+            if (byType.ContainsKey(type))
+            {
+                continue;
+            }
+
+            string canonicalId =
+                CanonicalSignatureBuilder.GetCanonicalId(type);
+            bool declared = ProjectionTypeOwnership.TryGet(
+                canonicalId,
+                out TypeOwnershipEntry entry);
+            byType.Add(
+                type,
+                new TypeProjection
+                {
+                    Symbol = type,
+                    CanonicalId = canonicalId,
+                    Ownership = declared
+                        ? entry.Ownership
+                        : DeriveOwnership(type, proxyTypes),
+                    OwnershipReason = declared ? entry.Reason : null,
+                    Shape = GetShape(type),
+                    RequiresProxy = proxyTypes.Contains(type),
+                    UsesDynamicInterfaceProxy =
+                        proxyTypes.Contains(type) &&
+                        IsDynamicInterfaceProxyCandidate(type),
+                });
+        }
+
+        foreach (VtblProjection vtbl in vtbls)
+        {
+            TypeProjection projection = byType[vtbl.FacadeType];
+            if (vtbl.IsTypeVtbl)
+            {
+                projection.TypeVtbl = vtbl;
+            }
+            else
+            {
+                projection.InstanceVtbl = vtbl;
+            }
+        }
+
+        return
+        [
+            .. byType.Values.OrderBy(
+                type => type.CanonicalId,
+                StringComparer.Ordinal),
+        ];
+    }
+
+    /// <summary>
+    /// The default when no ownership is declared. Derivation is a Step 2
+    /// convenience, not the end state: Step 3 requires every type to declare.
+    /// </summary>
+    private static TypeOwnership DeriveOwnership(
+        INamedTypeSymbol type,
+        HashSet<INamedTypeSymbol> proxyTypes) =>
+        type.IsStatic
+            ? TypeOwnership.Facade
+            : type.IsValueType && proxyTypes.Contains(type)
+                ? TypeOwnership.Value
+                : TypeOwnership.Remote;
+
+    private static string GetShape(INamedTypeSymbol type) =>
+        type.TypeKind switch
+        {
+            TypeKind.Interface => "interface",
+            TypeKind.Struct => "struct",
+            TypeKind.Enum => "enum",
+            TypeKind.Delegate => "delegate",
+            _ => type.IsStatic
+                ? "static class"
+                : type.IsAbstract
+                    ? "abstract class"
+                    : type.IsSealed
+                        ? "sealed class"
+                        : "class",
+        };
+
+    /// <summary>
+    /// Whether an analyzer can reach the type this call is declared on. Today
+    /// this is reported, not enforced: withdrawing the unreachable set is a
+    /// behavior change the differential corpus has to clear first.
+    /// </summary>
+    public bool IsReachable(ProjectedCall call) =>
+        _typesBySymbol.TryGetValue(
+            call.Symbol.ContainingType,
+            out TypeProjection? type) &&
+        type.IsReachable;
 
     public bool RequiresProxy(INamedTypeSymbol type) =>
         _proxyTypes.Contains(type);
@@ -296,15 +462,15 @@ internal sealed class ProjectionModel
             IsDynamicInterfaceProxyCandidate(baseType);
     }
 
-    private static bool IsAnalyzerLocalClass(
-        INamedTypeSymbol type) =>
-        CanonicalSignatureBuilder.GetMetadataTypeName(type) is
-            "Microsoft.CodeAnalysis.LocalizableString" or
-            "Microsoft.CodeAnalysis.LocalizableResourceString" or
-            "Microsoft.CodeAnalysis.DiagnosticDescriptor" or
-            "Microsoft.CodeAnalysis.Diagnostic" or
-            "Microsoft.CodeAnalysis.Location" or
-            "Microsoft.CodeAnalysis.SymbolEqualityComparer";
+    /// <summary>
+    /// A type the analyzer can hold without a handle, so it cannot be reached
+    /// through a proxy that assumes one.
+    /// </summary>
+    private static bool IsAnalyzerLocalClass(INamedTypeSymbol type) =>
+        ProjectionTypeOwnership.TryGet(
+            CanonicalSignatureBuilder.GetCanonicalId(type),
+            out TypeOwnershipEntry entry) &&
+        entry.Ownership is TypeOwnership.Local or TypeOwnership.Dual;
 
     public VtblProjection GetInstanceVtbl(
         INamedTypeSymbol type) =>
@@ -349,12 +515,14 @@ internal sealed class ProjectionModel
             CollectProxyTypes(assemblies, orderedCalls);
         IReadOnlyList<VtblProjection> vtbls =
             CreateVtbls(proxyTypes, orderedCalls);
-        return new ProjectionModel(
+        var model = new ProjectionModel(
             assemblies,
             orderedMembers,
             orderedCalls,
             proxyTypes,
             vtbls);
+        ProjectionValidation.Validate(model);
+        return model;
     }
 
     private static void VisitNamespace(
@@ -395,6 +563,7 @@ internal sealed class ProjectionModel
             new MemberProjection
             {
                 Symbol = type,
+                CanonicalId = CanonicalSignatureBuilder.GetCanonicalId(type),
                 CanonicalSignature =
                     CanonicalSignatureBuilder.GetMemberSignature(type),
                 Calls = [],
@@ -432,6 +601,7 @@ internal sealed class ProjectionModel
                 new MemberProjection
                 {
                     Symbol = symbol,
+                    CanonicalId = CanonicalSignatureBuilder.GetCanonicalId(symbol),
                     CanonicalSignature =
                         CanonicalSignatureBuilder.GetMemberSignature(symbol),
                     Calls = memberCalls,
@@ -464,6 +634,7 @@ internal sealed class ProjectionModel
         IMethodSymbol method,
         AbiTypeClassifier classifier)
     {
+        string canonicalId = CanonicalSignatureBuilder.GetCanonicalId(method);
         string canonicalSignature =
             CanonicalSignatureBuilder.GetOperationSignature(method);
         ProjectionStrategy strategy = ClassifyMemberStrategy(method);
@@ -498,41 +669,30 @@ internal sealed class ProjectionModel
                         method.ReturnNullableAnnotation,
                         AbiTypePosition.Return);
         if (returnValue.Kind == AbiTypeKind.ObjectHandle &&
-            (method.GetReturnTypeAttributes().Any(attribute =>
-                    attribute.AttributeClass?.ToDisplayString() ==
-                    "System.Diagnostics.CodeAnalysis.MaybeNullAttribute") ||
-                method is
-                {
-                    Name: "get_ContainingSymbol",
-                    ContainingType.Name: "ISymbol",
-                    ContainingType.ContainingNamespace:
-                    {
-                        Name: "CodeAnalysis",
-                        ContainingNamespace:
-                        {
-                            Name: "Microsoft",
-                            ContainingNamespace.IsGlobalNamespace: true
-                        }
-                    }
-                }))
+            method.GetReturnTypeAttributes().Any(attribute =>
+                attribute.AttributeClass?.ToDisplayString() ==
+                "System.Diagnostics.CodeAnalysis.MaybeNullAttribute"))
         {
             returnValue = returnValue with { IsNullable = true };
         }
 
-        string? unsupportedReason = ValidateOperation(
-            method,
-            strategy,
-            receiver,
-            parameters,
-            returnValue);
         string? overrideReason = null;
-        if (ProjectionOverrides.TryGet(
-                canonicalSignature,
-                out ProjectionOverride projectionOverride))
+        ProjectionOverride? projectionOverride = null;
+        if (ProjectionOverrides.TryGet(canonicalId, out ProjectionOverride found))
         {
-            strategy = projectionOverride.Strategy;
-            overrideReason = projectionOverride.Reason;
-            unsupportedReason = strategy == ProjectionStrategy.Unsupported
+            projectionOverride = found;
+            overrideReason = found.Reason;
+            if (found.ReturnIsNullable is bool isNullable)
+            {
+                returnValue = returnValue with { IsNullable = isNullable };
+            }
+
+            strategy = found.Strategy ?? strategy;
+        }
+
+        string? unsupportedReason =
+            strategy == ProjectionStrategy.Unsupported &&
+            projectionOverride?.Strategy == ProjectionStrategy.Unsupported
                 ? projectionOverride.Reason
                 : ValidateOperation(
                     method,
@@ -540,7 +700,6 @@ internal sealed class ProjectionModel
                     receiver,
                     parameters,
                     returnValue);
-        }
 
         if (unsupportedReason is not null)
         {
@@ -550,6 +709,7 @@ internal sealed class ProjectionModel
         return new ProjectedCall
         {
             Symbol = method,
+            CanonicalId = canonicalId,
             CanonicalSignature = canonicalSignature,
             BaseName = GetOperationBaseName(method),
             GeneratedName = string.Empty,
@@ -672,12 +832,6 @@ internal sealed class ProjectionModel
         {
             return $"Return type is unsupported: " +
                 returnValue.UnsupportedReason;
-        }
-
-        if (returnValue.Kind == AbiTypeKind.ObjectCollection &&
-            method.Name == "GetTypeMembers")
-        {
-            return "GetTypeMembers overload projection is not supported.";
         }
 
         if (strategy == ProjectionStrategy.Constructor &&
@@ -1578,6 +1732,19 @@ internal sealed class AbiTypeClassifier
 
 internal static class CanonicalSignatureBuilder
 {
+    /// <summary>
+    /// The canonical model key. <see cref="DocumentationCommentId"/> already
+    /// distinguishes overloads, generic arity, ref-ness, and conversion return
+    /// types; the assembly name is prepended because a documentation comment id
+    /// is only unique within one assembly.
+    /// </summary>
+    public static string GetCanonicalId(ISymbol symbol) =>
+        $"[{symbol.ContainingAssembly?.Identity.Name}]" +
+        (DocumentationCommentId.CreateDeclarationId(symbol) ??
+            throw new InvalidOperationException(
+                "No documentation comment id exists for " +
+                $"'{symbol.ToDisplayString()}'."));
+
     public static string GetMemberSignature(ISymbol symbol) =>
         symbol switch
         {

@@ -512,6 +512,37 @@ Generated operation names must be deterministic and unambiguous for overloads.
 Their exact naming and stable identity scheme will be selected after inspecting
 the real overload and generic-method surface.
 
+## The model
+
+Everything the emitters do is decided by `ProjectionModel`, and everything the
+model decides is written out under `Projection/Manifest/` — `RoslynProjection.json`
+in full, `ProjectionInventory.txt` as one greppable line per type and per call.
+Both are checked in, so a change to a projection rule shows up as a reviewable
+diff rather than as an analyzer failing on someone's machine.
+
+Members are keyed by **canonical id**: `[Assembly]M:Ns.Type.Member(Params)~Return`,
+built from `DocumentationCommentId`. The assembly prefix is there because a
+documentation comment id is only unique within one assembly. Overloads,
+generic arity, ref-ness, and conversion return types are all already
+distinguished by that form, which is what makes a table keyed on it incapable
+of applying to the wrong overload.
+
+Three tables carry the deliberate deviations, and each entry needs a reason:
+
+| Table | Keyed by | Holds |
+|---|---|---|
+| `ProjectionOverrides` | member canonical id | A replaced strategy, a corrected return nullability, or an analyzer-side body |
+| `ProjectionTypeOwnership` | type canonical id | Which side owns a type's state, where it differs from the derived default |
+| `ProjectionClosure` | type canonical id | The analyzer-facing roots the reachability walk starts from |
+
+`ProjectionValidation` runs on every model construction and refuses to generate
+on: a duplicated canonical id; a table entry matching no member or type; a
+supported call in zero or several vtbl slots, or in one that disagrees with what
+the call records; an unsupported call occupying a slot; two slots sharing a name
+within a vtbl; or a type crossing as a handle with no proxy factory to receive
+it. A table entry that matches nothing is the specific failure the older
+name-matched rules could not report: the deviation simply stopped applying.
+
 ## Cases requiring explicit treatment
 
 Direct projection will not be sufficient for every API. Expected cases include:
