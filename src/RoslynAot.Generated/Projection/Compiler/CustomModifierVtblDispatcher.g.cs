@@ -14,27 +14,25 @@ using RoslynAot.Abi;
 namespace RoslynAot.Csc;
 
 [GeneratedComClass]
-internal sealed partial class SymbolEqualityComparerVtblDispatcher : ISymbolEqualityComparerVtbl
+internal sealed partial class CustomModifierVtblDispatcher : ICustomModifierVtbl
 {
     private readonly RoslynInterop _owner;
 
-    public SymbolEqualityComparerVtblDispatcher(RoslynInterop owner)
+    public CustomModifierVtblDispatcher(RoslynInterop owner)
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SymbolEqualityComparer_Equals(
+    public int CustomModifier_get_IsOptional(
         long receiver,
-        long x,
-        long y,
         out int result)
     {
-        RoslynCallCounters.Record(1406);
+        RoslynCallCounters.Record(221);
         result = default;
 
         try
         {
-            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolEqualityComparer>(receiver).Equals(x == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ISymbol>(x), y == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ISymbol>(y)) ? 1 : 0;
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CustomModifier>(receiver).IsOptional ? 1 : 0;
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -43,17 +41,16 @@ internal sealed partial class SymbolEqualityComparerVtblDispatcher : ISymbolEqua
         }
     }
 
-    public int SymbolEqualityComparer_GetHashCode(
+    public int CustomModifier_get_Modifier(
         long receiver,
-        long obj,
-        out int result)
+        out long result)
     {
-        RoslynCallCounters.Record(1407);
+        RoslynCallCounters.Record(222);
         result = default;
 
         try
         {
-            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolEqualityComparer>(receiver).GetHashCode(obj == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ISymbol>(obj));
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CustomModifier>(receiver).Modifier);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

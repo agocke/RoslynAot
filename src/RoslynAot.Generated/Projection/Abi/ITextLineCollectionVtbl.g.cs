@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("042fd599-5218-5ad7-bd0c-fb1bb60c83b0")]
+[Guid("4dadf592-5461-508e-8425-7bc5bb9c9ff0")]
 public partial interface ITextLineCollectionVtbl
 {
 
@@ -54,6 +54,26 @@ public partial interface ITextLineCollectionVtbl
     int TextLineCollection_GetTextSpan(
         long receiver,
         long span,
+        out long result
+    );
+
+    [PreserveSig]
+    int TextLineCollection_IndexOf(
+        long receiver,
+        int position,
+        out int result
+    );
+
+    [PreserveSig]
+    int TextLineCollection_get_Count(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int TextLineCollection_get_this__(
+        long receiver,
+        int index,
         out long result
     );
 }

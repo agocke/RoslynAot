@@ -23,11 +23,48 @@ internal sealed partial class AnalyzerImageReferenceVtblDispatcher : IAnalyzerIm
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int AnalyzerReference_GetAnalyzersForAllLanguages(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(303);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference>(receiver).GetAnalyzersForAllLanguages()).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AnalyzerReference_GetAnalyzers(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
+        out long result)
+    {
+        RoslynCallCounters.Record(304);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference>(receiver).GetAnalyzers(language)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int AnalyzerReference_GetGeneratorsForAllLanguages(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(250);
+        RoslynCallCounters.Record(305);
         result = default;
 
         try
@@ -46,7 +83,7 @@ internal sealed partial class AnalyzerImageReferenceVtblDispatcher : IAnalyzerIm
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)
     {
-        RoslynCallCounters.Record(251);
+        RoslynCallCounters.Record(306);
         result = default;
 
         try
@@ -66,7 +103,7 @@ internal sealed partial class AnalyzerImageReferenceVtblDispatcher : IAnalyzerIm
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(252);
+        RoslynCallCounters.Record(307);
         requiredLength = default;
 
         try
@@ -86,13 +123,76 @@ internal sealed partial class AnalyzerImageReferenceVtblDispatcher : IAnalyzerIm
         }
     }
 
+    public unsafe int AnalyzerReference_get_FullPath(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        RoslynCallCounters.Record(308);
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference>(receiver).FullPath;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AnalyzerImageReference_GetAnalyzersForAllLanguages(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(293);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerImageReference>(receiver).GetAnalyzersForAllLanguages()).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AnalyzerImageReference_GetAnalyzers(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
+        out long result)
+    {
+        RoslynCallCounters.Record(294);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerImageReference>(receiver).GetAnalyzers(language)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int AnalyzerImageReference_get_Display(
         long receiver,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(243);
+        RoslynCallCounters.Record(295);
         requiredLength = default;
 
         try
@@ -118,7 +218,7 @@ internal sealed partial class AnalyzerImageReferenceVtblDispatcher : IAnalyzerIm
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(244);
+        RoslynCallCounters.Record(296);
         requiredLength = default;
 
         try

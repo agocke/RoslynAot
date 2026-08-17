@@ -27,7 +27,7 @@ internal sealed partial class ISymbolInitializerOperationVtblDispatcher : IISymb
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1115);
+        RoslynCallCounters.Record(1200);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ISymbolInitializerOperationVtblDispatcher : IISymb
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1116);
+        RoslynCallCounters.Record(1201);
         result = default;
 
         try

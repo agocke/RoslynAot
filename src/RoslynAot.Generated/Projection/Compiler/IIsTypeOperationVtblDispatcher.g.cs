@@ -27,7 +27,7 @@ internal sealed partial class IIsTypeOperationVtblDispatcher : IIIsTypeOperation
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1022);
+        RoslynCallCounters.Record(1107);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IIsTypeOperationVtblDispatcher : IIIsTypeOperation
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1023);
+        RoslynCallCounters.Record(1108);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class IIsTypeOperationVtblDispatcher : IIIsTypeOperation
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1024);
+        RoslynCallCounters.Record(1109);
         result = default;
 
         try

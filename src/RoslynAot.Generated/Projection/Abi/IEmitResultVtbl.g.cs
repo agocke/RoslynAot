@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("2f06126e-8af4-5333-9c53-f3b733c8b2e4")]
+[Guid("4121fb82-7009-51ca-8dc0-006cf7490322")]
 public partial interface IEmitResultVtbl
 {
+
+    [PreserveSig]
+    int EmitResult_get_Diagnostics(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int EmitResult_get_Success(

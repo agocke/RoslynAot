@@ -28,7 +28,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5687);
+        RoslynCallCounters.Record(5811);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5688);
+        RoslynCallCounters.Record(5812);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5689);
+        RoslynCallCounters.Record(5813);
         result = default;
 
         try
@@ -85,7 +85,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5690);
+        RoslynCallCounters.Record(5814);
         result = default;
 
         try
@@ -104,7 +104,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5691);
+        RoslynCallCounters.Record(5815);
         result = default;
 
         try
@@ -123,7 +123,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5692);
+        RoslynCallCounters.Record(5816);
         result = default;
 
         try
@@ -142,7 +142,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5693);
+        RoslynCallCounters.Record(5817);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5694);
+        RoslynCallCounters.Record(5818);
         result = default;
 
         try
@@ -180,7 +180,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5695);
+        RoslynCallCounters.Record(5819);
         result = default;
 
         try

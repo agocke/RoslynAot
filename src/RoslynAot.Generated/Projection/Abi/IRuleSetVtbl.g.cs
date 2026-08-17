@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e886a619-9aaf-5568-8382-6e42389ce423")]
+[Guid("67c9e0d9-fb0c-5a2c-88fb-6a0660075650")]
 public partial interface IRuleSetVtbl
 {
 
@@ -35,5 +35,11 @@ public partial interface IRuleSetVtbl
     int RuleSet_get_GeneralDiagnosticOption(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int RuleSet_get_Includes(
+        long receiver,
+        out long result
     );
 }

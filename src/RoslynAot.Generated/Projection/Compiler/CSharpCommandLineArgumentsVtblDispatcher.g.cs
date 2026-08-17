@@ -30,7 +30,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(51);
+        RoslynCallCounters.Record(53);
         requiredLength = default;
 
         try
@@ -57,7 +57,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(52);
+        RoslynCallCounters.Record(54);
         requiredLength = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long analyzerLoader,
         out long result)
     {
-        RoslynCallCounters.Record(53);
+        RoslynCallCounters.Record(55);
         result = default;
 
         try
@@ -101,7 +101,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long metadataResolver,
         out long result)
     {
-        RoslynCallCounters.Record(54);
+        RoslynCallCounters.Record(56);
         result = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(55);
+        RoslynCallCounters.Record(57);
         requiredLength = default;
 
         try
@@ -147,7 +147,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(56);
+        RoslynCallCounters.Record(58);
         requiredLength = default;
 
         try
@@ -171,7 +171,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(57);
+        RoslynCallCounters.Record(59);
         result = default;
 
         try
@@ -191,7 +191,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(58);
+        RoslynCallCounters.Record(60);
         requiredLength = default;
 
         try
@@ -215,7 +215,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(59);
+        RoslynCallCounters.Record(61);
         result = default;
 
         try
@@ -233,7 +233,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(60);
+        RoslynCallCounters.Record(62);
         result = default;
 
         try
@@ -251,7 +251,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(61);
+        RoslynCallCounters.Record(63);
         result = default;
 
         try
@@ -269,7 +269,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(62);
+        RoslynCallCounters.Record(64);
         result = default;
 
         try
@@ -287,7 +287,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(63);
+        RoslynCallCounters.Record(65);
         result = default;
 
         try
@@ -307,7 +307,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(64);
+        RoslynCallCounters.Record(66);
         requiredLength = default;
 
         try
@@ -331,7 +331,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(65);
+        RoslynCallCounters.Record(67);
         result = default;
 
         try
@@ -349,7 +349,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(66);
+        RoslynCallCounters.Record(68);
         result = default;
 
         try
@@ -367,7 +367,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(67);
+        RoslynCallCounters.Record(69);
         result = default;
 
         try
@@ -385,7 +385,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(68);
+        RoslynCallCounters.Record(70);
         result = default;
 
         try
@@ -405,7 +405,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(69);
+        RoslynCallCounters.Record(71);
         requiredLength = default;
 
         try
@@ -425,13 +425,31 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         }
     }
 
+    public int CommandLineArguments_get_Errors(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(72);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).Errors).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int CommandLineArguments_get_GeneratedFilesOutputDirectory(
         long receiver,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(70);
+        RoslynCallCounters.Record(73);
         requiredLength = default;
 
         try
@@ -455,7 +473,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(71);
+        RoslynCallCounters.Record(74);
         result = default;
 
         try
@@ -469,11 +487,29 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         }
     }
 
+    public int CommandLineArguments_get_ManifestResources(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(75);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CommandLineArguments>(receiver).ManifestResources).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CommandLineArguments_get_NoWin32Manifest(
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(72);
+        RoslynCallCounters.Record(76);
         result = default;
 
         try
@@ -493,7 +529,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(73);
+        RoslynCallCounters.Record(77);
         requiredLength = default;
 
         try
@@ -519,7 +555,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(74);
+        RoslynCallCounters.Record(78);
         requiredLength = default;
 
         try
@@ -545,7 +581,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(75);
+        RoslynCallCounters.Record(79);
         requiredLength = default;
 
         try
@@ -569,7 +605,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(76);
+        RoslynCallCounters.Record(80);
         result = default;
 
         try
@@ -589,7 +625,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(77);
+        RoslynCallCounters.Record(81);
         requiredLength = default;
 
         try
@@ -613,7 +649,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(78);
+        RoslynCallCounters.Record(82);
         result = default;
 
         try
@@ -631,7 +667,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(79);
+        RoslynCallCounters.Record(83);
         result = default;
 
         try
@@ -649,7 +685,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(80);
+        RoslynCallCounters.Record(84);
         result = default;
 
         try
@@ -669,7 +705,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(81);
+        RoslynCallCounters.Record(85);
         requiredLength = default;
 
         try
@@ -693,7 +729,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(82);
+        RoslynCallCounters.Record(86);
         result = default;
 
         try
@@ -713,7 +749,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(83);
+        RoslynCallCounters.Record(87);
         requiredLength = default;
 
         try
@@ -739,7 +775,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(84);
+        RoslynCallCounters.Record(88);
         requiredLength = default;
 
         try
@@ -763,7 +799,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(85);
+        RoslynCallCounters.Record(89);
         result = default;
 
         try
@@ -783,7 +819,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(86);
+        RoslynCallCounters.Record(90);
         requiredLength = default;
 
         try
@@ -809,7 +845,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(87);
+        RoslynCallCounters.Record(91);
         requiredLength = default;
 
         try
@@ -835,7 +871,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(88);
+        RoslynCallCounters.Record(92);
         requiredLength = default;
 
         try
@@ -859,7 +895,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1763);
+        RoslynCallCounters.Record(1884);
         result = default;
 
         try
@@ -877,7 +913,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1764);
+        RoslynCallCounters.Record(1885);
         result = default;
 
         try

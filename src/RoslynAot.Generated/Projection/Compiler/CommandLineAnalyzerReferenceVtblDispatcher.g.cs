@@ -28,7 +28,7 @@ internal sealed partial class CommandLineAnalyzerReferenceVtblDispatcher : IComm
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(48);
+        RoslynCallCounters.Record(50);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class CommandLineAnalyzerReferenceVtblDispatcher : IComm
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(49);
+        RoslynCallCounters.Record(51);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class CommandLineAnalyzerReferenceVtblDispatcher : IComm
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(50);
+        RoslynCallCounters.Record(52);
         requiredLength = default;
 
         try

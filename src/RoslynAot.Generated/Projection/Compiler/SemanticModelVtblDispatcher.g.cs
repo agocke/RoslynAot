@@ -23,12 +23,31 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int SemanticModel_GetNullableContext(
+        long receiver,
+        int position,
+        out int result)
+    {
+        RoslynCallCounters.Record(1414);
+        result = default;
+
+        try
+        {
+            result = (int)_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).GetNullableContext(position);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SemanticModel_GetPreprocessingSymbolInfo(
         long receiver,
         long nameSyntax,
         out long result)
     {
-        RoslynCallCounters.Record(1323);
+        RoslynCallCounters.Record(1415);
         result = default;
 
         try
@@ -48,7 +67,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long symbol,
         out int result)
     {
-        RoslynCallCounters.Record(1324);
+        RoslynCallCounters.Record(1416);
         result = default;
 
         try
@@ -68,7 +87,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long eventSymbol,
         out int result)
     {
-        RoslynCallCounters.Record(1325);
+        RoslynCallCounters.Record(1417);
         result = default;
 
         try
@@ -88,7 +107,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(1326);
+        RoslynCallCounters.Record(1418);
         result = default;
 
         try
@@ -108,7 +127,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(1327);
+        RoslynCallCounters.Record(1419);
         result = default;
 
         try
@@ -129,7 +148,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(1328);
+        RoslynCallCounters.Record(1420);
         result = default;
 
         try
@@ -150,7 +169,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(1329);
+        RoslynCallCounters.Record(1421);
         result = default;
 
         try
@@ -172,7 +191,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         int includeReducedExtensionMethods,
         out long result)
     {
-        RoslynCallCounters.Record(1330);
+        RoslynCallCounters.Record(1422);
         result = default;
 
         try
@@ -190,7 +209,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1331);
+        RoslynCallCounters.Record(1423);
         result = default;
 
         try
@@ -208,7 +227,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1332);
+        RoslynCallCounters.Record(1424);
         result = default;
 
         try
@@ -222,11 +241,73 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         }
     }
 
+    public int SemanticModel_get_IsSpeculativeSemanticModel(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(1425);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).IsSpeculativeSemanticModel ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public unsafe int SemanticModel_get_Language(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        RoslynCallCounters.Record(1426);
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).Language;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_get_OriginalPositionForSpeculation(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(1427);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).OriginalPositionForSpeculation;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SemanticModel_get_ParentModel(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1333);
+        RoslynCallCounters.Record(1428);
         result = default;
 
         try
@@ -244,7 +325,7 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1334);
+        RoslynCallCounters.Record(1429);
         result = default;
 
         try

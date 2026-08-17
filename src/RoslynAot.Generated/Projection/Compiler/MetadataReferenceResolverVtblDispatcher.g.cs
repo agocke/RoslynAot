@@ -23,13 +23,31 @@ internal sealed partial class MetadataReferenceResolverVtblDispatcher : IMetadat
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int MetadataReferenceResolver_GetHashCode(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(930);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.MetadataReferenceResolver>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int MetadataReferenceResolver_ResolveMissingAssembly(
         long receiver,
         long definition,
         long referenceIdentity,
         out long result)
     {
-        RoslynCallCounters.Record(847);
+        RoslynCallCounters.Record(931);
         result = default;
 
         try
@@ -43,11 +61,32 @@ internal sealed partial class MetadataReferenceResolverVtblDispatcher : IMetadat
         }
     }
 
+    public int MetadataReferenceResolver_ResolveReference(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string reference,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string baseFilePath,
+        long properties,
+        out long result)
+    {
+        RoslynCallCounters.Record(932);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.MetadataReferenceResolver>(receiver).ResolveReference(reference, baseFilePath, _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.MetadataReferenceProperties>(properties))).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int MetadataReferenceResolver_get_ResolveMissingAssemblies(
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(848);
+        RoslynCallCounters.Record(933);
         result = default;
 
         try

@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f3106c97-8bfd-5d7f-b99c-702ccdcc0124")]
+[Guid("16a58908-ca20-5c4c-a6c6-7a7417e6438b")]
 public partial interface IIPointerTypeSymbolVtbl
 {
+
+    [PreserveSig]
+    int IPointerTypeSymbol_get_CustomModifiers(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int IPointerTypeSymbol_get_PointedAtType(

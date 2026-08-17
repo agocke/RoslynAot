@@ -27,7 +27,7 @@ internal sealed partial class CompilationWithAnalyzersVtblDispatcher : ICompilat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(266);
+        RoslynCallCounters.Record(322);
         result = default;
 
         try
@@ -41,11 +41,29 @@ internal sealed partial class CompilationWithAnalyzersVtblDispatcher : ICompilat
         }
     }
 
+    public int CompilationWithAnalyzers_get_Analyzers(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(323);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.CompilationWithAnalyzers>(receiver).Analyzers).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CompilationWithAnalyzers_get_Compilation(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(267);
+        RoslynCallCounters.Record(324);
         result = default;
 
         try

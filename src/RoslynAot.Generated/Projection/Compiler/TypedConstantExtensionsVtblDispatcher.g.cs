@@ -29,7 +29,7 @@ internal sealed partial class TypedConstantExtensionsVtblDispatcher : ITypedCons
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(5686);
+        RoslynCallCounters.Record(5810);
         requiredLength = default;
 
         try

@@ -27,7 +27,7 @@ internal sealed partial class IInterpolatedStringAdditionOperationVtblDispatcher
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1001);
+        RoslynCallCounters.Record(1086);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IInterpolatedStringAdditionOperationVtblDispatcher
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1002);
+        RoslynCallCounters.Record(1087);
         result = default;
 
         try

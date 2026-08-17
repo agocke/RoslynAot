@@ -12,7 +12,43 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d99554f3-e61c-5dde-9d7d-8b2d83a7ef69")]
+[Guid("a6a6339f-c014-526b-97cc-eef162fab494")]
 public partial interface IControlFlowAnalysisVtbl
 {
+
+    [PreserveSig]
+    int ControlFlowAnalysis_get_EndPointIsReachable(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int ControlFlowAnalysis_get_EntryPoints(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ControlFlowAnalysis_get_ExitPoints(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ControlFlowAnalysis_get_ReturnStatements(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int ControlFlowAnalysis_get_StartPointIsReachable(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int ControlFlowAnalysis_get_Succeeded(
+        long receiver,
+        out int result
+    );
 }

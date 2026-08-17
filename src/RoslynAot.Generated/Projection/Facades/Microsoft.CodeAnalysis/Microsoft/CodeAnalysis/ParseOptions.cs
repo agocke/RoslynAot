@@ -35,7 +35,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IParseOptionsVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ParseOptions_get_Errors(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -166,7 +170,11 @@ namespace Microsoft.CodeAnalysis
             [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
             public override ParseOptions CommonWithKind(SourceCodeKind kind)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IParseOptionsVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ParseOptions_CommonWithKind(__RoslynAotGetHandle(controlVtbl), (int)kind, out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return __RoslynAotCreateProxy(controlVtbl, result);
             }
 
             public override bool Equals(object? obj)
@@ -176,7 +184,11 @@ namespace Microsoft.CodeAnalysis
 
             public override int GetHashCode()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IParseOptionsVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ParseOptions_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result;
             }
 
             public override System.Collections.Generic.IReadOnlyDictionary<string, string> Features
@@ -191,7 +203,10 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IParseOptionsVtbl vtbl = __RoslynAotGetVtbl();
+                    long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                    return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.ParseOptions_get_Language(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
                 }
             }
 
@@ -199,7 +214,11 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IParseOptionsVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.ParseOptions_get_PreprocessorSymbolNames(__RoslynAotGetHandle(controlVtbl), out long result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadStringCollection(controlVtbl, result);
                 }
             }
         }

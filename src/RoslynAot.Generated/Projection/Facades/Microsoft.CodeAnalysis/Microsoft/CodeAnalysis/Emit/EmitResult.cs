@@ -14,7 +14,11 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IEmitResultVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.EmitResult_get_Diagnostics(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -41,7 +45,7 @@ namespace Microsoft.CodeAnalysis.Emit
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static EmitResult __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (EmitResult)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("2f06126e-8af4-5333-9c53-f3b733c8b2e4")]
+        [System.Runtime.InteropServices.Guid("4121fb82-7009-51ca-8dc0-006cf7490322")]
         internal partial interface __RoslynAotImplementation : EmitResult
         {
         }

@@ -12,7 +12,23 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("27ac298c-82ba-50b0-bcde-1ed24cb90d59")]
+[Guid("2a99bf5e-b951-5742-badb-186c2e4307a6")]
 public partial interface IXmlReferenceResolverVtbl
 {
+
+    [PreserveSig]
+    int XmlReferenceResolver_GetHashCode(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int XmlReferenceResolver_ResolveReference(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string baseFilePath,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
 }

@@ -26,7 +26,7 @@ internal sealed partial class AssemblyIdentityComparerTypeVtblDispatcher : IAsse
     public int AssemblyIdentityComparer_get_Default(
         out long result)
     {
-        RoslynCallCounters.Record(18);
+        RoslynCallCounters.Record(20);
         result = default;
 
         try

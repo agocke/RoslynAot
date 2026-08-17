@@ -22,4 +22,50 @@ internal sealed partial class XmlReferenceResolverVtblDispatcher : IXmlReference
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
+
+    public int XmlReferenceResolver_GetHashCode(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(1875);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.XmlReferenceResolver>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public unsafe int XmlReferenceResolver_ResolveReference(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string baseFilePath,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        RoslynCallCounters.Record(1876);
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.XmlReferenceResolver>(receiver).ResolveReference(path, baseFilePath);
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

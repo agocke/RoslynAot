@@ -27,7 +27,7 @@ internal sealed partial class ITupleBinaryOperationVtblDispatcher : IITupleBinar
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1123);
+        RoslynCallCounters.Record(1208);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ITupleBinaryOperationVtblDispatcher : IITupleBinar
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1124);
+        RoslynCallCounters.Record(1209);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class ITupleBinaryOperationVtblDispatcher : IITupleBinar
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1125);
+        RoslynCallCounters.Record(1210);
         result = default;
 
         try

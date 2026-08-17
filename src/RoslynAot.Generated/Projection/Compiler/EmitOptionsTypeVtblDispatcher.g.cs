@@ -37,7 +37,7 @@ internal sealed partial class EmitOptionsTypeVtblDispatcher : IEmitOptionsTypeVt
         int includePrivateMembers,
         out long result)
     {
-        RoslynCallCounters.Record(408);
+        RoslynCallCounters.Record(471);
         result = default;
 
         try

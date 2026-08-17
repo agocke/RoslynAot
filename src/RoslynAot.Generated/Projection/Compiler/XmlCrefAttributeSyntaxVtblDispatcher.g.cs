@@ -28,7 +28,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1442);
+        RoslynCallCounters.Record(1539);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1443);
+        RoslynCallCounters.Record(1540);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1444);
+        RoslynCallCounters.Record(1541);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1445);
+        RoslynCallCounters.Record(1542);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1446);
+        RoslynCallCounters.Record(1543);
         result = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int rawKind,
         out int result)
     {
-        RoslynCallCounters.Record(1447);
+        RoslynCallCounters.Record(1544);
         result = default;
 
         try
@@ -140,7 +140,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long node,
         out int result)
     {
-        RoslynCallCounters.Record(1448);
+        RoslynCallCounters.Record(1545);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int getInnermostNodeForTie,
         out long result)
     {
-        RoslynCallCounters.Record(1449);
+        RoslynCallCounters.Record(1546);
         result = default;
 
         try
@@ -181,7 +181,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1450);
+        RoslynCallCounters.Record(1547);
         result = default;
 
         try
@@ -201,7 +201,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1451);
+        RoslynCallCounters.Record(1548);
         result = default;
 
         try
@@ -220,7 +220,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long syntaxAnnotation,
         out long result)
     {
-        RoslynCallCounters.Record(1452);
+        RoslynCallCounters.Record(1549);
         result = default;
 
         try
@@ -239,7 +239,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1453);
+        RoslynCallCounters.Record(1550);
         result = default;
 
         try
@@ -258,7 +258,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1454);
+        RoslynCallCounters.Record(1551);
         result = default;
 
         try
@@ -276,7 +276,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1455);
+        RoslynCallCounters.Record(1552);
         result = default;
 
         try
@@ -298,7 +298,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1456);
+        RoslynCallCounters.Record(1553);
         result = default;
 
         try
@@ -320,7 +320,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1457);
+        RoslynCallCounters.Record(1554);
         result = default;
 
         try
@@ -338,7 +338,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1458);
+        RoslynCallCounters.Record(1555);
         result = default;
 
         try
@@ -356,7 +356,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1459);
+        RoslynCallCounters.Record(1556);
         result = default;
 
         try
@@ -374,7 +374,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1460);
+        RoslynCallCounters.Record(1557);
         result = default;
 
         try
@@ -392,7 +392,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1461);
+        RoslynCallCounters.Record(1558);
         result = default;
 
         try
@@ -411,7 +411,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1462);
+        RoslynCallCounters.Record(1559);
         result = default;
 
         try
@@ -430,7 +430,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1463);
+        RoslynCallCounters.Record(1560);
         result = default;
 
         try
@@ -449,7 +449,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1464);
+        RoslynCallCounters.Record(1561);
         result = default;
 
         try
@@ -469,7 +469,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(1465);
+        RoslynCallCounters.Record(1562);
         result = default;
 
         try
@@ -488,7 +488,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1466);
+        RoslynCallCounters.Record(1563);
         result = default;
 
         try
@@ -506,7 +506,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1467);
+        RoslynCallCounters.Record(1564);
         result = default;
 
         try
@@ -526,7 +526,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1468);
+        RoslynCallCounters.Record(1565);
         requiredLength = default;
 
         try
@@ -552,7 +552,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1469);
+        RoslynCallCounters.Record(1566);
         requiredLength = default;
 
         try
@@ -576,7 +576,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1470);
+        RoslynCallCounters.Record(1567);
         result = default;
 
         try
@@ -594,7 +594,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1471);
+        RoslynCallCounters.Record(1568);
         result = default;
 
         try
@@ -612,7 +612,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1472);
+        RoslynCallCounters.Record(1569);
         result = default;
 
         try
@@ -630,7 +630,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1473);
+        RoslynCallCounters.Record(1570);
         result = default;
 
         try
@@ -648,7 +648,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1474);
+        RoslynCallCounters.Record(1571);
         result = default;
 
         try
@@ -666,7 +666,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1475);
+        RoslynCallCounters.Record(1572);
         result = default;
 
         try
@@ -684,7 +684,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1476);
+        RoslynCallCounters.Record(1573);
         result = default;
 
         try
@@ -702,7 +702,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1477);
+        RoslynCallCounters.Record(1574);
         result = default;
 
         try
@@ -720,7 +720,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1478);
+        RoslynCallCounters.Record(1575);
         result = default;
 
         try
@@ -738,7 +738,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1479);
+        RoslynCallCounters.Record(1576);
         result = default;
 
         try
@@ -758,7 +758,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1480);
+        RoslynCallCounters.Record(1577);
         requiredLength = default;
 
         try
@@ -782,7 +782,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1481);
+        RoslynCallCounters.Record(1578);
         result = default;
 
         try
@@ -800,7 +800,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1482);
+        RoslynCallCounters.Record(1579);
         result = default;
 
         try
@@ -818,7 +818,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1483);
+        RoslynCallCounters.Record(1580);
         result = default;
 
         try
@@ -836,7 +836,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1484);
+        RoslynCallCounters.Record(1581);
         result = default;
 
         try
@@ -854,7 +854,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1485);
+        RoslynCallCounters.Record(1582);
         result = default;
 
         try
@@ -872,7 +872,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1486);
+        RoslynCallCounters.Record(1583);
         result = default;
 
         try
@@ -890,7 +890,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(1877);
+        RoslynCallCounters.Record(2000);
 
         try
         {
@@ -909,7 +909,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1878);
+        RoslynCallCounters.Record(2001);
         result = default;
 
         try
@@ -929,7 +929,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1879);
+        RoslynCallCounters.Record(2002);
         result = default;
 
         try
@@ -947,7 +947,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1880);
+        RoslynCallCounters.Record(2003);
         result = default;
 
         try
@@ -969,7 +969,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1881);
+        RoslynCallCounters.Record(2004);
         result = default;
 
         try
@@ -991,7 +991,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1882);
+        RoslynCallCounters.Record(2005);
         result = default;
 
         try
@@ -1009,7 +1009,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1883);
+        RoslynCallCounters.Record(2006);
         result = default;
 
         try
@@ -1027,7 +1027,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1884);
+        RoslynCallCounters.Record(2007);
         result = default;
 
         try
@@ -1045,7 +1045,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1885);
+        RoslynCallCounters.Record(2008);
         result = default;
 
         try
@@ -1063,7 +1063,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out ushort result)
     {
-        RoslynCallCounters.Record(1886);
+        RoslynCallCounters.Record(2009);
         result = default;
 
         try
@@ -1083,7 +1083,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1887);
+        RoslynCallCounters.Record(2010);
         requiredLength = default;
 
         try
@@ -1108,7 +1108,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long endQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(4877);
+        RoslynCallCounters.Record(5001);
         result = default;
 
         try
@@ -1127,7 +1127,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long equalsToken,
         out long result)
     {
-        RoslynCallCounters.Record(4878);
+        RoslynCallCounters.Record(5002);
         result = default;
 
         try
@@ -1146,7 +1146,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(4879);
+        RoslynCallCounters.Record(5003);
         result = default;
 
         try
@@ -1165,7 +1165,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long startQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(4880);
+        RoslynCallCounters.Record(5004);
         result = default;
 
         try
@@ -1183,7 +1183,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4881);
+        RoslynCallCounters.Record(5005);
         result = default;
 
         try
@@ -1201,7 +1201,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4882);
+        RoslynCallCounters.Record(5006);
         result = default;
 
         try
@@ -1219,7 +1219,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4883);
+        RoslynCallCounters.Record(5007);
         result = default;
 
         try
@@ -1237,7 +1237,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4884);
+        RoslynCallCounters.Record(5008);
         result = default;
 
         try
@@ -1255,7 +1255,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(4901);
+        RoslynCallCounters.Record(5025);
 
         try
         {
@@ -1277,7 +1277,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long endQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(4902);
+        RoslynCallCounters.Record(5026);
         result = default;
 
         try
@@ -1296,7 +1296,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long cref,
         out long result)
     {
-        RoslynCallCounters.Record(4903);
+        RoslynCallCounters.Record(5027);
         result = default;
 
         try
@@ -1315,7 +1315,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long endQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(4904);
+        RoslynCallCounters.Record(5028);
         result = default;
 
         try
@@ -1334,7 +1334,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long equalsToken,
         out long result)
     {
-        RoslynCallCounters.Record(4905);
+        RoslynCallCounters.Record(5029);
         result = default;
 
         try
@@ -1353,7 +1353,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(4906);
+        RoslynCallCounters.Record(5030);
         result = default;
 
         try
@@ -1372,7 +1372,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long startQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(4907);
+        RoslynCallCounters.Record(5031);
         result = default;
 
         try
@@ -1390,7 +1390,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4908);
+        RoslynCallCounters.Record(5032);
         result = default;
 
         try
@@ -1408,7 +1408,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4909);
+        RoslynCallCounters.Record(5033);
         result = default;
 
         try
@@ -1426,7 +1426,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4910);
+        RoslynCallCounters.Record(5034);
         result = default;
 
         try
@@ -1444,7 +1444,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4911);
+        RoslynCallCounters.Record(5035);
         result = default;
 
         try
@@ -1462,7 +1462,7 @@ internal sealed partial class XmlCrefAttributeSyntaxVtblDispatcher : IXmlCrefAtt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4912);
+        RoslynCallCounters.Record(5036);
         result = default;
 
         try

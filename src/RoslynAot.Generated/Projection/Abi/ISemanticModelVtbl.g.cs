@@ -12,9 +12,16 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("9c336c3f-8e08-5c4e-8f69-de69289b22a9")]
+[Guid("0e1e44d2-e483-5580-849b-28bfcf475245")]
 public partial interface ISemanticModelVtbl
 {
+
+    [PreserveSig]
+    int SemanticModel_GetNullableContext(
+        long receiver,
+        int position,
+        out int result
+    );
 
     [PreserveSig]
     int SemanticModel_GetPreprocessingSymbolInfo(
@@ -91,6 +98,26 @@ public partial interface ISemanticModelVtbl
 
     [PreserveSig]
     int SemanticModel_get_IgnoresAccessibility(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int SemanticModel_get_IsSpeculativeSemanticModel(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int SemanticModel_get_Language(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int SemanticModel_get_OriginalPositionForSpeculation(
         long receiver,
         out int result
     );

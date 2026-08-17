@@ -27,7 +27,7 @@ internal sealed partial class IModuleSymbolVtblDispatcher : IIModuleSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(637);
+        RoslynCallCounters.Record(710);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class IModuleSymbolVtblDispatcher : IIModuleSymbolVtbl
         long namespaceSymbol,
         out long result)
     {
-        RoslynCallCounters.Record(638);
+        RoslynCallCounters.Record(711);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class IModuleSymbolVtblDispatcher : IIModuleSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(639);
+        RoslynCallCounters.Record(712);
         result = default;
 
         try
@@ -78,11 +78,29 @@ internal sealed partial class IModuleSymbolVtblDispatcher : IIModuleSymbolVtbl
         }
     }
 
+    public int IModuleSymbol_get_ReferencedAssemblies(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(713);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IModuleSymbol>(receiver).ReferencedAssemblies).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int IModuleSymbol_get_ReferencedAssemblySymbols(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(640);
+        RoslynCallCounters.Record(714);
         result = default;
 
         try

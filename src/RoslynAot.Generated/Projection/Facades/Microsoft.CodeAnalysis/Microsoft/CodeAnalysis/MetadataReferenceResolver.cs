@@ -71,12 +71,20 @@ namespace Microsoft.CodeAnalysis
 
             public override int GetHashCode()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IMetadataReferenceResolverVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.MetadataReferenceResolver_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result;
             }
 
             public override System.Collections.Immutable.ImmutableArray<PortableExecutableReference> ResolveReference(string reference, string? baseFilePath, MetadataReferenceProperties properties)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IMetadataReferenceResolverVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.MetadataReferenceResolver_ResolveReference(__RoslynAotGetHandle(controlVtbl), reference, baseFilePath, properties.__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<PortableExecutableReference>(controlVtbl, result, static (controlVtbl, handle) => PortableExecutableReference.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 

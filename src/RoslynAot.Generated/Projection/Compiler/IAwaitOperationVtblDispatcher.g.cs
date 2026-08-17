@@ -27,7 +27,7 @@ internal sealed partial class IAwaitOperationVtblDispatcher : IIAwaitOperationVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(898);
+        RoslynCallCounters.Record(983);
         result = default;
 
         try

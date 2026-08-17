@@ -14,7 +14,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IDiagnosticSuppressorVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.DiagnosticSuppressor_get_SupportedDiagnostics(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<DiagnosticDescriptor>(controlVtbl, result, static (controlVtbl, handle) => DiagnosticDescriptor.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -61,14 +65,21 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
             public override void ReportSuppressions(SuppressionAnalysisContext context)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IDiagnosticSuppressorVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.DiagnosticSuppressor_ReportSuppressions(__RoslynAotGetHandle(controlVtbl), context.__RoslynAotGetHandle(controlVtbl));
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
 
             public override System.Collections.Immutable.ImmutableArray<SuppressionDescriptor> SupportedSuppressions
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IDiagnosticSuppressorVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.DiagnosticSuppressor_get_SupportedSuppressions(__RoslynAotGetHandle(controlVtbl), out long result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<SuppressionDescriptor>(controlVtbl, result, static (controlVtbl, handle) => SuppressionDescriptor.__RoslynAotCreateProxy(controlVtbl, handle)));
                 }
             }
         }

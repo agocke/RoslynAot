@@ -27,7 +27,7 @@ internal sealed partial class ModuleMetadataVtblDispatcher : IModuleMetadataVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(835);
+        RoslynCallCounters.Record(918);
         result = default;
 
         try
@@ -44,7 +44,7 @@ internal sealed partial class ModuleMetadataVtblDispatcher : IModuleMetadataVtbl
     public int Metadata_Dispose(
         long receiver)
     {
-        RoslynCallCounters.Record(836);
+        RoslynCallCounters.Record(919);
 
         try
         {
@@ -61,7 +61,7 @@ internal sealed partial class ModuleMetadataVtblDispatcher : IModuleMetadataVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(837);
+        RoslynCallCounters.Record(920);
         result = default;
 
         try
@@ -79,7 +79,7 @@ internal sealed partial class ModuleMetadataVtblDispatcher : IModuleMetadataVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(838);
+        RoslynCallCounters.Record(921);
         result = default;
 
         try
@@ -96,7 +96,7 @@ internal sealed partial class ModuleMetadataVtblDispatcher : IModuleMetadataVtbl
     public int ModuleMetadata_Dispose(
         long receiver)
     {
-        RoslynCallCounters.Record(857);
+        RoslynCallCounters.Record(942);
 
         try
         {
@@ -116,7 +116,7 @@ internal sealed partial class ModuleMetadataVtblDispatcher : IModuleMetadataVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string display,
         out long result)
     {
-        RoslynCallCounters.Record(858);
+        RoslynCallCounters.Record(943);
         result = default;
 
         try
@@ -134,7 +134,7 @@ internal sealed partial class ModuleMetadataVtblDispatcher : IModuleMetadataVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(859);
+        RoslynCallCounters.Record(944);
         result = default;
 
         try
@@ -152,7 +152,7 @@ internal sealed partial class ModuleMetadataVtblDispatcher : IModuleMetadataVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(860);
+        RoslynCallCounters.Record(945);
         result = default;
 
         try
@@ -172,7 +172,7 @@ internal sealed partial class ModuleMetadataVtblDispatcher : IModuleMetadataVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(861);
+        RoslynCallCounters.Record(946);
         requiredLength = default;
 
         try

@@ -28,7 +28,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1442);
+        RoslynCallCounters.Record(1539);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1443);
+        RoslynCallCounters.Record(1540);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1444);
+        RoslynCallCounters.Record(1541);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1445);
+        RoslynCallCounters.Record(1542);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1446);
+        RoslynCallCounters.Record(1543);
         result = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int rawKind,
         out int result)
     {
-        RoslynCallCounters.Record(1447);
+        RoslynCallCounters.Record(1544);
         result = default;
 
         try
@@ -140,7 +140,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long node,
         out int result)
     {
-        RoslynCallCounters.Record(1448);
+        RoslynCallCounters.Record(1545);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int getInnermostNodeForTie,
         out long result)
     {
-        RoslynCallCounters.Record(1449);
+        RoslynCallCounters.Record(1546);
         result = default;
 
         try
@@ -181,7 +181,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1450);
+        RoslynCallCounters.Record(1547);
         result = default;
 
         try
@@ -201,7 +201,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1451);
+        RoslynCallCounters.Record(1548);
         result = default;
 
         try
@@ -220,7 +220,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long syntaxAnnotation,
         out long result)
     {
-        RoslynCallCounters.Record(1452);
+        RoslynCallCounters.Record(1549);
         result = default;
 
         try
@@ -239,7 +239,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1453);
+        RoslynCallCounters.Record(1550);
         result = default;
 
         try
@@ -258,7 +258,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1454);
+        RoslynCallCounters.Record(1551);
         result = default;
 
         try
@@ -276,7 +276,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1455);
+        RoslynCallCounters.Record(1552);
         result = default;
 
         try
@@ -298,7 +298,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1456);
+        RoslynCallCounters.Record(1553);
         result = default;
 
         try
@@ -320,7 +320,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1457);
+        RoslynCallCounters.Record(1554);
         result = default;
 
         try
@@ -338,7 +338,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1458);
+        RoslynCallCounters.Record(1555);
         result = default;
 
         try
@@ -356,7 +356,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1459);
+        RoslynCallCounters.Record(1556);
         result = default;
 
         try
@@ -374,7 +374,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1460);
+        RoslynCallCounters.Record(1557);
         result = default;
 
         try
@@ -392,7 +392,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1461);
+        RoslynCallCounters.Record(1558);
         result = default;
 
         try
@@ -411,7 +411,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1462);
+        RoslynCallCounters.Record(1559);
         result = default;
 
         try
@@ -430,7 +430,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1463);
+        RoslynCallCounters.Record(1560);
         result = default;
 
         try
@@ -449,7 +449,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1464);
+        RoslynCallCounters.Record(1561);
         result = default;
 
         try
@@ -469,7 +469,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(1465);
+        RoslynCallCounters.Record(1562);
         result = default;
 
         try
@@ -488,7 +488,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1466);
+        RoslynCallCounters.Record(1563);
         result = default;
 
         try
@@ -506,7 +506,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1467);
+        RoslynCallCounters.Record(1564);
         result = default;
 
         try
@@ -526,7 +526,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1468);
+        RoslynCallCounters.Record(1565);
         requiredLength = default;
 
         try
@@ -552,7 +552,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1469);
+        RoslynCallCounters.Record(1566);
         requiredLength = default;
 
         try
@@ -576,7 +576,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1470);
+        RoslynCallCounters.Record(1567);
         result = default;
 
         try
@@ -594,7 +594,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1471);
+        RoslynCallCounters.Record(1568);
         result = default;
 
         try
@@ -612,7 +612,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1472);
+        RoslynCallCounters.Record(1569);
         result = default;
 
         try
@@ -630,7 +630,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1473);
+        RoslynCallCounters.Record(1570);
         result = default;
 
         try
@@ -648,7 +648,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1474);
+        RoslynCallCounters.Record(1571);
         result = default;
 
         try
@@ -666,7 +666,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1475);
+        RoslynCallCounters.Record(1572);
         result = default;
 
         try
@@ -684,7 +684,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1476);
+        RoslynCallCounters.Record(1573);
         result = default;
 
         try
@@ -702,7 +702,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1477);
+        RoslynCallCounters.Record(1574);
         result = default;
 
         try
@@ -720,7 +720,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1478);
+        RoslynCallCounters.Record(1575);
         result = default;
 
         try
@@ -738,7 +738,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1479);
+        RoslynCallCounters.Record(1576);
         result = default;
 
         try
@@ -758,7 +758,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1480);
+        RoslynCallCounters.Record(1577);
         requiredLength = default;
 
         try
@@ -782,7 +782,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1481);
+        RoslynCallCounters.Record(1578);
         result = default;
 
         try
@@ -800,7 +800,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1482);
+        RoslynCallCounters.Record(1579);
         result = default;
 
         try
@@ -818,7 +818,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1483);
+        RoslynCallCounters.Record(1580);
         result = default;
 
         try
@@ -836,7 +836,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1484);
+        RoslynCallCounters.Record(1581);
         result = default;
 
         try
@@ -854,7 +854,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1485);
+        RoslynCallCounters.Record(1582);
         result = default;
 
         try
@@ -872,7 +872,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1486);
+        RoslynCallCounters.Record(1583);
         result = default;
 
         try
@@ -890,7 +890,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(1877);
+        RoslynCallCounters.Record(2000);
 
         try
         {
@@ -909,7 +909,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1878);
+        RoslynCallCounters.Record(2001);
         result = default;
 
         try
@@ -929,7 +929,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1879);
+        RoslynCallCounters.Record(2002);
         result = default;
 
         try
@@ -947,7 +947,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1880);
+        RoslynCallCounters.Record(2003);
         result = default;
 
         try
@@ -969,7 +969,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1881);
+        RoslynCallCounters.Record(2004);
         result = default;
 
         try
@@ -991,7 +991,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1882);
+        RoslynCallCounters.Record(2005);
         result = default;
 
         try
@@ -1009,7 +1009,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1883);
+        RoslynCallCounters.Record(2006);
         result = default;
 
         try
@@ -1027,7 +1027,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1884);
+        RoslynCallCounters.Record(2007);
         result = default;
 
         try
@@ -1045,7 +1045,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1885);
+        RoslynCallCounters.Record(2008);
         result = default;
 
         try
@@ -1063,7 +1063,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out ushort result)
     {
-        RoslynCallCounters.Record(1886);
+        RoslynCallCounters.Record(2009);
         result = default;
 
         try
@@ -1083,7 +1083,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1887);
+        RoslynCallCounters.Record(2010);
         requiredLength = default;
 
         try
@@ -1108,7 +1108,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3988);
+        RoslynCallCounters.Record(4112);
         result = default;
 
         try
@@ -1127,7 +1127,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(3989);
+        RoslynCallCounters.Record(4113);
         result = default;
 
         try
@@ -1145,7 +1145,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3990);
+        RoslynCallCounters.Record(4114);
         result = default;
 
         try
@@ -1163,7 +1163,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(3098);
+        RoslynCallCounters.Record(3222);
 
         try
         {
@@ -1181,7 +1181,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3099);
+        RoslynCallCounters.Record(3223);
         result = default;
 
         try
@@ -1200,7 +1200,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3100);
+        RoslynCallCounters.Record(3224);
         result = default;
 
         try
@@ -1219,7 +1219,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3101);
+        RoslynCallCounters.Record(3225);
         result = default;
 
         try
@@ -1238,7 +1238,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3102);
+        RoslynCallCounters.Record(3226);
         result = default;
 
         try
@@ -1257,7 +1257,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long delegateKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(3103);
+        RoslynCallCounters.Record(3227);
         result = default;
 
         try
@@ -1276,7 +1276,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(3104);
+        RoslynCallCounters.Record(3228);
         result = default;
 
         try
@@ -1295,7 +1295,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(3105);
+        RoslynCallCounters.Record(3229);
         result = default;
 
         try
@@ -1314,7 +1314,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long parameterList,
         out long result)
     {
-        RoslynCallCounters.Record(3106);
+        RoslynCallCounters.Record(3230);
         result = default;
 
         try
@@ -1333,7 +1333,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long returnType,
         out long result)
     {
-        RoslynCallCounters.Record(3107);
+        RoslynCallCounters.Record(3231);
         result = default;
 
         try
@@ -1352,7 +1352,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(3108);
+        RoslynCallCounters.Record(3232);
         result = default;
 
         try
@@ -1371,7 +1371,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long typeParameterList,
         out long result)
     {
-        RoslynCallCounters.Record(3109);
+        RoslynCallCounters.Record(3233);
         result = default;
 
         try
@@ -1389,7 +1389,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(3110);
+        RoslynCallCounters.Record(3234);
         result = default;
 
         try
@@ -1407,7 +1407,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3111);
+        RoslynCallCounters.Record(3235);
         result = default;
 
         try
@@ -1425,7 +1425,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3112);
+        RoslynCallCounters.Record(3236);
         result = default;
 
         try
@@ -1443,7 +1443,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3113);
+        RoslynCallCounters.Record(3237);
         result = default;
 
         try
@@ -1461,7 +1461,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3114);
+        RoslynCallCounters.Record(3238);
         result = default;
 
         try
@@ -1479,7 +1479,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3115);
+        RoslynCallCounters.Record(3239);
         result = default;
 
         try
@@ -1497,7 +1497,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3116);
+        RoslynCallCounters.Record(3240);
         result = default;
 
         try
@@ -1515,7 +1515,7 @@ internal sealed partial class DelegateDeclarationSyntaxVtblDispatcher : IDelegat
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3117);
+        RoslynCallCounters.Record(3241);
         result = default;
 
         try

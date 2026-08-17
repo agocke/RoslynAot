@@ -42,7 +42,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IRuleSetVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.RuleSet_get_Includes(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<RuleSetInclude>(controlVtbl, result, static (controlVtbl, handle) => RuleSetInclude.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 

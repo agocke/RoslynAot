@@ -27,7 +27,7 @@ internal sealed partial class CompilationAnalysisContextVtblDispatcher : ICompil
         long receiver,
         long diagnostic)
     {
-        RoslynCallCounters.Record(261);
+        RoslynCallCounters.Record(317);
 
         try
         {
@@ -44,7 +44,7 @@ internal sealed partial class CompilationAnalysisContextVtblDispatcher : ICompil
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(262);
+        RoslynCallCounters.Record(318);
         result = default;
 
         try
@@ -62,7 +62,7 @@ internal sealed partial class CompilationAnalysisContextVtblDispatcher : ICompil
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(263);
+        RoslynCallCounters.Record(319);
         result = default;
 
         try

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("58efe60e-7a7f-5686-8f26-bfbd115c37f5")]
+[Guid("5bce2904-79dc-5583-bab5-5c303bf3c7bc")]
 public partial interface IAnalyzerOptionsVtbl
 {
 
@@ -20,6 +20,12 @@ public partial interface IAnalyzerOptionsVtbl
     int AnalyzerOptions_GetHashCode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int AnalyzerOptions_get_AdditionalFiles(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]

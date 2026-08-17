@@ -27,7 +27,7 @@ internal sealed partial class ICompilationUnitSyntaxVtblDispatcher : IICompilati
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(547);
+        RoslynCallCounters.Record(616);
         result = default;
 
         try

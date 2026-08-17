@@ -28,7 +28,7 @@ internal sealed partial class IArrayTypeSymbolVtblDispatcher : IIArrayTypeSymbol
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(530);
+        RoslynCallCounters.Record(598);
         result = default;
 
         try
@@ -42,11 +42,29 @@ internal sealed partial class IArrayTypeSymbolVtblDispatcher : IIArrayTypeSymbol
         }
     }
 
+    public int IArrayTypeSymbol_get_CustomModifiers(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(599);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IArrayTypeSymbol>(receiver).CustomModifiers).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int IArrayTypeSymbol_get_ElementNullableAnnotation(
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(531);
+        RoslynCallCounters.Record(600);
         result = default;
 
         try
@@ -64,7 +82,7 @@ internal sealed partial class IArrayTypeSymbolVtblDispatcher : IIArrayTypeSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(532);
+        RoslynCallCounters.Record(601);
         result = default;
 
         try
@@ -82,7 +100,7 @@ internal sealed partial class IArrayTypeSymbolVtblDispatcher : IIArrayTypeSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(533);
+        RoslynCallCounters.Record(602);
         result = default;
 
         try
@@ -100,7 +118,7 @@ internal sealed partial class IArrayTypeSymbolVtblDispatcher : IIArrayTypeSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(534);
+        RoslynCallCounters.Record(603);
         result = default;
 
         try

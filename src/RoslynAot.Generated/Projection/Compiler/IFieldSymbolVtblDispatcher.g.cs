@@ -27,7 +27,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(564);
+        RoslynCallCounters.Record(633);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(565);
+        RoslynCallCounters.Record(634);
         result = default;
 
         try
@@ -59,11 +59,29 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         }
     }
 
+    public int IFieldSymbol_get_CustomModifiers(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(635);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IFieldSymbol>(receiver).CustomModifiers).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int IFieldSymbol_get_FixedSize(
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(566);
+        RoslynCallCounters.Record(636);
         result = default;
 
         try
@@ -81,7 +99,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(567);
+        RoslynCallCounters.Record(637);
         result = default;
 
         try
@@ -99,7 +117,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(568);
+        RoslynCallCounters.Record(638);
         result = default;
 
         try
@@ -117,7 +135,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(569);
+        RoslynCallCounters.Record(639);
         result = default;
 
         try
@@ -135,7 +153,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(570);
+        RoslynCallCounters.Record(640);
         result = default;
 
         try
@@ -153,7 +171,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(571);
+        RoslynCallCounters.Record(641);
         result = default;
 
         try
@@ -171,7 +189,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(572);
+        RoslynCallCounters.Record(642);
         result = default;
 
         try
@@ -189,7 +207,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(573);
+        RoslynCallCounters.Record(643);
         result = default;
 
         try
@@ -207,7 +225,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(574);
+        RoslynCallCounters.Record(644);
         result = default;
 
         try
@@ -225,7 +243,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(575);
+        RoslynCallCounters.Record(645);
         result = default;
 
         try
@@ -239,11 +257,29 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         }
     }
 
+    public int IFieldSymbol_get_RefCustomModifiers(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(646);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IFieldSymbol>(receiver).RefCustomModifiers).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int IFieldSymbol_get_RefKind(
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(576);
+        RoslynCallCounters.Record(647);
         result = default;
 
         try
@@ -261,7 +297,7 @@ internal sealed partial class IFieldSymbolVtblDispatcher : IIFieldSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(577);
+        RoslynCallCounters.Record(648);
         result = default;
 
         try

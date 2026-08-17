@@ -27,7 +27,7 @@ internal sealed partial class IRelationalCaseClauseOperationVtblDispatcher : IIR
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1088);
+        RoslynCallCounters.Record(1173);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IRelationalCaseClauseOperationVtblDispatcher : IIR
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1089);
+        RoslynCallCounters.Record(1174);
         result = default;
 
         try

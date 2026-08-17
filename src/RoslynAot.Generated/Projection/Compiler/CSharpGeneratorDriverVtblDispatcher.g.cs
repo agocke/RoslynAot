@@ -27,7 +27,7 @@ internal sealed partial class CSharpGeneratorDriverVtblDispatcher : ICSharpGener
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(505);
+        RoslynCallCounters.Record(569);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class CSharpGeneratorDriverVtblDispatcher : ICSharpGener
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(506);
+        RoslynCallCounters.Record(570);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class CSharpGeneratorDriverVtblDispatcher : ICSharpGener
         long newText,
         out long result)
     {
-        RoslynCallCounters.Record(507);
+        RoslynCallCounters.Record(571);
         result = default;
 
         try
@@ -84,7 +84,7 @@ internal sealed partial class CSharpGeneratorDriverVtblDispatcher : ICSharpGener
         long compilation,
         out long result)
     {
-        RoslynCallCounters.Record(508);
+        RoslynCallCounters.Record(572);
         result = default;
 
         try
@@ -103,7 +103,7 @@ internal sealed partial class CSharpGeneratorDriverVtblDispatcher : ICSharpGener
         long newOptions,
         out long result)
     {
-        RoslynCallCounters.Record(509);
+        RoslynCallCounters.Record(573);
         result = default;
 
         try
@@ -122,7 +122,7 @@ internal sealed partial class CSharpGeneratorDriverVtblDispatcher : ICSharpGener
         long newOptions,
         out long result)
     {
-        RoslynCallCounters.Record(510);
+        RoslynCallCounters.Record(574);
         result = default;
 
         try

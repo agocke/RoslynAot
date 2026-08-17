@@ -28,7 +28,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1442);
+        RoslynCallCounters.Record(1539);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1443);
+        RoslynCallCounters.Record(1540);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1444);
+        RoslynCallCounters.Record(1541);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1445);
+        RoslynCallCounters.Record(1542);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1446);
+        RoslynCallCounters.Record(1543);
         result = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int rawKind,
         out int result)
     {
-        RoslynCallCounters.Record(1447);
+        RoslynCallCounters.Record(1544);
         result = default;
 
         try
@@ -140,7 +140,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long node,
         out int result)
     {
-        RoslynCallCounters.Record(1448);
+        RoslynCallCounters.Record(1545);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int getInnermostNodeForTie,
         out long result)
     {
-        RoslynCallCounters.Record(1449);
+        RoslynCallCounters.Record(1546);
         result = default;
 
         try
@@ -181,7 +181,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1450);
+        RoslynCallCounters.Record(1547);
         result = default;
 
         try
@@ -201,7 +201,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1451);
+        RoslynCallCounters.Record(1548);
         result = default;
 
         try
@@ -220,7 +220,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long syntaxAnnotation,
         out long result)
     {
-        RoslynCallCounters.Record(1452);
+        RoslynCallCounters.Record(1549);
         result = default;
 
         try
@@ -239,7 +239,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1453);
+        RoslynCallCounters.Record(1550);
         result = default;
 
         try
@@ -258,7 +258,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1454);
+        RoslynCallCounters.Record(1551);
         result = default;
 
         try
@@ -276,7 +276,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1455);
+        RoslynCallCounters.Record(1552);
         result = default;
 
         try
@@ -298,7 +298,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1456);
+        RoslynCallCounters.Record(1553);
         result = default;
 
         try
@@ -320,7 +320,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1457);
+        RoslynCallCounters.Record(1554);
         result = default;
 
         try
@@ -338,7 +338,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1458);
+        RoslynCallCounters.Record(1555);
         result = default;
 
         try
@@ -356,7 +356,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1459);
+        RoslynCallCounters.Record(1556);
         result = default;
 
         try
@@ -374,7 +374,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1460);
+        RoslynCallCounters.Record(1557);
         result = default;
 
         try
@@ -392,7 +392,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1461);
+        RoslynCallCounters.Record(1558);
         result = default;
 
         try
@@ -411,7 +411,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1462);
+        RoslynCallCounters.Record(1559);
         result = default;
 
         try
@@ -430,7 +430,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1463);
+        RoslynCallCounters.Record(1560);
         result = default;
 
         try
@@ -449,7 +449,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1464);
+        RoslynCallCounters.Record(1561);
         result = default;
 
         try
@@ -469,7 +469,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(1465);
+        RoslynCallCounters.Record(1562);
         result = default;
 
         try
@@ -488,7 +488,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1466);
+        RoslynCallCounters.Record(1563);
         result = default;
 
         try
@@ -506,7 +506,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1467);
+        RoslynCallCounters.Record(1564);
         result = default;
 
         try
@@ -526,7 +526,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1468);
+        RoslynCallCounters.Record(1565);
         requiredLength = default;
 
         try
@@ -552,7 +552,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1469);
+        RoslynCallCounters.Record(1566);
         requiredLength = default;
 
         try
@@ -576,7 +576,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1470);
+        RoslynCallCounters.Record(1567);
         result = default;
 
         try
@@ -594,7 +594,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1471);
+        RoslynCallCounters.Record(1568);
         result = default;
 
         try
@@ -612,7 +612,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1472);
+        RoslynCallCounters.Record(1569);
         result = default;
 
         try
@@ -630,7 +630,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1473);
+        RoslynCallCounters.Record(1570);
         result = default;
 
         try
@@ -648,7 +648,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1474);
+        RoslynCallCounters.Record(1571);
         result = default;
 
         try
@@ -666,7 +666,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1475);
+        RoslynCallCounters.Record(1572);
         result = default;
 
         try
@@ -684,7 +684,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1476);
+        RoslynCallCounters.Record(1573);
         result = default;
 
         try
@@ -702,7 +702,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1477);
+        RoslynCallCounters.Record(1574);
         result = default;
 
         try
@@ -720,7 +720,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1478);
+        RoslynCallCounters.Record(1575);
         result = default;
 
         try
@@ -738,7 +738,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1479);
+        RoslynCallCounters.Record(1576);
         result = default;
 
         try
@@ -758,7 +758,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1480);
+        RoslynCallCounters.Record(1577);
         requiredLength = default;
 
         try
@@ -782,7 +782,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1481);
+        RoslynCallCounters.Record(1578);
         result = default;
 
         try
@@ -800,7 +800,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1482);
+        RoslynCallCounters.Record(1579);
         result = default;
 
         try
@@ -818,7 +818,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1483);
+        RoslynCallCounters.Record(1580);
         result = default;
 
         try
@@ -836,7 +836,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1484);
+        RoslynCallCounters.Record(1581);
         result = default;
 
         try
@@ -854,7 +854,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1485);
+        RoslynCallCounters.Record(1582);
         result = default;
 
         try
@@ -872,7 +872,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1486);
+        RoslynCallCounters.Record(1583);
         result = default;
 
         try
@@ -890,7 +890,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(1877);
+        RoslynCallCounters.Record(2000);
 
         try
         {
@@ -909,7 +909,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1878);
+        RoslynCallCounters.Record(2001);
         result = default;
 
         try
@@ -929,7 +929,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1879);
+        RoslynCallCounters.Record(2002);
         result = default;
 
         try
@@ -947,7 +947,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1880);
+        RoslynCallCounters.Record(2003);
         result = default;
 
         try
@@ -969,7 +969,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1881);
+        RoslynCallCounters.Record(2004);
         result = default;
 
         try
@@ -991,7 +991,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1882);
+        RoslynCallCounters.Record(2005);
         result = default;
 
         try
@@ -1009,7 +1009,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1883);
+        RoslynCallCounters.Record(2006);
         result = default;
 
         try
@@ -1027,7 +1027,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1884);
+        RoslynCallCounters.Record(2007);
         result = default;
 
         try
@@ -1045,7 +1045,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1885);
+        RoslynCallCounters.Record(2008);
         result = default;
 
         try
@@ -1063,7 +1063,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out ushort result)
     {
-        RoslynCallCounters.Record(1886);
+        RoslynCallCounters.Record(2009);
         result = default;
 
         try
@@ -1083,7 +1083,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1887);
+        RoslynCallCounters.Record(2010);
         requiredLength = default;
 
         try
@@ -1107,7 +1107,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4577);
+        RoslynCallCounters.Record(4701);
         result = default;
 
         try
@@ -1126,7 +1126,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long endOfDirectiveToken,
         out long result)
     {
-        RoslynCallCounters.Record(3137);
+        RoslynCallCounters.Record(3261);
         result = default;
 
         try
@@ -1145,7 +1145,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long hashToken,
         out long result)
     {
-        RoslynCallCounters.Record(3138);
+        RoslynCallCounters.Record(3262);
         result = default;
 
         try
@@ -1163,7 +1163,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3139);
+        RoslynCallCounters.Record(3263);
         result = default;
 
         try
@@ -1181,7 +1181,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3140);
+        RoslynCallCounters.Record(3264);
         result = default;
 
         try
@@ -1199,7 +1199,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3141);
+        RoslynCallCounters.Record(3265);
         result = default;
 
         try
@@ -1217,7 +1217,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(3142);
+        RoslynCallCounters.Record(3266);
         result = default;
 
         try
@@ -1235,7 +1235,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(4055);
+        RoslynCallCounters.Record(4179);
 
         try
         {
@@ -1258,7 +1258,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(4056);
+        RoslynCallCounters.Record(4180);
         result = default;
 
         try
@@ -1277,7 +1277,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long endOfDirectiveToken,
         out long result)
     {
-        RoslynCallCounters.Record(4057);
+        RoslynCallCounters.Record(4181);
         result = default;
 
         try
@@ -1296,7 +1296,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long hashToken,
         out long result)
     {
-        RoslynCallCounters.Record(4058);
+        RoslynCallCounters.Record(4182);
         result = default;
 
         try
@@ -1315,7 +1315,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(4059);
+        RoslynCallCounters.Record(4183);
         result = default;
 
         try
@@ -1334,7 +1334,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long nullableKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(4060);
+        RoslynCallCounters.Record(4184);
         result = default;
 
         try
@@ -1353,7 +1353,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long settingToken,
         out long result)
     {
-        RoslynCallCounters.Record(4061);
+        RoslynCallCounters.Record(4185);
         result = default;
 
         try
@@ -1372,7 +1372,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long targetToken,
         out long result)
     {
-        RoslynCallCounters.Record(4062);
+        RoslynCallCounters.Record(4186);
         result = default;
 
         try
@@ -1390,7 +1390,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4063);
+        RoslynCallCounters.Record(4187);
         result = default;
 
         try
@@ -1408,7 +1408,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4064);
+        RoslynCallCounters.Record(4188);
         result = default;
 
         try
@@ -1426,7 +1426,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(4065);
+        RoslynCallCounters.Record(4189);
         result = default;
 
         try
@@ -1444,7 +1444,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4066);
+        RoslynCallCounters.Record(4190);
         result = default;
 
         try
@@ -1462,7 +1462,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4067);
+        RoslynCallCounters.Record(4191);
         result = default;
 
         try
@@ -1480,7 +1480,7 @@ internal sealed partial class NullableDirectiveTriviaSyntaxVtblDispatcher : INul
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4068);
+        RoslynCallCounters.Record(4192);
         result = default;
 
         try

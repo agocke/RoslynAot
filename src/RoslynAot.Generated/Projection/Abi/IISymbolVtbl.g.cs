@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1ab2e418-f1d4-53d7-953d-6fe30612fc80")]
+[Guid("157e4c5d-7a79-504e-9e81-ebbeaee6e828")]
 public partial interface IISymbolVtbl
 {
 
@@ -20,14 +20,6 @@ public partial interface IISymbolVtbl
     int ISymbol_Accept_fee44f0e(
         long receiver,
         long visitor
-    );
-
-    [PreserveSig]
-    int ISymbol_Equals(
-        long receiver,
-        long other,
-        long equalityComparer,
-        out int result
     );
 
     [PreserveSig]
@@ -107,6 +99,12 @@ public partial interface IISymbolVtbl
     );
 
     [PreserveSig]
+    int ISymbol_get_DeclaringSyntaxReferences(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int ISymbol_get_HasUnsupportedMetadata(
         long receiver,
         out int result
@@ -172,6 +170,12 @@ public partial interface IISymbolVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int ISymbol_get_Locations(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]

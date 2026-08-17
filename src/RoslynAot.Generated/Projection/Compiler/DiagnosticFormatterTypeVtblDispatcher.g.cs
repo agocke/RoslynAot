@@ -26,7 +26,7 @@ internal sealed partial class DiagnosticFormatterTypeVtblDispatcher : IDiagnosti
     public int DiagnosticFormatter_ctor(
         out long result)
     {
-        RoslynCallCounters.Record(223);
+        RoslynCallCounters.Record(265);
         result = default;
 
         try

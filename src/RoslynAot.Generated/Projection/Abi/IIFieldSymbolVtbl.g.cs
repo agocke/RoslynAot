@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f3cf2592-dac3-56fa-bdb3-9fe23271b2f6")]
+[Guid("039d24b0-09b1-5170-94c0-337954fd0e3e")]
 public partial interface IIFieldSymbolVtbl
 {
 
@@ -24,6 +24,12 @@ public partial interface IIFieldSymbolVtbl
 
     [PreserveSig]
     int IFieldSymbol_get_CorrespondingTupleField(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int IFieldSymbol_get_CustomModifiers(
         long receiver,
         out long result
     );
@@ -84,6 +90,12 @@ public partial interface IIFieldSymbolVtbl
 
     [PreserveSig]
     int IFieldSymbol_get_OriginalDefinition(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int IFieldSymbol_get_RefCustomModifiers(
         long receiver,
         out long result
     );

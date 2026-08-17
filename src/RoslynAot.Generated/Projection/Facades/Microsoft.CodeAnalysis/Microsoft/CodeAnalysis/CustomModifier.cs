@@ -12,5 +12,62 @@ namespace Microsoft.CodeAnalysis
     {
         public abstract bool IsOptional { get; }
         public abstract INamedTypeSymbol Modifier { get; }
+
+        internal CustomModifier()
+        {
+        }
+
+        private global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;
+        private global::RoslynAot.Abi.ICustomModifierVtbl? __roslynAotVtbl;
+        private long __roslynAotHandle;
+        internal CustomModifier(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.ICustomModifierVtbl vtbl, long handle)
+        {
+            __roslynAotControlVtbl = controlVtbl ?? throw new System.ArgumentNullException(nameof(controlVtbl));
+            __roslynAotVtbl = vtbl ?? throw new System.ArgumentNullException(nameof(vtbl));
+            __roslynAotHandle = handle != 0 ? handle : throw new System.ArgumentOutOfRangeException(nameof(handle));
+        }
+
+        internal global::RoslynAot.Abi.ICustomModifierVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
+        internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
+        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl)
+        {
+            global::RoslynAot.Abi.IRoslynControlVtbl actual = __RoslynAotGetControlVtbl();
+            if (!object.ReferenceEquals(actual, controlVtbl))
+                throw new System.InvalidOperationException("Roslyn facade values cannot cross control vtbl identities.");
+            return __roslynAotHandle;
+        }
+
+        private sealed partial class __RoslynAotProxy : CustomModifier
+        {
+            internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.ICustomModifierVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
+            {
+            }
+
+            public override bool IsOptional
+            {
+                get
+                {
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ICustomModifierVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.CustomModifier_get_IsOptional(__RoslynAotGetHandle(controlVtbl), out int result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return result != 0;
+                }
+            }
+
+            public override INamedTypeSymbol Modifier
+            {
+                get
+                {
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ICustomModifierVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.CustomModifier_get_Modifier(__RoslynAotGetHandle(controlVtbl), out long result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
+                }
+            }
+        }
+
+        internal static CustomModifier __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCustomModifierVtbl(controlVtbl), handle);
     }
 }

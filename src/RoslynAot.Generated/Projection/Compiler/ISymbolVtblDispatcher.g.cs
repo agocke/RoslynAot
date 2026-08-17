@@ -27,7 +27,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(737);
+        RoslynCallCounters.Record(817);
 
         try
         {
@@ -40,31 +40,11 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         }
     }
 
-    public int ISymbol_Equals(
-        long receiver,
-        long other,
-        long equalityComparer,
-        out int result)
-    {
-        RoslynCallCounters.Record(738);
-        result = default;
-
-        try
-        {
-            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ISymbol>(receiver).Equals(other == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ISymbol>(other), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SymbolEqualityComparer>(equalityComparer)) ? 1 : 0;
-            return RoslynAbi.Success;
-        }
-        catch (global::System.Exception exception)
-        {
-            return _owner.SetError(exception);
-        }
-    }
-
     public int ISymbol_GetAttributes(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(739);
+        RoslynCallCounters.Record(818);
         result = default;
 
         try
@@ -84,7 +64,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(740);
+        RoslynCallCounters.Record(819);
         requiredLength = default;
 
         try
@@ -111,7 +91,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(741);
+        RoslynCallCounters.Record(820);
         requiredLength = default;
 
         try
@@ -140,7 +120,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(742);
+        RoslynCallCounters.Record(821);
         requiredLength = default;
 
         try
@@ -164,7 +144,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(743);
+        RoslynCallCounters.Record(822);
         result = default;
 
         try
@@ -182,7 +162,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(744);
+        RoslynCallCounters.Record(823);
         result = default;
 
         try
@@ -200,7 +180,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(745);
+        RoslynCallCounters.Record(824);
         result = default;
 
         try
@@ -218,7 +198,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(746);
+        RoslynCallCounters.Record(825);
         result = default;
 
         try
@@ -236,7 +216,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(747);
+        RoslynCallCounters.Record(826);
         result = default;
 
         try
@@ -254,7 +234,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(748);
+        RoslynCallCounters.Record(827);
         result = default;
 
         try
@@ -272,7 +252,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(749);
+        RoslynCallCounters.Record(828);
         result = default;
 
         try
@@ -286,11 +266,29 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         }
     }
 
+    public int ISymbol_get_DeclaringSyntaxReferences(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(829);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ISymbol>(receiver).DeclaringSyntaxReferences).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ISymbol_get_HasUnsupportedMetadata(
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(750);
+        RoslynCallCounters.Record(830);
         result = default;
 
         try
@@ -308,7 +306,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(751);
+        RoslynCallCounters.Record(831);
         result = default;
 
         try
@@ -326,7 +324,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(752);
+        RoslynCallCounters.Record(832);
         result = default;
 
         try
@@ -344,7 +342,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(753);
+        RoslynCallCounters.Record(833);
         result = default;
 
         try
@@ -362,7 +360,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(754);
+        RoslynCallCounters.Record(834);
         result = default;
 
         try
@@ -380,7 +378,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(755);
+        RoslynCallCounters.Record(835);
         result = default;
 
         try
@@ -398,7 +396,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(756);
+        RoslynCallCounters.Record(836);
         result = default;
 
         try
@@ -416,7 +414,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(757);
+        RoslynCallCounters.Record(837);
         result = default;
 
         try
@@ -434,7 +432,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(758);
+        RoslynCallCounters.Record(838);
         result = default;
 
         try
@@ -452,7 +450,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(759);
+        RoslynCallCounters.Record(839);
         result = default;
 
         try
@@ -472,7 +470,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(760);
+        RoslynCallCounters.Record(840);
         requiredLength = default;
 
         try
@@ -492,13 +490,31 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         }
     }
 
+    public int ISymbol_get_Locations(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(841);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ISymbol>(receiver).Locations).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int ISymbol_get_MetadataName(
         long receiver,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(761);
+        RoslynCallCounters.Record(842);
         requiredLength = default;
 
         try
@@ -522,7 +538,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(762);
+        RoslynCallCounters.Record(843);
         result = default;
 
         try
@@ -542,7 +558,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(763);
+        RoslynCallCounters.Record(844);
         requiredLength = default;
 
         try
@@ -566,7 +582,7 @@ internal sealed partial class ISymbolVtblDispatcher : IISymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(764);
+        RoslynCallCounters.Record(845);
         result = default;
 
         try

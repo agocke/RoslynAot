@@ -12,22 +12,26 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fe339c34-5463-5d50-ad37-5a713c2b9c99")]
-public partial interface ISymbolEqualityComparerVtbl
+[Guid("13aba885-7ab7-5c19-87fd-9a69249f4fe3")]
+public partial interface IAnalysisResultVtbl
 {
 
     [PreserveSig]
-    int SymbolEqualityComparer_Equals(
+    int AnalysisResult_GetAllDiagnostics_f3f018a2(
         long receiver,
-        long x,
-        long y,
-        out int result
+        out long result
     );
 
     [PreserveSig]
-    int SymbolEqualityComparer_GetHashCode(
+    int AnalysisResult_GetAllDiagnostics_b6692b45(
         long receiver,
-        long obj,
-        out int result
+        long analyzer,
+        out long result
+    );
+
+    [PreserveSig]
+    int AnalysisResult_get_Analyzers(
+        long receiver,
+        out long result
     );
 }

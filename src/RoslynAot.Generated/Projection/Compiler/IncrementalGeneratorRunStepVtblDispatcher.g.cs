@@ -29,7 +29,7 @@ internal sealed partial class IncrementalGeneratorRunStepVtblDispatcher : IIncre
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(813);
+        RoslynCallCounters.Record(894);
         requiredLength = default;
 
         try

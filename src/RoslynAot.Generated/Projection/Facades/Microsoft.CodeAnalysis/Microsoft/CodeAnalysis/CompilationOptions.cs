@@ -144,7 +144,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ICompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.CompilationOptions_get_Errors(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -886,7 +890,10 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ICompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+                    long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                    return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CompilationOptions_get_Language(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
                 }
             }
 
@@ -894,7 +901,11 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ICompilationOptionsVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.CompilationOptions_get_NullableContextOptions(__RoslynAotGetHandle(controlVtbl), out int result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return (NullableContextOptions)result;
                 }
 
                 protected set

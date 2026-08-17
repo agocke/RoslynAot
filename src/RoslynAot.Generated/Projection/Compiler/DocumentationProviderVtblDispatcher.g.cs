@@ -22,4 +22,22 @@ internal sealed partial class DocumentationProviderVtblDispatcher : IDocumentati
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
+
+    public int DocumentationProvider_GetHashCode(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(461);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DocumentationProvider>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

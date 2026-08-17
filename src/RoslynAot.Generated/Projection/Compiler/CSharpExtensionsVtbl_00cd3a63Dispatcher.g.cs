@@ -28,7 +28,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(1821);
+        RoslynCallCounters.Record(1944);
         result = default;
 
         try
@@ -48,7 +48,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long lastStatement,
         out long result)
     {
-        RoslynCallCounters.Record(1822);
+        RoslynCallCounters.Record(1945);
         result = default;
 
         try
@@ -67,7 +67,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long constructorInitializer,
         out long result)
     {
-        RoslynCallCounters.Record(1823);
+        RoslynCallCounters.Record(1946);
         result = default;
 
         try
@@ -86,7 +86,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(1824);
+        RoslynCallCounters.Record(1947);
         result = default;
 
         try
@@ -105,7 +105,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long primaryConstructorBaseType,
         out long result)
     {
-        RoslynCallCounters.Record(1825);
+        RoslynCallCounters.Record(1948);
         result = default;
 
         try
@@ -124,7 +124,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(1826);
+        RoslynCallCounters.Record(1949);
         result = default;
 
         try
@@ -144,7 +144,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long lastStatement,
         out long result)
     {
-        RoslynCallCounters.Record(1827);
+        RoslynCallCounters.Record(1950);
         result = default;
 
         try
@@ -164,7 +164,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long destination,
         out long result)
     {
-        RoslynCallCounters.Record(1828);
+        RoslynCallCounters.Record(1951);
         result = default;
 
         try
@@ -185,7 +185,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int isExplicitInSource,
         out long result)
     {
-        RoslynCallCounters.Record(1829);
+        RoslynCallCounters.Record(1952);
         result = default;
 
         try
@@ -207,7 +207,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int isExplicitInSource,
         out long result)
     {
-        RoslynCallCounters.Record(1830);
+        RoslynCallCounters.Record(1953);
         result = default;
 
         try
@@ -226,7 +226,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long awaitExpression,
         out long result)
     {
-        RoslynCallCounters.Record(1831);
+        RoslynCallCounters.Record(1954);
         result = default;
 
         try
@@ -245,7 +245,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long awaitUsingDeclaration,
         out long result)
     {
-        RoslynCallCounters.Record(1832);
+        RoslynCallCounters.Record(1955);
         result = default;
 
         try
@@ -264,7 +264,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long awaitUsingStatement,
         out long result)
     {
-        RoslynCallCounters.Record(1833);
+        RoslynCallCounters.Record(1956);
         result = default;
 
         try
@@ -282,7 +282,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long conversionExpression,
         out long result)
     {
-        RoslynCallCounters.Record(1834);
+        RoslynCallCounters.Record(1957);
         result = default;
 
         try
@@ -301,7 +301,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long assignment,
         out long result)
     {
-        RoslynCallCounters.Record(1835);
+        RoslynCallCounters.Record(1958);
         result = default;
 
         try
@@ -320,7 +320,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long @foreach,
         out long result)
     {
-        RoslynCallCounters.Record(1836);
+        RoslynCallCounters.Record(1959);
         result = default;
 
         try
@@ -338,7 +338,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long spread,
         out long result)
     {
-        RoslynCallCounters.Record(1837);
+        RoslynCallCounters.Record(1960);
         result = default;
 
         try
@@ -357,7 +357,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long forEachStatement,
         out long result)
     {
-        RoslynCallCounters.Record(1838);
+        RoslynCallCounters.Record(1961);
         result = default;
 
         try
@@ -376,7 +376,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long forEachStatement,
         out long result)
     {
-        RoslynCallCounters.Record(1839);
+        RoslynCallCounters.Record(1962);
         result = default;
 
         try
@@ -394,7 +394,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long compoundAssignment,
         out long result)
     {
-        RoslynCallCounters.Record(1840);
+        RoslynCallCounters.Record(1963);
         result = default;
 
         try
@@ -414,7 +414,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1841);
+        RoslynCallCounters.Record(1964);
         requiredLength = default;
 
         try
@@ -438,7 +438,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long compoundAssignment,
         out long result)
     {
-        RoslynCallCounters.Record(1842);
+        RoslynCallCounters.Record(1965);
         result = default;
 
         try
@@ -459,7 +459,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(1843);
+        RoslynCallCounters.Record(1966);
         result = default;
 
         try
@@ -480,7 +480,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(1844);
+        RoslynCallCounters.Record(1967);
         result = default;
 
         try
@@ -500,7 +500,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long attribute,
         out long result)
     {
-        RoslynCallCounters.Record(1845);
+        RoslynCallCounters.Record(1968);
         result = default;
 
         try
@@ -520,7 +520,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long constructorInitializer,
         out long result)
     {
-        RoslynCallCounters.Record(1846);
+        RoslynCallCounters.Record(1969);
         result = default;
 
         try
@@ -541,7 +541,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(1847);
+        RoslynCallCounters.Record(1970);
         result = default;
 
         try
@@ -562,7 +562,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(1848);
+        RoslynCallCounters.Record(1971);
         result = default;
 
         try
@@ -582,7 +582,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long constructorInitializer,
         out long result)
     {
-        RoslynCallCounters.Record(1849);
+        RoslynCallCounters.Record(1972);
         result = default;
 
         try
@@ -603,7 +603,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(1850);
+        RoslynCallCounters.Record(1973);
         result = default;
 
         try
@@ -621,7 +621,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1851);
+        RoslynCallCounters.Record(1974);
         result = default;
 
         try
@@ -639,7 +639,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1852);
+        RoslynCallCounters.Record(1975);
         result = default;
 
         try
@@ -657,7 +657,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1853);
+        RoslynCallCounters.Record(1976);
         result = default;
 
         try
@@ -675,7 +675,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1854);
+        RoslynCallCounters.Record(1977);
         result = default;
 
         try
@@ -693,7 +693,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1855);
+        RoslynCallCounters.Record(1978);
         result = default;
 
         try
@@ -711,7 +711,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long node,
         out ushort result)
     {
-        RoslynCallCounters.Record(1856);
+        RoslynCallCounters.Record(1979);
         result = default;
 
         try
@@ -729,7 +729,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long nodeOrToken,
         out ushort result)
     {
-        RoslynCallCounters.Record(1857);
+        RoslynCallCounters.Record(1980);
         result = default;
 
         try
@@ -747,7 +747,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long token,
         out ushort result)
     {
-        RoslynCallCounters.Record(1858);
+        RoslynCallCounters.Record(1981);
         result = default;
 
         try
@@ -765,7 +765,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long trivia,
         out ushort result)
     {
-        RoslynCallCounters.Record(1859);
+        RoslynCallCounters.Record(1982);
         result = default;
 
         try
@@ -785,7 +785,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long newTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1860);
+        RoslynCallCounters.Record(1983);
         result = default;
 
         try
@@ -803,7 +803,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long node,
         out short result)
     {
-        RoslynCallCounters.Record(1861);
+        RoslynCallCounters.Record(1984);
         result = default;
 
         try

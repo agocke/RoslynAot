@@ -366,7 +366,11 @@ namespace Microsoft.CodeAnalysis
 
         System.Collections.Immutable.ImmutableArray<CustomModifier> GetTypeArgumentCustomModifiers(int ordinal)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IINamedTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.INamedTypeSymbol_GetTypeArgumentCustomModifiers(__RoslynAotGetHandle(controlVtbl), ordinal, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<CustomModifier>(controlVtbl, result, static (controlVtbl, handle) => CustomModifier.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
@@ -375,7 +379,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static INamedTypeSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (INamedTypeSymbol)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("355e259a-16ef-58da-9aa3-b62012521c4d")]
+        [System.Runtime.InteropServices.Guid("de56ef26-81f2-5264-ac82-0bad572e136a")]
         internal partial interface __RoslynAotImplementation : INamedTypeSymbol
         {
         }

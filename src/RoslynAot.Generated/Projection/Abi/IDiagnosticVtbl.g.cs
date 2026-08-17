@@ -12,9 +12,22 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c5492b16-d7ce-583d-80b0-08f76839308b")]
+[Guid("fe66d58a-5d56-563b-9d5b-b8afb6d97d4d")]
 public partial interface IDiagnosticVtbl
 {
+
+    [PreserveSig]
+    int Diagnostic_Equals_9b1492a8(
+        long receiver,
+        long obj,
+        out int result
+    );
+
+    [PreserveSig]
+    int Diagnostic_GetHashCode(
+        long receiver,
+        out int result
+    );
 
     [PreserveSig]
     int Diagnostic_GetSuppressionInfo(
@@ -38,7 +51,45 @@ public partial interface IDiagnosticVtbl
     );
 
     [PreserveSig]
+    int Diagnostic_get_Descriptor(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int Diagnostic_get_Id(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int Diagnostic_get_IsSuppressed(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
     int Diagnostic_get_IsWarningAsError(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int Diagnostic_get_Location(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int Diagnostic_get_Severity(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int Diagnostic_get_WarningLevel(
         long receiver,
         out int result
     );

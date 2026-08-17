@@ -28,7 +28,7 @@ internal sealed partial class TextChangeVtblDispatcher : ITextChangeVtbl
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1691);
+        RoslynCallCounters.Record(1807);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class TextChangeVtblDispatcher : ITextChangeVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1692);
+        RoslynCallCounters.Record(1808);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class TextChangeVtblDispatcher : ITextChangeVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1693);
+        RoslynCallCounters.Record(1809);
         requiredLength = default;
 
         try
@@ -92,7 +92,7 @@ internal sealed partial class TextChangeVtblDispatcher : ITextChangeVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1694);
+        RoslynCallCounters.Record(1810);
         requiredLength = default;
 
         try
@@ -116,7 +116,7 @@ internal sealed partial class TextChangeVtblDispatcher : ITextChangeVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1695);
+        RoslynCallCounters.Record(1811);
         result = default;
 
         try

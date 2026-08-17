@@ -27,7 +27,7 @@ internal sealed partial class IParameterInitializerOperationVtblDispatcher : IIP
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1058);
+        RoslynCallCounters.Record(1143);
         result = default;
 
         try

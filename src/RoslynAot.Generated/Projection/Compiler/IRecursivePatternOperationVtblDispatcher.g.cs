@@ -27,7 +27,7 @@ internal sealed partial class IRecursivePatternOperationVtblDispatcher : IIRecur
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1083);
+        RoslynCallCounters.Record(1168);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IRecursivePatternOperationVtblDispatcher : IIRecur
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1084);
+        RoslynCallCounters.Record(1169);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class IRecursivePatternOperationVtblDispatcher : IIRecur
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1085);
+        RoslynCallCounters.Record(1170);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class IRecursivePatternOperationVtblDispatcher : IIRecur
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1086);
+        RoslynCallCounters.Record(1171);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class IRecursivePatternOperationVtblDispatcher : IIRecur
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1087);
+        RoslynCallCounters.Record(1172);
         result = default;
 
         try

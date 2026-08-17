@@ -260,7 +260,11 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ISourceTextVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.SourceText_get_this__(__RoslynAotGetHandle(controlVtbl), position, out ushort result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return (char)result;
                 }
             }
 
@@ -268,7 +272,11 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ISourceTextVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.SourceText_get_Length(__RoslynAotGetHandle(controlVtbl), out int result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return result;
                 }
             }
         }

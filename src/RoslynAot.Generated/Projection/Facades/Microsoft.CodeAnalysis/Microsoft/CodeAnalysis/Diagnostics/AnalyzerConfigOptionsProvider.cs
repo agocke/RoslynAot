@@ -46,19 +46,31 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
             public override AnalyzerConfigOptions GetOptions(AdditionalText textFile)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IAnalyzerConfigOptionsProviderVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.AnalyzerConfigOptionsProvider_GetOptions_df6d0fc5(__RoslynAotGetHandle(controlVtbl), textFile.__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return AnalyzerConfigOptions.__RoslynAotCreateProxy(controlVtbl, result);
             }
 
             public override AnalyzerConfigOptions GetOptions(SyntaxTree tree)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IAnalyzerConfigOptionsProviderVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.AnalyzerConfigOptionsProvider_GetOptions_dacab0fe(__RoslynAotGetHandle(controlVtbl), tree.__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return AnalyzerConfigOptions.__RoslynAotCreateProxy(controlVtbl, result);
             }
 
             public override AnalyzerConfigOptions GlobalOptions
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IAnalyzerConfigOptionsProviderVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.AnalyzerConfigOptionsProvider_get_GlobalOptions(__RoslynAotGetHandle(controlVtbl), out long result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return AnalyzerConfigOptions.__RoslynAotCreateProxy(controlVtbl, result);
                 }
             }
         }

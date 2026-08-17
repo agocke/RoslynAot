@@ -12,7 +12,103 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("468a53d0-eea8-5e1c-adb6-8a6d0b93c7cf")]
+[Guid("57537511-074a-560f-950f-61506cf87eb7")]
 public partial interface IDataFlowAnalysisVtbl
 {
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_AlwaysAssigned(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_CapturedInside(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_CapturedOutside(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_Captured(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_DataFlowsIn(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_DataFlowsOut(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_DefinitelyAssignedOnEntry(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_DefinitelyAssignedOnExit(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_ReadInside(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_ReadOutside(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_Succeeded(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_UnsafeAddressTaken(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_UsedLocalFunctions(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_VariablesDeclared(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_WrittenInside(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DataFlowAnalysis_get_WrittenOutside(
+        long receiver,
+        out long result
+    );
 }

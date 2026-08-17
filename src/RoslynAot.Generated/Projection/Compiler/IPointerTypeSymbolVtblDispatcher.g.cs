@@ -23,11 +23,29 @@ internal sealed partial class IPointerTypeSymbolVtblDispatcher : IIPointerTypeSy
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int IPointerTypeSymbol_get_CustomModifiers(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(790);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IPointerTypeSymbol>(receiver).CustomModifiers).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int IPointerTypeSymbol_get_PointedAtType(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(713);
+        RoslynCallCounters.Record(791);
         result = default;
 
         try

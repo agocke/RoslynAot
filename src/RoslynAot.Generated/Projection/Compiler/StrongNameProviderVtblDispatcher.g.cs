@@ -22,4 +22,22 @@ internal sealed partial class StrongNameProviderVtblDispatcher : IStrongNameProv
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
+
+    public int StrongNameProvider_GetHashCode(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(1443);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.StrongNameProvider>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

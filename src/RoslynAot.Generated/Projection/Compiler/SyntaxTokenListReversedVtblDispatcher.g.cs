@@ -28,7 +28,7 @@ internal sealed partial class SyntaxTokenListReversedVtblDispatcher : ISyntaxTok
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1585);
+        RoslynCallCounters.Record(1684);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SyntaxTokenListReversedVtblDispatcher : ISyntaxTok
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1586);
+        RoslynCallCounters.Record(1685);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class SyntaxTokenListReversedVtblDispatcher : ISyntaxTok
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1587);
+        RoslynCallCounters.Record(1686);
         result = default;
 
         try

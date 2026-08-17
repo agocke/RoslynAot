@@ -28,7 +28,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         long obj,
         out int result)
     {
-        RoslynCallCounters.Record(4);
+        RoslynCallCounters.Record(6);
         result = default;
 
         try
@@ -49,7 +49,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(5);
+        RoslynCallCounters.Record(7);
         requiredLength = default;
 
         try
@@ -73,7 +73,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(6);
+        RoslynCallCounters.Record(8);
         result = default;
 
         try
@@ -93,7 +93,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(7);
+        RoslynCallCounters.Record(9);
         requiredLength = default;
 
         try
@@ -117,7 +117,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(8);
+        RoslynCallCounters.Record(10);
         result = default;
 
         try
@@ -137,7 +137,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(9);
+        RoslynCallCounters.Record(11);
         requiredLength = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(10);
+        RoslynCallCounters.Record(12);
         result = default;
 
         try
@@ -179,7 +179,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(11);
+        RoslynCallCounters.Record(13);
         result = default;
 
         try
@@ -197,7 +197,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(12);
+        RoslynCallCounters.Record(14);
         result = default;
 
         try
@@ -215,7 +215,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(13);
+        RoslynCallCounters.Record(15);
         result = default;
 
         try
@@ -235,7 +235,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(14);
+        RoslynCallCounters.Record(16);
         requiredLength = default;
 
         try

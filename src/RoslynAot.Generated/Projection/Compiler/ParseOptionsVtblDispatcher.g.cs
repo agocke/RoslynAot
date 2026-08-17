@@ -23,12 +23,49 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int ParseOptions_CommonWithKind(
+        long receiver,
+        int kind,
+        out long result)
+    {
+        RoslynCallCounters.Record(1383);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(receiver).CommonWithKind((global::Microsoft.CodeAnalysis.SourceCodeKind)kind));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ParseOptions_GetHashCode(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(1384);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ParseOptions_WithDocumentationMode(
         long receiver,
         byte documentationMode,
         out long result)
     {
-        RoslynCallCounters.Record(1298);
+        RoslynCallCounters.Record(1385);
         result = default;
 
         try
@@ -47,7 +84,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         int kind,
         out long result)
     {
-        RoslynCallCounters.Record(1299);
+        RoslynCallCounters.Record(1386);
         result = default;
 
         try
@@ -65,7 +102,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(1300);
+        RoslynCallCounters.Record(1387);
         result = default;
 
         try
@@ -79,11 +116,29 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         }
     }
 
+    public int ParseOptions_get_Errors(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(1388);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(receiver).Errors).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ParseOptions_get_Kind(
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1301);
+        RoslynCallCounters.Record(1389);
         result = default;
 
         try
@@ -97,11 +152,55 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         }
     }
 
+    public unsafe int ParseOptions_get_Language(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        RoslynCallCounters.Record(1390);
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(receiver).Language;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ParseOptions_get_PreprocessorSymbolNames(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(1391);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.ToArray(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(receiver).PreprocessorSymbolNames));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ParseOptions_get_SpecifiedKind(
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1302);
+        RoslynCallCounters.Record(1392);
         result = default;
 
         try

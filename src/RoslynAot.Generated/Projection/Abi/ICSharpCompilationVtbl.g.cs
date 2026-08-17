@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fc7329ba-c29b-50af-878a-a7840d8ec616")]
+[Guid("4b6f87bd-1cb9-5c5e-b544-43ba1c23f624")]
 public partial interface ICSharpCompilationVtbl : ICompilationVtbl
 {
 
@@ -152,6 +152,12 @@ public partial interface ICSharpCompilationVtbl : ICompilationVtbl
     );
 
     [PreserveSig]
+    int CSharpCompilation_get_DirectiveReferences(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int CSharpCompilation_get_IsCaseSensitive(
         long receiver,
         out int result
@@ -185,6 +191,12 @@ public partial interface ICSharpCompilationVtbl : ICompilationVtbl
 
     [PreserveSig]
     int CSharpCompilation_get_ScriptCompilationInfo(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpCompilation_get_SyntaxTrees(
         long receiver,
         out long result
     );

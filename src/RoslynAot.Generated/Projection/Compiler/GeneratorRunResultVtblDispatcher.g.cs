@@ -23,11 +23,29 @@ internal sealed partial class GeneratorRunResultVtblDispatcher : IGeneratorRunRe
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int GeneratorRunResult_get_Diagnostics(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(591);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.GeneratorRunResult>(receiver).Diagnostics).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int GeneratorRunResult_get_Generator(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(524);
+        RoslynCallCounters.Record(592);
         result = default;
 
         try

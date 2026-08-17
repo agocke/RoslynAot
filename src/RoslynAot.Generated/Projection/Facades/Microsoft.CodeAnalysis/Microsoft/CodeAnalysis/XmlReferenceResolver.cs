@@ -51,7 +51,11 @@ namespace Microsoft.CodeAnalysis
 
             public override int GetHashCode()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IXmlReferenceResolverVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.XmlReferenceResolver_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result;
             }
 
             public override System.IO.Stream OpenRead(string resolvedPath)
@@ -61,7 +65,10 @@ namespace Microsoft.CodeAnalysis
 
             public override string? ResolveReference(string path, string? baseFilePath)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IXmlReferenceResolverVtbl vtbl = __RoslynAotGetVtbl();
+                long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.XmlReferenceResolver_ResolveReference(__roslynAotReceiver, path, baseFilePath, buffer, bufferLength, out requiredLength));
             }
         }
 

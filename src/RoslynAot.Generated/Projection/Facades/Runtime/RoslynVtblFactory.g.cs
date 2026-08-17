@@ -74,8 +74,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ICSharpCompilationVtbl>(
             controlVtbl,
-            5814079619169724858L,
-            1641155302934416007L);
+            6655788881460299709L,
+            2663354835927254197L);
     }
 
     public static ICSharpDiagnosticFormatterVtbl GetCSharpDiagnosticFormatterVtbl(
@@ -184,8 +184,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ICSharpSyntaxTreeVtbl>(
             controlVtbl,
-            6506996546945505637L,
-            2621740467006617505L);
+            6444992185785312294L,
+            -2446358623980801114L);
     }
 
     public static ICSharpSyntaxVisitorVtbl GetCSharpSyntaxVisitorVtbl(
@@ -3274,8 +3274,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IAdditionalTextVtbl>(
             controlVtbl,
-            6355794022207923437L,
-            -6967577286812335226L);
+            6564943152324386835L,
+            -4122156748036303438L);
     }
 
     public static IAnalyzerConfigOptionsResultVtbl GetAnalyzerConfigOptionsResultVtbl(
@@ -3284,8 +3284,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IAnalyzerConfigOptionsResultVtbl>(
             controlVtbl,
-            6492232242684935967L,
-            -5695178980898450809L);
+            6916740614742006277L,
+            -3719633276943332175L);
     }
 
     public static IAnalyzerConfigSetVtbl GetAnalyzerConfigSetVtbl(
@@ -3454,8 +3454,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ICommandLineArgumentsVtbl>(
             controlVtbl,
-            6800368704516195054L,
-            5886335314465302186L);
+            6418892847465040505L,
+            -6805277320333470057L);
     }
 
     public static ICommandLineParserVtbl GetCommandLineParserVtbl(
@@ -3534,8 +3534,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ICompilationOptionsVtbl>(
             controlVtbl,
-            5933667281316142142L,
-            9069539139560442279L);
+            5796452038015122102L,
+            -8040323937579187323L);
     }
 
     public static ICompilationReferenceVtbl GetCompilationReferenceVtbl(
@@ -3554,8 +3554,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ICompilationVtbl>(
             controlVtbl,
-            5790877004212716245L,
-            -3776299778535395398L);
+            6061401358198453764L,
+            -6461598389950117503L);
     }
 
     public static ICompilationTypeVtbl GetCompilationTypeVtbl(
@@ -3574,8 +3574,18 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IControlFlowAnalysisVtbl>(
             controlVtbl,
-            6764096701940978931L,
-            7633504075262950813L);
+            5939051728545919903L,
+            -7731279357415601001L);
+    }
+
+    public static ICustomModifierVtbl GetCustomModifierVtbl(
+        IRoslynControlVtbl controlVtbl)
+    {
+        ArgumentNullException.ThrowIfNull(controlVtbl);
+        return GetVtbl<ICustomModifierVtbl>(
+            controlVtbl,
+            6708271760819166354L,
+            6423136796010766767L);
     }
 
     public static IDataFlowAnalysisVtbl GetDataFlowAnalysisVtbl(
@@ -3584,8 +3594,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IDataFlowAnalysisVtbl>(
             controlVtbl,
-            6781557545418511312L,
-            -3474646910201317715L);
+            6201183227786523921L,
+            -5224465373614501995L);
     }
 
     public static IDesktopAssemblyIdentityComparerVtbl GetDesktopAssemblyIdentityComparerVtbl(
@@ -3668,14 +3678,24 @@ public static class RoslynVtblFactory
             -1608892892668374619L);
     }
 
+    public static IAnalysisResultVtbl GetAnalysisResultVtbl(
+        IRoslynControlVtbl controlVtbl)
+    {
+        ArgumentNullException.ThrowIfNull(controlVtbl);
+        return GetVtbl<IAnalysisResultVtbl>(
+            controlVtbl,
+            6636470452634757253L,
+            -2067258725200364153L);
+    }
+
     public static IAnalyzerConfigOptionsProviderVtbl GetAnalyzerConfigOptionsProviderVtbl(
         IRoslynControlVtbl controlVtbl)
     {
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IAnalyzerConfigOptionsProviderVtbl>(
             controlVtbl,
-            6712214274854901743L,
-            8802417555966824351L);
+            6049831297994795362L,
+            4852418399692555685L);
     }
 
     public static IAnalyzerConfigOptionsVtbl GetAnalyzerConfigOptionsVtbl(
@@ -3694,8 +3714,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IAnalyzerFileReferenceVtbl>(
             controlVtbl,
-            6562762926199295136L,
-            8667610459827101365L);
+            5823827119466129983L,
+            -1638672035241284174L);
     }
 
     public static IAnalyzerFileReferenceTypeVtbl GetAnalyzerFileReferenceTypeVtbl(
@@ -3714,8 +3734,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IAnalyzerImageReferenceVtbl>(
             controlVtbl,
-            6844648383582249024L,
-            2708206263955103145L);
+            5823811917897684409L,
+            -2345546420720299076L);
     }
 
     public static IAnalyzerLoadFailureEventArgsVtbl GetAnalyzerLoadFailureEventArgsVtbl(
@@ -3734,8 +3754,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IAnalyzerOptionsVtbl>(
             controlVtbl,
-            6234805421512582670L,
-            -777051179430500721L);
+            6161902702512974084L,
+            -4843635438673676870L);
     }
 
     public static IAnalyzerReferenceVtbl GetAnalyzerReferenceVtbl(
@@ -3744,8 +3764,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IAnalyzerReferenceVtbl>(
             controlVtbl,
-            6710288559043187075L,
-            1824702691447952784L);
+            5881892790990116902L,
+            -2191831534369528179L);
     }
 
     public static ICodeBlockAnalysisContextVtbl GetCodeBlockAnalysisContextVtbl(
@@ -3794,8 +3814,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ICompilationWithAnalyzersVtbl>(
             controlVtbl,
-            6443048152982747184L,
-            8097491194483460526L);
+            5817321761033528788L,
+            2994660176577302688L);
     }
 
     public static IDiagnosticAnalyzerVtbl GetDiagnosticAnalyzerVtbl(
@@ -3804,8 +3824,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IDiagnosticAnalyzerVtbl>(
             controlVtbl,
-            6375647526795968203L,
-            -6409062264786003313L);
+            6583602660549082732L,
+            3973519339714411141L);
     }
 
     public static IDiagnosticSuppressorVtbl GetDiagnosticSuppressorVtbl(
@@ -3814,8 +3834,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IDiagnosticSuppressorVtbl>(
             controlVtbl,
-            6514697134624950511L,
-            3059599878895529382L);
+            6466057425909955135L,
+            -6519094966091186815L);
     }
 
     public static IOperationAnalysisContextVtbl GetOperationAnalysisContextVtbl(
@@ -3824,8 +3844,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IOperationAnalysisContextVtbl>(
             controlVtbl,
-            5913682965530252434L,
-            -5383242077193271404L);
+            6235033470711009150L,
+            5584945956296490136L);
     }
 
     public static IOperationBlockAnalysisContextVtbl GetOperationBlockAnalysisContextVtbl(
@@ -3834,8 +3854,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IOperationBlockAnalysisContextVtbl>(
             controlVtbl,
-            5811725125295821111L,
-            -8588416451904067137L);
+            6452479603312682371L,
+            -8450142970622460004L);
     }
 
     public static IOperationBlockStartAnalysisContextVtbl GetOperationBlockStartAnalysisContextVtbl(
@@ -3844,8 +3864,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IOperationBlockStartAnalysisContextVtbl>(
             controlVtbl,
-            6714020329119860254L,
-            -4486129416593459301L);
+            6303699228016849098L,
+            -2913702716235477114L);
     }
 
     public static ISemanticModelAnalysisContextVtbl GetSemanticModelAnalysisContextVtbl(
@@ -3864,8 +3884,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ISuppressionAnalysisContextVtbl>(
             controlVtbl,
-            5841276090350539353L,
-            1565618563024440250L);
+            6147748646180528571L,
+            -6029028134739148111L);
     }
 
     public static ISuppressionInfoVtbl GetSuppressionInfoVtbl(
@@ -3964,8 +3984,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IUnresolvedAnalyzerReferenceVtbl>(
             controlVtbl,
-            6738119573611548726L,
-            -8772922667562664544L);
+            6159884644641925536L,
+            3600332926076328623L);
     }
 
     public static IUnresolvedAnalyzerReferenceTypeVtbl GetUnresolvedAnalyzerReferenceTypeVtbl(
@@ -3984,8 +4004,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IDiagnosticVtbl>(
             controlVtbl,
-            6358475531990149910L,
-            -8417164580571533184L);
+            6213662739104454026L,
+            5583858491664653213L);
     }
 
     public static IDllImportDataVtbl GetDllImportDataVtbl(
@@ -4014,8 +4034,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IDocumentationProviderVtbl>(
             controlVtbl,
-            6877428367923953648L,
-            2269807975325865398L);
+            6515877452026200954L,
+            3702606951010807728L);
     }
 
     public static IDocumentationProviderTypeVtbl GetDocumentationProviderTypeVtbl(
@@ -4114,8 +4134,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IEmitResultVtbl>(
             controlVtbl,
-            5995288310325842542L,
-            -1967289962752420964L);
+            5893646247417478018L,
+            2450883949237420173L);
     }
 
     public static IMethodInstrumentationVtbl GetMethodInstrumentationVtbl(
@@ -4354,8 +4374,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IGeneratorDriverRunResultVtbl>(
             controlVtbl,
-            6740429786999420618L,
-            -5799539231736928322L);
+            6035884951631395538L,
+            1995396101133271193L);
     }
 
     public static IGeneratorDriverTimingInfoVtbl GetGeneratorDriverTimingInfoVtbl(
@@ -4384,8 +4404,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IGeneratorExecutionContextVtbl>(
             controlVtbl,
-            6480729872147604542L,
-            -1844524079909934708L);
+            6699838842471549031L,
+            -7375558277183572089L);
     }
 
     public static IGeneratorExtensionsVtbl GetGeneratorExtensionsVtbl(
@@ -4424,8 +4444,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IGeneratorRunResultVtbl>(
             controlVtbl,
-            6655901281802283573L,
-            6862907918242329237L);
+            6009070349037795817L,
+            -3887184140264574790L);
     }
 
     public static IGeneratorSyntaxContextVtbl GetGeneratorSyntaxContextVtbl(
@@ -4474,8 +4494,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IIArrayTypeSymbolVtbl>(
             controlVtbl,
-            5873751213741879644L,
-            -4270965745031611982L);
+            6039161796809603123L,
+            7760604040733319048L);
     }
 
     public static IIAssemblySymbolVtbl GetIAssemblySymbolVtbl(
@@ -4544,8 +4564,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IIFieldSymbolVtbl>(
             controlVtbl,
-            6267562366583383442L,
-            -670348931160362051L);
+            5868200970338247856L,
+            4471790019277996180L);
     }
 
     public static IIFunctionPointerTypeSymbolVtbl GetIFunctionPointerTypeSymbolVtbl(
@@ -4604,8 +4624,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IIMethodSymbolVtbl>(
             controlVtbl,
-            6110968432390272142L,
-            3469789982143173024L);
+            6103907333010773513L,
+            -1912659933934507391L);
     }
 
     public static IIModuleSymbolVtbl GetIModuleSymbolVtbl(
@@ -4614,8 +4634,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IIModuleSymbolVtbl>(
             controlVtbl,
-            6459107853000363467L,
-            4791322676661584019L);
+            6405572945912559569L,
+            7328719009003368344L);
     }
 
     public static IINamedTypeSymbolVtbl GetINamedTypeSymbolVtbl(
@@ -4624,8 +4644,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IINamedTypeSymbolVtbl>(
             controlVtbl,
-            6402455036908938650L,
-            5556406278080078746L);
+            5937013088893464358L,
+            7643503946678108844L);
     }
 
     public static IINamespaceOrTypeSymbolVtbl GetINamespaceOrTypeSymbolVtbl(
@@ -4704,8 +4724,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IIParameterSymbolVtbl>(
             controlVtbl,
-            6284906645605886785L,
-            -7944663157309812081L);
+            6743528525704836798L,
+            -9143497035596371290L);
     }
 
     public static IIPointerTypeSymbolVtbl GetIPointerTypeSymbolVtbl(
@@ -4714,8 +4734,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IIPointerTypeSymbolVtbl>(
             controlVtbl,
-            6737257490390477975L,
-            2594580041928055993L);
+            6650912988887091464L,
+            -8411626690585114970L);
     }
 
     public static IIPreprocessingSymbolVtbl GetIPreprocessingSymbolVtbl(
@@ -4734,8 +4754,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IIPropertySymbolVtbl>(
             controlVtbl,
-            6569750879536146560L,
-            567107061862830745L);
+            6400358199282688960L,
+            -1319628209278969723L);
     }
 
     public static IIRangeVariableSymbolVtbl GetIRangeVariableSymbolVtbl(
@@ -4804,8 +4824,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IISymbolVtbl>(
             controlVtbl,
-            6041563318424101912L,
-            -9152420521928868459L);
+            5786697231687896157L,
+            2947859594315792798L);
     }
 
     public static IISyntaxContextReceiverVtbl GetISyntaxContextReceiverVtbl(
@@ -4908,16 +4928,6 @@ public static class RoslynVtblFactory
             -8143712093506170723L);
     }
 
-    public static ILocalizableResourceStringVtbl GetLocalizableResourceStringVtbl(
-        IRoslynControlVtbl controlVtbl)
-    {
-        ArgumentNullException.ThrowIfNull(controlVtbl);
-        return GetVtbl<ILocalizableResourceStringVtbl>(
-            controlVtbl,
-            6848539129567331454L,
-            -7073325846760769898L);
-    }
-
     public static ILocalizableStringVtbl GetLocalizableStringVtbl(
         IRoslynControlVtbl controlVtbl)
     {
@@ -4934,8 +4944,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ILocationVtbl>(
             controlVtbl,
-            6830941505138115430L,
-            1655381992017786545L);
+            6863883799911492016L,
+            -6477306721547176010L);
     }
 
     public static ILocationTypeVtbl GetLocationTypeVtbl(
@@ -4984,8 +4994,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IMetadataReferenceResolverVtbl>(
             controlVtbl,
-            5767891942437439252L,
-            1251082749246420874L);
+            5893311378744964744L,
+            -8014568452759343231L);
     }
 
     public static IMetadataReferenceVtbl GetMetadataReferenceVtbl(
@@ -6404,8 +6414,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IParseOptionsVtbl>(
             controlVtbl,
-            5920773251384725807L,
-            -1601491021426688624L);
+            6797288025063759249L,
+            5115295614641470639L);
     }
 
     public static IPortableExecutableReferenceVtbl GetPortableExecutableReferenceVtbl(
@@ -6426,6 +6436,16 @@ public static class RoslynVtblFactory
             controlVtbl,
             6657616936202665036L,
             8005180330969679548L);
+    }
+
+    public static IResourceDescriptionVtbl GetResourceDescriptionVtbl(
+        IRoslynControlVtbl controlVtbl)
+    {
+        ArgumentNullException.ThrowIfNull(controlVtbl);
+        return GetVtbl<IResourceDescriptionVtbl>(
+            controlVtbl,
+            5765257549080727166L,
+            8387729037993731211L);
     }
 
     public static IRuleSetIncludeVtbl GetRuleSetIncludeVtbl(
@@ -6454,8 +6474,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IRuleSetVtbl>(
             controlVtbl,
-            6154338971112875545L,
-            2586363851464147587L);
+            6497844393088245977L,
+            5788822480037280648L);
     }
 
     public static IRuleSetTypeVtbl GetRuleSetTypeVtbl(
@@ -6484,8 +6504,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ISemanticModelVtbl>(
             controlVtbl,
-            6651409867304299583L,
-            -6259269934214387313L);
+            6161175541771551954L,
+            4995133894298213252L);
     }
 
     public static ISourceFileResolverVtbl GetSourceFileResolverVtbl(
@@ -6524,8 +6544,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ISourceReferenceResolverVtbl>(
             controlVtbl,
-            6440702062709558781L,
-            7272133431654437279L);
+            6015969602238508503L,
+            2601477292362556059L);
     }
 
     public static IStrongNameProviderVtbl GetStrongNameProviderVtbl(
@@ -6534,8 +6554,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IStrongNameProviderVtbl>(
             controlVtbl,
-            6337657333931695868L,
-            -6387089546060692315L);
+            6634465544919145727L,
+            7162834702244864686L);
     }
 
     public static ISubsystemVersionVtbl GetSubsystemVersionVtbl(
@@ -6616,16 +6636,6 @@ public static class RoslynVtblFactory
             controlVtbl,
             5765852722622269846L,
             -8405828446748818035L);
-    }
-
-    public static ISymbolEqualityComparerVtbl GetSymbolEqualityComparerVtbl(
-        IRoslynControlVtbl controlVtbl)
-    {
-        ArgumentNullException.ThrowIfNull(controlVtbl);
-        return GetVtbl<ISymbolEqualityComparerVtbl>(
-            controlVtbl,
-            6723967032107441204L,
-            -7377974550939945043L);
     }
 
     public static ISymbolInfoVtbl GetSymbolInfoVtbl(
@@ -6734,8 +6744,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ISyntaxReferenceVtbl>(
             controlVtbl,
-            6254905267877286541L,
-            2689815707119404689L);
+            6887641373985171656L,
+            -6651813634596288586L);
     }
 
     public static ISyntaxTokenListEnumeratorVtbl GetSyntaxTokenListEnumeratorVtbl(
@@ -6824,8 +6834,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ISyntaxTreeVtbl>(
             controlVtbl,
-            5787686116502552415L,
-            -647849810971800687L);
+            6013348340235617522L,
+            4993407918235622320L);
     }
 
     public static ISyntaxTriviaListEnumeratorVtbl GetSyntaxTriviaListEnumeratorVtbl(
@@ -6964,8 +6974,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ISourceTextContainerVtbl>(
             controlVtbl,
-            6694885453241542852L,
-            -4140510093068267100L);
+            6430037342728033710L,
+            -8342648740283769193L);
     }
 
     public static ISourceTextVtbl GetSourceTextVtbl(
@@ -6974,8 +6984,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ISourceTextVtbl>(
             controlVtbl,
-            5805846055961034073L,
-            -2862919314530476112L);
+            6086822010268462592L,
+            7346323877647091366L);
     }
 
     public static ITextChangeEventArgsVtbl GetTextChangeEventArgsVtbl(
@@ -7044,8 +7054,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ITextLineCollectionVtbl>(
             controlVtbl,
-            6545790846509241753L,
-            -5727720324792120131L);
+            5804669746618955154L,
+            -1107994653023853180L);
     }
 
     public static ITextLineVtbl GetTextLineVtbl(
@@ -7144,8 +7154,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IXmlReferenceResolverVtbl>(
             controlVtbl,
-            5814290854976432524L,
-            6416988783666716348L);
+            6287791788020842334L,
+            -6483139271915414598L);
     }
 
     private static T GetVtbl<T>(

@@ -27,7 +27,7 @@ internal sealed partial class AssemblyMetadataTypeVtblDispatcher : IAssemblyMeta
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         out long result)
     {
-        RoslynCallCounters.Record(19);
+        RoslynCallCounters.Record(21);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class AssemblyMetadataTypeVtblDispatcher : IAssemblyMeta
         long @module,
         out long result)
     {
-        RoslynCallCounters.Record(20);
+        RoslynCallCounters.Record(22);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class AssemblyMetadataTypeVtblDispatcher : IAssemblyMeta
         long modules,
         out long result)
     {
-        RoslynCallCounters.Record(21);
+        RoslynCallCounters.Record(23);
         result = default;
 
         try

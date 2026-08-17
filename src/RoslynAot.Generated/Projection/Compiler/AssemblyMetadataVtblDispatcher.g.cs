@@ -27,7 +27,7 @@ internal sealed partial class AssemblyMetadataVtblDispatcher : IAssemblyMetadata
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(835);
+        RoslynCallCounters.Record(918);
         result = default;
 
         try
@@ -44,7 +44,7 @@ internal sealed partial class AssemblyMetadataVtblDispatcher : IAssemblyMetadata
     public int Metadata_Dispose(
         long receiver)
     {
-        RoslynCallCounters.Record(836);
+        RoslynCallCounters.Record(919);
 
         try
         {
@@ -61,7 +61,7 @@ internal sealed partial class AssemblyMetadataVtblDispatcher : IAssemblyMetadata
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(837);
+        RoslynCallCounters.Record(920);
         result = default;
 
         try
@@ -79,7 +79,7 @@ internal sealed partial class AssemblyMetadataVtblDispatcher : IAssemblyMetadata
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(838);
+        RoslynCallCounters.Record(921);
         result = default;
 
         try
@@ -96,7 +96,7 @@ internal sealed partial class AssemblyMetadataVtblDispatcher : IAssemblyMetadata
     public int AssemblyMetadata_Dispose(
         long receiver)
     {
-        RoslynCallCounters.Record(22);
+        RoslynCallCounters.Record(24);
 
         try
         {
@@ -113,7 +113,7 @@ internal sealed partial class AssemblyMetadataVtblDispatcher : IAssemblyMetadata
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(23);
+        RoslynCallCounters.Record(25);
         result = default;
 
         try
@@ -131,7 +131,7 @@ internal sealed partial class AssemblyMetadataVtblDispatcher : IAssemblyMetadata
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(24);
+        RoslynCallCounters.Record(26);
         result = default;
 
         try

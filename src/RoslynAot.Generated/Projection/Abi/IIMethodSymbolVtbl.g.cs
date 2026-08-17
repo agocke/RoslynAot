@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("763f748e-8569-54ce-a051-dae29a2b2730")]
+[Guid("26025609-6f61-54b5-812a-b67decdd74e5")]
 public partial interface IIMethodSymbolVtbl
 {
 
@@ -225,6 +225,12 @@ public partial interface IIMethodSymbolVtbl
     );
 
     [PreserveSig]
+    int IMethodSymbol_get_RefCustomModifiers(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int IMethodSymbol_get_RefKind(
         long receiver,
         out byte result
@@ -234,6 +240,12 @@ public partial interface IIMethodSymbolVtbl
     int IMethodSymbol_get_ReturnNullableAnnotation(
         long receiver,
         out byte result
+    );
+
+    [PreserveSig]
+    int IMethodSymbol_get_ReturnTypeCustomModifiers(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]

@@ -201,14 +201,22 @@ namespace Microsoft.CodeAnalysis.Text
 
             public override int IndexOf(int position)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ITextLineCollectionVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.TextLineCollection_IndexOf(__RoslynAotGetHandle(controlVtbl), position, out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result;
             }
 
             public override int Count
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ITextLineCollectionVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.TextLineCollection_get_Count(__RoslynAotGetHandle(controlVtbl), out int result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return result;
                 }
             }
 
@@ -216,7 +224,11 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ITextLineCollectionVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.TextLineCollection_get_this__(__RoslynAotGetHandle(controlVtbl), index, out long result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return TextLine.__RoslynAotCreateProxy(controlVtbl, result);
                 }
             }
         }

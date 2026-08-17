@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("673ac366-611b-5ecc-b176-ccb12619f916")]
+[Guid("194869b0-69f3-5f41-b637-eee0dafb1ba6")]
 public partial interface ILocationVtbl
 {
+
+    [PreserveSig]
+    int Location_GetHashCode(
+        long receiver,
+        out int result
+    );
 
     [PreserveSig]
     int Location_GetLineSpan(
@@ -46,6 +52,12 @@ public partial interface ILocationVtbl
     int Location_get_IsInSource(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int Location_get_Kind(
+        long receiver,
+        out byte result
     );
 
     [PreserveSig]

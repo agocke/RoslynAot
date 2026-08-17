@@ -27,12 +27,29 @@ internal sealed partial class DiagnosticSuppressorVtblDispatcher : IDiagnosticSu
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(272);
+        RoslynCallCounters.Record(329);
         result = default;
 
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DiagnosticAnalyzer_Initialize(
+        long receiver,
+        long context)
+    {
+        RoslynCallCounters.Record(330);
+
+        try
+        {
+            _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer>(receiver).Initialize(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalysisContext>(context));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -47,7 +64,7 @@ internal sealed partial class DiagnosticSuppressorVtblDispatcher : IDiagnosticSu
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(273);
+        RoslynCallCounters.Record(331);
         requiredLength = default;
 
         try
@@ -67,15 +84,86 @@ internal sealed partial class DiagnosticSuppressorVtblDispatcher : IDiagnosticSu
         }
     }
 
+    public int DiagnosticAnalyzer_get_SupportedDiagnostics(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(332);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer>(receiver).SupportedDiagnostics).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int DiagnosticSuppressor_Initialize(
         long receiver,
         long context)
     {
-        RoslynCallCounters.Record(274);
+        RoslynCallCounters.Record(333);
 
         try
         {
             _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticSuppressor>(receiver).Initialize(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalysisContext>(context));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DiagnosticSuppressor_ReportSuppressions(
+        long receiver,
+        long context)
+    {
+        RoslynCallCounters.Record(334);
+
+        try
+        {
+            _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticSuppressor>(receiver).ReportSuppressions(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SuppressionAnalysisContext>(context));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DiagnosticSuppressor_get_SupportedDiagnostics(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(335);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticSuppressor>(receiver).SupportedDiagnostics).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DiagnosticSuppressor_get_SupportedSuppressions(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(336);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticSuppressor>(receiver).SupportedSuppressions).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

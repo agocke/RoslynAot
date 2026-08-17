@@ -28,7 +28,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1679);
+        RoslynCallCounters.Record(1792);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         long span,
         out long result)
     {
-        RoslynCallCounters.Record(1680);
+        RoslynCallCounters.Record(1793);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         int start,
         out long result)
     {
-        RoslynCallCounters.Record(1681);
+        RoslynCallCounters.Record(1794);
         result = default;
 
         try
@@ -86,7 +86,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string newText,
         out long result)
     {
-        RoslynCallCounters.Record(1682);
+        RoslynCallCounters.Record(1795);
         result = default;
 
         try
@@ -107,7 +107,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string newText,
         out long result)
     {
-        RoslynCallCounters.Record(1683);
+        RoslynCallCounters.Record(1796);
         result = default;
 
         try
@@ -127,7 +127,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1684);
+        RoslynCallCounters.Record(1797);
         requiredLength = default;
 
         try
@@ -154,7 +154,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1685);
+        RoslynCallCounters.Record(1798);
         requiredLength = default;
 
         try
@@ -178,7 +178,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1686);
+        RoslynCallCounters.Record(1799);
         result = default;
 
         try
@@ -196,7 +196,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1687);
+        RoslynCallCounters.Record(1800);
         result = default;
 
         try
@@ -214,7 +214,7 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1688);
+        RoslynCallCounters.Record(1801);
         result = default;
 
         try
@@ -228,11 +228,48 @@ internal sealed partial class SourceTextVtblDispatcher : ISourceTextVtbl
         }
     }
 
+    public int SourceText_get_this__(
+        long receiver,
+        int position,
+        out ushort result)
+    {
+        RoslynCallCounters.Record(1802);
+        result = default;
+
+        try
+        {
+            result = (ushort)_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver)[position];
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SourceText_get_Length(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(1803);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(receiver).Length;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SourceText_get_Lines(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1689);
+        RoslynCallCounters.Record(1804);
         result = default;
 
         try

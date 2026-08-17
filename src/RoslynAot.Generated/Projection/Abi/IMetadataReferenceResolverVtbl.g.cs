@@ -12,15 +12,30 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7bd24714-ab29-500b-8ab7-73c521bd5c11")]
+[Guid("90dc7688-3f79-51c9-812f-3a897488c690")]
 public partial interface IMetadataReferenceResolverVtbl
 {
+
+    [PreserveSig]
+    int MetadataReferenceResolver_GetHashCode(
+        long receiver,
+        out int result
+    );
 
     [PreserveSig]
     int MetadataReferenceResolver_ResolveMissingAssembly(
         long receiver,
         long definition,
         long referenceIdentity,
+        out long result
+    );
+
+    [PreserveSig]
+    int MetadataReferenceResolver_ResolveReference(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string reference,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string baseFilePath,
+        long properties,
         out long result
     );
 

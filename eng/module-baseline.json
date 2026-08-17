@@ -3,267 +3,267 @@
   "modules": [
     {
       "module": "(all analyzers)",
-      "sizeBytes": 9384848,
-      "retainedTypeCount": 20738,
-      "retainedMethodCount": 23484
+      "sizeBytes": 9325024,
+      "retainedTypeCount": 19918,
+      "retainedMethodCount": 23522
     },
     {
       "module": "Microsoft.CodeAnalysis.CSharp.NetAnalyzers.Microsoft.CodeQuality.Analyzers.QualityGuidelines.CSharpAvoidMultipleEnumerationsAnalyzer",
-      "sizeBytes": 6154528,
-      "retainedTypeCount": 15524,
-      "retainedMethodCount": 13406
+      "sizeBytes": 6201008,
+      "retainedTypeCount": 15597,
+      "retainedMethodCount": 13513
     },
     {
       "module": "Microsoft.CodeAnalysis.CSharp.NetAnalyzers.Microsoft.NetCore.Analyzers.Performance.CSharpUseStringMethodCharOverloadWithSingleCharacters",
-      "sizeBytes": 3565712,
-      "retainedTypeCount": 3946,
-      "retainedMethodCount": 7867
+      "sizeBytes": 3578272,
+      "retainedTypeCount": 3941,
+      "retainedMethodCount": 7896
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.ApiDesignGuidelines.CSharpImplementStandardExceptionConstructorsAnalyzer",
-      "sizeBytes": 3577312,
-      "retainedTypeCount": 4022,
-      "retainedMethodCount": 7914
+      "sizeBytes": 3602464,
+      "retainedTypeCount": 4026,
+      "retainedMethodCount": 7969
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.ApiDesignGuidelines.CSharpPassSystemUriObjectsInsteadOfStringsAnalyzer",
-      "sizeBytes": 3762464,
-      "retainedTypeCount": 4230,
-      "retainedMethodCount": 8599
+      "sizeBytes": 3792224,
+      "retainedTypeCount": 4275,
+      "retainedMethodCount": 8685
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.ApiDesignGuidelines.CSharpUsePreferredTermsAnalyzer",
-      "sizeBytes": 2593376,
+      "sizeBytes": 2593360,
       "retainedTypeCount": 2716,
-      "retainedMethodCount": 5238
+      "retainedMethodCount": 5236
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.ApiReview.CSharpAvoidCallingProblematicMethodsAnalyzer",
-      "sizeBytes": 2593376,
+      "sizeBytes": 2593360,
       "retainedTypeCount": 2716,
-      "retainedMethodCount": 5238
+      "retainedMethodCount": 5236
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.Documentation.CSharpAvoidUsingCrefTagsWithAPrefixAnalyzer",
-      "sizeBytes": 3344384,
-      "retainedTypeCount": 3254,
-      "retainedMethodCount": 7272
+      "sizeBytes": 3365488,
+      "retainedTypeCount": 3272,
+      "retainedMethodCount": 7328
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpAvoidDeadConditionalCode",
-      "sizeBytes": 5422112,
-      "retainedTypeCount": 13406,
-      "retainedMethodCount": 11397
+      "sizeBytes": 4274752,
+      "retainedTypeCount": 5454,
+      "retainedMethodCount": 9702
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpAvoidUninstantiatedInternalClasses",
-      "sizeBytes": 3579760,
-      "retainedTypeCount": 3580,
-      "retainedMethodCount": 7772
+      "sizeBytes": 3638608,
+      "retainedTypeCount": 3719,
+      "retainedMethodCount": 7947
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpMakeTypesInternal",
-      "sizeBytes": 3610112,
-      "retainedTypeCount": 3748,
-      "retainedMethodCount": 8263
+      "sizeBytes": 3626928,
+      "retainedTypeCount": 3751,
+      "retainedMethodCount": 8293
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpUseCrossPlatformIntrinsicsAnalyzer",
-      "sizeBytes": 3640192,
-      "retainedTypeCount": 4132,
-      "retainedMethodCount": 8031
+      "sizeBytes": 3648688,
+      "retainedTypeCount": 4127,
+      "retainedMethodCount": 8062
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpUseNameofInPlaceOfStringAnalyzer",
-      "sizeBytes": 3314640,
-      "retainedTypeCount": 3218,
-      "retainedMethodCount": 7111
+      "sizeBytes": 3331568,
+      "retainedTypeCount": 3211,
+      "retainedMethodCount": 7160
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpVariableNamesShouldNotMatchFieldNamesAnalyzer",
-      "sizeBytes": 2593376,
+      "sizeBytes": 2593360,
       "retainedTypeCount": 2716,
-      "retainedMethodCount": 5238
+      "retainedMethodCount": 5236
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.QualityGuidelines.CSharpDoNotInitializeUnnecessarilyAnalyzer",
-      "sizeBytes": 3349712,
-      "retainedTypeCount": 3458,
-      "retainedMethodCount": 7189
+      "sizeBytes": 3358080,
+      "retainedTypeCount": 3453,
+      "retainedMethodCount": 7210
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.QualityGuidelines.CSharpUseLiteralsWhereAppropriate",
-      "sizeBytes": 3478416,
-      "retainedTypeCount": 3482,
-      "retainedMethodCount": 7615
+      "sizeBytes": 3537280,
+      "retainedTypeCount": 3619,
+      "retainedMethodCount": 7782
     },
     {
       "module": "Microsoft.NetCore.Analyzers.Performance.CSharpUseSpanClearInsteadOfFillAnalyzer",
-      "sizeBytes": 3556896,
-      "retainedTypeCount": 3937,
-      "retainedMethodCount": 7855
+      "sizeBytes": 3565360,
+      "retainedTypeCount": 3932,
+      "retainedMethodCount": 7884
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.InteropServices.CSharpMarkBooleanPInvokeArgumentsWithMarshalAsAnalyzer",
-      "sizeBytes": 2593376,
+      "sizeBytes": 2593360,
       "retainedTypeCount": 2716,
-      "retainedMethodCount": 5238
+      "retainedMethodCount": 5236
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.InteropServices.CSharpUseManagedEquivalentsOfWin32ApiAnalyzer",
-      "sizeBytes": 2593376,
+      "sizeBytes": 2593360,
       "retainedTypeCount": 2716,
-      "retainedMethodCount": 5238
+      "retainedMethodCount": 5236
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Performance.CSharpConstantExpectedAnalyzer",
-      "sizeBytes": 4276288,
-      "retainedTypeCount": 4231,
-      "retainedMethodCount": 9817
+      "sizeBytes": 4293344,
+      "retainedTypeCount": 4270,
+      "retainedMethodCount": 9864
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Performance.CSharpUseSearchValuesAnalyzer",
-      "sizeBytes": 4814704,
-      "retainedTypeCount": 5691,
-      "retainedMethodCount": 12192
+      "sizeBytes": 4827376,
+      "retainedTypeCount": 5725,
+      "retainedMethodCount": 12210
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Resources.CSharpMarkAssembliesWithNeutralResourcesLanguageAnalyzer",
-      "sizeBytes": 3617424,
-      "retainedTypeCount": 3810,
-      "retainedMethodCount": 7996
+      "sizeBytes": 3680464,
+      "retainedTypeCount": 3912,
+      "retainedMethodCount": 8171
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpAvoidZeroLengthArrayAllocationsAnalyzer",
-      "sizeBytes": 3619424,
-      "retainedTypeCount": 4031,
-      "retainedMethodCount": 7841
+      "sizeBytes": 3640320,
+      "retainedTypeCount": 4026,
+      "retainedMethodCount": 7886
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpDetectPreviewFeatureAnalyzer",
-      "sizeBytes": 4934832,
-      "retainedTypeCount": 5876,
-      "retainedMethodCount": 12577
+      "sizeBytes": 4946704,
+      "retainedTypeCount": 5885,
+      "retainedMethodCount": 12541
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpDoNotUseStackallocInLoopsAnalyzer",
-      "sizeBytes": 3366624,
-      "retainedTypeCount": 3202,
-      "retainedMethodCount": 7379
+      "sizeBytes": 3370848,
+      "retainedTypeCount": 3195,
+      "retainedMethodCount": 7385
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpDoNotUseTimersThatPreventPowerStateChangesAnalyzer",
-      "sizeBytes": 2593376,
+      "sizeBytes": 2593360,
       "retainedTypeCount": 2716,
-      "retainedMethodCount": 5238
+      "retainedMethodCount": 5236
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpForwardCancellationTokenToInvocationsAnalyzer",
-      "sizeBytes": 3728432,
-      "retainedTypeCount": 4145,
-      "retainedMethodCount": 8511
+      "sizeBytes": 3741056,
+      "retainedTypeCount": 4140,
+      "retainedMethodCount": 8544
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpPreferDictionaryContainsMethods",
-      "sizeBytes": 3603760,
-      "retainedTypeCount": 4146,
-      "retainedMethodCount": 7939
+      "sizeBytes": 3616336,
+      "retainedTypeCount": 4141,
+      "retainedMethodCount": 7970
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpPreventNumericIntPtrUIntPtrBehavioralChanges",
-      "sizeBytes": 3666560,
-      "retainedTypeCount": 3934,
-      "retainedMethodCount": 8490
+      "sizeBytes": 3683312,
+      "retainedTypeCount": 3973,
+      "retainedMethodCount": 8511
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpProvideDeserializationMethodsForOptionalFieldsAnalyzer",
-      "sizeBytes": 2593376,
+      "sizeBytes": 2593360,
       "retainedTypeCount": 2716,
-      "retainedMethodCount": 5238
+      "retainedMethodCount": 5236
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpSpecifyCultureForToLowerAndToUpperAnalyzer",
-      "sizeBytes": 3590832,
-      "retainedTypeCount": 3816,
-      "retainedMethodCount": 8269
+      "sizeBytes": 3624512,
+      "retainedTypeCount": 3841,
+      "retainedMethodCount": 8355
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpUseOrdinalStringComparisonAnalyzer",
-      "sizeBytes": 3752224,
-      "retainedTypeCount": 4283,
-      "retainedMethodCount": 8639
+      "sizeBytes": 3781648,
+      "retainedTypeCount": 4287,
+      "retainedMethodCount": 8718
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpUseSpanBasedStringConcat",
-      "sizeBytes": 3713488,
-      "retainedTypeCount": 3988,
-      "retainedMethodCount": 8382
+      "sizeBytes": 3722000,
+      "retainedTypeCount": 3983,
+      "retainedMethodCount": 8415
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Security.CSharpDataSetDataTableInIFormatterSerializableObjectGraphAnalyzer",
-      "sizeBytes": 3771712,
-      "retainedTypeCount": 4373,
-      "retainedMethodCount": 8425
+      "sizeBytes": 3788752,
+      "retainedTypeCount": 4394,
+      "retainedMethodCount": 8479
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Security.CSharpDataSetDataTableInSerializableObjectGraphAnalyzer",
-      "sizeBytes": 3781216,
-      "retainedTypeCount": 4398,
-      "retainedMethodCount": 8434
+      "sizeBytes": 3806480,
+      "retainedTypeCount": 4419,
+      "retainedMethodCount": 8492
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Security.CSharpDataSetDataTableInSerializableTypeAnalyzer",
-      "sizeBytes": 3648464,
-      "retainedTypeCount": 4178,
-      "retainedMethodCount": 7911
+      "sizeBytes": 3669648,
+      "retainedTypeCount": 4214,
+      "retainedMethodCount": 7952
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Security.CSharpDataSetDataTableInWebSerializableObjectGraphAnalyzer",
-      "sizeBytes": 3648672,
-      "retainedTypeCount": 4157,
-      "retainedMethodCount": 7920
+      "sizeBytes": 3648880,
+      "retainedTypeCount": 4096,
+      "retainedMethodCount": 7891
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Usage.CSharpImplementGenericMathInterfacesCorrectly",
-      "sizeBytes": 3714528,
-      "retainedTypeCount": 4031,
-      "retainedMethodCount": 8498
+      "sizeBytes": 3727280,
+      "retainedTypeCount": 4068,
+      "retainedMethodCount": 8513
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Usage.CSharpMissingShebangInFileBasedProgram",
-      "sizeBytes": 3486688,
-      "retainedTypeCount": 3680,
-      "retainedMethodCount": 7783
+      "sizeBytes": 3507776,
+      "retainedTypeCount": 3684,
+      "retainedMethodCount": 7839
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Usage.CSharpPreferGenericOverloadsAnalyzer",
-      "sizeBytes": 4134928,
-      "retainedTypeCount": 3845,
-      "retainedMethodCount": 9654
+      "sizeBytes": 4160144,
+      "retainedTypeCount": 3840,
+      "retainedMethodCount": 9719
     },
     {
       "module": "Microsoft.NetFramework.CSharp.Analyzers.CSharpAvoidDuplicateAcceleratorsAnalyzer",
-      "sizeBytes": 2593376,
+      "sizeBytes": 2593360,
       "retainedTypeCount": 2716,
-      "retainedMethodCount": 5238
+      "retainedMethodCount": 5236
     },
     {
       "module": "Microsoft.NetFramework.CSharp.Analyzers.CSharpCallBaseClassMethodsOnISerializableTypesAnalyzer",
-      "sizeBytes": 2593376,
+      "sizeBytes": 2593360,
       "retainedTypeCount": 2716,
-      "retainedMethodCount": 5238
+      "retainedMethodCount": 5236
     },
     {
       "module": "Microsoft.NetFramework.CSharp.Analyzers.CSharpDoNotMarkServicedComponentsWithWebMethodAnalyzer",
-      "sizeBytes": 2593376,
+      "sizeBytes": 2593360,
       "retainedTypeCount": 2716,
-      "retainedMethodCount": 5238
+      "retainedMethodCount": 5236
     },
     {
       "module": "Microsoft.NetFramework.CSharp.Analyzers.CSharpSetLocaleForDataTypesAnalyzer",
-      "sizeBytes": 2593376,
+      "sizeBytes": 2593360,
       "retainedTypeCount": 2716,
-      "retainedMethodCount": 5238
+      "retainedMethodCount": 5236
     }
   ]
 }

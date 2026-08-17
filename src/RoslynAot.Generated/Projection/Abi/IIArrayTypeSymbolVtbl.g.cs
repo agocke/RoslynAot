@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c21ab15c-c19b-5183-b279-878f487bbac4")]
+[Guid("47f23833-69a8-53cf-88df-5ef24134b36b")]
 public partial interface IIArrayTypeSymbolVtbl
 {
 
@@ -21,6 +21,12 @@ public partial interface IIArrayTypeSymbolVtbl
         long receiver,
         long other,
         out int result
+    );
+
+    [PreserveSig]
+    int IArrayTypeSymbol_get_CustomModifiers(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]

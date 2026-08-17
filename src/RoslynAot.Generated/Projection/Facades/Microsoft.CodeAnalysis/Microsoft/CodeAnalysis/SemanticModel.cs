@@ -296,7 +296,11 @@ namespace Microsoft.CodeAnalysis
 
             public override NullableContext GetNullableContext(int position)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.SemanticModel_GetNullableContext(__RoslynAotGetHandle(controlVtbl), position, out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return (NullableContext)result;
             }
 
             protected override IOperation? GetOperationCore(SyntaxNode node, System.Threading.CancellationToken cancellationToken)
@@ -387,7 +391,11 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.SemanticModel_get_IsSpeculativeSemanticModel(__RoslynAotGetHandle(controlVtbl), out int result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return result != 0;
                 }
             }
 
@@ -395,7 +403,10 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+                    long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                    return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SemanticModel_get_Language(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
                 }
             }
 
@@ -412,7 +423,11 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ISemanticModelVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.SemanticModel_get_OriginalPositionForSpeculation(__RoslynAotGetHandle(controlVtbl), out int result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return result;
                 }
             }
 

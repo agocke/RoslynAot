@@ -27,7 +27,7 @@ internal sealed partial class TextLineCollectionVtblDispatcher : ITextLineCollec
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1715);
+        RoslynCallCounters.Record(1831);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class TextLineCollectionVtblDispatcher : ITextLineCollec
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1716);
+        RoslynCallCounters.Record(1832);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class TextLineCollectionVtblDispatcher : ITextLineCollec
         long span,
         out long result)
     {
-        RoslynCallCounters.Record(1717);
+        RoslynCallCounters.Record(1833);
         result = default;
 
         try
@@ -84,7 +84,7 @@ internal sealed partial class TextLineCollectionVtblDispatcher : ITextLineCollec
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1718);
+        RoslynCallCounters.Record(1834);
         result = default;
 
         try
@@ -103,7 +103,7 @@ internal sealed partial class TextLineCollectionVtblDispatcher : ITextLineCollec
         long position,
         out int result)
     {
-        RoslynCallCounters.Record(1719);
+        RoslynCallCounters.Record(1835);
         result = default;
 
         try
@@ -122,12 +122,68 @@ internal sealed partial class TextLineCollectionVtblDispatcher : ITextLineCollec
         long span,
         out long result)
     {
-        RoslynCallCounters.Record(1720);
+        RoslynCallCounters.Record(1836);
         result = default;
 
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.TextLineCollection>(receiver).GetTextSpan(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.LinePositionSpan>(span)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int TextLineCollection_IndexOf(
+        long receiver,
+        int position,
+        out int result)
+    {
+        RoslynCallCounters.Record(1837);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.TextLineCollection>(receiver).IndexOf(position);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int TextLineCollection_get_Count(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(1838);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.TextLineCollection>(receiver).Count;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int TextLineCollection_get_this__(
+        long receiver,
+        int index,
+        out long result)
+    {
+        RoslynCallCounters.Record(1839);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.TextLineCollection>(receiver)[index]);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

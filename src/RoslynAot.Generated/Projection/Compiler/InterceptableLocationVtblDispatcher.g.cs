@@ -28,7 +28,7 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(2457);
+        RoslynCallCounters.Record(2581);
         result = default;
 
         try
@@ -48,7 +48,7 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2458);
+        RoslynCallCounters.Record(2582);
         requiredLength = default;
 
         try
@@ -72,7 +72,7 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2459);
+        RoslynCallCounters.Record(2583);
         result = default;
 
         try
@@ -92,7 +92,7 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2460);
+        RoslynCallCounters.Record(2584);
         requiredLength = default;
 
         try
@@ -116,7 +116,7 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2461);
+        RoslynCallCounters.Record(2585);
         result = default;
 
         try

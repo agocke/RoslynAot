@@ -23,11 +23,29 @@ internal sealed partial class EmitDifferenceResultVtblDispatcher : IEmitDifferen
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int EmitResult_get_Diagnostics(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(496);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Emit.EmitResult>(receiver).Diagnostics).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int EmitResult_get_Success(
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(433);
+        RoslynCallCounters.Record(497);
         result = default;
 
         try
@@ -45,7 +63,7 @@ internal sealed partial class EmitDifferenceResultVtblDispatcher : IEmitDifferen
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(407);
+        RoslynCallCounters.Record(470);
         result = default;
 
         try

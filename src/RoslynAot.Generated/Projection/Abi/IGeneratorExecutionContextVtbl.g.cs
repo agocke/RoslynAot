@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7a9ee43e-2d7b-59f0-8c69-503d1fef66e6")]
+[Guid("11e18867-9bee-5cfa-87f7-4704d3c0a499")]
 public partial interface IGeneratorExecutionContextVtbl
 {
 
@@ -34,6 +34,12 @@ public partial interface IGeneratorExecutionContextVtbl
     int GeneratorExecutionContext_ReportDiagnostic(
         long receiver,
         long diagnostic
+    );
+
+    [PreserveSig]
+    int GeneratorExecutionContext_get_AdditionalFiles(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]

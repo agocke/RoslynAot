@@ -22,4 +22,112 @@ internal sealed partial class ControlFlowAnalysisVtblDispatcher : IControlFlowAn
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
+
+    public int ControlFlowAnalysis_get_EndPointIsReachable(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(215);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ControlFlowAnalysis>(receiver).EndPointIsReachable ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowAnalysis_get_EntryPoints(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(216);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ControlFlowAnalysis>(receiver).EntryPoints).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowAnalysis_get_ExitPoints(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(217);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ControlFlowAnalysis>(receiver).ExitPoints).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowAnalysis_get_ReturnStatements(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(218);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ControlFlowAnalysis>(receiver).ReturnStatements).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowAnalysis_get_StartPointIsReachable(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(219);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ControlFlowAnalysis>(receiver).StartPointIsReachable ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowAnalysis_get_Succeeded(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(220);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ControlFlowAnalysis>(receiver).Succeeded ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

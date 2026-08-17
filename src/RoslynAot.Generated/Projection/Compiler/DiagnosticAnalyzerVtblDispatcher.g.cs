@@ -27,12 +27,29 @@ internal sealed partial class DiagnosticAnalyzerVtblDispatcher : IDiagnosticAnal
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(272);
+        RoslynCallCounters.Record(329);
         result = default;
 
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DiagnosticAnalyzer_Initialize(
+        long receiver,
+        long context)
+    {
+        RoslynCallCounters.Record(330);
+
+        try
+        {
+            _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer>(receiver).Initialize(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalysisContext>(context));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -47,7 +64,7 @@ internal sealed partial class DiagnosticAnalyzerVtblDispatcher : IDiagnosticAnal
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(273);
+        RoslynCallCounters.Record(331);
         requiredLength = default;
 
         try
@@ -59,6 +76,24 @@ internal sealed partial class DiagnosticAnalyzerVtblDispatcher : IDiagnosticAnal
             if (buffer == 0) return RoslynAbi.Success;
             if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
             __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DiagnosticAnalyzer_get_SupportedDiagnostics(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(332);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer>(receiver).SupportedDiagnostics).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

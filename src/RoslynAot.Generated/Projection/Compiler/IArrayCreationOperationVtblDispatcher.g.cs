@@ -27,7 +27,7 @@ internal sealed partial class IArrayCreationOperationVtblDispatcher : IIArrayCre
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(890);
+        RoslynCallCounters.Record(975);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IArrayCreationOperationVtblDispatcher : IIArrayCre
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(891);
+        RoslynCallCounters.Record(976);
         result = default;
 
         try

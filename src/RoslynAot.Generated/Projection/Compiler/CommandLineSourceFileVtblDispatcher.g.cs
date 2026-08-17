@@ -27,7 +27,7 @@ internal sealed partial class CommandLineSourceFileVtblDispatcher : ICommandLine
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(103);
+        RoslynCallCounters.Record(107);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class CommandLineSourceFileVtblDispatcher : ICommandLine
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(104);
+        RoslynCallCounters.Record(108);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class CommandLineSourceFileVtblDispatcher : ICommandLine
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(105);
+        RoslynCallCounters.Record(109);
         requiredLength = default;
 
         try

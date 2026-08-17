@@ -27,7 +27,7 @@ internal sealed partial class SyntaxNodeExtensionsVtblDispatcher : ISyntaxNodeEx
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(1487);
+        RoslynCallCounters.Record(1584);
         result = default;
 
         try

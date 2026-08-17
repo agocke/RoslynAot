@@ -22,4 +22,40 @@ internal sealed partial class SyntaxReferenceVtblDispatcher : ISyntaxReferenceVt
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
+
+    public int SyntaxReference_get_Span(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(1642);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxReference>(receiver).Span);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxReference_get_SyntaxTree(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(1643);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxReference>(receiver).SyntaxTree);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

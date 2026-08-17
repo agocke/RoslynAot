@@ -28,7 +28,7 @@ internal sealed partial class ChildSyntaxListReversedVtblDispatcher : IChildSynt
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(35);
+        RoslynCallCounters.Record(37);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class ChildSyntaxListReversedVtblDispatcher : IChildSynt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(36);
+        RoslynCallCounters.Record(38);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class ChildSyntaxListReversedVtblDispatcher : IChildSynt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(37);
+        RoslynCallCounters.Record(39);
         result = default;
 
         try

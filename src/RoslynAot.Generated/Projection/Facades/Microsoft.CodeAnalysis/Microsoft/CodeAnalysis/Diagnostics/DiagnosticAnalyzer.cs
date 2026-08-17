@@ -67,14 +67,21 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
             public override void Initialize(AnalysisContext context)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IDiagnosticAnalyzerVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.DiagnosticAnalyzer_Initialize(__RoslynAotGetHandle(controlVtbl), context.__RoslynAotGetHandle(controlVtbl));
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
 
             public override System.Collections.Immutable.ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IDiagnosticAnalyzerVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.DiagnosticAnalyzer_get_SupportedDiagnostics(__RoslynAotGetHandle(controlVtbl), out long result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<DiagnosticDescriptor>(controlVtbl, result, static (controlVtbl, handle) => DiagnosticDescriptor.__RoslynAotCreateProxy(controlVtbl, handle)));
                 }
             }
         }

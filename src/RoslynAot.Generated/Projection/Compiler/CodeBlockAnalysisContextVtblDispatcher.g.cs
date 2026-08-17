@@ -27,7 +27,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         long diagnostic)
     {
-        RoslynCallCounters.Record(253);
+        RoslynCallCounters.Record(309);
 
         try
         {
@@ -44,7 +44,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(254);
+        RoslynCallCounters.Record(310);
         result = default;
 
         try
@@ -62,7 +62,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(255);
+        RoslynCallCounters.Record(311);
         result = default;
 
         try
@@ -80,7 +80,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(256);
+        RoslynCallCounters.Record(312);
         result = default;
 
         try
@@ -98,7 +98,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(257);
+        RoslynCallCounters.Record(313);
         result = default;
 
         try
@@ -116,7 +116,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(258);
+        RoslynCallCounters.Record(314);
         result = default;
 
         try
@@ -134,7 +134,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(259);
+        RoslynCallCounters.Record(315);
         result = default;
 
         try
@@ -152,7 +152,7 @@ internal sealed partial class CodeBlockAnalysisContextVtblDispatcher : ICodeBloc
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(260);
+        RoslynCallCounters.Record(316);
         result = default;
 
         try

@@ -52,7 +52,10 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IAdditionalTextVtbl vtbl = __RoslynAotGetVtbl();
+                    long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                    return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.AdditionalText_get_Path(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
                 }
             }
         }

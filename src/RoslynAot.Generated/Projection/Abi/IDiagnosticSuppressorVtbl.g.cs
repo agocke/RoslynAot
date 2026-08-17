@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("109348ef-da87-5a68-a66d-6520e1e1752a")]
+[Guid("60a3ba3f-0cf8-59bc-81fd-1801ab8587a5")]
 public partial interface IDiagnosticSuppressorVtbl : IDiagnosticAnalyzerVtbl
 {
 
@@ -20,5 +20,23 @@ public partial interface IDiagnosticSuppressorVtbl : IDiagnosticAnalyzerVtbl
     int DiagnosticSuppressor_Initialize(
         long receiver,
         long context
+    );
+
+    [PreserveSig]
+    int DiagnosticSuppressor_ReportSuppressions(
+        long receiver,
+        long context
+    );
+
+    [PreserveSig]
+    int DiagnosticSuppressor_get_SupportedDiagnostics(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int DiagnosticSuppressor_get_SupportedSuppressions(
+        long receiver,
+        out long result
     );
 }

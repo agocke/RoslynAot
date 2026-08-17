@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("5634dc3e-9ef4-5258-a789-0082cb79dd7d")]
+[Guid("eb7afab6-226a-5071-85c3-856dfa076b90")]
 public partial interface ICompilationOptionsVtbl
 {
 
@@ -210,9 +210,23 @@ public partial interface ICompilationOptionsVtbl
     );
 
     [PreserveSig]
+    int CompilationOptions_get_Errors(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int CompilationOptions_get_GeneralDiagnosticOption(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int CompilationOptions_get_Language(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
     );
 
     [PreserveSig]
@@ -241,6 +255,12 @@ public partial interface ICompilationOptionsVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int CompilationOptions_get_NullableContextOptions(
+        long receiver,
+        out int result
     );
 
     [PreserveSig]

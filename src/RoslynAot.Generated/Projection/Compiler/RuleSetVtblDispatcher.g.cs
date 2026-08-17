@@ -28,7 +28,7 @@ internal sealed partial class RuleSetVtblDispatcher : IRuleSetVtbl
         int action,
         out long result)
     {
-        RoslynCallCounters.Record(1314);
+        RoslynCallCounters.Record(1404);
         result = default;
 
         try
@@ -48,7 +48,7 @@ internal sealed partial class RuleSetVtblDispatcher : IRuleSetVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1315);
+        RoslynCallCounters.Record(1405);
         requiredLength = default;
 
         try
@@ -72,12 +72,30 @@ internal sealed partial class RuleSetVtblDispatcher : IRuleSetVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1316);
+        RoslynCallCounters.Record(1406);
         result = default;
 
         try
         {
             result = (int)_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.RuleSet>(receiver).GeneralDiagnosticOption;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int RuleSet_get_Includes(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(1407);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.RuleSet>(receiver).Includes).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

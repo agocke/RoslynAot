@@ -48,12 +48,20 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public override System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> GetAnalyzers(string language)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IAnalyzerImageReferenceVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.AnalyzerImageReference_GetAnalyzers(__RoslynAotGetHandle(controlVtbl), language, out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<DiagnosticAnalyzer>(controlVtbl, result, static (controlVtbl, handle) => DiagnosticAnalyzer.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public override System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> GetAnalyzersForAllLanguages()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IAnalyzerImageReferenceVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.AnalyzerImageReference_GetAnalyzersForAllLanguages(__RoslynAotGetHandle(controlVtbl), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<DiagnosticAnalyzer>(controlVtbl, result, static (controlVtbl, handle) => DiagnosticAnalyzer.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         internal AnalyzerImageReference()

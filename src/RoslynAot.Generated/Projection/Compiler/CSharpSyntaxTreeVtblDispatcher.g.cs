@@ -23,13 +23,165 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int SyntaxTree_GetDiagnostics_8a5f35b5(
+        long receiver,
+        long node,
+        out long result)
+    {
+        RoslynCallCounters.Record(1708);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetDiagnostics(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(node))).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_GetDiagnostics_d1e047f8(
+        long receiver,
+        long nodeOrToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(1709);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetDiagnostics(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxNodeOrToken>(nodeOrToken))).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_GetDiagnostics_522133bc(
+        long receiver,
+        long token,
+        out long result)
+    {
+        RoslynCallCounters.Record(1710);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetDiagnostics(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxToken>(token))).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_GetDiagnostics_a937dd12(
+        long receiver,
+        long trivia,
+        out long result)
+    {
+        RoslynCallCounters.Record(1711);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetDiagnostics(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.SyntaxTrivia>(trivia))).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_GetLocation(
+        long receiver,
+        long span,
+        out long result)
+    {
+        RoslynCallCounters.Record(1712);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetLocation(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_GetReference(
+        long receiver,
+        long node,
+        out long result)
+    {
+        RoslynCallCounters.Record(1713);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetReference(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(node)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_HasHiddenRegions(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(1714);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).HasHiddenRegions() ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_IsEquivalentTo(
+        long receiver,
+        long tree,
+        int topLevel,
+        out int result)
+    {
+        RoslynCallCounters.Record(1715);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).IsEquivalentTo(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(tree), topLevel != 0) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int SyntaxTree_ToString(
         long receiver,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1609);
+        RoslynCallCounters.Record(1716);
         requiredLength = default;
 
         try
@@ -49,11 +201,131 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
+    public int SyntaxTree_WithChangedText(
+        long receiver,
+        long newText,
+        out long result)
+    {
+        RoslynCallCounters.Record(1717);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).WithChangedText(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(newText)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_WithFilePath(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        out long result)
+    {
+        RoslynCallCounters.Record(1718);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).WithFilePath(path));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_WithRootAndOptions(
+        long receiver,
+        long root,
+        long options,
+        out long result)
+    {
+        RoslynCallCounters.Record(1719);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).WithRootAndOptions(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(root), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(options)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public unsafe int SyntaxTree_get_FilePath(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        RoslynCallCounters.Record(1720);
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).FilePath;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_get_HasCompilationUnitRoot(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(1721);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).HasCompilationUnitRoot ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_get_Length(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(1722);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).Length;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxTree_get_Options(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1610);
+        RoslynCallCounters.Record(1723);
         result = default;
 
         try
@@ -72,7 +344,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2143);
+        RoslynCallCounters.Record(2266);
         result = default;
 
         try
@@ -91,7 +363,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long nodeOrToken,
         out long result)
     {
-        RoslynCallCounters.Record(2144);
+        RoslynCallCounters.Record(2267);
         result = default;
 
         try
@@ -110,7 +382,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(2145);
+        RoslynCallCounters.Record(2268);
         result = default;
 
         try
@@ -129,7 +401,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long trivia,
         out long result)
     {
-        RoslynCallCounters.Record(2146);
+        RoslynCallCounters.Record(2269);
         result = default;
 
         try
@@ -148,7 +420,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long span,
         out long result)
     {
-        RoslynCallCounters.Record(2147);
+        RoslynCallCounters.Record(2270);
         result = default;
 
         try
@@ -166,7 +438,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2148);
+        RoslynCallCounters.Record(2271);
         result = default;
 
         try
@@ -186,7 +458,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(2149);
+        RoslynCallCounters.Record(2272);
         result = default;
 
         try
@@ -205,12 +477,30 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long newText,
         out long result)
     {
-        RoslynCallCounters.Record(2150);
+        RoslynCallCounters.Record(2273);
         result = default;
 
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).WithChangedText(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(newText)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpSyntaxTree_get_Options(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(2274);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).Options);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

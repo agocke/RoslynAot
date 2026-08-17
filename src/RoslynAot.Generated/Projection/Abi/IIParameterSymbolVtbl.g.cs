@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("99d4ab41-794b-5738-8f52-6a78f3e2be91")]
+[Guid("2359b6be-d377-5d95-a6ea-70f4e3c51b81")]
 public partial interface IIParameterSymbolVtbl
 {
+
+    [PreserveSig]
+    int IParameterSymbol_get_CustomModifiers(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int IParameterSymbol_get_HasExplicitDefaultValue(
@@ -72,6 +78,12 @@ public partial interface IIParameterSymbolVtbl
 
     [PreserveSig]
     int IParameterSymbol_get_OriginalDefinition(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int IParameterSymbol_get_RefCustomModifiers(
         long receiver,
         out long result
     );

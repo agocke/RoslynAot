@@ -12,9 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("89e46a35-82f3-5c5e-95b2-0cf163f23d5f")]
+[Guid("20baf9e9-81a5-5364-ba70-ff9e9ef20dca")]
 public partial interface IGeneratorRunResultVtbl
 {
+
+    [PreserveSig]
+    int GeneratorRunResult_get_Diagnostics(
+        long receiver,
+        out long result
+    );
 
     [PreserveSig]
     int GeneratorRunResult_get_Generator(

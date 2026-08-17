@@ -28,7 +28,7 @@ internal sealed partial class SuppressionAnalysisContextVtblDispatcher : ISuppre
         long syntaxTree,
         out long result)
     {
-        RoslynCallCounters.Record(312);
+        RoslynCallCounters.Record(371);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SuppressionAnalysisContextVtblDispatcher : ISuppre
         long receiver,
         long suppression)
     {
-        RoslynCallCounters.Record(313);
+        RoslynCallCounters.Record(372);
 
         try
         {
@@ -63,7 +63,7 @@ internal sealed partial class SuppressionAnalysisContextVtblDispatcher : ISuppre
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(314);
+        RoslynCallCounters.Record(373);
         result = default;
 
         try
@@ -81,12 +81,30 @@ internal sealed partial class SuppressionAnalysisContextVtblDispatcher : ISuppre
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(315);
+        RoslynCallCounters.Record(374);
         result = default;
 
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SuppressionAnalysisContext>(receiver).Options);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SuppressionAnalysisContext_get_ReportedDiagnostics(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(375);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.SuppressionAnalysisContext>(receiver).ReportedDiagnostics).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

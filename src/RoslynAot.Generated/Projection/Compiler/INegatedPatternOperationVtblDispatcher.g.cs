@@ -27,7 +27,7 @@ internal sealed partial class INegatedPatternOperationVtblDispatcher : IINegated
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1053);
+        RoslynCallCounters.Record(1138);
         result = default;
 
         try

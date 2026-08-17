@@ -22,4 +22,292 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
+
+    public int DataFlowAnalysis_get_AlwaysAssigned(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(223);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).AlwaysAssigned).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_CapturedInside(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(224);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).CapturedInside).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_CapturedOutside(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(225);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).CapturedOutside).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_Captured(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(226);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).Captured).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_DataFlowsIn(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(227);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).DataFlowsIn).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_DataFlowsOut(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(228);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).DataFlowsOut).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_DefinitelyAssignedOnEntry(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(229);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).DefinitelyAssignedOnEntry).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_DefinitelyAssignedOnExit(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(230);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).DefinitelyAssignedOnExit).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_ReadInside(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(231);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).ReadInside).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_ReadOutside(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(232);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).ReadOutside).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_Succeeded(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(233);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).Succeeded ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_UnsafeAddressTaken(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(234);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).UnsafeAddressTaken).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_UsedLocalFunctions(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(235);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).UsedLocalFunctions).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_VariablesDeclared(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(236);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).VariablesDeclared).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_WrittenInside(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(237);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).WrittenInside).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int DataFlowAnalysis_get_WrittenOutside(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(238);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DataFlowAnalysis>(receiver).WrittenOutside).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

@@ -17,6 +17,8 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
+                if (__RoslynAotIsLocal)
+                    return __RoslynAotLocalDescriptor.__RoslynAotLocalDefaultSeverity;
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
                 int status = vtbl.Diagnostic_get_DefaultSeverity(__RoslynAotGetHandle(controlVtbl), out int result);
@@ -47,6 +49,8 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
+                if (__RoslynAotIsLocal)
+                    return __RoslynAotLocalProperties;
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
             }
         }
@@ -151,16 +155,30 @@ namespace Microsoft.CodeAnalysis
 
             public override bool Equals(Diagnostic? obj)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                if (__RoslynAotIsLocal || obj is not null && obj.__RoslynAotIsLocal)
+                    return ReferenceEquals(this, obj);
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Diagnostic_Equals_9b1492a8(__RoslynAotGetHandle(controlVtbl), obj is null ? 0L : obj.__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result != 0;
             }
 
             public override int GetHashCode()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                if (__RoslynAotIsLocal)
+                    return System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(this);
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Diagnostic_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result;
             }
 
             public override string GetMessage(System.IFormatProvider? formatProvider = null)
             {
+                if (__RoslynAotIsLocal)
+                    return __RoslynAotGetLocalMessage(formatProvider);
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
             }
 
@@ -168,6 +186,8 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
+                    if (__RoslynAotIsLocal)
+                        return __RoslynAotLocalAdditionalLocations;
                     throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
                 }
             }
@@ -176,7 +196,13 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    if (__RoslynAotIsLocal)
+                        return __RoslynAotLocalDescriptor;
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.Diagnostic_get_Descriptor(__RoslynAotGetHandle(controlVtbl), out long result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return DiagnosticDescriptor.__RoslynAotCreateProxy(controlVtbl, result);
                 }
             }
 
@@ -184,7 +210,12 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    if (__RoslynAotIsLocal)
+                        return __RoslynAotLocalDescriptor.__RoslynAotLocalId;
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
+                    long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                    return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.Diagnostic_get_Id(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
                 }
             }
 
@@ -192,7 +223,13 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    if (__RoslynAotIsLocal)
+                        return false;
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.Diagnostic_get_IsSuppressed(__RoslynAotGetHandle(controlVtbl), out int result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return result != 0;
                 }
             }
 
@@ -200,7 +237,13 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    if (__RoslynAotIsLocal)
+                        return __RoslynAotLocalLocation;
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.Diagnostic_get_Location(__RoslynAotGetHandle(controlVtbl), out long result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return Location.__RoslynAotCreateProxy(controlVtbl, result);
                 }
             }
 
@@ -208,7 +251,13 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    if (__RoslynAotIsLocal)
+                        return __RoslynAotLocalDescriptor.__RoslynAotLocalDefaultSeverity;
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.Diagnostic_get_Severity(__RoslynAotGetHandle(controlVtbl), out int result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return (DiagnosticSeverity)result;
                 }
             }
 
@@ -216,7 +265,13 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    if (__RoslynAotIsLocal)
+                        return __RoslynAotLocalDescriptor.__RoslynAotLocalDefaultSeverity == DiagnosticSeverity.Error ? 0 : 1;
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.Diagnostic_get_WarningLevel(__RoslynAotGetHandle(controlVtbl), out int result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return result;
                 }
             }
         }

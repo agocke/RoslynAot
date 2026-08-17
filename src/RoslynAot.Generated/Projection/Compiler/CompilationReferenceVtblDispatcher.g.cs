@@ -28,7 +28,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(840);
+        RoslynCallCounters.Record(923);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         long properties,
         out long result)
     {
-        RoslynCallCounters.Record(841);
+        RoslynCallCounters.Record(924);
         result = default;
 
         try
@@ -67,7 +67,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(842);
+        RoslynCallCounters.Record(925);
         requiredLength = default;
 
         try
@@ -91,7 +91,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(843);
+        RoslynCallCounters.Record(926);
         result = default;
 
         try
@@ -110,7 +110,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(199);
+        RoslynCallCounters.Record(209);
         result = default;
 
         try
@@ -128,7 +128,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(200);
+        RoslynCallCounters.Record(210);
         result = default;
 
         try
@@ -147,7 +147,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(201);
+        RoslynCallCounters.Record(211);
         result = default;
 
         try
@@ -166,7 +166,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         long properties,
         out long result)
     {
-        RoslynCallCounters.Record(202);
+        RoslynCallCounters.Record(212);
         result = default;
 
         try
@@ -184,7 +184,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(203);
+        RoslynCallCounters.Record(213);
         result = default;
 
         try
@@ -204,7 +204,7 @@ internal sealed partial class CompilationReferenceVtblDispatcher : ICompilationR
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(204);
+        RoslynCallCounters.Record(214);
         requiredLength = default;
 
         try

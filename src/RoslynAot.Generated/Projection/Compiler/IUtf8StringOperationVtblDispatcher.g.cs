@@ -29,7 +29,7 @@ internal sealed partial class IUtf8StringOperationVtblDispatcher : IIUtf8StringO
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1143);
+        RoslynCallCounters.Record(1228);
         requiredLength = default;
 
         try

@@ -27,7 +27,7 @@ internal sealed partial class ControlFlowBranchVtblDispatcher : IControlFlowBran
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(470);
+        RoslynCallCounters.Record(534);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ControlFlowBranchVtblDispatcher : IControlFlowBran
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(471);
+        RoslynCallCounters.Record(535);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class ControlFlowBranchVtblDispatcher : IControlFlowBran
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(472);
+        RoslynCallCounters.Record(536);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class ControlFlowBranchVtblDispatcher : IControlFlowBran
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(473);
+        RoslynCallCounters.Record(537);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class ControlFlowBranchVtblDispatcher : IControlFlowBran
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(474);
+        RoslynCallCounters.Record(538);
         result = default;
 
         try
@@ -117,7 +117,7 @@ internal sealed partial class ControlFlowBranchVtblDispatcher : IControlFlowBran
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(475);
+        RoslynCallCounters.Record(539);
         result = default;
 
         try
@@ -135,7 +135,7 @@ internal sealed partial class ControlFlowBranchVtblDispatcher : IControlFlowBran
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(476);
+        RoslynCallCounters.Record(540);
         result = default;
 
         try

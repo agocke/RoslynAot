@@ -28,7 +28,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1442);
+        RoslynCallCounters.Record(1539);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1443);
+        RoslynCallCounters.Record(1540);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1444);
+        RoslynCallCounters.Record(1541);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1445);
+        RoslynCallCounters.Record(1542);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1446);
+        RoslynCallCounters.Record(1543);
         result = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int rawKind,
         out int result)
     {
-        RoslynCallCounters.Record(1447);
+        RoslynCallCounters.Record(1544);
         result = default;
 
         try
@@ -140,7 +140,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long node,
         out int result)
     {
-        RoslynCallCounters.Record(1448);
+        RoslynCallCounters.Record(1545);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int getInnermostNodeForTie,
         out long result)
     {
-        RoslynCallCounters.Record(1449);
+        RoslynCallCounters.Record(1546);
         result = default;
 
         try
@@ -181,7 +181,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1450);
+        RoslynCallCounters.Record(1547);
         result = default;
 
         try
@@ -201,7 +201,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1451);
+        RoslynCallCounters.Record(1548);
         result = default;
 
         try
@@ -220,7 +220,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long syntaxAnnotation,
         out long result)
     {
-        RoslynCallCounters.Record(1452);
+        RoslynCallCounters.Record(1549);
         result = default;
 
         try
@@ -239,7 +239,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1453);
+        RoslynCallCounters.Record(1550);
         result = default;
 
         try
@@ -258,7 +258,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1454);
+        RoslynCallCounters.Record(1551);
         result = default;
 
         try
@@ -276,7 +276,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1455);
+        RoslynCallCounters.Record(1552);
         result = default;
 
         try
@@ -298,7 +298,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1456);
+        RoslynCallCounters.Record(1553);
         result = default;
 
         try
@@ -320,7 +320,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1457);
+        RoslynCallCounters.Record(1554);
         result = default;
 
         try
@@ -338,7 +338,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1458);
+        RoslynCallCounters.Record(1555);
         result = default;
 
         try
@@ -356,7 +356,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1459);
+        RoslynCallCounters.Record(1556);
         result = default;
 
         try
@@ -374,7 +374,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1460);
+        RoslynCallCounters.Record(1557);
         result = default;
 
         try
@@ -392,7 +392,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1461);
+        RoslynCallCounters.Record(1558);
         result = default;
 
         try
@@ -411,7 +411,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1462);
+        RoslynCallCounters.Record(1559);
         result = default;
 
         try
@@ -430,7 +430,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1463);
+        RoslynCallCounters.Record(1560);
         result = default;
 
         try
@@ -449,7 +449,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1464);
+        RoslynCallCounters.Record(1561);
         result = default;
 
         try
@@ -469,7 +469,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(1465);
+        RoslynCallCounters.Record(1562);
         result = default;
 
         try
@@ -488,7 +488,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1466);
+        RoslynCallCounters.Record(1563);
         result = default;
 
         try
@@ -506,7 +506,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1467);
+        RoslynCallCounters.Record(1564);
         result = default;
 
         try
@@ -526,7 +526,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1468);
+        RoslynCallCounters.Record(1565);
         requiredLength = default;
 
         try
@@ -552,7 +552,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1469);
+        RoslynCallCounters.Record(1566);
         requiredLength = default;
 
         try
@@ -576,7 +576,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1470);
+        RoslynCallCounters.Record(1567);
         result = default;
 
         try
@@ -594,7 +594,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1471);
+        RoslynCallCounters.Record(1568);
         result = default;
 
         try
@@ -612,7 +612,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1472);
+        RoslynCallCounters.Record(1569);
         result = default;
 
         try
@@ -630,7 +630,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1473);
+        RoslynCallCounters.Record(1570);
         result = default;
 
         try
@@ -648,7 +648,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1474);
+        RoslynCallCounters.Record(1571);
         result = default;
 
         try
@@ -666,7 +666,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1475);
+        RoslynCallCounters.Record(1572);
         result = default;
 
         try
@@ -684,7 +684,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1476);
+        RoslynCallCounters.Record(1573);
         result = default;
 
         try
@@ -702,7 +702,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1477);
+        RoslynCallCounters.Record(1574);
         result = default;
 
         try
@@ -720,7 +720,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1478);
+        RoslynCallCounters.Record(1575);
         result = default;
 
         try
@@ -738,7 +738,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1479);
+        RoslynCallCounters.Record(1576);
         result = default;
 
         try
@@ -758,7 +758,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1480);
+        RoslynCallCounters.Record(1577);
         requiredLength = default;
 
         try
@@ -782,7 +782,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1481);
+        RoslynCallCounters.Record(1578);
         result = default;
 
         try
@@ -800,7 +800,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1482);
+        RoslynCallCounters.Record(1579);
         result = default;
 
         try
@@ -818,7 +818,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1483);
+        RoslynCallCounters.Record(1580);
         result = default;
 
         try
@@ -836,7 +836,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1484);
+        RoslynCallCounters.Record(1581);
         result = default;
 
         try
@@ -854,7 +854,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1485);
+        RoslynCallCounters.Record(1582);
         result = default;
 
         try
@@ -872,7 +872,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1486);
+        RoslynCallCounters.Record(1583);
         result = default;
 
         try
@@ -890,7 +890,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(1877);
+        RoslynCallCounters.Record(2000);
 
         try
         {
@@ -909,7 +909,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1878);
+        RoslynCallCounters.Record(2001);
         result = default;
 
         try
@@ -929,7 +929,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1879);
+        RoslynCallCounters.Record(2002);
         result = default;
 
         try
@@ -947,7 +947,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1880);
+        RoslynCallCounters.Record(2003);
         result = default;
 
         try
@@ -969,7 +969,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1881);
+        RoslynCallCounters.Record(2004);
         result = default;
 
         try
@@ -991,7 +991,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1882);
+        RoslynCallCounters.Record(2005);
         result = default;
 
         try
@@ -1009,7 +1009,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1883);
+        RoslynCallCounters.Record(2006);
         result = default;
 
         try
@@ -1027,7 +1027,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1884);
+        RoslynCallCounters.Record(2007);
         result = default;
 
         try
@@ -1045,7 +1045,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1885);
+        RoslynCallCounters.Record(2008);
         result = default;
 
         try
@@ -1063,7 +1063,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out ushort result)
     {
-        RoslynCallCounters.Record(1886);
+        RoslynCallCounters.Record(2009);
         result = default;
 
         try
@@ -1083,7 +1083,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1887);
+        RoslynCallCounters.Record(2010);
         requiredLength = default;
 
         try
@@ -1107,7 +1107,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(3779);
+        RoslynCallCounters.Record(3903);
 
         try
         {
@@ -1134,7 +1134,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long @into,
         out long result)
     {
-        RoslynCallCounters.Record(3780);
+        RoslynCallCounters.Record(3904);
         result = default;
 
         try
@@ -1153,7 +1153,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long equalsKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(3781);
+        RoslynCallCounters.Record(3905);
         result = default;
 
         try
@@ -1172,7 +1172,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(3782);
+        RoslynCallCounters.Record(3906);
         result = default;
 
         try
@@ -1191,7 +1191,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long inExpression,
         out long result)
     {
-        RoslynCallCounters.Record(3783);
+        RoslynCallCounters.Record(3907);
         result = default;
 
         try
@@ -1210,7 +1210,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long inKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(3784);
+        RoslynCallCounters.Record(3908);
         result = default;
 
         try
@@ -1229,7 +1229,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long @into,
         out long result)
     {
-        RoslynCallCounters.Record(3785);
+        RoslynCallCounters.Record(3909);
         result = default;
 
         try
@@ -1248,7 +1248,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long joinKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(3786);
+        RoslynCallCounters.Record(3910);
         result = default;
 
         try
@@ -1267,7 +1267,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long leftExpression,
         out long result)
     {
-        RoslynCallCounters.Record(3787);
+        RoslynCallCounters.Record(3911);
         result = default;
 
         try
@@ -1286,7 +1286,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long onKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(3788);
+        RoslynCallCounters.Record(3912);
         result = default;
 
         try
@@ -1305,7 +1305,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long rightExpression,
         out long result)
     {
-        RoslynCallCounters.Record(3789);
+        RoslynCallCounters.Record(3913);
         result = default;
 
         try
@@ -1324,7 +1324,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(3790);
+        RoslynCallCounters.Record(3914);
         result = default;
 
         try
@@ -1342,7 +1342,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3791);
+        RoslynCallCounters.Record(3915);
         result = default;
 
         try
@@ -1360,7 +1360,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3792);
+        RoslynCallCounters.Record(3916);
         result = default;
 
         try
@@ -1378,7 +1378,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3793);
+        RoslynCallCounters.Record(3917);
         result = default;
 
         try
@@ -1396,7 +1396,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3794);
+        RoslynCallCounters.Record(3918);
         result = default;
 
         try
@@ -1414,7 +1414,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3795);
+        RoslynCallCounters.Record(3919);
         result = default;
 
         try
@@ -1432,7 +1432,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3796);
+        RoslynCallCounters.Record(3920);
         result = default;
 
         try
@@ -1450,7 +1450,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3797);
+        RoslynCallCounters.Record(3921);
         result = default;
 
         try
@@ -1468,7 +1468,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3798);
+        RoslynCallCounters.Record(3922);
         result = default;
 
         try
@@ -1486,7 +1486,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3799);
+        RoslynCallCounters.Record(3923);
         result = default;
 
         try
@@ -1504,7 +1504,7 @@ internal sealed partial class JoinClauseSyntaxVtblDispatcher : IJoinClauseSyntax
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3800);
+        RoslynCallCounters.Record(3924);
         result = default;
 
         try

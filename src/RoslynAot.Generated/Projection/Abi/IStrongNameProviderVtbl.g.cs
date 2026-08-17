@@ -12,7 +12,13 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("5125defc-e1c4-57f3-a504-71eae57f5ca7")]
+[Guid("1f795cff-5b43-5c12-ae62-251c36806763")]
 public partial interface IStrongNameProviderVtbl
 {
+
+    [PreserveSig]
+    int StrongNameProvider_GetHashCode(
+        long receiver,
+        out int result
+    );
 }

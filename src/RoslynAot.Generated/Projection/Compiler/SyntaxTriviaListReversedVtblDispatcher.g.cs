@@ -28,7 +28,7 @@ internal sealed partial class SyntaxTriviaListReversedVtblDispatcher : ISyntaxTr
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1638);
+        RoslynCallCounters.Record(1751);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SyntaxTriviaListReversedVtblDispatcher : ISyntaxTr
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1639);
+        RoslynCallCounters.Record(1752);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class SyntaxTriviaListReversedVtblDispatcher : ISyntaxTr
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1640);
+        RoslynCallCounters.Record(1753);
         result = default;
 
         try

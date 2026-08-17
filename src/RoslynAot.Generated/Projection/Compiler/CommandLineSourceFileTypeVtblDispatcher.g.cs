@@ -28,7 +28,7 @@ internal sealed partial class CommandLineSourceFileTypeVtblDispatcher : ICommand
         int isScript,
         out long result)
     {
-        RoslynCallCounters.Record(101);
+        RoslynCallCounters.Record(105);
         result = default;
 
         try
@@ -48,7 +48,7 @@ internal sealed partial class CommandLineSourceFileTypeVtblDispatcher : ICommand
         int isInputRedirected,
         out long result)
     {
-        RoslynCallCounters.Record(102);
+        RoslynCallCounters.Record(106);
         result = default;
 
         try

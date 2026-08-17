@@ -23,30 +23,11 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int OperationBlockAnalysisContext_GetControlFlowGraph(
-        long receiver,
-        long operationBlock,
-        out long result)
-    {
-        RoslynCallCounters.Record(284);
-        result = default;
-
-        try
-        {
-            result = _owner.Objects.AddObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext>(receiver).GetControlFlowGraph(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IOperation>(operationBlock)));
-            return RoslynAbi.Success;
-        }
-        catch (global::System.Exception exception)
-        {
-            return _owner.SetError(exception);
-        }
-    }
-
     public int OperationBlockAnalysisContext_ReportDiagnostic(
         long receiver,
         long diagnostic)
     {
-        RoslynCallCounters.Record(285);
+        RoslynCallCounters.Record(345);
 
         try
         {
@@ -63,7 +44,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(286);
+        RoslynCallCounters.Record(346);
         result = default;
 
         try
@@ -81,7 +62,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(287);
+        RoslynCallCounters.Record(347);
         result = default;
 
         try
@@ -99,7 +80,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(288);
+        RoslynCallCounters.Record(348);
         result = default;
 
         try
@@ -117,7 +98,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(289);
+        RoslynCallCounters.Record(349);
         result = default;
 
         try
@@ -135,7 +116,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(290);
+        RoslynCallCounters.Record(350);
         result = default;
 
         try
@@ -153,7 +134,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(291);
+        RoslynCallCounters.Record(351);
         result = default;
 
         try
@@ -171,7 +152,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(292);
+        RoslynCallCounters.Record(352);
         result = default;
 
         try

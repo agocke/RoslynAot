@@ -12,9 +12,65 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c5983f5f-fddb-5051-91cb-3885076002f7")]
+[Guid("926dc4f2-b474-5373-b09b-0ea10b264c45")]
 public partial interface ISyntaxTreeVtbl
 {
+
+    [PreserveSig]
+    int SyntaxTree_GetDiagnostics_8a5f35b5(
+        long receiver,
+        long node,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_GetDiagnostics_d1e047f8(
+        long receiver,
+        long nodeOrToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_GetDiagnostics_522133bc(
+        long receiver,
+        long token,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_GetDiagnostics_a937dd12(
+        long receiver,
+        long trivia,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_GetLocation(
+        long receiver,
+        long span,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_GetReference(
+        long receiver,
+        long node,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_HasHiddenRegions(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_IsEquivalentTo(
+        long receiver,
+        long tree,
+        int topLevel,
+        out int result
+    );
 
     [PreserveSig]
     int SyntaxTree_ToString(
@@ -22,6 +78,48 @@ public partial interface ISyntaxTreeVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int SyntaxTree_WithChangedText(
+        long receiver,
+        long newText,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_WithFilePath(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_WithRootAndOptions(
+        long receiver,
+        long root,
+        long options,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_get_FilePath(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int SyntaxTree_get_HasCompilationUnitRoot(
+        long receiver,
+        out int result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_get_Length(
+        long receiver,
+        out int result
     );
 
     [PreserveSig]

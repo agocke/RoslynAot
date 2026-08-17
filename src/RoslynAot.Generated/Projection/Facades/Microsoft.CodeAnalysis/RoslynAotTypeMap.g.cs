@@ -31,6 +31,9 @@
     typeof(global::Microsoft.CodeAnalysis.DesktopAssemblyIdentityComparer),
     typeof(global::Microsoft.CodeAnalysis.DesktopAssemblyIdentityComparer.__RoslynAotImplementation))]
 [assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
+    typeof(global::Microsoft.CodeAnalysis.Diagnostics.AnalysisResult),
+    typeof(global::Microsoft.CodeAnalysis.Diagnostics.AnalysisResult.__RoslynAotImplementation))]
+[assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
     typeof(global::Microsoft.CodeAnalysis.Diagnostics.SuppressionInfo),
     typeof(global::Microsoft.CodeAnalysis.Diagnostics.SuppressionInfo.__RoslynAotImplementation))]
 [assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(

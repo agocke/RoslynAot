@@ -27,7 +27,7 @@ internal sealed partial class CompilationWithAnalyzersOptionsVtblDispatcher : IC
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(268);
+        RoslynCallCounters.Record(325);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class CompilationWithAnalyzersOptionsVtblDispatcher : IC
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(269);
+        RoslynCallCounters.Record(326);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class CompilationWithAnalyzersOptionsVtblDispatcher : IC
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(270);
+        RoslynCallCounters.Record(327);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class CompilationWithAnalyzersOptionsVtblDispatcher : IC
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(271);
+        RoslynCallCounters.Record(328);
         result = default;
 
         try

@@ -22,4 +22,22 @@ internal sealed partial class SourceTextContainerVtblDispatcher : ISourceTextCon
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
+
+    public int SourceTextContainer_get_CurrentText(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(1805);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceTextContainer>(receiver).CurrentText);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

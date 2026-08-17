@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3613c2d5-53f4-505d-baef-02ef5be397cb")]
+[Guid("ac7d3604-6c6b-541e-8189-c9d57fca53a6")]
 public partial interface ICompilationVtbl
 {
 
@@ -176,6 +176,13 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
+    int Compilation_GetUnreferencedAssemblyIdentities(
+        long receiver,
+        long diagnostic,
+        out long result
+    );
+
+    [PreserveSig]
     int Compilation_HasImplicitConversion(
         long receiver,
         long fromType,
@@ -284,7 +291,19 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
+    int Compilation_get_DirectiveReferences(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int Compilation_get_DynamicType(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int Compilation_get_ExternalReferences(
         long receiver,
         out long result
     );

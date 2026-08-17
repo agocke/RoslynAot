@@ -23,12 +23,49 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int Diagnostic_Equals_9b1492a8(
+        long receiver,
+        long obj,
+        out int result)
+    {
+        RoslynCallCounters.Record(241);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostic>(receiver).Equals(obj == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostic>(obj)) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Diagnostic_GetHashCode(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(242);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostic>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int Diagnostic_GetSuppressionInfo(
         long receiver,
         long compilation,
         out long result)
     {
-        RoslynCallCounters.Record(207);
+        RoslynCallCounters.Record(243);
         result = default;
 
         try
@@ -48,7 +85,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(208);
+        RoslynCallCounters.Record(244);
         requiredLength = default;
 
         try
@@ -72,7 +109,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(209);
+        RoslynCallCounters.Record(245);
         result = default;
 
         try
@@ -86,16 +123,132 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         }
     }
 
+    public int Diagnostic_get_Descriptor(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(246);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostic>(receiver).Descriptor);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public unsafe int Diagnostic_get_Id(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        RoslynCallCounters.Record(247);
+        requiredLength = default;
+
+        try
+        {
+            if (bufferLength < 0) throw new global::System.ArgumentOutOfRangeException(nameof(bufferLength));
+            string? __roslynAotValue = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostic>(receiver).Id;
+            if (__roslynAotValue is null) { requiredLength = -1; return RoslynAbi.Success; }
+            requiredLength = __roslynAotValue.Length;
+            if (buffer == 0) return RoslynAbi.Success;
+            if (bufferLength < requiredLength) throw new global::System.ArgumentException("The UTF-16 result buffer is too small.", nameof(bufferLength));
+            __roslynAotValue.AsSpan().CopyTo(new global::System.Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Diagnostic_get_IsSuppressed(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(248);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostic>(receiver).IsSuppressed ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int Diagnostic_get_IsWarningAsError(
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(210);
+        RoslynCallCounters.Record(249);
         result = default;
 
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostic>(receiver).IsWarningAsError ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Diagnostic_get_Location(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(250);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostic>(receiver).Location);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Diagnostic_get_Severity(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(251);
+        result = default;
+
+        try
+        {
+            result = (int)_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostic>(receiver).Severity;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Diagnostic_get_WarningLevel(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(252);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostic>(receiver).WarningLevel;
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

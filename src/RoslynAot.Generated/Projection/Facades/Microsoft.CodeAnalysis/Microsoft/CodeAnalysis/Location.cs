@@ -64,11 +64,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
-                global::RoslynAot.Abi.ILocationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetLocationTypeVtbl(controlVtbl);
-                int status = vtbl.Location_get_None(out long result);
-                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-                return __RoslynAotCreateProxy(controlVtbl, result);
+                return __RoslynAotCreateNone();
             }
         }
 
@@ -76,6 +72,8 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
+                if (__RoslynAotIsLocal)
+                    return __RoslynAotLocalSourceSpan;
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
                 int status = vtbl.Location_get_SourceSpan(__RoslynAotGetHandle(controlVtbl), out long result);
@@ -88,6 +86,8 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
+                if (__RoslynAotIsLocal)
+                    return __RoslynAotLocalSourceTree;
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
                 int status = vtbl.Location_get_SourceTree(__RoslynAotGetHandle(controlVtbl), out long result);
@@ -190,19 +190,33 @@ namespace Microsoft.CodeAnalysis
 
             public override bool Equals(object? obj)
             {
+                if (__RoslynAotIsLocal)
+                    return ReferenceEquals(this, obj);
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
             }
 
             public override int GetHashCode()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                if (__RoslynAotIsLocal)
+                    return System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(this);
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.Location_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return result;
             }
 
             public override LocationKind Kind
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    if (__RoslynAotIsLocal)
+                        return __RoslynAotLocalKind;
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.Location_get_Kind(__RoslynAotGetHandle(controlVtbl), out byte result);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return (LocationKind)result;
                 }
             }
         }

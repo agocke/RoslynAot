@@ -27,7 +27,7 @@ internal sealed partial class IDiscardOperationVtblDispatcher : IIDiscardOperati
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(953);
+        RoslynCallCounters.Record(1038);
         result = default;
 
         try

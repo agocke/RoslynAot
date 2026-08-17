@@ -27,7 +27,7 @@ internal sealed partial class IParenthesizedOperationVtblDispatcher : IIParenthe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1060);
+        RoslynCallCounters.Record(1145);
         result = default;
 
         try

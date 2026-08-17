@@ -27,7 +27,7 @@ internal sealed partial class MetadataVtblDispatcher : IMetadataVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(835);
+        RoslynCallCounters.Record(918);
         result = default;
 
         try
@@ -44,7 +44,7 @@ internal sealed partial class MetadataVtblDispatcher : IMetadataVtbl
     public int Metadata_Dispose(
         long receiver)
     {
-        RoslynCallCounters.Record(836);
+        RoslynCallCounters.Record(919);
 
         try
         {
@@ -61,7 +61,7 @@ internal sealed partial class MetadataVtblDispatcher : IMetadataVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(837);
+        RoslynCallCounters.Record(920);
         result = default;
 
         try
@@ -79,7 +79,7 @@ internal sealed partial class MetadataVtblDispatcher : IMetadataVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(838);
+        RoslynCallCounters.Record(921);
         result = default;
 
         try

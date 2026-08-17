@@ -27,7 +27,7 @@ internal sealed partial class IDiscardSymbolVtblDispatcher : IIDiscardSymbolVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(548);
+        RoslynCallCounters.Record(617);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IDiscardSymbolVtblDispatcher : IIDiscardSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(549);
+        RoslynCallCounters.Record(618);
         result = default;
 
         try

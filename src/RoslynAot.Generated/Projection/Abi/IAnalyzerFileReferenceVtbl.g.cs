@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("41364ca0-9e1c-5b13-b55e-744dca894978")]
+[Guid("c110aa3f-63e8-50d2-b2ad-134c774442e9")]
 public partial interface IAnalyzerFileReferenceVtbl : IAnalyzerReferenceVtbl
 {
 
@@ -28,6 +28,19 @@ public partial interface IAnalyzerFileReferenceVtbl : IAnalyzerReferenceVtbl
         long receiver,
         long other,
         out int result
+    );
+
+    [PreserveSig]
+    int AnalyzerFileReference_GetAnalyzersForAllLanguages(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
+    int AnalyzerFileReference_GetAnalyzers(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
+        out long result
     );
 
     [PreserveSig]

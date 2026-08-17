@@ -110,11 +110,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public FlowAnalysis.ControlFlowGraph GetControlFlowGraph(IOperation operationBlock)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationBlockStartAnalysisContextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationBlockStartAnalysisContext_GetControlFlowGraph(__RoslynAotGetHandle(controlVtbl), operationBlock.__RoslynAotGetHandle(controlVtbl), out long result);
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-            return FlowAnalysis.ControlFlowGraph.__RoslynAotCreateProxy(controlVtbl, result);
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
         [System.Runtime.CompilerServices.OverloadResolutionPriority(-1)]

@@ -42,15 +42,7 @@
   "entries": [
     {
       "ruleId": "CA1032",
-      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.ApiDesignGuidelines.CSharpImplementStandardExceptionConstructorsAnalyzer",
-      "status": "Fail",
-      "reason": {
-        "kind": "AnalyzerException",
-        "case": "CA1032/Basic",
-        "actionKind": "Symbol",
-        "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_Locations"
-      }
+      "status": "Pass"
     },
     {
       "ruleId": "CA1200",
@@ -82,10 +74,10 @@
       "status": "Fail",
       "reason": {
         "kind": "AnalyzerException",
-        "case": "CA1032/Basic",
+        "case": "CA1309/Basic",
         "actionKind": "OperationBlock",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_Locations"
+        "failingMember": "Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext.GetControlFlowGraph"
       }
     },
     {
@@ -97,7 +89,7 @@
         "case": "CA1515/Basic",
         "actionKind": "Symbol",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_DeclaringSyntaxReferences"
+        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
       }
     },
     {
@@ -293,7 +285,7 @@
         "case": "CA2020/Basic",
         "actionKind": "Operation",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_DeclaringSyntaxReferences"
+        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
       }
     },
     {
@@ -302,10 +294,10 @@
       "status": "Fail",
       "reason": {
         "kind": "AnalyzerException",
-        "case": "CA1516/Basic",
+        "case": "CA1841/Basic",
         "actionKind": "Operation",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_Locations"
+        "failingMember": "Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext.get_CancellationToken"
       }
     },
     {
@@ -329,7 +321,7 @@
         "case": "CA2260/Basic",
         "actionKind": "Symbol",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_DeclaringSyntaxReferences"
+        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
       }
     },
     {
@@ -357,7 +349,7 @@
         "case": "CA2352/Basic",
         "actionKind": "Symbol",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_DeclaringSyntaxReferences"
+        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
       }
     },
     {
@@ -369,7 +361,7 @@
         "case": "CA2352/Basic",
         "actionKind": "Symbol",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_DeclaringSyntaxReferences"
+        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
       }
     },
     {
@@ -393,7 +385,7 @@
         "case": "CA2352/Basic",
         "actionKind": "Symbol",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_DeclaringSyntaxReferences"
+        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
       }
     }
   ]

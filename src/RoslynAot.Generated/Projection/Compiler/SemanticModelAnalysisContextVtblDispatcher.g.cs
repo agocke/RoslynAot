@@ -27,7 +27,7 @@ internal sealed partial class SemanticModelAnalysisContextVtblDispatcher : ISema
         long receiver,
         long diagnostic)
     {
-        RoslynCallCounters.Record(301);
+        RoslynCallCounters.Record(360);
 
         try
         {
@@ -44,7 +44,7 @@ internal sealed partial class SemanticModelAnalysisContextVtblDispatcher : ISema
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(302);
+        RoslynCallCounters.Record(361);
         result = default;
 
         try
@@ -62,7 +62,7 @@ internal sealed partial class SemanticModelAnalysisContextVtblDispatcher : ISema
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(303);
+        RoslynCallCounters.Record(362);
         result = default;
 
         try
@@ -80,7 +80,7 @@ internal sealed partial class SemanticModelAnalysisContextVtblDispatcher : ISema
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(304);
+        RoslynCallCounters.Record(363);
         result = default;
 
         try
@@ -98,7 +98,7 @@ internal sealed partial class SemanticModelAnalysisContextVtblDispatcher : ISema
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(305);
+        RoslynCallCounters.Record(364);
         result = default;
 
         try
@@ -116,7 +116,7 @@ internal sealed partial class SemanticModelAnalysisContextVtblDispatcher : ISema
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(306);
+        RoslynCallCounters.Record(365);
         result = default;
 
         try

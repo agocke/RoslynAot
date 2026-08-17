@@ -27,7 +27,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(674);
+        RoslynCallCounters.Record(749);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(675);
+        RoslynCallCounters.Record(750);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(676);
+        RoslynCallCounters.Record(751);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(677);
+        RoslynCallCounters.Record(752);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(678);
+        RoslynCallCounters.Record(753);
         result = default;
 
         try
@@ -118,7 +118,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(679);
+        RoslynCallCounters.Record(754);
         result = default;
 
         try
@@ -136,7 +136,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(680);
+        RoslynCallCounters.Record(755);
         result = default;
 
         try

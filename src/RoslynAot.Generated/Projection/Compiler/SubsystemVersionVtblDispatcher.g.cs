@@ -28,7 +28,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1346);
+        RoslynCallCounters.Record(1445);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1347);
+        RoslynCallCounters.Record(1446);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1348);
+        RoslynCallCounters.Record(1447);
         requiredLength = default;
 
         try
@@ -90,7 +90,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1349);
+        RoslynCallCounters.Record(1448);
         result = default;
 
         try
@@ -108,7 +108,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1350);
+        RoslynCallCounters.Record(1449);
         result = default;
 
         try
@@ -126,7 +126,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1351);
+        RoslynCallCounters.Record(1450);
         result = default;
 
         try

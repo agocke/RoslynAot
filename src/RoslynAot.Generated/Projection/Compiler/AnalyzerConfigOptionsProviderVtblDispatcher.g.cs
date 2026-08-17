@@ -22,4 +22,60 @@ internal sealed partial class AnalyzerConfigOptionsProviderVtblDispatcher : IAna
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
+
+    public int AnalyzerConfigOptionsProvider_GetOptions_df6d0fc5(
+        long receiver,
+        long textFile,
+        out long result)
+    {
+        RoslynCallCounters.Record(278);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider>(receiver).GetOptions(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AdditionalText>(textFile)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AnalyzerConfigOptionsProvider_GetOptions_dacab0fe(
+        long receiver,
+        long tree,
+        out long result)
+    {
+        RoslynCallCounters.Record(279);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider>(receiver).GetOptions(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(tree)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int AnalyzerConfigOptionsProvider_get_GlobalOptions(
+        long receiver,
+        out long result)
+    {
+        RoslynCallCounters.Record(280);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider>(receiver).GlobalOptions);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

@@ -23,11 +23,29 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int Location_GetHashCode(
+        long receiver,
+        out int result)
+    {
+        RoslynCallCounters.Record(907);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Location>(receiver).GetHashCode();
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int Location_GetLineSpan(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(826);
+        RoslynCallCounters.Record(908);
         result = default;
 
         try
@@ -45,7 +63,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(827);
+        RoslynCallCounters.Record(909);
         result = default;
 
         try
@@ -65,7 +83,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(828);
+        RoslynCallCounters.Record(910);
         requiredLength = default;
 
         try
@@ -89,7 +107,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(829);
+        RoslynCallCounters.Record(911);
         result = default;
 
         try
@@ -107,7 +125,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(830);
+        RoslynCallCounters.Record(912);
         result = default;
 
         try
@@ -121,11 +139,29 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         }
     }
 
+    public int Location_get_Kind(
+        long receiver,
+        out byte result)
+    {
+        RoslynCallCounters.Record(913);
+        result = default;
+
+        try
+        {
+            result = (byte)_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Location>(receiver).Kind;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int Location_get_MetadataModule(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(831);
+        RoslynCallCounters.Record(914);
         result = default;
 
         try
@@ -143,7 +179,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(833);
+        RoslynCallCounters.Record(916);
         result = default;
 
         try
@@ -161,7 +197,7 @@ internal sealed partial class LocationVtblDispatcher : ILocationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(834);
+        RoslynCallCounters.Record(917);
         result = default;
 
         try

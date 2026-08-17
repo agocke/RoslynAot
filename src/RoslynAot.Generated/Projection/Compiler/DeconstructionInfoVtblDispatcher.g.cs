@@ -27,7 +27,7 @@ internal sealed partial class DeconstructionInfoVtblDispatcher : IDeconstruction
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2443);
+        RoslynCallCounters.Record(2567);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class DeconstructionInfoVtblDispatcher : IDeconstruction
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2444);
+        RoslynCallCounters.Record(2568);
         result = default;
 
         try

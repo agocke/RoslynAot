@@ -27,7 +27,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(535);
+        RoslynCallCounters.Record(604);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(536);
+        RoslynCallCounters.Record(605);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string fullyQualifiedMetadataName,
         out long result)
     {
-        RoslynCallCounters.Record(537);
+        RoslynCallCounters.Record(606);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         long toAssembly,
         out int result)
     {
-        RoslynCallCounters.Record(538);
+        RoslynCallCounters.Record(607);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string fullyQualifiedMetadataName,
         out long result)
     {
-        RoslynCallCounters.Record(539);
+        RoslynCallCounters.Record(608);
         result = default;
 
         try
@@ -120,7 +120,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(540);
+        RoslynCallCounters.Record(609);
         result = default;
 
         try
@@ -138,7 +138,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(541);
+        RoslynCallCounters.Record(610);
         result = default;
 
         try
@@ -156,7 +156,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(542);
+        RoslynCallCounters.Record(611);
         result = default;
 
         try
@@ -174,7 +174,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(543);
+        RoslynCallCounters.Record(612);
         result = default;
 
         try
@@ -192,7 +192,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(544);
+        RoslynCallCounters.Record(613);
         result = default;
 
         try
@@ -210,7 +210,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(545);
+        RoslynCallCounters.Record(614);
         result = default;
 
         try
@@ -228,7 +228,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(546);
+        RoslynCallCounters.Record(615);
         result = default;
 
         try

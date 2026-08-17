@@ -28,7 +28,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1442);
+        RoslynCallCounters.Record(1539);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1443);
+        RoslynCallCounters.Record(1540);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1444);
+        RoslynCallCounters.Record(1541);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1445);
+        RoslynCallCounters.Record(1542);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1446);
+        RoslynCallCounters.Record(1543);
         result = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int rawKind,
         out int result)
     {
-        RoslynCallCounters.Record(1447);
+        RoslynCallCounters.Record(1544);
         result = default;
 
         try
@@ -140,7 +140,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long node,
         out int result)
     {
-        RoslynCallCounters.Record(1448);
+        RoslynCallCounters.Record(1545);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int getInnermostNodeForTie,
         out long result)
     {
-        RoslynCallCounters.Record(1449);
+        RoslynCallCounters.Record(1546);
         result = default;
 
         try
@@ -181,7 +181,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1450);
+        RoslynCallCounters.Record(1547);
         result = default;
 
         try
@@ -201,7 +201,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1451);
+        RoslynCallCounters.Record(1548);
         result = default;
 
         try
@@ -220,7 +220,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long syntaxAnnotation,
         out long result)
     {
-        RoslynCallCounters.Record(1452);
+        RoslynCallCounters.Record(1549);
         result = default;
 
         try
@@ -239,7 +239,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1453);
+        RoslynCallCounters.Record(1550);
         result = default;
 
         try
@@ -258,7 +258,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1454);
+        RoslynCallCounters.Record(1551);
         result = default;
 
         try
@@ -276,7 +276,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1455);
+        RoslynCallCounters.Record(1552);
         result = default;
 
         try
@@ -298,7 +298,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1456);
+        RoslynCallCounters.Record(1553);
         result = default;
 
         try
@@ -320,7 +320,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1457);
+        RoslynCallCounters.Record(1554);
         result = default;
 
         try
@@ -338,7 +338,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1458);
+        RoslynCallCounters.Record(1555);
         result = default;
 
         try
@@ -356,7 +356,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1459);
+        RoslynCallCounters.Record(1556);
         result = default;
 
         try
@@ -374,7 +374,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1460);
+        RoslynCallCounters.Record(1557);
         result = default;
 
         try
@@ -392,7 +392,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1461);
+        RoslynCallCounters.Record(1558);
         result = default;
 
         try
@@ -411,7 +411,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1462);
+        RoslynCallCounters.Record(1559);
         result = default;
 
         try
@@ -430,7 +430,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1463);
+        RoslynCallCounters.Record(1560);
         result = default;
 
         try
@@ -449,7 +449,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1464);
+        RoslynCallCounters.Record(1561);
         result = default;
 
         try
@@ -469,7 +469,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(1465);
+        RoslynCallCounters.Record(1562);
         result = default;
 
         try
@@ -488,7 +488,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1466);
+        RoslynCallCounters.Record(1563);
         result = default;
 
         try
@@ -506,7 +506,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1467);
+        RoslynCallCounters.Record(1564);
         result = default;
 
         try
@@ -526,7 +526,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1468);
+        RoslynCallCounters.Record(1565);
         requiredLength = default;
 
         try
@@ -552,7 +552,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1469);
+        RoslynCallCounters.Record(1566);
         requiredLength = default;
 
         try
@@ -576,7 +576,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1470);
+        RoslynCallCounters.Record(1567);
         result = default;
 
         try
@@ -594,7 +594,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1471);
+        RoslynCallCounters.Record(1568);
         result = default;
 
         try
@@ -612,7 +612,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1472);
+        RoslynCallCounters.Record(1569);
         result = default;
 
         try
@@ -630,7 +630,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1473);
+        RoslynCallCounters.Record(1570);
         result = default;
 
         try
@@ -648,7 +648,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1474);
+        RoslynCallCounters.Record(1571);
         result = default;
 
         try
@@ -666,7 +666,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1475);
+        RoslynCallCounters.Record(1572);
         result = default;
 
         try
@@ -684,7 +684,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1476);
+        RoslynCallCounters.Record(1573);
         result = default;
 
         try
@@ -702,7 +702,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1477);
+        RoslynCallCounters.Record(1574);
         result = default;
 
         try
@@ -720,7 +720,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1478);
+        RoslynCallCounters.Record(1575);
         result = default;
 
         try
@@ -738,7 +738,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1479);
+        RoslynCallCounters.Record(1576);
         result = default;
 
         try
@@ -758,7 +758,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1480);
+        RoslynCallCounters.Record(1577);
         requiredLength = default;
 
         try
@@ -782,7 +782,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1481);
+        RoslynCallCounters.Record(1578);
         result = default;
 
         try
@@ -800,7 +800,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1482);
+        RoslynCallCounters.Record(1579);
         result = default;
 
         try
@@ -818,7 +818,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1483);
+        RoslynCallCounters.Record(1580);
         result = default;
 
         try
@@ -836,7 +836,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1484);
+        RoslynCallCounters.Record(1581);
         result = default;
 
         try
@@ -854,7 +854,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1485);
+        RoslynCallCounters.Record(1582);
         result = default;
 
         try
@@ -872,7 +872,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1486);
+        RoslynCallCounters.Record(1583);
         result = default;
 
         try
@@ -890,7 +890,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(1877);
+        RoslynCallCounters.Record(2000);
 
         try
         {
@@ -909,7 +909,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1878);
+        RoslynCallCounters.Record(2001);
         result = default;
 
         try
@@ -929,7 +929,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1879);
+        RoslynCallCounters.Record(2002);
         result = default;
 
         try
@@ -947,7 +947,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1880);
+        RoslynCallCounters.Record(2003);
         result = default;
 
         try
@@ -969,7 +969,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1881);
+        RoslynCallCounters.Record(2004);
         result = default;
 
         try
@@ -991,7 +991,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1882);
+        RoslynCallCounters.Record(2005);
         result = default;
 
         try
@@ -1009,7 +1009,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1883);
+        RoslynCallCounters.Record(2006);
         result = default;
 
         try
@@ -1027,7 +1027,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1884);
+        RoslynCallCounters.Record(2007);
         result = default;
 
         try
@@ -1045,7 +1045,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1885);
+        RoslynCallCounters.Record(2008);
         result = default;
 
         try
@@ -1063,7 +1063,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out ushort result)
     {
-        RoslynCallCounters.Record(1886);
+        RoslynCallCounters.Record(2009);
         result = default;
 
         try
@@ -1083,7 +1083,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1887);
+        RoslynCallCounters.Record(2010);
         requiredLength = default;
 
         try
@@ -1108,7 +1108,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3988);
+        RoslynCallCounters.Record(4112);
         result = default;
 
         try
@@ -1127,7 +1127,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(3989);
+        RoslynCallCounters.Record(4113);
         result = default;
 
         try
@@ -1145,7 +1145,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3990);
+        RoslynCallCounters.Record(4114);
         result = default;
 
         try
@@ -1164,7 +1164,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(2723);
+        RoslynCallCounters.Record(2847);
         result = default;
 
         try
@@ -1183,7 +1183,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(2724);
+        RoslynCallCounters.Record(2848);
         result = default;
 
         try
@@ -1202,7 +1202,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long baseList,
         out long result)
     {
-        RoslynCallCounters.Record(2725);
+        RoslynCallCounters.Record(2849);
         result = default;
 
         try
@@ -1221,7 +1221,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long closeBraceToken,
         out long result)
     {
-        RoslynCallCounters.Record(2726);
+        RoslynCallCounters.Record(2850);
         result = default;
 
         try
@@ -1240,7 +1240,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(2727);
+        RoslynCallCounters.Record(2851);
         result = default;
 
         try
@@ -1259,7 +1259,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(2728);
+        RoslynCallCounters.Record(2852);
         result = default;
 
         try
@@ -1278,7 +1278,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long openBraceToken,
         out long result)
     {
-        RoslynCallCounters.Record(2729);
+        RoslynCallCounters.Record(2853);
         result = default;
 
         try
@@ -1297,7 +1297,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(2730);
+        RoslynCallCounters.Record(2854);
         result = default;
 
         try
@@ -1315,7 +1315,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2731);
+        RoslynCallCounters.Record(2855);
         result = default;
 
         try
@@ -1333,7 +1333,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2732);
+        RoslynCallCounters.Record(2856);
         result = default;
 
         try
@@ -1351,7 +1351,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2733);
+        RoslynCallCounters.Record(2857);
         result = default;
 
         try
@@ -1369,7 +1369,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2734);
+        RoslynCallCounters.Record(2858);
         result = default;
 
         try
@@ -1387,7 +1387,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2735);
+        RoslynCallCounters.Record(2859);
         result = default;
 
         try
@@ -1405,7 +1405,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(3243);
+        RoslynCallCounters.Record(3367);
 
         try
         {
@@ -1423,7 +1423,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3244);
+        RoslynCallCounters.Record(3368);
         result = default;
 
         try
@@ -1442,7 +1442,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3245);
+        RoslynCallCounters.Record(3369);
         result = default;
 
         try
@@ -1461,7 +1461,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3246);
+        RoslynCallCounters.Record(3370);
         result = default;
 
         try
@@ -1480,7 +1480,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long baseList,
         out long result)
     {
-        RoslynCallCounters.Record(3247);
+        RoslynCallCounters.Record(3371);
         result = default;
 
         try
@@ -1499,7 +1499,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long closeBraceToken,
         out long result)
     {
-        RoslynCallCounters.Record(3248);
+        RoslynCallCounters.Record(3372);
         result = default;
 
         try
@@ -1518,7 +1518,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long enumKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(3249);
+        RoslynCallCounters.Record(3373);
         result = default;
 
         try
@@ -1537,7 +1537,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(3250);
+        RoslynCallCounters.Record(3374);
         result = default;
 
         try
@@ -1556,7 +1556,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(3251);
+        RoslynCallCounters.Record(3375);
         result = default;
 
         try
@@ -1575,7 +1575,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long openBraceToken,
         out long result)
     {
-        RoslynCallCounters.Record(3252);
+        RoslynCallCounters.Record(3376);
         result = default;
 
         try
@@ -1594,7 +1594,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(3253);
+        RoslynCallCounters.Record(3377);
         result = default;
 
         try
@@ -1612,7 +1612,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3254);
+        RoslynCallCounters.Record(3378);
         result = default;
 
         try
@@ -1630,7 +1630,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3255);
+        RoslynCallCounters.Record(3379);
         result = default;
 
         try
@@ -1648,7 +1648,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3256);
+        RoslynCallCounters.Record(3380);
         result = default;
 
         try
@@ -1666,7 +1666,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3257);
+        RoslynCallCounters.Record(3381);
         result = default;
 
         try
@@ -1684,7 +1684,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3258);
+        RoslynCallCounters.Record(3382);
         result = default;
 
         try
@@ -1702,7 +1702,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3259);
+        RoslynCallCounters.Record(3383);
         result = default;
 
         try
@@ -1720,7 +1720,7 @@ internal sealed partial class EnumDeclarationSyntaxVtblDispatcher : IEnumDeclara
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3260);
+        RoslynCallCounters.Record(3384);
         result = default;
 
         try

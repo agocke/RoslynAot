@@ -27,7 +27,7 @@ internal sealed partial class EmitDifferenceOptionsVtblDispatcher : IEmitDiffere
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(405);
+        RoslynCallCounters.Record(468);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class EmitDifferenceOptionsVtblDispatcher : IEmitDiffere
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(406);
+        RoslynCallCounters.Record(469);
         result = default;
 
         try

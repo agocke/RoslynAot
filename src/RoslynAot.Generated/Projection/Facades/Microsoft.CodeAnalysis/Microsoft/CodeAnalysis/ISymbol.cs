@@ -98,7 +98,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IISymbolVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ISymbol_get_DeclaringSyntaxReferences(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<SyntaxReference>(controlVtbl, result, static (controlVtbl, handle) => SyntaxReference.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -237,7 +241,11 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.IISymbolVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.ISymbol_get_Locations(__RoslynAotGetHandle(controlVtbl), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Location>(controlVtbl, result, static (controlVtbl, handle) => Location.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
         }
 
@@ -364,7 +372,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
         internal static ISymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ISymbol)(object)new global::RoslynAot.RoslynFacade.RoslynObjectProxy(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("1ab2e418-f1d4-53d7-953d-6fe30612fc80")]
+        [System.Runtime.InteropServices.Guid("157e4c5d-7a79-504e-9e81-ebbeaee6e828")]
         internal partial interface __RoslynAotImplementation : ISymbol
         {
         }

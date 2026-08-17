@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("8e5f02ee-c34e-5e5f-aaa6-8a07c876b051")]
+[Guid("38730a79-7d09-5914-9756-804355cc8ea1")]
 public partial interface ICommandLineArgumentsVtbl
 {
 
@@ -149,6 +149,12 @@ public partial interface ICommandLineArgumentsVtbl
     );
 
     [PreserveSig]
+    int CommandLineArguments_get_Errors(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int CommandLineArguments_get_GeneratedFilesOutputDirectory(
         long receiver,
         nint buffer,
@@ -160,6 +166,12 @@ public partial interface ICommandLineArgumentsVtbl
     int CommandLineArguments_get_InteractiveMode(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int CommandLineArguments_get_ManifestResources(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]

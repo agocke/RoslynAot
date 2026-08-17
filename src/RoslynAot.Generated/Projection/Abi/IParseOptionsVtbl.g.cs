@@ -12,9 +12,22 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0c6bd12f-cfe7-522a-907d-e2ac665cc6e9")]
+[Guid("f9f11d91-d171-5e54-af7c-d16f422efd46")]
 public partial interface IParseOptionsVtbl
 {
+
+    [PreserveSig]
+    int ParseOptions_CommonWithKind(
+        long receiver,
+        int kind,
+        out long result
+    );
+
+    [PreserveSig]
+    int ParseOptions_GetHashCode(
+        long receiver,
+        out int result
+    );
 
     [PreserveSig]
     int ParseOptions_WithDocumentationMode(
@@ -37,9 +50,29 @@ public partial interface IParseOptionsVtbl
     );
 
     [PreserveSig]
+    int ParseOptions_get_Errors(
+        long receiver,
+        out long result
+    );
+
+    [PreserveSig]
     int ParseOptions_get_Kind(
         long receiver,
         out int result
+    );
+
+    [PreserveSig]
+    int ParseOptions_get_Language(
+        long receiver,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength
+    );
+
+    [PreserveSig]
+    int ParseOptions_get_PreprocessorSymbolNames(
+        long receiver,
+        out long result
     );
 
     [PreserveSig]
