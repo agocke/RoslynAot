@@ -74,7 +74,14 @@ for the minimal shape - no `case.json` needed for the common case). An
 optional `case.json` next to the source can declare `rules` (defaults
 to the containing `<RuleId>` directory name) and
 `extraCompilerArguments` for cases that need extra references or
-compiler switches.
+compiler switches. `corpus/README.md` documents the layout, the
+`case.json` schema, and which rules deliberately have no case and why.
+
+Write the case against **managed** csc first - a case only counts once
+the managed side actually reports the rule, and several CA rules are
+fussier to trigger than their documentation suggests. The burn-down
+aggregates per rule ID across the whole corpus, so a case that trips
+several rules counts for all of them.
 
 ## Updating the baseline
 

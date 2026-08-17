@@ -1,0 +1,6 @@
+{
+  "description": "CA1515 only fires for application (non-library) compilations, so this case overrides the default /target:library. csc takes the last /target: wins, and extra arguments are appended after the shared vector.",
+  "extraCompilerArguments": [
+    "/target:exe"
+  ]
+}

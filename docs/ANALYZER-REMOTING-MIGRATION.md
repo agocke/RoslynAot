@@ -106,6 +106,33 @@ size baseline to hold the rest of the migration against.
 
 **Closes:** 15, and the measurement half of 19.
 
+### Measured result (2026-08-16)
+
+First real pass rate, from `eng/differential-baseline.json` over all 37 rule IDs
+in `samples/RoslynAot.CSharpNetAnalyzers.Native`: **6 pass, 27 fail, 4 not
+exercised**. The four uncovered rules are individually explained in
+`corpus/README.md`; each was attempted and measured rather than assumed.
+
+The failures rank into far fewer causes than rules, which is what makes the
+list actionable — fixing the top entry alone unblocks seven rules:
+
+| Rules blocked | Cause |
+|---|---|
+| 7 | `IOperation.ConstantValue` |
+| 6 | silent no-op — no diagnostic, no exception (see below) |
+| 3 | `ISymbol.Locations` |
+| 3 | `ISymbol.DeclaringSyntaxReferences` |
+| 2 | `CSharpExtensions.GetDeclaredSymbol` |
+| 1 each | `CompilationStartAnalysisContext.CancellationToken`, `AttributeData.ConstructorArguments`, `VariableDeclarationSyntax.Variables`, `OperationWalker` dispatch, two analyzer-internal frames |
+
+Six rules (CA1851, CA1870, CA2352–CA2355) fail as `MissingDiagnostic`: the
+native side raises no `AD0001` and reports nothing. This is a distinct failure
+class from a named unimplemented member — the analyzer runs to completion and
+silently produces nothing — and it is invisible to any check that only watches
+for exceptions. It is the same shape as the projected-`ToString` defect fixed in
+`e3bf4e1`, so it should be diagnosed before the ranked member work: a silent
+wrong answer costs more than a loud missing one.
+
 ---
 
 ## Step 2 — The projection model becomes the source of truth

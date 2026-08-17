@@ -42,7 +42,15 @@
   "entries": [
     {
       "ruleId": "CA1032",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.ApiDesignGuidelines.CSharpImplementStandardExceptionConstructorsAnalyzer",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1032/Basic",
+        "actionKind": "Symbol",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_Locations"
+      }
     },
     {
       "ruleId": "CA1200",
@@ -50,35 +58,75 @@
     },
     {
       "ruleId": "CA1309",
-      "status": "NotExercised"
+      "status": "Pass"
     },
     {
       "ruleId": "CA1311",
-      "status": "NotExercised"
+      "status": "Pass"
     },
     {
       "ruleId": "CA1507",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpUseNameofInPlaceOfStringAnalyzer",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1309/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.InvalidCastException",
+        "failingMember": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpUseNameofInPlaceOfStringAnalyzer.IsApplicableToLanguageVersion"
+      }
     },
     {
       "ruleId": "CA1508",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpAvoidDeadConditionalCode",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1032/Basic",
+        "actionKind": "OperationBlock",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_Locations"
+      }
     },
     {
       "ruleId": "CA1515",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpMakeTypesInternal",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1515/Basic",
+        "actionKind": "Symbol",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_DeclaringSyntaxReferences"
+      }
     },
     {
       "ruleId": "CA1516",
-      "status": "NotExercised"
+      "status": "Pass"
     },
     {
       "ruleId": "CA1802",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.QualityGuidelines.CSharpUseLiteralsWhereAppropriate",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1802/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
+      }
     },
     {
       "ruleId": "CA1805",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.QualityGuidelines.CSharpDoNotInitializeUnnecessarilyAnalyzer",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1802/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
+      }
     },
     {
       "ruleId": "CA1812",
@@ -98,75 +146,195 @@
     },
     {
       "ruleId": "CA1825",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpAvoidZeroLengthArrayAllocationsAnalyzer",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1825/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
+      }
     },
     {
       "ruleId": "CA1841",
-      "status": "NotExercised"
+      "status": "Pass"
     },
     {
       "ruleId": "CA1845",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpUseSpanBasedStringConcat",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1845/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.InvalidOperationException",
+        "failingMember": "Microsoft.CodeAnalysis.Operations.OperationWalker.__RoslynAotGetControlVtbl"
+      }
     },
     {
       "ruleId": "CA1851",
-      "status": "NotExercised"
+      "status": "Fail",
+      "reason": {
+        "kind": "MissingDiagnostic",
+        "case": "CA1851/Basic"
+      }
     },
     {
       "ruleId": "CA1855",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.NetCore.Analyzers.Performance.CSharpUseSpanClearInsteadOfFillAnalyzer",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1855/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
+      }
     },
     {
       "ruleId": "CA1856",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Performance.CSharpConstantExpectedAnalyzer",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1856/Basic",
+        "actionKind": "SyntaxNode",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetDeclaredSymbol"
+      }
     },
     {
       "ruleId": "CA1857",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Performance.CSharpConstantExpectedAnalyzer",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1856/Basic",
+        "actionKind": "SyntaxNode",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetDeclaredSymbol"
+      }
     },
     {
       "ruleId": "CA1865",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.CodeAnalysis.CSharp.NetAnalyzers.Microsoft.NetCore.Analyzers.Performance.CSharpUseStringMethodCharOverloadWithSingleCharacters",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1865/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
+      }
     },
     {
       "ruleId": "CA1866",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.CodeAnalysis.CSharp.NetAnalyzers.Microsoft.NetCore.Analyzers.Performance.CSharpUseStringMethodCharOverloadWithSingleCharacters",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1865/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
+      }
     },
     {
       "ruleId": "CA1867",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.CodeAnalysis.CSharp.NetAnalyzers.Microsoft.NetCore.Analyzers.Performance.CSharpUseStringMethodCharOverloadWithSingleCharacters",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1865/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
+      }
     },
     {
       "ruleId": "CA1870",
-      "status": "NotExercised"
+      "status": "Fail",
+      "reason": {
+        "kind": "MissingDiagnostic",
+        "case": "CA1870/Basic"
+      }
     },
     {
       "ruleId": "CA2014",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpDoNotUseStackallocInLoopsAnalyzer",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA2014/Basic",
+        "actionKind": "SyntaxNode",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclarationSyntax.get_Variables"
+      }
     },
     {
       "ruleId": "CA2016",
-      "status": "NotExercised"
+      "status": "Pass"
     },
     {
       "ruleId": "CA2020",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpPreventNumericIntPtrUIntPtrBehavioralChanges",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA2020/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_DeclaringSyntaxReferences"
+      }
     },
     {
       "ruleId": "CA2234",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.ApiDesignGuidelines.CSharpPassSystemUriObjectsInsteadOfStringsAnalyzer",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA1516/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_Locations"
+      }
     },
     {
       "ruleId": "CA2252",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpDetectPreviewFeatureAnalyzer",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA2252/Basic",
+        "actionKind": "Symbol",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.AttributeData.get_ConstructorArguments"
+      }
     },
     {
       "ruleId": "CA2260",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Usage.CSharpImplementGenericMathInterfacesCorrectly",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA2260/Basic",
+        "actionKind": "Symbol",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.CodeAnalysis.ISymbol.get_DeclaringSyntaxReferences"
+      }
     },
     {
       "ruleId": "CA2263",
-      "status": "NotExercised"
+      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Usage.CSharpPreferGenericOverloadsAnalyzer",
+      "status": "Fail",
+      "reason": {
+        "kind": "AnalyzerException",
+        "case": "CA2263/Basic",
+        "actionKind": "Operation",
+        "exceptionType": "System.PlatformNotSupportedException",
+        "failingMember": "Microsoft.NetCore.CSharp.Analyzers.Usage.CSharpPreferGenericOverloadsAnalyzer.GetModifiedInvocationSyntax"
+      }
     },
     {
       "ruleId": "CA2266",
@@ -174,19 +342,35 @@
     },
     {
       "ruleId": "CA2352",
-      "status": "NotExercised"
+      "status": "Fail",
+      "reason": {
+        "kind": "MissingDiagnostic",
+        "case": "CA2352/Basic"
+      }
     },
     {
       "ruleId": "CA2353",
-      "status": "NotExercised"
+      "status": "Fail",
+      "reason": {
+        "kind": "MissingDiagnostic",
+        "case": "CA2353/Basic"
+      }
     },
     {
       "ruleId": "CA2354",
-      "status": "NotExercised"
+      "status": "Fail",
+      "reason": {
+        "kind": "MissingDiagnostic",
+        "case": "CA2354/Basic"
+      }
     },
     {
       "ruleId": "CA2355",
-      "status": "NotExercised"
+      "status": "Fail",
+      "reason": {
+        "kind": "MissingDiagnostic",
+        "case": "CA2355/Basic"
+      }
     },
     {
       "ruleId": "CA2356",
