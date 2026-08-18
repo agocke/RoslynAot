@@ -640,7 +640,7 @@ internal sealed class FacadeDeclarationTransform
         };
     }
 
-    private static MethodDeclarationSyntax RewriteProxyMethod(
+    private MethodDeclarationSyntax RewriteProxyMethod(
         MethodDeclarationSyntax declaration,
         IMethodSymbol symbol,
         MemberProjection? projection)
@@ -677,7 +677,7 @@ internal sealed class FacadeDeclarationTransform
             SyntaxFactory.IdentifierName(typeParameterName));
     }
 
-    private static PropertyDeclarationSyntax RewriteProxyProperty(
+    private PropertyDeclarationSyntax RewriteProxyProperty(
         PropertyDeclarationSyntax declaration,
         MemberProjection? projection)
     {
@@ -698,7 +698,7 @@ internal sealed class FacadeDeclarationTransform
                             projection))));
     }
 
-    private static IndexerDeclarationSyntax RewriteProxyIndexer(
+    private IndexerDeclarationSyntax RewriteProxyIndexer(
         IndexerDeclarationSyntax declaration,
         MemberProjection? projection)
     {
@@ -719,7 +719,7 @@ internal sealed class FacadeDeclarationTransform
                             projection))));
     }
 
-    private static EventDeclarationSyntax RewriteProxyEvent(
+    private EventDeclarationSyntax RewriteProxyEvent(
         EventDeclarationSyntax declaration,
         MemberProjection? projection)
     {
@@ -780,7 +780,7 @@ internal sealed class FacadeDeclarationTransform
         SyntaxFactory.Block(
             SyntaxFactory.ParseStatement(UnsupportedStatement));
 
-    private static ConstructorDeclarationSyntax RewriteConstructor(
+    private ConstructorDeclarationSyntax RewriteConstructor(
         ConstructorDeclarationSyntax declaration,
         MemberProjection projection)
     {
@@ -820,7 +820,7 @@ internal sealed class FacadeDeclarationTransform
             .WithBody(GetBody(projection.Calls.SingleOrDefault()));
     }
 
-    private static OperatorDeclarationSyntax RewriteOperator(
+    private OperatorDeclarationSyntax RewriteOperator(
         OperatorDeclarationSyntax declaration,
         MemberProjection projection) =>
         declaration
@@ -828,7 +828,7 @@ internal sealed class FacadeDeclarationTransform
             .WithSemicolonToken(default)
             .WithBody(GetBody(projection.Calls.SingleOrDefault()));
 
-    private static ConversionOperatorDeclarationSyntax RewriteConversion(
+    private ConversionOperatorDeclarationSyntax RewriteConversion(
         ConversionOperatorDeclarationSyntax declaration,
         MemberProjection projection) =>
         declaration
@@ -926,7 +926,7 @@ internal sealed class FacadeDeclarationTransform
                 modifier =>
                     !kinds.Contains(modifier.Kind())));
 
-    private static SyntaxList<AccessorDeclarationSyntax> RewriteAccessors(
+    private SyntaxList<AccessorDeclarationSyntax> RewriteAccessors(
         SyntaxList<AccessorDeclarationSyntax> accessors,
         MemberProjection? projection)
     {
@@ -956,8 +956,19 @@ internal sealed class FacadeDeclarationTransform
         return SyntaxFactory.List(rewritten);
     }
 
-    private static BlockSyntax GetBody(ProjectedCall? operation)
+    private BlockSyntax GetBody(ProjectedCall? operation)
     {
+        if (operation is not null &&
+            ProjectionLocalVisitors.TryGetStatements(
+                operation,
+                _model,
+                out IReadOnlyList<string> visitorStatements))
+        {
+            return SyntaxFactory.Block(
+                visitorStatements.Select(
+                    statement => SyntaxFactory.ParseStatement(statement)));
+        }
+
         if (operation is not null &&
             AnalyzerLocalFacadeEmitter.TryGetStatements(
                 operation,

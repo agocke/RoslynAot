@@ -19,7 +19,7 @@ namespace RoslynAot.Csc;
 /// </summary>
 internal static class RoslynCallCounters
 {
-    public const int MemberCount = 5851;
+    public const int MemberCount = 5852;
 
     private static readonly long[] s_counts = new long[MemberCount];
 
@@ -5873,6 +5873,7 @@ internal static class RoslynCallCounters
         "RoslynAot.Abi.IRoslynControlVtbl.SymbolEqualityComparerEquals",
         "RoslynAot.Abi.IRoslynControlVtbl.SymbolEqualityComparerGetHashCode",
         "RoslynAot.Abi.IRoslynControlVtbl.CopyObjectToStringUtf16",
+        "RoslynAot.Abi.IRoslynControlVtbl.GetObjectRuntimeVtblId",
         "RoslynAot.Abi.IRoslynControlVtbl.CopyConstantStringUtf16",
         "RoslynAot.Abi.IRoslynControlVtbl.ObjectEquals",
         "RoslynAot.Abi.IRoslynControlVtbl.ObjectGetHashCode",
@@ -5897,9 +5898,10 @@ internal static class RoslynCallCounters
     public const int ControlSymbolEqualityComparerEquals = 5845;
     public const int ControlSymbolEqualityComparerGetHashCode = 5846;
     public const int ControlCopyObjectToStringUtf16 = 5847;
-    public const int ControlCopyConstantStringUtf16 = 5848;
-    public const int ControlObjectEquals = 5849;
-    public const int ControlObjectGetHashCode = 5850;
+    public const int ControlGetObjectRuntimeVtblId = 5848;
+    public const int ControlCopyConstantStringUtf16 = 5849;
+    public const int ControlObjectEquals = 5850;
+    public const int ControlObjectGetHashCode = 5851;
 
     public static void Record(int ordinal) =>
         Interlocked.Increment(ref s_counts[ordinal]);

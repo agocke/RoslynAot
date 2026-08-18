@@ -546,6 +546,29 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         }
     }
 
+    public int GetObjectRuntimeVtblId(
+        long handle,
+        out long vtblIdLow,
+        out long vtblIdHigh)
+    {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlGetObjectRuntimeVtblId);
+        vtblIdLow = default;
+        vtblIdHigh = default;
+        try
+        {
+            RoslynDispatcherRegistry.TryGetRuntimeVtblId(
+                _objects.GetObject(handle),
+                out vtblIdLow,
+                out vtblIdHigh);
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
     public unsafe int CopyConstantStringUtf16(
         long handle,
         nint buffer,

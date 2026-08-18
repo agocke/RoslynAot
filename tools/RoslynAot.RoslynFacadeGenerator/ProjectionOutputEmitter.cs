@@ -423,6 +423,17 @@ internal static class ProjectionOutputEmitter
             // identically today, because String.ToString is the identity, but
             // relying on that would make the transport depend on a BCL detail
             // instead of on GetObject<string>.
+            // The most-derived projected type of the object behind a handle.
+            // IsObjectType answers "is it this one" and needs a candidate;
+            // an analyzer-side switch over a visitor's hundred-odd operation
+            // interfaces needs the answer itself, in one crossing rather than
+            // one per candidate.
+            [PreserveSig]
+            int GetObjectRuntimeVtblId(
+                long handle,
+                out long vtblIdLow,
+                out long vtblIdHigh);
+
             [PreserveSig]
             int CopyConstantStringUtf16(
                 long handle,
@@ -533,6 +544,7 @@ internal static class ProjectionOutputEmitter
         "SymbolEqualityComparerEquals",
         "SymbolEqualityComparerGetHashCode",
         "CopyObjectToStringUtf16",
+        "GetObjectRuntimeVtblId",
         "CopyConstantStringUtf16",
         "ObjectEquals",
         "ObjectGetHashCode",
@@ -718,6 +730,54 @@ internal static class ProjectionOutputEmitter
 
         builder.AppendLine("            _ => false,");
         builder.AppendLine("        };");
+        builder.AppendLine();
+
+        // The most-derived projected type of a live object, which is what an
+        // analyzer-side switch needs to dispatch on in one crossing instead of
+        // probing every candidate. Cached per runtime type: Roslyn's operation
+        // and symbol implementations are a bounded set, and a walker asks this
+        // once per node.
+        builder.AppendLine(
+            "    private static readonly global::System.Collections.Generic." +
+            "Dictionary<global::System.Type, (long Low, long High)> " +
+            "s_runtimeVtblIds = [];");
+        builder.AppendLine();
+        builder.AppendLine("    public static bool TryGetRuntimeVtblId(");
+        builder.AppendLine("        object value,");
+        builder.AppendLine("        out long vtblIdLow,");
+        builder.AppendLine("        out long vtblIdHigh)");
+        builder.AppendLine("    {");
+        builder.AppendLine("        global::System.Type type = value.GetType();");
+        builder.AppendLine("        (long Low, long High) resolved;");
+        builder.AppendLine("        lock (s_runtimeVtblIds)");
+        builder.AppendLine("        {");
+        builder.AppendLine(
+            "            if (!s_runtimeVtblIds.TryGetValue(type, out resolved))");
+        builder.AppendLine("            {");
+        builder.AppendLine("                resolved = ResolveRuntimeVtblId(value);");
+        builder.AppendLine("                s_runtimeVtblIds[type] = resolved;");
+        builder.AppendLine("            }");
+        builder.AppendLine("        }");
+        builder.AppendLine();
+        builder.AppendLine("        vtblIdLow = resolved.Low;");
+        builder.AppendLine("        vtblIdHigh = resolved.High;");
+        builder.AppendLine("        return resolved != (0L, 0L);");
+        builder.AppendLine("    }");
+        builder.AppendLine();
+        builder.AppendLine(
+            "    private static (long, long) ResolveRuntimeVtblId(object value)");
+        builder.AppendLine("    {");
+        foreach (VtblProjection vtbl in GetRuntimeClassVtbls(model))
+        {
+            (long low, long high) = GetVtblIdParts(vtbl);
+            string typeName = vtbl.FacadeType.ToDisplayString(
+                SymbolDisplayFormat.FullyQualifiedFormat);
+            builder.AppendLine(
+                $"        if (value is {typeName}) return ({low}L, {high}L);");
+        }
+
+        builder.AppendLine("        return (0L, 0L);");
+        builder.AppendLine("    }");
         builder.AppendLine("}");
         return builder.ToString();
     }
@@ -768,16 +828,28 @@ internal static class ProjectionOutputEmitter
                         TypeKind.Class or
                         TypeKind.Interface &&
                     IsExternallyReferenceable(vtbl.FacadeType))
-            .OrderByDescending(
-                vtbl => GetInheritanceDepth(vtbl.FacadeType))
+            .OrderByDescending(vtbl => GetSpecificity(vtbl.FacadeType))
             .ThenBy(
                 vtbl => CanonicalSignatureBuilder.GetMetadataTypeName(
                     vtbl.FacadeType),
                 StringComparer.Ordinal);
 
-    private static int GetInheritanceDepth(INamedTypeSymbol type)
+    /// <summary>
+    /// How specific a type is, so that "most derived first" is a total order
+    /// over classes and interfaces alike.
+    /// </summary>
+    /// <remarks>
+    /// Counting only the base-type chain ranks every interface equally at one,
+    /// because an interface has no base type — which left the order among them
+    /// alphabetical. That is harmless for a yes/no <c>IsRuntimeType</c> query
+    /// and wrong for a most-derived one, where it would answer
+    /// <c>IOperation</c> for an object that is an <c>IBinaryOperation</c>.
+    /// Adding the transitive interface count separates them: a derived
+    /// interface implements everything its bases do and at least one more.
+    /// </remarks>
+    private static int GetSpecificity(INamedTypeSymbol type)
     {
-        int depth = 0;
+        int depth = type.AllInterfaces.Length;
         for (INamedTypeSymbol? current = type;
              current is not null;
              current = current.BaseType)

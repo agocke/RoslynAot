@@ -88,7 +88,7 @@ boundary is now `IsObjectType` at 778,492 calls — cast-time type resolution,
 which migration Step 4 deliberately left alone.
 
 The honest headline from that measurement: of the module's 37 rules,
-**13 pass, 21 fail against a named unimplemented member, and 3 are not yet
+**14 pass, 20 fail against a named unimplemented member, and 3 are not yet
 exercised by the corpus**. `IOperation.ConstantValue` used to block 7 rules and
 is now implemented — the first piece of Step 5's wire grammar, a tagged union
 carrying a boxed C# constant by value because the analyzer pattern-matches the
@@ -119,6 +119,18 @@ is small — 13 base classes, 18 derived types, against 498 interfaces. It costs
 **+5.0% on the floor module**, because module-initializer registration is
 invisible to trimming and roots each registered proxy everywhere; making
 registration demand-driven is the follow-up. See problem 3.
+
+Analyzer-constructed visitors now dispatch analyzer-side. An analyzer that
+subclasses `OperationWalker` and calls `Visit` was reaching a remoted member on
+an object the compiler does not own, which threw on a null control vtbl rather
+than naming a missing member — CA1845's failure. `Visit` now resolves the
+operation's runtime type in one crossing and calls the matching `VisitXxx`, all
+generated from public API rather than declared per member. The shipping module
+**shrank 78,832 bytes** as a result, because 129 remoted `VisitXxx` bodies
+became one-line local calls. The matching ownership correction is held back:
+labelling those two types `Local` regresses three rules from a visible
+exception to a silent missing diagnostic, for reasons not yet understood. See
+problem 25.
 
 The harness has also earned its keep beyond counting. It caught a defect that
 **terminated the compiler process** rather than reporting a failure: a generic

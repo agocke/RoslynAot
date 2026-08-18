@@ -12,18 +12,13 @@ namespace Microsoft.CodeAnalysis.Operations
     {
         public override void DefaultVisit(IOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationWalkerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationWalker_DefaultVisit_b9c38140(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            foreach (var __roslynAotChild in operation.ChildOperations.ToImmutableArray())
+                Visit(__roslynAotChild);
         }
 
         public override void Visit(IOperation? operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationWalkerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationWalker_Visit_019fc0ce(__RoslynAotGetHandle(controlVtbl), operation is null ? 0L : operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            base.Visit(operation);
         }
 
         internal OperationWalker()

@@ -3,33 +3,33 @@
   "modules": [
     {
       "module": "(all analyzers)",
-      "sizeBytes": 9634208,
-      "retainedTypeCount": 20983,
-      "retainedMethodCount": 24247
+      "sizeBytes": 9555376,
+      "retainedTypeCount": 21027,
+      "retainedMethodCount": 23853
     },
     {
       "module": "Microsoft.CodeAnalysis.CSharp.NetAnalyzers.Microsoft.CodeQuality.Analyzers.QualityGuidelines.CSharpAvoidMultipleEnumerationsAnalyzer",
-      "sizeBytes": 6428768,
+      "sizeBytes": 6428784,
       "retainedTypeCount": 15807,
-      "retainedMethodCount": 14230
+      "retainedMethodCount": 14232
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.ApiDesignGuidelines.CSharpUsePreferredTermsAnalyzer",
-      "sizeBytes": 2736224,
+      "sizeBytes": 2736240,
       "retainedTypeCount": 2896,
-      "retainedMethodCount": 5669
+      "retainedMethodCount": 5671
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpAvoidDeadConditionalCode",
-      "sizeBytes": 5696112,
+      "sizeBytes": 5696128,
       "retainedTypeCount": 13679,
-      "retainedMethodCount": 12217
+      "retainedMethodCount": 12219
     },
     {
       "module": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpForwardCancellationTokenToInvocationsAnalyzer",
-      "sizeBytes": 3981376,
+      "sizeBytes": 3981392,
       "retainedTypeCount": 4364,
-      "retainedMethodCount": 9296
+      "retainedMethodCount": 9298
     }
   ]
 }

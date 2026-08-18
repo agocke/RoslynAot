@@ -12,1038 +12,1041 @@ namespace Microsoft.CodeAnalysis.Operations
     {
         public virtual void DefaultVisit(IOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_DefaultVisit_e29857e1(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public virtual void Visit(IOperation? operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_Visit_b07d2116(__RoslynAotGetHandle(controlVtbl), operation is null ? 0L : operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            if (operation is null)
+                return;
+            global::RoslynAot.Abi.IRoslynControlVtbl __roslynAotControl = operation.__RoslynAotGetControlVtbl();
+            int __roslynAotStatus = __roslynAotControl.GetObjectRuntimeVtblId(operation.__RoslynAotGetHandle(__roslynAotControl), out long __roslynAotLow, out long __roslynAotHigh);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(__roslynAotControl, __roslynAotStatus);
+            switch ((__roslynAotLow, __roslynAotHigh))
+            {
+                case (6220667445067610340L, -1009132934905424992L):
+                    VisitCaughtException((FlowAnalysis.ICaughtExceptionOperation)operation);
+                    return;
+                case (6678057089087607817L, -4773701337688282476L):
+                    VisitFlowAnonymousFunction((FlowAnalysis.IFlowAnonymousFunctionOperation)operation);
+                    return;
+                case (6680641790851881254L, 1436419002512444057L):
+                    VisitFlowCapture((FlowAnalysis.IFlowCaptureOperation)operation);
+                    return;
+                case (6661187455956838096L, -8539655738072444743L):
+                    VisitFlowCaptureReference((FlowAnalysis.IFlowCaptureReferenceOperation)operation);
+                    return;
+                case (6754606469936391932L, 1821369774094577800L):
+                    VisitIsNull((FlowAnalysis.IIsNullOperation)operation);
+                    return;
+                case (6132020520475098606L, -2906436670734327930L):
+                    VisitStaticLocalInitializationSemaphore((FlowAnalysis.IStaticLocalInitializationSemaphoreOperation)operation);
+                    return;
+                case (5819483989918896948L, 7605087328275120522L):
+                    VisitAddressOf((IAddressOfOperation)operation);
+                    return;
+                case (6885926471103929494L, -4143799750330633305L):
+                    VisitAnonymousFunction((IAnonymousFunctionOperation)operation);
+                    return;
+                case (6085553791434465174L, -2045473698406146657L):
+                    VisitAnonymousObjectCreation((IAnonymousObjectCreationOperation)operation);
+                    return;
+                case (5933649356924830061L, -8028898167493389898L):
+                    VisitArgument((IArgumentOperation)operation);
+                    return;
+                case (6533941479356021612L, -9023410392256180075L):
+                    VisitArrayCreation((IArrayCreationOperation)operation);
+                    return;
+                case (6863797967115798996L, 8482795963786436764L):
+                    VisitArrayElementReference((IArrayElementReferenceOperation)operation);
+                    return;
+                case (6894866530894694262L, -3820142029190010455L):
+                    VisitArrayInitializer((IArrayInitializerOperation)operation);
+                    return;
+                case (6439384789911717975L, -7388235860300431208L):
+                    VisitAttribute((IAttributeOperation)operation);
+                    return;
+                case (6893744925584339599L, 3879663848084901273L):
+                    VisitAwait((IAwaitOperation)operation);
+                    return;
+                case (6004763933982645628L, 3064068070453088447L):
+                    VisitBinaryOperator((IBinaryOperation)operation);
+                    return;
+                case (6578246491093762371L, -2158760389432596575L):
+                    VisitBinaryPattern((IBinaryPatternOperation)operation);
+                    return;
+                case (6427340112392841237L, 8085813449968167323L):
+                    VisitBlock((IBlockOperation)operation);
+                    return;
+                case (6197656800996718861L, -3395092733510154622L):
+                    VisitBranch((IBranchOperation)operation);
+                    return;
+                case (6432388520737123982L, 6053660367014050237L):
+                    VisitCatchClause((ICatchClauseOperation)operation);
+                    return;
+                case (6430377446401711066L, -3741233849196465273L):
+                    VisitCoalesceAssignment((ICoalesceAssignmentOperation)operation);
+                    return;
+                case (6179048968382301125L, 3259588789209741212L):
+                    VisitCoalesce((ICoalesceOperation)operation);
+                    return;
+                case (6723470031175650030L, -804889918192233553L):
+                    VisitCollectionExpression((ICollectionExpressionOperation)operation);
+                    return;
+                case (6269722265082360484L, 3878392023010161325L):
+                    VisitCompoundAssignment((ICompoundAssignmentOperation)operation);
+                    return;
+                case (5808234929654641927L, -7156460690318292547L):
+                    VisitConditionalAccessInstance((IConditionalAccessInstanceOperation)operation);
+                    return;
+                case (5938127315978003756L, -8623920270765908064L):
+                    VisitConditionalAccess((IConditionalAccessOperation)operation);
+                    return;
+                case (6384108859944595548L, 6056731019479164314L):
+                    VisitConditional((IConditionalOperation)operation);
+                    return;
+                case (6824831494064002278L, 5420114252080888478L):
+                    VisitConstantPattern((IConstantPatternOperation)operation);
+                    return;
+                case (6248952735378422523L, 1478668721558234558L):
+                    VisitConstructorBodyOperation((IConstructorBodyOperation)operation);
+                    return;
+                case (6266076142523367182L, -226608117089679445L):
+                    VisitConversion((IConversionOperation)operation);
+                    return;
+                case (5912483307568739122L, 6703307496026951306L):
+                    VisitDeclarationExpression((IDeclarationExpressionOperation)operation);
+                    return;
+                case (6478521530882938884L, -5530286830515677772L):
+                    VisitDeclarationPattern((IDeclarationPatternOperation)operation);
+                    return;
+                case (5872348033292937152L, -5095270401365280329L):
+                    VisitDeconstructionAssignment((IDeconstructionAssignmentOperation)operation);
+                    return;
+                case (6549255534542252931L, -5242381117060569704L):
+                    VisitDefaultCaseClause((IDefaultCaseClauseOperation)operation);
+                    return;
+                case (6826364055310057955L, -4895151606382450815L):
+                    VisitDefaultValue((IDefaultValueOperation)operation);
+                    return;
+                case (5998238115483430132L, 3215775174225257366L):
+                    VisitDelegateCreation((IDelegateCreationOperation)operation);
+                    return;
+                case (6391369264946657146L, -4297130426174178660L):
+                    VisitDiscardOperation((IDiscardOperation)operation);
+                    return;
+                case (6213541281055457759L, 1420065244176037520L):
+                    VisitDiscardPattern((IDiscardPatternOperation)operation);
+                    return;
+                case (5843914439839394069L, 7967534499879739266L):
+                    VisitDynamicIndexerAccess((IDynamicIndexerAccessOperation)operation);
+                    return;
+                case (6812267521197333360L, -452810855911613049L):
+                    VisitDynamicInvocation((IDynamicInvocationOperation)operation);
+                    return;
+                case (6627993350390204748L, -6280089344469916021L):
+                    VisitDynamicMemberReference((IDynamicMemberReferenceOperation)operation);
+                    return;
+                case (6570722489711244511L, 6666312242077433012L):
+                    VisitDynamicObjectCreation((IDynamicObjectCreationOperation)operation);
+                    return;
+                case (5832995659858143126L, -7959430782451214415L):
+                    VisitEmpty((IEmptyOperation)operation);
+                    return;
+                case (5844430072025155390L, -6489298840172991052L):
+                    VisitEnd((IEndOperation)operation);
+                    return;
+                case (6116464473492838818L, 5630356878778717089L):
+                    VisitEventAssignment((IEventAssignmentOperation)operation);
+                    return;
+                case (5998587415654015289L, -5143347829054695254L):
+                    VisitEventReference((IEventReferenceOperation)operation);
+                    return;
+                case (5860685175969034522L, -7854748898097245027L):
+                    VisitExpressionStatement((IExpressionStatementOperation)operation);
+                    return;
+                case (6736709989877889166L, -7525742199261115722L):
+                    VisitFieldInitializer((IFieldInitializerOperation)operation);
+                    return;
+                case (5871209120158250676L, -9107769725290181734L):
+                    VisitFieldReference((IFieldReferenceOperation)operation);
+                    return;
+                case (6559976443206196190L, -6060058214304398149L):
+                    VisitForEachLoop((IForEachLoopOperation)operation);
+                    return;
+                case (6403905979414878155L, -3149134805620239940L):
+                    VisitForLoop((IForLoopOperation)operation);
+                    return;
+                case (6632486365177572997L, 2451103833718737589L):
+                    VisitForToLoop((IForToLoopOperation)operation);
+                    return;
+                case (6109678151279307032L, -8701444905153863508L):
+                    VisitFunctionPointerInvocation((IFunctionPointerInvocationOperation)operation);
+                    return;
+                case (5961417316989814215L, 5746188385712854463L):
+                    VisitImplicitIndexerReference((IImplicitIndexerReferenceOperation)operation);
+                    return;
+                case (6773218015101381947L, 9194510519169771397L):
+                    VisitIncrementOrDecrement((IIncrementOrDecrementOperation)operation);
+                    return;
+                case (6288756728618427591L, 5532751018363514787L):
+                    VisitInlineArrayAccess((IInlineArrayAccessOperation)operation);
+                    return;
+                case (6234482690598257498L, -971882216968220737L):
+                    VisitInstanceReference((IInstanceReferenceOperation)operation);
+                    return;
+                case (6546713265073102030L, -4950832223161245551L):
+                    VisitInterpolatedStringAddition((IInterpolatedStringAdditionOperation)operation);
+                    return;
+                case (6236719439420526500L, -4032558093336766077L):
+                    VisitInterpolatedStringAppend((IInterpolatedStringAppendOperation)operation);
+                    return;
+                case (6858686332434926876L, -882252148887598182L):
+                    VisitInterpolatedStringHandlerArgumentPlaceholder((IInterpolatedStringHandlerArgumentPlaceholderOperation)operation);
+                    return;
+                case (5952288198349022703L, 121298990134254996L):
+                    VisitInterpolatedStringHandlerCreation((IInterpolatedStringHandlerCreationOperation)operation);
+                    return;
+                case (5967394405903538064L, 7034572447859216045L):
+                    VisitInterpolatedString((IInterpolatedStringOperation)operation);
+                    return;
+                case (5893567695697328316L, 5281872073452129726L):
+                    VisitInterpolatedStringText((IInterpolatedStringTextOperation)operation);
+                    return;
+                case (6277162119877450606L, 9001636320537298563L):
+                    VisitInterpolation((IInterpolationOperation)operation);
+                    return;
+                case (6399662568722519984L, -5183289192604555647L):
+                    VisitInvalid((IInvalidOperation)operation);
+                    return;
+                case (6710803507406972704L, 3673527752225131711L):
+                    VisitInvocation((IInvocationOperation)operation);
+                    return;
+                case (6092447603591283137L, -7793821421758891380L):
+                    VisitIsPattern((IIsPatternOperation)operation);
+                    return;
+                case (6666523425168528001L, -4375456139644762211L):
+                    VisitIsType((IIsTypeOperation)operation);
+                    return;
+                case (6558512024121172878L, 6465484794973771401L):
+                    VisitLabeled((ILabeledOperation)operation);
+                    return;
+                case (5799968126543671658L, 2748167786024855741L):
+                    VisitListPattern((IListPatternOperation)operation);
+                    return;
+                case (6326628092952737127L, -9036152339025956992L):
+                    VisitLiteral((ILiteralOperation)operation);
+                    return;
+                case (6567006521321825903L, 514039708876082571L):
+                    VisitLocalFunction((ILocalFunctionOperation)operation);
+                    return;
+                case (5822384531544886461L, 308214680519557814L):
+                    VisitLocalReference((ILocalReferenceOperation)operation);
+                    return;
+                case (6380403136630967751L, -8711106330929960524L):
+                    VisitLock((ILockOperation)operation);
+                    return;
+                case (6610795313350356038L, 3892482375589184408L):
+                    VisitMemberInitializer((IMemberInitializerOperation)operation);
+                    return;
+                case (6627173927677138462L, -1735655602070206079L):
+                    VisitMethodBodyOperation((IMethodBodyOperation)operation);
+                    return;
+                case (6657692720800439896L, -2707819179842156147L):
+                    VisitMethodReference((IMethodReferenceOperation)operation);
+                    return;
+                case (6733026025438044548L, 6494050522952151467L):
+                    VisitNameOf((INameOfOperation)operation);
+                    return;
+                case (6513750130606680651L, 3590202332471553444L):
+                    VisitNegatedPattern((INegatedPatternOperation)operation);
+                    return;
+                case (6719692122703252321L, -4980252727643479394L):
+                    VisitObjectCreation((IObjectCreationOperation)operation);
+                    return;
+                case (6071994419942166607L, 4703288211271550880L):
+                    VisitObjectOrCollectionInitializer((IObjectOrCollectionInitializerOperation)operation);
+                    return;
+                case (6096682761421464670L, 3755015795917004717L):
+                    VisitOmittedArgument((IOmittedArgumentOperation)operation);
+                    return;
+                case (6883333905145853321L, -5363749039359186760L):
+                    VisitParameterInitializer((IParameterInitializerOperation)operation);
+                    return;
+                case (6894350033315732372L, -7618930119897447778L):
+                    VisitParameterReference((IParameterReferenceOperation)operation);
+                    return;
+                case (6478317660056340908L, -2752326843348942412L):
+                    VisitParenthesized((IParenthesizedOperation)operation);
+                    return;
+                case (6023085261137150986L, 4315787478287386022L):
+                    VisitPatternCaseClause((IPatternCaseClauseOperation)operation);
+                    return;
+                case (6070807031940069204L, 2261926793824819347L):
+                    VisitPropertyInitializer((IPropertyInitializerOperation)operation);
+                    return;
+                case (6863696222180759294L, 7108591833129500043L):
+                    VisitPropertyReference((IPropertyReferenceOperation)operation);
+                    return;
+                case (6396276235815500893L, -4689168751995956056L):
+                    VisitPropertySubpattern((IPropertySubpatternOperation)operation);
+                    return;
+                case (5814591805460267295L, 3651372407029561994L):
+                    VisitRaiseEvent((IRaiseEventOperation)operation);
+                    return;
+                case (6493163821295039800L, -8983376660323639388L):
+                    VisitRangeCaseClause((IRangeCaseClauseOperation)operation);
+                    return;
+                case (5794535122713732793L, -9197387767690199361L):
+                    VisitRangeOperation((IRangeOperation)operation);
+                    return;
+                case (5934346448901334731L, -22491926413553267L):
+                    VisitReDimClause((IReDimClauseOperation)operation);
+                    return;
+                case (5943089550205875120L, -2155787957041631574L):
+                    VisitReDim((IReDimOperation)operation);
+                    return;
+                case (6192512159543473658L, -6363759721179314779L):
+                    VisitRecursivePattern((IRecursivePatternOperation)operation);
+                    return;
+                case (5830623764759236904L, -8705997439286331971L):
+                    VisitRelationalCaseClause((IRelationalCaseClauseOperation)operation);
+                    return;
+                case (5903861547148688241L, -6962474170935462470L):
+                    VisitRelationalPattern((IRelationalPatternOperation)operation);
+                    return;
+                case (6450289644650019473L, 7680762458572365953L):
+                    VisitReturn((IReturnOperation)operation);
+                    return;
+                case (6089052141803516454L, 524747722967322526L):
+                    VisitSimpleAssignment((ISimpleAssignmentOperation)operation);
+                    return;
+                case (5961523559752316360L, -7779859883904832876L):
+                    VisitSingleValueCaseClause((ISingleValueCaseClauseOperation)operation);
+                    return;
+                case (6692672273600084885L, 1639170800939663009L):
+                    VisitSizeOf((ISizeOfOperation)operation);
+                    return;
+                case (6009401141553220573L, -6490042901831717998L):
+                    VisitSlicePattern((ISlicePatternOperation)operation);
+                    return;
+                case (5957758391893859493L, 7351657444641114498L):
+                    VisitSpread((ISpreadOperation)operation);
+                    return;
+                case (5852279335599146097L, -2868870892398157154L):
+                    VisitStop((IStopOperation)operation);
+                    return;
+                case (6097492620833795723L, -3083903464746719849L):
+                    VisitSwitchCase((ISwitchCaseOperation)operation);
+                    return;
+                case (6038368567526306462L, -1512630046971592557L):
+                    VisitSwitchExpressionArm((ISwitchExpressionArmOperation)operation);
+                    return;
+                case (6612528017602281101L, 597052537326796684L):
+                    VisitSwitchExpression((ISwitchExpressionOperation)operation);
+                    return;
+                case (6046666670977480267L, -5130542608863632705L):
+                    VisitSwitch((ISwitchOperation)operation);
+                    return;
+                case (6187893280065838465L, 5163014571094186667L):
+                    VisitThrow((IThrowOperation)operation);
+                    return;
+                case (5913176787045295526L, 6154447440161960124L):
+                    VisitTranslatedQuery((ITranslatedQueryOperation)operation);
+                    return;
+                case (6803168616149464088L, 3611503728052015767L):
+                    VisitTry((ITryOperation)operation);
+                    return;
+                case (6161601382753285111L, -6010533265229994366L):
+                    VisitTupleBinaryOperator((ITupleBinaryOperation)operation);
+                    return;
+                case (5871375534495651296L, -5957160814836229478L):
+                    VisitTuple((ITupleOperation)operation);
+                    return;
+                case (6732353058514663028L, 1655463322438650281L):
+                    VisitTypeOf((ITypeOfOperation)operation);
+                    return;
+                case (6578135450878091133L, -742537805189493119L):
+                    VisitTypeParameterObjectCreation((ITypeParameterObjectCreationOperation)operation);
+                    return;
+                case (6141139821035079832L, -6352358911203212646L):
+                    VisitTypePattern((ITypePatternOperation)operation);
+                    return;
+                case (6187359070647693571L, 8278806960769751217L):
+                    VisitUnaryOperator((IUnaryOperation)operation);
+                    return;
+                case (5852660651562082570L, -4289536609779083637L):
+                    VisitUsingDeclaration((IUsingDeclarationOperation)operation);
+                    return;
+                case (6595121719885254081L, 7850876676627693232L):
+                    VisitUsing((IUsingOperation)operation);
+                    return;
+                case (6754927942868001177L, 8862123401264811703L):
+                    VisitUtf8String((IUtf8StringOperation)operation);
+                    return;
+                case (6780893301687205566L, -6006521906552441186L):
+                    VisitVariableDeclarationGroup((IVariableDeclarationGroupOperation)operation);
+                    return;
+                case (5989677096909150766L, 8871742291939027364L):
+                    VisitVariableDeclaration((IVariableDeclarationOperation)operation);
+                    return;
+                case (6018247234738779367L, -2897580766173799746L):
+                    VisitVariableDeclarator((IVariableDeclaratorOperation)operation);
+                    return;
+                case (6210307353862596862L, 2756701874172601781L):
+                    VisitVariableInitializer((IVariableInitializerOperation)operation);
+                    return;
+                case (6406682449354667659L, -2271321167872915563L):
+                    VisitWhileLoop((IWhileLoopOperation)operation);
+                    return;
+                case (6834691663733262993L, -3637164163635034440L):
+                    VisitWith((IWithOperation)operation);
+                    return;
+                default:
+                    DefaultVisit(operation);
+                    return;
+            }
         }
 
         public virtual void VisitAddressOf(IAddressOfOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitAddressOf_164428ba(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitAnonymousFunction(IAnonymousFunctionOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitAnonymousFunction_f77e4908(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitAnonymousObjectCreation(IAnonymousObjectCreationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitAnonymousObjectCreation_d60508d5(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitArgument(IArgumentOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitArgument_f31a4fc1(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitArrayCreation(IArrayCreationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitArrayCreation_6e015dda(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitArrayElementReference(IArrayElementReferenceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitArrayElementReference_92a91978(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitArrayInitializer(IArrayInitializerOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitArrayInitializer_f31720d1(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitAttribute(IAttributeOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitAttribute_bfbe60f3(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitAwait(IAwaitOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitAwait_6129a319(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitBinaryOperator(IBinaryOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitBinaryOperator_f8e6584e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitBinaryPattern(IBinaryPatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitBinaryPattern_e1fa3e6b(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitBlock(IBlockOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitBlock_28caac6a(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitBranch(IBranchOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitBranch_53800272(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitCatchClause(ICatchClauseOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitCatchClause_98f8a20b(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitCaughtException(FlowAnalysis.ICaughtExceptionOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitCaughtException_2ca1ea6b(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitCoalesce(ICoalesceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitCoalesce_e773e6b3(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitCoalesceAssignment(ICoalesceAssignmentOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitCoalesceAssignment_b99e4782(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         [System.Obsolete("ICollectionElementInitializerOperation has been replaced with IInvocationOperation and IDynamicInvocationOperation", true)]
         public virtual void VisitCollectionElementInitializer(ICollectionElementInitializerOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            DefaultVisit(operation);
         }
 
         public virtual void VisitCollectionExpression(ICollectionExpressionOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitCollectionExpression_9d39ec63(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82210")]
         public virtual void VisitCollectionExpressionElementsPlaceholder(ICollectionExpressionElementsPlaceholderOperation operation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            DefaultVisit(operation);
         }
 
         public virtual void VisitCompoundAssignment(ICompoundAssignmentOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitCompoundAssignment_c68fe9cd(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitConditional(IConditionalOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitConditional_92e252b6(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitConditionalAccess(IConditionalAccessOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitConditionalAccess_c2c11d2b(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitConditionalAccessInstance(IConditionalAccessInstanceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitConditionalAccessInstance_3c159643(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitConstantPattern(IConstantPatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitConstantPattern_efed05e8(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitConstructorBodyOperation(IConstructorBodyOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitConstructorBodyOperation_6613dd25(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitConversion(IConversionOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitConversion_83a7e324(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDeclarationExpression(IDeclarationExpressionOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDeclarationExpression_72f780cb(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDeclarationPattern(IDeclarationPatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDeclarationPattern_b19cc9ee(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDeconstructionAssignment(IDeconstructionAssignmentOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDeconstructionAssignment_5799f6d1(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDefaultCaseClause(IDefaultCaseClauseOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDefaultCaseClause_0cfb7f53(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDefaultValue(IDefaultValueOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDefaultValue_3df4c823(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDelegateCreation(IDelegateCreationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDelegateCreation_42fc83e9(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDiscardOperation(IDiscardOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDiscardOperation_ecb44614(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDiscardPattern(IDiscardPatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDiscardPattern_fb042769(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDynamicIndexerAccess(IDynamicIndexerAccessOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDynamicIndexerAccess_c6293f85(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDynamicInvocation(IDynamicInvocationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDynamicInvocation_92554fa5(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDynamicMemberReference(IDynamicMemberReferenceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDynamicMemberReference_61c97eff(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitDynamicObjectCreation(IDynamicObjectCreationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitDynamicObjectCreation_b9f347c3(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitEmpty(IEmptyOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitEmpty_179a7ec7(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitEnd(IEndOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitEnd_7816047d(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitEventAssignment(IEventAssignmentOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitEventAssignment_92185086(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitEventReference(IEventReferenceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitEventReference_671f6948(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitExpressionStatement(IExpressionStatementOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitExpressionStatement_2d16f50e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitFieldInitializer(IFieldInitializerOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitFieldInitializer_27969861(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitFieldReference(IFieldReferenceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitFieldReference_f45b6394(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitFlowAnonymousFunction(FlowAnalysis.IFlowAnonymousFunctionOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitFlowAnonymousFunction_a1642ad1(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitFlowCapture(FlowAnalysis.IFlowCaptureOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitFlowCapture_7b46dfb6(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitFlowCaptureReference(FlowAnalysis.IFlowCaptureReferenceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitFlowCaptureReference_f7082d54(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitForEachLoop(IForEachLoopOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitForEachLoop_556dab3b(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitForLoop(IForLoopOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitForLoop_c5977019(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitForToLoop(IForToLoopOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitForToLoop_52341cad(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitFunctionPointerInvocation(IFunctionPointerInvocationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitFunctionPointerInvocation_a55ae459(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitImplicitIndexerReference(IImplicitIndexerReferenceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitImplicitIndexerReference_b35b5ad2(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitIncrementOrDecrement(IIncrementOrDecrementOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitIncrementOrDecrement_7a5fda31(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitInlineArrayAccess(IInlineArrayAccessOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitInlineArrayAccess_486a7422(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitInstanceReference(IInstanceReferenceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitInstanceReference_f0c993f2(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitInterpolatedString(IInterpolatedStringOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitInterpolatedString_6b08297e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitInterpolatedStringAddition(IInterpolatedStringAdditionOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitInterpolatedStringAddition_c88a8911(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitInterpolatedStringAppend(IInterpolatedStringAppendOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitInterpolatedStringAppend_28f7f764(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitInterpolatedStringHandlerArgumentPlaceholder(IInterpolatedStringHandlerArgumentPlaceholderOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitInterpolatedStringHandlerArgumentPlaceholder_235e9507(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitInterpolatedStringHandlerCreation(IInterpolatedStringHandlerCreationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitInterpolatedStringHandlerCreation_90d42729(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitInterpolatedStringText(IInterpolatedStringTextOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitInterpolatedStringText_d9bd7906(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitInterpolation(IInterpolationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitInterpolation_52e167f5(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitInvalid(IInvalidOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitInvalid_b1fc80ca(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitInvocation(IInvocationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitInvocation_05578a4c(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitIsNull(FlowAnalysis.IIsNullOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitIsNull_c97ab8c2(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitIsPattern(IIsPatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitIsPattern_03a5d754(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitIsType(IIsTypeOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitIsType_edc7f8be(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitLabeled(ILabeledOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitLabeled_e027d40c(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitListPattern(IListPatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitListPattern_7b1e25e7(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitLiteral(ILiteralOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitLiteral_382a09b7(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitLocalFunction(ILocalFunctionOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitLocalFunction_efb7d219(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitLocalReference(ILocalReferenceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitLocalReference_d035121e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitLock(ILockOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitLock_912c71b0(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitMemberInitializer(IMemberInitializerOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitMemberInitializer_e25bde91(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitMethodBodyOperation(IMethodBodyOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitMethodBodyOperation_399b4434(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitMethodReference(IMethodReferenceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitMethodReference_dbe55764(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitNameOf(INameOfOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitNameOf_6eabea12(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitNegatedPattern(INegatedPatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitNegatedPattern_c4c8182f(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitObjectCreation(IObjectCreationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitObjectCreation_55e28efc(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitObjectOrCollectionInitializer(IObjectOrCollectionInitializerOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitObjectOrCollectionInitializer_43f4e32d(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitOmittedArgument(IOmittedArgumentOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitOmittedArgument_e8aeb880(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitParameterInitializer(IParameterInitializerOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitParameterInitializer_50e189a2(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitParameterReference(IParameterReferenceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitParameterReference_030c6bc7(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitParenthesized(IParenthesizedOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitParenthesized_db15577c(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitPatternCaseClause(IPatternCaseClauseOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitPatternCaseClause_4dbae5be(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitPropertyInitializer(IPropertyInitializerOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitPropertyInitializer_db5b2e05(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitPropertyReference(IPropertyReferenceOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitPropertyReference_69778c25(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitPropertySubpattern(IPropertySubpatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitPropertySubpattern_3d19dc66(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitRaiseEvent(IRaiseEventOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitRaiseEvent_6c1c10d6(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitRangeCaseClause(IRangeCaseClauseOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitRangeCaseClause_c0fbe074(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitRangeOperation(IRangeOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitRangeOperation_5a6b56ad(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitRecursivePattern(IRecursivePatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitRecursivePattern_b4947d8e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitReDim(IReDimOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitReDim_6cdc3a0a(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitReDimClause(IReDimClauseOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitReDimClause_aec444c4(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitRelationalCaseClause(IRelationalCaseClauseOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitRelationalCaseClause_058b9852(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitRelationalPattern(IRelationalPatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitRelationalPattern_ba15b412(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitReturn(IReturnOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitReturn_15065235(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitSimpleAssignment(ISimpleAssignmentOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitSimpleAssignment_af9040e6(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitSingleValueCaseClause(ISingleValueCaseClauseOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitSingleValueCaseClause_8a17517e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitSizeOf(ISizeOfOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitSizeOf_971b0211(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitSlicePattern(ISlicePatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitSlicePattern_c59f6c7c(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitSpread(ISpreadOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitSpread_f2dcd648(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitStaticLocalInitializationSemaphore(FlowAnalysis.IStaticLocalInitializationSemaphoreOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitStaticLocalInitializationSemaphore_d4013b4f(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitStop(IStopOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitStop_c9cf57c1(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitSwitch(ISwitchOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitSwitch_3003e920(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitSwitchCase(ISwitchCaseOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitSwitchCase_aceee7ab(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitSwitchExpression(ISwitchExpressionOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitSwitchExpression_5878cc0d(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitSwitchExpressionArm(ISwitchExpressionArmOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitSwitchExpressionArm_d34aa767(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitThrow(IThrowOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitThrow_786beab1(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitTranslatedQuery(ITranslatedQueryOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitTranslatedQuery_7b137e9f(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitTry(ITryOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitTry_9f01acaf(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitTuple(ITupleOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitTuple_34d83ef3(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitTupleBinaryOperator(ITupleBinaryOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitTupleBinaryOperator_130560cf(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitTypeOf(ITypeOfOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitTypeOf_90bf0d2c(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitTypeParameterObjectCreation(ITypeParameterObjectCreationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitTypeParameterObjectCreation_892dd5b2(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitTypePattern(ITypePatternOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitTypePattern_d6b56e81(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitUnaryOperator(IUnaryOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitUnaryOperator_e2fd23ef(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitUsing(IUsingOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitUsing_85f70ce1(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitUsingDeclaration(IUsingDeclarationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitUsingDeclaration_a69631c1(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitUtf8String(IUtf8StringOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitUtf8String_9adda4bf(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitVariableDeclaration(IVariableDeclarationOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitVariableDeclaration_0040f96e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitVariableDeclarationGroup(IVariableDeclarationGroupOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitVariableDeclarationGroup_d378db6e(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitVariableDeclarator(IVariableDeclaratorOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitVariableDeclarator_74a8d945(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitVariableInitializer(IVariableInitializerOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitVariableInitializer_fd85660a(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitWhileLoop(IWhileLoopOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitWhileLoop_171a0752(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         public virtual void VisitWith(IWithOperation operation)
         {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IOperationVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OperationVisitor_VisitWith_5ff37e4a(__RoslynAotGetHandle(controlVtbl), operation.__RoslynAotGetHandle(controlVtbl));
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            DefaultVisit(operation);
         }
 
         internal OperationVisitor()

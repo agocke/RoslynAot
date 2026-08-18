@@ -100,6 +100,13 @@ internal static class ProjectionValidation
             failures.Add($"Closure root '{id}' matches no type.");
         }
 
+        foreach (string id in ProjectionLocalVisitors.Ids
+            .Where(id => !typeIds.Contains(id))
+            .OrderBy(id => id, StringComparer.Ordinal))
+        {
+            failures.Add($"Declared local visitor '{id}' matches no type.");
+        }
+
         var memberIds = model.Members
             .Select(member => member.CanonicalId)
             .ToHashSet(StringComparer.Ordinal);

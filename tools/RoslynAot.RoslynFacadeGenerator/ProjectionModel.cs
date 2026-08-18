@@ -532,6 +532,28 @@ internal sealed class ProjectionModel
         return false;
     }
 
+    /// <summary>
+    /// The instance vtbl id of a type, split for the wire, or false when the
+    /// type has no instance vtbl to name.
+    /// </summary>
+    public bool TryGetInstanceVtblId(
+        INamedTypeSymbol type,
+        out long vtblIdLow,
+        out long vtblIdHigh)
+    {
+        if (!_instanceVtbls.TryGetValue(type, out VtblProjection? vtbl))
+        {
+            vtblIdLow = 0;
+            vtblIdHigh = 0;
+            return false;
+        }
+
+        byte[] bytes = vtbl.VtblId.ToByteArray();
+        vtblIdLow = BitConverter.ToInt64(bytes, 0);
+        vtblIdHigh = BitConverter.ToInt64(bytes, 8);
+        return true;
+    }
+
     public bool IsReachable(ProjectedCall call) =>
         _typesBySymbol.TryGetValue(
             call.Symbol.ContainingType,

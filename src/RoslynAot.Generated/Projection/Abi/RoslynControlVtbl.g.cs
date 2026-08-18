@@ -202,6 +202,17 @@ public partial interface IRoslynControlVtbl
     // identically today, because String.ToString is the identity, but
     // relying on that would make the transport depend on a BCL detail
     // instead of on GetObject<string>.
+    // The most-derived projected type of the object behind a handle.
+    // IsObjectType answers "is it this one" and needs a candidate;
+    // an analyzer-side switch over a visitor's hundred-odd operation
+    // interfaces needs the answer itself, in one crossing rather than
+    // one per candidate.
+    [PreserveSig]
+    int GetObjectRuntimeVtblId(
+        long handle,
+        out long vtblIdLow,
+        out long vtblIdHigh);
+
     [PreserveSig]
     int CopyConstantStringUtf16(
         long handle,

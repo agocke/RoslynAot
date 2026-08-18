@@ -739,51 +739,67 @@ internal static class RoslynDispatcherRegistry
         long vtblIdHigh) =>
         (vtblIdLow, vtblIdHigh) switch
     {
+            (6173686296870914860L, -6291074703811439971L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElifDirectiveTriviaSyntax,
             (6617292003628591168L, 5705589592462471811L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.GenericNameSyntax,
             (6378778039328877304L, -6468544805959958091L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax,
-            (6336387776999725139L, 2583725802200742041L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AliasQualifiedNameSyntax,
-            (6173686296870914860L, -6291074703811439971L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElifDirectiveTriviaSyntax,
             (6853250579377893499L, 7954223281596750222L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IfDirectiveTriviaSyntax,
+            (6336387776999725139L, 2583725802200742041L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AliasQualifiedNameSyntax,
+            (6145121297121875355L, -4978701154842606431L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConditionalDirectiveTriviaSyntax,
+            (6572374307262685830L, 7151437908536282505L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElseDirectiveTriviaSyntax,
+            (6610055857480204501L, -5927910094199379833L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LineDirectiveTriviaSyntax,
+            (6598033023443322783L, 7222450656038825098L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LineSpanDirectiveTriviaSyntax,
             (6260547214907951605L, -4872226030206321265L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedLambdaExpressionSyntax,
             (5772905048210195276L, -2854827036487176288L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax,
             (5941466610133280891L, 7514366238717993859L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SimpleLambdaExpressionSyntax,
             (6770757230587951292L, -453402068043195969L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax,
             (6114379243737953146L, -5919412889171490395L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousMethodExpressionSyntax,
             (5991012875372147583L, -196296017181458546L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ArrayTypeSyntax,
+            (6854012168140682863L, 3886996220272812473L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BadDirectiveTriviaSyntax,
             (5822541048819853484L, -8219305288443796297L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseExpressionSyntax,
+            (5815631628113957582L, -5491747894268410229L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BranchingDirectiveTriviaSyntax,
             (6705555468537791126L, -8283779936812233324L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ClassDeclarationSyntax,
-            (6145121297121875355L, -4978701154842606431L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConditionalDirectiveTriviaSyntax,
-            (6572374307262685830L, 7151437908536282505L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElseDirectiveTriviaSyntax,
+            (6585320306759958107L, -7893217617313407589L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DefineDirectiveTriviaSyntax,
+            (6899252969847841171L, -7991305672885103468L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EndIfDirectiveTriviaSyntax,
+            (6906488039199652269L, 5493926804473738175L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EndRegionDirectiveTriviaSyntax,
+            (6493993593069751690L, -523546204951530590L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ErrorDirectiveTriviaSyntax,
             (5892024624210655776L, -6672413774229332546L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExtensionBlockDeclarationSyntax,
             (6614558530491132731L, -7738937945760649581L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerTypeSyntax,
+            (6567673727813790935L, -5017165555250366080L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IgnoredDirectiveTriviaSyntax,
             (6173965496797396324L, 6229507198542198437L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitObjectCreationExpressionSyntax,
             (5838227767798711447L, -1122819958262803311L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InterfaceDeclarationSyntax,
             (6098070997023322579L, -2341843595018355832L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LambdaExpressionSyntax,
-            (6610055857480204501L, -5927910094199379833L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LineDirectiveTriviaSyntax,
-            (6598033023443322783L, 7222450656038825098L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LineSpanDirectiveTriviaSyntax,
+            (6681227443122531669L, -1762516228850495340L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LineOrSpanDirectiveTriviaSyntax,
+            (6595146488468505231L, 6639538081938023083L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LoadDirectiveTriviaSyntax,
             (6792636711236032020L, 8557302856187455660L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax,
+            (6122266619963240511L, 7094214956124662408L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NullableDirectiveTriviaSyntax,
             (5885397334686985257L, -4190850911668668241L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NullableTypeSyntax,
             (6512510571879220950L, 5252291698698915736L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ObjectCreationExpressionSyntax,
             (6706429552160272594L, -6681344694988010313L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.OmittedTypeArgumentSyntax,
             (6854799676675196965L, 1749304030988836503L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PointerTypeSyntax,
+            (6500495373414681322L, 5753026367137304232L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PragmaChecksumDirectiveTriviaSyntax,
+            (6866493966539563799L, -554557049060671597L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PragmaWarningDirectiveTriviaSyntax,
             (6868210878357674557L, -6121057333906921846L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PredefinedTypeSyntax,
             (6126500803318654751L, 5247225422571463072L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RecordDeclarationSyntax,
             (6862738783246393196L, 7046830137283686536L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RefTypeSyntax,
+            (6829281478064078284L, -6060617531799585903L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax,
+            (6566131396358668879L, -648238969609355121L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RegionDirectiveTriviaSyntax,
             (6456229706919864378L, -7102648410554703470L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ScopedTypeSyntax,
+            (6691349065301856052L, 1423169669671280570L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ShebangDirectiveTriviaSyntax,
+            (6887645680833696894L, 216271236558752640L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SkippedTokensTriviaSyntax,
             (6608764474854630359L, -4949103441305047125L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.StructDeclarationSyntax,
             (6391906851191116087L, -3366756546107969865L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ThisExpressionSyntax,
             (6639068085882354724L, 9136948846743335843L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TupleTypeSyntax,
+            (6244225900593546154L, -5326837368074989937L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UndefDirectiveTriviaSyntax,
             (5954971091826991810L, -9221836678040765267L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UnionDeclarationSyntax,
+            (6464539612127665115L, 5511418079489486007L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.WarningDirectiveTriviaSyntax,
             (5798643577670004534L, -3223702664587949420L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousFunctionExpressionSyntax,
             (5970316233843956041L, 1339152177450390188L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousObjectCreationExpressionSyntax,
             (5998155634712416873L, 4491110454066825636L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ArrayCreationExpressionSyntax,
             (6899306953297714457L, -7068227669127922007L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AssignmentExpressionSyntax,
             (6126437435564045988L, 20416973922992267L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AwaitExpressionSyntax,
-            (6854012168140682863L, 3886996220272812473L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BadDirectiveTriviaSyntax,
             (6136671933125757575L, 7648980670198313661L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseObjectCreationExpressionSyntax,
             (6435927300169785740L, 147790496059789708L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax,
             (6021618411643907745L, -5387147971603391567L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BinaryPatternSyntax,
-            (5815631628113957582L, -5491747894268410229L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BranchingDirectiveTriviaSyntax,
             (5771452914898718926L, 8010211769312584878L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CastExpressionSyntax,
             (6468309558864598642L, 1937355170153297069L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CheckedExpressionSyntax,
             (6109077211039920088L, -5105438055274643325L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CollectionExpressionSyntax,
@@ -796,15 +812,13 @@ internal static class RoslynDispatcherRegistry
             (6057491396782539085L, -2446683831588907859L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DeclarationExpressionSyntax,
             (6035632147434802361L, 6977265912086484145L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DeclarationPatternSyntax,
             (6564929318828725483L, 1461790398344677818L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DefaultExpressionSyntax,
-            (6585320306759958107L, -7893217617313407589L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DefineDirectiveTriviaSyntax,
             (6118779673556942284L, 3348192872647028367L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DestructorDeclarationSyntax,
+            (6592042638821628589L, -7787286225697838425L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,
             (6010149171002323175L, -617892030332104316L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DiscardPatternSyntax,
+            (5974909081600127830L, 755338971896083612L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DocumentationCommentTriviaSyntax,
             (6322489232319255089L, -7891435392384621401L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElementAccessExpressionSyntax,
             (6507107307285850292L, 520588756398370439L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElementBindingExpressionSyntax,
-            (6899252969847841171L, -7991305672885103468L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EndIfDirectiveTriviaSyntax,
-            (6906488039199652269L, 5493926804473738175L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EndRegionDirectiveTriviaSyntax,
             (6252182969843888881L, -2586735001302130008L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EnumDeclarationSyntax,
-            (6493993593069751690L, -523546204951530590L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ErrorDirectiveTriviaSyntax,
             (6496177316662666159L, -6189358707217552205L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EventDeclarationSyntax,
             (5962657387393567101L, 2261089762963184820L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EventFieldDeclarationSyntax,
             (6198331634401394210L, -5261579484186983277L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExtensionMemberCrefSyntax,
@@ -813,7 +827,6 @@ internal static class RoslynDispatcherRegistry
             (6335856354968528532L, -4461471530835529295L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FileScopedNamespaceDeclarationSyntax,
             (5910686286840975802L, 1542376238790538158L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ForEachStatementSyntax,
             (5948380047355989222L, -4923178154232991341L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ForEachVariableStatementSyntax,
-            (6567673727813790935L, -5017165555250366080L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IgnoredDirectiveTriviaSyntax,
             (5839970272143613699L, 1492345222220015540L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitArrayCreationExpressionSyntax,
             (6240483524012754263L, 4615061449619055787L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitElementAccessSyntax,
             (6297812844687279215L, 8434434846811875503L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitStackAllocArrayCreationExpressionSyntax,
@@ -824,25 +837,20 @@ internal static class RoslynDispatcherRegistry
             (6715488184707894905L, -3252832842550617422L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringExpressionSyntax,
             (6110165608647327054L, -8365664047582446448L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax,
             (6349202165083398712L, 6088789639676211896L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IsPatternExpressionSyntax,
-            (6681227443122531669L, -1762516228850495340L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LineOrSpanDirectiveTriviaSyntax,
             (6498062744065843766L, -3835585306380572752L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ListPatternSyntax,
             (6466967039481050840L, 6440063444289663147L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LiteralExpressionSyntax,
-            (6595146488468505231L, 6639538081938023083L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LoadDirectiveTriviaSyntax,
             (6721280065561592617L, -6412387919900080505L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.MakeRefExpressionSyntax,
             (6356751346145254483L, -5342407459198344044L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.MemberAccessExpressionSyntax,
             (5859356491403117494L, 6172254135938192015L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.MemberBindingExpressionSyntax,
             (6280154327689458180L, 6782172436496513717L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax,
             (5912891622332789275L, -617175278909888639L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NameMemberCrefSyntax,
             (6900305432243721508L, 4625943362399729834L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax,
-            (6122266619963240511L, 7094214956124662408L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NullableDirectiveTriviaSyntax,
             (6581383117185637630L, -776395528779992386L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.OmittedArraySizeExpressionSyntax,
             (6256680365622613552L, -7684465955728169555L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.OperatorDeclarationSyntax,
             (6104608596704906596L, 6916438271082165169L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.OperatorMemberCrefSyntax,
             (6362490506055588165L, 2566884783677450386L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedExpressionSyntax,
             (6298521483152318199L, -6421687198054099060L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedPatternSyntax,
             (6582302938719574205L, -2669010109959168854L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PostfixUnaryExpressionSyntax,
-            (6500495373414681322L, 5753026367137304232L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PragmaChecksumDirectiveTriviaSyntax,
-            (6866493966539563799L, -554557049060671597L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PragmaWarningDirectiveTriviaSyntax,
             (6391311819335029955L, -5423885984780864849L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PrefixUnaryExpressionSyntax,
             (5978332513851201705L, 3620410738435137949L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PropertyDeclarationSyntax,
             (6665145835779389678L, 583663746861183624L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.QueryExpressionSyntax,
@@ -851,10 +859,7 @@ internal static class RoslynDispatcherRegistry
             (6867840064481132562L, -7945967438152414825L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RefExpressionSyntax,
             (6049264929621585368L, 8414899852598173834L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RefTypeExpressionSyntax,
             (5814083409272389963L, -6338195997316413289L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RefValueExpressionSyntax,
-            (6829281478064078284L, -6060617531799585903L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax,
-            (6566131396358668879L, -648238969609355121L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RegionDirectiveTriviaSyntax,
             (6512099586228906686L, 7142747480489771682L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RelationalPatternSyntax,
-            (6691349065301856052L, 1423169669671280570L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ShebangDirectiveTriviaSyntax,
             (6881277058697870263L, -8604937093035304572L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SizeOfExpressionSyntax,
             (6264483429978260377L, -6997488735173169253L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SlicePatternSyntax,
             (5775202338997386915L, -4152242397518877772L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.StackAllocArrayCreationExpressionSyntax,
@@ -866,10 +871,8 @@ internal static class RoslynDispatcherRegistry
             (6235785048938288861L, 5038733431068532885L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypePatternSyntax,
             (5998554438737150581L, 3494987663274175362L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax,
             (6672474911185521982L, -6842310043684860779L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UnaryPatternSyntax,
-            (6244225900593546154L, -5326837368074989937L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UndefDirectiveTriviaSyntax,
             (6712363434127820877L, 5199364648633771648L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UnsafeExpressionSyntax,
             (6887312600100279038L, 5401472529941716642L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.VarPatternSyntax,
-            (6464539612127665115L, 5511418079489486007L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.WarningDirectiveTriviaSyntax,
             (6698351429450251432L, 6295560785316983938L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.WithExpressionSyntax,
             (6368266031800601494L, -4281764318750591339L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AllowsConstraintClauseSyntax,
             (5973303311379016479L, 5411695061324207488L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax,
@@ -887,6 +890,7 @@ internal static class RoslynDispatcherRegistry
             (6413214778061665473L, 4519975472258905511L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CheckedStatementSyntax,
             (6038491198369412943L, -6849180323471492706L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ClassOrStructConstraintSyntax,
             (6199933720375563778L, -5032985217068669305L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax,
+            (5978293792156890608L, 658593068002677889L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CompilationUnitSyntax,
             (6492621125427474108L, 8082045468592498598L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorConstraintSyntax,
             (6052125610425626305L, 1943375638856971674L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ContinueStatementSyntax,
             (6058596268825927039L, 4194404120965887406L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CrefBracketedParameterListSyntax,
@@ -894,10 +898,8 @@ internal static class RoslynDispatcherRegistry
             (6082448259016114173L, 4881753552269242017L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DefaultConstraintSyntax,
             (6854124086606060972L, -2983066930355971686L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DefaultSwitchLabelSyntax,
             (6536410394495048241L, -1475598838911438174L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DelegateDeclarationSyntax,
-            (6592042638821628589L, -7787286225697838425L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,
             (6382514949105107062L, 2340631080701471644L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DiscardDesignationSyntax,
             (6553790624624757268L, -3017334367107938415L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DoStatementSyntax,
-            (5974909081600127830L, 755338971896083612L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DocumentationCommentTriviaSyntax,
             (6329114612056455415L, 6109823350259839404L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EmptyStatementSyntax,
             (6854323585264919889L, 1495769955729800847L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EnumMemberDeclarationSyntax,
             (6086034947627696630L, -5969575395934854228L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionColonSyntax,
@@ -935,8 +937,8 @@ internal static class RoslynDispatcherRegistry
             (6902099731650601408L, 6128347812827413182L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SelectClauseSyntax,
             (6383393140303850924L, 2178445787750029486L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SimpleBaseTypeSyntax,
             (6549528542974261827L, -5140131541623322490L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SingleVariableDesignationSyntax,
-            (6887645680833696894L, 216271236558752640L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SkippedTokensTriviaSyntax,
             (6090862150346007350L, 7361979752357051836L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SpreadElementSyntax,
+            (5932520241206000875L, -4115810500083620430L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.StructuredTriviaSyntax,
             (6538734470065970818L, 4211872661063520648L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SwitchStatementSyntax,
             (5960690314101000283L, 6025638827977153435L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ThrowStatementSyntax,
             (6136146748252212918L, -7600181480447352405L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TryStatementSyntax,
@@ -957,6 +959,8 @@ internal static class RoslynDispatcherRegistry
             (6537248133615590011L, 7534102948276081054L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlTextAttributeSyntax,
             (6303417821089196647L, 8328887198844955026L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlTextSyntax,
             (6585953578268953580L, -8978742914169895014L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.YieldStatementSyntax,
+            (6805892318212971116L, 3459135966549338263L) => value is global::Microsoft.CodeAnalysis.IErrorTypeSymbol,
+            (6660210152896629588L, 208613667673949833L) => value is global::Microsoft.CodeAnalysis.Text.TextLineCollection,
             (6111650690333510295L, -4608807439847327577L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AccessorDeclarationSyntax,
             (5773049395067049516L, -816855224309977455L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AccessorListSyntax,
             (6706221327811755636L, 2890333999427339190L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AllowsConstraintSyntax,
@@ -980,7 +984,6 @@ internal static class RoslynDispatcherRegistry
             (6385281979678934995L, 3651270367322077854L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CatchDeclarationSyntax,
             (6909076024352004192L, 7217272235531872694L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CatchFilterClauseSyntax,
             (6040334274825541791L, 6844895473762759577L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CollectionElementSyntax,
-            (5978293792156890608L, 658593068002677889L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CompilationUnitSyntax,
             (6154820770094773204L, 8307454707630257083L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorInitializerSyntax,
             (6121115734995399637L, -6640898961270863198L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax,
             (6466252474516907067L, -8178182220627426682L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CrefSyntax,
@@ -1009,7 +1012,6 @@ internal static class RoslynDispatcherRegistry
             (5925645260699089504L, -6327005923310979919L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.QueryContinuationSyntax,
             (6156149118487978479L, -8610257430148651846L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SelectOrGroupClauseSyntax,
             (5785780259035058393L, -4643807841164364154L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax,
-            (5932520241206000875L, -4115810500083620430L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.StructuredTriviaSyntax,
             (6763643203813748132L, 117519546907870365L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax,
             (5972756895202463473L, -2804757799815607920L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionArmSyntax,
             (6002967311681743313L, 2967623935964462485L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SwitchLabelSyntax,
@@ -1031,54 +1033,120 @@ internal static class RoslynDispatcherRegistry
             (6242482217118788216L, -2361690915501776221L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax,
             (6066028325600425363L, 8133198206782482826L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax,
             (6795129273133947376L, -3551296767104032611L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlPrefixSyntax,
+            (6879916988017005015L, -6617622292582463053L) => value is global::Microsoft.CodeAnalysis.IArrayTypeSymbol,
+            (6477212890330258670L, -4446406480323306103L) => value is global::Microsoft.CodeAnalysis.IDynamicTypeSymbol,
+            (6417832099796260401L, -6243531804504036446L) => value is global::Microsoft.CodeAnalysis.IFunctionPointerTypeSymbol,
+            (5916999778746345536L, 5518929607660773037L) => value is global::Microsoft.CodeAnalysis.INamedTypeSymbol,
+            (6650912988887091464L, -8411626690585114970L) => value is global::Microsoft.CodeAnalysis.IPointerTypeSymbol,
+            (5888018917143146087L, -3266382106801698914L) => value is global::Microsoft.CodeAnalysis.ITypeParameterSymbol,
             (6592819178594807712L, -2855131136780162890L) => value is global::Microsoft.CodeAnalysis.AssemblyMetadata,
+            (6578973506009578618L, 8312952492149964679L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions,
+            (6150454455051417175L, -8871987170541682523L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,
+            (6504587520261228364L, 5094455481690590858L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode,
+            (6497132759354869273L, 7105655810823733404L) => value is global::Microsoft.CodeAnalysis.CompilationReference,
+            (5811322149339945119L, 2308144372393975194L) => value is global::Microsoft.CodeAnalysis.Diagnostic,
+            (6383246998347410759L, -5132694442624866370L) => value is global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerFileReference,
+            (6910974624911649144L, 8549931182006596742L) => value is global::Microsoft.CodeAnalysis.INamespaceSymbol,
+            (6244190721606964011L, -4567947647576929138L) => value is global::Microsoft.CodeAnalysis.ISourceAssemblySymbol,
+            (6869865748335467059L, -3432631301897972574L) => value is global::Microsoft.CodeAnalysis.ITypeSymbol,
+            (5904847537358701094L, -5263436887476129105L) => value is global::Microsoft.CodeAnalysis.LocalizableString,
+            (5801866436300090440L, -967807436237488998L) => value is global::Microsoft.CodeAnalysis.ModuleMetadata,
+            (6753815970454523409L, -5057262226529624158L) => value is global::Microsoft.CodeAnalysis.SourceFileResolver,
+            (6334903794570028567L, -4711927794259259234L) => value is global::Microsoft.CodeAnalysis.AssemblyIdentity,
             (6403782174460483344L, 6653543079286316175L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpCommandLineArguments,
             (6259014060537408448L, 3222434785862186649L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser,
             (6513853735695111729L, 7179390645458279041L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation,
-            (6578973506009578618L, 8312952492149964679L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions,
             (5989628894161898704L, 1578727213959738249L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpDiagnosticFormatter,
             (5792381882888769229L, -5365207419229665883L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpGeneratorDriver,
-            (6150454455051417175L, -8871987170541682523L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,
             (5921091056968502100L, -3953374216578716782L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpScriptCompilationInfo,
-            (6504587520261228364L, 5094455481690590858L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode,
             (5939964703278124852L, -3712735063761703552L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter,
             (6757606629844938092L, 2201594045327063736L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree,
             (6909110796047630645L, -4526935855294428025L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker,
-            (6497132759354869273L, 7105655810823733404L) => value is global::Microsoft.CodeAnalysis.CompilationReference,
+            (5842706113779122515L, -1083317572378227816L) => value is global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation,
+            (6435686176918881384L, -2264862211094181706L) => value is global::Microsoft.CodeAnalysis.CSharp.SyntaxTokenParser,
+            (6324936807005086795L, -5345475321772525121L) => value is global::Microsoft.CodeAnalysis.CustomModifier,
             (6215879060056713313L, 7142915523038002345L) => value is global::Microsoft.CodeAnalysis.DesktopAssemblyIdentityComparer,
             (6155103157010467893L, -9203640603832526197L) => value is global::Microsoft.CodeAnalysis.DesktopStrongNameProvider,
-            (6383246998347410759L, -5132694442624866370L) => value is global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerFileReference,
+            (6817537380920958174L, -6426313369435623507L) => value is global::Microsoft.CodeAnalysis.DiagnosticDescriptor,
             (5867053650678190168L, -6396539037201873227L) => value is global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerImageReference,
             (6913479558301595707L, 335124799297012889L) => value is global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerLoadFailureEventArgs,
             (6635351788279702369L, 5008461230726056585L) => value is global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticSuppressor,
             (6404872672142685806L, 8186581770054330277L) => value is global::Microsoft.CodeAnalysis.Diagnostics.UnresolvedAnalyzerReference,
+            (6061432742681312154L, 7262655059948350121L) => value is global::Microsoft.CodeAnalysis.DllImportData,
             (6901623101402045634L, -6973961590633892218L) => value is global::Microsoft.CodeAnalysis.Emit.EmitDifferenceResult,
+            (5984900808059830187L, 1317375250298486658L) => value is global::Microsoft.CodeAnalysis.Emit.EmitOptions,
             (6017134286226091063L, -7766792781714627952L) => value is global::Microsoft.CodeAnalysis.GeneratorAttribute,
-            (5801866436300090440L, -967807436237488998L) => value is global::Microsoft.CodeAnalysis.ModuleMetadata,
+            (6519047655564337545L, -7074729740500482431L) => value is global::Microsoft.CodeAnalysis.IAliasSymbol,
+            (6002036998257516093L, -8398571145057786214L) => value is global::Microsoft.CodeAnalysis.IAssemblySymbol,
+            (6126586631411333034L, -8686961410666617960L) => value is global::Microsoft.CodeAnalysis.IDiscardSymbol,
+            (5815096847334667733L, 7478332459375573167L) => value is global::Microsoft.CodeAnalysis.IEventSymbol,
+            (6669725327007781390L, -8257387934513594751L) => value is global::Microsoft.CodeAnalysis.IFieldSymbol,
+            (6480004954692704832L, 4611917686853249172L) => value is global::Microsoft.CodeAnalysis.ILabelSymbol,
+            (6016933693655636294L, 3097322181403985582L) => value is global::Microsoft.CodeAnalysis.ILocalSymbol,
+            (6138804782956584293L, 5169855993014625424L) => value is global::Microsoft.CodeAnalysis.IMethodSymbol,
+            (6405572945912559569L, 7328719009003368344L) => value is global::Microsoft.CodeAnalysis.IModuleSymbol,
+            (6106630561244385013L, 160115260111085711L) => value is global::Microsoft.CodeAnalysis.INamespaceOrTypeSymbol,
+            (6603346922221177183L, 3209273076288997767L) => value is global::Microsoft.CodeAnalysis.IParameterSymbol,
+            (6226070177996971646L, -1835355549691233120L) => value is global::Microsoft.CodeAnalysis.IPreprocessingSymbol,
+            (5946664347348519295L, 4677222066378639495L) => value is global::Microsoft.CodeAnalysis.IPropertySymbol,
+            (5798928462980401724L, -7867930966094734934L) => value is global::Microsoft.CodeAnalysis.IRangeVariableSymbol,
+            (6163533666753424866L, 3696341625299175827L) => value is global::Microsoft.CodeAnalysis.Metadata,
+            (6578246491093762371L, -2158760389432596575L) => value is global::Microsoft.CodeAnalysis.Operations.IBinaryPatternOperation,
+            (6430377446401711066L, -3741233849196465273L) => value is global::Microsoft.CodeAnalysis.Operations.ICoalesceAssignmentOperation,
+            (6269722265082360484L, 3878392023010161325L) => value is global::Microsoft.CodeAnalysis.Operations.ICompoundAssignmentOperation,
+            (6824831494064002278L, 5420114252080888478L) => value is global::Microsoft.CodeAnalysis.Operations.IConstantPatternOperation,
+            (6248952735378422523L, 1478668721558234558L) => value is global::Microsoft.CodeAnalysis.Operations.IConstructorBodyOperation,
+            (6478521530882938884L, -5530286830515677772L) => value is global::Microsoft.CodeAnalysis.Operations.IDeclarationPatternOperation,
+            (5872348033292937152L, -5095270401365280329L) => value is global::Microsoft.CodeAnalysis.Operations.IDeconstructionAssignmentOperation,
+            (6549255534542252931L, -5242381117060569704L) => value is global::Microsoft.CodeAnalysis.Operations.IDefaultCaseClauseOperation,
+            (6213541281055457759L, 1420065244176037520L) => value is global::Microsoft.CodeAnalysis.Operations.IDiscardPatternOperation,
+            (5998587415654015289L, -5143347829054695254L) => value is global::Microsoft.CodeAnalysis.Operations.IEventReferenceOperation,
+            (6736709989877889166L, -7525742199261115722L) => value is global::Microsoft.CodeAnalysis.Operations.IFieldInitializerOperation,
+            (5871209120158250676L, -9107769725290181734L) => value is global::Microsoft.CodeAnalysis.Operations.IFieldReferenceOperation,
+            (6559976443206196190L, -6060058214304398149L) => value is global::Microsoft.CodeAnalysis.Operations.IForEachLoopOperation,
+            (6403905979414878155L, -3149134805620239940L) => value is global::Microsoft.CodeAnalysis.Operations.IForLoopOperation,
+            (6632486365177572997L, 2451103833718737589L) => value is global::Microsoft.CodeAnalysis.Operations.IForToLoopOperation,
+            (6236719439420526500L, -4032558093336766077L) => value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringAppendOperation,
+            (5893567695697328316L, 5281872073452129726L) => value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringTextOperation,
+            (6277162119877450606L, 9001636320537298563L) => value is global::Microsoft.CodeAnalysis.Operations.IInterpolationOperation,
+            (5799968126543671658L, 2748167786024855741L) => value is global::Microsoft.CodeAnalysis.Operations.IListPatternOperation,
+            (6627173927677138462L, -1735655602070206079L) => value is global::Microsoft.CodeAnalysis.Operations.IMethodBodyOperation,
+            (6657692720800439896L, -2707819179842156147L) => value is global::Microsoft.CodeAnalysis.Operations.IMethodReferenceOperation,
+            (6513750130606680651L, 3590202332471553444L) => value is global::Microsoft.CodeAnalysis.Operations.INegatedPatternOperation,
+            (6883333905145853321L, -5363749039359186760L) => value is global::Microsoft.CodeAnalysis.Operations.IParameterInitializerOperation,
+            (6023085261137150986L, 4315787478287386022L) => value is global::Microsoft.CodeAnalysis.Operations.IPatternCaseClauseOperation,
+            (6070807031940069204L, 2261926793824819347L) => value is global::Microsoft.CodeAnalysis.Operations.IPropertyInitializerOperation,
+            (6863696222180759294L, 7108591833129500043L) => value is global::Microsoft.CodeAnalysis.Operations.IPropertyReferenceOperation,
+            (6493163821295039800L, -8983376660323639388L) => value is global::Microsoft.CodeAnalysis.Operations.IRangeCaseClauseOperation,
+            (6192512159543473658L, -6363759721179314779L) => value is global::Microsoft.CodeAnalysis.Operations.IRecursivePatternOperation,
+            (5830623764759236904L, -8705997439286331971L) => value is global::Microsoft.CodeAnalysis.Operations.IRelationalCaseClauseOperation,
+            (5903861547148688241L, -6962474170935462470L) => value is global::Microsoft.CodeAnalysis.Operations.IRelationalPatternOperation,
+            (6089052141803516454L, 524747722967322526L) => value is global::Microsoft.CodeAnalysis.Operations.ISimpleAssignmentOperation,
+            (5961523559752316360L, -7779859883904832876L) => value is global::Microsoft.CodeAnalysis.Operations.ISingleValueCaseClauseOperation,
+            (6009401141553220573L, -6490042901831717998L) => value is global::Microsoft.CodeAnalysis.Operations.ISlicePatternOperation,
+            (6141139821035079832L, -6352358911203212646L) => value is global::Microsoft.CodeAnalysis.Operations.ITypePatternOperation,
+            (6210307353862596862L, 2756701874172601781L) => value is global::Microsoft.CodeAnalysis.Operations.IVariableInitializerOperation,
+            (6406682449354667659L, -2271321167872915563L) => value is global::Microsoft.CodeAnalysis.Operations.IWhileLoopOperation,
             (5975260851814815145L, 8947261945377031089L) => value is global::Microsoft.CodeAnalysis.Operations.OperationWalker,
             (5766561595639973638L, -5648836441194710864L) => value is global::Microsoft.CodeAnalysis.PortableExecutableReference,
-            (6753815970454523409L, -5057262226529624158L) => value is global::Microsoft.CodeAnalysis.SourceFileResolver,
+            (5765257549080727166L, 8387729037993731211L) => value is global::Microsoft.CodeAnalysis.ResourceDescription,
+            (6305598023263921092L, -8643817826394609222L) => value is global::Microsoft.CodeAnalysis.SuppressionDescriptor,
+            (5846737820548908128L, 2994877434984818619L) => value is global::Microsoft.CodeAnalysis.SyntaxAnnotation,
             (6627462623129914502L, -4238089336260025160L) => value is global::Microsoft.CodeAnalysis.Text.TextChangeEventArgs,
             (6118682005477857987L, -1999366681826881403L) => value is global::Microsoft.CodeAnalysis.UnresolvedMetadataReference,
             (6595138540243804355L, 5553718526281674126L) => value is global::Microsoft.CodeAnalysis.XmlFileResolver,
             (6159722067567629388L, -3870974281439332932L) => value is global::Microsoft.CodeAnalysis.AdditionalText,
             (6024297944993335436L, -7065923222341436998L) => value is global::Microsoft.CodeAnalysis.AnalyzerConfig,
             (6714316955742506299L, 4643492143633292685L) => value is global::Microsoft.CodeAnalysis.AnalyzerConfigSet,
-            (6334903794570028567L, -4711927794259259234L) => value is global::Microsoft.CodeAnalysis.AssemblyIdentity,
             (6222698393385353556L, 6344855293642378394L) => value is global::Microsoft.CodeAnalysis.AssemblyIdentityComparer,
             (6209933636566173515L, 5116270058005009822L) => value is global::Microsoft.CodeAnalysis.AttributeData,
             (6842334284655663217L, 3723432951882157717L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor,
-            (5842706113779122515L, -1083317572378227816L) => value is global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation,
-            (6435686176918881384L, -2264862211094181706L) => value is global::Microsoft.CodeAnalysis.CSharp.SyntaxTokenParser,
             (6520485306366077042L, -1330736119947768679L) => value is global::Microsoft.CodeAnalysis.CommandLineArguments,
             (6349933110489488382L, 223764789649756819L) => value is global::Microsoft.CodeAnalysis.CommandLineParser,
             (5838057543718980479L, -2639246118531137364L) => value is global::Microsoft.CodeAnalysis.Compilation,
             (6559866682155532990L, -5850717138316559465L) => value is global::Microsoft.CodeAnalysis.CompilationOptions,
             (6897252118549907955L, 6399807766838608033L) => value is global::Microsoft.CodeAnalysis.ControlFlowAnalysis,
-            (6324936807005086795L, -5345475321772525121L) => value is global::Microsoft.CodeAnalysis.CustomModifier,
             (6749534072336568398L, -8700308751649649776L) => value is global::Microsoft.CodeAnalysis.DataFlowAnalysis,
-            (5811322149339945119L, 2308144372393975194L) => value is global::Microsoft.CodeAnalysis.Diagnostic,
-            (6817537380920958174L, -6426313369435623507L) => value is global::Microsoft.CodeAnalysis.DiagnosticDescriptor,
             (6412420830151071932L, 4338889509376079787L) => value is global::Microsoft.CodeAnalysis.DiagnosticFormatter,
             (5994657287270306651L, 4487218105910285716L) => value is global::Microsoft.CodeAnalysis.Diagnostics.AnalysisContext,
             (6636470452634757253L, -2067258725200364153L) => value is global::Microsoft.CodeAnalysis.Diagnostics.AnalysisResult,
@@ -1094,89 +1162,29 @@ internal static class RoslynDispatcherRegistry
             (6084212300098344158L, 629711434844556469L) => value is global::Microsoft.CodeAnalysis.Diagnostics.SuppressionInfo,
             (5824146596876579651L, 5614823933163949240L) => value is global::Microsoft.CodeAnalysis.Diagnostics.SymbolStartAnalysisContext,
             (6621633318013859560L, -3644058924037277265L) => value is global::Microsoft.CodeAnalysis.Diagnostics.Telemetry.AnalyzerTelemetryInfo,
-            (6061432742681312154L, 7262655059948350121L) => value is global::Microsoft.CodeAnalysis.DllImportData,
             (5999264127411572078L, -710269375020333379L) => value is global::Microsoft.CodeAnalysis.DocumentationProvider,
             (6883620862467456628L, 4373418245110047116L) => value is global::Microsoft.CodeAnalysis.EmbeddedText,
             (6755517211427362198L, 1897398644073945511L) => value is global::Microsoft.CodeAnalysis.Emit.EmitBaseline,
-            (5984900808059830187L, 1317375250298486658L) => value is global::Microsoft.CodeAnalysis.Emit.EmitOptions,
             (6264547997076737453L, 113710103746622118L) => value is global::Microsoft.CodeAnalysis.Emit.EmitResult,
             (6747533194834058974L, -6601405085979904852L) => value is global::Microsoft.CodeAnalysis.ErrorLogOptions,
             (6129704948536134761L, -3553680752300514903L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock,
             (5831580335317123668L, 4271686525641846936L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch,
             (6489553148949194120L, -2793163428732318536L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph,
             (6724941978863853197L, -2395739250435928405L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion,
-            (6829143716795851916L, -576526879624741990L) => value is global::Microsoft.CodeAnalysis.GeneratorDriver,
-            (6035884951631395538L, 1995396101133271193L) => value is global::Microsoft.CodeAnalysis.GeneratorDriverRunResult,
-            (6373319895333463069L, 4167567116788806046L) => value is global::Microsoft.CodeAnalysis.IncrementalGeneratorRunStep,
-            (5904847537358701094L, -5263436887476129105L) => value is global::Microsoft.CodeAnalysis.LocalizableString,
-            (6467616330741294022L, -1441270302119742284L) => value is global::Microsoft.CodeAnalysis.Location,
-            (6163533666753424866L, 3696341625299175827L) => value is global::Microsoft.CodeAnalysis.Metadata,
-            (6822048974074265806L, -8216230940611193166L) => value is global::Microsoft.CodeAnalysis.MetadataId,
-            (6603965155313165831L, -501461725512585801L) => value is global::Microsoft.CodeAnalysis.MetadataReference,
-            (6425765204403708054L, 1624020926161490052L) => value is global::Microsoft.CodeAnalysis.MetadataReferenceResolver,
-            (6607180581171137371L, 7248270592908009089L) => value is global::Microsoft.CodeAnalysis.Operations.OperationVisitor,
-            (6488166937858613601L, -7940948572626126699L) => value is global::Microsoft.CodeAnalysis.ParseOptions,
-            (5765257549080727166L, 8387729037993731211L) => value is global::Microsoft.CodeAnalysis.ResourceDescription,
-            (6114799947863825248L, -5339211378672967549L) => value is global::Microsoft.CodeAnalysis.RuleSet,
-            (6371500335164148619L, 947005162410212491L) => value is global::Microsoft.CodeAnalysis.RuleSetInclude,
-            (5787152926327919127L, -7104917347685376889L) => value is global::Microsoft.CodeAnalysis.ScriptCompilationInfo,
-            (6322454380729126121L, 2581760767325674927L) => value is global::Microsoft.CodeAnalysis.SemanticModel,
-            (6106831364189181391L, -1316449860461737836L) => value is global::Microsoft.CodeAnalysis.SourceReferenceResolver,
-            (6032737276270416390L, 8744871423109662601L) => value is global::Microsoft.CodeAnalysis.StrongNameProvider,
-            (6305598023263921092L, -8643817826394609222L) => value is global::Microsoft.CodeAnalysis.SuppressionDescriptor,
-            (6639777338690592016L, -1023363997453811569L) => value is global::Microsoft.CodeAnalysis.SymbolDisplayFormat,
-            (6886515366973858567L, -6546120953504135010L) => value is global::Microsoft.CodeAnalysis.SymbolVisitor,
-            (5846737820548908128L, 2994877434984818619L) => value is global::Microsoft.CodeAnalysis.SyntaxAnnotation,
-            (6623672229737979740L, 3303931401762442117L) => value is global::Microsoft.CodeAnalysis.SyntaxNode,
-            (6887641373985171656L, -6651813634596288586L) => value is global::Microsoft.CodeAnalysis.SyntaxReference,
-            (5933738100484288194L, 8606499462315599774L) => value is global::Microsoft.CodeAnalysis.SyntaxTree,
-            (6730944937249305724L, -2380146906168220996L) => value is global::Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider,
-            (6840225252998176656L, 6913865226921685933L) => value is global::Microsoft.CodeAnalysis.SyntaxWalker,
-            (6567153764373157662L, 5156686040093789088L) => value is global::Microsoft.CodeAnalysis.Text.SourceText,
-            (6430037342728033710L, -8342648740283769193L) => value is global::Microsoft.CodeAnalysis.Text.SourceTextContainer,
-            (6660210152896629588L, 208613667673949833L) => value is global::Microsoft.CodeAnalysis.Text.TextLineCollection,
-            (6061793248684524715L, 1176493549687507614L) => value is global::Microsoft.CodeAnalysis.XmlReferenceResolver,
             (6220667445067610340L, -1009132934905424992L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.ICaughtExceptionOperation,
             (6678057089087607817L, -4773701337688282476L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.IFlowAnonymousFunctionOperation,
             (6680641790851881254L, 1436419002512444057L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.IFlowCaptureOperation,
             (6661187455956838096L, -8539655738072444743L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.IFlowCaptureReferenceOperation,
             (6754606469936391932L, 1821369774094577800L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.IIsNullOperation,
             (6132020520475098606L, -2906436670734327930L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.IStaticLocalInitializationSemaphoreOperation,
-            (6519047655564337545L, -7074729740500482431L) => value is global::Microsoft.CodeAnalysis.IAliasSymbol,
-            (6188727919026413649L, 6709024803131858573L) => value is global::Microsoft.CodeAnalysis.IAnalyzerAssemblyLoader,
-            (6879916988017005015L, -6617622292582463053L) => value is global::Microsoft.CodeAnalysis.IArrayTypeSymbol,
-            (6002036998257516093L, -8398571145057786214L) => value is global::Microsoft.CodeAnalysis.IAssemblySymbol,
-            (6649826640131542072L, -1331247717981046616L) => value is global::Microsoft.CodeAnalysis.ICompilationUnitSyntax,
-            (6126586631411333034L, -8686961410666617960L) => value is global::Microsoft.CodeAnalysis.IDiscardSymbol,
-            (6477212890330258670L, -4446406480323306103L) => value is global::Microsoft.CodeAnalysis.IDynamicTypeSymbol,
-            (6805892318212971116L, 3459135966549338263L) => value is global::Microsoft.CodeAnalysis.IErrorTypeSymbol,
-            (5815096847334667733L, 7478332459375573167L) => value is global::Microsoft.CodeAnalysis.IEventSymbol,
-            (6669725327007781390L, -8257387934513594751L) => value is global::Microsoft.CodeAnalysis.IFieldSymbol,
-            (6417832099796260401L, -6243531804504036446L) => value is global::Microsoft.CodeAnalysis.IFunctionPointerTypeSymbol,
-            (6773801488849304718L, -3388942734433718095L) => value is global::Microsoft.CodeAnalysis.IImportScope,
-            (6762479211410742682L, 3662469512751465110L) => value is global::Microsoft.CodeAnalysis.IIncrementalGenerator,
-            (6480004954692704832L, 4611917686853249172L) => value is global::Microsoft.CodeAnalysis.ILabelSymbol,
-            (6016933693655636294L, 3097322181403985582L) => value is global::Microsoft.CodeAnalysis.ILocalSymbol,
-            (6138804782956584293L, 5169855993014625424L) => value is global::Microsoft.CodeAnalysis.IMethodSymbol,
-            (6405572945912559569L, 7328719009003368344L) => value is global::Microsoft.CodeAnalysis.IModuleSymbol,
-            (5916999778746345536L, 5518929607660773037L) => value is global::Microsoft.CodeAnalysis.INamedTypeSymbol,
-            (6106630561244385013L, 160115260111085711L) => value is global::Microsoft.CodeAnalysis.INamespaceOrTypeSymbol,
-            (6910974624911649144L, 8549931182006596742L) => value is global::Microsoft.CodeAnalysis.INamespaceSymbol,
-            (6701787610258061089L, -8672041633418212725L) => value is global::Microsoft.CodeAnalysis.IOperation,
-            (6603346922221177183L, 3209273076288997767L) => value is global::Microsoft.CodeAnalysis.IParameterSymbol,
-            (6650912988887091464L, -8411626690585114970L) => value is global::Microsoft.CodeAnalysis.IPointerTypeSymbol,
-            (6226070177996971646L, -1835355549691233120L) => value is global::Microsoft.CodeAnalysis.IPreprocessingSymbol,
-            (5946664347348519295L, 4677222066378639495L) => value is global::Microsoft.CodeAnalysis.IPropertySymbol,
-            (5798928462980401724L, -7867930966094734934L) => value is global::Microsoft.CodeAnalysis.IRangeVariableSymbol,
-            (6593600127019162334L, 2733647287615190665L) => value is global::Microsoft.CodeAnalysis.ISkippedTokensTriviaSyntax,
-            (6244190721606964011L, -4567947647576929138L) => value is global::Microsoft.CodeAnalysis.ISourceAssemblySymbol,
-            (6208041245262492078L, -7190103240747531110L) => value is global::Microsoft.CodeAnalysis.ISourceGenerator,
-            (5971835674129478968L, -5102896886962772600L) => value is global::Microsoft.CodeAnalysis.IStructuredTriviaSyntax,
+            (6829143716795851916L, -576526879624741990L) => value is global::Microsoft.CodeAnalysis.GeneratorDriver,
+            (6035884951631395538L, 1995396101133271193L) => value is global::Microsoft.CodeAnalysis.GeneratorDriverRunResult,
             (6412777484932919766L, -4595826088741756515L) => value is global::Microsoft.CodeAnalysis.ISymbol,
-            (6322855025962942993L, 8709161109305365922L) => value is global::Microsoft.CodeAnalysis.ISyntaxContextReceiver,
-            (6212594861418671563L, -3278367033268530017L) => value is global::Microsoft.CodeAnalysis.ISyntaxReceiver,
-            (5888018917143146087L, -3266382106801698914L) => value is global::Microsoft.CodeAnalysis.ITypeParameterSymbol,
-            (6869865748335467059L, -3432631301897972574L) => value is global::Microsoft.CodeAnalysis.ITypeSymbol,
+            (6373319895333463069L, 4167567116788806046L) => value is global::Microsoft.CodeAnalysis.IncrementalGeneratorRunStep,
+            (6467616330741294022L, -1441270302119742284L) => value is global::Microsoft.CodeAnalysis.Location,
+            (6822048974074265806L, -8216230940611193166L) => value is global::Microsoft.CodeAnalysis.MetadataId,
+            (6603965155313165831L, -501461725512585801L) => value is global::Microsoft.CodeAnalysis.MetadataReference,
+            (6425765204403708054L, 1624020926161490052L) => value is global::Microsoft.CodeAnalysis.MetadataReferenceResolver,
             (5819483989918896948L, 7605087328275120522L) => value is global::Microsoft.CodeAnalysis.Operations.IAddressOfOperation,
             (6885926471103929494L, -4143799750330633305L) => value is global::Microsoft.CodeAnalysis.Operations.IAnonymousFunctionOperation,
             (6085553791434465174L, -2045473698406146657L) => value is global::Microsoft.CodeAnalysis.Operations.IAnonymousObjectCreationOperation,
@@ -1188,29 +1196,20 @@ internal static class RoslynDispatcherRegistry
             (6439384789911717975L, -7388235860300431208L) => value is global::Microsoft.CodeAnalysis.Operations.IAttributeOperation,
             (6893744925584339599L, 3879663848084901273L) => value is global::Microsoft.CodeAnalysis.Operations.IAwaitOperation,
             (6004763933982645628L, 3064068070453088447L) => value is global::Microsoft.CodeAnalysis.Operations.IBinaryOperation,
-            (6578246491093762371L, -2158760389432596575L) => value is global::Microsoft.CodeAnalysis.Operations.IBinaryPatternOperation,
             (6427340112392841237L, 8085813449968167323L) => value is global::Microsoft.CodeAnalysis.Operations.IBlockOperation,
             (6197656800996718861L, -3395092733510154622L) => value is global::Microsoft.CodeAnalysis.Operations.IBranchOperation,
             (6219385994487758139L, -8721585065045530235L) => value is global::Microsoft.CodeAnalysis.Operations.ICaseClauseOperation,
             (6432388520737123982L, 6053660367014050237L) => value is global::Microsoft.CodeAnalysis.Operations.ICatchClauseOperation,
-            (6430377446401711066L, -3741233849196465273L) => value is global::Microsoft.CodeAnalysis.Operations.ICoalesceAssignmentOperation,
             (6179048968382301125L, 3259588789209741212L) => value is global::Microsoft.CodeAnalysis.Operations.ICoalesceOperation,
             (6723470031175650030L, -804889918192233553L) => value is global::Microsoft.CodeAnalysis.Operations.ICollectionExpressionOperation,
-            (6269722265082360484L, 3878392023010161325L) => value is global::Microsoft.CodeAnalysis.Operations.ICompoundAssignmentOperation,
             (5808234929654641927L, -7156460690318292547L) => value is global::Microsoft.CodeAnalysis.Operations.IConditionalAccessInstanceOperation,
             (5938127315978003756L, -8623920270765908064L) => value is global::Microsoft.CodeAnalysis.Operations.IConditionalAccessOperation,
             (6384108859944595548L, 6056731019479164314L) => value is global::Microsoft.CodeAnalysis.Operations.IConditionalOperation,
-            (6824831494064002278L, 5420114252080888478L) => value is global::Microsoft.CodeAnalysis.Operations.IConstantPatternOperation,
-            (6248952735378422523L, 1478668721558234558L) => value is global::Microsoft.CodeAnalysis.Operations.IConstructorBodyOperation,
             (6266076142523367182L, -226608117089679445L) => value is global::Microsoft.CodeAnalysis.Operations.IConversionOperation,
             (5912483307568739122L, 6703307496026951306L) => value is global::Microsoft.CodeAnalysis.Operations.IDeclarationExpressionOperation,
-            (6478521530882938884L, -5530286830515677772L) => value is global::Microsoft.CodeAnalysis.Operations.IDeclarationPatternOperation,
-            (5872348033292937152L, -5095270401365280329L) => value is global::Microsoft.CodeAnalysis.Operations.IDeconstructionAssignmentOperation,
-            (6549255534542252931L, -5242381117060569704L) => value is global::Microsoft.CodeAnalysis.Operations.IDefaultCaseClauseOperation,
             (6826364055310057955L, -4895151606382450815L) => value is global::Microsoft.CodeAnalysis.Operations.IDefaultValueOperation,
             (5998238115483430132L, 3215775174225257366L) => value is global::Microsoft.CodeAnalysis.Operations.IDelegateCreationOperation,
             (6391369264946657146L, -4297130426174178660L) => value is global::Microsoft.CodeAnalysis.Operations.IDiscardOperation,
-            (6213541281055457759L, 1420065244176037520L) => value is global::Microsoft.CodeAnalysis.Operations.IDiscardPatternOperation,
             (5843914439839394069L, 7967534499879739266L) => value is global::Microsoft.CodeAnalysis.Operations.IDynamicIndexerAccessOperation,
             (6812267521197333360L, -452810855911613049L) => value is global::Microsoft.CodeAnalysis.Operations.IDynamicInvocationOperation,
             (6627993350390204748L, -6280089344469916021L) => value is global::Microsoft.CodeAnalysis.Operations.IDynamicMemberReferenceOperation,
@@ -1218,32 +1217,22 @@ internal static class RoslynDispatcherRegistry
             (5832995659858143126L, -7959430782451214415L) => value is global::Microsoft.CodeAnalysis.Operations.IEmptyOperation,
             (5844430072025155390L, -6489298840172991052L) => value is global::Microsoft.CodeAnalysis.Operations.IEndOperation,
             (6116464473492838818L, 5630356878778717089L) => value is global::Microsoft.CodeAnalysis.Operations.IEventAssignmentOperation,
-            (5998587415654015289L, -5143347829054695254L) => value is global::Microsoft.CodeAnalysis.Operations.IEventReferenceOperation,
             (5860685175969034522L, -7854748898097245027L) => value is global::Microsoft.CodeAnalysis.Operations.IExpressionStatementOperation,
-            (6736709989877889166L, -7525742199261115722L) => value is global::Microsoft.CodeAnalysis.Operations.IFieldInitializerOperation,
-            (5871209120158250676L, -9107769725290181734L) => value is global::Microsoft.CodeAnalysis.Operations.IFieldReferenceOperation,
-            (6559976443206196190L, -6060058214304398149L) => value is global::Microsoft.CodeAnalysis.Operations.IForEachLoopOperation,
-            (6403905979414878155L, -3149134805620239940L) => value is global::Microsoft.CodeAnalysis.Operations.IForLoopOperation,
-            (6632486365177572997L, 2451103833718737589L) => value is global::Microsoft.CodeAnalysis.Operations.IForToLoopOperation,
             (6109678151279307032L, -8701444905153863508L) => value is global::Microsoft.CodeAnalysis.Operations.IFunctionPointerInvocationOperation,
             (5961417316989814215L, 5746188385712854463L) => value is global::Microsoft.CodeAnalysis.Operations.IImplicitIndexerReferenceOperation,
             (6773218015101381947L, 9194510519169771397L) => value is global::Microsoft.CodeAnalysis.Operations.IIncrementOrDecrementOperation,
             (6288756728618427591L, 5532751018363514787L) => value is global::Microsoft.CodeAnalysis.Operations.IInlineArrayAccessOperation,
             (6234482690598257498L, -971882216968220737L) => value is global::Microsoft.CodeAnalysis.Operations.IInstanceReferenceOperation,
             (6546713265073102030L, -4950832223161245551L) => value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringAdditionOperation,
-            (6236719439420526500L, -4032558093336766077L) => value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringAppendOperation,
             (6728537355592827406L, 5703617478361468587L) => value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringContentOperation,
             (6858686332434926876L, -882252148887598182L) => value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringHandlerArgumentPlaceholderOperation,
             (5952288198349022703L, 121298990134254996L) => value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringHandlerCreationOperation,
             (5967394405903538064L, 7034572447859216045L) => value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringOperation,
-            (5893567695697328316L, 5281872073452129726L) => value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringTextOperation,
-            (6277162119877450606L, 9001636320537298563L) => value is global::Microsoft.CodeAnalysis.Operations.IInterpolationOperation,
             (6399662568722519984L, -5183289192604555647L) => value is global::Microsoft.CodeAnalysis.Operations.IInvalidOperation,
             (6710803507406972704L, 3673527752225131711L) => value is global::Microsoft.CodeAnalysis.Operations.IInvocationOperation,
             (6092447603591283137L, -7793821421758891380L) => value is global::Microsoft.CodeAnalysis.Operations.IIsPatternOperation,
             (6666523425168528001L, -4375456139644762211L) => value is global::Microsoft.CodeAnalysis.Operations.IIsTypeOperation,
             (6558512024121172878L, 6465484794973771401L) => value is global::Microsoft.CodeAnalysis.Operations.ILabeledOperation,
-            (5799968126543671658L, 2748167786024855741L) => value is global::Microsoft.CodeAnalysis.Operations.IListPatternOperation,
             (6326628092952737127L, -9036152339025956992L) => value is global::Microsoft.CodeAnalysis.Operations.ILiteralOperation,
             (6567006521321825903L, 514039708876082571L) => value is global::Microsoft.CodeAnalysis.Operations.ILocalFunctionOperation,
             (5822384531544886461L, 308214680519557814L) => value is global::Microsoft.CodeAnalysis.Operations.ILocalReferenceOperation,
@@ -1252,34 +1241,20 @@ internal static class RoslynDispatcherRegistry
             (6610795313350356038L, 3892482375589184408L) => value is global::Microsoft.CodeAnalysis.Operations.IMemberInitializerOperation,
             (5831320674813863355L, -7539237144007249507L) => value is global::Microsoft.CodeAnalysis.Operations.IMemberReferenceOperation,
             (5987774893124380922L, -8633600879468077174L) => value is global::Microsoft.CodeAnalysis.Operations.IMethodBodyBaseOperation,
-            (6627173927677138462L, -1735655602070206079L) => value is global::Microsoft.CodeAnalysis.Operations.IMethodBodyOperation,
-            (6657692720800439896L, -2707819179842156147L) => value is global::Microsoft.CodeAnalysis.Operations.IMethodReferenceOperation,
             (6733026025438044548L, 6494050522952151467L) => value is global::Microsoft.CodeAnalysis.Operations.INameOfOperation,
-            (6513750130606680651L, 3590202332471553444L) => value is global::Microsoft.CodeAnalysis.Operations.INegatedPatternOperation,
             (6719692122703252321L, -4980252727643479394L) => value is global::Microsoft.CodeAnalysis.Operations.IObjectCreationOperation,
             (6071994419942166607L, 4703288211271550880L) => value is global::Microsoft.CodeAnalysis.Operations.IObjectOrCollectionInitializerOperation,
             (6096682761421464670L, 3755015795917004717L) => value is global::Microsoft.CodeAnalysis.Operations.IOmittedArgumentOperation,
-            (6883333905145853321L, -5363749039359186760L) => value is global::Microsoft.CodeAnalysis.Operations.IParameterInitializerOperation,
             (6894350033315732372L, -7618930119897447778L) => value is global::Microsoft.CodeAnalysis.Operations.IParameterReferenceOperation,
             (6478317660056340908L, -2752326843348942412L) => value is global::Microsoft.CodeAnalysis.Operations.IParenthesizedOperation,
-            (6023085261137150986L, 4315787478287386022L) => value is global::Microsoft.CodeAnalysis.Operations.IPatternCaseClauseOperation,
             (6734197414347785785L, 2642798265864640922L) => value is global::Microsoft.CodeAnalysis.Operations.IPatternOperation,
-            (6070807031940069204L, 2261926793824819347L) => value is global::Microsoft.CodeAnalysis.Operations.IPropertyInitializerOperation,
-            (6863696222180759294L, 7108591833129500043L) => value is global::Microsoft.CodeAnalysis.Operations.IPropertyReferenceOperation,
             (6396276235815500893L, -4689168751995956056L) => value is global::Microsoft.CodeAnalysis.Operations.IPropertySubpatternOperation,
             (5814591805460267295L, 3651372407029561994L) => value is global::Microsoft.CodeAnalysis.Operations.IRaiseEventOperation,
-            (6493163821295039800L, -8983376660323639388L) => value is global::Microsoft.CodeAnalysis.Operations.IRangeCaseClauseOperation,
             (5794535122713732793L, -9197387767690199361L) => value is global::Microsoft.CodeAnalysis.Operations.IRangeOperation,
             (5934346448901334731L, -22491926413553267L) => value is global::Microsoft.CodeAnalysis.Operations.IReDimClauseOperation,
             (5943089550205875120L, -2155787957041631574L) => value is global::Microsoft.CodeAnalysis.Operations.IReDimOperation,
-            (6192512159543473658L, -6363759721179314779L) => value is global::Microsoft.CodeAnalysis.Operations.IRecursivePatternOperation,
-            (5830623764759236904L, -8705997439286331971L) => value is global::Microsoft.CodeAnalysis.Operations.IRelationalCaseClauseOperation,
-            (5903861547148688241L, -6962474170935462470L) => value is global::Microsoft.CodeAnalysis.Operations.IRelationalPatternOperation,
             (6450289644650019473L, 7680762458572365953L) => value is global::Microsoft.CodeAnalysis.Operations.IReturnOperation,
-            (6089052141803516454L, 524747722967322526L) => value is global::Microsoft.CodeAnalysis.Operations.ISimpleAssignmentOperation,
-            (5961523559752316360L, -7779859883904832876L) => value is global::Microsoft.CodeAnalysis.Operations.ISingleValueCaseClauseOperation,
             (6692672273600084885L, 1639170800939663009L) => value is global::Microsoft.CodeAnalysis.Operations.ISizeOfOperation,
-            (6009401141553220573L, -6490042901831717998L) => value is global::Microsoft.CodeAnalysis.Operations.ISlicePatternOperation,
             (5957758391893859493L, 7351657444641114498L) => value is global::Microsoft.CodeAnalysis.Operations.ISpreadOperation,
             (5852279335599146097L, -2868870892398157154L) => value is global::Microsoft.CodeAnalysis.Operations.IStopOperation,
             (6097492620833795723L, -3083903464746719849L) => value is global::Microsoft.CodeAnalysis.Operations.ISwitchCaseOperation,
@@ -1294,7 +1269,6 @@ internal static class RoslynDispatcherRegistry
             (5871375534495651296L, -5957160814836229478L) => value is global::Microsoft.CodeAnalysis.Operations.ITupleOperation,
             (6732353058514663028L, 1655463322438650281L) => value is global::Microsoft.CodeAnalysis.Operations.ITypeOfOperation,
             (6578135450878091133L, -742537805189493119L) => value is global::Microsoft.CodeAnalysis.Operations.ITypeParameterObjectCreationOperation,
-            (6141139821035079832L, -6352358911203212646L) => value is global::Microsoft.CodeAnalysis.Operations.ITypePatternOperation,
             (6187359070647693571L, 8278806960769751217L) => value is global::Microsoft.CodeAnalysis.Operations.IUnaryOperation,
             (5852660651562082570L, -4289536609779083637L) => value is global::Microsoft.CodeAnalysis.Operations.IUsingDeclarationOperation,
             (6595121719885254081L, 7850876676627693232L) => value is global::Microsoft.CodeAnalysis.Operations.IUsingOperation,
@@ -1302,9 +1276,629 @@ internal static class RoslynDispatcherRegistry
             (6780893301687205566L, -6006521906552441186L) => value is global::Microsoft.CodeAnalysis.Operations.IVariableDeclarationGroupOperation,
             (5989677096909150766L, 8871742291939027364L) => value is global::Microsoft.CodeAnalysis.Operations.IVariableDeclarationOperation,
             (6018247234738779367L, -2897580766173799746L) => value is global::Microsoft.CodeAnalysis.Operations.IVariableDeclaratorOperation,
-            (6210307353862596862L, 2756701874172601781L) => value is global::Microsoft.CodeAnalysis.Operations.IVariableInitializerOperation,
-            (6406682449354667659L, -2271321167872915563L) => value is global::Microsoft.CodeAnalysis.Operations.IWhileLoopOperation,
             (6834691663733262993L, -3637164163635034440L) => value is global::Microsoft.CodeAnalysis.Operations.IWithOperation,
+            (6607180581171137371L, 7248270592908009089L) => value is global::Microsoft.CodeAnalysis.Operations.OperationVisitor,
+            (6488166937858613601L, -7940948572626126699L) => value is global::Microsoft.CodeAnalysis.ParseOptions,
+            (6114799947863825248L, -5339211378672967549L) => value is global::Microsoft.CodeAnalysis.RuleSet,
+            (6371500335164148619L, 947005162410212491L) => value is global::Microsoft.CodeAnalysis.RuleSetInclude,
+            (5787152926327919127L, -7104917347685376889L) => value is global::Microsoft.CodeAnalysis.ScriptCompilationInfo,
+            (6322454380729126121L, 2581760767325674927L) => value is global::Microsoft.CodeAnalysis.SemanticModel,
+            (6106831364189181391L, -1316449860461737836L) => value is global::Microsoft.CodeAnalysis.SourceReferenceResolver,
+            (6032737276270416390L, 8744871423109662601L) => value is global::Microsoft.CodeAnalysis.StrongNameProvider,
+            (6639777338690592016L, -1023363997453811569L) => value is global::Microsoft.CodeAnalysis.SymbolDisplayFormat,
+            (6886515366973858567L, -6546120953504135010L) => value is global::Microsoft.CodeAnalysis.SymbolVisitor,
+            (6623672229737979740L, 3303931401762442117L) => value is global::Microsoft.CodeAnalysis.SyntaxNode,
+            (6887641373985171656L, -6651813634596288586L) => value is global::Microsoft.CodeAnalysis.SyntaxReference,
+            (5933738100484288194L, 8606499462315599774L) => value is global::Microsoft.CodeAnalysis.SyntaxTree,
+            (6730944937249305724L, -2380146906168220996L) => value is global::Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider,
+            (6840225252998176656L, 6913865226921685933L) => value is global::Microsoft.CodeAnalysis.SyntaxWalker,
+            (6567153764373157662L, 5156686040093789088L) => value is global::Microsoft.CodeAnalysis.Text.SourceText,
+            (6430037342728033710L, -8342648740283769193L) => value is global::Microsoft.CodeAnalysis.Text.SourceTextContainer,
+            (6061793248684524715L, 1176493549687507614L) => value is global::Microsoft.CodeAnalysis.XmlReferenceResolver,
+            (6188727919026413649L, 6709024803131858573L) => value is global::Microsoft.CodeAnalysis.IAnalyzerAssemblyLoader,
+            (6649826640131542072L, -1331247717981046616L) => value is global::Microsoft.CodeAnalysis.ICompilationUnitSyntax,
+            (6773801488849304718L, -3388942734433718095L) => value is global::Microsoft.CodeAnalysis.IImportScope,
+            (6762479211410742682L, 3662469512751465110L) => value is global::Microsoft.CodeAnalysis.IIncrementalGenerator,
+            (6701787610258061089L, -8672041633418212725L) => value is global::Microsoft.CodeAnalysis.IOperation,
+            (6593600127019162334L, 2733647287615190665L) => value is global::Microsoft.CodeAnalysis.ISkippedTokensTriviaSyntax,
+            (6208041245262492078L, -7190103240747531110L) => value is global::Microsoft.CodeAnalysis.ISourceGenerator,
+            (5971835674129478968L, -5102896886962772600L) => value is global::Microsoft.CodeAnalysis.IStructuredTriviaSyntax,
+            (6322855025962942993L, 8709161109305365922L) => value is global::Microsoft.CodeAnalysis.ISyntaxContextReceiver,
+            (6212594861418671563L, -3278367033268530017L) => value is global::Microsoft.CodeAnalysis.ISyntaxReceiver,
             _ => false,
         };
+
+    private static readonly global::System.Collections.Generic.Dictionary<global::System.Type, (long Low, long High)> s_runtimeVtblIds = [];
+
+    public static bool TryGetRuntimeVtblId(
+        object value,
+        out long vtblIdLow,
+        out long vtblIdHigh)
+    {
+        global::System.Type type = value.GetType();
+        (long Low, long High) resolved;
+        lock (s_runtimeVtblIds)
+        {
+            if (!s_runtimeVtblIds.TryGetValue(type, out resolved))
+            {
+                resolved = ResolveRuntimeVtblId(value);
+                s_runtimeVtblIds[type] = resolved;
+            }
+        }
+
+        vtblIdLow = resolved.Low;
+        vtblIdHigh = resolved.High;
+        return resolved != (0L, 0L);
+    }
+
+    private static (long, long) ResolveRuntimeVtblId(object value)
+    {
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElifDirectiveTriviaSyntax) return (6173686296870914860L, -6291074703811439971L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.GenericNameSyntax) return (6617292003628591168L, 5705589592462471811L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax) return (6378778039328877304L, -6468544805959958091L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IfDirectiveTriviaSyntax) return (6853250579377893499L, 7954223281596750222L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AliasQualifiedNameSyntax) return (6336387776999725139L, 2583725802200742041L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConditionalDirectiveTriviaSyntax) return (6145121297121875355L, -4978701154842606431L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElseDirectiveTriviaSyntax) return (6572374307262685830L, 7151437908536282505L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LineDirectiveTriviaSyntax) return (6610055857480204501L, -5927910094199379833L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LineSpanDirectiveTriviaSyntax) return (6598033023443322783L, 7222450656038825098L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedLambdaExpressionSyntax) return (6260547214907951605L, -4872226030206321265L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax) return (5772905048210195276L, -2854827036487176288L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SimpleLambdaExpressionSyntax) return (5941466610133280891L, 7514366238717993859L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax) return (6770757230587951292L, -453402068043195969L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousMethodExpressionSyntax) return (6114379243737953146L, -5919412889171490395L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ArrayTypeSyntax) return (5991012875372147583L, -196296017181458546L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BadDirectiveTriviaSyntax) return (6854012168140682863L, 3886996220272812473L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseExpressionSyntax) return (5822541048819853484L, -8219305288443796297L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BranchingDirectiveTriviaSyntax) return (5815631628113957582L, -5491747894268410229L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ClassDeclarationSyntax) return (6705555468537791126L, -8283779936812233324L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DefineDirectiveTriviaSyntax) return (6585320306759958107L, -7893217617313407589L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EndIfDirectiveTriviaSyntax) return (6899252969847841171L, -7991305672885103468L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EndRegionDirectiveTriviaSyntax) return (6906488039199652269L, 5493926804473738175L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ErrorDirectiveTriviaSyntax) return (6493993593069751690L, -523546204951530590L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExtensionBlockDeclarationSyntax) return (5892024624210655776L, -6672413774229332546L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerTypeSyntax) return (6614558530491132731L, -7738937945760649581L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IgnoredDirectiveTriviaSyntax) return (6567673727813790935L, -5017165555250366080L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitObjectCreationExpressionSyntax) return (6173965496797396324L, 6229507198542198437L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InterfaceDeclarationSyntax) return (5838227767798711447L, -1122819958262803311L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LambdaExpressionSyntax) return (6098070997023322579L, -2341843595018355832L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LineOrSpanDirectiveTriviaSyntax) return (6681227443122531669L, -1762516228850495340L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LoadDirectiveTriviaSyntax) return (6595146488468505231L, 6639538081938023083L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax) return (6792636711236032020L, 8557302856187455660L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NullableDirectiveTriviaSyntax) return (6122266619963240511L, 7094214956124662408L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NullableTypeSyntax) return (5885397334686985257L, -4190850911668668241L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ObjectCreationExpressionSyntax) return (6512510571879220950L, 5252291698698915736L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.OmittedTypeArgumentSyntax) return (6706429552160272594L, -6681344694988010313L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PointerTypeSyntax) return (6854799676675196965L, 1749304030988836503L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PragmaChecksumDirectiveTriviaSyntax) return (6500495373414681322L, 5753026367137304232L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PragmaWarningDirectiveTriviaSyntax) return (6866493966539563799L, -554557049060671597L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PredefinedTypeSyntax) return (6868210878357674557L, -6121057333906921846L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RecordDeclarationSyntax) return (6126500803318654751L, 5247225422571463072L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RefTypeSyntax) return (6862738783246393196L, 7046830137283686536L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax) return (6829281478064078284L, -6060617531799585903L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RegionDirectiveTriviaSyntax) return (6566131396358668879L, -648238969609355121L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ScopedTypeSyntax) return (6456229706919864378L, -7102648410554703470L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ShebangDirectiveTriviaSyntax) return (6691349065301856052L, 1423169669671280570L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SkippedTokensTriviaSyntax) return (6887645680833696894L, 216271236558752640L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.StructDeclarationSyntax) return (6608764474854630359L, -4949103441305047125L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ThisExpressionSyntax) return (6391906851191116087L, -3366756546107969865L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TupleTypeSyntax) return (6639068085882354724L, 9136948846743335843L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UndefDirectiveTriviaSyntax) return (6244225900593546154L, -5326837368074989937L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UnionDeclarationSyntax) return (5954971091826991810L, -9221836678040765267L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.WarningDirectiveTriviaSyntax) return (6464539612127665115L, 5511418079489486007L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousFunctionExpressionSyntax) return (5798643577670004534L, -3223702664587949420L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousObjectCreationExpressionSyntax) return (5970316233843956041L, 1339152177450390188L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ArrayCreationExpressionSyntax) return (5998155634712416873L, 4491110454066825636L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AssignmentExpressionSyntax) return (6899306953297714457L, -7068227669127922007L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AwaitExpressionSyntax) return (6126437435564045988L, 20416973922992267L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseObjectCreationExpressionSyntax) return (6136671933125757575L, 7648980670198313661L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax) return (6435927300169785740L, 147790496059789708L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BinaryPatternSyntax) return (6021618411643907745L, -5387147971603391567L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CastExpressionSyntax) return (5771452914898718926L, 8010211769312584878L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CheckedExpressionSyntax) return (6468309558864598642L, 1937355170153297069L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CollectionExpressionSyntax) return (6109077211039920088L, -5105438055274643325L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConditionalAccessExpressionSyntax) return (6255058442786281953L, -6769069938653943653L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConditionalExpressionSyntax) return (6178252452643503298L, 6666926361729816721L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConstantPatternSyntax) return (6783188284920391710L, -5415999917383767917L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorDeclarationSyntax) return (6168080288635506061L, -3432105025437695579L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConversionOperatorDeclarationSyntax) return (5789705656762916906L, -4044942653823789670L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConversionOperatorMemberCrefSyntax) return (6811449073486869664L, 5206663025448904066L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DeclarationExpressionSyntax) return (6057491396782539085L, -2446683831588907859L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DeclarationPatternSyntax) return (6035632147434802361L, 6977265912086484145L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DefaultExpressionSyntax) return (6564929318828725483L, 1461790398344677818L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DestructorDeclarationSyntax) return (6118779673556942284L, 3348192872647028367L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax) return (6592042638821628589L, -7787286225697838425L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DiscardPatternSyntax) return (6010149171002323175L, -617892030332104316L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DocumentationCommentTriviaSyntax) return (5974909081600127830L, 755338971896083612L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElementAccessExpressionSyntax) return (6322489232319255089L, -7891435392384621401L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElementBindingExpressionSyntax) return (6507107307285850292L, 520588756398370439L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EnumDeclarationSyntax) return (6252182969843888881L, -2586735001302130008L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EventDeclarationSyntax) return (6496177316662666159L, -6189358707217552205L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EventFieldDeclarationSyntax) return (5962657387393567101L, 2261089762963184820L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExtensionMemberCrefSyntax) return (6198331634401394210L, -5261579484186983277L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FieldDeclarationSyntax) return (5986736592225217985L, -1590681526157393772L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FieldExpressionSyntax) return (6797927312299110487L, -497155932615405651L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FileScopedNamespaceDeclarationSyntax) return (6335856354968528532L, -4461471530835529295L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ForEachStatementSyntax) return (5910686286840975802L, 1542376238790538158L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ForEachVariableStatementSyntax) return (5948380047355989222L, -4923178154232991341L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitArrayCreationExpressionSyntax) return (5839970272143613699L, 1492345222220015540L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitElementAccessSyntax) return (6240483524012754263L, 4615061449619055787L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitStackAllocArrayCreationExpressionSyntax) return (6297812844687279215L, 8434434846811875503L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IndexerDeclarationSyntax) return (6550055049808154563L, 7323465784860987524L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IndexerMemberCrefSyntax) return (6336177696973126470L, 2118938274248840070L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax) return (6281400151855044698L, -5370865297751212098L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InstanceExpressionSyntax) return (6359019025032712815L, 1244556416098070669L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringExpressionSyntax) return (6715488184707894905L, -3252832842550617422L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax) return (6110165608647327054L, -8365664047582446448L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IsPatternExpressionSyntax) return (6349202165083398712L, 6088789639676211896L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ListPatternSyntax) return (6498062744065843766L, -3835585306380572752L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LiteralExpressionSyntax) return (6466967039481050840L, 6440063444289663147L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.MakeRefExpressionSyntax) return (6721280065561592617L, -6412387919900080505L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.MemberAccessExpressionSyntax) return (6356751346145254483L, -5342407459198344044L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.MemberBindingExpressionSyntax) return (5859356491403117494L, 6172254135938192015L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax) return (6280154327689458180L, 6782172436496513717L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NameMemberCrefSyntax) return (5912891622332789275L, -617175278909888639L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax) return (6900305432243721508L, 4625943362399729834L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.OmittedArraySizeExpressionSyntax) return (6581383117185637630L, -776395528779992386L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.OperatorDeclarationSyntax) return (6256680365622613552L, -7684465955728169555L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.OperatorMemberCrefSyntax) return (6104608596704906596L, 6916438271082165169L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedExpressionSyntax) return (6362490506055588165L, 2566884783677450386L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedPatternSyntax) return (6298521483152318199L, -6421687198054099060L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PostfixUnaryExpressionSyntax) return (6582302938719574205L, -2669010109959168854L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PrefixUnaryExpressionSyntax) return (6391311819335029955L, -5423885984780864849L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PropertyDeclarationSyntax) return (5978332513851201705L, 3620410738435137949L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.QueryExpressionSyntax) return (6665145835779389678L, 583663746861183624L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RangeExpressionSyntax) return (6296284405172229915L, 5645003304442774151L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RecursivePatternSyntax) return (6785040784820316665L, 4209314389169593523L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RefExpressionSyntax) return (6867840064481132562L, -7945967438152414825L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RefTypeExpressionSyntax) return (6049264929621585368L, 8414899852598173834L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RefValueExpressionSyntax) return (5814083409272389963L, -6338195997316413289L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RelationalPatternSyntax) return (6512099586228906686L, 7142747480489771682L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SizeOfExpressionSyntax) return (6881277058697870263L, -8604937093035304572L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SlicePatternSyntax) return (6264483429978260377L, -6997488735173169253L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.StackAllocArrayCreationExpressionSyntax) return (5775202338997386915L, -4152242397518877772L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionSyntax) return (5935418322054433902L, -6809751819803170169L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ThrowExpressionSyntax) return (6120269798017056418L, -5114335706585119326L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TupleExpressionSyntax) return (6259268799291287090L, 5915437072673363607L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeDeclarationSyntax) return (6875205826576770110L, -2440133802354735706L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeOfExpressionSyntax) return (6850008834819816836L, -258719137476203330L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypePatternSyntax) return (6235785048938288861L, 5038733431068532885L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax) return (5998554438737150581L, 3494987663274175362L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UnaryPatternSyntax) return (6672474911185521982L, -6842310043684860779L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UnsafeExpressionSyntax) return (6712363434127820877L, 5199364648633771648L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.VarPatternSyntax) return (6887312600100279038L, 5401472529941716642L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.WithExpressionSyntax) return (6698351429450251432L, 6295560785316983938L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AllowsConstraintClauseSyntax) return (6368266031800601494L, -4281764318750591339L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax) return (5973303311379016479L, 5411695061324207488L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseFieldDeclarationSyntax) return (6671796584090149571L, 7736223888777249948L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseMethodDeclarationSyntax) return (5793859202836811025L, -4419454863288532815L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseNamespaceDeclarationSyntax) return (6536289993376239433L, 8563014870436138905L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BasePropertyDeclarationSyntax) return (6828124015332845150L, -2005615884353432927L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseTypeDeclarationSyntax) return (6091666609642019543L, -3876499024500577868L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax) return (6063306129479895282L, -3869817098750401359L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax) return (6042811318237096049L, 9125024270953989285L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BracketedParameterListSyntax) return (6380646881457846283L, 8506949023785607858L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BreakStatementSyntax) return (6256260330590833440L, -3029613429911585623L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CasePatternSwitchLabelSyntax) return (6039233879961601594L, -7452282370928388686L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CaseSwitchLabelSyntax) return (6287335255950461881L, 3694474405884759996L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CheckedStatementSyntax) return (6413214778061665473L, 4519975472258905511L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ClassOrStructConstraintSyntax) return (6038491198369412943L, -6849180323471492706L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CommonForEachStatementSyntax) return (6199933720375563778L, -5032985217068669305L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CompilationUnitSyntax) return (5978293792156890608L, 658593068002677889L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorConstraintSyntax) return (6492621125427474108L, 8082045468592498598L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ContinueStatementSyntax) return (6052125610425626305L, 1943375638856971674L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CrefBracketedParameterListSyntax) return (6058596268825927039L, 4194404120965887406L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterListSyntax) return (6264422489270650920L, -600714656546693959L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DefaultConstraintSyntax) return (6082448259016114173L, 4881753552269242017L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DefaultSwitchLabelSyntax) return (6854124086606060972L, -2983066930355971686L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DelegateDeclarationSyntax) return (6536410394495048241L, -1475598838911438174L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DiscardDesignationSyntax) return (6382514949105107062L, 2340631080701471644L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.DoStatementSyntax) return (6553790624624757268L, -3017334367107938415L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EmptyStatementSyntax) return (6329114612056455415L, 6109823350259839404L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EnumMemberDeclarationSyntax) return (6854323585264919889L, 1495769955729800847L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionColonSyntax) return (6086034947627696630L, -5969575395934854228L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionElementSyntax) return (6629966388205181213L, 2334857141337510832L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionStatementSyntax) return (6228587622071027689L, -6675818205651865962L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax) return (5814416288903794540L, -6155395844638861671L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FixedStatementSyntax) return (6186811189936672056L, -6430041454597210712L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ForStatementSyntax) return (6608461824186936377L, -1548287439150942574L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FromClauseSyntax) return (5908748133224058579L, 8263683886917488018L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterSyntax) return (5879403253803612815L, 2361296241557420939L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.GlobalStatementSyntax) return (6054902708642466828L, 6296752407474154892L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.GotoStatementSyntax) return (6378258534092300319L, 6053584526485018254L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.GroupClauseSyntax) return (6256080436576530690L, -8777504906917826665L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IfStatementSyntax) return (6476529997578322069L, -8087709443584371281L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IncompleteMemberSyntax) return (6219964844917930903L, 1965147552264309948L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringTextSyntax) return (5873868947680322665L, -2256798617148384371L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationSyntax) return (6218764943684452286L, 2257062265769542796L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.JoinClauseSyntax) return (6312492096149486492L, 9037966381203607462L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LabeledStatementSyntax) return (5856930173422433630L, -5762421815802107255L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LetClauseSyntax) return (6583633392403849673L, 2875986595219289487L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax) return (6750088407210106414L, 2623965402121021374L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LocalFunctionStatementSyntax) return (5893683657153638724L, -9068679497193238876L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LockStatementSyntax) return (6204781574763228059L, -5043545275396571232L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.MemberCrefSyntax) return (6363573216721841774L, -3609143966321527424L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax) return (6282759736541087233L, 656793080403091608L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.OrderByClauseSyntax) return (5803805773139617325L, -6183064158684088132L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax) return (5787524202350101115L, -7518172613611114602L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ParameterSyntax) return (6487174415205284058L, 4313127714235971486L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedVariableDesignationSyntax) return (6400107579896097382L, 5503222576551384499L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax) return (6855604274784453584L, -2721647212034921848L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PrimaryConstructorBaseTypeSyntax) return (5819869031584786205L, -8432837136057537120L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedCrefSyntax) return (6371033840055426385L, -5077894694617405811L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.RefStructConstraintSyntax) return (5991255982503936677L, -4078043295371974776L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ReturnStatementSyntax) return (5998586428422619482L, 196097390619694720L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SelectClauseSyntax) return (6902099731650601408L, 6128347812827413182L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SimpleBaseTypeSyntax) return (6383393140303850924L, 2178445787750029486L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SingleVariableDesignationSyntax) return (6549528542974261827L, -5140131541623322490L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SpreadElementSyntax) return (6090862150346007350L, 7361979752357051836L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.StructuredTriviaSyntax) return (5932520241206000875L, -4115810500083620430L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SwitchStatementSyntax) return (6538734470065970818L, 4211872661063520648L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ThrowStatementSyntax) return (5960690314101000283L, 6025638827977153435L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TryStatementSyntax) return (6136146748252212918L, -7600181480447352405L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeConstraintSyntax) return (6209485480538999866L, 1137267005919034803L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeCrefSyntax) return (6124570826565363534L, 6498022368080152205L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UnsafeStatementSyntax) return (6475365437864957213L, -2574677156429512257L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UsingStatementSyntax) return (6612077750185553712L, -2731646610157701187L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.WhereClauseSyntax) return (6322001680417581255L, -5208610676567817063L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.WhileStatementSyntax) return (6636783537287679047L, 1279272387616872353L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.WithElementSyntax) return (6265419968179298092L, 1400574838596010664L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlCDataSectionSyntax) return (6435759183380399448L, -3825040714510259814L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlCommentSyntax) return (6051219843319679676L, 3954578534756255631L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlCrefAttributeSyntax) return (5765080426696128668L, -6035009754038966354L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementSyntax) return (5856181585527592049L, -1677592481998822735L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlEmptyElementSyntax) return (5901847703569844680L, 1485373297890211459L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameAttributeSyntax) return (6571374072084378454L, 760832739536641184L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlProcessingInstructionSyntax) return (6293804292316346412L, 8107489147094247099L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlTextAttributeSyntax) return (6537248133615590011L, 7534102948276081054L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlTextSyntax) return (6303417821089196647L, 8328887198844955026L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.YieldStatementSyntax) return (6585953578268953580L, -8978742914169895014L);
+        if (value is global::Microsoft.CodeAnalysis.IErrorTypeSymbol) return (6805892318212971116L, 3459135966549338263L);
+        if (value is global::Microsoft.CodeAnalysis.Text.TextLineCollection) return (6660210152896629588L, 208613667673949833L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AccessorDeclarationSyntax) return (6111650690333510295L, -4608807439847327577L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AccessorListSyntax) return (5773049395067049516L, -816855224309977455L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AllowsConstraintSyntax) return (6706221327811755636L, 2890333999427339190L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousObjectMemberDeclaratorSyntax) return (5867450636100095452L, -7698418640577344124L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax) return (6319986773721751383L, 1504434660588378754L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ArrayRankSpecifierSyntax) return (5982607697173422795L, -2718574164410300739L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ArrowExpressionClauseSyntax) return (6008886978689042246L, -2645571243973800024L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentListSyntax) return (6416484005956829908L, -95687648649280588L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentSyntax) return (6494899657405025795L, -168684153056810570L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax) return (6109961699097337638L, -1848118950475592271L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AttributeSyntax) return (6587189058609649056L, -987437963975177321L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.AttributeTargetSpecifierSyntax) return (6357674171718559186L, -5921886020189765476L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseArgumentListSyntax) return (6597417034535204279L, -3675483401555258215L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseCrefParameterListSyntax) return (6038440974582493285L, 7240112513510130822L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseExpressionColonSyntax) return (6913369816237968469L, 7142781096306520482L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseListSyntax) return (6488467745904993004L, -5356815954474729340L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseParameterListSyntax) return (6730719929004190832L, -7971115113358189650L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseParameterSyntax) return (6663100717961127336L, -5889890479207006798L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseTypeSyntax) return (5873375413707484698L, -7190352310358503028L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CatchClauseSyntax) return (5839212530338868455L, 5254124977309120388L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CatchDeclarationSyntax) return (6385281979678934995L, 3651270367322077854L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CatchFilterClauseSyntax) return (6909076024352004192L, 7217272235531872694L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CollectionElementSyntax) return (6040334274825541791L, 6844895473762759577L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorInitializerSyntax) return (6154820770094773204L, 8307454707630257083L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax) return (6121115734995399637L, -6640898961270863198L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.CrefSyntax) return (6466252474516907067L, -8178182220627426682L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElseClauseSyntax) return (6626158739351244778L, -4176614776199477577L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.EqualsValueClauseSyntax) return (6465338105064029009L, -611817702430945616L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax) return (6146037284077213160L, 2710799346717606542L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionOrPatternSyntax) return (6361482109178490703L, -8782154859183080574L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ExternAliasDirectiveSyntax) return (6623618875610126865L, 1500473068253592464L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FinallyClauseSyntax) return (5877149879501008219L, -4403668934973342822L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerCallingConventionSyntax) return (6477474579514773500L, -2481756470117610355L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterListSyntax) return (6237119989010214939L, 4143750298564734872L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionListSyntax) return (6468390935154832319L, 5978706543194094524L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionSyntax) return (5794538919717754512L, -8218994355447477365L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringContentSyntax) return (6785278886178076046L, 7166247594726966709L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationAlignmentClauseSyntax) return (6856922053176469292L, -2808636557653624928L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationFormatClauseSyntax) return (6445359755919158183L, -6150052352603008843L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.JoinIntoClauseSyntax) return (6628010676094446603L, -6014699017407798346L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.LineDirectivePositionSyntax) return (6365908145241307026L, -5675397840517865331L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.MemberDeclarationSyntax) return (5837728368939960439L, -2042806596527974013L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.NameEqualsSyntax) return (6880229644538682133L, 1761288947982186679L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.OrderingSyntax) return (5790580755504346042L, -4593173036148024947L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PositionalPatternClauseSyntax) return (6398549584418384454L, -8530045611725401188L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.PropertyPatternClauseSyntax) return (6630353925515863585L, -3960914369025109617L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.QueryBodySyntax) return (6051946977611849576L, 1242099572593323700L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.QueryClauseSyntax) return (6061845812929586675L, -7704218153977597801L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.QueryContinuationSyntax) return (5925645260699089504L, -6327005923310979919L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SelectOrGroupClauseSyntax) return (6156149118487978479L, -8610257430148651846L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax) return (5785780259035058393L, -4643807841164364154L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax) return (6763643203813748132L, 117519546907870365L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionArmSyntax) return (5972756895202463473L, -2804757799815607920L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SwitchLabelSyntax) return (6002967311681743313L, 2967623935964462485L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.SwitchSectionSyntax) return (6608921542605932480L, -5012388812357769829L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TupleElementSyntax) return (6396384407399020173L, 3916850450910157228L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeArgumentListSyntax) return (6040384076191689215L, -1414503556560208715L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax) return (5766035546419811812L, 1048934714421184397L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintSyntax) return (6598081093279455915L, -1365893146112341318L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax) return (6667381671694305521L, -8799261686469669719L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterSyntax) return (5894557994426885057L, 4599660964688006583L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax) return (6159546637672573392L, -882269706019369813L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclarationSyntax) return (5938839036767673665L, -7033519931193003613L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclaratorSyntax) return (6764166965935144330L, -2487311915293145921L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax) return (6496207130213586826L, 8504357477825931710L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.WhenClauseSyntax) return (5832452742007522806L, 2294528666620478101L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlAttributeSyntax) return (6793018911415728395L, -4936577705021866590L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementEndTagSyntax) return (6280296836854858999L, -6801453031748572031L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementStartTagSyntax) return (6596615272799572709L, 7064266601414551476L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax) return (6242482217118788216L, -2361690915501776221L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax) return (6066028325600425363L, 8133198206782482826L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.Syntax.XmlPrefixSyntax) return (6795129273133947376L, -3551296767104032611L);
+        if (value is global::Microsoft.CodeAnalysis.IArrayTypeSymbol) return (6879916988017005015L, -6617622292582463053L);
+        if (value is global::Microsoft.CodeAnalysis.IDynamicTypeSymbol) return (6477212890330258670L, -4446406480323306103L);
+        if (value is global::Microsoft.CodeAnalysis.IFunctionPointerTypeSymbol) return (6417832099796260401L, -6243531804504036446L);
+        if (value is global::Microsoft.CodeAnalysis.INamedTypeSymbol) return (5916999778746345536L, 5518929607660773037L);
+        if (value is global::Microsoft.CodeAnalysis.IPointerTypeSymbol) return (6650912988887091464L, -8411626690585114970L);
+        if (value is global::Microsoft.CodeAnalysis.ITypeParameterSymbol) return (5888018917143146087L, -3266382106801698914L);
+        if (value is global::Microsoft.CodeAnalysis.AssemblyMetadata) return (6592819178594807712L, -2855131136780162890L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions) return (6578973506009578618L, 8312952492149964679L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpParseOptions) return (6150454455051417175L, -8871987170541682523L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode) return (6504587520261228364L, 5094455481690590858L);
+        if (value is global::Microsoft.CodeAnalysis.CompilationReference) return (6497132759354869273L, 7105655810823733404L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostic) return (5811322149339945119L, 2308144372393975194L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerFileReference) return (6383246998347410759L, -5132694442624866370L);
+        if (value is global::Microsoft.CodeAnalysis.INamespaceSymbol) return (6910974624911649144L, 8549931182006596742L);
+        if (value is global::Microsoft.CodeAnalysis.ISourceAssemblySymbol) return (6244190721606964011L, -4567947647576929138L);
+        if (value is global::Microsoft.CodeAnalysis.ITypeSymbol) return (6869865748335467059L, -3432631301897972574L);
+        if (value is global::Microsoft.CodeAnalysis.LocalizableString) return (5904847537358701094L, -5263436887476129105L);
+        if (value is global::Microsoft.CodeAnalysis.ModuleMetadata) return (5801866436300090440L, -967807436237488998L);
+        if (value is global::Microsoft.CodeAnalysis.SourceFileResolver) return (6753815970454523409L, -5057262226529624158L);
+        if (value is global::Microsoft.CodeAnalysis.AssemblyIdentity) return (6334903794570028567L, -4711927794259259234L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpCommandLineArguments) return (6403782174460483344L, 6653543079286316175L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser) return (6259014060537408448L, 3222434785862186649L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation) return (6513853735695111729L, 7179390645458279041L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpDiagnosticFormatter) return (5989628894161898704L, 1578727213959738249L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpGeneratorDriver) return (5792381882888769229L, -5365207419229665883L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpScriptCompilationInfo) return (5921091056968502100L, -3953374216578716782L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter) return (5939964703278124852L, -3712735063761703552L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree) return (6757606629844938092L, 2201594045327063736L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker) return (6909110796047630645L, -4526935855294428025L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation) return (5842706113779122515L, -1083317572378227816L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.SyntaxTokenParser) return (6435686176918881384L, -2264862211094181706L);
+        if (value is global::Microsoft.CodeAnalysis.CustomModifier) return (6324936807005086795L, -5345475321772525121L);
+        if (value is global::Microsoft.CodeAnalysis.DesktopAssemblyIdentityComparer) return (6215879060056713313L, 7142915523038002345L);
+        if (value is global::Microsoft.CodeAnalysis.DesktopStrongNameProvider) return (6155103157010467893L, -9203640603832526197L);
+        if (value is global::Microsoft.CodeAnalysis.DiagnosticDescriptor) return (6817537380920958174L, -6426313369435623507L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerImageReference) return (5867053650678190168L, -6396539037201873227L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerLoadFailureEventArgs) return (6913479558301595707L, 335124799297012889L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticSuppressor) return (6635351788279702369L, 5008461230726056585L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.UnresolvedAnalyzerReference) return (6404872672142685806L, 8186581770054330277L);
+        if (value is global::Microsoft.CodeAnalysis.DllImportData) return (6061432742681312154L, 7262655059948350121L);
+        if (value is global::Microsoft.CodeAnalysis.Emit.EmitDifferenceResult) return (6901623101402045634L, -6973961590633892218L);
+        if (value is global::Microsoft.CodeAnalysis.Emit.EmitOptions) return (5984900808059830187L, 1317375250298486658L);
+        if (value is global::Microsoft.CodeAnalysis.GeneratorAttribute) return (6017134286226091063L, -7766792781714627952L);
+        if (value is global::Microsoft.CodeAnalysis.IAliasSymbol) return (6519047655564337545L, -7074729740500482431L);
+        if (value is global::Microsoft.CodeAnalysis.IAssemblySymbol) return (6002036998257516093L, -8398571145057786214L);
+        if (value is global::Microsoft.CodeAnalysis.IDiscardSymbol) return (6126586631411333034L, -8686961410666617960L);
+        if (value is global::Microsoft.CodeAnalysis.IEventSymbol) return (5815096847334667733L, 7478332459375573167L);
+        if (value is global::Microsoft.CodeAnalysis.IFieldSymbol) return (6669725327007781390L, -8257387934513594751L);
+        if (value is global::Microsoft.CodeAnalysis.ILabelSymbol) return (6480004954692704832L, 4611917686853249172L);
+        if (value is global::Microsoft.CodeAnalysis.ILocalSymbol) return (6016933693655636294L, 3097322181403985582L);
+        if (value is global::Microsoft.CodeAnalysis.IMethodSymbol) return (6138804782956584293L, 5169855993014625424L);
+        if (value is global::Microsoft.CodeAnalysis.IModuleSymbol) return (6405572945912559569L, 7328719009003368344L);
+        if (value is global::Microsoft.CodeAnalysis.INamespaceOrTypeSymbol) return (6106630561244385013L, 160115260111085711L);
+        if (value is global::Microsoft.CodeAnalysis.IParameterSymbol) return (6603346922221177183L, 3209273076288997767L);
+        if (value is global::Microsoft.CodeAnalysis.IPreprocessingSymbol) return (6226070177996971646L, -1835355549691233120L);
+        if (value is global::Microsoft.CodeAnalysis.IPropertySymbol) return (5946664347348519295L, 4677222066378639495L);
+        if (value is global::Microsoft.CodeAnalysis.IRangeVariableSymbol) return (5798928462980401724L, -7867930966094734934L);
+        if (value is global::Microsoft.CodeAnalysis.Metadata) return (6163533666753424866L, 3696341625299175827L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IBinaryPatternOperation) return (6578246491093762371L, -2158760389432596575L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ICoalesceAssignmentOperation) return (6430377446401711066L, -3741233849196465273L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ICompoundAssignmentOperation) return (6269722265082360484L, 3878392023010161325L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IConstantPatternOperation) return (6824831494064002278L, 5420114252080888478L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IConstructorBodyOperation) return (6248952735378422523L, 1478668721558234558L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDeclarationPatternOperation) return (6478521530882938884L, -5530286830515677772L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDeconstructionAssignmentOperation) return (5872348033292937152L, -5095270401365280329L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDefaultCaseClauseOperation) return (6549255534542252931L, -5242381117060569704L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDiscardPatternOperation) return (6213541281055457759L, 1420065244176037520L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IEventReferenceOperation) return (5998587415654015289L, -5143347829054695254L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IFieldInitializerOperation) return (6736709989877889166L, -7525742199261115722L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IFieldReferenceOperation) return (5871209120158250676L, -9107769725290181734L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IForEachLoopOperation) return (6559976443206196190L, -6060058214304398149L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IForLoopOperation) return (6403905979414878155L, -3149134805620239940L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IForToLoopOperation) return (6632486365177572997L, 2451103833718737589L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringAppendOperation) return (6236719439420526500L, -4032558093336766077L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringTextOperation) return (5893567695697328316L, 5281872073452129726L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInterpolationOperation) return (6277162119877450606L, 9001636320537298563L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IListPatternOperation) return (5799968126543671658L, 2748167786024855741L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IMethodBodyOperation) return (6627173927677138462L, -1735655602070206079L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IMethodReferenceOperation) return (6657692720800439896L, -2707819179842156147L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.INegatedPatternOperation) return (6513750130606680651L, 3590202332471553444L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IParameterInitializerOperation) return (6883333905145853321L, -5363749039359186760L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IPatternCaseClauseOperation) return (6023085261137150986L, 4315787478287386022L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IPropertyInitializerOperation) return (6070807031940069204L, 2261926793824819347L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IPropertyReferenceOperation) return (6863696222180759294L, 7108591833129500043L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IRangeCaseClauseOperation) return (6493163821295039800L, -8983376660323639388L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IRecursivePatternOperation) return (6192512159543473658L, -6363759721179314779L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IRelationalCaseClauseOperation) return (5830623764759236904L, -8705997439286331971L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IRelationalPatternOperation) return (5903861547148688241L, -6962474170935462470L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ISimpleAssignmentOperation) return (6089052141803516454L, 524747722967322526L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ISingleValueCaseClauseOperation) return (5961523559752316360L, -7779859883904832876L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ISlicePatternOperation) return (6009401141553220573L, -6490042901831717998L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ITypePatternOperation) return (6141139821035079832L, -6352358911203212646L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IVariableInitializerOperation) return (6210307353862596862L, 2756701874172601781L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IWhileLoopOperation) return (6406682449354667659L, -2271321167872915563L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.OperationWalker) return (5975260851814815145L, 8947261945377031089L);
+        if (value is global::Microsoft.CodeAnalysis.PortableExecutableReference) return (5766561595639973638L, -5648836441194710864L);
+        if (value is global::Microsoft.CodeAnalysis.ResourceDescription) return (5765257549080727166L, 8387729037993731211L);
+        if (value is global::Microsoft.CodeAnalysis.SuppressionDescriptor) return (6305598023263921092L, -8643817826394609222L);
+        if (value is global::Microsoft.CodeAnalysis.SyntaxAnnotation) return (5846737820548908128L, 2994877434984818619L);
+        if (value is global::Microsoft.CodeAnalysis.Text.TextChangeEventArgs) return (6627462623129914502L, -4238089336260025160L);
+        if (value is global::Microsoft.CodeAnalysis.UnresolvedMetadataReference) return (6118682005477857987L, -1999366681826881403L);
+        if (value is global::Microsoft.CodeAnalysis.XmlFileResolver) return (6595138540243804355L, 5553718526281674126L);
+        if (value is global::Microsoft.CodeAnalysis.AdditionalText) return (6159722067567629388L, -3870974281439332932L);
+        if (value is global::Microsoft.CodeAnalysis.AnalyzerConfig) return (6024297944993335436L, -7065923222341436998L);
+        if (value is global::Microsoft.CodeAnalysis.AnalyzerConfigSet) return (6714316955742506299L, 4643492143633292685L);
+        if (value is global::Microsoft.CodeAnalysis.AssemblyIdentityComparer) return (6222698393385353556L, 6344855293642378394L);
+        if (value is global::Microsoft.CodeAnalysis.AttributeData) return (6209933636566173515L, 5116270058005009822L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor) return (6842334284655663217L, 3723432951882157717L);
+        if (value is global::Microsoft.CodeAnalysis.CommandLineArguments) return (6520485306366077042L, -1330736119947768679L);
+        if (value is global::Microsoft.CodeAnalysis.CommandLineParser) return (6349933110489488382L, 223764789649756819L);
+        if (value is global::Microsoft.CodeAnalysis.Compilation) return (5838057543718980479L, -2639246118531137364L);
+        if (value is global::Microsoft.CodeAnalysis.CompilationOptions) return (6559866682155532990L, -5850717138316559465L);
+        if (value is global::Microsoft.CodeAnalysis.ControlFlowAnalysis) return (6897252118549907955L, 6399807766838608033L);
+        if (value is global::Microsoft.CodeAnalysis.DataFlowAnalysis) return (6749534072336568398L, -8700308751649649776L);
+        if (value is global::Microsoft.CodeAnalysis.DiagnosticFormatter) return (6412420830151071932L, 4338889509376079787L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.AnalysisContext) return (5994657287270306651L, 4487218105910285716L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.AnalysisResult) return (6636470452634757253L, -2067258725200364153L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptions) return (6438748368205131833L, -2123232355439954261L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider) return (6049831297994795362L, 4852418399692555685L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions) return (6022475101661823548L, 1917491034122234023L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference) return (6717427689147469734L, -5572731814927566406L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.CompilationStartAnalysisContext) return (6082593704803247972L, 508542189685383049L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.CompilationWithAnalyzers) return (5817321761033528788L, 2994660176577302688L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.CompilationWithAnalyzersOptions) return (6853798320188142410L, 1413436164291795603L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer) return (6820741406076592940L, -535778755247251559L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext) return (6649901833935359334L, -305057706860825937L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.SuppressionInfo) return (6084212300098344158L, 629711434844556469L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.SymbolStartAnalysisContext) return (5824146596876579651L, 5614823933163949240L);
+        if (value is global::Microsoft.CodeAnalysis.Diagnostics.Telemetry.AnalyzerTelemetryInfo) return (6621633318013859560L, -3644058924037277265L);
+        if (value is global::Microsoft.CodeAnalysis.DocumentationProvider) return (5999264127411572078L, -710269375020333379L);
+        if (value is global::Microsoft.CodeAnalysis.EmbeddedText) return (6883620862467456628L, 4373418245110047116L);
+        if (value is global::Microsoft.CodeAnalysis.Emit.EmitBaseline) return (6755517211427362198L, 1897398644073945511L);
+        if (value is global::Microsoft.CodeAnalysis.Emit.EmitResult) return (6264547997076737453L, 113710103746622118L);
+        if (value is global::Microsoft.CodeAnalysis.ErrorLogOptions) return (6747533194834058974L, -6601405085979904852L);
+        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock) return (6129704948536134761L, -3553680752300514903L);
+        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch) return (5831580335317123668L, 4271686525641846936L);
+        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph) return (6489553148949194120L, -2793163428732318536L);
+        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion) return (6724941978863853197L, -2395739250435928405L);
+        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.ICaughtExceptionOperation) return (6220667445067610340L, -1009132934905424992L);
+        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.IFlowAnonymousFunctionOperation) return (6678057089087607817L, -4773701337688282476L);
+        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.IFlowCaptureOperation) return (6680641790851881254L, 1436419002512444057L);
+        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.IFlowCaptureReferenceOperation) return (6661187455956838096L, -8539655738072444743L);
+        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.IIsNullOperation) return (6754606469936391932L, 1821369774094577800L);
+        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.IStaticLocalInitializationSemaphoreOperation) return (6132020520475098606L, -2906436670734327930L);
+        if (value is global::Microsoft.CodeAnalysis.GeneratorDriver) return (6829143716795851916L, -576526879624741990L);
+        if (value is global::Microsoft.CodeAnalysis.GeneratorDriverRunResult) return (6035884951631395538L, 1995396101133271193L);
+        if (value is global::Microsoft.CodeAnalysis.ISymbol) return (6412777484932919766L, -4595826088741756515L);
+        if (value is global::Microsoft.CodeAnalysis.IncrementalGeneratorRunStep) return (6373319895333463069L, 4167567116788806046L);
+        if (value is global::Microsoft.CodeAnalysis.Location) return (6467616330741294022L, -1441270302119742284L);
+        if (value is global::Microsoft.CodeAnalysis.MetadataId) return (6822048974074265806L, -8216230940611193166L);
+        if (value is global::Microsoft.CodeAnalysis.MetadataReference) return (6603965155313165831L, -501461725512585801L);
+        if (value is global::Microsoft.CodeAnalysis.MetadataReferenceResolver) return (6425765204403708054L, 1624020926161490052L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IAddressOfOperation) return (5819483989918896948L, 7605087328275120522L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IAnonymousFunctionOperation) return (6885926471103929494L, -4143799750330633305L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IAnonymousObjectCreationOperation) return (6085553791434465174L, -2045473698406146657L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IArgumentOperation) return (5933649356924830061L, -8028898167493389898L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IArrayCreationOperation) return (6533941479356021612L, -9023410392256180075L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IArrayElementReferenceOperation) return (6863797967115798996L, 8482795963786436764L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IArrayInitializerOperation) return (6894866530894694262L, -3820142029190010455L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IAssignmentOperation) return (6662894377592048326L, -1598299613541721965L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IAttributeOperation) return (6439384789911717975L, -7388235860300431208L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IAwaitOperation) return (6893744925584339599L, 3879663848084901273L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IBinaryOperation) return (6004763933982645628L, 3064068070453088447L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IBlockOperation) return (6427340112392841237L, 8085813449968167323L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IBranchOperation) return (6197656800996718861L, -3395092733510154622L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ICaseClauseOperation) return (6219385994487758139L, -8721585065045530235L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ICatchClauseOperation) return (6432388520737123982L, 6053660367014050237L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ICoalesceOperation) return (6179048968382301125L, 3259588789209741212L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ICollectionExpressionOperation) return (6723470031175650030L, -804889918192233553L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IConditionalAccessInstanceOperation) return (5808234929654641927L, -7156460690318292547L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IConditionalAccessOperation) return (5938127315978003756L, -8623920270765908064L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IConditionalOperation) return (6384108859944595548L, 6056731019479164314L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IConversionOperation) return (6266076142523367182L, -226608117089679445L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDeclarationExpressionOperation) return (5912483307568739122L, 6703307496026951306L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDefaultValueOperation) return (6826364055310057955L, -4895151606382450815L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDelegateCreationOperation) return (5998238115483430132L, 3215775174225257366L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDiscardOperation) return (6391369264946657146L, -4297130426174178660L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDynamicIndexerAccessOperation) return (5843914439839394069L, 7967534499879739266L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDynamicInvocationOperation) return (6812267521197333360L, -452810855911613049L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDynamicMemberReferenceOperation) return (6627993350390204748L, -6280089344469916021L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IDynamicObjectCreationOperation) return (6570722489711244511L, 6666312242077433012L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IEmptyOperation) return (5832995659858143126L, -7959430782451214415L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IEndOperation) return (5844430072025155390L, -6489298840172991052L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IEventAssignmentOperation) return (6116464473492838818L, 5630356878778717089L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IExpressionStatementOperation) return (5860685175969034522L, -7854748898097245027L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IFunctionPointerInvocationOperation) return (6109678151279307032L, -8701444905153863508L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IImplicitIndexerReferenceOperation) return (5961417316989814215L, 5746188385712854463L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IIncrementOrDecrementOperation) return (6773218015101381947L, 9194510519169771397L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInlineArrayAccessOperation) return (6288756728618427591L, 5532751018363514787L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInstanceReferenceOperation) return (6234482690598257498L, -971882216968220737L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringAdditionOperation) return (6546713265073102030L, -4950832223161245551L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringContentOperation) return (6728537355592827406L, 5703617478361468587L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringHandlerArgumentPlaceholderOperation) return (6858686332434926876L, -882252148887598182L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringHandlerCreationOperation) return (5952288198349022703L, 121298990134254996L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInterpolatedStringOperation) return (5967394405903538064L, 7034572447859216045L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInvalidOperation) return (6399662568722519984L, -5183289192604555647L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IInvocationOperation) return (6710803507406972704L, 3673527752225131711L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IIsPatternOperation) return (6092447603591283137L, -7793821421758891380L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IIsTypeOperation) return (6666523425168528001L, -4375456139644762211L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ILabeledOperation) return (6558512024121172878L, 6465484794973771401L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ILiteralOperation) return (6326628092952737127L, -9036152339025956992L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ILocalFunctionOperation) return (6567006521321825903L, 514039708876082571L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ILocalReferenceOperation) return (5822384531544886461L, 308214680519557814L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ILockOperation) return (6380403136630967751L, -8711106330929960524L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ILoopOperation) return (6839893268161346309L, 2936137526508142781L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IMemberInitializerOperation) return (6610795313350356038L, 3892482375589184408L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IMemberReferenceOperation) return (5831320674813863355L, -7539237144007249507L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IMethodBodyBaseOperation) return (5987774893124380922L, -8633600879468077174L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.INameOfOperation) return (6733026025438044548L, 6494050522952151467L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IObjectCreationOperation) return (6719692122703252321L, -4980252727643479394L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IObjectOrCollectionInitializerOperation) return (6071994419942166607L, 4703288211271550880L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IOmittedArgumentOperation) return (6096682761421464670L, 3755015795917004717L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IParameterReferenceOperation) return (6894350033315732372L, -7618930119897447778L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IParenthesizedOperation) return (6478317660056340908L, -2752326843348942412L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IPatternOperation) return (6734197414347785785L, 2642798265864640922L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IPropertySubpatternOperation) return (6396276235815500893L, -4689168751995956056L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IRaiseEventOperation) return (5814591805460267295L, 3651372407029561994L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IRangeOperation) return (5794535122713732793L, -9197387767690199361L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IReDimClauseOperation) return (5934346448901334731L, -22491926413553267L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IReDimOperation) return (5943089550205875120L, -2155787957041631574L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IReturnOperation) return (6450289644650019473L, 7680762458572365953L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ISizeOfOperation) return (6692672273600084885L, 1639170800939663009L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ISpreadOperation) return (5957758391893859493L, 7351657444641114498L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IStopOperation) return (5852279335599146097L, -2868870892398157154L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ISwitchCaseOperation) return (6097492620833795723L, -3083903464746719849L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ISwitchExpressionArmOperation) return (6038368567526306462L, -1512630046971592557L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ISwitchExpressionOperation) return (6612528017602281101L, 597052537326796684L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ISwitchOperation) return (6046666670977480267L, -5130542608863632705L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ISymbolInitializerOperation) return (6155547298131218549L, -9165570325429581889L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IThrowOperation) return (6187893280065838465L, 5163014571094186667L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ITranslatedQueryOperation) return (5913176787045295526L, 6154447440161960124L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ITryOperation) return (6803168616149464088L, 3611503728052015767L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ITupleBinaryOperation) return (6161601382753285111L, -6010533265229994366L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ITupleOperation) return (5871375534495651296L, -5957160814836229478L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ITypeOfOperation) return (6732353058514663028L, 1655463322438650281L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.ITypeParameterObjectCreationOperation) return (6578135450878091133L, -742537805189493119L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IUnaryOperation) return (6187359070647693571L, 8278806960769751217L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IUsingDeclarationOperation) return (5852660651562082570L, -4289536609779083637L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IUsingOperation) return (6595121719885254081L, 7850876676627693232L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IUtf8StringOperation) return (6754927942868001177L, 8862123401264811703L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IVariableDeclarationGroupOperation) return (6780893301687205566L, -6006521906552441186L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IVariableDeclarationOperation) return (5989677096909150766L, 8871742291939027364L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IVariableDeclaratorOperation) return (6018247234738779367L, -2897580766173799746L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.IWithOperation) return (6834691663733262993L, -3637164163635034440L);
+        if (value is global::Microsoft.CodeAnalysis.Operations.OperationVisitor) return (6607180581171137371L, 7248270592908009089L);
+        if (value is global::Microsoft.CodeAnalysis.ParseOptions) return (6488166937858613601L, -7940948572626126699L);
+        if (value is global::Microsoft.CodeAnalysis.RuleSet) return (6114799947863825248L, -5339211378672967549L);
+        if (value is global::Microsoft.CodeAnalysis.RuleSetInclude) return (6371500335164148619L, 947005162410212491L);
+        if (value is global::Microsoft.CodeAnalysis.ScriptCompilationInfo) return (5787152926327919127L, -7104917347685376889L);
+        if (value is global::Microsoft.CodeAnalysis.SemanticModel) return (6322454380729126121L, 2581760767325674927L);
+        if (value is global::Microsoft.CodeAnalysis.SourceReferenceResolver) return (6106831364189181391L, -1316449860461737836L);
+        if (value is global::Microsoft.CodeAnalysis.StrongNameProvider) return (6032737276270416390L, 8744871423109662601L);
+        if (value is global::Microsoft.CodeAnalysis.SymbolDisplayFormat) return (6639777338690592016L, -1023363997453811569L);
+        if (value is global::Microsoft.CodeAnalysis.SymbolVisitor) return (6886515366973858567L, -6546120953504135010L);
+        if (value is global::Microsoft.CodeAnalysis.SyntaxNode) return (6623672229737979740L, 3303931401762442117L);
+        if (value is global::Microsoft.CodeAnalysis.SyntaxReference) return (6887641373985171656L, -6651813634596288586L);
+        if (value is global::Microsoft.CodeAnalysis.SyntaxTree) return (5933738100484288194L, 8606499462315599774L);
+        if (value is global::Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider) return (6730944937249305724L, -2380146906168220996L);
+        if (value is global::Microsoft.CodeAnalysis.SyntaxWalker) return (6840225252998176656L, 6913865226921685933L);
+        if (value is global::Microsoft.CodeAnalysis.Text.SourceText) return (6567153764373157662L, 5156686040093789088L);
+        if (value is global::Microsoft.CodeAnalysis.Text.SourceTextContainer) return (6430037342728033710L, -8342648740283769193L);
+        if (value is global::Microsoft.CodeAnalysis.XmlReferenceResolver) return (6061793248684524715L, 1176493549687507614L);
+        if (value is global::Microsoft.CodeAnalysis.IAnalyzerAssemblyLoader) return (6188727919026413649L, 6709024803131858573L);
+        if (value is global::Microsoft.CodeAnalysis.ICompilationUnitSyntax) return (6649826640131542072L, -1331247717981046616L);
+        if (value is global::Microsoft.CodeAnalysis.IImportScope) return (6773801488849304718L, -3388942734433718095L);
+        if (value is global::Microsoft.CodeAnalysis.IIncrementalGenerator) return (6762479211410742682L, 3662469512751465110L);
+        if (value is global::Microsoft.CodeAnalysis.IOperation) return (6701787610258061089L, -8672041633418212725L);
+        if (value is global::Microsoft.CodeAnalysis.ISkippedTokensTriviaSyntax) return (6593600127019162334L, 2733647287615190665L);
+        if (value is global::Microsoft.CodeAnalysis.ISourceGenerator) return (6208041245262492078L, -7190103240747531110L);
+        if (value is global::Microsoft.CodeAnalysis.IStructuredTriviaSyntax) return (5971835674129478968L, -5102896886962772600L);
+        if (value is global::Microsoft.CodeAnalysis.ISyntaxContextReceiver) return (6322855025962942993L, 8709161109305365922L);
+        if (value is global::Microsoft.CodeAnalysis.ISyntaxReceiver) return (6212594861418671563L, -3278367033268530017L);
+        return (0L, 0L);
+    }
 }

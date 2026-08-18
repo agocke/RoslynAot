@@ -130,15 +130,7 @@
     },
     {
       "ruleId": "CA1845",
-      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpUseSpanBasedStringConcat",
-      "status": "Fail",
-      "reason": {
-        "kind": "AnalyzerException",
-        "case": "CA1845/Basic",
-        "actionKind": "Operation",
-        "exceptionType": "System.InvalidOperationException",
-        "failingMember": "Microsoft.CodeAnalysis.Operations.OperationWalker.__RoslynAotGetControlVtbl"
-      }
+      "status": "Pass"
     },
     {
       "ruleId": "CA1851",
