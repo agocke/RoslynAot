@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis.Operations
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IIAnonymousObjectCreationOperationVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.IAnonymousObjectCreationOperation_get_Initializers(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.IAnonymousObjectCreationOperation_get_Initializers(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IOperation>(controlVtbl, result, static (controlVtbl, handle) => IOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -25,7 +25,7 @@ namespace Microsoft.CodeAnalysis.Operations
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IIAnonymousObjectCreationOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIAnonymousObjectCreationOperationVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IAnonymousObjectCreationOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IAnonymousObjectCreationOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("3ffb9f96-3aee-5474-9fdd-183982049de3")]

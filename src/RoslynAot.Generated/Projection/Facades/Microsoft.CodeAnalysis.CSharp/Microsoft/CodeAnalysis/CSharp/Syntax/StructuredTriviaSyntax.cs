@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IStructuredTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.StructuredTriviaSyntax_get_ParentTrivia(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.StructuredTriviaSyntax_get_ParentTrivia(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -25,7 +25,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IStructuredTriviaSyntaxVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetStructuredTriviaSyntaxVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static StructuredTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (StructuredTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("3fe5fceb-8bba-5254-b265-b11b28b4e1c6")]

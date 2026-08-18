@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IControlFlowBranchVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ControlFlowBranch_get_Destination(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ControlFlowBranch_get_Destination(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result == 0 ? null : BasicBlock.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IControlFlowBranchVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ControlFlowBranch_get_EnteringRegions(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ControlFlowBranch_get_EnteringRegions(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ControlFlowRegion>(controlVtbl, result, static (controlVtbl, handle) => ControlFlowRegion.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IControlFlowBranchVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ControlFlowBranch_get_FinallyRegions(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ControlFlowBranch_get_FinallyRegions(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ControlFlowRegion>(controlVtbl, result, static (controlVtbl, handle) => ControlFlowRegion.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -52,7 +52,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IControlFlowBranchVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ControlFlowBranch_get_IsConditionalSuccessor(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.ControlFlowBranch_get_IsConditionalSuccessor(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -64,7 +64,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IControlFlowBranchVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ControlFlowBranch_get_LeavingRegions(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ControlFlowBranch_get_LeavingRegions(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ControlFlowRegion>(controlVtbl, result, static (controlVtbl, handle) => ControlFlowRegion.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -76,7 +76,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IControlFlowBranchVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ControlFlowBranch_get_Semantics(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.ControlFlowBranch_get_Semantics(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return (ControlFlowBranchSemantics)result;
             }
@@ -88,7 +88,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IControlFlowBranchVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ControlFlowBranch_get_Source(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ControlFlowBranch_get_Source(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return BasicBlock.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -97,7 +97,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IControlFlowBranchVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetControlFlowBranchVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ControlFlowBranch __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ControlFlowBranch)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("fdbb0254-ef6a-50ed-9870-b4404314483b")]

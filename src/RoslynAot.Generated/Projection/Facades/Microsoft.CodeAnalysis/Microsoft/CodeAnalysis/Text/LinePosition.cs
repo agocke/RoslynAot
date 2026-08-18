@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILinePositionVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.LinePosition_get_Character(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.LinePosition_get_Character(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -42,7 +42,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILinePositionVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.LinePosition_get_Line(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.LinePosition_get_Line(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -64,7 +64,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILinePositionVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LinePosition_CompareTo(__RoslynAotGetHandle(controlVtbl), other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.LinePosition_CompareTo(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -73,7 +73,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILinePositionVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LinePosition_Equals_c7695a0d(__RoslynAotGetHandle(controlVtbl), other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.LinePosition_Equals_c7695a0d(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -87,7 +87,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILinePositionVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LinePosition_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.LinePosition_GetHashCode(__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -126,7 +126,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILinePositionVtbl vtbl = __RoslynAotGetVtbl();
-            long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+            long __roslynAotReceiver = __RoslynAotGetHandle();
             return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.LinePosition_ToString(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
@@ -159,7 +159,7 @@ namespace Microsoft.CodeAnalysis.Text
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static LinePosition __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new LinePosition(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetLinePositionVtbl(controlVtbl), handle);
     }
 }

@@ -29,7 +29,7 @@ namespace Microsoft.CodeAnalysis.Text
 
         internal global::RoslynAot.Abi.ISourceTextContainerVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         private sealed partial class __RoslynAotProxy : SourceTextContainer
         {
             internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.ISourceTextContainerVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
@@ -55,7 +55,7 @@ namespace Microsoft.CodeAnalysis.Text
                 {
                     global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                     global::RoslynAot.Abi.ISourceTextContainerVtbl vtbl = __RoslynAotGetVtbl();
-                    int status = vtbl.SourceTextContainer_get_CurrentText(__RoslynAotGetHandle(controlVtbl), out long result);
+                    int status = vtbl.SourceTextContainer_get_CurrentText(__RoslynAotGetHandle(), out long result);
                     global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                     return SourceText.__RoslynAotCreateProxy(controlVtbl, result);
                 }

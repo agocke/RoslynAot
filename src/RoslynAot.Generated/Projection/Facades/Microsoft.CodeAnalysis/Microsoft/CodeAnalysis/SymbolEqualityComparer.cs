@@ -23,7 +23,7 @@ namespace Microsoft.CodeAnalysis
             if (y is null)
                 return false;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = x.__RoslynAotGetControlVtbl();
-            int status = controlVtbl.SymbolEqualityComparerEquals(__RoslynAotKind, x.__RoslynAotGetHandle(controlVtbl), y.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = controlVtbl.SymbolEqualityComparerEquals(__RoslynAotKind, x.__RoslynAotGetHandle(), y.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -33,7 +33,7 @@ namespace Microsoft.CodeAnalysis
             if (obj is null)
                 return 0;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = obj.__RoslynAotGetControlVtbl();
-            int status = controlVtbl.SymbolEqualityComparerGetHashCode(__RoslynAotKind, obj.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = controlVtbl.SymbolEqualityComparerGetHashCode(__RoslynAotKind, obj.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }

@@ -51,7 +51,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static SyntaxValueProvider __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new SyntaxValueProvider(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxValueProviderVtbl(controlVtbl), handle);
     }
 }

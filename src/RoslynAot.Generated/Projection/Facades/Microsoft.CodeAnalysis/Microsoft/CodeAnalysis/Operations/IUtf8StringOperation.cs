@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis.Operations
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IIUtf8StringOperationVtbl vtbl = __RoslynAotGetVtbl();
-                long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                long __roslynAotReceiver = __RoslynAotGetHandle();
                 return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.IUtf8StringOperation_get_Value(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
@@ -24,7 +24,7 @@ namespace Microsoft.CodeAnalysis.Operations
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IIUtf8StringOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIUtf8StringOperationVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IUtf8StringOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IUtf8StringOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("c601e199-532c-5dbe-b7ce-10a84796fc7a")]

@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_AdditionalFileActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_AdditionalFileActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -27,7 +27,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_AdditionalFileActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_AdditionalFileActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -39,7 +39,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_CodeBlockActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_CodeBlockActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -48,7 +48,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_CodeBlockActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_CodeBlockActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -60,7 +60,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_CodeBlockEndActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_CodeBlockEndActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -69,7 +69,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_CodeBlockEndActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_CodeBlockEndActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -81,7 +81,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_CodeBlockStartActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_CodeBlockStartActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -90,7 +90,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_CodeBlockStartActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_CodeBlockStartActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -102,7 +102,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_CompilationActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_CompilationActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -111,7 +111,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_CompilationActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_CompilationActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -123,7 +123,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_CompilationEndActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_CompilationEndActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -132,7 +132,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_CompilationEndActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_CompilationEndActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -144,7 +144,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_CompilationStartActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_CompilationStartActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -153,7 +153,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_CompilationStartActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_CompilationStartActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -165,7 +165,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_Concurrent(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_Concurrent(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -174,7 +174,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_Concurrent(__RoslynAotGetHandle(controlVtbl), value ? 1 : 0);
+                int status = vtbl.AnalyzerTelemetryInfo_set_Concurrent(__RoslynAotGetHandle(), value ? 1 : 0);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -200,7 +200,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_OperationActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_OperationActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -209,7 +209,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_OperationActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_OperationActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -221,7 +221,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_OperationBlockActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_OperationBlockActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -230,7 +230,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_OperationBlockActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_OperationBlockActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -242,7 +242,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_OperationBlockEndActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_OperationBlockEndActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -251,7 +251,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_OperationBlockEndActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_OperationBlockEndActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -263,7 +263,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_OperationBlockStartActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_OperationBlockStartActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -272,7 +272,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_OperationBlockStartActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_OperationBlockStartActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -284,7 +284,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_SemanticModelActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_SemanticModelActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -293,7 +293,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_SemanticModelActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_SemanticModelActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -305,7 +305,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_SuppressionActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_SuppressionActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -314,7 +314,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_SuppressionActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_SuppressionActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -326,7 +326,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_SymbolActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_SymbolActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -335,7 +335,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_SymbolActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_SymbolActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -347,7 +347,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_SymbolEndActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_SymbolEndActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -356,7 +356,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_SymbolEndActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_SymbolEndActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -368,7 +368,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_SymbolStartActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_SymbolStartActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -377,7 +377,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_SymbolStartActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_SymbolStartActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -389,7 +389,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_SyntaxNodeActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_SyntaxNodeActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -398,7 +398,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_SyntaxNodeActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_SyntaxNodeActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -410,7 +410,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_get_SyntaxTreeActionsCount(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.AnalyzerTelemetryInfo_get_SyntaxTreeActionsCount(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -419,7 +419,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerTelemetryInfo_set_SyntaxTreeActionsCount(__RoslynAotGetHandle(controlVtbl), value);
+                int status = vtbl.AnalyzerTelemetryInfo_set_SyntaxTreeActionsCount(__RoslynAotGetHandle(), value);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
         }
@@ -440,7 +440,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry
 
         internal global::RoslynAot.Abi.IAnalyzerTelemetryInfoVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static AnalyzerTelemetryInfo __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new AnalyzerTelemetryInfo(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAnalyzerTelemetryInfoVtbl(controlVtbl), handle);
     }
 }

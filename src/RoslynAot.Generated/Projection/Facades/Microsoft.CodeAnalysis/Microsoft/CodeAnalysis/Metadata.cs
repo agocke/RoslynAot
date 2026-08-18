@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IMetadataVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Metadata_get_Id(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.Metadata_get_Id(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return MetadataId.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IMetadataVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Metadata_get_Kind(__RoslynAotGetHandle(controlVtbl), out byte result);
+                int status = vtbl.Metadata_get_Kind(__RoslynAotGetHandle(), out byte result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return (MetadataImageKind)result;
             }
@@ -43,7 +43,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IMetadataVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.Metadata_Copy(__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.Metadata_Copy(__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -52,14 +52,14 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IMetadataVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.Metadata_Dispose(__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.Metadata_Dispose(__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IMetadataVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetMetadataVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static Metadata __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (Metadata)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("cfffade2-4536-5589-9389-72c81f0b4c33")]

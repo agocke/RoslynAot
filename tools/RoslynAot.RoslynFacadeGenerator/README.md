@@ -251,11 +251,10 @@ The generated code depends on a small handwritten runtime:
 - `RoslynInterop`, the compiler-side control object and owner of shared
   projection state.
 - A compiler-side handle table with type checking, slot generations, and
-  interop-identity-scoped lifetime.
+  process lifetime.
 - Generated per-vtbl dispatchers and a lazy dispatcher registry.
 - Generated helpers that request and cache the required per-type RCWs.
-- Facade helpers for control identity validation, HRESULT translation, and
-  proxy construction.
+- Facade helpers for HRESULT translation and proxy construction.
 - Compiler helpers for exception capture and handle creation, lookup, release,
   and disposal.
 
@@ -361,9 +360,9 @@ public SyntaxTokenParser.Result ParseNextToken()
 ```
 
 Static members obtain `IRoslynControlVtbl` from the facade runtime, then query
-the generated type vtbl. Arguments that are remote proxies must
-belong to that same control identity before their handles are passed to the
-ABI.
+the generated type vtbl. Remote-proxy arguments contribute their handles
+directly: a module talks to one compiler, so every handle it holds is already
+meaningful to that control.
 
 Constructors and static factories become creation calls. Public or
 protected Roslyn constructors retain their original declaration, but their
@@ -465,8 +464,8 @@ Exceptions never escape through the unmanaged entry point. `SetError` records
 enough information for the facade runtime to recreate common argument,
 disposal, cancellation, and unsupported-operation exceptions. Other
 exceptions become an explicit remote Roslyn exception.
-Synchronous error details are stored per interop identity and calling thread, and the
-facade validates both the error-size query and copy operation.
+Synchronous error details are stored per calling thread, and the facade
+validates both the error-size query and copy operation.
 
 ### `SyntaxTokenParser` projection
 

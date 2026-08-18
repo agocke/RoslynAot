@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis
             this = default;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICommandLineReferenceTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineReferenceTypeVtbl(controlVtbl);
-            int status = vtbl.CommandLineReference_ctor(reference, properties.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.CommandLineReference_ctor(reference, properties.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineReferenceVtbl(controlVtbl);
@@ -31,7 +31,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ICommandLineReferenceVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.CommandLineReference_get_Properties(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.CommandLineReference_get_Properties(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return MetadataReferenceProperties.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -43,7 +43,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ICommandLineReferenceVtbl vtbl = __RoslynAotGetVtbl();
-                long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                long __roslynAotReceiver = __RoslynAotGetHandle();
                 return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CommandLineReference_get_Reference(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
@@ -52,7 +52,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICommandLineReferenceVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CommandLineReference_Equals_e07b61cf(__RoslynAotGetHandle(controlVtbl), other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.CommandLineReference_Equals_e07b61cf(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -66,7 +66,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICommandLineReferenceVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CommandLineReference_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.CommandLineReference_GetHashCode(__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -100,7 +100,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static CommandLineReference __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new CommandLineReference(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineReferenceVtbl(controlVtbl), handle);
     }
 }

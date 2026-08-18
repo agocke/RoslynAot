@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.LineDirectiveTriviaSyntax_get_EndOfDirectiveToken(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.LineDirectiveTriviaSyntax_get_EndOfDirectiveToken(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.LineDirectiveTriviaSyntax_get_File(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.LineDirectiveTriviaSyntax_get_File(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.LineDirectiveTriviaSyntax_get_HashToken(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.LineDirectiveTriviaSyntax_get_HashToken(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -52,7 +52,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.LineDirectiveTriviaSyntax_get_IsActive(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.LineDirectiveTriviaSyntax_get_IsActive(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -64,7 +64,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.LineDirectiveTriviaSyntax_get_Line(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.LineDirectiveTriviaSyntax_get_Line(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -76,7 +76,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.LineDirectiveTriviaSyntax_get_LineKeyword(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.LineDirectiveTriviaSyntax_get_LineKeyword(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -86,7 +86,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LineDirectiveTriviaSyntax_Accept_3e8c7740(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.LineDirectiveTriviaSyntax_Accept_3e8c7740(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -99,7 +99,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LineDirectiveTriviaSyntax_Update(__RoslynAotGetHandle(controlVtbl), hashToken.__RoslynAotGetHandle(controlVtbl), lineKeyword.__RoslynAotGetHandle(controlVtbl), line.__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.LineDirectiveTriviaSyntax_Update(__RoslynAotGetHandle(), hashToken.__RoslynAotGetHandle(), lineKeyword.__RoslynAotGetHandle(), line.__RoslynAotGetHandle(), @file.__RoslynAotGetHandle(), endOfDirectiveToken.__RoslynAotGetHandle(), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -108,7 +108,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LineDirectiveTriviaSyntax_WithEndOfDirectiveToken(__RoslynAotGetHandle(controlVtbl), endOfDirectiveToken.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.LineDirectiveTriviaSyntax_WithEndOfDirectiveToken(__RoslynAotGetHandle(), endOfDirectiveToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -117,7 +117,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LineDirectiveTriviaSyntax_WithFile(__RoslynAotGetHandle(controlVtbl), @file.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.LineDirectiveTriviaSyntax_WithFile(__RoslynAotGetHandle(), @file.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -126,7 +126,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LineDirectiveTriviaSyntax_WithHashToken(__RoslynAotGetHandle(controlVtbl), hashToken.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.LineDirectiveTriviaSyntax_WithHashToken(__RoslynAotGetHandle(), hashToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -135,7 +135,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LineDirectiveTriviaSyntax_WithIsActive(__RoslynAotGetHandle(controlVtbl), isActive ? 1 : 0, out long result);
+            int status = vtbl.LineDirectiveTriviaSyntax_WithIsActive(__RoslynAotGetHandle(), isActive ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -144,7 +144,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LineDirectiveTriviaSyntax_WithLine(__RoslynAotGetHandle(controlVtbl), line.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.LineDirectiveTriviaSyntax_WithLine(__RoslynAotGetHandle(), line.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -153,7 +153,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LineDirectiveTriviaSyntax_WithLineKeyword(__RoslynAotGetHandle(controlVtbl), lineKeyword.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.LineDirectiveTriviaSyntax_WithLineKeyword(__RoslynAotGetHandle(), lineKeyword.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -161,7 +161,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.ILineDirectiveTriviaSyntaxVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetLineDirectiveTriviaSyntaxVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static LineDirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (LineDirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("e29900d5-a2c7-5bbb-8728-cb3e2dd5bbad")]

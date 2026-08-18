@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IDiagnosticSuppressorVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.DiagnosticSuppressor_get_SupportedDiagnostics(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.DiagnosticSuppressor_get_SupportedDiagnostics(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<DiagnosticDescriptor>(controlVtbl, result, static (controlVtbl, handle) => DiagnosticDescriptor.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IDiagnosticSuppressorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.DiagnosticSuppressor_Initialize(__RoslynAotGetHandle(controlVtbl), context.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.DiagnosticSuppressor_Initialize(__RoslynAotGetHandle(), context.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -49,7 +49,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         internal global::RoslynAot.Abi.IDiagnosticSuppressorVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         private sealed partial class __RoslynAotProxy : DiagnosticSuppressor
         {
             internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.IDiagnosticSuppressorVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
@@ -60,7 +60,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IDiagnosticSuppressorVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.DiagnosticSuppressor_ReportSuppressions(__RoslynAotGetHandle(controlVtbl), context.__RoslynAotGetHandle(controlVtbl));
+                int status = vtbl.DiagnosticSuppressor_ReportSuppressions(__RoslynAotGetHandle(), context.__RoslynAotGetHandle());
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             }
 
@@ -70,7 +70,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
                 {
                     global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                     global::RoslynAot.Abi.IDiagnosticSuppressorVtbl vtbl = __RoslynAotGetVtbl();
-                    int status = vtbl.DiagnosticSuppressor_get_SupportedSuppressions(__RoslynAotGetHandle(controlVtbl), out long result);
+                    int status = vtbl.DiagnosticSuppressor_get_SupportedSuppressions(__RoslynAotGetHandle(), out long result);
                     global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                     return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<SuppressionDescriptor>(controlVtbl, result, static (controlVtbl, handle) => SuppressionDescriptor.__RoslynAotCreateProxy(controlVtbl, handle)));
                 }

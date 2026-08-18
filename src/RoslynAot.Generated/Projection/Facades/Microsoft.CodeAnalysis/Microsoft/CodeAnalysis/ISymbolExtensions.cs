@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IISymbolExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetISymbolExtensionsVtbl(controlVtbl);
-            int status = vtbl.ISymbolExtensions_GetConstructedReducedFrom(@method.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.ISymbolExtensions_GetConstructedReducedFrom(@method.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result == 0 ? null : IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }

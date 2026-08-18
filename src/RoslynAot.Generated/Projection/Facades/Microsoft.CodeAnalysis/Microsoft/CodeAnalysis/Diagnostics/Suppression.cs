@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ISuppressionVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Suppression_get_Descriptor(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.Suppression_get_Descriptor(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SuppressionDescriptor.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ISuppressionVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Suppression_get_SuppressedDiagnostic(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.Suppression_get_SuppressedDiagnostic(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return Diagnostic.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISuppressionTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSuppressionTypeVtbl(controlVtbl);
-            int status = vtbl.Suppression_Create(descriptor.__RoslynAotGetHandle(controlVtbl), suppressedDiagnostic.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.Suppression_Create(descriptor.__RoslynAotGetHandle(), suppressedDiagnostic.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -49,7 +49,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISuppressionVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.Suppression_Equals_661a2ff9(__RoslynAotGetHandle(controlVtbl), other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.Suppression_Equals_661a2ff9(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -63,7 +63,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISuppressionVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.Suppression_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.Suppression_GetHashCode(__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -107,7 +107,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static Suppression __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new Suppression(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSuppressionVtbl(controlVtbl), handle);
     }
 }

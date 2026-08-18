@@ -535,6 +535,18 @@ unstarted.** Per bullet:
   cache by object identity already, so one shared compiler-side object gives
   every analyzer type in a module the same `IRoslynControlVtbl` proxy for
   free — no separate "many analyzers, one control" mechanism was needed.
+
+  **Completed 2026-08-18.** The above retired the *encoding*; the plumbing
+  outlived it by a day. `__RoslynAotGetHandle` still took an
+  `IRoslynControlVtbl` it discarded, at 9,540 generated call sites, and
+  `RoslynObjectProxy` still compared controls in `Equals` and on every cache
+  hit — checks the cache's own handle-only key had already given up on, so
+  they read as a safety property that was not being kept. The parameter is
+  gone from both shapes and from every call site, and the invariant they were
+  gesturing at is now stated once, fail-closed, where the control enters the
+  module: `GetOrCreateControlVtbl` records the first control and throws if a
+  second ever arrives. Manifest identity is unchanged — this is facade text,
+  not ABI.
 - **Reverse map and handle→proxy cache — done.** `RoslynHandleTable.Add` dedups
   reference-typed objects by identity (`Dictionary<object, long>`,
   `ReferenceEqualityComparer`); `RoslynObjectProxy.GetOrCreate` mirrors it on

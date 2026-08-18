@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis.Operations
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IISwitchCaseOperationVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ISwitchCaseOperation_get_Body(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ISwitchCaseOperation_get_Body(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IOperation>(controlVtbl, result, static (controlVtbl, handle) => IOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis.Operations
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IISwitchCaseOperationVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ISwitchCaseOperation_get_Clauses(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ISwitchCaseOperation_get_Clauses(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ICaseClauseOperation>(controlVtbl, result, static (controlVtbl, handle) => ICaseClauseOperation.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis.Operations
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IISwitchCaseOperationVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ISwitchCaseOperation_get_Locals(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ISwitchCaseOperation_get_Locals(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ILocalSymbol>(controlVtbl, result, static (controlVtbl, handle) => ILocalSymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -49,7 +49,7 @@ namespace Microsoft.CodeAnalysis.Operations
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IISwitchCaseOperationVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetISwitchCaseOperationVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ISwitchCaseOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ISwitchCaseOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("955d2e8b-a53b-549e-97e5-2c5623c633d5")]

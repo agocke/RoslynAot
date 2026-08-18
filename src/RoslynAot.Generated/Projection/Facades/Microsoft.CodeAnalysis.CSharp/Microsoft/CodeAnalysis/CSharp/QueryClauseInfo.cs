@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IQueryClauseInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.QueryClauseInfo_get_CastInfo(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.QueryClauseInfo_get_CastInfo(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SymbolInfo.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IQueryClauseInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.QueryClauseInfo_get_OperationInfo(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.QueryClauseInfo_get_OperationInfo(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SymbolInfo.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IQueryClauseInfoVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.QueryClauseInfo_Equals_960e0ade(__RoslynAotGetHandle(controlVtbl), other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.QueryClauseInfo_Equals_960e0ade(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -52,7 +52,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IQueryClauseInfoVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.QueryClauseInfo_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.QueryClauseInfo_GetHashCode(__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -86,7 +86,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static QueryClauseInfo __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new QueryClauseInfo(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetQueryClauseInfoVtbl(controlVtbl), handle);
     }
 }

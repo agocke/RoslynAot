@@ -54,7 +54,7 @@ namespace Microsoft.CodeAnalysis.Emit
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static MethodInstrumentation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new MethodInstrumentation(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetMethodInstrumentationVtbl(controlVtbl), handle);
     }
 }

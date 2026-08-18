@@ -26,7 +26,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IAnalyzerConfigOptionsResultVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.AnalyzerConfigOptionsResult_get_Diagnostics(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.AnalyzerConfigOptionsResult_get_Diagnostics(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -69,7 +69,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static AnalyzerConfigOptionsResult __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new AnalyzerConfigOptionsResult(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAnalyzerConfigOptionsResultVtbl(controlVtbl), handle);
     }
 }

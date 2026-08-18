@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis.Emit
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IEmitBaselineVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.EmitBaseline_get_OriginalMetadata(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.EmitBaseline_get_OriginalMetadata(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return ModuleMetadata.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -44,7 +44,7 @@ namespace Microsoft.CodeAnalysis.Emit
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IEmitBaselineVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetEmitBaselineVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static EmitBaseline __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (EmitBaseline)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("8d2a5596-6b1c-5dc0-a7d9-559103ea541a")]

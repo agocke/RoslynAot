@@ -201,14 +201,8 @@ internal sealed class FacadeDeclarationTransform
                 "global::System.ArgumentOutOfRangeException(nameof(handle)); }"),
             ParseMember(getVtblMember),
             ParseMember(getControlVtblMember),
-            // Migration Step 4 retired control-scoped handle identity: a
-            // handle already means one specific object process-wide, so
-            // there is nothing left to verify by comparing controlVtbl
-            // references here.
             ParseMember(
-                "internal long __RoslynAotGetHandle(" +
-                "global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => " +
-                "__roslynAotHandle;"),
+                "internal long __RoslynAotGetHandle() => __roslynAotHandle;"),
         };
         if (type.TypeKind == TypeKind.Class &&
             !typeDeclaration.Members
@@ -340,9 +334,8 @@ internal sealed class FacadeDeclarationTransform
                     "__RoslynAotGetControlVtbl() => " +
                     "__RoslynAotGetProxy().ControlVtbl;"),
                 ParseMember(
-                    "public long __RoslynAotGetHandle(" +
-                    "global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => " +
-                    "__RoslynAotGetProxy().GetHandle(controlVtbl);"),
+                    "public long __RoslynAotGetHandle() => " +
+                    "__RoslynAotGetProxy().GetHandle();"),
                 ParseMember(
                     $"internal static {fullyQualifiedType} " +
                     "__RoslynAotCreateProxy(" +
@@ -1150,12 +1143,12 @@ internal static class FacadeBodyEmitter
             {
                 yield return
                     $"{operation.Receiver!.AbiType} __roslynAotReceiver = " +
-                    "__RoslynAotGetHandle(controlVtbl);";
+                    "__RoslynAotGetHandle();";
                 arguments.Add("__roslynAotReceiver");
             }
             else
             {
-                arguments.Add("__RoslynAotGetHandle(controlVtbl)");
+                arguments.Add("__RoslynAotGetHandle()");
             }
         }
 
@@ -1272,19 +1265,18 @@ internal static class FacadeBodyEmitter
                 name,
             AbiTypeKind.ObjectHandle =>
                 parameter.AbiType.IsNullable
-                    ? $"{name} is null ? 0L : " +
-                        $"{name}.__RoslynAotGetHandle({controlVtbl})"
-                    : $"{name}.__RoslynAotGetHandle({controlVtbl})",
+                    ? $"{name} is null ? 0L : {name}.__RoslynAotGetHandle()"
+                    : $"{name}.__RoslynAotGetHandle()",
             AbiTypeKind.ValueHandle =>
-                $"{name}.__RoslynAotGetHandle({controlVtbl})",
+                $"{name}.__RoslynAotGetHandle()",
             AbiTypeKind.NullableHandle =>
                 $"{name}.HasValue ? " +
-                $"{name}.Value.__RoslynAotGetHandle({controlVtbl}) : 0L",
+                $"{name}.Value.__RoslynAotGetHandle() : 0L",
             AbiTypeKind.ObjectArray =>
                 "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime." +
                 $"CreateObjectCollectionHandle({controlVtbl}, " +
                 $"global::System.Array.ConvertAll({name}, " +
-                $"item => item.__RoslynAotGetHandle({controlVtbl})))",
+                "item => item.__RoslynAotGetHandle()))",
             AbiTypeKind.Utf16String => name,
             _ => throw new InvalidOperationException(
                 $"No facade argument conversion exists for " +

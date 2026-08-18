@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IIModuleSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.IModuleSymbol_get_GlobalNamespace(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.IModuleSymbol_get_GlobalNamespace(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return INamespaceSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IIModuleSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.IModuleSymbol_get_ReferencedAssemblies(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.IModuleSymbol_get_ReferencedAssemblies(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<AssemblyIdentity>(controlVtbl, result, static (controlVtbl, handle) => AssemblyIdentity.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IIModuleSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.IModuleSymbol_get_ReferencedAssemblySymbols(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.IModuleSymbol_get_ReferencedAssemblySymbols(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IAssemblySymbol>(controlVtbl, result, static (controlVtbl, handle) => IAssemblySymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -50,7 +50,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIModuleSymbolVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IModuleSymbol_GetMetadata(__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.IModuleSymbol_GetMetadata(__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result == 0 ? null : ModuleMetadata.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -59,7 +59,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIModuleSymbolVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IModuleSymbol_GetModuleNamespace(__RoslynAotGetHandle(controlVtbl), namespaceSymbol.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.IModuleSymbol_GetModuleNamespace(__RoslynAotGetHandle(), namespaceSymbol.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result == 0 ? null : INamespaceSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -67,7 +67,7 @@ namespace Microsoft.CodeAnalysis
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IIModuleSymbolVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIModuleSymbolVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IModuleSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IModuleSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("f7f877d1-2aa7-58e5-986f-4c061cd7b465")]

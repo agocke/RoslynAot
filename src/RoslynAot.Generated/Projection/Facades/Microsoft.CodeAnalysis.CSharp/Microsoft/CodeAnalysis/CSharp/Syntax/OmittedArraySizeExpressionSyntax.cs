@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IOmittedArraySizeExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.OmittedArraySizeExpressionSyntax_get_OmittedArraySizeExpressionToken(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.OmittedArraySizeExpressionSyntax_get_OmittedArraySizeExpressionToken(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -26,7 +26,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IOmittedArraySizeExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OmittedArraySizeExpressionSyntax_Accept_ecfec616(__RoslynAotGetHandle(controlVtbl), visitor.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.OmittedArraySizeExpressionSyntax_Accept_ecfec616(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -39,7 +39,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IOmittedArraySizeExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OmittedArraySizeExpressionSyntax_Update(__RoslynAotGetHandle(controlVtbl), omittedArraySizeExpressionToken.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.OmittedArraySizeExpressionSyntax_Update(__RoslynAotGetHandle(), omittedArraySizeExpressionToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -48,7 +48,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IOmittedArraySizeExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OmittedArraySizeExpressionSyntax_WithOmittedArraySizeExpressionToken(__RoslynAotGetHandle(controlVtbl), omittedArraySizeExpressionToken.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.OmittedArraySizeExpressionSyntax_WithOmittedArraySizeExpressionToken(__RoslynAotGetHandle(), omittedArraySizeExpressionToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -56,7 +56,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IOmittedArraySizeExpressionSyntaxVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetOmittedArraySizeExpressionSyntaxVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static OmittedArraySizeExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (OmittedArraySizeExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("4e9a5cfe-c513-5b55-bef2-dd4d61b039f5")]

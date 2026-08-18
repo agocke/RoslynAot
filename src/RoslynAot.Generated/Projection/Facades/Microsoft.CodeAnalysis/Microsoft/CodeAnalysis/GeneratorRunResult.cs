@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IGeneratorRunResultVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.GeneratorRunResult_get_Diagnostics(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.GeneratorRunResult_get_Diagnostics(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle)));
             }
@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IGeneratorRunResultVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.GeneratorRunResult_get_Generator(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.GeneratorRunResult_get_Generator(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return ISourceGenerator.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -106,7 +106,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static GeneratorRunResult __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new GeneratorRunResult(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorRunResultVtbl(controlVtbl), handle);
     }
 }

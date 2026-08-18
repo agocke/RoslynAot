@@ -31,7 +31,7 @@ namespace Microsoft.CodeAnalysis
 
         internal global::RoslynAot.Abi.IDiagnosticFormatterVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static DiagnosticFormatter __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
             if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6412420830151071932L, 4338889509376079787L)is DiagnosticFormatter __roslynAotDerived)

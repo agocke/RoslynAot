@@ -27,7 +27,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IErrorLogOptionsVtbl vtbl = __RoslynAotGetVtbl();
-                long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                long __roslynAotReceiver = __RoslynAotGetHandle();
                 return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.ErrorLogOptions_get_Path(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IErrorLogOptionsVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ErrorLogOptions_get_SarifVersion(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.ErrorLogOptions_get_SarifVersion(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return (SarifVersion)result;
             }
@@ -60,7 +60,7 @@ namespace Microsoft.CodeAnalysis
 
         internal global::RoslynAot.Abi.IErrorLogOptionsVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static ErrorLogOptions __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new ErrorLogOptions(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetErrorLogOptionsVtbl(controlVtbl), handle);
     }
 }

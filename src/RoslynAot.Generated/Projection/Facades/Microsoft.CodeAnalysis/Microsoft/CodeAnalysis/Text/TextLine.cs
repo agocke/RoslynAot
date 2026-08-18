@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ITextLineVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.TextLine_get_End(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.TextLine_get_End(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ITextLineVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.TextLine_get_EndIncludingLineBreak(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.TextLine_get_EndIncludingLineBreak(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -42,7 +42,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ITextLineVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.TextLine_get_LineNumber(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.TextLine_get_LineNumber(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -54,7 +54,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ITextLineVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.TextLine_get_Span(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.TextLine_get_Span(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return TextSpan.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -66,7 +66,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ITextLineVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.TextLine_get_SpanIncludingLineBreak(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.TextLine_get_SpanIncludingLineBreak(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return TextSpan.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -78,7 +78,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ITextLineVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.TextLine_get_Start(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.TextLine_get_Start(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -90,7 +90,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ITextLineVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.TextLine_get_Text(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.TextLine_get_Text(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result == 0 ? null : SourceText.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -100,7 +100,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITextLineVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TextLine_Equals_ff95a8aa(__RoslynAotGetHandle(controlVtbl), other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.TextLine_Equals_ff95a8aa(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -114,7 +114,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ITextLineTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetTextLineTypeVtbl(controlVtbl);
-            int status = vtbl.TextLine_FromSpan(text.__RoslynAotGetHandle(controlVtbl), span.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.TextLine_FromSpan(text.__RoslynAotGetHandle(), span.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -123,7 +123,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITextLineVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TextLine_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.TextLine_GetHashCode(__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -142,7 +142,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITextLineVtbl vtbl = __RoslynAotGetVtbl();
-            long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+            long __roslynAotReceiver = __RoslynAotGetHandle();
             return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.TextLine_ToString(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
@@ -175,7 +175,7 @@ namespace Microsoft.CodeAnalysis.Text
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static TextLine __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new TextLine(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetTextLineVtbl(controlVtbl), handle);
     }
 }

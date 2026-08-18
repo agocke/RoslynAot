@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IDeconstructionInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.DeconstructionInfo_get_Conversion(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.DeconstructionInfo_get_Conversion(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result == 0 ? null : global::Microsoft.CodeAnalysis.CSharp.Conversion.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IDeconstructionInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.DeconstructionInfo_get_Method(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.DeconstructionInfo_get_Method(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result == 0 ? null : IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -73,7 +73,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static DeconstructionInfo __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new DeconstructionInfo(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetDeconstructionInfoVtbl(controlVtbl), handle);
     }
 }

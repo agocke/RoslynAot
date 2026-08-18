@@ -32,7 +32,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ICompilationAnalysisContextVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.CompilationAnalysisContext_get_Compilation(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.CompilationAnalysisContext_get_Compilation(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return Compilation.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -44,7 +44,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ICompilationAnalysisContextVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.CompilationAnalysisContext_get_Options(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.CompilationAnalysisContext_get_Options(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return AnalyzerOptions.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -56,7 +56,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
                 return;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICompilationAnalysisContextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CompilationAnalysisContext_ReportDiagnostic(__RoslynAotGetHandle(controlVtbl), diagnostic.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.CompilationAnalysisContext_ReportDiagnostic(__RoslynAotGetHandle(), diagnostic.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -104,7 +104,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static CompilationAnalysisContext __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new CompilationAnalysisContext(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCompilationAnalysisContextVtbl(controlVtbl), handle);
     }
 }

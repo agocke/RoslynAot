@@ -163,7 +163,7 @@ internal static class ProjectionLocalVisitors
             $"{parameterName}.__RoslynAotGetControlVtbl();",
             "int __roslynAotStatus = __roslynAotControl" +
             ".GetObjectRuntimeVtblId(" +
-            $"{parameterName}.__RoslynAotGetHandle(__roslynAotControl), " +
+            $"{parameterName}.__RoslynAotGetHandle(), " +
             "out long __roslynAotLow, out long __roslynAotHigh);",
             "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime" +
             ".ThrowIfFailed(__roslynAotControl, __roslynAotStatus);",

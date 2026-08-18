@@ -27,7 +27,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxWalkerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxWalker_DefaultVisit(__RoslynAotGetHandle(controlVtbl), node.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.CSharpSyntaxWalker_DefaultVisit(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -35,7 +35,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxWalkerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxWalker_Visit(__RoslynAotGetHandle(controlVtbl), node is null ? 0L : node.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.CSharpSyntaxWalker_Visit(__RoslynAotGetHandle(), node is null ? 0L : node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -43,7 +43,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxWalkerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxWalker_VisitLeadingTrivia(__RoslynAotGetHandle(controlVtbl), token.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.CSharpSyntaxWalker_VisitLeadingTrivia(__RoslynAotGetHandle(), token.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -51,7 +51,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxWalkerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxWalker_VisitToken(__RoslynAotGetHandle(controlVtbl), token.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.CSharpSyntaxWalker_VisitToken(__RoslynAotGetHandle(), token.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -59,7 +59,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxWalkerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxWalker_VisitTrailingTrivia(__RoslynAotGetHandle(controlVtbl), token.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.CSharpSyntaxWalker_VisitTrailingTrivia(__RoslynAotGetHandle(), token.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxWalkerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxWalker_VisitTrivia(__RoslynAotGetHandle(controlVtbl), trivia.__RoslynAotGetHandle(controlVtbl));
+            int status = vtbl.CSharpSyntaxWalker_VisitTrivia(__RoslynAotGetHandle(), trivia.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -87,7 +87,7 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         internal global::RoslynAot.Abi.ICSharpSyntaxWalkerVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         private sealed partial class __RoslynAotProxy : CSharpSyntaxWalker
         {
             internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.ICSharpSyntaxWalkerVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)

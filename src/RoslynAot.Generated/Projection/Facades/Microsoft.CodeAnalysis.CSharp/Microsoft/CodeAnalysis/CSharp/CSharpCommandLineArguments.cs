@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ICSharpCommandLineArgumentsVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.CSharpCommandLineArguments_get_CompilationOptions(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.CSharpCommandLineArguments_get_CompilationOptions(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return CSharpCompilationOptions.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -36,7 +36,7 @@ namespace Microsoft.CodeAnalysis.CSharp
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ICSharpCommandLineArgumentsVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.CSharpCommandLineArguments_get_ParseOptions(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.CSharpCommandLineArguments_get_ParseOptions(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return CSharpParseOptions.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -53,7 +53,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.ICSharpCommandLineArgumentsVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpCommandLineArgumentsVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static CSharpCommandLineArguments __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CSharpCommandLineArguments)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("7fb21710-cdf5-58de-8f9c-9eba2d22565c")]

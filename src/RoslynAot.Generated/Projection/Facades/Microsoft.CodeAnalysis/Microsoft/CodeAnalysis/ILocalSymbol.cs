@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_ConstantValue(__RoslynAotGetHandle(controlVtbl), out global::RoslynAot.Abi.RoslynConstantKind constantKind, out long constantLow, out long constantHigh);
+                int status = vtbl.ILocalSymbol_get_ConstantValue(__RoslynAotGetHandle(), out global::RoslynAot.Abi.RoslynConstantKind constantKind, out long constantLow, out long constantHigh);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadConstant(controlVtbl, constantKind, constantLow, constantHigh);
             }
@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_HasConstantValue(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.ILocalSymbol_get_HasConstantValue(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_IsConst(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.ILocalSymbol_get_IsConst(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -52,7 +52,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_IsFixed(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.ILocalSymbol_get_IsFixed(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -64,7 +64,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_IsForEach(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.ILocalSymbol_get_IsForEach(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -76,7 +76,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_IsFunctionValue(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.ILocalSymbol_get_IsFunctionValue(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -88,7 +88,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_IsRef(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.ILocalSymbol_get_IsRef(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -100,7 +100,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_IsUsing(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.ILocalSymbol_get_IsUsing(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -112,7 +112,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_NullableAnnotation(__RoslynAotGetHandle(controlVtbl), out byte result);
+                int status = vtbl.ILocalSymbol_get_NullableAnnotation(__RoslynAotGetHandle(), out byte result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return (NullableAnnotation)result;
             }
@@ -124,7 +124,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_RefKind(__RoslynAotGetHandle(controlVtbl), out byte result);
+                int status = vtbl.ILocalSymbol_get_RefKind(__RoslynAotGetHandle(), out byte result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return (RefKind)result;
             }
@@ -136,7 +136,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_ScopedKind(__RoslynAotGetHandle(controlVtbl), out byte result);
+                int status = vtbl.ILocalSymbol_get_ScopedKind(__RoslynAotGetHandle(), out byte result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return (ScopedKind)result;
             }
@@ -148,7 +148,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IILocalSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ILocalSymbol_get_Type(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ILocalSymbol_get_Type(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return ITypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -157,7 +157,7 @@ namespace Microsoft.CodeAnalysis
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IILocalSymbolVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetILocalSymbolVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ILocalSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ILocalSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("b76c5946-7150-5380-aec6-85191de6fb2a")]

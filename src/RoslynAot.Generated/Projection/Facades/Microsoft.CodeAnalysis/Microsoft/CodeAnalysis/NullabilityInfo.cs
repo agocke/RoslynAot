@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.INullabilityInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.NullabilityInfo_get_Annotation(__RoslynAotGetHandle(controlVtbl), out byte result);
+                int status = vtbl.NullabilityInfo_get_Annotation(__RoslynAotGetHandle(), out byte result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return (NullableAnnotation)result;
             }
@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.INullabilityInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.NullabilityInfo_get_FlowState(__RoslynAotGetHandle(controlVtbl), out byte result);
+                int status = vtbl.NullabilityInfo_get_FlowState(__RoslynAotGetHandle(), out byte result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return (NullableFlowState)result;
             }
@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.INullabilityInfoVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.NullabilityInfo_Equals_9cc98f3d(__RoslynAotGetHandle(controlVtbl), other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.NullabilityInfo_Equals_9cc98f3d(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -54,7 +54,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.INullabilityInfoVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.NullabilityInfo_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.NullabilityInfo_GetHashCode(__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -88,7 +88,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static NullabilityInfo __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new NullabilityInfo(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetNullabilityInfoVtbl(controlVtbl), handle);
     }
 }

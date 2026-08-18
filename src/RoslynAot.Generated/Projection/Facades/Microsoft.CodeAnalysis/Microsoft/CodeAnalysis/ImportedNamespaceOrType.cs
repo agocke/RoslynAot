@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IImportedNamespaceOrTypeVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ImportedNamespaceOrType_get_DeclaringSyntaxReference(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ImportedNamespaceOrType_get_DeclaringSyntaxReference(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result == 0 ? null : SyntaxReference.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IImportedNamespaceOrTypeVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ImportedNamespaceOrType_get_NamespaceOrType(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ImportedNamespaceOrType_get_NamespaceOrType(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return INamespaceOrTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -65,7 +65,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static ImportedNamespaceOrType __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new ImportedNamespaceOrType(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetImportedNamespaceOrTypeVtbl(controlVtbl), handle);
     }
 }

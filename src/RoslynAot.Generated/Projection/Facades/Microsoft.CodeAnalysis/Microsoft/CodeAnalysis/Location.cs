@@ -23,7 +23,7 @@ namespace Microsoft.CodeAnalysis
                     return Kind == LocationKind.MetadataFile;
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Location_get_IsInMetadata(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.Location_get_IsInMetadata(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis
                     return Kind == LocationKind.SourceFile;
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Location_get_IsInSource(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.Location_get_IsInSource(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -54,7 +54,7 @@ namespace Microsoft.CodeAnalysis
                     return null;
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Location_get_MetadataModule(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.Location_get_MetadataModule(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result == 0 ? null : IModuleSymbol.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -76,7 +76,7 @@ namespace Microsoft.CodeAnalysis
                     return __RoslynAotLocalSourceSpan;
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Location_get_SourceSpan(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.Location_get_SourceSpan(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return Text.TextSpan.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -90,7 +90,7 @@ namespace Microsoft.CodeAnalysis
                     return __RoslynAotLocalSourceTree;
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Location_get_SourceTree(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.Location_get_SourceTree(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result == 0 ? null : SyntaxTree.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -105,7 +105,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ILocationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetLocationTypeVtbl(controlVtbl);
-            int status = vtbl.Location_Create_8a5c1903(filePath, textSpan.__RoslynAotGetHandle(controlVtbl), lineSpan.__RoslynAotGetHandle(controlVtbl), mappedFilePath, mappedLineSpan.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.Location_Create_8a5c1903(filePath, textSpan.__RoslynAotGetHandle(), lineSpan.__RoslynAotGetHandle(), mappedFilePath, mappedLineSpan.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -114,7 +114,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ILocationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetLocationTypeVtbl(controlVtbl);
-            int status = vtbl.Location_Create_a6e44ea2(filePath, textSpan.__RoslynAotGetHandle(controlVtbl), lineSpan.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.Location_Create_a6e44ea2(filePath, textSpan.__RoslynAotGetHandle(), lineSpan.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -130,7 +130,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.Location_GetLineSpan(__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.Location_GetLineSpan(__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return FileLinePositionSpan.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -139,7 +139,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.Location_GetMappedLineSpan(__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.Location_GetMappedLineSpan(__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return FileLinePositionSpan.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -158,7 +158,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
-            long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+            long __roslynAotReceiver = __RoslynAotGetHandle();
             return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.Location_ToString(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
@@ -174,7 +174,7 @@ namespace Microsoft.CodeAnalysis
 
         internal global::RoslynAot.Abi.ILocationVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         private sealed partial class __RoslynAotProxy : Location
         {
             internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.ILocationVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
@@ -194,7 +194,7 @@ namespace Microsoft.CodeAnalysis
                     return System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(this);
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Location_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+                int status = vtbl.Location_GetHashCode(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result;
             }
@@ -207,7 +207,7 @@ namespace Microsoft.CodeAnalysis
                         return __RoslynAotLocalKind;
                     global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                     global::RoslynAot.Abi.ILocationVtbl vtbl = __RoslynAotGetVtbl();
-                    int status = vtbl.Location_get_Kind(__RoslynAotGetHandle(controlVtbl), out byte result);
+                    int status = vtbl.Location_get_Kind(__RoslynAotGetHandle(), out byte result);
                     global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                     return (LocationKind)result;
                 }

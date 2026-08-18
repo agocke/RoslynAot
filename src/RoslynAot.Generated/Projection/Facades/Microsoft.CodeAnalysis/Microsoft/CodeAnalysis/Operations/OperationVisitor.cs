@@ -19,7 +19,7 @@ namespace Microsoft.CodeAnalysis.Operations
             if (operation is null)
                 return;
             global::RoslynAot.Abi.IRoslynControlVtbl __roslynAotControl = operation.__RoslynAotGetControlVtbl();
-            int __roslynAotStatus = __roslynAotControl.GetObjectRuntimeVtblId(operation.__RoslynAotGetHandle(__roslynAotControl), out long __roslynAotLow, out long __roslynAotHigh);
+            int __roslynAotStatus = __roslynAotControl.GetObjectRuntimeVtblId(operation.__RoslynAotGetHandle(), out long __roslynAotLow, out long __roslynAotHigh);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(__roslynAotControl, __roslynAotStatus);
             switch ((__roslynAotLow, __roslynAotHigh))
             {
@@ -1065,7 +1065,7 @@ namespace Microsoft.CodeAnalysis.Operations
 
         internal global::RoslynAot.Abi.IOperationVisitorVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         private sealed partial class __RoslynAotProxy : OperationVisitor
         {
             internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.IOperationVisitorVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)

@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IImportedXmlNamespaceVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ImportedXmlNamespace_get_DeclaringSyntaxReference(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.ImportedXmlNamespace_get_DeclaringSyntaxReference(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result == 0 ? null : SyntaxReference.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IImportedXmlNamespaceVtbl vtbl = __RoslynAotGetVtbl();
-                long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+                long __roslynAotReceiver = __RoslynAotGetHandle();
                 return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.ImportedXmlNamespace_get_XmlNamespace(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
             }
         }
@@ -64,7 +64,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static ImportedXmlNamespace __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new ImportedXmlNamespace(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetImportedXmlNamespaceVtbl(controlVtbl), handle);
     }
 }

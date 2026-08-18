@@ -58,9 +58,8 @@ operation key represented by another proxy instance.
 Required semantics:
 
 - A compiler object has a stable handle within its lifetime.
-- A `(control identity, handle)` maps to one canonical analyzer proxy.
+- A handle maps to one canonical analyzer proxy.
 - Proxy equality and hashing remain stable.
-- Different compiler control identities never accidentally share proxies.
 
 **Partial status (2026-08-16).** The *semantics* are now correct: `ObjectEquals`
 and `ObjectGetHashCode` on `IRoslynControlVtbl` forward `Equals`/`GetHashCode`
@@ -385,8 +384,8 @@ configured compatibility failure. Silent omission is never acceptable.
 ### 16. Lifetime, concurrency, and reentrancy need a model
 
 Handles currently tend to accumulate, while analyzer statics can outlive one
-compilation or compiler control identity. Concurrent analyzer execution and
-nested callbacks add further pressure.
+compilation. Concurrent analyzer execution and nested callbacks add further
+pressure.
 
 The design needs:
 

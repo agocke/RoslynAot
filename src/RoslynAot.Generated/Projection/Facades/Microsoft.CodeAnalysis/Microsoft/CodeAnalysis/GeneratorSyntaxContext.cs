@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IGeneratorSyntaxContextVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.GeneratorSyntaxContext_get_Node(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.GeneratorSyntaxContext_get_Node(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SyntaxNode.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IGeneratorSyntaxContextVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.GeneratorSyntaxContext_get_SemanticModel(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.GeneratorSyntaxContext_get_SemanticModel(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SemanticModel.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -65,7 +65,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static GeneratorSyntaxContext __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new GeneratorSyntaxContext(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorSyntaxContextVtbl(controlVtbl), handle);
     }
 }

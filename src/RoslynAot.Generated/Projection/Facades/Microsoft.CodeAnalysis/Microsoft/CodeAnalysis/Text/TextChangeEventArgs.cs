@@ -34,7 +34,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ITextChangeEventArgsVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.TextChangeEventArgs_get_NewText(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.TextChangeEventArgs_get_NewText(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SourceText.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ITextChangeEventArgsVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.TextChangeEventArgs_get_OldText(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.TextChangeEventArgs_get_OldText(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return SourceText.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -68,7 +68,7 @@ namespace Microsoft.CodeAnalysis.Text
 
         internal global::RoslynAot.Abi.ITextChangeEventArgsVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static TextChangeEventArgs __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new TextChangeEventArgs(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetTextChangeEventArgsVtbl(controlVtbl), handle);
     }
 }

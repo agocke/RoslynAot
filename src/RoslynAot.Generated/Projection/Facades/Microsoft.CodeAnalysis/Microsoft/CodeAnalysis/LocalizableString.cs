@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis
                 return other is not null && __RoslynAotAreEqual(other);
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocalizableStringVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LocalizableString_Equals_5694416a(__RoslynAotGetHandle(controlVtbl), other is null ? 0L : other.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.LocalizableString_Equals_5694416a(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -49,7 +49,7 @@ namespace Microsoft.CodeAnalysis
                 return __RoslynAotGetHash();
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocalizableStringVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LocalizableString_GetHashCode(__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.LocalizableString_GetHashCode(__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -76,7 +76,7 @@ namespace Microsoft.CodeAnalysis
                 return __RoslynAotGetText(null);
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocalizableStringVtbl vtbl = __RoslynAotGetVtbl();
-            long __roslynAotReceiver = __RoslynAotGetHandle(controlVtbl);
+            long __roslynAotReceiver = __RoslynAotGetHandle();
             return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.LocalizableString_ToString_a1eaba99(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
@@ -103,7 +103,7 @@ namespace Microsoft.CodeAnalysis
 
         internal global::RoslynAot.Abi.ILocalizableStringVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         private sealed partial class __RoslynAotProxy : LocalizableString
         {
             internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.ILocalizableStringVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)

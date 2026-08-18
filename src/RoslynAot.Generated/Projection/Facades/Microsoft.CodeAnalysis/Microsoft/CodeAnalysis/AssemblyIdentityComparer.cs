@@ -42,7 +42,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAssemblyIdentityComparerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AssemblyIdentityComparer_Compare(__RoslynAotGetHandle(controlVtbl), reference.__RoslynAotGetHandle(controlVtbl), definition.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.AssemblyIdentityComparer_Compare(__RoslynAotGetHandle(), reference.__RoslynAotGetHandle(), definition.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return (ComparisonResult)result;
         }
@@ -51,7 +51,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAssemblyIdentityComparerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AssemblyIdentityComparer_ReferenceMatchesDefinition_0539a3af(__RoslynAotGetHandle(controlVtbl), reference.__RoslynAotGetHandle(controlVtbl), definition.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.AssemblyIdentityComparer_ReferenceMatchesDefinition_0539a3af(__RoslynAotGetHandle(), reference.__RoslynAotGetHandle(), definition.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -60,7 +60,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAssemblyIdentityComparerVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AssemblyIdentityComparer_ReferenceMatchesDefinition_af7b523b(__RoslynAotGetHandle(controlVtbl), referenceDisplayName, definition.__RoslynAotGetHandle(controlVtbl), out int result);
+            int status = vtbl.AssemblyIdentityComparer_ReferenceMatchesDefinition_af7b523b(__RoslynAotGetHandle(), referenceDisplayName, definition.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -75,7 +75,7 @@ namespace Microsoft.CodeAnalysis
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IAssemblyIdentityComparerVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAssemblyIdentityComparerVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static AssemblyIdentityComparer __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AssemblyIdentityComparer)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("3220c154-7738-565b-9a8c-cfe845740d58")]

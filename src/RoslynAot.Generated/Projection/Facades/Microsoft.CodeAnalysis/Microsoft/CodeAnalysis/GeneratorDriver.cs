@@ -24,7 +24,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IGeneratorDriverVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.GeneratorDriver_GetRunResult(__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.GeneratorDriver_GetRunResult(__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return GeneratorDriverRunResult.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IGeneratorDriverVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.GeneratorDriver_GetTimingInfo(__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.GeneratorDriver_GetTimingInfo(__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return GeneratorDriverTimingInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -52,7 +52,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IGeneratorDriverVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.GeneratorDriver_ReplaceAdditionalText(__RoslynAotGetHandle(controlVtbl), oldText.__RoslynAotGetHandle(controlVtbl), newText.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.GeneratorDriver_ReplaceAdditionalText(__RoslynAotGetHandle(), oldText.__RoslynAotGetHandle(), newText.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -81,7 +81,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IGeneratorDriverVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.GeneratorDriver_RunGenerators_652ab369(__RoslynAotGetHandle(controlVtbl), compilation.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.GeneratorDriver_RunGenerators_652ab369(__RoslynAotGetHandle(), compilation.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -95,7 +95,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IGeneratorDriverVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.GeneratorDriver_WithUpdatedAnalyzerConfigOptions(__RoslynAotGetHandle(controlVtbl), newOptions.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.GeneratorDriver_WithUpdatedAnalyzerConfigOptions(__RoslynAotGetHandle(), newOptions.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -104,7 +104,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IGeneratorDriverVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.GeneratorDriver_WithUpdatedParseOptions(__RoslynAotGetHandle(controlVtbl), newOptions.__RoslynAotGetHandle(controlVtbl), out long result);
+            int status = vtbl.GeneratorDriver_WithUpdatedParseOptions(__RoslynAotGetHandle(), newOptions.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -112,7 +112,7 @@ namespace Microsoft.CodeAnalysis
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IGeneratorDriverVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorDriverVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
-        public long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __RoslynAotGetProxy().GetHandle(controlVtbl);
+        public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static GeneratorDriver __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (GeneratorDriver)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
         [System.Runtime.InteropServices.Guid("2fb5248c-fe07-5ec5-9abb-8088dbc3fff7")]

@@ -35,7 +35,7 @@ namespace Microsoft.CodeAnalysis
 
         internal global::RoslynAot.Abi.ISyntaxReferenceVtbl __RoslynAotGetVtbl() => __roslynAotVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no vtbl.");
         internal global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __roslynAotControlVtbl ?? throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         private sealed partial class __RoslynAotProxy : SyntaxReference
         {
             internal __RoslynAotProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, global::RoslynAot.Abi.ISyntaxReferenceVtbl vtbl, long handle) : base(controlVtbl, vtbl, handle)
@@ -53,7 +53,7 @@ namespace Microsoft.CodeAnalysis
                 {
                     global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                     global::RoslynAot.Abi.ISyntaxReferenceVtbl vtbl = __RoslynAotGetVtbl();
-                    int status = vtbl.SyntaxReference_get_Span(__RoslynAotGetHandle(controlVtbl), out long result);
+                    int status = vtbl.SyntaxReference_get_Span(__RoslynAotGetHandle(), out long result);
                     global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                     return Text.TextSpan.__RoslynAotCreateProxy(controlVtbl, result);
                 }
@@ -65,7 +65,7 @@ namespace Microsoft.CodeAnalysis
                 {
                     global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                     global::RoslynAot.Abi.ISyntaxReferenceVtbl vtbl = __RoslynAotGetVtbl();
-                    int status = vtbl.SyntaxReference_get_SyntaxTree(__RoslynAotGetHandle(controlVtbl), out long result);
+                    int status = vtbl.SyntaxReference_get_SyntaxTree(__RoslynAotGetHandle(), out long result);
                     global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                     return SyntaxTree.__RoslynAotCreateProxy(controlVtbl, result);
                 }

@@ -253,7 +253,7 @@ public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
 
     private long Handle { get; }
 
-    public long GetHandle(IRoslynControlVtbl controlVtbl) => Handle;
+    public long GetHandle() => Handle;
 
     private static readonly Lock s_cacheGate = new();
     private static readonly Dictionary<long, WeakReference<RoslynObjectProxy>>
@@ -285,8 +285,7 @@ public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
             if (s_cache.TryGetValue(
                     handle,
                     out WeakReference<RoslynObjectProxy>? entry) &&
-                entry.TryGetTarget(out RoslynObjectProxy? existing) &&
-                ReferenceEquals(existing.ControlVtbl, controlVtbl))
+                entry.TryGetTarget(out RoslynObjectProxy? existing))
             {
                 return existing;
             }
@@ -340,20 +339,13 @@ public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
     public override bool Equals(object? other)
     {
         // GetOrCreate dedups by handle, so equal handles are usually
-        // already the same instance and return above. This
-        // ControlVtbl check is not the control-scoping migration
-        // Step 4 retired — it survives because handles are no longer
-        // tagged with which table they came from, so it is what
-        // stops two numerically equal handles from two different
-        // live control identities (were that ever to happen) from
-        // comparing equal.
+        // already the same instance and return here.
         if (ReferenceEquals(this, other))
         {
             return true;
         }
 
-        if (other is not RoslynObjectProxy proxy ||
-            !ReferenceEquals(ControlVtbl, proxy.ControlVtbl))
+        if (other is not RoslynObjectProxy proxy)
         {
             return false;
         }
@@ -474,8 +466,32 @@ public static unsafe class RoslynFacadeRuntime
                 "The compiler Roslyn projection manifest is incompatible.");
         }
 
+        IRoslynControlVtbl? established = s_controlVtbl;
+        if (established is null)
+        {
+            s_controlVtbl = controlVtbl;
+        }
+        else if (!ReferenceEquals(established, controlVtbl))
+        {
+            // Handles, the proxy cache, and proxy equality are all
+            // keyed on the handle alone, which is only sound because
+            // a module talks to exactly one compiler. Nothing can
+            // produce a second control today - RoslynInterop.Shared
+            // is a process singleton and this method caches by COM
+            // instance - so this is the assertion that keeps the
+            // assumption true rather than a case to handle. Failing
+            // here beats resolving one compiler's handle against
+            // another's table.
+            throw new InvalidOperationException(
+                "A second compiler Roslyn control vtbl was supplied " +
+                "to this analyzer module. Handles are only " +
+                "meaningful against the control that issued them.");
+        }
+
         return controlVtbl;
     }
+
+    private static IRoslynControlVtbl? s_controlVtbl;
 
     public static IRoslynControlVtbl GetCurrentControlVtbl() =>
         s_current.Value ?? throw new InvalidOperationException(

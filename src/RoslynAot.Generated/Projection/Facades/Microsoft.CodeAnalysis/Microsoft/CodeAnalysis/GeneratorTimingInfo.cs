@@ -26,7 +26,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IGeneratorTimingInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.GeneratorTimingInfo_get_Generator(__RoslynAotGetHandle(controlVtbl), out long result);
+                int status = vtbl.GeneratorTimingInfo_get_Generator(__RoslynAotGetHandle(), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return ISourceGenerator.__RoslynAotCreateProxy(controlVtbl, result);
             }
@@ -61,7 +61,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.InvalidOperationException("This Roslyn facade value has no control vtbl.");
         }
 
-        internal long __RoslynAotGetHandle(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl) => __roslynAotHandle;
+        internal long __RoslynAotGetHandle() => __roslynAotHandle;
         internal static GeneratorTimingInfo __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new GeneratorTimingInfo(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorTimingInfoVtbl(controlVtbl), handle);
     }
 }

@@ -48,21 +48,21 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISymbolDisplayVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayVtbl(controlVtbl);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToDisplayString_4f7fdcfa(symbol.__RoslynAotGetHandle(controlVtbl), format is null ? 0L : format.__RoslynAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToDisplayString_4f7fdcfa(symbol.__RoslynAotGetHandle(), format is null ? 0L : format.__RoslynAotGetHandle(), buffer, bufferLength, out requiredLength))!;
         }
 
         public static string ToDisplayString(ITypeSymbol symbol, NullableAnnotation nullableAnnotation, SymbolDisplayFormat? format = null)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISymbolDisplayVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayVtbl(controlVtbl);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToDisplayString_30d0480a(symbol.__RoslynAotGetHandle(controlVtbl), (byte)nullableAnnotation, format is null ? 0L : format.__RoslynAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToDisplayString_30d0480a(symbol.__RoslynAotGetHandle(), (byte)nullableAnnotation, format is null ? 0L : format.__RoslynAotGetHandle(), buffer, bufferLength, out requiredLength))!;
         }
 
         public static string ToDisplayString(ITypeSymbol symbol, NullableFlowState nullableFlowState, SymbolDisplayFormat? format = null)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISymbolDisplayVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayVtbl(controlVtbl);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToDisplayString_e75e5202(symbol.__RoslynAotGetHandle(controlVtbl), (byte)nullableFlowState, format is null ? 0L : format.__RoslynAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToDisplayString_e75e5202(symbol.__RoslynAotGetHandle(), (byte)nullableFlowState, format is null ? 0L : format.__RoslynAotGetHandle(), buffer, bufferLength, out requiredLength))!;
         }
 
         public static System.Collections.Immutable.ImmutableArray<SymbolDisplayPart> ToMinimalDisplayParts(ISymbol symbol, SemanticModel semanticModel, int position, SymbolDisplayFormat? format = null)
@@ -84,21 +84,21 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISymbolDisplayVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayVtbl(controlVtbl);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToMinimalDisplayString_cc43ae84(symbol.__RoslynAotGetHandle(controlVtbl), semanticModel.__RoslynAotGetHandle(controlVtbl), position, format is null ? 0L : format.__RoslynAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToMinimalDisplayString_cc43ae84(symbol.__RoslynAotGetHandle(), semanticModel.__RoslynAotGetHandle(), position, format is null ? 0L : format.__RoslynAotGetHandle(), buffer, bufferLength, out requiredLength))!;
         }
 
         public static string ToMinimalDisplayString(ITypeSymbol symbol, NullableAnnotation nullableAnnotation, SemanticModel semanticModel, int position, SymbolDisplayFormat? format = null)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISymbolDisplayVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayVtbl(controlVtbl);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToMinimalDisplayString_35efd54e(symbol.__RoslynAotGetHandle(controlVtbl), (byte)nullableAnnotation, semanticModel.__RoslynAotGetHandle(controlVtbl), position, format is null ? 0L : format.__RoslynAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToMinimalDisplayString_35efd54e(symbol.__RoslynAotGetHandle(), (byte)nullableAnnotation, semanticModel.__RoslynAotGetHandle(), position, format is null ? 0L : format.__RoslynAotGetHandle(), buffer, bufferLength, out requiredLength))!;
         }
 
         public static string ToMinimalDisplayString(ITypeSymbol symbol, NullableFlowState nullableFlowState, SemanticModel semanticModel, int position, SymbolDisplayFormat? format = null)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISymbolDisplayVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSymbolDisplayVtbl(controlVtbl);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToMinimalDisplayString_ac559369(symbol.__RoslynAotGetHandle(controlVtbl), (byte)nullableFlowState, semanticModel.__RoslynAotGetHandle(controlVtbl), position, format is null ? 0L : format.__RoslynAotGetHandle(controlVtbl), buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SymbolDisplay_ToMinimalDisplayString_ac559369(symbol.__RoslynAotGetHandle(), (byte)nullableFlowState, semanticModel.__RoslynAotGetHandle(), position, format is null ? 0L : format.__RoslynAotGetHandle(), buffer, bufferLength, out requiredLength))!;
         }
     }
 }
