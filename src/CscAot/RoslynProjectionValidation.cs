@@ -65,6 +65,53 @@ internal static class RoslynProjectionValidation
                 "The same Roslyn object crossed twice did not reuse its handle.");
         }
 
+        // String collections cross as handles so that membership is answered
+        // by the collection Roslyn built, with its own comparer. Copying the
+        // contents into a string[] and probing that would substitute ordinal
+        // equality — the defect this asserts against is a *wrong answer*, not
+        // an exception, so a case-insensitive source is what makes it visible.
+        var caseInsensitive = new HashSet<string>(
+            StringComparer.OrdinalIgnoreCase)
+        {
+            "Alpha",
+            "Beta",
+        };
+        long collectionHandle = interop.AddObject(caseInsensitive);
+        AssertSuccess(
+            interop.StringCollectionContains(
+                collectionHandle,
+                "ALPHA",
+                out int containsMismatchedCase));
+        if (containsMismatchedCase == 0)
+        {
+            throw new InvalidOperationException(
+                "A string collection answered Contains with ordinal equality " +
+                "instead of its own comparer.");
+        }
+
+        AssertSuccess(
+            interop.GetCollectionCount(collectionHandle, out int collectionCount));
+        if (collectionCount != caseInsensitive.Count)
+        {
+            throw new InvalidOperationException(
+                "A string collection's count did not survive the projection.");
+        }
+
+        // Enumeration is the one operation the handle cannot answer a question
+        // at a time, so it snapshots; nothing else in the corpus is guaranteed
+        // to reach that path.
+        AssertSuccess(
+            interop.SnapshotStringCollection(
+                collectionHandle,
+                out long snapshotHandle));
+        AssertSuccess(
+            interop.GetCollectionCount(snapshotHandle, out int snapshotCount));
+        if (snapshotCount != caseInsensitive.Count)
+        {
+            throw new InvalidOperationException(
+                "A string collection snapshot did not preserve its elements.");
+        }
+
         AssertSuccess(
             parseOptionsTypeVtbl.CSharpParseOptions_get_Default(
                 out long optionsHandle));

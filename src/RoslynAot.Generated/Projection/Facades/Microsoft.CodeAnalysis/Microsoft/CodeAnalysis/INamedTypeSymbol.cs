@@ -233,7 +233,7 @@ namespace Microsoft.CodeAnalysis
                 global::RoslynAot.Abi.IINamedTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
                 int status = vtbl.INamedTypeSymbol_get_MemberNames(__RoslynAotGetHandle(controlVtbl), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadStringCollection(controlVtbl, result);
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadStringCollectionProxy(controlVtbl, result);
             }
         }
 

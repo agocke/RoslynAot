@@ -33,7 +33,7 @@ internal sealed partial class CommandLineParserTypeVtblDispatcher : ICommandLine
 
         try
         {
-            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.ToArray(global::Microsoft.CodeAnalysis.CommandLineParser.SplitCommandLineIntoArguments(commandLine, removeHashComments != 0)));
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CommandLineParser.SplitCommandLineIntoArguments(commandLine, removeHashComments != 0));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

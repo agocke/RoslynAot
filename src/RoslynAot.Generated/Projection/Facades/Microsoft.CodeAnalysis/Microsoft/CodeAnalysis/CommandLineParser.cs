@@ -42,7 +42,7 @@ namespace Microsoft.CodeAnalysis
             global::RoslynAot.Abi.ICommandLineParserTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineParserTypeVtbl(controlVtbl);
             int status = vtbl.CommandLineParser_SplitCommandLineIntoArguments(commandLine, removeHashComments ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadStringCollection(controlVtbl, result);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadStringCollectionProxy(controlVtbl, result);
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;

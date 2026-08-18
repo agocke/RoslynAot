@@ -481,6 +481,83 @@ against — demonstrated to work for reference and struct instantiations alike,
 including through prebuilt analyzer IL. Seven signatures cover the whole
 surface. See [generic virtual dispatch](GENERIC-VIRTUAL-DISPATCH.md).
 
+### 22. Copying a collection preserves its contents and discards its behavior
+
+Discovered 2026-08-17, while auditing a proposed memoization of
+`IAssemblySymbol.NamespaceNames`. The `StringCollection` and `ObjectCollection`
+transports were defined as "read the elements across and rebuild an array."
+That is faithful for the elements and wrong for everything else the collection
+knows how to do.
+
+Two things are lost, and only one of them is benign:
+
+- **Lookup complexity.** Roslyn backs these with sets — `IdentifierCollection`,
+  `ImmutableSegmentedHashSet`. An O(1) membership test becomes an O(n) array
+  scan.
+- **Equality semantics.** The copy answers `Contains` with
+  `EqualityComparer<string>.Default` no matter what the source used. Roslyn's
+  analyzer config keys compare case-insensitively through
+  `CaseInsensitiveComparison.OneToOneUnicodeComparer` — not even
+  `StringComparer.OrdinalIgnoreCase`, so there is no BCL comparer to name on
+  the wire. Measured directly: the source collection answers `true` and the
+  copied `string[]` answers `false` for the same query.
+
+Declaring a member `IEnumerable<string>` does not avoid this.
+`Enumerable.Contains` dispatches to `ICollection<T>.Contains` whenever the
+runtime type provides one, so the comparer leaks to callers regardless of the
+declared type. Verified on `INamedTypeSymbol.MemberNames`, whose runtime type
+is a hash set.
+
+**This is the worst failure shape in the inventory after problem 21, and for
+the opposite reason.** Problem 21 kills the process, which is at least
+impossible to miss. This one produces a wrong answer with no exception, no
+`AD0001`, and no crash — a wrong diagnostic that the differential harness
+catches only if some corpus case happens to observe it. `AnalyzerConfigOptions.Keys`
+is projected and reachable, and no corpus case exercises it today.
+
+**Fixed for string collections.** They now cross as a handle: `Count` and
+`Contains` are answered by the collection Roslyn built, using its own comparer
+and its own complexity. Enumeration — the one operation that cannot be answered
+a question at a time — snapshots through `SnapshotStringCollection`, so only
+enumerating callers pay for materialization. The analyzer-side
+`RoslynStringCollection` implements `ICollection<string>` rather than only
+`IEnumerable<string>` precisely so that `Enumerable.Contains` defers to the
+faithful implementation.
+
+`ProjectionValidation` now rejects any copied collection whose declared type
+promises membership (`ICollection<T>`, `ISet<T>`, `IReadOnlySet<T>`). Object
+collections pass that check today: 210 of 261 are `ImmutableArray<T>`, whose
+`Contains` is `EqualityComparer<T>.Default` and therefore provably identical to
+the array a copy produces, and the remaining 51 are lazy iterator sequences
+implementing no `ICollection<T>` for anything to defer to. The residual risk is
+stated in the check's own remarks: were one of those ever backed by a set with
+a custom comparer, the copy would diverge and this check would not catch it.
+Proxying every lazy sequence to close that gap would turn a tree walk into a
+snapshot plus a crossing per element, which is why the line is drawn at the
+declared contract.
+
+Fixing an object collection, if one ever fails the check, does **not** need a
+per-element-type special case. Shared generics canonicalize every reference-type
+instantiation, so the constraint is not the element type but that the control
+vtbl is non-generic and has no `T` at the `Contains` call site. The dispatcher
+is generated code that knows the static type, so it can register a typed
+closure alongside the handle.
+
+The regression test is in `RoslynProjectionValidation`: a
+`HashSet<string>(StringComparer.OrdinalIgnoreCase)` crossed as a handle must
+answer `Contains("ALPHA")` for `"Alpha"`. Mutation-tested — reverting the
+implementation to the copy-based one makes it fail.
+
+**The measurement that was missing.** Instrumenting the control vtbl settled a
+question the per-member counters could not even express. Across the corpus:
+`StringCollectionContains` is called 548,636 times, while
+`SnapshotStringCollection` and `CopyStringCollectionItemUtf16` are called
+**zero** times. Callers only ever probe these collections; nothing enumerates
+them. So the copy was materializing 177 strings — `1 + 2N` crossings — on every
+get to answer a membership test that now costs one crossing, and the
+correctness fix removed roughly two orders of magnitude of traffic as a side
+effect rather than as its purpose.
+
 ## Architectural conclusion
 
 The repeated failures are not evidence that remoting is impossible. They show

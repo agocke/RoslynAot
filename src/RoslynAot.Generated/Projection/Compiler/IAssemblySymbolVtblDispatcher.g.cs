@@ -215,7 +215,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
 
         try
         {
-            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.ToArray(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IAssemblySymbol>(receiver).NamespaceNames));
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IAssemblySymbol>(receiver).NamespaceNames);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -233,7 +233,7 @@ internal sealed partial class IAssemblySymbolVtblDispatcher : IIAssemblySymbolVt
 
         try
         {
-            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.ToArray(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IAssemblySymbol>(receiver).TypeNames));
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IAssemblySymbol>(receiver).TypeNames);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

@@ -26,7 +26,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
                 global::RoslynAot.Abi.IAnalyzerConfigOptionsVtbl vtbl = __RoslynAotGetVtbl();
                 int status = vtbl.AnalyzerConfigOptions_get_Keys(__RoslynAotGetHandle(controlVtbl), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadStringCollection(controlVtbl, result);
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadStringCollectionProxy(controlVtbl, result);
             }
         }
 

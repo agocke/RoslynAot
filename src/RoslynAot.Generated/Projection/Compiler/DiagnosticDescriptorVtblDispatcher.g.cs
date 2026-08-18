@@ -114,7 +114,7 @@ internal sealed partial class DiagnosticDescriptorVtblDispatcher : IDiagnosticDe
 
         try
         {
-            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.ToArray(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DiagnosticDescriptor>(receiver).CustomTags));
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.DiagnosticDescriptor>(receiver).CustomTags);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

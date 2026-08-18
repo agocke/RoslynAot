@@ -15,6 +15,7 @@ internal static class ProjectionValidation
         var failures = new List<string>();
         ValidateCanonicalIds(model, failures);
         ValidateOverrides(model, failures);
+        ValidateCollectionTransport(model, failures);
         ValidateOwnership(model, failures);
         ValidateGenericVirtualDispatch(model, failures);
         ValidateAbiSymmetry(model, failures);
@@ -108,6 +109,88 @@ internal static class ProjectionValidation
             failures.Add($"Field initializer '{id}' matches no member.");
         }
     }
+
+    /// <summary>
+    /// A collection may only cross as a copy when the copy answers
+    /// <c>Contains</c> the same way the source would.
+    /// </summary>
+    /// <remarks>
+    /// Copying preserves a collection's contents and discards its behaviour.
+    /// The elements survive; the comparer and the lookup complexity do not.
+    /// A <c>string[]</c> standing in for a set answers with
+    /// <c>EqualityComparer&lt;string&gt;.Default</c> whatever the source used,
+    /// and Roslyn's analyzer config keys compare case-insensitively through
+    /// <c>CaseInsensitiveComparison</c> — so the copy returns <c>false</c>
+    /// where Roslyn returns <c>true</c>, with no exception to notice.
+    ///
+    /// This is a worse failure mode than the ones the other checks here guard.
+    /// A dead compiler or an <c>AD0001</c> announces itself; a wrong
+    /// <c>Contains</c> becomes a wrong diagnostic, and the differential
+    /// harness only catches it if some corpus case happens to observe it.
+    ///
+    /// What is and is not allowed to copy:
+    /// <list type="bullet">
+    /// <item><c>ImmutableArray&lt;T&gt;</c> — allowed. Its <c>Contains</c> is
+    /// <c>EqualityComparer&lt;T&gt;.Default</c>, identical to the array the
+    /// copy produces, so the substitution is provably faithful from the
+    /// declared type alone.</item>
+    /// <item><c>ICollection&lt;T&gt;</c>, <c>ISet&lt;T&gt;</c>,
+    /// <c>IReadOnlySet&lt;T&gt;</c> — rejected. The declared type promises
+    /// membership, so the comparer is part of the contract being projected
+    /// and a copy cannot carry it. These must cross as a handle.</item>
+    /// <item><c>IEnumerable&lt;T&gt;</c> — allowed, with a residual risk worth
+    /// stating plainly. Roslyn's are lazy iterator sequences that implement no
+    /// <c>ICollection&lt;T&gt;</c>, so <c>Enumerable.Contains</c> does the same
+    /// linear default-equality scan on either side. But that deferral is real:
+    /// were one of these ever backed by a set with a custom comparer, the copy
+    /// would diverge and this check would not catch it. Proxying every lazy
+    /// sequence to close that gap would turn a tree walk into a snapshot plus
+    /// a crossing per element, which is why the line is drawn here.</item>
+    /// </list>
+    /// </remarks>
+    private static void ValidateCollectionTransport(
+        ProjectionModel model,
+        List<string> failures)
+    {
+        foreach (ProjectedCall call in model.Calls.Where(call => call.IsSupported))
+        {
+            // String collections cross as a handle, so their membership is
+            // answered by the collection itself and there is nothing to check.
+            if (call.ReturnValue.Kind != AbiTypeKind.ObjectCollection ||
+                !PromisesMembership(call.ReturnValue.SourceType))
+            {
+                continue;
+            }
+
+            failures.Add(
+                $"Call '{call.CanonicalId}' returns " +
+                $"'{call.ReturnValue.SourceType.ToDisplayString()}', whose " +
+                "contract includes membership, but crosses as a copied " +
+                "collection; the copy would answer Contains with ordinal " +
+                "equality instead of the source's comparer. It must cross as " +
+                "a handle.");
+        }
+    }
+
+    private static bool PromisesMembership(ITypeSymbol type) =>
+        type.OriginalDefinition is INamedTypeSymbol
+        {
+            Arity: 1,
+            Name: "ICollection" or "ISet" or "IReadOnlySet",
+            ContainingNamespace:
+            {
+                Name: "Generic",
+                ContainingNamespace:
+                {
+                    Name: "Collections",
+                    ContainingNamespace:
+                    {
+                        Name: "System",
+                        ContainingNamespace.IsGlobalNamespace: true
+                    }
+                }
+            }
+        };
 
     /// <summary>
     /// Ownership is what says whether an instance may cross as a handle, so a

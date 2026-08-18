@@ -66,7 +66,7 @@ namespace Microsoft.CodeAnalysis.CSharp
                 global::RoslynAot.Abi.ICSharpParseOptionsVtbl vtbl = __RoslynAotGetVtbl();
                 int status = vtbl.CSharpParseOptions_get_PreprocessorSymbolNames(__RoslynAotGetHandle(controlVtbl), out long result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadStringCollection(controlVtbl, result);
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadStringCollectionProxy(controlVtbl, result);
             }
         }
 

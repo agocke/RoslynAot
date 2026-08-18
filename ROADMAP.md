@@ -79,6 +79,14 @@ it: per-member boundary call counts, and module size, ILC time, and retained
 type count for the whole-assembly module plus four representative
 single-analyzer modules.
 
+Those call counts now include the control vtbl, not just the generated
+per-member dispatchers. That matters more than it sounds: a single member call
+can fan out into many control-vtbl crossings, and leaving them uncounted made
+the totals look complete when they were the tip. The control vtbl turns out to
+be **70.7% of all boundary traffic**, and the largest single consumer of the
+boundary is now `IsObjectType` at 778,492 calls — cast-time type resolution,
+which migration Step 4 deliberately left alone.
+
 The honest headline from that measurement: of the module's 37 rules,
 **9 pass, 25 fail against a named unimplemented member, and 3 are not yet
 exercised by the corpus**. The failures concentrate — `IOperation.ConstantValue`
@@ -150,9 +158,14 @@ builds, caching is incomplete, and only Linux has been validated.
   representative analyzer assemblies.
 - Preserve analyzer failures as explicit build diagnostics rather than crashes
   or silent omissions. Unimplemented members now surface as `AD0001` naming the
-  analyzer and member, but silent wrong answers remain the harder class: two
-  have been found and fixed so far, both `object` virtuals that facade
-  interfaces structurally cannot occupy.
+  analyzer and member, but silent wrong answers remain the harder class: three
+  have been found and fixed so far. Two were `object` virtuals that facade
+  interfaces structurally cannot occupy. The third was a transport rule rather
+  than a member — copying a collection across the boundary preserved its
+  elements while discarding its comparer, so `Contains` answered with ordinal
+  equality whatever the source used. String collections now cross as handles,
+  and the generator refuses to copy any collection whose declared type promises
+  membership. See problem 22.
 - Detect analyzers that cannot run through the native path and apply the
   configured failure or fallback policy.
 

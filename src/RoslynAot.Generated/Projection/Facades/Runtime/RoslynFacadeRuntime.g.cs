@@ -20,6 +20,119 @@ public delegate int CopyUtf16String(
 
 public sealed class RoslynProxyTypeMap;
 
+/// <summary>
+/// A compiler-owned string collection, reached through its handle
+/// rather than copied.
+/// </summary>
+/// <remarks>
+/// Copying the contents into a <c>string[]</c> and handing that back
+/// preserves the elements but discards the collection's behaviour.
+/// Two things go missing, and only one of them is benign:
+/// <list type="bullet">
+/// <item>Membership complexity. Roslyn backs these with sets -
+/// <c>IdentifierCollection</c>, <c>ImmutableSegmentedHashSet</c> -
+/// so an O(1) lookup becomes an O(n) array scan.</item>
+/// <item>Equality semantics. The copy answers with
+/// <c>EqualityComparer&lt;string&gt;.Default</c> no matter what the
+/// source used. Analyzer config keys compare case-insensitively
+/// through <c>CaseInsensitiveComparison</c>, so a copy answers
+/// <c>false</c> where Roslyn answers <c>true</c> - a wrong answer
+/// with no exception attached.</item>
+/// </list>
+/// Implementing <see cref="ICollection{T}"/> rather than only
+/// <see cref="IEnumerable{T}"/> is load-bearing:
+/// <c>Enumerable.Contains</c> defers to <c>ICollection&lt;T&gt;</c>
+/// when the runtime type provides it, so members declared as
+/// <c>IEnumerable&lt;string&gt;</c> get the faithful answer too.
+/// </remarks>
+public sealed class RoslynStringCollection : ICollection<string>
+{
+    private readonly IRoslynControlVtbl _controlVtbl;
+    private readonly long _handle;
+    private string[]? _snapshot;
+
+    public RoslynStringCollection(
+        IRoslynControlVtbl controlVtbl,
+        long handle)
+    {
+        _controlVtbl = controlVtbl ??
+            throw new ArgumentNullException(nameof(controlVtbl));
+        _handle = handle != 0
+            ? handle
+            : throw new ArgumentOutOfRangeException(nameof(handle));
+    }
+
+    public int Count
+    {
+        get
+        {
+            int status = _controlVtbl.GetCollectionCount(
+                _handle,
+                out int count);
+            RoslynFacadeRuntime.ThrowIfFailed(_controlVtbl, status);
+            return count;
+        }
+    }
+
+    public bool IsReadOnly => true;
+
+    public bool Contains(string item)
+    {
+        if (item is null)
+        {
+            return false;
+        }
+
+        int status = _controlVtbl.StringCollectionContains(
+            _handle,
+            item,
+            out int result);
+        RoslynFacadeRuntime.ThrowIfFailed(_controlVtbl, status);
+        return result != 0;
+    }
+
+    // Enumeration is the one operation that cannot be answered a
+    // question at a time, so it snapshots. Held afterwards because
+    // the compiler-side collection a handle refers to is immutable
+    // for the handle's lifetime.
+    private string[] Snapshot()
+    {
+        string[]? snapshot = _snapshot;
+        if (snapshot is null)
+        {
+            int status = _controlVtbl.SnapshotStringCollection(
+                _handle,
+                out long snapshotHandle);
+            RoslynFacadeRuntime.ThrowIfFailed(_controlVtbl, status);
+            snapshot = RoslynFacadeRuntime.ReadStringCollection(
+                _controlVtbl,
+                snapshotHandle);
+            _snapshot = snapshot;
+        }
+
+        return snapshot;
+    }
+
+    public IEnumerator<string> GetEnumerator() =>
+        ((IEnumerable<string>)Snapshot()).GetEnumerator();
+
+    System.Collections.IEnumerator
+        System.Collections.IEnumerable.GetEnumerator() =>
+        GetEnumerator();
+
+    public void CopyTo(string[] array, int arrayIndex) =>
+        Snapshot().CopyTo(array, arrayIndex);
+
+    public void Add(string item) =>
+        throw new NotSupportedException();
+
+    public bool Remove(string item) =>
+        throw new NotSupportedException();
+
+    public void Clear() =>
+        throw new NotSupportedException();
+}
+
 public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
 {
     public RoslynObjectProxy(
@@ -439,6 +552,11 @@ public static unsafe class RoslynFacadeRuntime
 
         return result;
     }
+
+    public static RoslynStringCollection ReadStringCollectionProxy(
+        IRoslynControlVtbl controlVtbl,
+        long handle) =>
+        new(controlVtbl, handle);
 
     public static long CreateObjectCollectionHandle(
         IRoslynControlVtbl controlVtbl,

@@ -19,7 +19,7 @@ namespace RoslynAot.Csc;
 /// </summary>
 internal static class RoslynCallCounters
 {
-    public const int MemberCount = 5823;
+    public const int MemberCount = 5840;
 
     private static readonly long[] s_counts = new long[MemberCount];
 
@@ -5848,7 +5848,46 @@ internal static class RoslynCallCounters
         "Microsoft.CodeAnalysis.CSharpExtensions.IsKind",
         "Microsoft.CodeAnalysis.CSharpExtensions.IsKind",
         "Microsoft.CodeAnalysis.CSharpExtensions.IsKind",
+        "RoslynAot.Abi.IRoslynControlVtbl.GetManifestIdentity",
+        "RoslynAot.Abi.IRoslynControlVtbl.GetVtbl",
+        "RoslynAot.Abi.IRoslynControlVtbl.CopyLastErrorUtf16",
+        "RoslynAot.Abi.IRoslynControlVtbl.CreateSourceTextUtf16",
+        "RoslynAot.Abi.IRoslynControlVtbl.IsObjectType",
+        "RoslynAot.Abi.IRoslynControlVtbl.CreateObjectCollection",
+        "RoslynAot.Abi.IRoslynControlVtbl.GetCollectionCount",
+        "RoslynAot.Abi.IRoslynControlVtbl.GetObjectCollectionItem",
+        "RoslynAot.Abi.IRoslynControlVtbl.CopyStringCollectionItemUtf16",
+        "RoslynAot.Abi.IRoslynControlVtbl.StringCollectionContains",
+        "RoslynAot.Abi.IRoslynControlVtbl.SnapshotStringCollection",
+        "RoslynAot.Abi.IRoslynControlVtbl.GetWellKnownObject",
+        "RoslynAot.Abi.IRoslynControlVtbl.SymbolEqualityComparerEquals",
+        "RoslynAot.Abi.IRoslynControlVtbl.SymbolEqualityComparerGetHashCode",
+        "RoslynAot.Abi.IRoslynControlVtbl.CopyObjectToStringUtf16",
+        "RoslynAot.Abi.IRoslynControlVtbl.ObjectEquals",
+        "RoslynAot.Abi.IRoslynControlVtbl.ObjectGetHashCode",
     ];
+
+    /// <summary>
+    /// Ordinals for the control vtbl, which is hand-written and
+    /// so records against these rather than an emitted literal.
+    /// </summary>
+    public const int ControlGetManifestIdentity = 5823;
+    public const int ControlGetVtbl = 5824;
+    public const int ControlCopyLastErrorUtf16 = 5825;
+    public const int ControlCreateSourceTextUtf16 = 5826;
+    public const int ControlIsObjectType = 5827;
+    public const int ControlCreateObjectCollection = 5828;
+    public const int ControlGetCollectionCount = 5829;
+    public const int ControlGetObjectCollectionItem = 5830;
+    public const int ControlCopyStringCollectionItemUtf16 = 5831;
+    public const int ControlStringCollectionContains = 5832;
+    public const int ControlSnapshotStringCollection = 5833;
+    public const int ControlGetWellKnownObject = 5834;
+    public const int ControlSymbolEqualityComparerEquals = 5835;
+    public const int ControlSymbolEqualityComparerGetHashCode = 5836;
+    public const int ControlCopyObjectToStringUtf16 = 5837;
+    public const int ControlObjectEquals = 5838;
+    public const int ControlObjectGetHashCode = 5839;
 
     public static void Record(int ordinal) =>
         Interlocked.Increment(ref s_counts[ordinal]);

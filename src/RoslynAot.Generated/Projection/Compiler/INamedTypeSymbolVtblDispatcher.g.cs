@@ -428,7 +428,7 @@ internal sealed partial class INamedTypeSymbolVtblDispatcher : IINamedTypeSymbol
 
         try
         {
-            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.ToArray(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.INamedTypeSymbol>(receiver).MemberNames));
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.INamedTypeSymbol>(receiver).MemberNames);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

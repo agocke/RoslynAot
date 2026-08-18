@@ -1219,7 +1219,7 @@ internal static class FacadeBodyEmitter
                 WrapCollectionResult(
                     result,
                     "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime." +
-                    $"ReadStringCollection(controlVtbl, {expression})"),
+                    $"ReadStringCollectionProxy(controlVtbl, {expression})"),
             AbiTypeKind.ObjectCollection =>
                 GetObjectCollectionCreation(result, expression),
             AbiTypeKind.ObjectHandle =>

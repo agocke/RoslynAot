@@ -32,7 +32,7 @@ internal sealed partial class AnalyzerConfigOptionsVtblDispatcher : IAnalyzerCon
 
         try
         {
-            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.ToArray(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptions>(receiver).Keys));
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptions>(receiver).Keys);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

@@ -246,6 +246,26 @@ internal static class ProjectionOutputEmitter
                 int bufferLength,
                 out int requiredLength);
 
+            // Membership must be answered by the collection that owns the
+            // semantics. Copying the contents to a string[] and probing that
+            // silently substitutes ordinal equality for whatever comparer the
+            // source used - Roslyn's analyzer config keys, for one, are
+            // case-insensitive through CaseInsensitiveComparison, so the copy
+            // answers false where Roslyn answers true.
+            [PreserveSig]
+            int StringCollectionContains(
+                long handle,
+                [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+                out int result);
+
+            // Materializes a live collection into an indexable snapshot so
+            // enumeration can use the index-based item accessor above. Only
+            // enumeration pays for this; membership and count do not.
+            [PreserveSig]
+            int SnapshotStringCollection(
+                long handle,
+                out long result);
+
             [PreserveSig]
             int GetWellKnownObject(
                 RoslynWellKnownObject kind,
@@ -341,6 +361,43 @@ internal static class ProjectionOutputEmitter
         return ordinals;
     }
 
+    /// <summary>
+    /// The control vtbl's own methods, which carry the traffic no per-member
+    /// counter can see.
+    /// </summary>
+    /// <remarks>
+    /// Dispatcher counters record one increment per projected member call, but
+    /// a single such call can fan out into many control-vtbl crossings — a
+    /// collection read costs a count plus two per element, so a member counted
+    /// once was really hundreds of round trips. Leaving these uncounted made
+    /// the boundary totals look like the whole picture when they were the tip
+    /// of it, and a measurement that silently under-reports is worse than none.
+    ///
+    /// This list must match the interface emitted in <c>EmitAbi</c>; a name
+    /// here that no longer exists there is a dead counter, and a method there
+    /// missing here reads as zero calls rather than as uninstrumented.
+    /// </remarks>
+    private static readonly string[] s_controlVtblMembers =
+    [
+        "GetManifestIdentity",
+        "GetVtbl",
+        "CopyLastErrorUtf16",
+        "CreateSourceTextUtf16",
+        "IsObjectType",
+        "CreateObjectCollection",
+        "GetCollectionCount",
+        "GetObjectCollectionItem",
+        "CopyStringCollectionItemUtf16",
+        "StringCollectionContains",
+        "SnapshotStringCollection",
+        "GetWellKnownObject",
+        "SymbolEqualityComparerEquals",
+        "SymbolEqualityComparerGetHashCode",
+        "CopyObjectToStringUtf16",
+        "ObjectEquals",
+        "ObjectGetHashCode",
+    ];
+
     private static string EmitCallCounters(
         ProjectionModel model,
         IReadOnlyDictionary<string, int> ordinals)
@@ -374,7 +431,8 @@ internal static class ProjectionOutputEmitter
         builder.AppendLine("internal static class RoslynCallCounters");
         builder.AppendLine("{");
         builder.AppendLine(
-            $"    public const int MemberCount = {members.Length};");
+            "    public const int MemberCount = " +
+            $"{members.Length + s_controlVtblMembers.Length};");
         builder.AppendLine();
         builder.AppendLine(
             "    private static readonly long[] s_counts = new long[MemberCount];");
@@ -387,7 +445,31 @@ internal static class ProjectionOutputEmitter
                 $"        {Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(GetCounterName(operation), quote: true)},");
         }
 
+        foreach (string name in s_controlVtblMembers)
+        {
+            builder.AppendLine(
+                "        " +
+                Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(
+                    $"RoslynAot.Abi.IRoslynControlVtbl.{name}",
+                    quote: true) +
+                ",");
+        }
+
         builder.AppendLine("    ];");
+        builder.AppendLine();
+        builder.AppendLine("    /// <summary>");
+        builder.AppendLine(
+            "    /// Ordinals for the control vtbl, which is hand-written and");
+        builder.AppendLine(
+            "    /// so records against these rather than an emitted literal.");
+        builder.AppendLine("    /// </summary>");
+        for (int index = 0; index < s_controlVtblMembers.Length; index++)
+        {
+            builder.AppendLine(
+                $"    public const int Control{s_controlVtblMembers[index]} = " +
+                $"{members.Length + index};");
+        }
+
         builder.AppendLine();
         builder.AppendLine("    public static void Record(int ordinal) =>");
         builder.AppendLine(
@@ -737,9 +819,12 @@ internal static class ProjectionOutputEmitter
                 yield return $"result = {invocation};";
                 break;
             case AbiTypeKind.StringCollection:
+                // Deliberately not ToArray'd: the analyzer reaches this
+                // collection through a handle so that membership is answered
+                // by the collection itself, with its own comparer and its own
+                // complexity, rather than by a copy that has neither.
                 yield return
-                    $"result = _owner.Objects.AddObject(" +
-                    $"global::System.Linq.Enumerable.ToArray({invocation}));";
+                    $"result = _owner.Objects.AddObject({invocation});";
                 break;
             case AbiTypeKind.ObjectCollection:
                 yield return
@@ -901,6 +986,119 @@ internal static class ProjectionOutputEmitter
             out int requiredLength);
 
         public sealed class RoslynProxyTypeMap;
+
+        /// <summary>
+        /// A compiler-owned string collection, reached through its handle
+        /// rather than copied.
+        /// </summary>
+        /// <remarks>
+        /// Copying the contents into a <c>string[]</c> and handing that back
+        /// preserves the elements but discards the collection's behaviour.
+        /// Two things go missing, and only one of them is benign:
+        /// <list type="bullet">
+        /// <item>Membership complexity. Roslyn backs these with sets -
+        /// <c>IdentifierCollection</c>, <c>ImmutableSegmentedHashSet</c> -
+        /// so an O(1) lookup becomes an O(n) array scan.</item>
+        /// <item>Equality semantics. The copy answers with
+        /// <c>EqualityComparer&lt;string&gt;.Default</c> no matter what the
+        /// source used. Analyzer config keys compare case-insensitively
+        /// through <c>CaseInsensitiveComparison</c>, so a copy answers
+        /// <c>false</c> where Roslyn answers <c>true</c> - a wrong answer
+        /// with no exception attached.</item>
+        /// </list>
+        /// Implementing <see cref="ICollection{T}"/> rather than only
+        /// <see cref="IEnumerable{T}"/> is load-bearing:
+        /// <c>Enumerable.Contains</c> defers to <c>ICollection&lt;T&gt;</c>
+        /// when the runtime type provides it, so members declared as
+        /// <c>IEnumerable&lt;string&gt;</c> get the faithful answer too.
+        /// </remarks>
+        public sealed class RoslynStringCollection : ICollection<string>
+        {
+            private readonly IRoslynControlVtbl _controlVtbl;
+            private readonly long _handle;
+            private string[]? _snapshot;
+
+            public RoslynStringCollection(
+                IRoslynControlVtbl controlVtbl,
+                long handle)
+            {
+                _controlVtbl = controlVtbl ??
+                    throw new ArgumentNullException(nameof(controlVtbl));
+                _handle = handle != 0
+                    ? handle
+                    : throw new ArgumentOutOfRangeException(nameof(handle));
+            }
+
+            public int Count
+            {
+                get
+                {
+                    int status = _controlVtbl.GetCollectionCount(
+                        _handle,
+                        out int count);
+                    RoslynFacadeRuntime.ThrowIfFailed(_controlVtbl, status);
+                    return count;
+                }
+            }
+
+            public bool IsReadOnly => true;
+
+            public bool Contains(string item)
+            {
+                if (item is null)
+                {
+                    return false;
+                }
+
+                int status = _controlVtbl.StringCollectionContains(
+                    _handle,
+                    item,
+                    out int result);
+                RoslynFacadeRuntime.ThrowIfFailed(_controlVtbl, status);
+                return result != 0;
+            }
+
+            // Enumeration is the one operation that cannot be answered a
+            // question at a time, so it snapshots. Held afterwards because
+            // the compiler-side collection a handle refers to is immutable
+            // for the handle's lifetime.
+            private string[] Snapshot()
+            {
+                string[]? snapshot = _snapshot;
+                if (snapshot is null)
+                {
+                    int status = _controlVtbl.SnapshotStringCollection(
+                        _handle,
+                        out long snapshotHandle);
+                    RoslynFacadeRuntime.ThrowIfFailed(_controlVtbl, status);
+                    snapshot = RoslynFacadeRuntime.ReadStringCollection(
+                        _controlVtbl,
+                        snapshotHandle);
+                    _snapshot = snapshot;
+                }
+
+                return snapshot;
+            }
+
+            public IEnumerator<string> GetEnumerator() =>
+                ((IEnumerable<string>)Snapshot()).GetEnumerator();
+
+            System.Collections.IEnumerator
+                System.Collections.IEnumerable.GetEnumerator() =>
+                GetEnumerator();
+
+            public void CopyTo(string[] array, int arrayIndex) =>
+                Snapshot().CopyTo(array, arrayIndex);
+
+            public void Add(string item) =>
+                throw new NotSupportedException();
+
+            public bool Remove(string item) =>
+                throw new NotSupportedException();
+
+            public void Clear() =>
+                throw new NotSupportedException();
+        }
 
         public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
         {
@@ -1321,6 +1519,11 @@ internal static class ProjectionOutputEmitter
 
                 return result;
             }
+
+            public static RoslynStringCollection ReadStringCollectionProxy(
+                IRoslynControlVtbl controlVtbl,
+                long handle) =>
+                new(controlVtbl, handle);
 
             public static long CreateObjectCollectionHandle(
                 IRoslynControlVtbl controlVtbl,

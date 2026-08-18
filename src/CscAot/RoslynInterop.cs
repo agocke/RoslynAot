@@ -41,6 +41,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         out long identityLow,
         out long identityHigh)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlGetManifestIdentity);
         identityLow = RoslynAbi.ManifestIdentityLow;
         identityHigh = RoslynAbi.ManifestIdentityHigh;
         return RoslynAbi.Success;
@@ -51,6 +53,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         long vtblIdHigh,
         out nint vtbl)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlGetVtbl);
         vtbl = 0;
         try
         {
@@ -89,6 +93,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         int checksumAlgorithm,
         out long result)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlCreateSourceTextUtf16);
         result = default;
         try
         {
@@ -123,6 +129,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         long vtblIdHigh,
         out int isType)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlIsObjectType);
         isType = 0;
         try
         {
@@ -146,6 +154,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         int count,
         out long result)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlCreateObjectCollection);
         result = default;
         try
         {
@@ -176,10 +186,67 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         long handle,
         out int count)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlGetCollectionCount);
         count = default;
         try
         {
-            count = _objects.GetObject<Array>(handle).Length;
+            // Object collections still cross as arrays; string collections
+            // now cross as the live Roslyn collection, so both shapes reach
+            // here and neither may be assumed.
+            count = _objects.GetObject<object>(handle) switch
+            {
+                Array array => array.Length,
+                ICollection<string> strings => strings.Count,
+                System.Collections.ICollection collection => collection.Count,
+                var other => throw new InvalidOperationException(
+                    $"The Roslyn handle refers to '{other.GetType()}', " +
+                    "which is not a countable collection."),
+            };
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
+    public int StringCollectionContains(
+        long handle,
+        string value,
+        out int result)
+    {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlStringCollectionContains);
+        result = default;
+        try
+        {
+            // The whole point of the handle: this is the collection Roslyn
+            // built, so Contains runs against its comparer rather than the
+            // ordinal default a copied array would impose.
+            result = _objects.GetObject<ICollection<string>>(handle)
+                .Contains(value)
+                ? 1
+                : 0;
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
+    public int SnapshotStringCollection(
+        long handle,
+        out long result)
+    {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlSnapshotStringCollection);
+        result = default;
+        try
+        {
+            result = _objects.AddObject(
+                _objects.GetObject<IEnumerable<string>>(handle).ToArray());
             return RoslynAbi.Success;
         }
         catch (Exception exception)
@@ -193,6 +260,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         int index,
         out long result)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlGetObjectCollectionItem);
         result = default;
         try
         {
@@ -216,6 +285,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlCopyStringCollectionItemUtf16);
         requiredLength = default;
         try
         {
@@ -252,6 +323,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         RoslynWellKnownObject kind,
         out long result)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlGetWellKnownObject);
         result = default;
         try
         {
@@ -278,6 +351,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         long y,
         out int result)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlSymbolEqualityComparerEquals);
         result = default;
         try
         {
@@ -301,6 +376,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         long symbol,
         out int result)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlSymbolEqualityComparerGetHashCode);
         result = default;
         try
         {
@@ -332,6 +409,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         int bufferLength,
         out int requiredLength)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlCopyObjectToStringUtf16);
         requiredLength = default;
         try
         {
@@ -370,6 +449,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         long other,
         out int result)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlObjectEquals);
         result = default;
         try
         {
@@ -387,6 +468,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
 
     public int ObjectGetHashCode(long handle, out int result)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlObjectGetHashCode);
         result = default;
         try
         {
@@ -405,6 +488,8 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         out int requiredLength,
         out RoslynRemoteErrorKind errorKind)
     {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlCopyLastErrorUtf16);
         RemoteError error = _lastError.Value ??
             new RemoteError(
                 RoslynRemoteErrorKind.None,

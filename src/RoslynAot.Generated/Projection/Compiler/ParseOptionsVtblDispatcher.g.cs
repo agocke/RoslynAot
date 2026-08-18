@@ -187,7 +187,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
 
         try
         {
-            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.ToArray(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(receiver).PreprocessorSymbolNames));
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(receiver).PreprocessorSymbolNames);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

@@ -113,6 +113,26 @@ public partial interface IRoslynControlVtbl
         int bufferLength,
         out int requiredLength);
 
+    // Membership must be answered by the collection that owns the
+    // semantics. Copying the contents to a string[] and probing that
+    // silently substitutes ordinal equality for whatever comparer the
+    // source used - Roslyn's analyzer config keys, for one, are
+    // case-insensitive through CaseInsensitiveComparison, so the copy
+    // answers false where Roslyn answers true.
+    [PreserveSig]
+    int StringCollectionContains(
+        long handle,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
+        out int result);
+
+    // Materializes a live collection into an indexable snapshot so
+    // enumeration can use the index-based item accessor above. Only
+    // enumeration pays for this; membership and count do not.
+    [PreserveSig]
+    int SnapshotStringCollection(
+        long handle,
+        out long result);
+
     [PreserveSig]
     int GetWellKnownObject(
         RoslynWellKnownObject kind,
