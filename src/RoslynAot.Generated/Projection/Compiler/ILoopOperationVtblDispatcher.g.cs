@@ -27,7 +27,7 @@ internal sealed partial class ILoopOperationVtblDispatcher : IILoopOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1126);
+        RoslynCallCounters.Record(1134);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ILoopOperationVtblDispatcher : IILoopOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1127);
+        RoslynCallCounters.Record(1135);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class ILoopOperationVtblDispatcher : IILoopOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1128);
+        RoslynCallCounters.Record(1136);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class ILoopOperationVtblDispatcher : IILoopOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1129);
+        RoslynCallCounters.Record(1137);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class ILoopOperationVtblDispatcher : IILoopOperationVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1130);
+        RoslynCallCounters.Record(1138);
         result = default;
 
         try

@@ -27,7 +27,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long operation,
         out long result)
     {
-        RoslynCallCounters.Record(1246);
+        RoslynCallCounters.Record(1254);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long operation,
         out long result)
     {
-        RoslynCallCounters.Record(1247);
+        RoslynCallCounters.Record(1255);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1248);
+        RoslynCallCounters.Record(1256);
         requiredLength = default;
 
         try
@@ -93,7 +93,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1249);
+        RoslynCallCounters.Record(1257);
         requiredLength = default;
 
         try
@@ -120,7 +120,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1250);
+        RoslynCallCounters.Record(1258);
         requiredLength = default;
 
         try
@@ -144,7 +144,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long operation,
         out long result)
     {
-        RoslynCallCounters.Record(1251);
+        RoslynCallCounters.Record(1259);
         result = default;
 
         try
@@ -162,7 +162,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long declarationGroup,
         out long result)
     {
-        RoslynCallCounters.Record(1252);
+        RoslynCallCounters.Record(1260);
         result = default;
 
         try
@@ -180,7 +180,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long declaration,
         out long result)
     {
-        RoslynCallCounters.Record(1253);
+        RoslynCallCounters.Record(1261);
         result = default;
 
         try
@@ -198,7 +198,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long functionPointer,
         out long result)
     {
-        RoslynCallCounters.Record(1254);
+        RoslynCallCounters.Record(1262);
         result = default;
 
         try
@@ -216,7 +216,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long declarationOperation,
         out long result)
     {
-        RoslynCallCounters.Record(1255);
+        RoslynCallCounters.Record(1263);
         result = default;
 
         try

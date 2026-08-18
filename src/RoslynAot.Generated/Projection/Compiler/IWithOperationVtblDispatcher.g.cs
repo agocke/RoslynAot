@@ -27,7 +27,7 @@ internal sealed partial class IWithOperationVtblDispatcher : IIWithOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1243);
+        RoslynCallCounters.Record(1251);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IWithOperationVtblDispatcher : IIWithOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1244);
+        RoslynCallCounters.Record(1252);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class IWithOperationVtblDispatcher : IIWithOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1245);
+        RoslynCallCounters.Record(1253);
         result = default;
 
         try

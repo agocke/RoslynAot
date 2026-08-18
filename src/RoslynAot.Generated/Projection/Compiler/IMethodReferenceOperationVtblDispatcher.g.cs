@@ -27,7 +27,7 @@ internal sealed partial class IMethodReferenceOperationVtblDispatcher : IIMethod
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1138);
+        RoslynCallCounters.Record(1146);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IMethodReferenceOperationVtblDispatcher : IIMethod
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1139);
+        RoslynCallCounters.Record(1147);
         result = default;
 
         try

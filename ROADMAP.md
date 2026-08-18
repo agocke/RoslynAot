@@ -88,12 +88,26 @@ boundary is now `IsObjectType` at 778,492 calls — cast-time type resolution,
 which migration Step 4 deliberately left alone.
 
 The honest headline from that measurement: of the module's 37 rules,
-**9 pass, 25 fail against a named unimplemented member, and 3 are not yet
-exercised by the corpus**. The failures concentrate — `IOperation.ConstantValue`
-blocks 7 rules and `SyntaxReference.GetSyntax` blocks 6, so two members account
-for half of them. Roughly half of all failures are rooted in generics. Details
-and the ordered plan to close them are in the
+**12 pass, 22 fail against a named unimplemented member, and 3 are not yet
+exercised by the corpus**. `IOperation.ConstantValue` used to block 7 rules and
+is now implemented — the first piece of Step 5's wire grammar, a tagged union
+carrying a boxed C# constant by value because the analyzer pattern-matches the
+result against real framework types. Three of those seven rules now pass
+(CA1802, CA1805, CA1855); the other four moved on to their next blocker, which
+is the honest shape of a burn-down. `SyntaxReference.GetSyntax` still blocks 6.
+Roughly half of all failures are rooted in generics. Details and the ordered
+plan to close them are in the
 [analyzer remoting migration plan](docs/ANALYZER-REMOTING-MIGRATION.md).
+
+Two measurement defects were found while doing that work, both of which had
+been reporting green. The burn-down's stack-frame parser could not match a
+generic method frame at all, so it silently attributed those failures to the
+next frame down — analyzer code rather than the Roslyn member. Three rules were
+misattributed: CA1508's real blocker is `IOperation.Accept[TArgument,TResult]`,
+CA1865's is `SyntaxNode.FirstAncestorOrSelf[TNode]`, and CA2263's is
+`SyntaxFactory.SeparatedList[TNode]`. And the projection self-check's facade
+client — the only test that drives both sides as separately compiled modules —
+has never run: its type map is empty, so its first cast throws. See problem 24.
 
 The harness has also earned its keep beyond counting. It caught a defect that
 **terminated the compiler process** rather than reporting a failure: a generic

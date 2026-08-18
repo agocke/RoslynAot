@@ -26,7 +26,7 @@ internal sealed partial class SyntaxTokenParserVtblDispatcher : ISyntaxTokenPars
     public int SyntaxTokenParser_Dispose(
         long receiver)
     {
-        RoslynCallCounters.Record(5807);
+        RoslynCallCounters.Record(5817);
 
         try
         {
@@ -43,7 +43,7 @@ internal sealed partial class SyntaxTokenParserVtblDispatcher : ISyntaxTokenPars
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(5808);
+        RoslynCallCounters.Record(5818);
         result = default;
 
         try
@@ -61,7 +61,7 @@ internal sealed partial class SyntaxTokenParserVtblDispatcher : ISyntaxTokenPars
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(5809);
+        RoslynCallCounters.Record(5819);
         result = default;
 
         try
@@ -79,7 +79,7 @@ internal sealed partial class SyntaxTokenParserVtblDispatcher : ISyntaxTokenPars
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(5810);
+        RoslynCallCounters.Record(5820);
         result = default;
 
         try
@@ -97,7 +97,7 @@ internal sealed partial class SyntaxTokenParserVtblDispatcher : ISyntaxTokenPars
         long receiver,
         long result)
     {
-        RoslynCallCounters.Record(5811);
+        RoslynCallCounters.Record(5821);
 
         try
         {
@@ -114,7 +114,7 @@ internal sealed partial class SyntaxTokenParserVtblDispatcher : ISyntaxTokenPars
         long receiver,
         int position)
     {
-        RoslynCallCounters.Record(5812);
+        RoslynCallCounters.Record(5822);
 
         try
         {

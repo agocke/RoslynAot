@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d3ad2b2d-99f0-520a-b49a-c09756080fb6")]
+[Guid("d6d51058-f635-516b-b5c6-a9cfa2ed3aa7")]
 public partial interface IAnalyzerImageReferenceVtbl : IAnalyzerReferenceVtbl
 {
 
@@ -43,5 +43,13 @@ public partial interface IAnalyzerImageReferenceVtbl : IAnalyzerReferenceVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int AnalyzerImageReference_get_Id(
+        long receiver,
+        out RoslynConstantKind constantKind,
+        out long constantLow,
+        out long constantHigh
     );
 }

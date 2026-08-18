@@ -28,7 +28,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(2572);
+        RoslynCallCounters.Record(2582);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2573);
+        RoslynCallCounters.Record(2583);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2574);
+        RoslynCallCounters.Record(2584);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2575);
+        RoslynCallCounters.Record(2585);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2576);
+        RoslynCallCounters.Record(2586);
         result = default;
 
         try
@@ -118,7 +118,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2577);
+        RoslynCallCounters.Record(2587);
         result = default;
 
         try
@@ -136,7 +136,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2578);
+        RoslynCallCounters.Record(2588);
         result = default;
 
         try
@@ -154,7 +154,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2579);
+        RoslynCallCounters.Record(2589);
         result = default;
 
         try
@@ -172,7 +172,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2580);
+        RoslynCallCounters.Record(2590);
         result = default;
 
         try
@@ -190,7 +190,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2581);
+        RoslynCallCounters.Record(2591);
         result = default;
 
         try
@@ -208,7 +208,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2582);
+        RoslynCallCounters.Record(2592);
         result = default;
 
         try
@@ -226,7 +226,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2583);
+        RoslynCallCounters.Record(2593);
         result = default;
 
         try

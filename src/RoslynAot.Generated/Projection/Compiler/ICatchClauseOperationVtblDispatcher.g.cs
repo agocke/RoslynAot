@@ -27,7 +27,7 @@ internal sealed partial class ICatchClauseOperationVtblDispatcher : IICatchClaus
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1004);
+        RoslynCallCounters.Record(1012);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ICatchClauseOperationVtblDispatcher : IICatchClaus
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1005);
+        RoslynCallCounters.Record(1013);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class ICatchClauseOperationVtblDispatcher : IICatchClaus
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1006);
+        RoslynCallCounters.Record(1014);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class ICatchClauseOperationVtblDispatcher : IICatchClaus
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1007);
+        RoslynCallCounters.Record(1015);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class ICatchClauseOperationVtblDispatcher : IICatchClaus
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1008);
+        RoslynCallCounters.Record(1016);
         result = default;
 
         try

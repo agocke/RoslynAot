@@ -28,7 +28,7 @@ internal sealed partial class PreprocessingSymbolInfoVtblDispatcher : IPreproces
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1402);
+        RoslynCallCounters.Record(1410);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class PreprocessingSymbolInfoVtblDispatcher : IPreproces
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1403);
+        RoslynCallCounters.Record(1411);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class PreprocessingSymbolInfoVtblDispatcher : IPreproces
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1404);
+        RoslynCallCounters.Record(1412);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class PreprocessingSymbolInfoVtblDispatcher : IPreproces
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1405);
+        RoslynCallCounters.Record(1413);
         result = default;
 
         try

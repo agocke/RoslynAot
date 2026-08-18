@@ -28,7 +28,7 @@ internal sealed partial class TextSpanTypeVtblDispatcher : ITextSpanTypeVtbl
         int length,
         out long result)
     {
-        RoslynCallCounters.Record(1843);
+        RoslynCallCounters.Record(1852);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class TextSpanTypeVtblDispatcher : ITextSpanTypeVtbl
         int end,
         out long result)
     {
-        RoslynCallCounters.Record(1848);
+        RoslynCallCounters.Record(1857);
         result = default;
 
         try

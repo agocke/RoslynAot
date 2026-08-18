@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("aff0a8a7-2892-5600-b330-1f2cf868ecc2")]
+[Guid("bd5e24a6-8ad7-56c9-8761-33ffb6de913f")]
 public partial interface ITypedConstantVtbl
 {
 
@@ -45,5 +45,13 @@ public partial interface ITypedConstantVtbl
     int TypedConstant_get_Type(
         long receiver,
         out long result
+    );
+
+    [PreserveSig]
+    int TypedConstant_get_Value(
+        long receiver,
+        out RoslynConstantKind constantKind,
+        out long constantLow,
+        out long constantHigh
     );
 }

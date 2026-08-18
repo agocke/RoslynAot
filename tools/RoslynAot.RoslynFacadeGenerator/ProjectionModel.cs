@@ -30,6 +30,28 @@ internal enum AbiTypeKind
     ObjectHandle,
     ValueHandle,
     NullableHandle,
+
+    /// <summary>
+    /// A boxed C# constant, crossing by value under a tag naming which
+    /// primitive it is.
+    /// </summary>
+    /// <remarks>
+    /// It cannot cross as a handle. The analyzer casts and pattern-matches the
+    /// result against real framework types — <c>(int)value</c>,
+    /// <c>value is string</c>, <c>value.Equals(0)</c> — so what arrives has to
+    /// be a genuine boxed <c>int</c> in the analyzer's heap, not a proxy.
+    /// Problem 23 classifies <c>System.Object</c> as a forced clone for exactly
+    /// this reason.
+    /// </remarks>
+    ConstantUnion,
+
+    /// <summary>
+    /// <see cref="ConstantUnion"/> wrapped in
+    /// <c>Microsoft.CodeAnalysis.Optional&lt;T&gt;</c>. Three states, not two:
+    /// no value, a value that is null, and a value. Collapsing the first two
+    /// is the same class of bug as a two-state sequence tag.
+    /// </summary>
+    OptionalConstant,
 }
 
 internal enum AbiTypePosition
@@ -1503,6 +1525,26 @@ internal sealed class AbiTypeClassifier
                 UnsupportedReason: null);
         }
 
+        // Roslyn uses object in return position for one thing: a boxed C#
+        // constant. IFieldSymbol.ConstantValue, ILocalSymbol.ConstantValue,
+        // IParameterSymbol.ExplicitDefaultValue, SyntaxToken.Value, and
+        // TypedConstant.Value are all that shape. The rule is deliberately
+        // structural rather than a list of those five members, and it is total
+        // because the union degrades: a runtime object that is not one of the
+        // constant types is reported by name compiler-side rather than guessed
+        // at. AnalyzerReference.Id and the two IEnumerator.Current explicit
+        // implementations are the members that reach that degradation, and
+        // they raise a named AD0001 exactly as they did when the whole member
+        // was unsupported.
+        if (position == AbiTypePosition.Return &&
+            type.SpecialType == SpecialType.System_Object)
+        {
+            return Supported(
+                AbiTypeKind.ConstantUnion,
+                "constant",
+                type);
+        }
+
         if (type is ITypeParameterSymbol)
         {
             return Unsupported(
@@ -1535,6 +1577,17 @@ internal sealed class AbiTypeClassifier
                 : Unsupported(
                     type,
                     "Only nullable facade value handles are supported.");
+        }
+
+        if (position == AbiTypePosition.Return &&
+            IsOptional(namedType) &&
+            namedType.TypeArguments is
+                [{ SpecialType: SpecialType.System_Object }])
+        {
+            return Supported(
+                AbiTypeKind.OptionalConstant,
+                "constant",
+                type);
         }
 
         if (namedType.IsGenericType)
@@ -1720,6 +1773,23 @@ internal sealed class AbiTypeClassifier
                     }
                 }
             }
+            }
+        };
+
+    private static bool IsOptional(
+        INamedTypeSymbol type) =>
+        type.OriginalDefinition is
+        {
+            Name: "Optional",
+            Arity: 1,
+            ContainingNamespace:
+            {
+                Name: "CodeAnalysis",
+                ContainingNamespace:
+                {
+                    Name: "Microsoft",
+                    ContainingNamespace.IsGlobalNamespace: true
+                }
             }
         };
 

@@ -444,6 +444,148 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         }
     }
 
+    /// <summary>
+    /// Writes a boxed C# constant onto the wire as a tag plus two words of
+    /// payload.
+    /// </summary>
+    /// <remarks>
+    /// Two words rather than one because <see cref="decimal"/> is sixteen
+    /// bytes; truncating it would be a silent wrong answer in the one
+    /// transport whose entire job is carrying constants exactly.
+    ///
+    /// The default arm is the degradation, and it throws rather than guesses.
+    /// Roslyn uses <c>object</c> in return position for constants, but the
+    /// projection's structural rule admits a few members that return something
+    /// else — <c>AnalyzerReference.Id</c> and two <c>IEnumerator.Current</c>
+    /// explicit implementations. Naming the runtime type in the message means
+    /// those raise an <c>AD0001</c> a reader can act on, which is what they did
+    /// when the whole member was unsupported. Answering <c>null</c> or a
+    /// handle instead would be problem 22's failure shape: a wrong answer with
+    /// nothing to notice.
+    /// </remarks>
+    internal void WriteConstant(
+        object? value,
+        out RoslynConstantKind kind,
+        out long low,
+        out long high)
+    {
+        low = 0;
+        high = 0;
+        switch (value)
+        {
+            case null:
+                kind = RoslynConstantKind.Null;
+                return;
+            case bool typed:
+                kind = RoslynConstantKind.Boolean;
+                low = typed ? 1 : 0;
+                return;
+            case sbyte typed:
+                kind = RoslynConstantKind.SByte;
+                low = typed;
+                return;
+            case byte typed:
+                kind = RoslynConstantKind.Byte;
+                low = typed;
+                return;
+            case short typed:
+                kind = RoslynConstantKind.Int16;
+                low = typed;
+                return;
+            case ushort typed:
+                kind = RoslynConstantKind.UInt16;
+                low = typed;
+                return;
+            case int typed:
+                kind = RoslynConstantKind.Int32;
+                low = typed;
+                return;
+            case uint typed:
+                kind = RoslynConstantKind.UInt32;
+                low = typed;
+                return;
+            case long typed:
+                kind = RoslynConstantKind.Int64;
+                low = typed;
+                return;
+            case ulong typed:
+                kind = RoslynConstantKind.UInt64;
+                low = unchecked((long)typed);
+                return;
+            case char typed:
+                kind = RoslynConstantKind.Char;
+                low = typed;
+                return;
+            case float typed:
+                kind = RoslynConstantKind.Single;
+                low = BitConverter.SingleToInt32Bits(typed);
+                return;
+            case double typed:
+                kind = RoslynConstantKind.Double;
+                low = BitConverter.DoubleToInt64Bits(typed);
+                return;
+            case decimal typed:
+                kind = RoslynConstantKind.Decimal;
+                int[] bits = decimal.GetBits(typed);
+                low = (uint)bits[0] | ((long)bits[1] << 32);
+                high = (uint)bits[2] | ((long)bits[3] << 32);
+                return;
+            case DateTime typed:
+                kind = RoslynConstantKind.DateTime;
+                low = typed.ToBinary();
+                return;
+            case string typed:
+                kind = RoslynConstantKind.String;
+                low = _objects.AddObject(typed);
+                return;
+            default:
+                throw new PlatformNotSupportedException(
+                    "This Roslyn API returned " +
+                    $"'{value.GetType().FullName}', which RoslynAot does not " +
+                    "carry as a constant value.");
+        }
+    }
+
+    public unsafe int CopyConstantStringUtf16(
+        long handle,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength)
+    {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlCopyConstantStringUtf16);
+        requiredLength = default;
+        try
+        {
+            if (bufferLength < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(bufferLength));
+            }
+
+            string value = _objects.GetObject<string>(handle);
+            requiredLength = value.Length;
+            if (buffer == 0)
+            {
+                return RoslynAbi.Success;
+            }
+
+            if (bufferLength < requiredLength)
+            {
+                throw new ArgumentException(
+                    "The UTF-16 result buffer is too small.",
+                    nameof(bufferLength));
+            }
+
+            value.AsSpan().CopyTo(
+                new Span<char>((void*)buffer, bufferLength));
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
     public int ObjectEquals(
         long handle,
         long other,

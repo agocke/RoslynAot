@@ -27,7 +27,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(409);
+        RoslynCallCounters.Record(412);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(410);
+        RoslynCallCounters.Record(413);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(411);
+        RoslynCallCounters.Record(414);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(412);
+        RoslynCallCounters.Record(415);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(413);
+        RoslynCallCounters.Record(416);
         result = default;
 
         try
@@ -117,7 +117,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(414);
+        RoslynCallCounters.Record(417);
         result = default;
 
         try
@@ -135,7 +135,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(415);
+        RoslynCallCounters.Record(418);
         result = default;
 
         try
@@ -153,7 +153,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(416);
+        RoslynCallCounters.Record(419);
         result = default;
 
         try
@@ -171,7 +171,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(417);
+        RoslynCallCounters.Record(420);
         result = default;
 
         try
@@ -189,7 +189,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(418);
+        RoslynCallCounters.Record(421);
         result = default;
 
         try
@@ -207,7 +207,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(419);
+        RoslynCallCounters.Record(422);
         result = default;
 
         try
@@ -225,7 +225,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(420);
+        RoslynCallCounters.Record(423);
         result = default;
 
         try
@@ -243,7 +243,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(421);
+        RoslynCallCounters.Record(424);
         result = default;
 
         try
@@ -261,7 +261,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(422);
+        RoslynCallCounters.Record(425);
         result = default;
 
         try
@@ -279,7 +279,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(423);
+        RoslynCallCounters.Record(426);
         result = default;
 
         try
@@ -297,7 +297,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(424);
+        RoslynCallCounters.Record(427);
         result = default;
 
         try
@@ -315,7 +315,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(425);
+        RoslynCallCounters.Record(428);
         result = default;
 
         try
@@ -333,7 +333,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(426);
+        RoslynCallCounters.Record(429);
         result = default;
 
         try
@@ -351,7 +351,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(427);
+        RoslynCallCounters.Record(430);
         result = default;
 
         try
@@ -369,7 +369,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(428);
+        RoslynCallCounters.Record(431);
 
         try
         {
@@ -386,7 +386,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(429);
+        RoslynCallCounters.Record(432);
 
         try
         {
@@ -403,7 +403,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(430);
+        RoslynCallCounters.Record(433);
 
         try
         {
@@ -420,7 +420,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(431);
+        RoslynCallCounters.Record(434);
 
         try
         {
@@ -437,7 +437,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(432);
+        RoslynCallCounters.Record(435);
 
         try
         {
@@ -454,7 +454,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(433);
+        RoslynCallCounters.Record(436);
 
         try
         {
@@ -471,7 +471,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(434);
+        RoslynCallCounters.Record(437);
 
         try
         {
@@ -488,7 +488,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(435);
+        RoslynCallCounters.Record(438);
 
         try
         {
@@ -505,7 +505,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(436);
+        RoslynCallCounters.Record(439);
 
         try
         {
@@ -522,7 +522,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(437);
+        RoslynCallCounters.Record(440);
 
         try
         {
@@ -539,7 +539,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(438);
+        RoslynCallCounters.Record(441);
 
         try
         {
@@ -556,7 +556,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(439);
+        RoslynCallCounters.Record(442);
 
         try
         {
@@ -573,7 +573,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(440);
+        RoslynCallCounters.Record(443);
 
         try
         {
@@ -590,7 +590,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(441);
+        RoslynCallCounters.Record(444);
 
         try
         {
@@ -607,7 +607,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(442);
+        RoslynCallCounters.Record(445);
 
         try
         {
@@ -624,7 +624,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(443);
+        RoslynCallCounters.Record(446);
 
         try
         {
@@ -641,7 +641,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(444);
+        RoslynCallCounters.Record(447);
 
         try
         {
@@ -658,7 +658,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(445);
+        RoslynCallCounters.Record(448);
 
         try
         {
@@ -675,7 +675,7 @@ internal sealed partial class AnalyzerTelemetryInfoVtblDispatcher : IAnalyzerTel
         long receiver,
         int value)
     {
-        RoslynCallCounters.Record(446);
+        RoslynCallCounters.Record(449);
 
         try
         {

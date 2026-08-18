@@ -28,7 +28,7 @@ internal sealed partial class SuppressionTypeVtblDispatcher : ISuppressionTypeVt
         long suppressedDiagnostic,
         out long result)
     {
-        RoslynCallCounters.Record(369);
+        RoslynCallCounters.Record(372);
         result = default;
 
         try

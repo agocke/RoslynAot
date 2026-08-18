@@ -27,7 +27,7 @@ internal sealed partial class SyntaxReferenceVtblDispatcher : ISyntaxReferenceVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1645);
+        RoslynCallCounters.Record(1653);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class SyntaxReferenceVtblDispatcher : ISyntaxReferenceVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1646);
+        RoslynCallCounters.Record(1654);
         result = default;
 
         try

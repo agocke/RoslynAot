@@ -27,7 +27,7 @@ internal sealed partial class ISingleValueCaseClauseOperationVtblDispatcher : II
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1182);
+        RoslynCallCounters.Record(1190);
         result = default;
 
         try

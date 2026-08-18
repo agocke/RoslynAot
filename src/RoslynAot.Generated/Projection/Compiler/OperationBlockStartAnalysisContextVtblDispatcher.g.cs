@@ -28,7 +28,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long operationBlock,
         out long result)
     {
-        RoslynCallCounters.Record(355);
+        RoslynCallCounters.Record(358);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(356);
+        RoslynCallCounters.Record(359);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(357);
+        RoslynCallCounters.Record(360);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(358);
+        RoslynCallCounters.Record(361);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(359);
+        RoslynCallCounters.Record(362);
         result = default;
 
         try
@@ -118,7 +118,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(360);
+        RoslynCallCounters.Record(363);
         result = default;
 
         try
@@ -136,7 +136,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(361);
+        RoslynCallCounters.Record(364);
         result = default;
 
         try
@@ -154,7 +154,7 @@ internal sealed partial class OperationBlockStartAnalysisContextVtblDispatcher :
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(362);
+        RoslynCallCounters.Record(365);
         result = default;
 
         try

@@ -640,6 +640,60 @@ it must reproduce Roslyn's existing public API, and that API says
 therefore irreducible, which is exactly why it needs enumerating rather than
 avoiding.
 
+### 24. The projection self-check's facade client has never run
+
+Discovered 2026-08-17, while adding a constant round-trip test to it.
+
+`csc-aot --validate-roslyn-projection <client>` loads
+`RoslynAot.RoslynProjection.Client` as a second NativeAOT module and drives the
+real analyzer-side facade through the real control vtbl. It is the only test in
+the repository that exercises both sides of the boundary as separately compiled
+modules — everything else either runs compiler-side dispatchers directly or
+goes through the differential harness, which sees diagnostics rather than
+transport.
+
+It fails on its first cast, and does so at `HEAD` with no local changes:
+
+```
+System.InvalidCastException: Specified cast is not valid.
+   at RoslynAot.RoslynProjection.Client.ProjectionClient.Validate
+```
+
+Instrumented, the cause is that the client module's proxy type map is empty:
+
+```
+STEP: map has SyntaxNode = False, impl =
+STEP: IsInterfaceImplemented = False
+```
+
+`TypeMapping.GetOrCreateProxyTypeMapping<RoslynProxyTypeMap>` finds no entry
+for `SyntaxNode`, so `IDynamicInterfaceCastable` answers "not implemented" for
+every Roslyn interface and `IsObjectType` is never reached. The 196
+`TypeMapAssociation` attributes are assembly-level in the facade
+(`RoslynAotTypeMap.g.cs`); the two native analyzer modules that work both set
+`<TypeMapEntryAssembly>$(AssemblyName)</TypeMapEntryAssembly>` and this client
+does not. Adding it is **not** sufficient — verified, including after deleting
+the client's obj/bin and republishing — so the entry assembly is necessary but
+something further is missing.
+
+**Why it went unnoticed is the more useful half.** Nothing in `eng/` invokes
+the client path. `validate-ca1200.sh`, `validate-sample-analyzer.sh`, and
+`validate-differential.sh` never pass a client argument, and
+`RoslynProjectionValidation.Run()` without one passes, which is what the
+"projection self-check passes" line in recent commit messages has been
+reporting. So the repository has a cross-module transport test that has been
+dead for an unknown number of commits while reading as green.
+
+Two consequences worth stating separately from the fix:
+
+- The claim "both sides agree" currently rests on the differential harness
+  alone. That is a strong end-to-end signal, but it observes diagnostics, so it
+  cannot distinguish a transport that is wrong from one that is merely
+  unreached — which is exactly the gap problem 22 lived in.
+- Whatever the type-map fix turns out to be, the client has to be wired into an
+  `eng/` script afterwards. A test nothing runs is worse than no test, because
+  it is counted.
+
 ## Architectural conclusion
 
 The repeated failures are not evidence that remoting is impossible. They show

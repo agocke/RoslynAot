@@ -77,7 +77,7 @@
         "case": "CA1309/Basic",
         "actionKind": "OperationBlock",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.FlowAnalysis.DataFlow.DataFlowOperationVisitor\u00604.VisitCore"
+        "failingMember": "Microsoft.CodeAnalysis.IOperation.Accept[TArgument,TResult]"
       }
     },
     {
@@ -98,27 +98,11 @@
     },
     {
       "ruleId": "CA1802",
-      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.QualityGuidelines.CSharpUseLiteralsWhereAppropriate",
-      "status": "Fail",
-      "reason": {
-        "kind": "AnalyzerException",
-        "case": "CA1802/Basic",
-        "actionKind": "Operation",
-        "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
-      }
+      "status": "Pass"
     },
     {
       "ruleId": "CA1805",
-      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.QualityGuidelines.CSharpDoNotInitializeUnnecessarilyAnalyzer",
-      "status": "Fail",
-      "reason": {
-        "kind": "AnalyzerException",
-        "case": "CA1802/Basic",
-        "actionKind": "Operation",
-        "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
-      }
+      "status": "Pass"
     },
     {
       "ruleId": "CA1812",
@@ -145,7 +129,7 @@
         "case": "CA1825/Basic",
         "actionKind": "Operation",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
+        "failingMember": "Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext.get_CancellationToken"
       }
     },
     {
@@ -178,15 +162,7 @@
     },
     {
       "ruleId": "CA1855",
-      "analyzerType": "Microsoft.NetCore.Analyzers.Performance.CSharpUseSpanClearInsteadOfFillAnalyzer",
-      "status": "Fail",
-      "reason": {
-        "kind": "AnalyzerException",
-        "case": "CA1855/Basic",
-        "actionKind": "Operation",
-        "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
-      }
+      "status": "Pass"
     },
     {
       "ruleId": "CA1856",
@@ -221,7 +197,7 @@
         "case": "CA1865/Basic",
         "actionKind": "Operation",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
+        "failingMember": "Microsoft.CodeAnalysis.SyntaxNode.FirstAncestorOrSelf[TNode]"
       }
     },
     {
@@ -233,7 +209,7 @@
         "case": "CA1865/Basic",
         "actionKind": "Operation",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
+        "failingMember": "Microsoft.CodeAnalysis.SyntaxNode.FirstAncestorOrSelf[TNode]"
       }
     },
     {
@@ -245,7 +221,7 @@
         "case": "CA1865/Basic",
         "actionKind": "Operation",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.IOperation.get_ConstantValue"
+        "failingMember": "Microsoft.CodeAnalysis.SyntaxNode.FirstAncestorOrSelf[TNode]"
       }
     },
     {
@@ -333,7 +309,7 @@
         "case": "CA2263/Basic",
         "actionKind": "Operation",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.NetCore.CSharp.Analyzers.Usage.CSharpPreferGenericOverloadsAnalyzer.GetModifiedInvocationSyntax"
+        "failingMember": "Microsoft.CodeAnalysis.CSharp.SyntaxFactory.SeparatedList[TNode]"
       }
     },
     {

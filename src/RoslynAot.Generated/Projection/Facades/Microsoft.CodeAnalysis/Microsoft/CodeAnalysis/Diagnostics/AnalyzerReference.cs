@@ -106,7 +106,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                    global::RoslynAot.Abi.IAnalyzerReferenceVtbl vtbl = __RoslynAotGetVtbl();
+                    int status = vtbl.AnalyzerReference_get_Id(__RoslynAotGetHandle(controlVtbl), out global::RoslynAot.Abi.RoslynConstantKind constantKind, out long constantLow, out long constantHigh);
+                    global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                    return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadConstant(controlVtbl, constantKind, constantLow, constantHigh);
                 }
             }
         }

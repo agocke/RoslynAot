@@ -28,7 +28,7 @@ internal sealed partial class LinePositionTypeVtblDispatcher : ILinePositionType
         int character,
         out long result)
     {
-        RoslynCallCounters.Record(1781);
+        RoslynCallCounters.Record(1790);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class LinePositionTypeVtblDispatcher : ILinePositionType
     public int LinePosition_get_Zero(
         out long result)
     {
-        RoslynCallCounters.Record(1788);
+        RoslynCallCounters.Record(1797);
         result = default;
 
         try

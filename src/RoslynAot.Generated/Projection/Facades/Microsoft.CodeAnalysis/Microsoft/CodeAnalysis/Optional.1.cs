@@ -14,14 +14,15 @@ namespace Microsoft.CodeAnalysis
         private readonly int _dummyPrimitive;
         public Optional(T value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            _value = value;
+            _dummyPrimitive = 1;
         }
 
         public bool HasValue
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                return _dummyPrimitive != 0;
             }
         }
 
@@ -29,18 +30,18 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                return _value;
             }
         }
 
         public static implicit operator Optional<T>(T value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            return new Optional<T>(value);
         }
 
         public override readonly string ToString()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            return _dummyPrimitive != 0 ? _value?.ToString() ?? "null" : "unspecified";
         }
     }
 }

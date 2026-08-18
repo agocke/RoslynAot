@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d29b7a49-b799-57c0-b5c5-88ef09ca1c15")]
+[Guid("e1b9920e-9fd8-5c8f-817e-b84e6cdd678d")]
 public partial interface IIFieldSymbolVtbl
 {
 
@@ -20,6 +20,14 @@ public partial interface IIFieldSymbolVtbl
     int IFieldSymbol_get_AssociatedSymbol(
         long receiver,
         out long result
+    );
+
+    [PreserveSig]
+    int IFieldSymbol_get_ConstantValue(
+        long receiver,
+        out RoslynConstantKind constantKind,
+        out long constantLow,
+        out long constantHigh
     );
 
     [PreserveSig]

@@ -27,7 +27,7 @@ internal sealed partial class SourceTextContainerVtblDispatcher : ISourceTextCon
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1808);
+        RoslynCallCounters.Record(1817);
         result = default;
 
         try

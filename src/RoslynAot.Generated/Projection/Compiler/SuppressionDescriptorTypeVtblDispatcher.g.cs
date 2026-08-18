@@ -29,7 +29,7 @@ internal sealed partial class SuppressionDescriptorTypeVtblDispatcher : ISuppres
         long justification,
         out long result)
     {
-        RoslynCallCounters.Record(1460);
+        RoslynCallCounters.Record(1468);
         result = default;
 
         try
@@ -49,7 +49,7 @@ internal sealed partial class SuppressionDescriptorTypeVtblDispatcher : ISuppres
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string justification,
         out long result)
     {
-        RoslynCallCounters.Record(1461);
+        RoslynCallCounters.Record(1469);
         result = default;
 
         try

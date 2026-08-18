@@ -28,7 +28,7 @@ internal sealed partial class RuleSetVtblDispatcher : IRuleSetVtbl
         int action,
         out long result)
     {
-        RoslynCallCounters.Record(1407);
+        RoslynCallCounters.Record(1415);
         result = default;
 
         try
@@ -48,7 +48,7 @@ internal sealed partial class RuleSetVtblDispatcher : IRuleSetVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1408);
+        RoslynCallCounters.Record(1416);
         requiredLength = default;
 
         try
@@ -72,7 +72,7 @@ internal sealed partial class RuleSetVtblDispatcher : IRuleSetVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1409);
+        RoslynCallCounters.Record(1417);
         result = default;
 
         try
@@ -90,7 +90,7 @@ internal sealed partial class RuleSetVtblDispatcher : IRuleSetVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1410);
+        RoslynCallCounters.Record(1418);
         result = default;
 
         try

@@ -27,7 +27,7 @@ internal sealed partial class IAnonymousFunctionOperationVtblDispatcher : IIAnon
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(970);
+        RoslynCallCounters.Record(978);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IAnonymousFunctionOperationVtblDispatcher : IIAnon
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(971);
+        RoslynCallCounters.Record(979);
         result = default;
 
         try

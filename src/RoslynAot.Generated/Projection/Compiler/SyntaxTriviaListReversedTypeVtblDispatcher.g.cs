@@ -27,7 +27,7 @@ internal sealed partial class SyntaxTriviaListReversedTypeVtblDispatcher : ISynt
         long list,
         out long result)
     {
-        RoslynCallCounters.Record(1753);
+        RoslynCallCounters.Record(1762);
         result = default;
 
         try

@@ -28,7 +28,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1542);
+        RoslynCallCounters.Record(1550);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1543);
+        RoslynCallCounters.Record(1551);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1544);
+        RoslynCallCounters.Record(1552);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1545);
+        RoslynCallCounters.Record(1553);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1546);
+        RoslynCallCounters.Record(1554);
         result = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int rawKind,
         out int result)
     {
-        RoslynCallCounters.Record(1547);
+        RoslynCallCounters.Record(1555);
         result = default;
 
         try
@@ -140,7 +140,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long node,
         out int result)
     {
-        RoslynCallCounters.Record(1548);
+        RoslynCallCounters.Record(1556);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int getInnermostNodeForTie,
         out long result)
     {
-        RoslynCallCounters.Record(1549);
+        RoslynCallCounters.Record(1557);
         result = default;
 
         try
@@ -181,7 +181,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1550);
+        RoslynCallCounters.Record(1558);
         result = default;
 
         try
@@ -201,7 +201,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1551);
+        RoslynCallCounters.Record(1559);
         result = default;
 
         try
@@ -220,7 +220,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long syntaxAnnotation,
         out long result)
     {
-        RoslynCallCounters.Record(1552);
+        RoslynCallCounters.Record(1560);
         result = default;
 
         try
@@ -239,7 +239,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1553);
+        RoslynCallCounters.Record(1561);
         result = default;
 
         try
@@ -258,7 +258,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1554);
+        RoslynCallCounters.Record(1562);
         result = default;
 
         try
@@ -276,7 +276,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1555);
+        RoslynCallCounters.Record(1563);
         result = default;
 
         try
@@ -298,7 +298,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1556);
+        RoslynCallCounters.Record(1564);
         result = default;
 
         try
@@ -320,7 +320,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1557);
+        RoslynCallCounters.Record(1565);
         result = default;
 
         try
@@ -338,7 +338,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1558);
+        RoslynCallCounters.Record(1566);
         result = default;
 
         try
@@ -356,7 +356,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1559);
+        RoslynCallCounters.Record(1567);
         result = default;
 
         try
@@ -374,7 +374,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1560);
+        RoslynCallCounters.Record(1568);
         result = default;
 
         try
@@ -392,7 +392,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1561);
+        RoslynCallCounters.Record(1569);
         result = default;
 
         try
@@ -411,7 +411,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1562);
+        RoslynCallCounters.Record(1570);
         result = default;
 
         try
@@ -430,7 +430,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1563);
+        RoslynCallCounters.Record(1571);
         result = default;
 
         try
@@ -449,7 +449,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1564);
+        RoslynCallCounters.Record(1572);
         result = default;
 
         try
@@ -469,7 +469,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(1565);
+        RoslynCallCounters.Record(1573);
         result = default;
 
         try
@@ -488,7 +488,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1566);
+        RoslynCallCounters.Record(1574);
         result = default;
 
         try
@@ -506,7 +506,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1567);
+        RoslynCallCounters.Record(1575);
         result = default;
 
         try
@@ -526,7 +526,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1568);
+        RoslynCallCounters.Record(1576);
         requiredLength = default;
 
         try
@@ -552,7 +552,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1569);
+        RoslynCallCounters.Record(1577);
         requiredLength = default;
 
         try
@@ -576,7 +576,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1570);
+        RoslynCallCounters.Record(1578);
         result = default;
 
         try
@@ -594,7 +594,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1571);
+        RoslynCallCounters.Record(1579);
         result = default;
 
         try
@@ -612,7 +612,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1572);
+        RoslynCallCounters.Record(1580);
         result = default;
 
         try
@@ -630,7 +630,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1573);
+        RoslynCallCounters.Record(1581);
         result = default;
 
         try
@@ -648,7 +648,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1574);
+        RoslynCallCounters.Record(1582);
         result = default;
 
         try
@@ -666,7 +666,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1575);
+        RoslynCallCounters.Record(1583);
         result = default;
 
         try
@@ -684,7 +684,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1576);
+        RoslynCallCounters.Record(1584);
         result = default;
 
         try
@@ -702,7 +702,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1577);
+        RoslynCallCounters.Record(1585);
         result = default;
 
         try
@@ -720,7 +720,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1578);
+        RoslynCallCounters.Record(1586);
         result = default;
 
         try
@@ -738,7 +738,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1579);
+        RoslynCallCounters.Record(1587);
         result = default;
 
         try
@@ -758,7 +758,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1580);
+        RoslynCallCounters.Record(1588);
         requiredLength = default;
 
         try
@@ -782,7 +782,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1581);
+        RoslynCallCounters.Record(1589);
         result = default;
 
         try
@@ -800,7 +800,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1582);
+        RoslynCallCounters.Record(1590);
         result = default;
 
         try
@@ -818,7 +818,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1583);
+        RoslynCallCounters.Record(1591);
         result = default;
 
         try
@@ -836,7 +836,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1584);
+        RoslynCallCounters.Record(1592);
         result = default;
 
         try
@@ -854,7 +854,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1585);
+        RoslynCallCounters.Record(1593);
         result = default;
 
         try
@@ -872,7 +872,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1586);
+        RoslynCallCounters.Record(1594);
         result = default;
 
         try
@@ -890,7 +890,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(2003);
+        RoslynCallCounters.Record(2013);
 
         try
         {
@@ -909,7 +909,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(2004);
+        RoslynCallCounters.Record(2014);
         result = default;
 
         try
@@ -929,7 +929,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(2005);
+        RoslynCallCounters.Record(2015);
         result = default;
 
         try
@@ -947,7 +947,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2006);
+        RoslynCallCounters.Record(2016);
         result = default;
 
         try
@@ -969,7 +969,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(2007);
+        RoslynCallCounters.Record(2017);
         result = default;
 
         try
@@ -991,7 +991,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(2008);
+        RoslynCallCounters.Record(2018);
         result = default;
 
         try
@@ -1009,7 +1009,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2009);
+        RoslynCallCounters.Record(2019);
         result = default;
 
         try
@@ -1027,7 +1027,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2010);
+        RoslynCallCounters.Record(2020);
         result = default;
 
         try
@@ -1045,7 +1045,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2011);
+        RoslynCallCounters.Record(2021);
         result = default;
 
         try
@@ -1063,7 +1063,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out ushort result)
     {
-        RoslynCallCounters.Record(2012);
+        RoslynCallCounters.Record(2022);
         result = default;
 
         try
@@ -1083,7 +1083,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2013);
+        RoslynCallCounters.Record(2023);
         requiredLength = default;
 
         try
@@ -1108,7 +1108,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(4115);
+        RoslynCallCounters.Record(4125);
         result = default;
 
         try
@@ -1127,7 +1127,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(4116);
+        RoslynCallCounters.Record(4126);
         result = default;
 
         try
@@ -1145,7 +1145,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4117);
+        RoslynCallCounters.Record(4127);
         result = default;
 
         try
@@ -1164,7 +1164,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(2850);
+        RoslynCallCounters.Record(2860);
         result = default;
 
         try
@@ -1183,7 +1183,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(2851);
+        RoslynCallCounters.Record(2861);
         result = default;
 
         try
@@ -1202,7 +1202,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long baseList,
         out long result)
     {
-        RoslynCallCounters.Record(2852);
+        RoslynCallCounters.Record(2862);
         result = default;
 
         try
@@ -1221,7 +1221,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long closeBraceToken,
         out long result)
     {
-        RoslynCallCounters.Record(2853);
+        RoslynCallCounters.Record(2863);
         result = default;
 
         try
@@ -1240,7 +1240,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(2854);
+        RoslynCallCounters.Record(2864);
         result = default;
 
         try
@@ -1259,7 +1259,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(2855);
+        RoslynCallCounters.Record(2865);
         result = default;
 
         try
@@ -1278,7 +1278,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long openBraceToken,
         out long result)
     {
-        RoslynCallCounters.Record(2856);
+        RoslynCallCounters.Record(2866);
         result = default;
 
         try
@@ -1297,7 +1297,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(2857);
+        RoslynCallCounters.Record(2867);
         result = default;
 
         try
@@ -1315,7 +1315,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2858);
+        RoslynCallCounters.Record(2868);
         result = default;
 
         try
@@ -1333,7 +1333,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2859);
+        RoslynCallCounters.Record(2869);
         result = default;
 
         try
@@ -1351,7 +1351,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2860);
+        RoslynCallCounters.Record(2870);
         result = default;
 
         try
@@ -1369,7 +1369,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2861);
+        RoslynCallCounters.Record(2871);
         result = default;
 
         try
@@ -1387,7 +1387,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2862);
+        RoslynCallCounters.Record(2872);
         result = default;
 
         try
@@ -1406,7 +1406,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(4818);
+        RoslynCallCounters.Record(4828);
         result = default;
 
         try
@@ -1425,7 +1425,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(4819);
+        RoslynCallCounters.Record(4829);
         result = default;
 
         try
@@ -1444,7 +1444,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(4820);
+        RoslynCallCounters.Record(4830);
         result = default;
 
         try
@@ -1463,7 +1463,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(4821);
+        RoslynCallCounters.Record(4831);
         result = default;
 
         try
@@ -1482,7 +1482,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(4822);
+        RoslynCallCounters.Record(4832);
         result = default;
 
         try
@@ -1501,7 +1501,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(4823);
+        RoslynCallCounters.Record(4833);
         result = default;
 
         try
@@ -1520,7 +1520,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long baseList,
         out long result)
     {
-        RoslynCallCounters.Record(4824);
+        RoslynCallCounters.Record(4834);
         result = default;
 
         try
@@ -1539,7 +1539,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long closeBraceToken,
         out long result)
     {
-        RoslynCallCounters.Record(4825);
+        RoslynCallCounters.Record(4835);
         result = default;
 
         try
@@ -1558,7 +1558,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(4826);
+        RoslynCallCounters.Record(4836);
         result = default;
 
         try
@@ -1577,7 +1577,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long keyword,
         out long result)
     {
-        RoslynCallCounters.Record(4827);
+        RoslynCallCounters.Record(4837);
         result = default;
 
         try
@@ -1596,7 +1596,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(4828);
+        RoslynCallCounters.Record(4838);
         result = default;
 
         try
@@ -1615,7 +1615,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long openBraceToken,
         out long result)
     {
-        RoslynCallCounters.Record(4829);
+        RoslynCallCounters.Record(4839);
         result = default;
 
         try
@@ -1634,7 +1634,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long parameterList,
         out long result)
     {
-        RoslynCallCounters.Record(4830);
+        RoslynCallCounters.Record(4840);
         result = default;
 
         try
@@ -1653,7 +1653,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(4831);
+        RoslynCallCounters.Record(4841);
         result = default;
 
         try
@@ -1672,7 +1672,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long typeParameterList,
         out long result)
     {
-        RoslynCallCounters.Record(4832);
+        RoslynCallCounters.Record(4842);
         result = default;
 
         try
@@ -1690,7 +1690,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(4833);
+        RoslynCallCounters.Record(4843);
         result = default;
 
         try
@@ -1708,7 +1708,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4834);
+        RoslynCallCounters.Record(4844);
         result = default;
 
         try
@@ -1726,7 +1726,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4835);
+        RoslynCallCounters.Record(4845);
         result = default;
 
         try
@@ -1744,7 +1744,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4836);
+        RoslynCallCounters.Record(4846);
         result = default;
 
         try
@@ -1762,7 +1762,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(3464);
+        RoslynCallCounters.Record(3474);
 
         try
         {
@@ -1780,7 +1780,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3465);
+        RoslynCallCounters.Record(3475);
         result = default;
 
         try
@@ -1799,7 +1799,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3466);
+        RoslynCallCounters.Record(3476);
         result = default;
 
         try
@@ -1818,7 +1818,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3467);
+        RoslynCallCounters.Record(3477);
         result = default;
 
         try
@@ -1837,7 +1837,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3468);
+        RoslynCallCounters.Record(3478);
         result = default;
 
         try
@@ -1856,7 +1856,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3469);
+        RoslynCallCounters.Record(3479);
         result = default;
 
         try
@@ -1875,7 +1875,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long closeBraceToken,
         out long result)
     {
-        RoslynCallCounters.Record(3470);
+        RoslynCallCounters.Record(3480);
         result = default;
 
         try
@@ -1894,7 +1894,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long keyword,
         out long result)
     {
-        RoslynCallCounters.Record(3471);
+        RoslynCallCounters.Record(3481);
         result = default;
 
         try
@@ -1913,7 +1913,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(3472);
+        RoslynCallCounters.Record(3482);
         result = default;
 
         try
@@ -1932,7 +1932,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long openBraceToken,
         out long result)
     {
-        RoslynCallCounters.Record(3473);
+        RoslynCallCounters.Record(3483);
         result = default;
 
         try
@@ -1951,7 +1951,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long parameterList,
         out long result)
     {
-        RoslynCallCounters.Record(3474);
+        RoslynCallCounters.Record(3484);
         result = default;
 
         try
@@ -1970,7 +1970,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(3475);
+        RoslynCallCounters.Record(3485);
         result = default;
 
         try
@@ -1989,7 +1989,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long typeParameterList,
         out long result)
     {
-        RoslynCallCounters.Record(3476);
+        RoslynCallCounters.Record(3486);
         result = default;
 
         try
@@ -2007,7 +2007,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3477);
+        RoslynCallCounters.Record(3487);
         result = default;
 
         try
@@ -2025,7 +2025,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3478);
+        RoslynCallCounters.Record(3488);
         result = default;
 
         try
@@ -2043,7 +2043,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3479);
+        RoslynCallCounters.Record(3489);
         result = default;
 
         try
@@ -2061,7 +2061,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3480);
+        RoslynCallCounters.Record(3490);
         result = default;
 
         try
@@ -2079,7 +2079,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3481);
+        RoslynCallCounters.Record(3491);
         result = default;
 
         try
@@ -2097,7 +2097,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3482);
+        RoslynCallCounters.Record(3492);
         result = default;
 
         try
@@ -2115,7 +2115,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3483);
+        RoslynCallCounters.Record(3493);
         result = default;
 
         try
@@ -2133,7 +2133,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3484);
+        RoslynCallCounters.Record(3494);
         result = default;
 
         try
@@ -2151,7 +2151,7 @@ internal sealed partial class ExtensionBlockDeclarationSyntaxVtblDispatcher : IE
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3485);
+        RoslynCallCounters.Record(3495);
         result = default;
 
         try

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3c7ea755-e6f8-55d4-bea9-f665aed27a77")]
+[Guid("c1ac6cfe-c2b7-5745-a7aa-c42dd28d05f0")]
 public partial interface ISyntaxTokenVtbl
 {
 
@@ -279,5 +279,13 @@ public partial interface ISyntaxTokenVtbl
         nint buffer,
         int bufferLength,
         out int requiredLength
+    );
+
+    [PreserveSig]
+    int SyntaxToken_get_Value(
+        long receiver,
+        out RoslynConstantKind constantKind,
+        out long constantLow,
+        out long constantHigh
     );
 }

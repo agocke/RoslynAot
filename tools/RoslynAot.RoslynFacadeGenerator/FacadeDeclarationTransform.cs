@@ -1133,6 +1133,41 @@ internal static class FacadeBodyEmitter
             yield break;
         }
 
+        if (ProjectionOutputEmitter.IsConstant(operation.ReturnValue.Kind))
+        {
+            arguments.Add(
+                "out global::RoslynAot.Abi.RoslynConstantKind constantKind");
+            arguments.Add("out long constantLow");
+            arguments.Add("out long constantHigh");
+            yield return
+                $"int status = {invocationPrefix}{string.Join(", ", arguments)});";
+            yield return
+                "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime." +
+                "ThrowIfFailed(controlVtbl, status);";
+            if (operation.ReturnValue.Kind == AbiTypeKind.OptionalConstant)
+            {
+                // The no-value state is the default Optional, not an Optional
+                // holding null. Analyzers ask HasValue to mean "is this a
+                // constant expression at all", so collapsing the two would
+                // answer that question wrongly for `const object x = null`.
+                yield return
+                    "return constantKind == " +
+                    "global::RoslynAot.Abi.RoslynConstantKind.NoValue " +
+                    "? default " +
+                    ": new global::Microsoft.CodeAnalysis.Optional<object?>(" +
+                    "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime." +
+                    "ReadConstant(controlVtbl, constantKind, constantLow, " +
+                    "constantHigh));";
+                yield break;
+            }
+
+            yield return
+                "return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime." +
+                "ReadConstant(controlVtbl, constantKind, constantLow, " +
+                "constantHigh);";
+            yield break;
+        }
+
         string resultType = operation.ReturnValue.AbiType;
         arguments.Add($"out {resultType} result");
         yield return

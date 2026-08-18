@@ -30,7 +30,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2595);
+        RoslynCallCounters.Record(2605);
         requiredLength = default;
 
         try
@@ -57,7 +57,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2596);
+        RoslynCallCounters.Record(2606);
         requiredLength = default;
 
         try
@@ -84,7 +84,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2597);
+        RoslynCallCounters.Record(2607);
         requiredLength = default;
 
         try
@@ -112,7 +112,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2598);
+        RoslynCallCounters.Record(2608);
         requiredLength = default;
 
         try
@@ -140,7 +140,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2599);
+        RoslynCallCounters.Record(2609);
         requiredLength = default;
 
         try
@@ -169,7 +169,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2600);
+        RoslynCallCounters.Record(2610);
         requiredLength = default;
 
         try
@@ -199,7 +199,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2601);
+        RoslynCallCounters.Record(2611);
         requiredLength = default;
 
         try
@@ -229,7 +229,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2602);
+        RoslynCallCounters.Record(2612);
         requiredLength = default;
 
         try

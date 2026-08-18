@@ -27,7 +27,7 @@ internal sealed partial class IPropertySubpatternOperationVtblDispatcher : IIPro
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1157);
+        RoslynCallCounters.Record(1165);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IPropertySubpatternOperationVtblDispatcher : IIPro
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1158);
+        RoslynCallCounters.Record(1166);
         result = default;
 
         try

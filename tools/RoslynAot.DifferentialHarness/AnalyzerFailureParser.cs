@@ -94,6 +94,20 @@ internal static partial class AnalyzerFailureParser
     [GeneratedRegex(@"action:\r?\n(?<type>[\w.+`]+): (?<message>.*)")]
     private static partial Regex ExceptionPattern();
 
-    [GeneratedRegex(@"\n\s+at (?<member>[\w.<>`]+\.[\w_<>]+)\(")]
+    /// <summary>
+    /// A stack frame's member name, including the type-argument list on a
+    /// generic method.
+    /// </summary>
+    /// <remarks>
+    /// That list is not decoration. Without it the pattern cannot match
+    /// <c>SyntaxNode.FirstAncestorOrSelf[TNode](...)</c> at all, so the search
+    /// for the failing member skips the frame and attributes the failure to
+    /// the next one down — the analyzer's own method. The burn-down then names
+    /// analyzer code where it should name the Roslyn member, and it does so
+    /// silently, which is the one outcome this parser's contract says it will
+    /// not produce. Generic methods are not a rare shape here: the roadmap puts
+    /// roughly half the remaining failures at generics.
+    /// </remarks>
+    [GeneratedRegex(@"\n\s+at (?<member>[\w.<>`]+\.[\w_<>]+(?:\[[\w,]+\])?)\(")]
     private static partial Regex FramePattern();
 }

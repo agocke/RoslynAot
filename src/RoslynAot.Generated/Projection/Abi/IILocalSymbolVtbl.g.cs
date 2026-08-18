@@ -12,9 +12,17 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7050493a-4226-501f-98f7-4019bcd32170")]
+[Guid("b76c5946-7150-5380-aec6-85191de6fb2a")]
 public partial interface IILocalSymbolVtbl
 {
+
+    [PreserveSig]
+    int ILocalSymbol_get_ConstantValue(
+        long receiver,
+        out RoslynConstantKind constantKind,
+        out long constantLow,
+        out long constantHigh
+    );
 
     [PreserveSig]
     int ILocalSymbol_get_HasConstantValue(

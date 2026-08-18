@@ -28,7 +28,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1866);
+        RoslynCallCounters.Record(1875);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1867);
+        RoslynCallCounters.Record(1876);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1868);
+        RoslynCallCounters.Record(1877);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1869);
+        RoslynCallCounters.Record(1878);
         result = default;
 
         try
@@ -100,12 +100,34 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1870);
+        RoslynCallCounters.Record(1879);
         result = default;
 
         try
         {
             result = _owner.Objects.AddNullableObject(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.TypedConstant>(receiver).Type);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int TypedConstant_get_Value(
+        long receiver,
+        out RoslynConstantKind constantKind,
+        out long constantLow,
+        out long constantHigh)
+    {
+        RoslynCallCounters.Record(1880);
+        constantKind = default;
+        constantLow = default;
+        constantHigh = default;
+
+        try
+        {
+            _owner.WriteConstant(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.TypedConstant>(receiver).Value, out constantKind, out constantLow, out constantHigh);
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

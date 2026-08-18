@@ -519,6 +519,62 @@ public static unsafe class RoslynFacadeRuntime
         return result;
     }
 
+    /// <summary>
+    /// Rebuilds a boxed C# constant in the analyzer's heap from its
+    /// tag and payload.
+    /// </summary>
+    /// <remarks>
+    /// The result has to be a genuine boxed primitive, not a proxy:
+    /// analyzers write <c>(int)operation.ConstantValue.Value</c>,
+    /// <c>value is string text</c>, and
+    /// <c>value.Equals(0)</c> against it. Both modules share the
+    /// framework's definition of these types, so the clone is exact
+    /// and identity is not observable on a box.
+    /// </remarks>
+    public static object? ReadConstant(
+        IRoslynControlVtbl controlVtbl,
+        RoslynConstantKind kind,
+        long low,
+        long high) =>
+        kind switch
+        {
+            RoslynConstantKind.Null => null,
+            RoslynConstantKind.Boolean => low != 0,
+            RoslynConstantKind.SByte => (sbyte)low,
+            RoslynConstantKind.Byte => (byte)low,
+            RoslynConstantKind.Int16 => (short)low,
+            RoslynConstantKind.UInt16 => (ushort)low,
+            RoslynConstantKind.Int32 => (int)low,
+            RoslynConstantKind.UInt32 => (uint)low,
+            RoslynConstantKind.Int64 => low,
+            RoslynConstantKind.UInt64 => (ulong)low,
+            RoslynConstantKind.Char => (char)low,
+            RoslynConstantKind.Single =>
+                BitConverter.Int32BitsToSingle((int)low),
+            RoslynConstantKind.Double =>
+                BitConverter.Int64BitsToDouble(low),
+            RoslynConstantKind.Decimal => new decimal(
+            [
+                (int)low,
+                (int)(low >> 32),
+                (int)high,
+                (int)(high >> 32),
+            ]),
+            RoslynConstantKind.DateTime =>
+                DateTime.FromBinary(low),
+            RoslynConstantKind.String => ReadUtf16String(
+                controlVtbl,
+                (nint buffer, int bufferLength, out int requiredLength) =>
+                    controlVtbl.CopyConstantStringUtf16(
+                        low,
+                        buffer,
+                        bufferLength,
+                        out requiredLength)),
+            _ => throw new InvalidOperationException(
+                $"The remote constant kind '{kind}' is not known to " +
+                "this module."),
+        };
+
     public static string[] ReadStringCollection(
         IRoslynControlVtbl controlVtbl,
         long handle)

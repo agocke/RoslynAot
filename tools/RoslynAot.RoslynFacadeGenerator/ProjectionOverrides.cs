@@ -193,6 +193,57 @@ internal static class ProjectionOverrides
             ],
             RemoteFallback: true),
 
+        // Optional<T> holds no compiler state: it is a value the analyzer
+        // constructs, reads, and discards. Remoting it would put a round trip
+        // behind HasValue. GenAPI's stand-in fields are the storage — _value
+        // for the value and _dummyPrimitive, emitted to keep the struct
+        // non-empty, for the has-value flag Roslyn spells _hasValue.
+        ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Optional`1.#ctor(`0)"] = new(
+            "Optional<T> is an analyzer-local value. Both fields are assigned " +
+            "here rather than through 'this = default' so definite " +
+            "assignment holds without a second write.",
+            LocalStatements:
+            [
+                "_value = value;",
+                "_dummyPrimitive = 1;",
+            ]),
+
+        ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Optional`1.get_HasValue~System.Boolean"] = new(
+            "Optional<T> is an analyzer-local value; the flag is the " +
+            "instance's own field.",
+            LocalStatements:
+            [
+                "return _dummyPrimitive != 0;",
+            ]),
+
+        ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Optional`1.get_Value~`0"] = new(
+            "Optional<T> is an analyzer-local value. Roslyn returns default " +
+            "rather than throwing when there is no value, and callers rely on " +
+            "it: reading Value after a false HasValue is how several analyzers " +
+            "spell 'null or absent'.",
+            LocalStatements:
+            [
+                "return _value;",
+            ]),
+
+        ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Optional`1.op_Implicit(`0)~Microsoft.CodeAnalysis.Optional{`0}"] = new(
+            "Optional<T> is an analyzer-local value.",
+            LocalStatements:
+            [
+                "return new global::Microsoft.CodeAnalysis.Optional<T>(value);",
+            ]),
+
+        ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Optional`1.ToString~System.String"] = new(
+            "Optional<T> is an analyzer-local value. Matches Roslyn's own " +
+            "rendering, including 'unspecified' for the no-value state, " +
+            "because diagnostics quoting it would otherwise differ.",
+            LocalStatements:
+            [
+                "return _dummyPrimitive != 0 " +
+                "? _value?.ToString() ?? \"null\" " +
+                ": \"unspecified\";",
+            ]),
+
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.AnalysisContext.RegisterOperationAction(System.Action{Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext},Microsoft.CodeAnalysis.OperationKind[])"] = new(
             "The params-array overload forwards to the ImmutableArray " +
             "overload analyzer-side. Marshalling the array would cost a " +

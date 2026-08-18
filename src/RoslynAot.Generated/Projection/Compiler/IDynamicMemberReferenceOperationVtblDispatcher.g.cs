@@ -27,7 +27,7 @@ internal sealed partial class IDynamicMemberReferenceOperationVtblDispatcher : I
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1046);
+        RoslynCallCounters.Record(1054);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IDynamicMemberReferenceOperationVtblDispatcher : I
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1047);
+        RoslynCallCounters.Record(1055);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class IDynamicMemberReferenceOperationVtblDispatcher : I
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1048);
+        RoslynCallCounters.Record(1056);
         requiredLength = default;
 
         try
@@ -89,7 +89,7 @@ internal sealed partial class IDynamicMemberReferenceOperationVtblDispatcher : I
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1049);
+        RoslynCallCounters.Record(1057);
         result = default;
 
         try

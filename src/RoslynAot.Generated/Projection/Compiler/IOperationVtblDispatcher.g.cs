@@ -27,7 +27,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(769);
+        RoslynCallCounters.Record(775);
 
         try
         {
@@ -44,7 +44,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(770);
+        RoslynCallCounters.Record(776);
         result = default;
 
         try
@@ -58,11 +58,34 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         }
     }
 
+    public int IOperation_get_ConstantValue(
+        long receiver,
+        out RoslynConstantKind constantKind,
+        out long constantLow,
+        out long constantHigh)
+    {
+        RoslynCallCounters.Record(777);
+        constantKind = default;
+        constantLow = default;
+        constantHigh = default;
+
+        try
+        {
+            var __roslynAotOptional = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IOperation>(receiver).ConstantValue;
+            if (__roslynAotOptional.HasValue) _owner.WriteConstant(__roslynAotOptional.Value, out constantKind, out constantLow, out constantHigh); else constantKind = RoslynConstantKind.NoValue;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int IOperation_get_IsImplicit(
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(771);
+        RoslynCallCounters.Record(778);
         result = default;
 
         try
@@ -80,7 +103,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(772);
+        RoslynCallCounters.Record(779);
         result = default;
 
         try
@@ -100,7 +123,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(773);
+        RoslynCallCounters.Record(780);
         requiredLength = default;
 
         try
@@ -124,7 +147,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(774);
+        RoslynCallCounters.Record(781);
         result = default;
 
         try
@@ -142,7 +165,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(775);
+        RoslynCallCounters.Record(782);
         result = default;
 
         try
@@ -160,7 +183,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(776);
+        RoslynCallCounters.Record(783);
         result = default;
 
         try
@@ -178,7 +201,7 @@ internal sealed partial class IOperationVtblDispatcher : IIOperationVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(777);
+        RoslynCallCounters.Record(784);
         result = default;
 
         try

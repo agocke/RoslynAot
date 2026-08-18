@@ -27,7 +27,7 @@ internal sealed partial class IIsNullOperationVtblDispatcher : IIIsNullOperation
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(562);
+        RoslynCallCounters.Record(566);
         result = default;
 
         try

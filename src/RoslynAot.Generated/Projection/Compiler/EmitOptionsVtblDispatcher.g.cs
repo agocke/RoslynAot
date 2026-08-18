@@ -28,7 +28,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(475);
+        RoslynCallCounters.Record(479);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(476);
+        RoslynCallCounters.Record(480);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         ulong value,
         out long result)
     {
-        RoslynCallCounters.Record(477);
+        RoslynCallCounters.Record(481);
         result = default;
 
         try
@@ -84,7 +84,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         int format,
         out long result)
     {
-        RoslynCallCounters.Record(478);
+        RoslynCallCounters.Record(482);
         result = default;
 
         try
@@ -103,7 +103,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(479);
+        RoslynCallCounters.Record(483);
         result = default;
 
         try
@@ -122,7 +122,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(480);
+        RoslynCallCounters.Record(484);
         result = default;
 
         try
@@ -141,7 +141,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(481);
+        RoslynCallCounters.Record(485);
         result = default;
 
         try
@@ -160,7 +160,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(482);
+        RoslynCallCounters.Record(486);
         result = default;
 
         try
@@ -179,7 +179,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string outputName,
         out long result)
     {
-        RoslynCallCounters.Record(483);
+        RoslynCallCounters.Record(487);
         result = default;
 
         try
@@ -198,7 +198,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         out long result)
     {
-        RoslynCallCounters.Record(484);
+        RoslynCallCounters.Record(488);
         result = default;
 
         try
@@ -217,7 +217,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string version,
         out long result)
     {
-        RoslynCallCounters.Record(485);
+        RoslynCallCounters.Record(489);
         result = default;
 
         try
@@ -236,7 +236,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         long subsystemVersion,
         out long result)
     {
-        RoslynCallCounters.Record(486);
+        RoslynCallCounters.Record(490);
         result = default;
 
         try
@@ -255,7 +255,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(487);
+        RoslynCallCounters.Record(491);
         result = default;
 
         try
@@ -273,7 +273,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         long receiver,
         out ulong result)
     {
-        RoslynCallCounters.Record(488);
+        RoslynCallCounters.Record(492);
         result = default;
 
         try
@@ -291,7 +291,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(489);
+        RoslynCallCounters.Record(493);
         result = default;
 
         try
@@ -309,7 +309,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(490);
+        RoslynCallCounters.Record(494);
         result = default;
 
         try
@@ -327,7 +327,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(491);
+        RoslynCallCounters.Record(495);
         result = default;
 
         try
@@ -345,7 +345,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(492);
+        RoslynCallCounters.Record(496);
         result = default;
 
         try
@@ -363,7 +363,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(493);
+        RoslynCallCounters.Record(497);
         result = default;
 
         try
@@ -383,7 +383,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(494);
+        RoslynCallCounters.Record(498);
         requiredLength = default;
 
         try
@@ -409,7 +409,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(495);
+        RoslynCallCounters.Record(499);
         requiredLength = default;
 
         try
@@ -435,7 +435,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(496);
+        RoslynCallCounters.Record(500);
         requiredLength = default;
 
         try
@@ -459,7 +459,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(497);
+        RoslynCallCounters.Record(501);
         result = default;
 
         try
@@ -477,7 +477,7 @@ internal sealed partial class EmitOptionsVtblDispatcher : IEmitOptionsVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(498);
+        RoslynCallCounters.Record(502);
         result = default;
 
         try

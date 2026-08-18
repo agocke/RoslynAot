@@ -27,7 +27,7 @@ internal sealed partial class NullableContextExtensionsVtblDispatcher : INullabl
         int context,
         out int result)
     {
-        RoslynCallCounters.Record(954);
+        RoslynCallCounters.Record(962);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class NullableContextExtensionsVtblDispatcher : INullabl
         int context,
         out int result)
     {
-        RoslynCallCounters.Record(955);
+        RoslynCallCounters.Record(963);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class NullableContextExtensionsVtblDispatcher : INullabl
         int context,
         out int result)
     {
-        RoslynCallCounters.Record(956);
+        RoslynCallCounters.Record(964);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class NullableContextExtensionsVtblDispatcher : INullabl
         int context,
         out int result)
     {
-        RoslynCallCounters.Record(957);
+        RoslynCallCounters.Record(965);
         result = default;
 
         try

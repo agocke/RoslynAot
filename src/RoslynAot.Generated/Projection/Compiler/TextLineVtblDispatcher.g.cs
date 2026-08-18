@@ -28,7 +28,7 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1823);
+        RoslynCallCounters.Record(1832);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1825);
+        RoslynCallCounters.Record(1834);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1826);
+        RoslynCallCounters.Record(1835);
         requiredLength = default;
 
         try
@@ -90,7 +90,7 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1827);
+        RoslynCallCounters.Record(1836);
         result = default;
 
         try
@@ -108,7 +108,7 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1828);
+        RoslynCallCounters.Record(1837);
         result = default;
 
         try
@@ -126,7 +126,7 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1829);
+        RoslynCallCounters.Record(1838);
         result = default;
 
         try
@@ -144,7 +144,7 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1830);
+        RoslynCallCounters.Record(1839);
         result = default;
 
         try
@@ -162,7 +162,7 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1831);
+        RoslynCallCounters.Record(1840);
         result = default;
 
         try
@@ -180,7 +180,7 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1832);
+        RoslynCallCounters.Record(1841);
         result = default;
 
         try
@@ -198,7 +198,7 @@ internal sealed partial class TextLineVtblDispatcher : ITextLineVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1833);
+        RoslynCallCounters.Record(1842);
         result = default;
 
         try

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("6e7cbcd1-30a9-5b83-9ddb-07c0135eaa29")]
+[Guid("ed8bb721-8852-5d01-8b8a-b5b214b8a687")]
 public partial interface IIOperationVtbl
 {
 
@@ -26,6 +26,14 @@ public partial interface IIOperationVtbl
     int IOperation_get_ChildOperations(
         long receiver,
         out long result
+    );
+
+    [PreserveSig]
+    int IOperation_get_ConstantValue(
+        long receiver,
+        out RoslynConstantKind constantKind,
+        out long constantLow,
+        out long constantHigh
     );
 
     [PreserveSig]

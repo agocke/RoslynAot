@@ -27,7 +27,7 @@ internal sealed partial class EmitResultVtblDispatcher : IEmitResultVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(499);
+        RoslynCallCounters.Record(503);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class EmitResultVtblDispatcher : IEmitResultVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(500);
+        RoslynCallCounters.Record(504);
         result = default;
 
         try

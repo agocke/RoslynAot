@@ -943,7 +943,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1918);
+        RoslynCallCounters.Record(1928);
         result = default;
 
         try
@@ -962,7 +962,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int enabled,
         out long result)
     {
-        RoslynCallCounters.Record(1919);
+        RoslynCallCounters.Record(1929);
         result = default;
 
         try
@@ -981,7 +981,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         long comparer,
         out long result)
     {
-        RoslynCallCounters.Record(1920);
+        RoslynCallCounters.Record(1930);
         result = default;
 
         try
@@ -1000,7 +1000,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int concurrentBuild,
         out long result)
     {
-        RoslynCallCounters.Record(1921);
+        RoslynCallCounters.Record(1931);
         result = default;
 
         try
@@ -1019,7 +1019,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(1922);
+        RoslynCallCounters.Record(1932);
         result = default;
 
         try
@@ -1038,7 +1038,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         out long result)
     {
-        RoslynCallCounters.Record(1923);
+        RoslynCallCounters.Record(1933);
         result = default;
 
         try
@@ -1057,7 +1057,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int deterministic,
         out long result)
     {
-        RoslynCallCounters.Record(1924);
+        RoslynCallCounters.Record(1934);
         result = default;
 
         try
@@ -1076,7 +1076,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(1925);
+        RoslynCallCounters.Record(1935);
         result = default;
 
         try
@@ -1095,7 +1095,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(1926);
+        RoslynCallCounters.Record(1936);
         result = default;
 
         try
@@ -1114,7 +1114,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         byte value,
         out long result)
     {
-        RoslynCallCounters.Record(1927);
+        RoslynCallCounters.Record(1937);
         result = default;
 
         try
@@ -1133,7 +1133,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         long resolver,
         out long result)
     {
-        RoslynCallCounters.Record(1928);
+        RoslynCallCounters.Record(1938);
         result = default;
 
         try
@@ -1152,7 +1152,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string moduleName,
         out long result)
     {
-        RoslynCallCounters.Record(1929);
+        RoslynCallCounters.Record(1939);
         result = default;
 
         try
@@ -1171,7 +1171,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int options,
         out long result)
     {
-        RoslynCallCounters.Record(1930);
+        RoslynCallCounters.Record(1940);
         result = default;
 
         try
@@ -1190,7 +1190,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(1931);
+        RoslynCallCounters.Record(1941);
         result = default;
 
         try
@@ -1209,7 +1209,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int kind,
         out long result)
     {
-        RoslynCallCounters.Record(1932);
+        RoslynCallCounters.Record(1942);
         result = default;
 
         try
@@ -1228,7 +1228,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int enabled,
         out long result)
     {
-        RoslynCallCounters.Record(1933);
+        RoslynCallCounters.Record(1943);
         result = default;
 
         try
@@ -1247,7 +1247,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int platform,
         out long result)
     {
-        RoslynCallCounters.Record(1934);
+        RoslynCallCounters.Record(1944);
         result = default;
 
         try
@@ -1266,7 +1266,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int publicSign,
         out long result)
     {
-        RoslynCallCounters.Record(1935);
+        RoslynCallCounters.Record(1945);
         result = default;
 
         try
@@ -1285,7 +1285,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int reportSuppressedDiagnostics,
         out long result)
     {
-        RoslynCallCounters.Record(1936);
+        RoslynCallCounters.Record(1946);
         result = default;
 
         try
@@ -1304,7 +1304,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(1937);
+        RoslynCallCounters.Record(1947);
         result = default;
 
         try
@@ -1323,7 +1323,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         long resolver,
         out long result)
     {
-        RoslynCallCounters.Record(1938);
+        RoslynCallCounters.Record(1948);
         result = default;
 
         try
@@ -1342,7 +1342,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         long provider,
         out long result)
     {
-        RoslynCallCounters.Record(1939);
+        RoslynCallCounters.Record(1949);
         result = default;
 
         try
@@ -1361,7 +1361,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         long provider,
         out long result)
     {
-        RoslynCallCounters.Record(1940);
+        RoslynCallCounters.Record(1950);
         result = default;
 
         try
@@ -1380,7 +1380,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int warningLevel,
         out long result)
     {
-        RoslynCallCounters.Record(1941);
+        RoslynCallCounters.Record(1951);
         result = default;
 
         try
@@ -1399,7 +1399,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         long resolver,
         out long result)
     {
-        RoslynCallCounters.Record(1942);
+        RoslynCallCounters.Record(1952);
         result = default;
 
         try
@@ -1417,7 +1417,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1943);
+        RoslynCallCounters.Record(1953);
         result = default;
 
         try
@@ -1437,7 +1437,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1944);
+        RoslynCallCounters.Record(1954);
         requiredLength = default;
 
         try
@@ -1461,7 +1461,7 @@ internal sealed partial class CSharpCompilationOptionsVtblDispatcher : ICSharpCo
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1945);
+        RoslynCallCounters.Record(1955);
         result = default;
 
         try

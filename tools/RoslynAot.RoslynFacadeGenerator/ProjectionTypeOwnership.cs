@@ -71,6 +71,12 @@ internal static class ProjectionTypeOwnership
             "Its ResourceManager and resource source type live in the analyzer " +
             "module and cannot be reached from the compiler."),
 
+        ["[Microsoft.CodeAnalysis]T:Microsoft.CodeAnalysis.Optional`1"] = new(
+            TypeOwnership.Local,
+            "A two-field value holding no compiler state. It arrives as a tag " +
+            "and a payload that the analyzer side reassembles, so there is " +
+            "never a compiler-side instance to take a handle to."),
+
         ["[Microsoft.CodeAnalysis]T:Microsoft.CodeAnalysis.SymbolEqualityComparer"] = new(
             TypeOwnership.Local,
             "The comparer holds no compiler state; only its kind crosses, and " +

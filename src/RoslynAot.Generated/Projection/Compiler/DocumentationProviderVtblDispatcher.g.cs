@@ -27,7 +27,7 @@ internal sealed partial class DocumentationProviderVtblDispatcher : IDocumentati
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(464);
+        RoslynCallCounters.Record(468);
         result = default;
 
         try

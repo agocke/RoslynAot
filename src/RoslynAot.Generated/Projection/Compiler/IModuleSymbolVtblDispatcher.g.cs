@@ -27,7 +27,7 @@ internal sealed partial class IModuleSymbolVtblDispatcher : IIModuleSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(713);
+        RoslynCallCounters.Record(719);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class IModuleSymbolVtblDispatcher : IIModuleSymbolVtbl
         long namespaceSymbol,
         out long result)
     {
-        RoslynCallCounters.Record(714);
+        RoslynCallCounters.Record(720);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class IModuleSymbolVtblDispatcher : IIModuleSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(715);
+        RoslynCallCounters.Record(721);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class IModuleSymbolVtblDispatcher : IIModuleSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(716);
+        RoslynCallCounters.Record(722);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class IModuleSymbolVtblDispatcher : IIModuleSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(717);
+        RoslynCallCounters.Record(723);
         result = default;
 
         try

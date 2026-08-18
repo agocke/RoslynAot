@@ -27,7 +27,7 @@ internal sealed partial class GeneratorDriverRunResultVtblDispatcher : IGenerato
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(578);
+        RoslynCallCounters.Record(582);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class GeneratorDriverRunResultVtblDispatcher : IGenerato
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(579);
+        RoslynCallCounters.Record(583);
         result = default;
 
         try

@@ -28,7 +28,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1542);
+        RoslynCallCounters.Record(1550);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1543);
+        RoslynCallCounters.Record(1551);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1544);
+        RoslynCallCounters.Record(1552);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1545);
+        RoslynCallCounters.Record(1553);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1546);
+        RoslynCallCounters.Record(1554);
         result = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int rawKind,
         out int result)
     {
-        RoslynCallCounters.Record(1547);
+        RoslynCallCounters.Record(1555);
         result = default;
 
         try
@@ -140,7 +140,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long node,
         out int result)
     {
-        RoslynCallCounters.Record(1548);
+        RoslynCallCounters.Record(1556);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int getInnermostNodeForTie,
         out long result)
     {
-        RoslynCallCounters.Record(1549);
+        RoslynCallCounters.Record(1557);
         result = default;
 
         try
@@ -181,7 +181,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1550);
+        RoslynCallCounters.Record(1558);
         result = default;
 
         try
@@ -201,7 +201,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1551);
+        RoslynCallCounters.Record(1559);
         result = default;
 
         try
@@ -220,7 +220,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long syntaxAnnotation,
         out long result)
     {
-        RoslynCallCounters.Record(1552);
+        RoslynCallCounters.Record(1560);
         result = default;
 
         try
@@ -239,7 +239,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1553);
+        RoslynCallCounters.Record(1561);
         result = default;
 
         try
@@ -258,7 +258,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1554);
+        RoslynCallCounters.Record(1562);
         result = default;
 
         try
@@ -276,7 +276,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1555);
+        RoslynCallCounters.Record(1563);
         result = default;
 
         try
@@ -298,7 +298,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1556);
+        RoslynCallCounters.Record(1564);
         result = default;
 
         try
@@ -320,7 +320,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1557);
+        RoslynCallCounters.Record(1565);
         result = default;
 
         try
@@ -338,7 +338,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1558);
+        RoslynCallCounters.Record(1566);
         result = default;
 
         try
@@ -356,7 +356,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1559);
+        RoslynCallCounters.Record(1567);
         result = default;
 
         try
@@ -374,7 +374,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1560);
+        RoslynCallCounters.Record(1568);
         result = default;
 
         try
@@ -392,7 +392,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1561);
+        RoslynCallCounters.Record(1569);
         result = default;
 
         try
@@ -411,7 +411,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1562);
+        RoslynCallCounters.Record(1570);
         result = default;
 
         try
@@ -430,7 +430,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1563);
+        RoslynCallCounters.Record(1571);
         result = default;
 
         try
@@ -449,7 +449,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1564);
+        RoslynCallCounters.Record(1572);
         result = default;
 
         try
@@ -469,7 +469,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(1565);
+        RoslynCallCounters.Record(1573);
         result = default;
 
         try
@@ -488,7 +488,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1566);
+        RoslynCallCounters.Record(1574);
         result = default;
 
         try
@@ -506,7 +506,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1567);
+        RoslynCallCounters.Record(1575);
         result = default;
 
         try
@@ -526,7 +526,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1568);
+        RoslynCallCounters.Record(1576);
         requiredLength = default;
 
         try
@@ -552,7 +552,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1569);
+        RoslynCallCounters.Record(1577);
         requiredLength = default;
 
         try
@@ -576,7 +576,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1570);
+        RoslynCallCounters.Record(1578);
         result = default;
 
         try
@@ -594,7 +594,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1571);
+        RoslynCallCounters.Record(1579);
         result = default;
 
         try
@@ -612,7 +612,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1572);
+        RoslynCallCounters.Record(1580);
         result = default;
 
         try
@@ -630,7 +630,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1573);
+        RoslynCallCounters.Record(1581);
         result = default;
 
         try
@@ -648,7 +648,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1574);
+        RoslynCallCounters.Record(1582);
         result = default;
 
         try
@@ -666,7 +666,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1575);
+        RoslynCallCounters.Record(1583);
         result = default;
 
         try
@@ -684,7 +684,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1576);
+        RoslynCallCounters.Record(1584);
         result = default;
 
         try
@@ -702,7 +702,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1577);
+        RoslynCallCounters.Record(1585);
         result = default;
 
         try
@@ -720,7 +720,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1578);
+        RoslynCallCounters.Record(1586);
         result = default;
 
         try
@@ -738,7 +738,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1579);
+        RoslynCallCounters.Record(1587);
         result = default;
 
         try
@@ -758,7 +758,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1580);
+        RoslynCallCounters.Record(1588);
         requiredLength = default;
 
         try
@@ -782,7 +782,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1581);
+        RoslynCallCounters.Record(1589);
         result = default;
 
         try
@@ -800,7 +800,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1582);
+        RoslynCallCounters.Record(1590);
         result = default;
 
         try
@@ -818,7 +818,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1583);
+        RoslynCallCounters.Record(1591);
         result = default;
 
         try
@@ -836,7 +836,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1584);
+        RoslynCallCounters.Record(1592);
         result = default;
 
         try
@@ -854,7 +854,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1585);
+        RoslynCallCounters.Record(1593);
         result = default;
 
         try
@@ -872,7 +872,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1586);
+        RoslynCallCounters.Record(1594);
         result = default;
 
         try
@@ -890,7 +890,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(2003);
+        RoslynCallCounters.Record(2013);
 
         try
         {
@@ -909,7 +909,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(2004);
+        RoslynCallCounters.Record(2014);
         result = default;
 
         try
@@ -929,7 +929,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(2005);
+        RoslynCallCounters.Record(2015);
         result = default;
 
         try
@@ -947,7 +947,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2006);
+        RoslynCallCounters.Record(2016);
         result = default;
 
         try
@@ -969,7 +969,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(2007);
+        RoslynCallCounters.Record(2017);
         result = default;
 
         try
@@ -991,7 +991,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(2008);
+        RoslynCallCounters.Record(2018);
         result = default;
 
         try
@@ -1009,7 +1009,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2009);
+        RoslynCallCounters.Record(2019);
         result = default;
 
         try
@@ -1027,7 +1027,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2010);
+        RoslynCallCounters.Record(2020);
         result = default;
 
         try
@@ -1045,7 +1045,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2011);
+        RoslynCallCounters.Record(2021);
         result = default;
 
         try
@@ -1063,7 +1063,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out ushort result)
     {
-        RoslynCallCounters.Record(2012);
+        RoslynCallCounters.Record(2022);
         result = default;
 
         try
@@ -1083,7 +1083,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2013);
+        RoslynCallCounters.Record(2023);
         requiredLength = default;
 
         try
@@ -1108,7 +1108,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(2635);
+        RoslynCallCounters.Record(2645);
         result = default;
 
         try
@@ -1127,7 +1127,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(2636);
+        RoslynCallCounters.Record(2646);
         result = default;
 
         try
@@ -1146,7 +1146,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long asyncKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(2637);
+        RoslynCallCounters.Record(2647);
         result = default;
 
         try
@@ -1165,7 +1165,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(2638);
+        RoslynCallCounters.Record(2648);
         result = default;
 
         try
@@ -1184,7 +1184,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(2639);
+        RoslynCallCounters.Record(2649);
         result = default;
 
         try
@@ -1203,7 +1203,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(2640);
+        RoslynCallCounters.Record(2650);
         result = default;
 
         try
@@ -1222,7 +1222,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(2641);
+        RoslynCallCounters.Record(2651);
         result = default;
 
         try
@@ -1240,7 +1240,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2642);
+        RoslynCallCounters.Record(2652);
         result = default;
 
         try
@@ -1258,7 +1258,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2643);
+        RoslynCallCounters.Record(2653);
         result = default;
 
         try
@@ -1276,7 +1276,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2644);
+        RoslynCallCounters.Record(2654);
         result = default;
 
         try
@@ -1294,7 +1294,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2645);
+        RoslynCallCounters.Record(2655);
         result = default;
 
         try
@@ -1312,7 +1312,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2646);
+        RoslynCallCounters.Record(2656);
         result = default;
 
         try
@@ -1330,7 +1330,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(2647);
+        RoslynCallCounters.Record(2657);
 
         try
         {
@@ -1348,7 +1348,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(2648);
+        RoslynCallCounters.Record(2658);
         result = default;
 
         try
@@ -1367,7 +1367,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(2649);
+        RoslynCallCounters.Record(2659);
         result = default;
 
         try
@@ -1386,7 +1386,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(2650);
+        RoslynCallCounters.Record(2660);
         result = default;
 
         try
@@ -1408,7 +1408,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(2651);
+        RoslynCallCounters.Record(2661);
         result = default;
 
         try
@@ -1431,7 +1431,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(2652);
+        RoslynCallCounters.Record(2662);
         result = default;
 
         try
@@ -1454,7 +1454,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(2653);
+        RoslynCallCounters.Record(2663);
         result = default;
 
         try
@@ -1473,7 +1473,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long asyncKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(2654);
+        RoslynCallCounters.Record(2664);
         result = default;
 
         try
@@ -1492,7 +1492,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(2655);
+        RoslynCallCounters.Record(2665);
         result = default;
 
         try
@@ -1511,7 +1511,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(2656);
+        RoslynCallCounters.Record(2666);
         result = default;
 
         try
@@ -1530,7 +1530,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long delegateKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(2657);
+        RoslynCallCounters.Record(2667);
         result = default;
 
         try
@@ -1549,7 +1549,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(2658);
+        RoslynCallCounters.Record(2668);
         result = default;
 
         try
@@ -1568,7 +1568,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(2659);
+        RoslynCallCounters.Record(2669);
         result = default;
 
         try
@@ -1587,7 +1587,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long parameterList,
         out long result)
     {
-        RoslynCallCounters.Record(2660);
+        RoslynCallCounters.Record(2670);
         result = default;
 
         try
@@ -1605,7 +1605,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2661);
+        RoslynCallCounters.Record(2671);
         result = default;
 
         try
@@ -1623,7 +1623,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2662);
+        RoslynCallCounters.Record(2672);
         result = default;
 
         try
@@ -1641,7 +1641,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2663);
+        RoslynCallCounters.Record(2673);
         result = default;
 
         try
@@ -1659,7 +1659,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2664);
+        RoslynCallCounters.Record(2674);
         result = default;
 
         try
@@ -1677,7 +1677,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2665);
+        RoslynCallCounters.Record(2675);
         result = default;
 
         try
@@ -1695,7 +1695,7 @@ internal sealed partial class AnonymousMethodExpressionSyntaxVtblDispatcher : IA
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2666);
+        RoslynCallCounters.Record(2676);
         result = default;
 
         try

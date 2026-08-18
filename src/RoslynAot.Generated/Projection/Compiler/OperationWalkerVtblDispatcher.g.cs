@@ -27,7 +27,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1256);
+        RoslynCallCounters.Record(1264);
 
         try
         {
@@ -44,7 +44,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1257);
+        RoslynCallCounters.Record(1265);
 
         try
         {
@@ -61,7 +61,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1258);
+        RoslynCallCounters.Record(1266);
 
         try
         {
@@ -78,7 +78,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1259);
+        RoslynCallCounters.Record(1267);
 
         try
         {
@@ -95,7 +95,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1260);
+        RoslynCallCounters.Record(1268);
 
         try
         {
@@ -112,7 +112,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1261);
+        RoslynCallCounters.Record(1269);
 
         try
         {
@@ -129,7 +129,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1262);
+        RoslynCallCounters.Record(1270);
 
         try
         {
@@ -146,7 +146,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1263);
+        RoslynCallCounters.Record(1271);
 
         try
         {
@@ -163,7 +163,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1264);
+        RoslynCallCounters.Record(1272);
 
         try
         {
@@ -180,7 +180,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1265);
+        RoslynCallCounters.Record(1273);
 
         try
         {
@@ -197,7 +197,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1266);
+        RoslynCallCounters.Record(1274);
 
         try
         {
@@ -214,7 +214,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1267);
+        RoslynCallCounters.Record(1275);
 
         try
         {
@@ -231,7 +231,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1268);
+        RoslynCallCounters.Record(1276);
 
         try
         {
@@ -248,7 +248,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1269);
+        RoslynCallCounters.Record(1277);
 
         try
         {
@@ -265,7 +265,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1270);
+        RoslynCallCounters.Record(1278);
 
         try
         {
@@ -282,7 +282,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1271);
+        RoslynCallCounters.Record(1279);
 
         try
         {
@@ -299,7 +299,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1272);
+        RoslynCallCounters.Record(1280);
 
         try
         {
@@ -316,7 +316,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1273);
+        RoslynCallCounters.Record(1281);
 
         try
         {
@@ -333,7 +333,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1274);
+        RoslynCallCounters.Record(1282);
 
         try
         {
@@ -350,7 +350,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1275);
+        RoslynCallCounters.Record(1283);
 
         try
         {
@@ -367,7 +367,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1276);
+        RoslynCallCounters.Record(1284);
 
         try
         {
@@ -384,7 +384,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1277);
+        RoslynCallCounters.Record(1285);
 
         try
         {
@@ -401,7 +401,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1278);
+        RoslynCallCounters.Record(1286);
 
         try
         {
@@ -418,7 +418,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1279);
+        RoslynCallCounters.Record(1287);
 
         try
         {
@@ -435,7 +435,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1280);
+        RoslynCallCounters.Record(1288);
 
         try
         {
@@ -452,7 +452,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1281);
+        RoslynCallCounters.Record(1289);
 
         try
         {
@@ -469,7 +469,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1282);
+        RoslynCallCounters.Record(1290);
 
         try
         {
@@ -486,7 +486,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1283);
+        RoslynCallCounters.Record(1291);
 
         try
         {
@@ -503,7 +503,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1284);
+        RoslynCallCounters.Record(1292);
 
         try
         {
@@ -520,7 +520,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1285);
+        RoslynCallCounters.Record(1293);
 
         try
         {
@@ -537,7 +537,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1286);
+        RoslynCallCounters.Record(1294);
 
         try
         {
@@ -554,7 +554,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1287);
+        RoslynCallCounters.Record(1295);
 
         try
         {
@@ -571,7 +571,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1288);
+        RoslynCallCounters.Record(1296);
 
         try
         {
@@ -588,7 +588,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1289);
+        RoslynCallCounters.Record(1297);
 
         try
         {
@@ -605,7 +605,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1290);
+        RoslynCallCounters.Record(1298);
 
         try
         {
@@ -622,7 +622,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1291);
+        RoslynCallCounters.Record(1299);
 
         try
         {
@@ -639,7 +639,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1292);
+        RoslynCallCounters.Record(1300);
 
         try
         {
@@ -656,7 +656,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1293);
+        RoslynCallCounters.Record(1301);
 
         try
         {
@@ -673,7 +673,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1294);
+        RoslynCallCounters.Record(1302);
 
         try
         {
@@ -690,7 +690,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1295);
+        RoslynCallCounters.Record(1303);
 
         try
         {
@@ -707,7 +707,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1296);
+        RoslynCallCounters.Record(1304);
 
         try
         {
@@ -724,7 +724,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1297);
+        RoslynCallCounters.Record(1305);
 
         try
         {
@@ -741,7 +741,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1298);
+        RoslynCallCounters.Record(1306);
 
         try
         {
@@ -758,7 +758,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1299);
+        RoslynCallCounters.Record(1307);
 
         try
         {
@@ -775,7 +775,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1300);
+        RoslynCallCounters.Record(1308);
 
         try
         {
@@ -792,7 +792,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1301);
+        RoslynCallCounters.Record(1309);
 
         try
         {
@@ -809,7 +809,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1302);
+        RoslynCallCounters.Record(1310);
 
         try
         {
@@ -826,7 +826,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1303);
+        RoslynCallCounters.Record(1311);
 
         try
         {
@@ -843,7 +843,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1304);
+        RoslynCallCounters.Record(1312);
 
         try
         {
@@ -860,7 +860,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1305);
+        RoslynCallCounters.Record(1313);
 
         try
         {
@@ -877,7 +877,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1306);
+        RoslynCallCounters.Record(1314);
 
         try
         {
@@ -894,7 +894,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1307);
+        RoslynCallCounters.Record(1315);
 
         try
         {
@@ -911,7 +911,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1308);
+        RoslynCallCounters.Record(1316);
 
         try
         {
@@ -928,7 +928,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1309);
+        RoslynCallCounters.Record(1317);
 
         try
         {
@@ -945,7 +945,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1310);
+        RoslynCallCounters.Record(1318);
 
         try
         {
@@ -962,7 +962,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1311);
+        RoslynCallCounters.Record(1319);
 
         try
         {
@@ -979,7 +979,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1312);
+        RoslynCallCounters.Record(1320);
 
         try
         {
@@ -996,7 +996,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1313);
+        RoslynCallCounters.Record(1321);
 
         try
         {
@@ -1013,7 +1013,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1314);
+        RoslynCallCounters.Record(1322);
 
         try
         {
@@ -1030,7 +1030,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1315);
+        RoslynCallCounters.Record(1323);
 
         try
         {
@@ -1047,7 +1047,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1316);
+        RoslynCallCounters.Record(1324);
 
         try
         {
@@ -1064,7 +1064,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1317);
+        RoslynCallCounters.Record(1325);
 
         try
         {
@@ -1081,7 +1081,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1318);
+        RoslynCallCounters.Record(1326);
 
         try
         {
@@ -1098,7 +1098,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1319);
+        RoslynCallCounters.Record(1327);
 
         try
         {
@@ -1115,7 +1115,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1320);
+        RoslynCallCounters.Record(1328);
 
         try
         {
@@ -1132,7 +1132,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1321);
+        RoslynCallCounters.Record(1329);
 
         try
         {
@@ -1149,7 +1149,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1322);
+        RoslynCallCounters.Record(1330);
 
         try
         {
@@ -1166,7 +1166,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1323);
+        RoslynCallCounters.Record(1331);
 
         try
         {
@@ -1183,7 +1183,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1324);
+        RoslynCallCounters.Record(1332);
 
         try
         {
@@ -1200,7 +1200,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1325);
+        RoslynCallCounters.Record(1333);
 
         try
         {
@@ -1217,7 +1217,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1326);
+        RoslynCallCounters.Record(1334);
 
         try
         {
@@ -1234,7 +1234,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1327);
+        RoslynCallCounters.Record(1335);
 
         try
         {
@@ -1251,7 +1251,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1328);
+        RoslynCallCounters.Record(1336);
 
         try
         {
@@ -1268,7 +1268,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1329);
+        RoslynCallCounters.Record(1337);
 
         try
         {
@@ -1285,7 +1285,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1330);
+        RoslynCallCounters.Record(1338);
 
         try
         {
@@ -1302,7 +1302,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1331);
+        RoslynCallCounters.Record(1339);
 
         try
         {
@@ -1319,7 +1319,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1332);
+        RoslynCallCounters.Record(1340);
 
         try
         {
@@ -1336,7 +1336,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1333);
+        RoslynCallCounters.Record(1341);
 
         try
         {
@@ -1353,7 +1353,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1334);
+        RoslynCallCounters.Record(1342);
 
         try
         {
@@ -1370,7 +1370,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1335);
+        RoslynCallCounters.Record(1343);
 
         try
         {
@@ -1387,7 +1387,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1336);
+        RoslynCallCounters.Record(1344);
 
         try
         {
@@ -1404,7 +1404,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1337);
+        RoslynCallCounters.Record(1345);
 
         try
         {
@@ -1421,7 +1421,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1338);
+        RoslynCallCounters.Record(1346);
 
         try
         {
@@ -1438,7 +1438,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1339);
+        RoslynCallCounters.Record(1347);
 
         try
         {
@@ -1455,7 +1455,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1340);
+        RoslynCallCounters.Record(1348);
 
         try
         {
@@ -1472,7 +1472,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1341);
+        RoslynCallCounters.Record(1349);
 
         try
         {
@@ -1489,7 +1489,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1342);
+        RoslynCallCounters.Record(1350);
 
         try
         {
@@ -1506,7 +1506,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1343);
+        RoslynCallCounters.Record(1351);
 
         try
         {
@@ -1523,7 +1523,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1344);
+        RoslynCallCounters.Record(1352);
 
         try
         {
@@ -1540,7 +1540,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1345);
+        RoslynCallCounters.Record(1353);
 
         try
         {
@@ -1557,7 +1557,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1346);
+        RoslynCallCounters.Record(1354);
 
         try
         {
@@ -1574,7 +1574,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1347);
+        RoslynCallCounters.Record(1355);
 
         try
         {
@@ -1591,7 +1591,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1348);
+        RoslynCallCounters.Record(1356);
 
         try
         {
@@ -1608,7 +1608,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1349);
+        RoslynCallCounters.Record(1357);
 
         try
         {
@@ -1625,7 +1625,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1350);
+        RoslynCallCounters.Record(1358);
 
         try
         {
@@ -1642,7 +1642,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1351);
+        RoslynCallCounters.Record(1359);
 
         try
         {
@@ -1659,7 +1659,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1352);
+        RoslynCallCounters.Record(1360);
 
         try
         {
@@ -1676,7 +1676,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1353);
+        RoslynCallCounters.Record(1361);
 
         try
         {
@@ -1693,7 +1693,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1354);
+        RoslynCallCounters.Record(1362);
 
         try
         {
@@ -1710,7 +1710,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1355);
+        RoslynCallCounters.Record(1363);
 
         try
         {
@@ -1727,7 +1727,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1356);
+        RoslynCallCounters.Record(1364);
 
         try
         {
@@ -1744,7 +1744,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1357);
+        RoslynCallCounters.Record(1365);
 
         try
         {
@@ -1761,7 +1761,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1358);
+        RoslynCallCounters.Record(1366);
 
         try
         {
@@ -1778,7 +1778,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1359);
+        RoslynCallCounters.Record(1367);
 
         try
         {
@@ -1795,7 +1795,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1360);
+        RoslynCallCounters.Record(1368);
 
         try
         {
@@ -1812,7 +1812,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1361);
+        RoslynCallCounters.Record(1369);
 
         try
         {
@@ -1829,7 +1829,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1362);
+        RoslynCallCounters.Record(1370);
 
         try
         {
@@ -1846,7 +1846,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1363);
+        RoslynCallCounters.Record(1371);
 
         try
         {
@@ -1863,7 +1863,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1364);
+        RoslynCallCounters.Record(1372);
 
         try
         {
@@ -1880,7 +1880,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1365);
+        RoslynCallCounters.Record(1373);
 
         try
         {
@@ -1897,7 +1897,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1366);
+        RoslynCallCounters.Record(1374);
 
         try
         {
@@ -1914,7 +1914,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1367);
+        RoslynCallCounters.Record(1375);
 
         try
         {
@@ -1931,7 +1931,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1368);
+        RoslynCallCounters.Record(1376);
 
         try
         {
@@ -1948,7 +1948,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1369);
+        RoslynCallCounters.Record(1377);
 
         try
         {
@@ -1965,7 +1965,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1370);
+        RoslynCallCounters.Record(1378);
 
         try
         {
@@ -1982,7 +1982,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1371);
+        RoslynCallCounters.Record(1379);
 
         try
         {
@@ -1999,7 +1999,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1372);
+        RoslynCallCounters.Record(1380);
 
         try
         {
@@ -2016,7 +2016,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1373);
+        RoslynCallCounters.Record(1381);
 
         try
         {
@@ -2033,7 +2033,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1374);
+        RoslynCallCounters.Record(1382);
 
         try
         {
@@ -2050,7 +2050,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1375);
+        RoslynCallCounters.Record(1383);
 
         try
         {
@@ -2067,7 +2067,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1376);
+        RoslynCallCounters.Record(1384);
 
         try
         {
@@ -2084,7 +2084,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1377);
+        RoslynCallCounters.Record(1385);
 
         try
         {
@@ -2101,7 +2101,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1378);
+        RoslynCallCounters.Record(1386);
 
         try
         {
@@ -2118,7 +2118,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1379);
+        RoslynCallCounters.Record(1387);
 
         try
         {
@@ -2135,7 +2135,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1380);
+        RoslynCallCounters.Record(1388);
 
         try
         {
@@ -2152,7 +2152,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1381);
+        RoslynCallCounters.Record(1389);
 
         try
         {
@@ -2169,7 +2169,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1382);
+        RoslynCallCounters.Record(1390);
 
         try
         {
@@ -2186,7 +2186,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1383);
+        RoslynCallCounters.Record(1391);
 
         try
         {
@@ -2203,7 +2203,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1384);
+        RoslynCallCounters.Record(1392);
 
         try
         {
@@ -2220,7 +2220,7 @@ internal sealed partial class OperationWalkerVtblDispatcher : IOperationWalkerVt
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1385);
+        RoslynCallCounters.Record(1393);
 
         try
         {

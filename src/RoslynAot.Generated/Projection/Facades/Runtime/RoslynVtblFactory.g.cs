@@ -3714,8 +3714,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IAnalyzerFileReferenceVtbl>(
             controlVtbl,
-            5975841593798461830L,
-            -2690045760276729424L);
+            6383246998347410759L,
+            -5132694442624866370L);
     }
 
     public static IAnalyzerFileReferenceTypeVtbl GetAnalyzerFileReferenceTypeVtbl(
@@ -3734,8 +3734,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IAnalyzerImageReferenceVtbl>(
             controlVtbl,
-            5911706720499739437L,
-            -5328030666149815628L);
+            5867053650678190168L,
+            -6396539037201873227L);
     }
 
     public static IAnalyzerLoadFailureEventArgsVtbl GetAnalyzerLoadFailureEventArgsVtbl(
@@ -3764,8 +3764,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IAnalyzerReferenceVtbl>(
             controlVtbl,
-            6082995159797217012L,
-            -7294346821962880836L);
+            6717427689147469734L,
+            -5572731814927566406L);
     }
 
     public static ICodeBlockAnalysisContextVtbl GetCodeBlockAnalysisContextVtbl(
@@ -3984,8 +3984,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IUnresolvedAnalyzerReferenceVtbl>(
             controlVtbl,
-            6675077169441431395L,
-            5230374706687131835L);
+            6404872672142685806L,
+            8186581770054330277L);
     }
 
     public static IUnresolvedAnalyzerReferenceTypeVtbl GetUnresolvedAnalyzerReferenceTypeVtbl(
@@ -4564,8 +4564,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IIFieldSymbolVtbl>(
             controlVtbl,
-            6323255748119460425L,
-            1521312918166619573L);
+            6669725327007781390L,
+            -8257387934513594751L);
     }
 
     public static IIFunctionPointerTypeSymbolVtbl GetIFunctionPointerTypeSymbolVtbl(
@@ -4614,8 +4614,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IILocalSymbolVtbl>(
             controlVtbl,
-            5773405980172765498L,
-            8079972011310380952L);
+            6016933693655636294L,
+            3097322181403985582L);
     }
 
     public static IIMethodSymbolVtbl GetIMethodSymbolVtbl(
@@ -4714,8 +4714,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IIOperationVtbl>(
             controlVtbl,
-            6594167783661812945L,
-            3002315540514986909L);
+            6701787610258061089L,
+            -8672041633418212725L);
     }
 
     public static IIParameterSymbolVtbl GetIParameterSymbolVtbl(
@@ -4724,8 +4724,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<IIParameterSymbolVtbl>(
             controlVtbl,
-            6907907713439961833L,
-            3457064160700957107L);
+            6603346922221177183L,
+            3209273076288997767L);
     }
 
     public static IIPointerTypeSymbolVtbl GetIPointerTypeSymbolVtbl(
@@ -6814,8 +6814,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ISyntaxTokenVtbl>(
             controlVtbl,
-            6184822142127744853L,
-            8609425284148931006L);
+            6288646549176872190L,
+            -1151358195872781657L);
     }
 
     public static ISyntaxTreeOptionsProviderVtbl GetSyntaxTreeOptionsProviderVtbl(
@@ -7114,8 +7114,8 @@ public static class RoslynVtblFactory
         ArgumentNullException.ThrowIfNull(controlVtbl);
         return GetVtbl<ITypedConstantVtbl>(
             controlVtbl,
-            6196997697743923367L,
-            -4401027320746397517L);
+            6253682216780309670L,
+            4580687173559476615L);
     }
 
     public static IUnresolvedMetadataReferenceVtbl GetUnresolvedMetadataReferenceVtbl(

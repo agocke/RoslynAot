@@ -27,7 +27,7 @@ internal sealed partial class INamespaceOrTypeSymbolVtblDispatcher : IINamespace
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(748);
+        RoslynCallCounters.Record(754);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class INamespaceOrTypeSymbolVtblDispatcher : IINamespace
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(749);
+        RoslynCallCounters.Record(755);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class INamespaceOrTypeSymbolVtblDispatcher : IINamespace
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(750);
+        RoslynCallCounters.Record(756);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class INamespaceOrTypeSymbolVtblDispatcher : IINamespace
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(751);
+        RoslynCallCounters.Record(757);
         result = default;
 
         try

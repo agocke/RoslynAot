@@ -716,6 +716,55 @@ to generics and known gaps.
 
 **Closes:** 5, 6, 7, 10.
 
+### Started (2026-08-17): `Opt` and `Union`, scoped to constants
+
+The first two constructors of the algebra are in, driven by the burn-down's
+largest single blocker rather than by working through the list in order.
+`IOperation.ConstantValue` blocked 7 rules; `Optional<object?>` is exactly
+`Opt(Union(prim))`.
+
+What landed, and why in this shape:
+
+- Two `AbiTypeKind`s, `ConstantUnion` and `OptionalConstant`, classified
+  **structurally** rather than by naming the five members that return a boxed
+  constant: `object` in return position is a constant union, and
+  `Optional<object>` in return position is that union wrapped. Roslyn uses
+  `object` in return position for nothing else.
+- The union is **total by degradation**, which is what makes the structural
+  rule safe. A runtime object outside the constant types is reported
+  compiler-side by name — the three members that reach it
+  (`AnalyzerReference.Id` and two `IEnumerator.Current` explicit
+  implementations) raise the same shape of `AD0001` they raised when the whole
+  member was unsupported. Answering `null` or a handle would be problem 22's
+  failure shape.
+- It crosses **by value, not by handle**. Analyzers write
+  `(int)operation.ConstantValue.Value` and `value is string`, so what arrives
+  has to be a real boxed `int` in the analyzer's heap. Problem 23 classifies
+  `System.Object` as a forced clone for this reason.
+- Payload is **two 64-bit words**, because `decimal` is sixteen bytes. One word
+  would truncate it silently.
+- Three states, not two. `default(Optional<object?>)` and an `Optional` holding
+  `null` are distinct, and `HasValue` is how an analyzer asks "is this a
+  constant expression at all" — so `const object x = null` depends on the
+  difference. Same argument as `Seq`'s three-state tag above.
+- Enum-typed constants need no member: Roslyn stores them as their underlying
+  primitive, so they arrive as `Int32` and the analyzer's own cast re-types
+  them. That is the managed behaviour.
+- `Optional<T>` itself became `Local`. It holds no compiler state, so remoting
+  it would have put a round trip behind `HasValue`.
+
+**Result:** 9 → 12 passing. CA1802, CA1805, and CA1855 pass; CA1825 moved to
+`CancellationToken` and CA1865/66/67 to `SyntaxNode.FirstAncestorOrSelf[TNode]`.
+Module cost: whole-assembly +29,504 bytes (+0.31%), floor +16 bytes, because
+the decoder is only rooted where a constant-returning member is reached.
+
+**Still to do for Step 5 proper:** `Ref`, `Struct`, `Nullable`, `Seq`, and
+`Local`; the three-state sequence tag; per-element runtime type ids; deleting
+the collection classification and the per-member marshalling it compensates
+for. The constant union is one `Union` instantiation, not the general one —
+`TypedConstant.Value` and `IFieldSymbol.ConstantValue` reuse it because they
+are the same shape, but a union over facade types is a different problem.
+
 ---
 
 ## Step 6 — Diagnostics

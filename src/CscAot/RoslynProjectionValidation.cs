@@ -112,6 +112,25 @@ internal static class RoslynProjectionValidation
                 "A string collection snapshot did not preserve its elements.");
         }
 
+        // A runtime type the constant union does not carry must announce
+        // itself rather than arrive as something plausible. The decode half of
+        // the union is exercised end to end in the facade client, which has
+        // the real analyzer-side reader; duplicating a decoder here would let
+        // both copies be wrong together.
+        try
+        {
+            interop.WriteConstant(
+                new object(),
+                out _,
+                out _,
+                out _);
+            throw new InvalidOperationException(
+                "A non-constant object crossed the constant union silently.");
+        }
+        catch (PlatformNotSupportedException)
+        {
+        }
+
         AssertSuccess(
             parseOptionsTypeVtbl.CSharpParseOptions_get_Default(
                 out long optionsHandle));

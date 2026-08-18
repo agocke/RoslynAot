@@ -185,6 +185,44 @@ internal static class ProjectionOutputEmitter
             SymbolEqualityComparerIncludeNullability,
         }
 
+        /// <summary>
+        /// Which member of the constant union is on the wire.
+        /// </summary>
+        /// <remarks>
+        /// <c>NoValue</c> and <c>Null</c> are separate members on purpose:
+        /// <c>default(Optional&lt;object&gt;)</c> and an
+        /// <c>Optional&lt;object&gt;</c> holding <c>null</c> are observably
+        /// different, and an analyzer asking whether an expression is a
+        /// constant is asking exactly that difference. <c>NoValue</c> is
+        /// unreachable for a bare <c>object</c> return, which has no third
+        /// state.
+        ///
+        /// Enum-typed constants do not appear here: Roslyn stores them as
+        /// their underlying primitive, so they arrive as <c>Int32</c> and the
+        /// analyzer's own cast re-types them. That is the managed behaviour,
+        /// not a simplification.
+        /// </remarks>
+        public enum RoslynConstantKind
+        {
+            NoValue,
+            Null,
+            Boolean,
+            SByte,
+            Byte,
+            Int16,
+            UInt16,
+            Int32,
+            UInt32,
+            Int64,
+            UInt64,
+            Char,
+            Single,
+            Double,
+            Decimal,
+            String,
+            DateTime,
+        }
+
         [GeneratedComInterface]
         [Guid("{{model.ControlVtblId:D}}")]
         public partial interface IRoslynControlVtbl
@@ -286,6 +324,19 @@ internal static class ProjectionOutputEmitter
 
             [PreserveSig]
             int CopyObjectToStringUtf16(
+                long handle,
+                nint buffer,
+                int bufferLength,
+                out int requiredLength);
+
+            // A string constant arrives as a handle to the boxed string
+            // alongside its tag, and is read back through this rather than
+            // through CopyObjectToStringUtf16. The two would behave
+            // identically today, because String.ToString is the identity, but
+            // relying on that would make the transport depend on a BCL detail
+            // instead of on GetObject<string>.
+            [PreserveSig]
+            int CopyConstantStringUtf16(
                 long handle,
                 nint buffer,
                 int bufferLength,
@@ -394,6 +445,7 @@ internal static class ProjectionOutputEmitter
         "SymbolEqualityComparerEquals",
         "SymbolEqualityComparerGetHashCode",
         "CopyObjectToStringUtf16",
+        "CopyConstantStringUtf16",
         "ObjectEquals",
         "ObjectGetHashCode",
     ];
@@ -720,6 +772,12 @@ internal static class ProjectionOutputEmitter
         {
             builder.AppendLine("        requiredLength = default;");
         }
+        else if (IsConstant(operation.ReturnValue.Kind))
+        {
+            builder.AppendLine("        constantKind = default;");
+            builder.AppendLine("        constantLow = default;");
+            builder.AppendLine("        constantHigh = default;");
+        }
         else if (operation.ReturnValue.Kind != AbiTypeKind.Void)
         {
             builder.AppendLine("        result = default;");
@@ -803,6 +861,20 @@ internal static class ProjectionOutputEmitter
             case AbiTypeKind.Void:
                 yield return $"{invocation};";
                 break;
+            case AbiTypeKind.ConstantUnion:
+                yield return
+                    $"_owner.WriteConstant({invocation}, " +
+                    "out constantKind, out constantLow, out constantHigh);";
+                break;
+            case AbiTypeKind.OptionalConstant:
+                yield return
+                    $"var __roslynAotOptional = {invocation};";
+                yield return
+                    "if (__roslynAotOptional.HasValue) " +
+                    "_owner.WriteConstant(__roslynAotOptional.Value, " +
+                    "out constantKind, out constantLow, out constantHigh); " +
+                    "else constantKind = RoslynConstantKind.NoValue;";
+                break;
             case AbiTypeKind.Boolean:
                 yield return $"result = {invocation} ? 1 : 0;";
                 break;
@@ -850,6 +922,9 @@ internal static class ProjectionOutputEmitter
                     $"'{operation.CanonicalSignature}'.");
         }
     }
+
+    internal static bool IsConstant(AbiTypeKind kind) =>
+        kind is AbiTypeKind.ConstantUnion or AbiTypeKind.OptionalConstant;
 
     private static string GetCompilerInvocation(
         ProjectedCall operation)
@@ -961,6 +1036,16 @@ internal static class ProjectionOutputEmitter
             parameters.Add("nint buffer");
             parameters.Add("int bufferLength");
             parameters.Add("out int requiredLength");
+        }
+        else if (IsConstant(operation.ReturnValue.Kind))
+        {
+            // Two words of payload rather than one, because decimal is
+            // sixteen bytes and truncating it would be a silent wrong answer
+            // in exactly the transport whose job is to carry constants
+            // exactly.
+            parameters.Add("out RoslynConstantKind constantKind");
+            parameters.Add("out long constantLow");
+            parameters.Add("out long constantHigh");
         }
         else if (operation.ReturnValue.Kind != AbiTypeKind.Void)
         {
@@ -1485,6 +1570,62 @@ internal static class ProjectionOutputEmitter
 
                 return result;
             }
+
+            /// <summary>
+            /// Rebuilds a boxed C# constant in the analyzer's heap from its
+            /// tag and payload.
+            /// </summary>
+            /// <remarks>
+            /// The result has to be a genuine boxed primitive, not a proxy:
+            /// analyzers write <c>(int)operation.ConstantValue.Value</c>,
+            /// <c>value is string text</c>, and
+            /// <c>value.Equals(0)</c> against it. Both modules share the
+            /// framework's definition of these types, so the clone is exact
+            /// and identity is not observable on a box.
+            /// </remarks>
+            public static object? ReadConstant(
+                IRoslynControlVtbl controlVtbl,
+                RoslynConstantKind kind,
+                long low,
+                long high) =>
+                kind switch
+                {
+                    RoslynConstantKind.Null => null,
+                    RoslynConstantKind.Boolean => low != 0,
+                    RoslynConstantKind.SByte => (sbyte)low,
+                    RoslynConstantKind.Byte => (byte)low,
+                    RoslynConstantKind.Int16 => (short)low,
+                    RoslynConstantKind.UInt16 => (ushort)low,
+                    RoslynConstantKind.Int32 => (int)low,
+                    RoslynConstantKind.UInt32 => (uint)low,
+                    RoslynConstantKind.Int64 => low,
+                    RoslynConstantKind.UInt64 => (ulong)low,
+                    RoslynConstantKind.Char => (char)low,
+                    RoslynConstantKind.Single =>
+                        BitConverter.Int32BitsToSingle((int)low),
+                    RoslynConstantKind.Double =>
+                        BitConverter.Int64BitsToDouble(low),
+                    RoslynConstantKind.Decimal => new decimal(
+                    [
+                        (int)low,
+                        (int)(low >> 32),
+                        (int)high,
+                        (int)(high >> 32),
+                    ]),
+                    RoslynConstantKind.DateTime =>
+                        DateTime.FromBinary(low),
+                    RoslynConstantKind.String => ReadUtf16String(
+                        controlVtbl,
+                        (nint buffer, int bufferLength, out int requiredLength) =>
+                            controlVtbl.CopyConstantStringUtf16(
+                                low,
+                                buffer,
+                                bufferLength,
+                                out requiredLength)),
+                    _ => throw new InvalidOperationException(
+                        $"The remote constant kind '{kind}' is not known to " +
+                        "this module."),
+                };
 
             public static string[] ReadStringCollection(
                 IRoslynControlVtbl controlVtbl,

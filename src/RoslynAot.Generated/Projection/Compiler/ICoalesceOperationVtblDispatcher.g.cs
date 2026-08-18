@@ -27,7 +27,7 @@ internal sealed partial class ICoalesceOperationVtblDispatcher : IICoalesceOpera
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1009);
+        RoslynCallCounters.Record(1017);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ICoalesceOperationVtblDispatcher : IICoalesceOpera
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1010);
+        RoslynCallCounters.Record(1018);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class ICoalesceOperationVtblDispatcher : IICoalesceOpera
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1011);
+        RoslynCallCounters.Record(1019);
         result = default;
 
         try

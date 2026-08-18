@@ -19,9 +19,9 @@ public static unsafe class RoslynAbi
     public const int Unsupported = unchecked((int)0x80131515);
     public const int Failure = unchecked((int)0x80004005);
 
-    public const string ManifestIdentity = "cf72b6a7fb9de91ebae18ae3ebf8ddfee70e36a37c399d44e29ab186e0843db1";
-    public const long ManifestIdentityLow = 2227485194887525071L;
-    public const long ManifestIdentityHigh = -81635526204268102L;
+    public const string ManifestIdentity = "589742b87b3464acc405f088c2ba68445c2fb3465be2b1426d20fbf44f8367df";
+    public const long ManifestIdentityLow = -6024632695537887400L;
+    public const long ManifestIdentityHigh = 4929395136840861124L;
 
     public static uint Release(nint instance)
     {
@@ -50,6 +50,44 @@ public enum RoslynWellKnownObject
 {
     SymbolEqualityComparerDefault,
     SymbolEqualityComparerIncludeNullability,
+}
+
+/// <summary>
+/// Which member of the constant union is on the wire.
+/// </summary>
+/// <remarks>
+/// <c>NoValue</c> and <c>Null</c> are separate members on purpose:
+/// <c>default(Optional&lt;object&gt;)</c> and an
+/// <c>Optional&lt;object&gt;</c> holding <c>null</c> are observably
+/// different, and an analyzer asking whether an expression is a
+/// constant is asking exactly that difference. <c>NoValue</c> is
+/// unreachable for a bare <c>object</c> return, which has no third
+/// state.
+///
+/// Enum-typed constants do not appear here: Roslyn stores them as
+/// their underlying primitive, so they arrive as <c>Int32</c> and the
+/// analyzer's own cast re-types them. That is the managed behaviour,
+/// not a simplification.
+/// </remarks>
+public enum RoslynConstantKind
+{
+    NoValue,
+    Null,
+    Boolean,
+    SByte,
+    Byte,
+    Int16,
+    UInt16,
+    Int32,
+    UInt32,
+    Int64,
+    UInt64,
+    Char,
+    Single,
+    Double,
+    Decimal,
+    String,
+    DateTime,
 }
 
 [GeneratedComInterface]
@@ -153,6 +191,19 @@ public partial interface IRoslynControlVtbl
 
     [PreserveSig]
     int CopyObjectToStringUtf16(
+        long handle,
+        nint buffer,
+        int bufferLength,
+        out int requiredLength);
+
+    // A string constant arrives as a handle to the boxed string
+    // alongside its tag, and is read back through this rather than
+    // through CopyObjectToStringUtf16. The two would behave
+    // identically today, because String.ToString is the identity, but
+    // relying on that would make the transport depend on a BCL detail
+    // instead of on GetObject<string>.
+    [PreserveSig]
+    int CopyConstantStringUtf16(
         long handle,
         nint buffer,
         int bufferLength,
