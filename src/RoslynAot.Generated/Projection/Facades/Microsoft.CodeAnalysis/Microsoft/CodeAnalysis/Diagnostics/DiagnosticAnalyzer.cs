@@ -79,6 +79,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             }
         }
 
-        internal static DiagnosticAnalyzer __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetDiagnosticAnalyzerVtbl(controlVtbl), handle);
+        internal static DiagnosticAnalyzer __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
+        {
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6820741406076592940L, -535778755247251559L)is DiagnosticAnalyzer __roslynAotDerived)
+                return __roslynAotDerived;
+            return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetDiagnosticAnalyzerVtbl(controlVtbl), handle);
+        }
     }
 }

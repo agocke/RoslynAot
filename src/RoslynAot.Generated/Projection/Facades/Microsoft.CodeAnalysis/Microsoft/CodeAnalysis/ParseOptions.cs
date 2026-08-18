@@ -216,6 +216,11 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        internal static ParseOptions __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetParseOptionsVtbl(controlVtbl), handle);
+        internal static ParseOptions __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
+        {
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6488166937858613601L, -7940948572626126699L)is ParseOptions __roslynAotDerived)
+                return __roslynAotDerived;
+            return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetParseOptionsVtbl(controlVtbl), handle);
+        }
     }
 }

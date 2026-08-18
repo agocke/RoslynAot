@@ -107,6 +107,52 @@ Examples encountered:
 The bridge needs runtime type identification and most-derived proxy
 construction, including complete interface maps.
 
+**Status (2026-08-17): closed for the class family; the interface family was
+already correct.** The two need opposite strategies, and conflating them was
+the mistake.
+
+An *interface* cast is interceptable, so `IDynamicInterfaceCastable` plus the
+type map resolves it lazily at the cast, and only the casts an analyzer
+actually writes retain entries. That is the design in §3.3 and it stays: there
+are 498 projected interfaces, and a factory reaching all of them would root the
+projection.
+
+A *class* cast is a plain runtime type check with nothing to intercept, so the
+proxy has to be most-derived when it is constructed or the cast simply throws.
+That was `ParseOptions` → `CSharpParseOptions`, the CA1507 failure, and it had
+no mechanism at all — the roadmap's claim that this case "already worked" was
+wrong.
+
+What makes it affordable is that the class family is nothing like the interface
+family: **13 base classes have projected derived types, none has more than
+three, and 18 derived types exist in total**. Each derived type registers
+itself against its base's vtbl id in a registry in the runtime assembly; the
+base's proxy factory consults it and falls back to its own proxy. Registration
+is emitted per assembly by whichever one owns the derived type, because that is
+the only direction the facades reference each other — `Microsoft.CodeAnalysis`
+cannot name `CSharpParseOptions`, while `Microsoft.CodeAnalysis.CSharp` reaches
+`ParseOptions` through the friend declaration Roslyn already ships. Four of the
+thirteen hierarchies cross assemblies that way and they are exactly the
+language-specific ones.
+
+Two things this cost, both worth stating:
+
+- **The registry cannot live on the facade type.** Registering onto
+  `SyntaxTree` runs its class constructor during module initialization, and
+  `SyntaxTree.EmptyDiagnosticOptions` is a static field projected as throwing,
+  so the process died before `Main`. Keying the registry on the base's vtbl id
+  instead touches nothing but the registry.
+- **Module-initializer registration is invisible to trimming**, so every
+  registered derived proxy and its vtbl is rooted in every module whether or
+  not that module casts. Registering all 18 cost **+9.1% on the floor module**
+  — `CSharpSyntaxWalker` and `CSharpSyntaxRewriter` carry a vtbl member per
+  syntax kind. Restricting registration to base types some supported member
+  actually returns, which is the only situation where a proxy is built at the
+  base, drops that to **+5.0%** (+130,288 bytes floor, +160,272 whole-assembly)
+  and excludes the visitor hierarchy entirely. That is still a real bill paid
+  by modules that never cast, and the follow-up is to make registration
+  demand-driven rather than eager so trimming can see through it.
+
 ### 4. Ownership must be explicit
 
 Not every Roslyn-shaped object has the same owner:

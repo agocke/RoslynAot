@@ -440,6 +440,98 @@ internal sealed class ProjectionModel
     /// this is reported, not enforced: withdrawing the unreachable set is a
     /// behavior change the differential corpus has to clear first.
     /// </summary>
+    /// <summary>
+    /// Projected classes that derive from <paramref name="type"/> and carry a
+    /// generated proxy subclass, most-derived first.
+    /// </summary>
+    /// <remarks>
+    /// This is the class family only. Interfaces resolve derived types at the
+    /// cast through <c>IDynamicInterfaceCastable</c> and the type map, which is
+    /// the trimming-correct design and must stay: there are 498 projected
+    /// interfaces, and a factory reaching all of them would root the
+    /// projection.
+    ///
+    /// A class cast is not interceptable, so that mechanism is unavailable and
+    /// the proxy has to be the most-derived type at construction. What makes
+    /// that affordable is that the class family is nothing like the interface
+    /// family: 13 base classes have projected derived types at all, none has
+    /// more than three, and 18 derived types exist in total. The design's
+    /// objection to eager most-derived construction is about the interface
+    /// lattice and does not carry over.
+    /// </remarks>
+    /// <summary>
+    /// Whether any supported member hands the analyzer an instance of this
+    /// type, which is the only situation in which a proxy is built at it.
+    /// </summary>
+    /// <remarks>
+    /// Most-derived construction costs whatever the derived proxies and their
+    /// vtbls cost, paid by every module, because the registrations run from a
+    /// module initializer that trimming cannot see through. Restricting it to
+    /// types a handle actually arrives as keeps that bill proportionate:
+    /// registering the <c>CSharpSyntaxVisitor</c> hierarchy alone roots
+    /// <c>CSharpSyntaxWalker</c> and <c>CSharpSyntaxRewriter</c>, whose vtbls
+    /// carry a member per syntax kind, to make casts possible on a type no
+    /// supported member ever returns.
+    /// </remarks>
+    public bool IsConstructedFromHandle(INamedTypeSymbol type) =>
+        SupportedCalls.Any(call =>
+            SymbolEqualityComparer.Default.Equals(
+                call.ReturnValue.RemoteType,
+                type) ||
+            SymbolEqualityComparer.Default.Equals(
+                call.ReturnValue.CollectionElementType,
+                type));
+
+    public IReadOnlyList<TypeProjection> GetProxiedDerivedTypes(
+        INamedTypeSymbol type) =>
+        !IsConstructedFromHandle(type)
+            ? []
+            :
+        Types
+            .Where(candidate =>
+                candidate.RequiresProxy &&
+                !candidate.UsesDynamicInterfaceProxy &&
+                candidate.Symbol.TypeKind == TypeKind.Class &&
+                !SymbolEqualityComparer.Default.Equals(
+                    candidate.Symbol,
+                    type) &&
+                DerivesFrom(candidate.Symbol, type))
+            .OrderByDescending(candidate => GetBaseDepth(candidate.Symbol))
+            .ThenBy(
+                candidate => candidate.CanonicalId,
+                StringComparer.Ordinal)
+            .ToArray();
+
+    public static int GetBaseDepth(INamedTypeSymbol type)
+    {
+        int depth = 0;
+        for (INamedTypeSymbol? current = type.BaseType;
+             current is not null;
+             current = current.BaseType)
+        {
+            depth++;
+        }
+
+        return depth;
+    }
+
+    private static bool DerivesFrom(
+        INamedTypeSymbol type,
+        INamedTypeSymbol baseType)
+    {
+        for (INamedTypeSymbol? current = type.BaseType;
+             current is not null;
+             current = current.BaseType)
+        {
+            if (SymbolEqualityComparer.Default.Equals(current, baseType))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public bool IsReachable(ProjectedCall call) =>
         _typesBySymbol.TryGetValue(
             call.Symbol.ContainingType,

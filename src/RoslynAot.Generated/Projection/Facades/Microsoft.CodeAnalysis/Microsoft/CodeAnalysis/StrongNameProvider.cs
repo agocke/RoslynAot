@@ -50,6 +50,11 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        internal static StrongNameProvider __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetStrongNameProviderVtbl(controlVtbl), handle);
+        internal static StrongNameProvider __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
+        {
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6032737276270416390L, 8744871423109662601L)is StrongNameProvider __roslynAotDerived)
+                return __roslynAotDerived;
+            return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetStrongNameProviderVtbl(controlVtbl), handle);
+        }
     }
 }

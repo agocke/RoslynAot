@@ -21,6 +21,107 @@ public delegate int CopyUtf16String(
 public sealed class RoslynProxyTypeMap;
 
 /// <summary>
+/// Which projected classes derive from which, and how to build the
+/// most-derived proxy over a handle.
+/// </summary>
+/// <remarks>
+/// A cast to a class is a runtime type check, so unlike an interface
+/// cast there is no point at which the facade could resolve a derived
+/// type on demand. The proxy therefore has to be the most-derived type
+/// at the moment it is constructed.
+///
+/// The table lives here, in the runtime assembly, keyed by the base
+/// type's vtbl id — deliberately not as a static on the base facade
+/// type itself. Registering onto the facade type would run its class
+/// constructor during module initialization, and several of these
+/// bases have static fields that are projected as throwing:
+/// <c>SyntaxTree.EmptyDiagnosticOptions</c> takes down the process
+/// before <c>Main</c>. Keying on the vtbl id touches nothing but this
+/// class.
+///
+/// Registrations are emitted per assembly by whichever one owns the
+/// derived type, because that is the only direction the facades
+/// reference each other in: Microsoft.CodeAnalysis cannot name
+/// <c>CSharpParseOptions</c>.
+/// </remarks>
+public static class RoslynDerivedProxyRegistry
+{
+    private sealed record Entry(
+        long DerivedVtblIdLow,
+        long DerivedVtblIdHigh,
+        int Depth,
+        Func<IRoslynControlVtbl, long, object> Create);
+
+    private static readonly Dictionary<(long, long), Entry[]>
+        s_entries = [];
+
+    public static void Register(
+        long baseVtblIdLow,
+        long baseVtblIdHigh,
+        long derivedVtblIdLow,
+        long derivedVtblIdHigh,
+        int depth,
+        Func<IRoslynControlVtbl, long, object> create)
+    {
+        var entry = new Entry(
+            derivedVtblIdLow,
+            derivedVtblIdHigh,
+            depth,
+            create);
+        lock (s_entries)
+        {
+            (long, long) key = (baseVtblIdLow, baseVtblIdHigh);
+            Entry[] existing = s_entries.TryGetValue(
+                key,
+                out Entry[]? found)
+                ? found
+                : [];
+
+            // Most-derived first, so a grandchild is preferred over
+            // its parent when both answer IsObjectType.
+            Entry[] updated = [.. existing, entry];
+            Array.Sort(
+                updated,
+                static (left, right) =>
+                    right.Depth.CompareTo(left.Depth));
+            s_entries[key] = updated;
+        }
+    }
+
+    public static object? TryCreate(
+        IRoslynControlVtbl controlVtbl,
+        long handle,
+        long baseVtblIdLow,
+        long baseVtblIdHigh)
+    {
+        Entry[]? entries;
+        lock (s_entries)
+        {
+            if (!s_entries.TryGetValue(
+                    (baseVtblIdLow, baseVtblIdHigh),
+                    out entries))
+            {
+                return null;
+            }
+        }
+
+        foreach (Entry entry in entries)
+        {
+            if (RoslynFacadeRuntime.IsObjectType(
+                    controlVtbl,
+                    handle,
+                    entry.DerivedVtblIdLow,
+                    entry.DerivedVtblIdHigh))
+            {
+                return entry.Create(controlVtbl, handle);
+            }
+        }
+
+        return null;
+    }
+}
+
+/// <summary>
 /// A compiler-owned string collection, reached through its handle
 /// rather than copied.
 /// </summary>
@@ -531,6 +632,25 @@ public static unsafe class RoslynFacadeRuntime
     /// framework's definition of these types, so the clone is exact
     /// and identity is not observable on a box.
     /// </remarks>
+    /// <summary>
+    /// Whether the compiler-side object behind a handle is of the type
+    /// a vtbl id names.
+    /// </summary>
+    public static bool IsObjectType(
+        IRoslynControlVtbl controlVtbl,
+        long handle,
+        long vtblIdLow,
+        long vtblIdHigh)
+    {
+        int status = controlVtbl.IsObjectType(
+            handle,
+            vtblIdLow,
+            vtblIdHigh,
+            out int isType);
+        ThrowIfFailed(controlVtbl, status);
+        return isType != 0;
+    }
+
     public static object? ReadConstant(
         IRoslynControlVtbl controlVtbl,
         RoslynConstantKind kind,

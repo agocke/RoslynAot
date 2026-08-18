@@ -58,15 +58,7 @@
     },
     {
       "ruleId": "CA1507",
-      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpUseNameofInPlaceOfStringAnalyzer",
-      "status": "Fail",
-      "reason": {
-        "kind": "AnalyzerException",
-        "case": "CA1309/Basic",
-        "actionKind": "Operation",
-        "exceptionType": "System.InvalidCastException",
-        "failingMember": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpUseNameofInPlaceOfStringAnalyzer.IsApplicableToLanguageVersion"
-      }
+      "status": "Pass"
     },
     {
       "ruleId": "CA1508",

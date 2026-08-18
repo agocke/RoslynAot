@@ -111,6 +111,94 @@ internal static class ProjectionOutputEmitter
                 "Microsoft.CodeAnalysis.CSharp",
                 "RoslynAotTypeMap.g.cs"),
             EmitFacadeTypeMap(model, "Microsoft.CodeAnalysis.CSharp"));
+        WriteGeneratedFile(
+            Path.Combine(coreDirectory, "RoslynAotDerivedProxies.g.cs"),
+            EmitDerivedProxyRegistrations(model, "Microsoft.CodeAnalysis"));
+        WriteGeneratedFile(
+            Path.Combine(
+                facadesRoot,
+                "Microsoft.CodeAnalysis.CSharp",
+                "RoslynAotDerivedProxies.g.cs"),
+            EmitDerivedProxyRegistrations(
+                model,
+                "Microsoft.CodeAnalysis.CSharp"));
+    }
+
+    /// <summary>
+    /// Registers each projected class onto its base so that a proxy built at
+    /// the base type resolves to the most-derived one.
+    /// </summary>
+    /// <remarks>
+    /// Emitted per assembly and keyed on the <em>derived</em> type's assembly,
+    /// because that is the only direction the facades reference each other:
+    /// Microsoft.CodeAnalysis cannot name <c>CSharpParseOptions</c>, while
+    /// Microsoft.CodeAnalysis.CSharp can reach <c>ParseOptions</c>' internals
+    /// through the friend declaration Roslyn already ships. Four of the
+    /// thirteen hierarchies cross assemblies this way, and they are exactly
+    /// the language-specific ones — including the <c>ParseOptions</c> pair
+    /// CA1507 casts through.
+    /// </remarks>
+    private static string EmitDerivedProxyRegistrations(
+        ProjectionModel model,
+        string assemblyName)
+    {
+        var registrations = new List<string>();
+        foreach (TypeProjection type in model.Types
+            .Where(type =>
+                type.RequiresProxy &&
+                !type.UsesDynamicInterfaceProxy &&
+                type.Symbol.TypeKind == TypeKind.Class)
+            .OrderBy(
+                type => type.CanonicalId,
+                StringComparer.Ordinal))
+        {
+            foreach (TypeProjection derived in model
+                .GetProxiedDerivedTypes(type.Symbol)
+                .Where(derived =>
+                    derived.Symbol.ContainingAssembly.Name == assemblyName))
+            {
+                VtblProjection? vtbl = derived.InstanceVtbl;
+                if (vtbl is null)
+                {
+                    continue;
+                }
+
+                if (type.InstanceVtbl is not { } baseVtbl)
+                {
+                    continue;
+                }
+
+                (long low, long high) = GetVtblIdParts(vtbl);
+                (long baseLow, long baseHigh) = GetVtblIdParts(baseVtbl);
+                string derivedName = derived.Symbol.ToDisplayString(
+                    SymbolDisplayFormat.FullyQualifiedFormat);
+                registrations.Add(
+                    "        global::RoslynAot.RoslynFacade." +
+                    "RoslynDerivedProxyRegistry.Register(" +
+                    $"{baseLow}L, {baseHigh}L, {low}L, {high}L, " +
+                    $"{ProjectionModel.GetBaseDepth(derived.Symbol)}, " +
+                    "static (controlVtbl, handle) => " +
+                    $"{derivedName}.__RoslynAotCreateProxy(controlVtbl, handle));");
+            }
+        }
+
+        var builder = new StringBuilder();
+        builder.AppendLine("namespace RoslynAot.RoslynFacade;");
+        builder.AppendLine();
+        builder.AppendLine("internal static class RoslynAotDerivedProxies");
+        builder.AppendLine("{");
+        builder.AppendLine(
+            "    [global::System.Runtime.CompilerServices.ModuleInitializer]");
+        builder.AppendLine("    internal static void Register()");
+        builder.AppendLine("    {");
+        foreach (string registration in registrations)
+        {
+            builder.AppendLine(registration);
+        }
+
+        builder.AppendLine("    }");
+        builder.AppendLine("}");
+        return builder.ToString();
     }
 
     private static string EmitFacadeTypeMap(
@@ -1073,6 +1161,107 @@ internal static class ProjectionOutputEmitter
         public sealed class RoslynProxyTypeMap;
 
         /// <summary>
+        /// Which projected classes derive from which, and how to build the
+        /// most-derived proxy over a handle.
+        /// </summary>
+        /// <remarks>
+        /// A cast to a class is a runtime type check, so unlike an interface
+        /// cast there is no point at which the facade could resolve a derived
+        /// type on demand. The proxy therefore has to be the most-derived type
+        /// at the moment it is constructed.
+        ///
+        /// The table lives here, in the runtime assembly, keyed by the base
+        /// type's vtbl id — deliberately not as a static on the base facade
+        /// type itself. Registering onto the facade type would run its class
+        /// constructor during module initialization, and several of these
+        /// bases have static fields that are projected as throwing:
+        /// <c>SyntaxTree.EmptyDiagnosticOptions</c> takes down the process
+        /// before <c>Main</c>. Keying on the vtbl id touches nothing but this
+        /// class.
+        ///
+        /// Registrations are emitted per assembly by whichever one owns the
+        /// derived type, because that is the only direction the facades
+        /// reference each other in: Microsoft.CodeAnalysis cannot name
+        /// <c>CSharpParseOptions</c>.
+        /// </remarks>
+        public static class RoslynDerivedProxyRegistry
+        {
+            private sealed record Entry(
+                long DerivedVtblIdLow,
+                long DerivedVtblIdHigh,
+                int Depth,
+                Func<IRoslynControlVtbl, long, object> Create);
+
+            private static readonly Dictionary<(long, long), Entry[]>
+                s_entries = [];
+
+            public static void Register(
+                long baseVtblIdLow,
+                long baseVtblIdHigh,
+                long derivedVtblIdLow,
+                long derivedVtblIdHigh,
+                int depth,
+                Func<IRoslynControlVtbl, long, object> create)
+            {
+                var entry = new Entry(
+                    derivedVtblIdLow,
+                    derivedVtblIdHigh,
+                    depth,
+                    create);
+                lock (s_entries)
+                {
+                    (long, long) key = (baseVtblIdLow, baseVtblIdHigh);
+                    Entry[] existing = s_entries.TryGetValue(
+                        key,
+                        out Entry[]? found)
+                        ? found
+                        : [];
+
+                    // Most-derived first, so a grandchild is preferred over
+                    // its parent when both answer IsObjectType.
+                    Entry[] updated = [.. existing, entry];
+                    Array.Sort(
+                        updated,
+                        static (left, right) =>
+                            right.Depth.CompareTo(left.Depth));
+                    s_entries[key] = updated;
+                }
+            }
+
+            public static object? TryCreate(
+                IRoslynControlVtbl controlVtbl,
+                long handle,
+                long baseVtblIdLow,
+                long baseVtblIdHigh)
+            {
+                Entry[]? entries;
+                lock (s_entries)
+                {
+                    if (!s_entries.TryGetValue(
+                            (baseVtblIdLow, baseVtblIdHigh),
+                            out entries))
+                    {
+                        return null;
+                    }
+                }
+
+                foreach (Entry entry in entries)
+                {
+                    if (RoslynFacadeRuntime.IsObjectType(
+                            controlVtbl,
+                            handle,
+                            entry.DerivedVtblIdLow,
+                            entry.DerivedVtblIdHigh))
+                    {
+                        return entry.Create(controlVtbl, handle);
+                    }
+                }
+
+                return null;
+            }
+        }
+
+        /// <summary>
         /// A compiler-owned string collection, reached through its handle
         /// rather than copied.
         /// </summary>
@@ -1583,6 +1772,25 @@ internal static class ProjectionOutputEmitter
             /// framework's definition of these types, so the clone is exact
             /// and identity is not observable on a box.
             /// </remarks>
+            /// <summary>
+            /// Whether the compiler-side object behind a handle is of the type
+            /// a vtbl id names.
+            /// </summary>
+            public static bool IsObjectType(
+                IRoslynControlVtbl controlVtbl,
+                long handle,
+                long vtblIdLow,
+                long vtblIdHigh)
+            {
+                int status = controlVtbl.IsObjectType(
+                    handle,
+                    vtblIdLow,
+                    vtblIdHigh,
+                    out int isType);
+                ThrowIfFailed(controlVtbl, status);
+                return isType != 0;
+            }
+
             public static object? ReadConstant(
                 IRoslynControlVtbl controlVtbl,
                 RoslynConstantKind kind,

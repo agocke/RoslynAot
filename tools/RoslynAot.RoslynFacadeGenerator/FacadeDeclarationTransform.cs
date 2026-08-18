@@ -223,6 +223,23 @@ internal sealed class FacadeDeclarationTransform
 
         string fullyQualifiedType = type.ToDisplayString(
             SymbolDisplayFormat.FullyQualifiedFormat);
+
+        // A class cast is a runtime type check, so nothing can resolve a
+        // derived type on demand the way IDynamicInterfaceCastable does for
+        // interfaces. The proxy has to be most-derived when it is built, or
+        // (CSharpParseOptions)someParseOptions throws InvalidCastException —
+        // which is exactly what CA1507 was failing on.
+        string? derivedLookup = null;
+        if (_model.GetProxiedDerivedTypes(type).Count > 0)
+        {
+            byte[] baseId = instanceVtbl.VtblId.ToByteArray();
+            derivedLookup =
+                "global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry" +
+                ".TryCreate(controlVtbl, handle, " +
+                $"{BitConverter.ToInt64(baseId, 0)}L, " +
+                $"{BitConverter.ToInt64(baseId, 8)}L)";
+        }
+
         if (type.IsAbstract)
         {
             ClassDeclarationSyntax proxy = SyntaxFactory.ClassDeclaration(
@@ -246,19 +263,19 @@ internal sealed class FacadeDeclarationTransform
             members.Add(proxy);
             members.Add(
                 ParseMember(
-                    $"internal static {fullyQualifiedType} __RoslynAotCreateProxy(" +
-                    "global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, " +
-                    "long handle) => new __RoslynAotProxy(" +
-                    $"controlVtbl, {getVtblExpression}, handle);"));
+                    CreateProxyFactory(
+                        fullyQualifiedType,
+                        $"new __RoslynAotProxy(controlVtbl, {getVtblExpression}, handle)",
+                        derivedLookup)));
         }
         else
         {
             members.Add(
                 ParseMember(
-                    $"internal static {fullyQualifiedType} __RoslynAotCreateProxy(" +
-                    "global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, " +
-                    $"long handle) => new {typeName}(" +
-                    $"controlVtbl, {getVtblExpression}, handle);"));
+                    CreateProxyFactory(
+                        fullyQualifiedType,
+                        $"new {typeName}(controlVtbl, {getVtblExpression}, handle)",
+                        derivedLookup)));
         }
 
         return typeDeclaration.AddMembers([.. members]);
@@ -556,6 +573,35 @@ internal sealed class FacadeDeclarationTransform
         }
 
         return CanonicalSignatureBuilder.GetMemberSignature(root);
+    }
+
+    /// <summary>
+    /// The proxy factory for a class-hierarchy facade. When the type has
+    /// projected derived types it asks the compiler which one the handle
+    /// actually is before falling back to its own proxy; the probe is one
+    /// crossing per candidate and the deepest hierarchy in the projection has
+    /// three.
+    /// </summary>
+    private static string CreateProxyFactory(
+        string fullyQualifiedType,
+        string fallback,
+        string? derivedLookup)
+    {
+        if (derivedLookup is null)
+        {
+            return $"internal static {fullyQualifiedType} " +
+                "__RoslynAotCreateProxy(" +
+                "global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, " +
+                $"long handle) => {fallback};";
+        }
+
+        return $"internal static {fullyQualifiedType} " +
+            "__RoslynAotCreateProxy(" +
+            "global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, " +
+            "long handle) { " +
+            $"if ({derivedLookup} is {fullyQualifiedType} __roslynAotDerived) " +
+            "return __roslynAotDerived; " +
+            $"return {fallback}; }}";
     }
 
     private MemberDeclarationSyntax CreateProxyOverride(ISymbol symbol)

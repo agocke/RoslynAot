@@ -88,7 +88,7 @@ boundary is now `IsObjectType` at 778,492 calls — cast-time type resolution,
 which migration Step 4 deliberately left alone.
 
 The honest headline from that measurement: of the module's 37 rules,
-**12 pass, 22 fail against a named unimplemented member, and 3 are not yet
+**13 pass, 21 fail against a named unimplemented member, and 3 are not yet
 exercised by the corpus**. `IOperation.ConstantValue` used to block 7 rules and
 is now implemented — the first piece of Step 5's wire grammar, a tagged union
 carrying a boxed C# constant by value because the analyzer pattern-matches the
@@ -108,6 +108,17 @@ CA1865's is `SyntaxNode.FirstAncestorOrSelf[TNode]`, and CA2263's is
 `SyntaxFactory.SeparatedList[TNode]`. And the projection self-check's facade
 client — the only test that drives both sides as separately compiled modules —
 has never run: its type map is empty, so its first cast throws. See problem 24.
+
+Casts to derived Roslyn classes now work. `ParseOptions` results cast to
+`CSharpParseOptions` — the CA1507 failure, and something the roadmap previously
+claimed already worked. Interfaces and classes need opposite strategies here:
+an interface cast is interceptable so `IDynamicInterfaceCastable` resolves it
+lazily, while a class cast is a plain type check, so the proxy must be
+most-derived at construction. That is affordable only because the class family
+is small — 13 base classes, 18 derived types, against 498 interfaces. It costs
+**+5.0% on the floor module**, because module-initializer registration is
+invisible to trimming and roots each registered proxy everywhere; making
+registration demand-driven is the follow-up. See problem 3.
 
 The harness has also earned its keep beyond counting. It caught a defect that
 **terminated the compiler process** rather than reporting a failure: a generic
