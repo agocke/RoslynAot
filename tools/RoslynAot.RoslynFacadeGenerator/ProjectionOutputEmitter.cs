@@ -1931,6 +1931,42 @@ internal static class ProjectionOutputEmitter
             "unreachableCalls=" +
             model.Calls.Count(call =>
                 call.IsSupported && !model.IsReachable(call)));
+
+        IReadOnlyList<ForeignTypeUse> foreignTypes =
+            ProjectionForeignTypes.Collect(model);
+        builder.AppendLine($"foreignTypes={foreignTypes.Count}");
+        builder.AppendLine(
+            "declaredForeignTypes=" +
+            foreignTypes.Count(use => use.Declared));
+        foreach (ForeignTransport transport in Enum.GetValues<ForeignTransport>())
+        {
+            builder.AppendLine(
+                $"foreign{transport}=" +
+                foreignTypes.Count(use => use.Entry.Transport == transport) +
+                "/" +
+                foreignTypes.Count(use =>
+                    use.Entry.Transport == transport && use.SupportedUses > 0));
+        }
+
+        builder.AppendLine();
+
+        // The types the boundary cannot substitute itself for. Reported with
+        // total and supported use counts because the difference is the point:
+        // a class with uses but no supported uses is work not yet started, and
+        // that is where the expensive surprises are.
+        foreach (ForeignTypeUse use in foreignTypes)
+        {
+            builder.Append("FOREIGN transport=");
+            builder.Append(use.Entry.Transport);
+            builder.Append(use.Declared ? " (declared)" : " (derived)");
+            builder.Append(" uses=");
+            builder.Append(use.Uses);
+            builder.Append(" supportedUses=");
+            builder.Append(use.SupportedUses);
+            builder.Append(" id=");
+            builder.AppendLine(use.CanonicalId);
+        }
+
         builder.AppendLine();
 
         foreach (TypeProjection type in model.Types)

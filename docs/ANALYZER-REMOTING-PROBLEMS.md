@@ -558,6 +558,88 @@ get to answer a membership test that now costs one crossing, and the
 correctness fix removed roughly two orders of magnitude of traffic as a side
 effect rather than as its purpose.
 
+### 23. The projection cannot substitute itself for a type it does not own
+
+Discovered 2026-08-17, generalizing problem 22 from collections to every type
+in a projected signature.
+
+Problem 22 was fixed by giving string collections a handle. That fix was only
+available because `RoslynStringCollection` could be handed back where an
+`IEnumerable<string>` was expected — the analyzer binds to an *interface*, so
+an analyzer-side implementation is indistinguishable from Roslyn's. The same
+move is unavailable for `ImmutableArray<T>`. The generator owns the name
+`Microsoft.CodeAnalysis.ISymbol` in the analyzer's closure and can put anything
+behind it; it does not own `System.Collections.Immutable.ImmutableArray<T>`,
+and the framework's copy is a struct over a `T[]` with nowhere to hide a
+handle. A real instance has to be produced, and whether producing one is
+faithful is a claim about that specific type.
+
+So the generalized rule is not "interface versus concrete" but **can this side
+supply the behavior**: an interface can be implemented, an abstract or virtual
+class can be subclassed, a sealed class or a struct can only be rebuilt. That
+distinction moves `StringComparer`, `Encoding`, `Stream`, and `TextWriter` out
+of the "must clone" set — they are abstract, so a forwarding subclass is
+faithful — and leaves the genuinely forced clones as a small set.
+
+**Measured, because a closed set is the whole point.** Across every projected
+signature there are **73** types no facade assembly owns. Classified:
+
+| Transport | Types | Reached by a supported call |
+|---|---|---|
+| Primitive — bit-identical, copying is the identity | 21 | 14 |
+| Proxy — this side supplies the behavior | 15 | 2 |
+| Clone — an instance must be rebuilt | 16 | 2 |
+| Callback — a delegate, crosses as a registration | 9 | 0 |
+| Unrepresentable — nothing usable can cross | 12 | 0 |
+
+Only 21 are derivable without a claim about the type. The other 52 are declared
+in `ProjectionForeignTypes` with a mandatory reason, and `ProjectionValidation`
+fails the build on an undeclared non-primitive type reached by a supported
+call, or on an unrepresentable type reached by one at all. Both are
+mutation-tested. That is the fail-closed half: a Roslyn upgrade that puts a new
+framework type into the analyzer surface stops the build rather than silently
+acquiring whatever the derivation guessed.
+
+**What the measurement says that was not visible before:**
+
+- `ImmutableDictionary<K,V>` is a forced clone that is **not** faithful on its
+  own. It carries a `KeyComparer` and a `ValueComparer`, so copying the pairs
+  reproduces problem 22 exactly, in a type the problem-22 guard did not cover:
+  `PromisesMembership` matched arity-1 `ICollection`/`ISet`/`IReadOnlySet` and
+  let every keyed collection through. Not yet live — all 14 members returning
+  one are unsupported — but `Diagnostic.Properties` is among them and is due at
+  migration Step 6. The guard is now widened to the keyed and immutable set
+  types, and mutation-tested by admitting `IEnumerable` to it, which makes 34
+  existing calls fail.
+- The composition that fixes it falls out of the classification: copy the
+  pairs, **proxy the comparer** — `IEqualityComparer<T>` is an interface, so it
+  crosses by the Proxy rule — and rebuild with
+  `CreateRange(keyComparer, valueComparer, pairs)`. Neither "copy and lose it"
+  nor "leave it unsupported" is necessary.
+- `CancellationToken` is the largest unimplemented foreign type in the surface:
+  **239 uses, 0 supported**, and unrepresentable. Its behavior is a live
+  registration list on a source the other side owns, so a clone is a token that
+  never cancels and never fires a callback — which is worse than not having one
+  because it looks like it works. Step 7's plan to round-trip
+  `IsCancellationRequested` is a *declared degradation*, and this table is where
+  it has to be written down when it lands.
+- Delegates are 9 distinct types and 0 supported uses, which is the size of the
+  callback gap Step 7 closes.
+
+**Precedent worth recording.** C#/WinRT never has to answer this question,
+because it controls its own ABI vocabulary: WinRT's type system has
+`IVector<T>`, `IMap<K,V>`, and `IIterable<T>` and nothing else, so a
+`ImmutableDictionary<string,string>` crosses as a CCW over the live instance
+through `IDictionary<K,V>` and its comparer never moves. Its hand-written
+mapping table registers only interfaces and open generic definitions — no
+`Dictionary`, no `List`, no immutable collection — and the entries needing real
+semantic knowledge are the non-collection conversions (`DateTimeOffset`,
+`TimeSpan`, `Exception`/`HResult`, `Uri`). RoslynAot cannot make that choice:
+it must reproduce Roslyn's existing public API, and that API says
+`ImmutableArray<T>` in return position 271 times. The forced-clone set is
+therefore irreducible, which is exactly why it needs enumerating rather than
+avoiding.
+
 ## Architectural conclusion
 
 The repeated failures are not evidence that remoting is impossible. They show

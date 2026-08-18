@@ -166,6 +166,16 @@ builds, caching is incomplete, and only Linux has been validated.
   equality whatever the source used. String collections now cross as handles,
   and the generator refuses to copy any collection whose declared type promises
   membership. See problem 22.
+- Account for every type in a projected signature that the projection does not
+  own. The boundary can substitute itself for a Roslyn type — it owns that name
+  in the analyzer's closure — but never for a framework type the analyzer binds
+  to directly, so an instance of one has to be rebuilt and whether the rebuild
+  is faithful is a claim about that specific type. There are 73 such types; 21
+  are derivably bit-identical and the other 52 are declared with a reason, with
+  the build failing on an undeclared one reached by a supported call. Two things
+  the measurement surfaced: `ImmutableDictionary` is a forced clone whose
+  comparers the membership guard did not cover, and `CancellationToken` is the
+  largest unimplemented foreign type in the surface at 239 uses. See problem 23.
 - Detect analyzers that cannot run through the native path and apply the
   configured failure or fallback policy.
 

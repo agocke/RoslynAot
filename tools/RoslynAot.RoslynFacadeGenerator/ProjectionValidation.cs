@@ -16,6 +16,7 @@ internal static class ProjectionValidation
         ValidateCanonicalIds(model, failures);
         ValidateOverrides(model, failures);
         ValidateCollectionTransport(model, failures);
+        ValidateForeignTypes(model, failures);
         ValidateOwnership(model, failures);
         ValidateGenericVirtualDispatch(model, failures);
         ValidateAbiSymmetry(model, failures);
@@ -172,25 +173,128 @@ internal static class ProjectionValidation
         }
     }
 
+    /// <summary>
+    /// Whether the declared type's contract includes answering a question
+    /// about membership or lookup, which is the part a copy cannot carry.
+    /// </summary>
+    /// <remarks>
+    /// The keyed collections matter as much as the set-like ones and were the
+    /// gap this check shipped with: an <c>ImmutableDictionary</c> carries a
+    /// <c>KeyComparer</c> exactly the way a set carries its comparer, and
+    /// Roslyn's analyzer config dictionaries are the case-insensitive ones.
+    /// None of them is supported yet, so this closes the hole before the first
+    /// one crosses rather than after — <c>Diagnostic.Properties</c> is due at
+    /// migration Step 6.
+    /// </remarks>
     private static bool PromisesMembership(ITypeSymbol type) =>
-        type.OriginalDefinition is INamedTypeSymbol
+        type.OriginalDefinition is INamedTypeSymbol named &&
+        IsSystemCollections(named.ContainingNamespace) &&
+        named switch
         {
-            Arity: 1,
-            Name: "ICollection" or "ISet" or "IReadOnlySet",
+            {
+                Arity: 1,
+                Name: "ICollection" or "ISet" or "IReadOnlySet" or
+                    "ImmutableHashSet" or "ImmutableSortedSet" or "HashSet",
+            } => true,
+            {
+                Arity: 2,
+                Name: "IDictionary" or "IReadOnlyDictionary" or "Dictionary" or
+                    "ImmutableDictionary" or "ImmutableSortedDictionary",
+            } => true,
+            _ => false,
+        };
+
+    private static bool IsSystemCollections(INamespaceSymbol? @namespace) =>
+        @namespace is
+        {
+            Name: "Generic" or "Immutable",
             ContainingNamespace:
             {
-                Name: "Generic",
+                Name: "Collections",
                 ContainingNamespace:
                 {
-                    Name: "Collections",
-                    ContainingNamespace:
-                    {
-                        Name: "System",
-                        ContainingNamespace.IsGlobalNamespace: true
-                    }
+                    Name: "System",
+                    ContainingNamespace.IsGlobalNamespace: true
                 }
             }
         };
+
+    /// <summary>
+    /// Every type in a projected signature that the projection does not own
+    /// has to carry a declared transport class, because the boundary cannot
+    /// substitute itself for a type the analyzer binds to directly.
+    /// </summary>
+    /// <remarks>
+    /// A Roslyn facade type can be faked: the generator owns the name
+    /// <c>Microsoft.CodeAnalysis.ISymbol</c> in the analyzer's closure and can
+    /// put whatever it likes behind it. A framework type cannot be — the
+    /// analyzer binds to the real <c>ImmutableArray&lt;T&gt;</c>, a struct over
+    /// a <c>T[]</c> with nowhere to hide a handle. So every framework type in
+    /// a signature is a point where a real instance has to be produced, and
+    /// whether producing one is faithful is a question about that type that no
+    /// structural rule answers.
+    ///
+    /// Two failures, deliberately different in severity:
+    /// <list type="bullet">
+    /// <item>An <b>undeclared</b> non-primitive type reached by a supported
+    /// call. This is the fail-closed half: a Roslyn upgrade that puts a new
+    /// framework type into the analyzer surface stops the build instead of
+    /// quietly acquiring whatever the derivation guessed.</item>
+    /// <item>An <b>unrepresentable</b> type reached by a supported call. That
+    /// is a contradiction in the model — the member claims to work and the
+    /// type it uses says nothing usable can cross.</item>
+    /// </list>
+    /// Types reached only by unsupported calls are reported in the inventory
+    /// rather than failed, because that set is the roadmap: it is how
+    /// <c>CancellationToken</c> is visible as the largest unimplemented
+    /// foreign type in the surface long before anything depends on it.
+    /// </remarks>
+    private static void ValidateForeignTypes(
+        ProjectionModel model,
+        List<string> failures)
+    {
+        IReadOnlyList<ForeignTypeUse> foreignTypes =
+            ProjectionForeignTypes.Collect(model);
+        foreach (ForeignTypeUse use in foreignTypes
+            .Where(use => use.SupportedUses > 0))
+        {
+            if (use.Entry.Transport == ForeignTransport.Unrepresentable)
+            {
+                failures.Add(
+                    $"Foreign type '{use.DisplayName}' is declared " +
+                    "unrepresentable but is reached by " +
+                    $"{use.SupportedUses} supported call(s), first " +
+                    $"'{use.FirstSupportedCallId}'. Either the member is not " +
+                    "in fact supported, or the declaration is stale.");
+                continue;
+            }
+
+            if (!use.Declared &&
+                use.Entry.Transport != ForeignTransport.Primitive)
+            {
+                failures.Add(
+                    $"Foreign type '{use.DisplayName}' is reached by " +
+                    $"{use.SupportedUses} supported call(s), first " +
+                    $"'{use.FirstSupportedCallId}', but has no declared " +
+                    "transport. The analyzer binds to the framework's copy of " +
+                    "it, so an instance has to be produced rather than " +
+                    "proxied; add it to ProjectionForeignTypes with the " +
+                    "argument for why that is faithful.");
+            }
+        }
+
+        var reached = foreignTypes
+            .Select(use => use.CanonicalId)
+            .ToHashSet(StringComparer.Ordinal);
+        foreach (string id in ProjectionForeignTypes.Ids
+            .Where(id => !reached.Contains(id))
+            .OrderBy(id => id, StringComparer.Ordinal))
+        {
+            failures.Add(
+                $"Declared foreign type '{id}' appears in no projected " +
+                "signature.");
+        }
+    }
 
     /// <summary>
     /// Ownership is what says whether an instance may cross as a handle, so a
