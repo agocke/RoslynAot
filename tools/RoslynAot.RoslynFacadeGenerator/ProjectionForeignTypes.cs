@@ -158,21 +158,35 @@ internal static class ProjectionForeignTypes
 
         // ---- Cloned, and only faithful with their behaviour carried --------
 
+        // The keyed collections are classified by what can be built today, not
+        // by what could be built. Both are forced clones — sealed, or with no
+        // virtual members to override — and a copy of either silently
+        // substitutes the default comparer for the instance's own, which is
+        // problem 22 exactly. Calling that Clone would record the intended
+        // design while leaving the build willing to accept the broken one.
+        // Unrepresentable fails closed instead: the moment a member returning
+        // one is marked supported, validation stops the build and names it.
+        //
+        // The path to Clone is short and worth keeping written down: copy the
+        // pairs and rebuild with CreateRange(keyComparer, valueComparer,
+        // pairs), with the comparers crossing as Proxy because
+        // IEqualityComparer<T> is an interface. Flip these two entries when
+        // that transport exists.
         ["[System.Collections.Immutable]T:System.Collections.Immutable.ImmutableDictionary`2"] = new(
-            ForeignTransport.Clone,
+            ForeignTransport.Unrepresentable,
             "Sealed, so the analyzer side cannot supply behaviour and the " +
-            "pairs must be copied. The copy is NOT faithful on its own: the " +
-            "instance carries a KeyComparer and a ValueComparer, and Roslyn's " +
-            "analyzer config keys compare case-insensitively. It must be " +
-            "rebuilt with CreateRange(keyComparer, valueComparer, pairs), and " +
-            "the comparers cross as Proxy because they are interfaces."),
+            "pairs would have to be copied — but the instance carries a " +
+            "KeyComparer and a ValueComparer, and Roslyn's analyzer config " +
+            "keys compare case-insensitively, so a copy answers lookups " +
+            "wrongly with nothing to notice. Cannot cross until the comparer " +
+            "crosses with it."),
 
         ["[System.Collections]T:System.Collections.Generic.Dictionary`2"] = new(
-            ForeignTransport.Clone,
+            ForeignTransport.Unrepresentable,
             "Its members are not virtual, so subclassing supplies no " +
-            "behaviour and the entries must be copied. Same requirement as " +
-            "ImmutableDictionary: the instance's IEqualityComparer<TKey> is " +
-            "part of what is being projected and has to be rebuilt with it."),
+            "behaviour and the entries would have to be copied. Same defect " +
+            "as ImmutableDictionary: the instance's IEqualityComparer<TKey> " +
+            "is part of what is being projected and a copy discards it."),
 
         ["[System.Runtime]T:System.Exception"] = new(
             ForeignTransport.Clone,

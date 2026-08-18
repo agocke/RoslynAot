@@ -634,9 +634,9 @@ signature there are **73** types no facade assembly owns. Classified:
 |---|---|---|
 | Primitive — bit-identical, copying is the identity | 21 | 14 |
 | Proxy — this side supplies the behavior | 15 | 2 |
-| Clone — an instance must be rebuilt | 16 | 2 |
+| Clone — an instance must be rebuilt | 14 | 3 |
 | Callback — a delegate, crosses as a registration | 9 | 0 |
-| Unrepresentable — nothing usable can cross | 12 | 0 |
+| Unrepresentable — nothing usable can cross | 14 | 0 |
 
 Only 21 are derivable without a claim about the type. The other 52 are declared
 in `ProjectionForeignTypes` with a mandatory reason, and `ProjectionValidation`
@@ -648,20 +648,27 @@ acquiring whatever the derivation guessed.
 
 **What the measurement says that was not visible before:**
 
-- `ImmutableDictionary<K,V>` is a forced clone that is **not** faithful on its
-  own. It carries a `KeyComparer` and a `ValueComparer`, so copying the pairs
-  reproduces problem 22 exactly, in a type the problem-22 guard did not cover:
-  `PromisesMembership` matched arity-1 `ICollection`/`ISet`/`IReadOnlySet` and
-  let every keyed collection through. Not yet live — all 14 members returning
-  one are unsupported — but `Diagnostic.Properties` is among them and is due at
+- The keyed collections cannot cross at all yet, and are classified
+  `Unrepresentable` to say so. `ImmutableDictionary<K,V>` is a forced clone —
+  sealed, so no behaviour can be supplied — but it carries a `KeyComparer` and
+  a `ValueComparer`, so copying the pairs reproduces problem 22 exactly, in a
+  type the problem-22 guard did not cover: `PromisesMembership` matched arity-1
+  `ICollection`/`ISet`/`IReadOnlySet` and let every keyed collection through.
+  `Dictionary<K,V>` has the identical defect for a different structural reason,
+  its members not being virtual. Not yet live — all 14 members returning one
+  are unsupported — but `Diagnostic.Properties` is among them and is due at
   migration Step 6. The guard is now widened to the keyed and immutable set
   types, and mutation-tested by admitting `IEnumerable` to it, which makes 34
   existing calls fail.
-- The composition that fixes it falls out of the classification: copy the
-  pairs, **proxy the comparer** — `IEqualityComparer<T>` is an interface, so it
-  crosses by the Proxy rule — and rebuild with
+- **Classified by what can be built, not by what could be built.** Recording
+  these as `Clone` would have described the intended design while leaving the
+  build willing to accept the broken one; `Unrepresentable` fails closed, so
+  marking any such member supported stops the build and names it. The path back
+  to `Clone` is short and stays written down in the entries themselves: copy
+  the pairs, **proxy the comparer** — `IEqualityComparer<T>` is an interface,
+  so it crosses by the Proxy rule — and rebuild with
   `CreateRange(keyComparer, valueComparer, pairs)`. Neither "copy and lose it"
-  nor "leave it unsupported" is necessary.
+  nor "leave it unsupported forever" is the end state.
 - `CancellationToken` is the largest unimplemented foreign type in the surface:
   **239 uses, 0 supported**, and unrepresentable. Its behavior is a live
   registration list on a source the other side owns, so a clone is a token that

@@ -198,9 +198,11 @@ builds, caching is incomplete, and only Linux has been validated.
   is faithful is a claim about that specific type. There are 73 such types; 21
   are derivably bit-identical and the other 52 are declared with a reason, with
   the build failing on an undeclared one reached by a supported call. Two things
-  the measurement surfaced: `ImmutableDictionary` is a forced clone whose
-  comparers the membership guard did not cover, and `CancellationToken` is the
-  largest unimplemented foreign type in the surface at 239 uses. See problem 23.
+  the measurement surfaced: the keyed collections cannot cross until their
+  comparers do, so `ImmutableDictionary` and `Dictionary` are classified
+  unrepresentable rather than as clones the build would accept, and
+  `CancellationToken` is the largest unimplemented foreign type in the surface
+  at 239 uses. See problem 23.
 - Detect analyzers that cannot run through the native path and apply the
   configured failure or fallback policy.
 
