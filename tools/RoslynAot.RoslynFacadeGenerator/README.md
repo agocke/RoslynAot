@@ -41,14 +41,15 @@ attributes, including Roslyn friend-assembly declarations, are preserved.
 GenAPI's usual `ReferenceAssemblyAttribute` is deliberately omitted because
 these facades must execute.
 
-The initial generated projection covers `SyntaxNode.RawKind`,
-`CSharpParseOptions.Default`, and the complete public `SyntaxTokenParser`
-cluster described below. A runtime operation creates the `SourceText`
-handle needed by `CreateTokenParser`; string-based Roslyn APIs remain
-unsupported. The generated facade projects under
-`src/RoslynAot.GeneratedFacade*` compile the complete emitted surface, while
-the ABI and compiler dispatch trees are wired into `RoslynAot.Abi` and
-`CscAot`.
+Coverage is whatever the model's rules currently classify as supported, and
+the exact numbers are the first lines of
+`Projection/Manifest/ProjectionInventory.txt` — 5,833 supported calls and
+2,897 unsupported across 700 types at the time of writing. Read them there
+rather than from prose here: they change with every projection rule, and the
+manifest is checked in so the change is a reviewable diff. The generated
+facade projects under `src/RoslynAot.GeneratedFacade*` compile the complete
+emitted surface, while the ABI and compiler dispatch trees are wired into
+`RoslynAot.Abi` and `CscAot`.
 
 Generated source mirrors the API structure on disk:
 
@@ -266,39 +267,43 @@ facade structs use the same representation. Only
 `RoslynInterop`, generated per-vtbl dispatchers, and reverse analyzer callback
 services are COM objects.
 
-### Initial ABI type rules
+### ABI type rules
 
 The ABI assembly does not reference Roslyn assemblies. Its signatures contain
-only explicitly sized ABI values:
+only explicitly sized ABI values. The classification lives in
+`AbiTypeKind`, and this table is its documentation:
 
-| Roslyn signature type | Initial ABI representation |
-| --- | --- |
-| `void` | HRESULT only |
-| Integral primitive | Same-width integral value |
-| `bool` | 32-bit normalized integer |
-| Enum | 32-bit normalized integer |
-| Reference parameter/receiver | 64-bit object handle |
-| Sealed reference result | 64-bit object handle |
-| Complex value type | 64-bit value handle |
-| Nullable remote value | Zero or a 64-bit handle |
-| Unsupported type | No operation; facade retains an unsupported body |
+| Roslyn signature type | ABI representation | `AbiTypeKind` |
+| --- | --- | --- |
+| `void` | HRESULT only | `Void` |
+| Integral primitive | Same-width integral value | `Integral` |
+| `bool` | 32-bit normalized integer | `Boolean` |
+| Enum | 32-bit normalized integer | `Enum` |
+| `string` | Caller-provided UTF-16 buffer, two-call copy | `Utf16String` |
+| Reference parameter/receiver/result | 64-bit object handle | `ObjectHandle` |
+| Complex value type | 64-bit value handle | `ValueHandle` |
+| Nullable remote value | Zero or a 64-bit handle | `NullableHandle` |
+| Reference sequence | Collection handle, counted and indexed | `ObjectCollection` |
+| Reference array | Collection handle built from element handles | `ObjectArray` |
+| String sequence | Collection handle, item-copied or membership-tested | `StringCollection` |
+| Boxed constant | Kind tag plus a two-word payload | `ConstantUnion` |
+| `Optional<object>` | Constant union with a has-value tag | `OptionalConstant` |
+| Unsupported type | No operation; facade retains an unsupported body | `Unsupported` |
 
-Strings, arrays, collections, delegates, generic substitutions, pointers,
-function pointers, and nontrivial `ref` parameters are initially unsupported.
-They will add projection rules rather than per-member implementations.
-Non-sealed reference results remain unsupported until runtime type
-discrimination exists. Types with externally visible non-const instance
+Delegates, generic substitutions, pointers, function pointers, and nontrivial
+`ref` parameters remain unsupported; they will add projection rules rather than
+per-member implementations. Types with externally visible non-const instance
 fields remain unsupported until field state can be mirrored. Non-const static
 facade fields receive explicit throwing initializers rather than silent default
 values; constants retain their original values.
 
-Handles are scoped to one `RoslynInterop` identity. The handle table distinguishes
-object and value entries, validates the expected Roslyn type, and rejects stale
-or foreign handles. Non-disposable values live for the interop identity. Disposing a
-remote `IDisposable` atomically invalidates its facade handle and disposes and
-removes the corresponding compiler entry. Repeated disposal succeeds.
-For non-nullable facade value types, handle zero resolves to `default(T)`;
-nullable handles continue to use zero for `null`.
+Handles are process-global: one table serves the whole compiler. It
+distinguishes object and value entries, validates the expected Roslyn type,
+rejects stale handles, and returns the same handle for a reference type that
+has already crossed. Disposing a remote `IDisposable` atomically invalidates
+its facade handle and disposes and removes the corresponding compiler entry.
+Repeated disposal succeeds. For non-nullable facade value types, handle zero
+resolves to `default(T)`; nullable handles continue to use zero for `null`.
 
 ### Facade templates
 
@@ -482,20 +487,7 @@ member implementations:
 Keeping the real `Result` compiler-side preserves its internal directive stack
 without exposing that version-specific implementation detail in the ABI.
 
-### Implemented initial increments
-
-1. Add the projection model and GenAPI member-body callback while retaining
-   unsupported plans for every member.
-2. Emit a generated ABI operation and compiler dispatch for scalar instance
-   properties, beginning with `SyntaxNode.RawKind`.
-3. Add reference and complex-value handle results and proxy construction.
-4. Generate the complete `SyntaxTokenParser` cluster, including creation,
-   result properties, reset, skipping, and disposal.
-5. Add deterministic manifests and projection identity validation.
-6. Expand signature rules by type category, leaving unknown categories
-   explicitly unsupported.
-
-## Initial projection rules
+## Projection rules
 
 - An instance receiver becomes an opaque object handle.
 - A COM operation returns an HRESULT-style status code.
@@ -508,9 +500,9 @@ without exposing that version-specific implementation detail in the ABI.
 - Exceptions are caught on the originating side and converted to explicit
   status codes; exceptions never cross the ABI.
 
-Generated operation names must be deterministic and unambiguous for overloads.
-Their exact naming and stable identity scheme will be selected after inspecting
-the real overload and generic-method surface.
+Generated operation names are deterministic and unambiguous for overloads; the
+stable identity scheme is the canonical id described under
+[The model](#the-model).
 
 ## The model
 
@@ -590,16 +582,13 @@ These cases should remain exceptions to direct projection. A member that cannot
 yet be projected must retain its correct public declaration and fail with a
 specific unsupported-API error rather than failing assembly or member binding.
 
-## Planned implementation sequence
+## Implementation sequence
 
-1. Generate the existing `Microsoft.CodeAnalysis` and
-   `Microsoft.CodeAnalysis.CSharp` facade declarations with unsupported bodies.
-2. Add the direct signature-to-COM transformation.
-3. Generate facade bodies and compiler dispatch from that transformation.
-4. Add marshalling support incrementally as the Roslyn API inventory requires
-   it.
-5. Compare generated assemblies with the input assemblies using ApiCompat and
-   targeted metadata checks.
+The ordered plan now lives in the
+[analyzer remoting migration plan](../../docs/ANALYZER-REMOTING-MIGRATION.md),
+which tracks it as numbered steps with dated measured results. One item never
+covered there and still outstanding: comparing generated assemblies with the
+input assemblies using ApiCompat and targeted metadata checks.
 
 The generator should prefer deterministic mechanical projection over a
 hand-maintained per-member implementation database. Explicit overrides are

@@ -21,7 +21,7 @@ Each native library is loaded for the compiler process lifetime. The compiler:
 
 ## Roslyn marshalling
 
-Each proxy owns a `RoslynInterop` instance. It provides:
+Every proxy shares one `RoslynInterop`, `RoslynInterop.Shared`. It provides:
 
 - A generation-checked handle table for compiler-owned Roslyn objects.
 - The stable control interface used by analyzer-side facades.

@@ -11,25 +11,31 @@ a rewrite.
 - `[GeneratedComInterface]` + `StrategyBasedComWrappers` for service interfaces
   and per-type vtbl dispatchers, fetched by `GetVtbl(vtblId)`. Roslyn objects
   cross as signed 64-bit handles, not COM objects.
-- `RoslynHandleTable`: slot + generation, stale-handle rejection, **and no
-  reverse map** — `Add` allocates a fresh slot on every crossing. Proxy
-  `Equals`/`GetHashCode` forward to the compiler-side object through
-  `ObjectEquals`/`ObjectGetHashCode`, so value equality is correct, but handles
-  and proxies are still not canonical and reference identity does not survive.
-- One `RoslynInterop` per `NativeDiagnosticAnalyzer`, so a 43-analyzer module
-  has 43 handle tables and one symbol crossing to all of them yields 43 handles.
-- Control identity is real: handles encode their owning interop, the active
-  control lives in an `AsyncLocal`, and transports reject a foreign control.
-- A two-way local/remote ownership split already exists in the facade runtime.
-- Trimming via `TypeMapAssociation<RoslynProxyTypeMap>` per facade type, with
-  derived types resolved at the cast through `IsObjectType` + the type map.
+- `RoslynHandleTable`: slot + generation, stale-handle rejection, and a reverse
+  map keyed on reference identity, so one compiler object has one handle.
+  `RoslynObjectProxy.GetOrCreate` mirrors it analyzer-side with a weak-valued
+  cache, which makes interface-family proxies canonical; class-hierarchy
+  proxies are not yet unified across differently-typed reads of one handle
+  (Step 4).
+- One `RoslynInterop.Shared` for the compiler process, so every analyzer in a
+  module sees the same handle table and the same `IRoslynControlVtbl` proxy.
+- Control identity is retired: handles no longer encode an owning interop. What
+  remains is the ambient control in an `AsyncLocal`, used to reach the vtbl,
+  not to scope a handle.
+- Ownership is a five-way declared classification — `Remote`, `Value`, `Local`,
+  `Dual`, `Facade` — derived by rule and overridden with a reason in
+  `ProjectionTypeOwnership` (Step 3).
+- Trimming via `TypeMapAssociation<RoslynProxyTypeMap>` per facade type.
+  Interface casts resolve lazily through `IsObjectType` + the type map; class
+  casts cannot be intercepted, so class proxies are instead built at their
+  most-derived projected type, registered by base vtbl id in the runtime
+  assembly (problem 3).
 - Errors: HRESULT plus a thread-local `CopyLastErrorUtf16` /
   `RoslynRemoteErrorKind` carrying category, message, and the failing
   control-vtbl member name — but as prose in the message, not a structured
   record.
-- Every generated dispatcher increments a per-member call counter;
-  `ROSLYNAOT_CALL_COUNTS` writes them out. Control-vtbl operations are not
-  counted.
+- Every generated dispatcher increments a per-member call counter, and so does
+  every control-vtbl operation; `ROSLYNAOT_CALL_COUNTS` writes them out.
 - Comparers already dispatch through `RoslynWellKnownObject` enum tags.
 - Compatibility: one `ManifestIdentity` hash over the whole projection, plus
   `AnalyzerAbi.Version`, compared for equality.

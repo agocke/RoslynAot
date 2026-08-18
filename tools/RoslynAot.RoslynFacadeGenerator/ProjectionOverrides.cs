@@ -37,56 +37,91 @@ internal sealed record ProjectionOverride(
 /// </summary>
 internal static class ProjectionOverrides
 {
+    // Reasons shared by more than one entry. Naming them keeps the table
+    // readable and makes the groups visible: an entry's constant says which
+    // decision it belongs to, and a group of one is a reason written inline.
+    private const string DiagnosticDual =
+        "Diagnostic is dual. An analyzer builds diagnostics from its " +
+        "own descriptors and message arguments, none of which the " +
+        "compiler owns, so Create constructs an analyzer-local " +
+        "Diagnostic that ReportDiagnostic later transports field by " +
+        "field.";
+
+    private const string LocalDiagnosticTransport =
+        "An analyzer-local Diagnostic has no handle, so it is " +
+        "transported field by field through the diagnostic sink; a " +
+        "compiler-owned one remotes.";
+
+    private const string DescriptorLocal =
+        "DiagnosticDescriptor is analyzer-local. Analyzers construct " +
+        "descriptors in static initializers, before any compiler " +
+        "object exists, so there is nothing to remote to and the " +
+        "state lives on the analyzer-side instance.";
+
+    private const string DescriptorLocalOrRemote =
+        "Reads the analyzer-local descriptor state when the instance " +
+        "was constructed analyzer-side, and remotes when it came from " +
+        "the compiler.";
+
+    private const string LocalizableStringDual =
+        "LocalizableString is dual. A fixed or resource string " +
+        "constructed analyzer-side answers locally; a compiler-owned " +
+        "one remotes.";
+
+    private const string ResourceStringLocal =
+        "LocalizableResourceString is analyzer-local. Its " +
+        "ResourceManager and resource source type live in the " +
+        "analyzer module and cannot be reached from the compiler.";
+
+    private const string LocationDual =
+        "Location is dual. A locally created location answers from " +
+        "its own kind rather than remoting to a handle it does not " +
+        "have.";
+
+    private const string ComparerLocal =
+        "The comparer itself is analyzer-local; only its kind " +
+        "crosses, and the comparison runs compiler-side against the " +
+        "two symbol handles.";
+
+    private const string ParamsForwardsToImmutableArray =
+        "The params-array overload forwards to the ImmutableArray " +
+        "overload analyzer-side. Marshalling the array would cost a " +
+        "crossing to rebuild what the other overload already accepts.";
+
     private static readonly IReadOnlyDictionary<string, ProjectionOverride>
         s_overrides = new Dictionary<string, ProjectionOverride>(
             StringComparer.Ordinal)
     {
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostic.Create(Microsoft.CodeAnalysis.DiagnosticDescriptor,Microsoft.CodeAnalysis.Location,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Location},System.Collections.Immutable.ImmutableDictionary{System.String,System.String},System.Object[])~Microsoft.CodeAnalysis.Diagnostic"] = new(
-            "Diagnostic is dual. An analyzer builds diagnostics from its " +
-            "own descriptors and message arguments, none of which the " +
-            "compiler owns, so Create constructs an analyzer-local " +
-            "Diagnostic that ReportDiagnostic later transports field by " +
-            "field.",
+            DiagnosticDual,
             LocalStatements:
             [
                 "return __RoslynAotCreateLocal(descriptor, location, additionalLocations, properties, messageArgs);",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostic.Create(Microsoft.CodeAnalysis.DiagnosticDescriptor,Microsoft.CodeAnalysis.Location,System.Object[])~Microsoft.CodeAnalysis.Diagnostic"] = new(
-            "Diagnostic is dual. An analyzer builds diagnostics from its " +
-            "own descriptors and message arguments, none of which the " +
-            "compiler owns, so Create constructs an analyzer-local " +
-            "Diagnostic that ReportDiagnostic later transports field by " +
-            "field.",
+            DiagnosticDual,
             LocalStatements:
             [
                 "return __RoslynAotCreateLocal(descriptor, location, messageArgs);",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.#ctor(System.String,Microsoft.CodeAnalysis.LocalizableString,Microsoft.CodeAnalysis.LocalizableString,System.String,Microsoft.CodeAnalysis.DiagnosticSeverity,System.Boolean,Microsoft.CodeAnalysis.LocalizableString,System.String,System.String[])"] = new(
-            "DiagnosticDescriptor is analyzer-local. Analyzers construct " +
-            "descriptors in static initializers, before any compiler " +
-            "object exists, so there is nothing to remote to and the state " +
-            "lives on the analyzer-side instance.",
+            DescriptorLocal,
             LocalStatements:
             [
                 "__RoslynAotInitializeLocal(id, title, messageFormat, category, defaultSeverity, isEnabledByDefault, description, helpLinkUri, customTags);",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.#ctor(System.String,System.String,System.String,System.String,Microsoft.CodeAnalysis.DiagnosticSeverity,System.Boolean,System.String,System.String,System.String[])"] = new(
-            "DiagnosticDescriptor is analyzer-local. Analyzers construct " +
-            "descriptors in static initializers, before any compiler " +
-            "object exists, so there is nothing to remote to and the state " +
-            "lives on the analyzer-side instance.",
+            DescriptorLocal,
             LocalStatements:
             [
                 "__RoslynAotInitializeLocal(id, title, messageFormat, category, defaultSeverity, isEnabledByDefault, description, helpLinkUri, customTags);",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.Equals(Microsoft.CodeAnalysis.DiagnosticDescriptor)~System.Boolean"] = new(
-            "Reads the analyzer-local descriptor state when the instance " +
-            "was constructed analyzer-side, and remotes when it came from " +
-            "the compiler.",
+            DescriptorLocalOrRemote,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return global::System.Object.ReferenceEquals(this, other);",
@@ -94,9 +129,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.GetHashCode~System.Int32"] = new(
-            "Reads the analyzer-local descriptor state when the instance " +
-            "was constructed analyzer-side, and remotes when it came from " +
-            "the compiler.",
+            DescriptorLocalOrRemote,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return global::System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(this);",
@@ -104,9 +137,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.get_Category~System.String"] = new(
-            "Reads the analyzer-local descriptor state when the instance " +
-            "was constructed analyzer-side, and remotes when it came from " +
-            "the compiler.",
+            DescriptorLocalOrRemote,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotLocalCategory;",
@@ -114,9 +145,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.get_CustomTags~System.Collections.Generic.IEnumerable{System.String}"] = new(
-            "Reads the analyzer-local descriptor state when the instance " +
-            "was constructed analyzer-side, and remotes when it came from " +
-            "the compiler.",
+            DescriptorLocalOrRemote,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotLocalCustomTags;",
@@ -124,9 +153,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.get_DefaultSeverity~Microsoft.CodeAnalysis.DiagnosticSeverity"] = new(
-            "Reads the analyzer-local descriptor state when the instance " +
-            "was constructed analyzer-side, and remotes when it came from " +
-            "the compiler.",
+            DescriptorLocalOrRemote,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotLocalDefaultSeverity;",
@@ -134,9 +161,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.get_Description~Microsoft.CodeAnalysis.LocalizableString"] = new(
-            "Reads the analyzer-local descriptor state when the instance " +
-            "was constructed analyzer-side, and remotes when it came from " +
-            "the compiler.",
+            DescriptorLocalOrRemote,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotLocalDescriptionValue;",
@@ -144,9 +169,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.get_HelpLinkUri~System.String"] = new(
-            "Reads the analyzer-local descriptor state when the instance " +
-            "was constructed analyzer-side, and remotes when it came from " +
-            "the compiler.",
+            DescriptorLocalOrRemote,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotLocalHelpLinkUri;",
@@ -154,9 +177,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.get_Id~System.String"] = new(
-            "Reads the analyzer-local descriptor state when the instance " +
-            "was constructed analyzer-side, and remotes when it came from " +
-            "the compiler.",
+            DescriptorLocalOrRemote,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotLocalId;",
@@ -164,9 +185,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.get_IsEnabledByDefault~System.Boolean"] = new(
-            "Reads the analyzer-local descriptor state when the instance " +
-            "was constructed analyzer-side, and remotes when it came from " +
-            "the compiler.",
+            DescriptorLocalOrRemote,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotLocalIsEnabledByDefault;",
@@ -174,9 +193,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.get_MessageFormat~Microsoft.CodeAnalysis.LocalizableString"] = new(
-            "Reads the analyzer-local descriptor state when the instance " +
-            "was constructed analyzer-side, and remotes when it came from " +
-            "the compiler.",
+            DescriptorLocalOrRemote,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotLocalMessageFormatValue;",
@@ -184,9 +201,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.DiagnosticDescriptor.get_Title~Microsoft.CodeAnalysis.LocalizableString"] = new(
-            "Reads the analyzer-local descriptor state when the instance " +
-            "was constructed analyzer-side, and remotes when it came from " +
-            "the compiler.",
+            DescriptorLocalOrRemote,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotLocalTitleValue;",
@@ -245,9 +260,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.AnalysisContext.RegisterOperationAction(System.Action{Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext},Microsoft.CodeAnalysis.OperationKind[])"] = new(
-            "The params-array overload forwards to the ImmutableArray " +
-            "overload analyzer-side. Marshalling the array would cost a " +
-            "crossing to rebuild what the other overload already accepts.",
+            ParamsForwardsToImmutableArray,
             LocalStatements:
             [
                 "global::System.ArgumentNullException.ThrowIfNull(action);",
@@ -256,9 +269,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.AnalysisContext.RegisterSymbolAction(System.Action{Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext},Microsoft.CodeAnalysis.SymbolKind[])"] = new(
-            "The params-array overload forwards to the ImmutableArray " +
-            "overload analyzer-side. Marshalling the array would cost a " +
-            "crossing to rebuild what the other overload already accepts.",
+            ParamsForwardsToImmutableArray,
             LocalStatements:
             [
                 "global::System.ArgumentNullException.ThrowIfNull(action);",
@@ -267,9 +278,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.AnalysisContext.RegisterSyntaxNodeAction``1(System.Action{Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext},``0[])"] = new(
-            "The params-array overload forwards to the ImmutableArray " +
-            "overload analyzer-side. Marshalling the array would cost a " +
-            "crossing to rebuild what the other overload already accepts.",
+            ParamsForwardsToImmutableArray,
             LocalStatements:
             [
                 "global::System.ArgumentNullException.ThrowIfNull(action);",
@@ -278,9 +287,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.CompilationAnalysisContext.ReportDiagnostic(Microsoft.CodeAnalysis.Diagnostic)"] = new(
-            "An analyzer-local Diagnostic has no handle, so it is " +
-            "transported field by field through the diagnostic sink; a " +
-            "compiler-owned one remotes.",
+            LocalDiagnosticTransport,
             LocalStatements:
             [
                 "if (__RoslynAotTryReportLocal(diagnostic)) return;",
@@ -288,9 +295,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.CompilationStartAnalysisContext.RegisterOperationAction(System.Action{Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext},Microsoft.CodeAnalysis.OperationKind[])"] = new(
-            "The params-array overload forwards to the ImmutableArray " +
-            "overload analyzer-side. Marshalling the array would cost a " +
-            "crossing to rebuild what the other overload already accepts.",
+            ParamsForwardsToImmutableArray,
             LocalStatements:
             [
                 "global::System.ArgumentNullException.ThrowIfNull(action);",
@@ -299,9 +304,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.CompilationStartAnalysisContext.RegisterSymbolAction(System.Action{Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext},Microsoft.CodeAnalysis.SymbolKind[])"] = new(
-            "The params-array overload forwards to the ImmutableArray " +
-            "overload analyzer-side. Marshalling the array would cost a " +
-            "crossing to rebuild what the other overload already accepts.",
+            ParamsForwardsToImmutableArray,
             LocalStatements:
             [
                 "global::System.ArgumentNullException.ThrowIfNull(action);",
@@ -310,9 +313,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.CompilationStartAnalysisContext.RegisterSyntaxNodeAction``1(System.Action{Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext},``0[])"] = new(
-            "The params-array overload forwards to the ImmutableArray " +
-            "overload analyzer-side. Marshalling the array would cost a " +
-            "crossing to rebuild what the other overload already accepts.",
+            ParamsForwardsToImmutableArray,
             LocalStatements:
             [
                 "global::System.ArgumentNullException.ThrowIfNull(action);",
@@ -321,9 +322,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext.ReportDiagnostic(Microsoft.CodeAnalysis.Diagnostic)"] = new(
-            "An analyzer-local Diagnostic has no handle, so it is " +
-            "transported field by field through the diagnostic sink; a " +
-            "compiler-owned one remotes.",
+            LocalDiagnosticTransport,
             LocalStatements:
             [
                 "if (__RoslynAotTryReportLocal(diagnostic)) return;",
@@ -331,9 +330,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.OperationBlockAnalysisContext.ReportDiagnostic(Microsoft.CodeAnalysis.Diagnostic)"] = new(
-            "An analyzer-local Diagnostic has no handle, so it is " +
-            "transported field by field through the diagnostic sink; a " +
-            "compiler-owned one remotes.",
+            LocalDiagnosticTransport,
             LocalStatements:
             [
                 "if (__RoslynAotTryReportLocal(diagnostic)) return;",
@@ -341,9 +338,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.OperationBlockStartAnalysisContext.RegisterOperationAction(System.Action{Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext},Microsoft.CodeAnalysis.OperationKind[])"] = new(
-            "The params-array overload forwards to the ImmutableArray " +
-            "overload analyzer-side. Marshalling the array would cost a " +
-            "crossing to rebuild what the other overload already accepts.",
+            ParamsForwardsToImmutableArray,
             LocalStatements:
             [
                 "global::System.ArgumentNullException.ThrowIfNull(action);",
@@ -352,9 +347,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext.ReportDiagnostic(Microsoft.CodeAnalysis.Diagnostic)"] = new(
-            "An analyzer-local Diagnostic has no handle, so it is " +
-            "transported field by field through the diagnostic sink; a " +
-            "compiler-owned one remotes.",
+            LocalDiagnosticTransport,
             LocalStatements:
             [
                 "if (__RoslynAotTryReportLocal(diagnostic)) return;",
@@ -362,9 +355,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.SymbolStartAnalysisContext.RegisterOperationAction(System.Action{Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext},Microsoft.CodeAnalysis.OperationKind[])"] = new(
-            "The params-array overload forwards to the ImmutableArray " +
-            "overload analyzer-side. Marshalling the array would cost a " +
-            "crossing to rebuild what the other overload already accepts.",
+            ParamsForwardsToImmutableArray,
             LocalStatements:
             [
                 "global::System.ArgumentNullException.ThrowIfNull(action);",
@@ -373,9 +364,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.SymbolStartAnalysisContext.RegisterSyntaxNodeAction``1(System.Action{Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext},``0[])"] = new(
-            "The params-array overload forwards to the ImmutableArray " +
-            "overload analyzer-side. Marshalling the array would cost a " +
-            "crossing to rebuild what the other overload already accepts.",
+            ParamsForwardsToImmutableArray,
             LocalStatements:
             [
                 "global::System.ArgumentNullException.ThrowIfNull(action);",
@@ -384,9 +373,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext.ReportDiagnostic(Microsoft.CodeAnalysis.Diagnostic)"] = new(
-            "An analyzer-local Diagnostic has no handle, so it is " +
-            "transported field by field through the diagnostic sink; a " +
-            "compiler-owned one remotes.",
+            LocalDiagnosticTransport,
             LocalStatements:
             [
                 "if (__RoslynAotTryReportLocal(diagnostic)) return;",
@@ -403,9 +390,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Diagnostics.SyntaxTreeAnalysisContext.ReportDiagnostic(Microsoft.CodeAnalysis.Diagnostic)"] = new(
-            "An analyzer-local Diagnostic has no handle, so it is " +
-            "transported field by field through the diagnostic sink; a " +
-            "compiler-owned one remotes.",
+            LocalDiagnosticTransport,
             LocalStatements:
             [
                 "if (__RoslynAotTryReportLocal(diagnostic)) return;",
@@ -422,54 +407,42 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableResourceString.#ctor(System.String,System.Resources.ResourceManager,System.Type)"] = new(
-            "LocalizableResourceString is analyzer-local. Its " +
-            "ResourceManager and resource source type live in the analyzer " +
-            "module and cannot be reached from the compiler.",
+            ResourceStringLocal,
             LocalStatements:
             [
                 "__RoslynAotInitializeLocal(nameOfLocalizableResource, resourceManager, resourceSource, global::System.Array.Empty<string>());",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableResourceString.#ctor(System.String,System.Resources.ResourceManager,System.Type,System.String[])"] = new(
-            "LocalizableResourceString is analyzer-local. Its " +
-            "ResourceManager and resource source type live in the analyzer " +
-            "module and cannot be reached from the compiler.",
+            ResourceStringLocal,
             LocalStatements:
             [
                 "__RoslynAotInitializeLocal(nameOfLocalizableResource, resourceManager, resourceSource, formatArguments);",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableResourceString.AreEqual(System.Object)~System.Boolean"] = new(
-            "LocalizableResourceString is analyzer-local. Its " +
-            "ResourceManager and resource source type live in the analyzer " +
-            "module and cannot be reached from the compiler.",
+            ResourceStringLocal,
             LocalStatements:
             [
                 "return __RoslynAotAreEqualLocal(other);",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableResourceString.GetHash~System.Int32"] = new(
-            "LocalizableResourceString is analyzer-local. Its " +
-            "ResourceManager and resource source type live in the analyzer " +
-            "module and cannot be reached from the compiler.",
+            ResourceStringLocal,
             LocalStatements:
             [
                 "return __RoslynAotGetHashLocal();",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableResourceString.GetText(System.IFormatProvider)~System.String"] = new(
-            "LocalizableResourceString is analyzer-local. Its " +
-            "ResourceManager and resource source type live in the analyzer " +
-            "module and cannot be reached from the compiler.",
+            ResourceStringLocal,
             LocalStatements:
             [
                 "return __RoslynAotGetTextLocal(formatProvider);",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableString.Equals(Microsoft.CodeAnalysis.LocalizableString)~System.Boolean"] = new(
-            "LocalizableString is dual. A fixed or resource string " +
-            "constructed analyzer-side answers locally; a compiler-owned " +
-            "one remotes.",
+            LocalizableStringDual,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return other is not null && __RoslynAotAreEqual(other);",
@@ -477,9 +450,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableString.Equals(System.Object)~System.Boolean"] = new(
-            "LocalizableString is dual. A fixed or resource string " +
-            "constructed analyzer-side answers locally; a compiler-owned " +
-            "one remotes.",
+            LocalizableStringDual,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return other is not null && __RoslynAotAreEqual(other);",
@@ -487,9 +458,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableString.GetHashCode~System.Int32"] = new(
-            "LocalizableString is dual. A fixed or resource string " +
-            "constructed analyzer-side answers locally; a compiler-owned " +
-            "one remotes.",
+            LocalizableStringDual,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotGetHash();",
@@ -497,9 +466,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableString.ToString(System.IFormatProvider)~System.String"] = new(
-            "LocalizableString is dual. A fixed or resource string " +
-            "constructed analyzer-side answers locally; a compiler-owned " +
-            "one remotes.",
+            LocalizableStringDual,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotGetText(formatProvider);",
@@ -507,9 +474,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableString.ToString~System.String"] = new(
-            "LocalizableString is dual. A fixed or resource string " +
-            "constructed analyzer-side answers locally; a compiler-owned " +
-            "one remotes.",
+            LocalizableStringDual,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return __RoslynAotGetText(null);",
@@ -517,36 +482,28 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableString.add_OnException(System.EventHandler{System.Exception})"] = new(
-            "LocalizableString is dual. A fixed or resource string " +
-            "constructed analyzer-side answers locally; a compiler-owned " +
-            "one remotes.",
+            LocalizableStringDual,
             LocalStatements:
             [
                 "__RoslynAotAddExceptionHandler(value);",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableString.op_Explicit(Microsoft.CodeAnalysis.LocalizableString)~System.String"] = new(
-            "LocalizableString is dual. A fixed or resource string " +
-            "constructed analyzer-side answers locally; a compiler-owned " +
-            "one remotes.",
+            LocalizableStringDual,
             LocalStatements:
             [
                 "return localizableResource?.__RoslynAotGetText(null);",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableString.op_Implicit(System.String)~Microsoft.CodeAnalysis.LocalizableString"] = new(
-            "LocalizableString is dual. A fixed or resource string " +
-            "constructed analyzer-side answers locally; a compiler-owned " +
-            "one remotes.",
+            LocalizableStringDual,
             LocalStatements:
             [
                 "return __RoslynAotCreateFixed(fixedResource);",
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.LocalizableString.remove_OnException(System.EventHandler{System.Exception})"] = new(
-            "LocalizableString is dual. A fixed or resource string " +
-            "constructed analyzer-side answers locally; a compiler-owned " +
-            "one remotes.",
+            LocalizableStringDual,
             LocalStatements:
             [
                 "__RoslynAotRemoveExceptionHandler(value);",
@@ -562,8 +519,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Location.get_IsInMetadata~System.Boolean"] = new(
-            "Location is dual. A locally created location answers from its " +
-            "own kind rather than remoting to a handle it does not have.",
+            LocationDual,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return Kind == global::Microsoft.CodeAnalysis.LocationKind.MetadataFile;",
@@ -571,8 +527,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Location.get_IsInSource~System.Boolean"] = new(
-            "Location is dual. A locally created location answers from its " +
-            "own kind rather than remoting to a handle it does not have.",
+            LocationDual,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return Kind == global::Microsoft.CodeAnalysis.LocationKind.SourceFile;",
@@ -580,8 +535,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.Location.get_MetadataModule~Microsoft.CodeAnalysis.IModuleSymbol"] = new(
-            "Location is dual. A locally created location answers from its " +
-            "own kind rather than remoting to a handle it does not have.",
+            LocationDual,
             LocalStatements:
             [
                 "if (__RoslynAotIsLocal) return null;",
@@ -734,9 +688,7 @@ internal static class ProjectionOverrides
             RemoteFallback: true),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.SymbolEqualityComparer.Equals(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.ISymbol)~System.Boolean"] = new(
-            "The comparer itself is analyzer-local; only its kind crosses, " +
-            "and the comparison runs compiler-side against the two symbol " +
-            "handles.",
+            ComparerLocal,
             LocalStatements:
             [
                 "if (x is null) return y is null;",
@@ -748,9 +700,7 @@ internal static class ProjectionOverrides
             ]),
 
         ["[Microsoft.CodeAnalysis]M:Microsoft.CodeAnalysis.SymbolEqualityComparer.GetHashCode(Microsoft.CodeAnalysis.ISymbol)~System.Int32"] = new(
-            "The comparer itself is analyzer-local; only its kind crosses, " +
-            "and the comparison runs compiler-side against the two symbol " +
-            "handles.",
+            ComparerLocal,
             LocalStatements:
             [
                 "if (obj is null) return 0;",

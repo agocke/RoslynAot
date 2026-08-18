@@ -23,6 +23,20 @@ public readonly partial struct SyntaxNodeAnalysisContext
         __roslynAotHandle = handle;
         _dummy = new AnalyzerLocalContext(node, reportDiagnostic);
     }
+
+    internal SyntaxNode __RoslynAotGetLocalNode() =>
+        (_dummy as AnalyzerLocalContext)?.Node ??
+        throw new InvalidOperationException(
+            "This syntax-node analysis context is not analyzer-owned.");
+
+    internal bool __RoslynAotTryReportLocal(Diagnostic diagnostic) =>
+        AnalyzerContextHelpers.TryReport(
+            (_dummy as AnalyzerLocalContext)?.ReportDiagnostic,
+            diagnostic);
+
+    private sealed record AnalyzerLocalContext(
+        SyntaxNode Node,
+        Action<Diagnostic> ReportDiagnostic);
 }
 
 public readonly partial struct OperationAnalysisContext

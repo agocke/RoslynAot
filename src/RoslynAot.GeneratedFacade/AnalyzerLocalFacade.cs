@@ -3,7 +3,6 @@ using System.Globalization;
 using System.Resources;
 using RoslynAot.Abi;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Text;
 
 [assembly: System.Runtime.InteropServices.TypeMapAssociation<
@@ -450,135 +449,24 @@ public sealed partial class SymbolEqualityComparer
 
 }
 
-namespace Microsoft.CodeAnalysis.Diagnostics
-{
-
-public readonly partial struct SyntaxNodeAnalysisContext
-{
-    internal SyntaxNodeAnalysisContext(
-        SyntaxNode node,
-        Action<Diagnostic> reportDiagnostic)
-    {
-        this = default;
-        _dummy = new AnalyzerLocalContext(
-            node ?? throw new ArgumentNullException(nameof(node)),
-            reportDiagnostic ??
-                throw new ArgumentNullException(nameof(reportDiagnostic)));
-    }
-
-    internal SyntaxNode __RoslynAotGetLocalNode() =>
-        (_dummy as AnalyzerLocalContext)?.Node ??
-        throw new InvalidOperationException(
-            "This syntax-node analysis context is not analyzer-owned.");
-
-    internal bool __RoslynAotTryReportLocal(Diagnostic diagnostic)
-    {
-        if (_dummy is not AnalyzerLocalContext context)
-        {
-            return false;
-        }
-
-        context.ReportDiagnostic(diagnostic);
-        return true;
-    }
-
-    private sealed record AnalyzerLocalContext(
-        SyntaxNode Node,
-        Action<Diagnostic> ReportDiagnostic);
-}
-
-}
-
 namespace RoslynAot.RoslynFacade
 {
 
+/// <summary>
+/// The analyzer-side entry points the analyzer runtime calls into the facade
+/// with. Registration and callback contexts are built by
+/// <see cref="AnalyzerActionFacadeFactory"/>; what is left here is descriptor
+/// state, which lives on the analyzer-owned <see cref="DiagnosticDescriptor"/>
+/// rather than on a context.
+/// </summary>
 public static class AnalyzerFacadeFactory
 {
-    public static AnalysisContext CreateAnalysisContext(
-        Action<Action<SyntaxNodeAnalysisContext>, int[]> registerSyntaxNodeAction)
-        => new AnalyzerLocalAnalysisContext(registerSyntaxNodeAction);
-
-    public static SyntaxNode CreateSyntaxNode(
-        IRoslynControlVtbl controlVtbl,
-        long handle) =>
-        SyntaxNode.__RoslynAotCreateProxy(controlVtbl, handle);
-
-    public static SyntaxNodeAnalysisContext CreateSyntaxNodeAnalysisContext(
-        SyntaxNode node,
-        Action<Diagnostic> reportDiagnostic) =>
-        new(node, reportDiagnostic);
-
     public static string GetDescriptorString(
         DiagnosticDescriptor descriptor,
         AnalyzerDescriptorField field)
     {
         ArgumentNullException.ThrowIfNull(descriptor);
         return descriptor.__RoslynAotGetLocalString(field);
-    }
-
-    private sealed class AnalyzerLocalAnalysisContext(
-        Action<Action<SyntaxNodeAnalysisContext>, int[]> registerSyntaxNodeAction)
-        : AnalysisContext
-    {
-        public override DiagnosticSeverity MinimumReportedSeverity =>
-            DiagnosticSeverity.Hidden;
-
-        public override void ConfigureGeneratedCodeAnalysis(
-            GeneratedCodeAnalysisFlags analysisMode)
-        {
-        }
-
-        public override void EnableConcurrentExecution()
-        {
-        }
-
-        public override void RegisterSyntaxNodeAction<TLanguageKindEnum>(
-            Action<SyntaxNodeAnalysisContext> action,
-            params ImmutableArray<TLanguageKindEnum> syntaxKinds)
-        {
-            ArgumentNullException.ThrowIfNull(action);
-            int[] rawKinds = new int[syntaxKinds.Length];
-            for (int index = 0; index < syntaxKinds.Length; index++)
-            {
-                rawKinds[index] = Convert.ToInt32(syntaxKinds[index]);
-            }
-
-            registerSyntaxNodeAction(action, rawKinds);
-        }
-
-        public override void RegisterCodeBlockAction(
-            Action<CodeBlockAnalysisContext> action) =>
-            throw UnsupportedRegistration();
-
-        public override void RegisterCodeBlockStartAction<TLanguageKindEnum>(
-            Action<CodeBlockStartAnalysisContext<TLanguageKindEnum>> action) =>
-            throw UnsupportedRegistration();
-
-        public override void RegisterCompilationAction(
-            Action<CompilationAnalysisContext> action) =>
-            throw UnsupportedRegistration();
-
-        public override void RegisterCompilationStartAction(
-            Action<CompilationStartAnalysisContext> action) =>
-            throw UnsupportedRegistration();
-
-        public override void RegisterSemanticModelAction(
-            Action<SemanticModelAnalysisContext> action) =>
-            throw UnsupportedRegistration();
-
-        public override void RegisterSymbolAction(
-            Action<SymbolAnalysisContext> action,
-            params ImmutableArray<SymbolKind> symbolKinds) =>
-            throw UnsupportedRegistration();
-
-        public override void RegisterSyntaxTreeAction(
-            Action<SyntaxTreeAnalysisContext> action) =>
-            throw UnsupportedRegistration();
-
-        private static PlatformNotSupportedException
-            UnsupportedRegistration() =>
-            new(
-                "This analyzer registration kind is not implemented by RoslynAot.");
     }
 }
 

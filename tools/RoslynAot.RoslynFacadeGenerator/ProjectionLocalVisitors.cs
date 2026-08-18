@@ -70,11 +70,6 @@ internal static class ProjectionLocalVisitors
         out LocalVisitorEntry entry) =>
         s_entries.TryGetValue(canonicalId, out entry!);
 
-    public static bool IsLocalVisitor(INamedTypeSymbol type) =>
-        TryGet(
-            CanonicalSignatureBuilder.GetCanonicalId(type),
-            out _);
-
     /// <summary>
     /// The analyzer-side body for one member of a declared visitor, or false
     /// if the member is not one of the three shapes the rule covers.

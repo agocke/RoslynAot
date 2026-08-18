@@ -47,16 +47,19 @@ as `AD0001` rather than silently omitting analysis.
 
 ## Facade values
 
-Analyzer-visible Roslyn values have two forms:
+Every projected type carries a declared or derived ownership class — `Remote`,
+`Value`, `Local`, `Dual`, or `Facade` — which decides how its instances may
+cross. In the runtime that shows up as two representations:
 
 - **Local values** are created and owned inside the analyzer module, such as
   diagnostic descriptors, localized strings, and analyzer contexts.
 - **Remote proxies** contain an opaque compiler handle plus generated typed
   vtables used to invoke real Roslyn objects in the compiler module.
 
-`RoslynFacadeRuntime` stores the active control interface in an async-local
-scope. Proxies verify that related values use the same control identity before
-combining handles in a call.
+`Dual` types have both, and a member on one answers locally or remotes
+depending on which it is holding. `RoslynFacadeRuntime` stores the active
+control interface in an async-local scope; handles themselves are
+process-global, so there is no control identity for a call to reconcile.
 
 The generated facade and proxy implementation is produced by the
 [Roslyn facade generator](../../tools/RoslynAot.RoslynFacadeGenerator/README.md).

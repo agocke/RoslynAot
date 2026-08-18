@@ -39,9 +39,9 @@ analysis-context initialization call, receives registered callbacks, and
 reports diagnostics through `IAnalyzerHost`.
 
 The compiler supplies a Roslyn control interface whenever analyzer code may
-construct or inspect facade values. Analyzer transports reject a different
-control identity after initialization so handles and proxies cannot be mixed
-between compiler-owned object tables.
+construct or inspect facade values. There is one such control per compiler
+process, so every analyzer in a module reads the same object table and a
+handle means the same thing to all of them.
 
 ## Strings
 
@@ -58,11 +58,12 @@ negative length is invalid except where a generated operation explicitly uses
 
 Roslyn handles encode:
 
-- The owning `RoslynInterop` identity.
-- A slot in its object table.
+- A slot in the process-global object table.
 - A generation used to reject stale handles after disposal and slot reuse.
 
-A handle is meaningful only to its owning compiler-side interop instance.
+Handles are process-global: one table serves the whole compiler, so a reference
+type that has already crossed keeps the same handle on every later crossing and
+analyzer-side reference equality reflects Roslyn's own object identity.
 Generated dispatchers validate the expected runtime type before invoking real
 Roslyn APIs.
 

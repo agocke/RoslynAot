@@ -110,7 +110,11 @@ Four rules follow, and they are cited by name later rather than re-argued:
   holds. Modules send ids.
 - **Per-analyzer roots.** The on-machine glue roots only what the analyzer
   reaches; the projection assembly declares no module initializers or eager
-  registration.
+  registration. **Currently violated, knowingly:** most-derived class-proxy
+  construction (problem 3) registers its 18 derived proxies from a
+  `[ModuleInitializer]`, which is invisible to trimming and costs +5.0% on the
+  floor module. Making that registration demand-driven is the follow-up that
+  restores this rule.
 
 Module size and ILC time are tracked build metrics (§6.3), because a rooting
 regression is invisible in behavior and obvious in bytes.
@@ -136,22 +140,25 @@ object identity for Roslyn objects, which is where problem 2 lives.
 | Trimmable proxy resolution | **Done** — see §1.2 |
 | Comparer identity as an enum tag | **Done** — `RoslynWellKnownObject` + `SymbolEqualityComparerEquals` |
 | Out-of-band error channel | **Partly** — `CopyLastErrorUtf16` + `RoslynRemoteErrorKind`, thread-local; carries category and message but no member, analyzer, or frame context (§4.5) |
-| Local vs remote ownership | **Partly** — a two-way split exists; §3.4 needs five classes |
-| **Canonical handles** | **Missing** — `RoslynHandleTable.Add` allocates a fresh slot on every crossing, with no reverse map |
-| **Canonical proxies** | **Missing** — no handle→proxy cache on the analyzer side |
+| Local vs remote ownership | **Done** — the five classes of §3.4, declared or derived with a reason in `ProjectionTypeOwnership` (migration Step 3) |
+| **Canonical handles** | **Done** — `RoslynHandleTable` keeps a reverse map keyed on reference identity, so one compiler object has one handle (migration Step 4) |
+| **Canonical proxies** | **Partly** — `RoslynObjectProxy.GetOrCreate` caches by handle for the interface family; class-hierarchy proxies are still one per declaring type |
 | Everything in L3, L4, Parts 4–6 | **Missing** |
 
-The two missing identity rows are the important ones, and they are the literal
-text of problem 2: *"Returning a new compiler handle for the same object creates
-the same problem one layer earlier."* `Add` is that fast path. §3.2's rule that
-the reverse map "must never be bypassed by a just-allocate-a-new-slot path" is
-not a caution against a hypothetical — it names the current code.
+The identity rows were the important ones, and they were the literal text of
+problem 2: *"Returning a new compiler handle for the same object creates the
+same problem one layer earlier."* `Add` was that fast path, and §3.2's rule
+that the reverse map "must never be bypassed by a just-allocate-a-new-slot
+path" named the code as it then stood. Migration Step 4 closed both halves and
+cut differential-corpus boundary calls 15.6% doing it. What remains is the
+class-hierarchy half of proxy canonicalization, which needs the same
+most-derived-construction answer as problem 3.
 
-**Handle tables are per analyzer proxy.** `NativeDiagnosticAnalyzer` holds
-`private readonly RoslynInterop _roslynInterop = new()`, so the 43-analyzer
-NetAnalyzers module has 43 independent tables, and one `INamedTypeSymbol`
-crossing to all of them produces 43 handles — times however many crossings
-each. This is the concrete cost of the scoping that §3.2 removes.
+**One handle table per process.** `NativeDiagnosticAnalyzer` now takes
+`RoslynInterop.Shared`, so a 43-analyzer module has one table and one
+`INamedTypeSymbol` crossing to all of them produces one handle. The scoping
+§3.2 removes is gone, and with it the interop component of a handle's
+encoding.
 
 Other BCL machinery worth using rather than rebuilding:
 
@@ -207,10 +214,10 @@ csc-compatible executable with no build server, so the process exits per
 invocation. Measure peak table size on the largest available build, but the
 structural risk is absent.
 
-Note this interacts with the identity fix in §3.2: today `Add` allocates a slot
-per crossing, so the table grows with *traffic*. Once handles are canonical it
-grows with the *object graph*, which is a far lower ceiling — the identity fix
-is also the memory fix.
+Note this interacts with the identity fix in §3.2: `Add` used to allocate a
+slot per crossing, so the table grew with *traffic*. Now that handles are
+canonical it grows with the *object graph*, which is a far lower ceiling — the
+identity fix was also the memory fix.
 
 **What must not be deferred**, because it looks like optimization and is not:
 canonical handles, the three-state `Seq` tag, per-element runtime type ids,

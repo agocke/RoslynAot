@@ -258,7 +258,5 @@ internal sealed class HarnessOptions
 
     public int TimeoutSeconds { get; set; } = 120;
 
-    public int Jobs { get; set; } = Environment.ProcessorCount;
-
     public string? OutputDirectory { get; set; }
 }
