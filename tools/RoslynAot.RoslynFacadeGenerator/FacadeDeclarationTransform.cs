@@ -1152,8 +1152,7 @@ internal static class FacadeBodyEmitter
             }
         }
 
-        arguments.AddRange(operation.Parameters.Select(
-            parameter => GetFacadeArgument(parameter, "controlVtbl")));
+        arguments.AddRange(operation.Parameters.Select(GetFacadeArgument));
 
         string invocationPrefix =
             $"vtbl.{operation.GeneratedName}(";
@@ -1245,8 +1244,7 @@ internal static class FacadeBodyEmitter
     }
 
     private static string GetFacadeArgument(
-        ParameterProjection parameter,
-        string controlVtbl)
+        ParameterProjection parameter)
     {
         string name = CSharpName.EscapeIdentifier(
             parameter.Symbol.Name);
@@ -1274,7 +1272,7 @@ internal static class FacadeBodyEmitter
                 $"{name}.Value.__RoslynAotGetHandle() : 0L",
             AbiTypeKind.ObjectArray =>
                 "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime." +
-                $"CreateObjectCollectionHandle({controlVtbl}, " +
+                "CreateObjectCollectionHandle(controlVtbl, " +
                 $"global::System.Array.ConvertAll({name}, " +
                 "item => item.__RoslynAotGetHandle()))",
             AbiTypeKind.Utf16String => name,

@@ -2,6 +2,7 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.CodeAnalysis;
 using Microsoft.DotNet.GenAPI;
+using StaticCs;
 
 namespace RoslynAot.RoslynFacadeGenerator;
 
@@ -52,7 +53,7 @@ internal static class ProjectionOutputEmitter
             Path.Combine(
                 analyzerRuntimeDirectory,
                 "RoslynProxyFactory.g.cs"),
-            EmitAnalyzerRuntimeProxyFactory(model));
+            EmitAnalyzerRuntimeProxyFactory());
         WriteManifest(
             Path.Combine(manifestDirectory, "RoslynProjection.json"),
             model);
@@ -173,7 +174,7 @@ internal static class ProjectionOutputEmitter
                 string derivedName = derived.Symbol.ToDisplayString(
                     SymbolDisplayFormat.FullyQualifiedFormat);
                 registrations.Add(
-                    "        global::RoslynAot.RoslynFacade." +
+                    "global::RoslynAot.RoslynFacade." +
                     "RoslynDerivedProxyRegistry.Register(" +
                     $"{baseLow}L, {baseHigh}L, {low}L, {high}L, " +
                     $"{ProjectionModel.GetBaseDepth(derived.Symbol)}, " +
@@ -182,21 +183,25 @@ internal static class ProjectionOutputEmitter
             }
         }
 
-        var builder = new StringBuilder();
+        var builder = new IndentingBuilder();
         builder.AppendLine("namespace RoslynAot.RoslynFacade;");
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine("internal static class RoslynAotDerivedProxies");
         builder.AppendLine("{");
+        builder.Indent();
         builder.AppendLine(
-            "    [global::System.Runtime.CompilerServices.ModuleInitializer]");
-        builder.AppendLine("    internal static void Register()");
-        builder.AppendLine("    {");
+            "[global::System.Runtime.CompilerServices.ModuleInitializer]");
+        builder.AppendLine("internal static void Register()");
+        builder.AppendLine("{");
+        builder.Indent();
         foreach (string registration in registrations)
         {
             builder.AppendLine(registration);
         }
 
-        builder.AppendLine("    }");
+        builder.Dedent();
+        builder.AppendLine("}");
+        builder.Dedent();
         builder.AppendLine("}");
         return builder.ToString();
     }
@@ -205,7 +210,7 @@ internal static class ProjectionOutputEmitter
         ProjectionModel model,
         string assemblyName)
     {
-        var builder = new StringBuilder();
+        var builder = new IndentingBuilder();
         foreach (VtblProjection vtbl in GetDynamicInterfaceVtbls(model)
             .Where(
                 vtbl =>
@@ -217,9 +222,11 @@ internal static class ProjectionOutputEmitter
                 "[assembly: global::System.Runtime.InteropServices." +
                 "TypeMapAssociation<" +
                 "global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(");
-            builder.AppendLine($"    typeof({typeName}),");
+            builder.Indent();
+            builder.AppendLine($"typeof({typeName}),");
             builder.AppendLine(
-                $"    typeof({typeName}.__RoslynAotImplementation))]");
+                $"typeof({typeName}.__RoslynAotImplementation))]");
+            builder.Dedent();
         }
 
         return builder.ToString();
@@ -456,35 +463,40 @@ internal static class ProjectionOutputEmitter
 
     private static string EmitAbiVtbl(VtblProjection vtbl)
     {
-        var builder = new StringBuilder();
+        var builder = new IndentingBuilder();
         builder.AppendLine("using System.Runtime.InteropServices;");
         builder.AppendLine("using System.Runtime.InteropServices.Marshalling;");
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine("namespace RoslynAot.Abi;");
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine("[GeneratedComInterface]");
-        builder.AppendLine($"[Guid(\"{vtbl.VtblId:D}\")]");
+        builder.AppendLine($"[Guid(\"{vtbl.VtblId.ToString("D")}\")]");
         string baseVtbl = vtbl.BaseVtbl is null
             ? string.Empty
             : $" : {vtbl.BaseVtbl.Name}";
         builder.AppendLine(
             $"public partial interface {vtbl.Name}{baseVtbl}");
         builder.AppendLine("{");
+        builder.Indent();
         foreach (ProjectedCall operation in vtbl.Members)
         {
-            builder.AppendLine();
-            builder.AppendLine("    [PreserveSig]");
-            builder.AppendLine($"    int {operation.GeneratedName}(");
+            builder.AppendLine("");
+            builder.AppendLine("[PreserveSig]");
+            builder.AppendLine($"int {operation.GeneratedName}(");
             IReadOnlyList<string> abiParameters = GetAbiParameters(operation);
-            string[] parameters = abiParameters
-                .Select((parameter, index) =>
-                    $"        {parameter}" +
-                    $"{(index + 1 == abiParameters.Count ? string.Empty : ",")}")
-                .ToArray();
-            builder.AppendLine(string.Join("\n", parameters));
-            builder.AppendLine("    );");
+            builder.Indent();
+            for (int index = 0; index < abiParameters.Count; index++)
+            {
+                builder.AppendLine(
+                    abiParameters[index] +
+                    (index + 1 == abiParameters.Count ? string.Empty : ","));
+            }
+
+            builder.Dedent();
+            builder.AppendLine(");");
         }
 
+        builder.Dedent();
         builder.AppendLine("}");
         return builder.ToString();
     }
@@ -564,12 +576,12 @@ internal static class ProjectionOutputEmitter
                 operation => ordinals[operation.CanonicalSignature])
             .ToArray();
 
-        var builder = new StringBuilder();
+        var builder = new IndentingBuilder();
         builder.AppendLine("#nullable enable");
         builder.AppendLine("using System.Threading;");
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine("namespace RoslynAot.Csc;");
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine("/// <summary>");
         builder.AppendLine(
             "/// Per-member call counts at the projection boundary. Counting is");
@@ -582,63 +594,71 @@ internal static class ProjectionOutputEmitter
         builder.AppendLine("/// </summary>");
         builder.AppendLine("internal static class RoslynCallCounters");
         builder.AppendLine("{");
+        builder.Indent();
         builder.AppendLine(
-            "    public const int MemberCount = " +
+            "public const int MemberCount = " +
             $"{members.Length + s_controlVtblMembers.Length};");
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine(
-            "    private static readonly long[] s_counts = new long[MemberCount];");
-        builder.AppendLine();
-        builder.AppendLine("    public static readonly string[] MemberNames =");
-        builder.AppendLine("    [");
+            "private static readonly long[] s_counts = new long[MemberCount];");
+        builder.AppendLine("");
+        builder.AppendLine("public static readonly string[] MemberNames =");
+        builder.AppendLine("[");
+        builder.Indent();
         foreach (ProjectedCall operation in members)
         {
             builder.AppendLine(
-                $"        {Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(GetCounterName(operation), quote: true)},");
+                $"{Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(GetCounterName(operation), quote: true)},");
         }
 
         foreach (string name in s_controlVtblMembers)
         {
             builder.AppendLine(
-                "        " +
                 Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(
                     $"RoslynAot.Abi.IRoslynControlVtbl.{name}",
                     quote: true) +
                 ",");
         }
 
-        builder.AppendLine("    ];");
-        builder.AppendLine();
-        builder.AppendLine("    /// <summary>");
+        builder.Dedent();
+        builder.AppendLine("];");
+        builder.AppendLine("");
+        builder.AppendLine("/// <summary>");
         builder.AppendLine(
-            "    /// Ordinals for the control vtbl, which is hand-written and");
+            "/// Ordinals for the control vtbl, which is hand-written and");
         builder.AppendLine(
-            "    /// so records against these rather than an emitted literal.");
-        builder.AppendLine("    /// </summary>");
+            "/// so records against these rather than an emitted literal.");
+        builder.AppendLine("/// </summary>");
         for (int index = 0; index < s_controlVtblMembers.Length; index++)
         {
             builder.AppendLine(
-                $"    public const int Control{s_controlVtblMembers[index]} = " +
+                $"public const int Control{s_controlVtblMembers[index]} = " +
                 $"{members.Length + index};");
         }
 
-        builder.AppendLine();
-        builder.AppendLine("    public static void Record(int ordinal) =>");
+        builder.AppendLine("");
+        builder.AppendLine("public static void Record(int ordinal) =>");
+        builder.Indent();
+        builder.AppendLine("Interlocked.Increment(ref s_counts[ordinal]);");
+        builder.Dedent();
+        builder.AppendLine("");
+        builder.AppendLine("public static long[] Snapshot()");
+        builder.AppendLine("{");
+        builder.Indent();
+        builder.AppendLine("var snapshot = new long[MemberCount];");
         builder.AppendLine(
-            "        Interlocked.Increment(ref s_counts[ordinal]);");
-        builder.AppendLine();
-        builder.AppendLine("    public static long[] Snapshot()");
-        builder.AppendLine("    {");
-        builder.AppendLine("        var snapshot = new long[MemberCount];");
+            "for (int index = 0; index < snapshot.Length; index++)");
+        builder.AppendLine("{");
+        builder.Indent();
         builder.AppendLine(
-            "        for (int index = 0; index < snapshot.Length; index++)");
-        builder.AppendLine("        {");
-        builder.AppendLine(
-            "            snapshot[index] = Interlocked.Read(ref s_counts[index]);");
-        builder.AppendLine("        }");
-        builder.AppendLine();
-        builder.AppendLine("        return snapshot;");
-        builder.AppendLine("    }");
+            "snapshot[index] = Interlocked.Read(ref s_counts[index]);");
+        builder.Dedent();
+        builder.AppendLine("}");
+        builder.AppendLine("");
+        builder.AppendLine("return snapshot;");
+        builder.Dedent();
+        builder.AppendLine("}");
+        builder.Dedent();
         builder.AppendLine("}");
         return builder.ToString();
     }
@@ -655,26 +675,29 @@ internal static class ProjectionOutputEmitter
         VtblProjection vtbl,
         IReadOnlyDictionary<string, int> ordinals)
     {
-        var builder = new StringBuilder();
+        var builder = new IndentingBuilder();
         builder.AppendLine("#nullable enable");
         builder.AppendLine("using System.Text;");
         builder.AppendLine("using System.Runtime.InteropServices.Marshalling;");
         builder.AppendLine("using RoslynAot.Abi;");
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine("namespace RoslynAot.Csc;");
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine("[GeneratedComClass]");
         builder.AppendLine(
             $"internal sealed partial class {GetDispatcherClassName(vtbl)} : {vtbl.Name}");
         builder.AppendLine("{");
-        builder.AppendLine("    private readonly RoslynInterop _owner;");
-        builder.AppendLine();
+        builder.Indent();
+        builder.AppendLine("private readonly RoslynInterop _owner;");
+        builder.AppendLine("");
         builder.AppendLine(
-            $"    public {GetDispatcherClassName(vtbl)}(RoslynInterop owner)");
-        builder.AppendLine("    {");
+            $"public {GetDispatcherClassName(vtbl)}(RoslynInterop owner)");
+        builder.AppendLine("{");
+        builder.Indent();
         builder.AppendLine(
-            "        _owner = owner ?? throw new ArgumentNullException(nameof(owner));");
-        builder.AppendLine("    }");
+            "_owner = owner ?? throw new ArgumentNullException(nameof(owner));");
+        builder.Dedent();
+        builder.AppendLine("}");
 
         foreach (ProjectedCall operation in GetDispatcherMembers(vtbl))
         {
@@ -684,6 +707,7 @@ internal static class ProjectionOutputEmitter
                 ordinals[operation.CanonicalSignature]);
         }
 
+        builder.Dedent();
         builder.AppendLine("}");
         return builder.ToString();
     }
@@ -691,46 +715,55 @@ internal static class ProjectionOutputEmitter
     private static string EmitCompilerDispatcherRegistry(
         ProjectionModel model)
     {
-        var builder = new StringBuilder();
+        var builder = new IndentingBuilder();
         builder.AppendLine("namespace RoslynAot.Csc;");
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine("internal static class RoslynDispatcherRegistry");
         builder.AppendLine("{");
-        builder.AppendLine("    public static object Create(");
-        builder.AppendLine("        long vtblIdLow,");
-        builder.AppendLine("        long vtblIdHigh,");
-        builder.AppendLine("        RoslynInterop owner) =>");
-        builder.AppendLine("        (vtblIdLow, vtblIdHigh) switch");
-        builder.AppendLine("        {");
+        builder.Indent();
+        builder.AppendLine("public static object Create(");
+        builder.Indent();
+        builder.AppendLine("long vtblIdLow,");
+        builder.AppendLine("long vtblIdHigh,");
+        builder.AppendLine("RoslynInterop owner) =>");
+        builder.AppendLine("(vtblIdLow, vtblIdHigh) switch");
+        builder.AppendLine("{");
+        builder.Indent();
         foreach (VtblProjection vtbl in model.Vtbls)
         {
             (long low, long high) = GetVtblIdParts(vtbl);
             builder.AppendLine(
-                $"            ({low}L, {high}L) => new {GetDispatcherClassName(vtbl)}(owner),");
+                $"({low}L, {high}L) => new {GetDispatcherClassName(vtbl)}(owner),");
         }
 
         builder.AppendLine(
-            "            _ => throw new PlatformNotSupportedException(\"The requested Roslyn vtable is not available in this build.\"),");
-        builder.AppendLine("        };");
-        builder.AppendLine();
-        builder.AppendLine("    public static bool IsRuntimeType(");
-        builder.AppendLine("        object value,");
-        builder.AppendLine("        long vtblIdLow,");
-        builder.AppendLine("        long vtblIdHigh) =>");
-        builder.AppendLine("        (vtblIdLow, vtblIdHigh) switch");
-        builder.AppendLine("    {");
+            "_ => throw new PlatformNotSupportedException(\"The requested Roslyn vtable is not available in this build.\"),");
+        builder.Dedent();
+        builder.AppendLine("};");
+        builder.Dedent();
+        builder.AppendLine("");
+        builder.AppendLine("public static bool IsRuntimeType(");
+        builder.Indent();
+        builder.AppendLine("object value,");
+        builder.AppendLine("long vtblIdLow,");
+        builder.AppendLine("long vtblIdHigh) =>");
+        builder.AppendLine("(vtblIdLow, vtblIdHigh) switch");
+        builder.AppendLine("{");
+        builder.Indent();
         foreach (VtblProjection vtbl in GetRuntimeClassVtbls(model))
         {
             (long low, long high) = GetVtblIdParts(vtbl);
             string typeName = vtbl.FacadeType.ToDisplayString(
                 SymbolDisplayFormat.FullyQualifiedFormat);
             builder.AppendLine(
-                $"            ({low}L, {high}L) => value is {typeName},");
+                $"({low}L, {high}L) => value is {typeName},");
         }
 
-        builder.AppendLine("            _ => false,");
-        builder.AppendLine("        };");
-        builder.AppendLine();
+        builder.AppendLine("_ => false,");
+        builder.Dedent();
+        builder.AppendLine("};");
+        builder.Dedent();
+        builder.AppendLine("");
 
         // The most-derived projected type of a live object, which is what an
         // analyzer-side switch needs to dispatch on in one crossing instead of
@@ -738,73 +771,77 @@ internal static class ProjectionOutputEmitter
         // and symbol implementations are a bounded set, and a walker asks this
         // once per node.
         builder.AppendLine(
-            "    private static readonly global::System.Collections.Generic." +
+            "private static readonly global::System.Collections.Generic." +
             "Dictionary<global::System.Type, (long Low, long High)> " +
             "s_runtimeVtblIds = [];");
-        builder.AppendLine();
-        builder.AppendLine("    public static bool TryGetRuntimeVtblId(");
-        builder.AppendLine("        object value,");
-        builder.AppendLine("        out long vtblIdLow,");
-        builder.AppendLine("        out long vtblIdHigh)");
-        builder.AppendLine("    {");
-        builder.AppendLine("        global::System.Type type = value.GetType();");
-        builder.AppendLine("        (long Low, long High) resolved;");
-        builder.AppendLine("        lock (s_runtimeVtblIds)");
-        builder.AppendLine("        {");
+        builder.AppendLine("");
         builder.AppendLine(
-            "            if (!s_runtimeVtblIds.TryGetValue(type, out resolved))");
-        builder.AppendLine("            {");
-        builder.AppendLine("                resolved = ResolveRuntimeVtblId(value);");
-        builder.AppendLine("                s_runtimeVtblIds[type] = resolved;");
-        builder.AppendLine("            }");
-        builder.AppendLine("        }");
-        builder.AppendLine();
-        builder.AppendLine("        vtblIdLow = resolved.Low;");
-        builder.AppendLine("        vtblIdHigh = resolved.High;");
-        builder.AppendLine("        return resolved != (0L, 0L);");
-        builder.AppendLine("    }");
-        builder.AppendLine();
+            """
+            public static bool TryGetRuntimeVtblId(
+                object value,
+                out long vtblIdLow,
+                out long vtblIdHigh)
+            {
+                global::System.Type type = value.GetType();
+                (long Low, long High) resolved;
+                lock (s_runtimeVtblIds)
+                {
+                    if (!s_runtimeVtblIds.TryGetValue(type, out resolved))
+                    {
+                        resolved = ResolveRuntimeVtblId(value);
+                        s_runtimeVtblIds[type] = resolved;
+                    }
+                }
+
+                vtblIdLow = resolved.Low;
+                vtblIdHigh = resolved.High;
+                return resolved != (0L, 0L);
+            }
+            """);
+        builder.AppendLine("");
         builder.AppendLine(
-            "    private static (long, long) ResolveRuntimeVtblId(object value)");
-        builder.AppendLine("    {");
+            "private static (long, long) ResolveRuntimeVtblId(object value)");
+        builder.AppendLine("{");
+        builder.Indent();
         foreach (VtblProjection vtbl in GetRuntimeClassVtbls(model))
         {
             (long low, long high) = GetVtblIdParts(vtbl);
             string typeName = vtbl.FacadeType.ToDisplayString(
                 SymbolDisplayFormat.FullyQualifiedFormat);
             builder.AppendLine(
-                $"        if (value is {typeName}) return ({low}L, {high}L);");
+                $"if (value is {typeName}) return ({low}L, {high}L);");
         }
 
-        builder.AppendLine("        return (0L, 0L);");
-        builder.AppendLine("    }");
+        builder.AppendLine("return (0L, 0L);");
+        builder.Dedent();
+        builder.AppendLine("}");
+        builder.Dedent();
         builder.AppendLine("}");
         return builder.ToString();
     }
 
-    private static string EmitAnalyzerRuntimeProxyFactory(
-        ProjectionModel model)
-    {
-        var builder = new StringBuilder();
-        builder.AppendLine("using System.Runtime.CompilerServices;");
-        builder.AppendLine("using System.Runtime.InteropServices;");
-        builder.AppendLine("using RoslynAot.Abi;");
-        builder.AppendLine("using RoslynAot.RoslynFacade;");
-        builder.AppendLine("using Microsoft.CodeAnalysis;");
-        builder.AppendLine();
-        builder.AppendLine("namespace RoslynAot.AnalyzerRuntime;");
-        builder.AppendLine();
-        builder.AppendLine("internal static class RoslynProxyFactory");
-        builder.AppendLine("{");
-        builder.AppendLine("    public static SyntaxNode CreateSyntaxNode(");
-        builder.AppendLine("        IRoslynControlVtbl controlVtbl,");
-        builder.AppendLine("        long handle) =>");
-        builder.AppendLine(
-            "        SyntaxNode.__RoslynAotCreateProxy(controlVtbl, handle);");
-        builder.AppendLine("}");
+    /// <summary>
+    /// Fixed text: the projection model has no say in this file's contents.
+    /// </summary>
+    private static string EmitAnalyzerRuntimeProxyFactory() =>
+        """
+        using System.Runtime.CompilerServices;
+        using System.Runtime.InteropServices;
+        using RoslynAot.Abi;
+        using RoslynAot.RoslynFacade;
+        using Microsoft.CodeAnalysis;
 
-        return builder.ToString();
-    }
+        namespace RoslynAot.AnalyzerRuntime;
+
+        internal static class RoslynProxyFactory
+        {
+            public static SyntaxNode CreateSyntaxNode(
+                IRoslynControlVtbl controlVtbl,
+                long handle) =>
+                SyntaxNode.__RoslynAotCreateProxy(controlVtbl, handle);
+        }
+
+        """;
 
     private static IEnumerable<VtblProjection> GetDynamicInterfaceVtbls(
         ProjectionModel model) =>
@@ -908,57 +945,64 @@ internal static class ProjectionOutputEmitter
     }
 
     private static void EmitCompilerMethod(
-        StringBuilder builder,
+        IndentingBuilder builder,
         ProjectedCall operation,
         int counterOrdinal)
     {
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine(
-            $"    public{(operation.ReturnValue.Kind == AbiTypeKind.Utf16String ? " unsafe" : string.Empty)} int {operation.GeneratedName}(");
+            $"public{(operation.ReturnValue.Kind == AbiTypeKind.Utf16String ? " unsafe" : string.Empty)} int {operation.GeneratedName}(");
         IReadOnlyList<string> abiParameters = GetAbiParameters(operation);
+        builder.Indent();
         for (int index = 0; index < abiParameters.Count; index++)
         {
-            builder.Append("        ");
-            builder.Append(abiParameters[index]);
-            builder.AppendLine(index + 1 == abiParameters.Count ? ")" : ",");
+            builder.AppendLine(
+                abiParameters[index] +
+                (index + 1 == abiParameters.Count ? ")" : ","));
         }
 
-        builder.AppendLine("    {");
+        builder.Dedent();
+        builder.AppendLine("{");
+        builder.Indent();
 
         // Counted before the try, so a member that always throws still reports
         // as called. Coverage answers "was it reached", not "did it succeed".
-        builder.AppendLine($"        RoslynCallCounters.Record({counterOrdinal});");
+        builder.AppendLine($"RoslynCallCounters.Record({counterOrdinal});");
         if (operation.ReturnValue.Kind == AbiTypeKind.Utf16String)
         {
-            builder.AppendLine("        requiredLength = default;");
+            builder.AppendLine("requiredLength = default;");
         }
         else if (IsConstant(operation.ReturnValue.Kind))
         {
-            builder.AppendLine("        constantKind = default;");
-            builder.AppendLine("        constantLow = default;");
-            builder.AppendLine("        constantHigh = default;");
+            builder.AppendLine("constantKind = default;");
+            builder.AppendLine("constantLow = default;");
+            builder.AppendLine("constantHigh = default;");
         }
         else if (operation.ReturnValue.Kind != AbiTypeKind.Void)
         {
-            builder.AppendLine("        result = default;");
+            builder.AppendLine("result = default;");
         }
 
-        builder.AppendLine();
-        builder.AppendLine("        try");
-        builder.AppendLine("        {");
+        builder.AppendLine("");
+        builder.AppendLine("try");
+        builder.AppendLine("{");
+        builder.Indent();
         foreach (string statement in GetCompilerStatements(operation))
         {
-            builder.Append("            ");
             builder.AppendLine(statement);
         }
 
-        builder.AppendLine("            return RoslynAbi.Success;");
-        builder.AppendLine("        }");
-        builder.AppendLine("        catch (global::System.Exception exception)");
-        builder.AppendLine("        {");
-        builder.AppendLine("            return _owner.SetError(exception);");
-        builder.AppendLine("        }");
-        builder.AppendLine("    }");
+        builder.AppendLine("return RoslynAbi.Success;");
+        builder.Dedent();
+        builder.AppendLine("}");
+        builder.AppendLine("catch (global::System.Exception exception)");
+        builder.AppendLine("{");
+        builder.Indent();
+        builder.AppendLine("return _owner.SetError(exception);");
+        builder.Dedent();
+        builder.AppendLine("}");
+        builder.Dedent();
+        builder.AppendLine("}");
     }
 
     private static IEnumerable<string> GetCompilerStatements(
@@ -1550,8 +1594,6 @@ internal static class ProjectionOutputEmitter
 
             public override bool Equals(object? other)
             {
-                // GetOrCreate dedups by handle, so equal handles are usually
-                // already the same instance and return here.
                 if (ReferenceEquals(this, other))
                 {
                     return true;
@@ -1562,6 +1604,11 @@ internal static class ProjectionOutputEmitter
                     return false;
                 }
 
+                // A handle denotes one object for the single control this
+                // module talks to, so equal handles are the same object and
+                // GetOrCreate has usually already collapsed them to one
+                // instance above. Distinct handles can still denote equal
+                // objects, which only the compiler can decide.
                 if (Handle == proxy.Handle)
                 {
                     return true;
@@ -1654,6 +1701,7 @@ internal static class ProjectionOutputEmitter
         {
             private static readonly StrategyBasedComWrappers s_comWrappers = new();
             private static readonly AsyncLocal<IRoslynControlVtbl?> s_current = new();
+            private static IRoslynControlVtbl? s_controlVtbl;
 
             public static IRoslynControlVtbl GetOrCreateControlVtbl(
                 nint instance)
@@ -1678,22 +1726,17 @@ internal static class ProjectionOutputEmitter
                         "The compiler Roslyn projection manifest is incompatible.");
                 }
 
-                IRoslynControlVtbl? established = s_controlVtbl;
-                if (established is null)
-                {
-                    s_controlVtbl = controlVtbl;
-                }
-                else if (!ReferenceEquals(established, controlVtbl))
+                s_controlVtbl ??= controlVtbl;
+                if (!ReferenceEquals(s_controlVtbl, controlVtbl))
                 {
                     // Handles, the proxy cache, and proxy equality are all
                     // keyed on the handle alone, which is only sound because
                     // a module talks to exactly one compiler. Nothing can
-                    // produce a second control today - RoslynInterop.Shared
-                    // is a process singleton and this method caches by COM
-                    // instance - so this is the assertion that keeps the
-                    // assumption true rather than a case to handle. Failing
-                    // here beats resolving one compiler's handle against
-                    // another's table.
+                    // produce a second control today, since RoslynInterop
+                    // .Shared is a process singleton, so this is the
+                    // assertion that keeps the assumption true rather than a
+                    // case to handle. Failing here beats resolving one
+                    // compiler's handle against another's table.
                     throw new InvalidOperationException(
                         "A second compiler Roslyn control vtbl was supplied " +
                         "to this analyzer module. Handles are only " +
@@ -1702,8 +1745,6 @@ internal static class ProjectionOutputEmitter
 
                 return controlVtbl;
             }
-
-            private static IRoslynControlVtbl? s_controlVtbl;
 
             public static IRoslynControlVtbl GetCurrentControlVtbl() =>
                 s_current.Value ?? throw new InvalidOperationException(
@@ -2046,100 +2087,100 @@ internal static class ProjectionOutputEmitter
 
     private static string EmitVtblFactory(ProjectionModel model)
     {
-        var builder = new StringBuilder();
+        var builder = new IndentingBuilder();
         builder.AppendLine("using System.Runtime.CompilerServices;");
         builder.AppendLine("using System.Runtime.InteropServices;");
         builder.AppendLine("using System.Runtime.InteropServices.Marshalling;");
         builder.AppendLine("using RoslynAot.Abi;");
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine("namespace RoslynAot.RoslynFacade;");
-        builder.AppendLine();
+        builder.AppendLine("");
         builder.AppendLine("public static class RoslynVtblFactory");
         builder.AppendLine("{");
+        builder.Indent();
         builder.AppendLine(
-            "    private static readonly StrategyBasedComWrappers s_comWrappers = new();");
+            "private static readonly StrategyBasedComWrappers s_comWrappers = new();");
         builder.AppendLine(
-            "    private static readonly ConditionalWeakTable<IRoslynControlVtbl, VtblCache> s_caches = new();");
-        builder.AppendLine();
+            "private static readonly ConditionalWeakTable<IRoslynControlVtbl, VtblCache> s_caches = new();");
+        builder.AppendLine("");
         foreach (VtblProjection vtbl in model.Vtbls)
         {
             (long low, long high) = GetVtblIdParts(vtbl);
             builder.AppendLine(
-                $"    public static {vtbl.Name} " +
+                $"public static {vtbl.Name} " +
                 $"{vtbl.FactoryMethodName}(");
-            builder.AppendLine("        IRoslynControlVtbl controlVtbl)");
-            builder.AppendLine("    {");
+            builder.Indent();
+            builder.AppendLine("IRoslynControlVtbl controlVtbl)");
+            builder.Dedent();
+            builder.AppendLine("{");
+            builder.Indent();
             builder.AppendLine(
-                "        ArgumentNullException.ThrowIfNull(controlVtbl);");
-            builder.AppendLine(
-                $"        return GetVtbl<{vtbl.Name}>(");
-            builder.AppendLine("            controlVtbl,");
-            builder.AppendLine($"            {low}L,");
-            builder.AppendLine($"            {high}L);");
-            builder.AppendLine("    }");
-            builder.AppendLine();
+                "ArgumentNullException.ThrowIfNull(controlVtbl);");
+            builder.AppendLine($"return GetVtbl<{vtbl.Name}>(");
+            builder.Indent();
+            builder.AppendLine("controlVtbl,");
+            builder.AppendLine($"{low}L,");
+            builder.AppendLine($"{high}L);");
+            builder.Dedent();
+            builder.Dedent();
+            builder.AppendLine("}");
+            builder.AppendLine("");
         }
 
-        builder.AppendLine("    private static T GetVtbl<T>(");
-        builder.AppendLine("        IRoslynControlVtbl controlVtbl,");
-        builder.AppendLine("        long vtblIdLow,");
-        builder.AppendLine("        long vtblIdHigh)");
-        builder.AppendLine("        where T : class");
-        builder.AppendLine("    {");
         builder.AppendLine(
-            "        object vtbl = s_caches.GetValue(controlVtbl, static _ => new VtblCache())");
-        builder.AppendLine(
-            "            .GetOrCreate(controlVtbl, vtblIdLow, vtblIdHigh);");
-        builder.AppendLine("        return vtbl as T ?? throw new InvalidOperationException(");
-        builder.AppendLine(
-            "            $\"The resolved Roslyn vtable does not implement '{typeof(T).FullName}'.\");");
-        builder.AppendLine("    }");
-        builder.AppendLine();
-        builder.AppendLine("    private sealed class VtblCache");
-        builder.AppendLine("    {");
-        builder.AppendLine(
-            "        private readonly Dictionary<(long Low, long High), object> _vtbls = [];");
-        builder.AppendLine();
-        builder.AppendLine("        public object GetOrCreate(");
-        builder.AppendLine("            IRoslynControlVtbl controlVtbl,");
-        builder.AppendLine("            long vtblIdLow,");
-        builder.AppendLine("            long vtblIdHigh)");
-        builder.AppendLine("        {");
-        builder.AppendLine("            lock (_vtbls)");
-        builder.AppendLine("            {");
-        builder.AppendLine(
-            "                if (_vtbls.TryGetValue((vtblIdLow, vtblIdHigh), out object? existing))");
-        builder.AppendLine("                {");
-        builder.AppendLine("                    return existing;");
-        builder.AppendLine("                }");
-        builder.AppendLine();
-        builder.AppendLine(
-            "                int status = controlVtbl.GetVtbl(vtblIdLow, vtblIdHigh, out nint pointer);");
-        builder.AppendLine(
-            "                RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);");
-        builder.AppendLine("                if (pointer == 0)");
-        builder.AppendLine("                {");
-        builder.AppendLine(
-            "                    throw new InvalidOperationException(\"The compiler returned no Roslyn vtable pointer.\");");
-        builder.AppendLine("                }");
-        builder.AppendLine();
-        builder.AppendLine("                try");
-        builder.AppendLine("                {");
-        builder.AppendLine(
-            "                    object created = s_comWrappers.GetOrCreateObjectForComInstance(");
-        builder.AppendLine("                        pointer,");
-        builder.AppendLine("                        CreateObjectFlags.None);");
-        builder.AppendLine(
-            "                    _vtbls.Add((vtblIdLow, vtblIdHigh), created);");
-        builder.AppendLine("                    return created;");
-        builder.AppendLine("                }");
-        builder.AppendLine("                finally");
-        builder.AppendLine("                {");
-        builder.AppendLine("                    RoslynAbi.Release(pointer);");
-        builder.AppendLine("                }");
-        builder.AppendLine("            }");
-        builder.AppendLine("        }");
-        builder.AppendLine("    }");
+            """
+            private static T GetVtbl<T>(
+                IRoslynControlVtbl controlVtbl,
+                long vtblIdLow,
+                long vtblIdHigh)
+                where T : class
+            {
+                object vtbl = s_caches.GetValue(controlVtbl, static _ => new VtblCache())
+                    .GetOrCreate(controlVtbl, vtblIdLow, vtblIdHigh);
+                return vtbl as T ?? throw new InvalidOperationException(
+                    $"The resolved Roslyn vtable does not implement '{typeof(T).FullName}'.");
+            }
+
+            private sealed class VtblCache
+            {
+                private readonly Dictionary<(long Low, long High), object> _vtbls = [];
+
+                public object GetOrCreate(
+                    IRoslynControlVtbl controlVtbl,
+                    long vtblIdLow,
+                    long vtblIdHigh)
+                {
+                    lock (_vtbls)
+                    {
+                        if (_vtbls.TryGetValue((vtblIdLow, vtblIdHigh), out object? existing))
+                        {
+                            return existing;
+                        }
+
+                        int status = controlVtbl.GetVtbl(vtblIdLow, vtblIdHigh, out nint pointer);
+                        RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                        if (pointer == 0)
+                        {
+                            throw new InvalidOperationException("The compiler returned no Roslyn vtable pointer.");
+                        }
+
+                        try
+                        {
+                            object created = s_comWrappers.GetOrCreateObjectForComInstance(
+                                pointer,
+                                CreateObjectFlags.None);
+                            _vtbls.Add((vtblIdLow, vtblIdHigh), created);
+                            return created;
+                        }
+                        finally
+                        {
+                            RoslynAbi.Release(pointer);
+                        }
+                    }
+                }
+            }
+            """);
+        builder.Dedent();
         builder.AppendLine("}");
         return builder.ToString();
     }

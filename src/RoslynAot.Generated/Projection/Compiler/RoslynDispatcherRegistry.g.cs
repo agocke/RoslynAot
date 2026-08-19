@@ -738,7 +738,7 @@ internal static class RoslynDispatcherRegistry
         long vtblIdLow,
         long vtblIdHigh) =>
         (vtblIdLow, vtblIdHigh) switch
-    {
+        {
             (6173686296870914860L, -6291074703811439971L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.ElifDirectiveTriviaSyntax,
             (6617292003628591168L, 5705589592462471811L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.GenericNameSyntax,
             (6378778039328877304L, -6468544805959958091L) => value is global::Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax,

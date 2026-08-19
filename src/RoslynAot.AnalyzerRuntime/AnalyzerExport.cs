@@ -103,7 +103,6 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
     private ImmutableArray<DiagnosticDescriptor> _descriptors;
     private Dictionary<DiagnosticDescriptor, int>? _descriptorIndexes;
     private readonly Dictionary<int, AnalyzerActionEntry> _actions = [];
-    private IRoslynControlVtbl? _roslynControlVtbl;
     private int _nextActionId;
     private readonly ThreadLocal<string?> _lastError = new();
 
@@ -409,20 +408,11 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
 
         try
         {
-            IRoslynControlVtbl candidate =
-                RoslynFacadeRuntime.GetOrCreateControlVtbl(
-                    interopPointer);
-            if (_roslynControlVtbl is null)
-            {
-                _roslynControlVtbl = candidate;
-            }
-            else if (!ReferenceEquals(_roslynControlVtbl, candidate))
-            {
-                controlVtbl = null!;
-                return false;
-            }
-
-            controlVtbl = _roslynControlVtbl;
+            // GetOrCreateControlVtbl is where the module establishes
+            // its one control and rejects a second, so there is
+            // nothing left to check per transport here.
+            controlVtbl = RoslynFacadeRuntime.GetOrCreateControlVtbl(
+                interopPointer);
             return true;
         }
         catch (InvalidOperationException)

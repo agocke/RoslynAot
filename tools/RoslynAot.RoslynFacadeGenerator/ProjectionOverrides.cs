@@ -53,10 +53,16 @@ internal static class ProjectionOverrides
         "compiler-owned one remotes.";
 
     private const string DescriptorLocal =
-        "DiagnosticDescriptor is analyzer-local. Analyzers construct " +
-        "descriptors in static initializers, before any compiler " +
-        "object exists, so there is nothing to remote to and the " +
-        "state lives on the analyzer-side instance.";
+        "DiagnosticDescriptor is analyzer-local because the analyzer " +
+        "authors it: the compiler pulls SupportedDiagnostics back out " +
+        "field by field, and Title, MessageFormat and Description are " +
+        "LocalizableStrings whose resource-backed case resolves " +
+        "against a ResourceManager living in the analyzer module. " +
+        "Only a flattened string could cross, so the state stays on " +
+        "the analyzer-side instance. Not an ordering constraint - the " +
+        "control vtbl is already established when descriptors are " +
+        "built, since the generated entry point constructs analyzers " +
+        "lazily inside EnsureAnalyzer.";
 
     private const string DescriptorLocalOrRemote =
         "Reads the analyzer-local descriptor state when the instance " +

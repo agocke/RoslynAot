@@ -338,8 +338,6 @@ public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
 
     public override bool Equals(object? other)
     {
-        // GetOrCreate dedups by handle, so equal handles are usually
-        // already the same instance and return here.
         if (ReferenceEquals(this, other))
         {
             return true;
@@ -350,6 +348,11 @@ public sealed class RoslynObjectProxy : IDynamicInterfaceCastable
             return false;
         }
 
+        // A handle denotes one object for the single control this
+        // module talks to, so equal handles are the same object and
+        // GetOrCreate has usually already collapsed them to one
+        // instance above. Distinct handles can still denote equal
+        // objects, which only the compiler can decide.
         if (Handle == proxy.Handle)
         {
             return true;
@@ -442,6 +445,7 @@ public static unsafe class RoslynFacadeRuntime
 {
     private static readonly StrategyBasedComWrappers s_comWrappers = new();
     private static readonly AsyncLocal<IRoslynControlVtbl?> s_current = new();
+    private static IRoslynControlVtbl? s_controlVtbl;
 
     public static IRoslynControlVtbl GetOrCreateControlVtbl(
         nint instance)
@@ -466,22 +470,17 @@ public static unsafe class RoslynFacadeRuntime
                 "The compiler Roslyn projection manifest is incompatible.");
         }
 
-        IRoslynControlVtbl? established = s_controlVtbl;
-        if (established is null)
-        {
-            s_controlVtbl = controlVtbl;
-        }
-        else if (!ReferenceEquals(established, controlVtbl))
+        s_controlVtbl ??= controlVtbl;
+        if (!ReferenceEquals(s_controlVtbl, controlVtbl))
         {
             // Handles, the proxy cache, and proxy equality are all
             // keyed on the handle alone, which is only sound because
             // a module talks to exactly one compiler. Nothing can
-            // produce a second control today - RoslynInterop.Shared
-            // is a process singleton and this method caches by COM
-            // instance - so this is the assertion that keeps the
-            // assumption true rather than a case to handle. Failing
-            // here beats resolving one compiler's handle against
-            // another's table.
+            // produce a second control today, since RoslynInterop
+            // .Shared is a process singleton, so this is the
+            // assertion that keeps the assumption true rather than a
+            // case to handle. Failing here beats resolving one
+            // compiler's handle against another's table.
             throw new InvalidOperationException(
                 "A second compiler Roslyn control vtbl was supplied " +
                 "to this analyzer module. Handles are only " +
@@ -490,8 +489,6 @@ public static unsafe class RoslynFacadeRuntime
 
         return controlVtbl;
     }
-
-    private static IRoslynControlVtbl? s_controlVtbl;
 
     public static IRoslynControlVtbl GetCurrentControlVtbl() =>
         s_current.Value ?? throw new InvalidOperationException(
