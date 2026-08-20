@@ -28,10 +28,18 @@ internal static class RoslynCallCountReport
         // never-called ones: an absent row would be indistinguishable from a
         // member the generator never projected at all. Sorted so the file is
         // deterministic across runs.
+        //
+        // A null name is a retired slot, kept only so the slots after it stay
+        // put. Emitting one would do the opposite of the rule above and report
+        // a member the projection no longer has.
         var members = new SortedDictionary<string, long>(StringComparer.Ordinal);
         for (int index = 0; index < counts.Length; index++)
         {
-            string name = RoslynCallCounters.MemberNames[index];
+            if (RoslynCallCounters.MemberNames[index] is not string name)
+            {
+                continue;
+            }
+
             members.TryGetValue(name, out long existing);
             members[name] = existing + counts[index];
         }

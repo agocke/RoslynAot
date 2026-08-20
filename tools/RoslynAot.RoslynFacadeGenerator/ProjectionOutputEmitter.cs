@@ -11,6 +11,15 @@ internal static class ProjectionOutputEmitter
         ProjectionModel model,
         string outputRoot)
     {
+        // Read before RecreateDirectory: the manifest directory is deleted
+        // and rebuilt each run, and this file has to survive that because it
+        // is an input, not an output.
+        string slotsPath = Path.Combine(
+            outputRoot,
+            "Manifest",
+            CallCounterSlots.FileName);
+        CallCounterSlots slots = CallCounterSlots.Load(slotsPath);
+
         string abiDirectory = RecreateDirectory(
             Path.Combine(outputRoot, "Abi"));
         string compilerDirectory = RecreateDirectory(
@@ -24,7 +33,7 @@ internal static class ProjectionOutputEmitter
             Path.Combine(abiDirectory, "RoslynControlVtbl.g.cs"),
             EmitAbiMetadata(model));
         IReadOnlyDictionary<string, int> callOrdinals =
-            GetCallCounterOrdinals(model);
+            GetCallCounterOrdinals(model, slots);
         foreach (VtblProjection vtbl in model.Vtbls)
         {
             WriteGeneratedFile(
@@ -42,7 +51,7 @@ internal static class ProjectionOutputEmitter
             Path.Combine(
                 compilerDirectory,
                 "RoslynCallCounters.g.cs"),
-            EmitCallCounters(model, callOrdinals));
+            EmitCallCounters(model, callOrdinals, slots));
         WriteGeneratedFile(
             Path.Combine(
                 compilerDirectory,
@@ -58,6 +67,7 @@ internal static class ProjectionOutputEmitter
                 manifestDirectory,
                 "ProjectionInventory.txt"),
             EmitInventory(model).ReplaceLineEndings("\n"));
+        slots.Save(slotsPath);
     }
 
     public static void WriteFacadeRuntime(
@@ -498,25 +508,36 @@ internal static class ProjectionOutputEmitter
     }
 
     /// <summary>
-    /// Assigns each distinct projected Roslyn member a stable counter slot.
+    /// Resolves each distinct projected Roslyn member to its counter slot.
     /// Keyed on canonical signature, not generated name: a member inherited
     /// into several vtbls is emitted as several dispatcher methods but is one
     /// Roslyn member, and the coverage metric is about members.
     /// </summary>
+    /// <remarks>
+    /// Slots come from <see cref="CallCounterSlots"/> rather than from this
+    /// run, so a member added to the projection takes a new slot at the end
+    /// and every existing member keeps the literal already emitted against it.
+    /// New signatures are reserved in sorted order only to make the assignment
+    /// deterministic within a run; the order carries no meaning once assigned.
+    /// </remarks>
     private static IReadOnlyDictionary<string, int> GetCallCounterOrdinals(
-        ProjectionModel model)
+        ProjectionModel model,
+        CallCounterSlots slots)
     {
-        var ordinals = new Dictionary<string, int>(StringComparer.Ordinal);
-        foreach (string signature in model.Vtbls
+        string[] signatures = model.Vtbls
             .SelectMany(GetDispatcherMembers)
             .Select(operation => operation.CanonicalSignature)
             .Distinct(StringComparer.Ordinal)
-            .OrderBy(signature => signature, StringComparer.Ordinal))
-        {
-            ordinals[signature] = ordinals.Count;
-        }
+            .OrderBy(signature => signature, StringComparer.Ordinal)
+            .ToArray();
+        slots.Reserve(signatures);
+        slots.Reserve(
+            s_controlVtblMembers.Select(CallCounterSlots.GetControlKey));
 
-        return ordinals;
+        return signatures.ToDictionary(
+            signature => signature,
+            signature => slots[signature],
+            StringComparer.Ordinal);
     }
 
     /// <summary>
@@ -560,7 +581,8 @@ internal static class ProjectionOutputEmitter
 
     private static string EmitCallCounters(
         ProjectionModel model,
-        IReadOnlyDictionary<string, int> ordinals)
+        IReadOnlyDictionary<string, int> ordinals,
+        CallCounterSlots slots)
     {
         ProjectedCall[] members = model.Vtbls
             .SelectMany(GetDispatcherMembers)
@@ -572,91 +594,93 @@ internal static class ProjectionOutputEmitter
                 operation => ordinals[operation.CanonicalSignature])
             .ToArray();
 
-        var builder = new IndentingBuilder();
-        builder.AppendLine("#nullable enable");
-        builder.AppendLine("using System.Threading;");
-        builder.AppendLine("");
-        builder.AppendLine("namespace RoslynAot.Csc;");
-        builder.AppendLine("");
-        builder.AppendLine("/// <summary>");
-        builder.AppendLine(
-            "/// Per-member call counts at the projection boundary. Counting is");
-        builder.AppendLine(
-            "/// unconditional - one interlocked increment against a preallocated");
-        builder.AppendLine(
-            "/// slot, negligible beside the round trip it measures - so a count of");
-        builder.AppendLine(
-            "/// zero always means 'never called' rather than 'not instrumented'.");
-        builder.AppendLine("/// </summary>");
-        builder.AppendLine("internal static class RoslynCallCounters");
-        builder.AppendLine("{");
-        builder.Indent();
-        builder.AppendLine(
-            "public const int MemberCount = " +
-            $"{members.Length + s_controlVtblMembers.Length};");
-        builder.AppendLine("");
-        builder.AppendLine(
-            "private static readonly long[] s_counts = new long[MemberCount];");
-        builder.AppendLine("");
-        builder.AppendLine("public static readonly string[] MemberNames =");
-        builder.AppendLine("[");
-        builder.Indent();
+        // Indexed by slot, so retired slots read as null rather than shifting
+        // the members after them. Nothing is emitted for a null: a name there
+        // would report a member the projection no longer has.
+        var names = new string?[slots.SlotCount];
         foreach (ProjectedCall operation in members)
         {
-            builder.AppendLine(
-                $"{Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(GetCounterName(operation), quote: true)},");
+            names[ordinals[operation.CanonicalSignature]] =
+                GetCounterName(operation);
         }
 
         foreach (string name in s_controlVtblMembers)
         {
-            builder.AppendLine(
-                Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(
-                    $"RoslynAot.Abi.IRoslynControlVtbl.{name}",
-                    quote: true) +
-                ",");
+            names[slots[CallCounterSlots.GetControlKey(name)]] =
+                $"RoslynAot.Abi.IRoslynControlVtbl.{name}";
         }
 
-        builder.Dedent();
-        builder.AppendLine("];");
-        builder.AppendLine("");
-        builder.AppendLine("/// <summary>");
-        builder.AppendLine(
-            "/// Ordinals for the control vtbl, which is hand-written and");
-        builder.AppendLine(
-            "/// so records against these rather than an emitted literal.");
-        builder.AppendLine("/// </summary>");
-        for (int index = 0; index < s_controlVtblMembers.Length; index++)
+        // Both lists carry their own indentation because a raw string literal
+        // reindents only its literal text, never what an interpolation hole
+        // expands to.
+        string memberNames = string.Join(
+            "\n",
+            names.Select(name =>
+                name is null
+                    ? "        null,"
+                    : "        " +
+                        Microsoft.CodeAnalysis.CSharp.SymbolDisplay
+                            .FormatLiteral(name, quote: true) +
+                        ","));
+        string controlOrdinals = string.Join(
+            "\n",
+            s_controlVtblMembers.Select(name =>
+                $"    public const int Control{name} = " +
+                $"{slots[CallCounterSlots.GetControlKey(name)]};"));
+
+        return $$"""
+        #nullable enable
+        using System.Threading;
+
+        namespace RoslynAot.Csc;
+
+        /// <summary>
+        /// Per-member call counts at the projection boundary. Counting is
+        /// unconditional - one interlocked increment against a preallocated
+        /// slot, negligible beside the round trip it measures - so a count of
+        /// zero always means 'never called' rather than 'not instrumented'.
+        /// </summary>
+        internal static class RoslynCallCounters
         {
-            builder.AppendLine(
-                $"public const int Control{s_controlVtblMembers[index]} = " +
-                $"{members.Length + index};");
-        }
+            /// <summary>
+            /// Slots ever assigned, not members currently projected: slots
+            /// are append-only, so a retired member leaves an unread hole
+            /// rather than moving every slot after it.
+            /// </summary>
+            public const int SlotCount = {{slots.SlotCount}};
 
-        builder.AppendLine("");
-        builder.AppendLine("public static void Record(int ordinal) =>");
-        builder.Indent();
-        builder.AppendLine("Interlocked.Increment(ref s_counts[ordinal]);");
-        builder.Dedent();
-        builder.AppendLine("");
-        builder.AppendLine("public static long[] Snapshot()");
-        builder.AppendLine("{");
-        builder.Indent();
-        builder.AppendLine("var snapshot = new long[MemberCount];");
-        builder.AppendLine(
-            "for (int index = 0; index < snapshot.Length; index++)");
-        builder.AppendLine("{");
-        builder.Indent();
-        builder.AppendLine(
-            "snapshot[index] = Interlocked.Read(ref s_counts[index]);");
-        builder.Dedent();
-        builder.AppendLine("}");
-        builder.AppendLine("");
-        builder.AppendLine("return snapshot;");
-        builder.Dedent();
-        builder.AppendLine("}");
-        builder.Dedent();
-        builder.AppendLine("}");
-        return builder.ToString();
+            private static readonly long[] s_counts = new long[SlotCount];
+
+            /// <summary>
+            /// Indexed by slot. A null is a retired slot, and callers must
+            /// skip it rather than report it as a member.
+            /// </summary>
+            public static readonly string?[] MemberNames =
+            [
+        {{memberNames}}
+            ];
+
+            /// <summary>
+            /// Ordinals for the control vtbl, which is hand-written and
+            /// so records against these rather than an emitted literal.
+            /// </summary>
+        {{controlOrdinals}}
+
+            public static void Record(int ordinal) =>
+                Interlocked.Increment(ref s_counts[ordinal]);
+
+            public static long[] Snapshot()
+            {
+                var snapshot = new long[SlotCount];
+                for (int index = 0; index < snapshot.Length; index++)
+                {
+                    snapshot[index] = Interlocked.Read(ref s_counts[index]);
+                }
+
+                return snapshot;
+            }
+        }
+        """;
     }
 
     /// <summary>
