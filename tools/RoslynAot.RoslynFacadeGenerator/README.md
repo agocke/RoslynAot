@@ -22,7 +22,7 @@ dotnet run \
 ```
 
 The generate command writes executable facade sources and their synchronized
-ABI, compiler dispatch, and manifest outputs. Its input assemblies and its
+ABI, compiler dispatch, and inventory outputs. Its input assemblies and its
 `--reference` set are not free choices — they decide every generated vtbl id
 and operation name — so the invocation that reproduces the checked-in tree is
 given under [Regenerating the checked-in
@@ -81,46 +81,47 @@ directories, and each top-level type receives a source file. Nested types stay
 in the file containing their declaring type. Generic arity is appended only
 when needed to distinguish legal same-name types such as `Name` and `Name<T>`.
 
+## The contract
+
+The generated tree is the contract between the compiler and the analyzer. The
+compiler builds `Abi/` and `Compiler/` into itself; the analyzer builds against
+the facade assemblies. `ManifestIdentity` in `Abi/RoslynControlVtbl.g.cs` is
+checked when the two meet, and asserts they came from the same contract.
+
+The contract is generated from the NuGet `Microsoft.CodeAnalysis.Common` and
+`Microsoft.CodeAnalysis.CSharp` **5.0.0** packages, and that version is the
+contract's, not the compiler's. The compiler links whatever Roslyn its SDK
+ships — 5.1000.26.38203 today — and implements the 5.0 contract on top of it.
+Roslyn floats, the contract holds still, and an analyzer built once keeps
+working as SDKs move. It also gives the facades their `AssemblyVersion` of
+`5.0.0.0`, which is what an analyzer's strong-name reference asks for.
+
+That places one obligation on the contract: its surface has to stay something a
+newer Roslyn can still satisfy, because `Compiler/` compiles against the real
+assemblies. If Roslyn ever drops or re-signatures a member the contract names,
+the compiler side stops building — an ordinary C# error, here, rather than a
+failure in somebody's analyzer.
+
+Moving the contract means regenerating from a newer baseline and shipping both
+halves together; analyzers rebuild against the new package. Nothing else moves
+the ABI.
+
 ## Regenerating the checked-in tree
 
-`src/RoslynAot.Generated/Projection` is generator output that is committed, and
-nothing rebuilds it during a normal build — the compiler and the analyzer both
-compile the checked-in files, so the tree is the source of truth rather than a
-cache of one. The generator runs when someone deliberately moves the
-projection, and a change to a projection rule or a table entry owes a
-regeneration in the same commit, otherwise the tables describe a tree that does
-not exist.
+`src/RoslynAot.Generated/Projection` is committed generator output, and nothing
+rebuilds it during a normal build. Regenerate when you move a projection rule
+or a table entry, in the same commit, so the tables and the tree agree. A clean
+regen reproduces the tree byte for byte, which is what keeps the diff worth
+reading.
 
-Regenerating is reproducible, which matters for one practical reason: a regen
-diff should be attributable to the change you made. If the input assemblies
-drift with whatever SDK is installed, the diff also contains surface drift, and
-the two cannot be told apart — see the history of issue #9 for what that costs.
-`ManifestIdentity` in `Abi/RoslynControlVtbl.g.cs` is a separate mechanism and
-does not help here: both sides read it out of this same tree, so it catches a
-compiler and an analyzer built from *different commits*, not a tree built from
-different inputs.
+### Baseline inputs
 
-### The projected Roslyn
-
-The projection is generated from the NuGet `Microsoft.CodeAnalysis.Common` and
-`Microsoft.CodeAnalysis.CSharp` **5.0.0** packages. Both are named as
-`PackageReference`s with `GeneratePathProperty="true"` in
-`RoslynAot.RoslynFacadeGenerator.csproj`, so the version is pinned in the
-project file and the regeneration command reads the paths back out rather than
-hunting for assemblies. (The GenAPI fork under `Upstream/` references the same
-version for its own compilation; the three references are not centrally pinned,
-so moving one means moving all of them.)
-
-That package version is the Roslyn analyzers themselves compile against — the
-sample analyzer references `Microsoft.CodeAnalysis.CSharp` 5.0.0 — and it is
-what gives the generated facades their `AssemblyVersion` of `5.0.0.0`, the
-version an analyzer's strong-name reference asks for. The .NET SDK's own
-Roslyn under `$(RoslynTargetsPath)/bincore` is deliberately not the baseline:
-it is whatever the installed SDK happens to ship (5.10.0.0 today), so
-generating from it would move vtbl GUIDs and operation-name hashes across most
-of the tree every time the SDK moved. The compiler side still compiles the
-generated dispatch against the SDK's Roslyn; the baseline surface has to stay a
-subset it can satisfy.
+Both packages are named as `PackageReference`s with `GeneratePathProperty="true"`
+in `RoslynAot.RoslynFacadeGenerator.csproj`, so the version is pinned in the
+project file and the command below reads the paths back out rather than hunting
+for assemblies. (The GenAPI fork under `Upstream/` references the same version
+for its own compilation; the three are not centrally pinned, so moving one means
+moving all of them.)
 
 The `net11.0` reference pack passed with `--reference` is required, not an
 optimization. Without it the run fails projection validation with one
