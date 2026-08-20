@@ -19,11 +19,20 @@ namespace RoslynAot.Csc;
 /// </summary>
 internal static class RoslynCallCounters
 {
-    public const int MemberCount = 5843;
+    /// <summary>
+    /// Slots ever assigned, not members currently projected: slots
+    /// are append-only, so a retired member leaves an unread hole
+    /// rather than moving every slot after it.
+    /// </summary>
+    public const int SlotCount = 5843;
 
-    private static readonly long[] s_counts = new long[MemberCount];
+    private static readonly long[] s_counts = new long[SlotCount];
 
-    public static readonly string[] MemberNames =
+    /// <summary>
+    /// Indexed by slot. A null is a retired slot, and callers must
+    /// skip it rather than report it as a member.
+    /// </summary>
+    public static readonly string?[] MemberNames =
     [
         "Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.Equals",
         "Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.GetHashCode",
@@ -5899,7 +5908,7 @@ internal static class RoslynCallCounters
 
     public static long[] Snapshot()
     {
-        var snapshot = new long[MemberCount];
+        var snapshot = new long[SlotCount];
         for (int index = 0; index < snapshot.Length; index++)
         {
             snapshot[index] = Interlocked.Read(ref s_counts[index]);

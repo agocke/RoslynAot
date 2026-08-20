@@ -159,6 +159,26 @@ dotnet run \
   "$csharp/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll"
 ```
 
+### The counter slot map is an input
+
+`Projection/Manifest/CallCounterSlots.txt` is the one file under
+`Projection/` that the generator *reads* as well as writes, and it is read
+before the output directories are recreated. It assigns each instrumented
+member its `RoslynCallCounters.Record` slot, append-only: a slot is never moved
+and never reused, so adding a member to the projection emits a new slot at the
+end and leaves every existing literal alone.
+
+Deleting it is not a neutral act. Slots were previously a dense index over
+signatures sorted ordinally, recomputed each run, which meant one added member
+renumbered every member sorting after it — a change touching 121 members
+rewrote a `Record(N)` line in nearly every dispatcher in the tree, 23,655 lines
+whose only difference was the literal. Regenerating without the file reproduces
+that.
+
+A retired member keeps its slot reserved rather than freeing it, and its entry
+in `MemberNames` reads `null`. Compacting would move every slot after the hole,
+which is the churn the file exists to prevent.
+
 The output directory is the checked-in tree itself. Every subdirectory the
 generator owns — `Facades`, `Abi`, `Compiler`, `AnalyzerRuntime`, `Manifest` —
 is recreated on each run, so stale files cannot survive a regeneration, and
