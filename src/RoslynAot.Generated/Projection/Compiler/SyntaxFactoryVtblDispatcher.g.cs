@@ -6977,6 +6977,27 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
+    public int SyntaxFactory_ParseSyntaxTree_b7815f8f(
+        long text,
+        long options,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5912);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::Microsoft.CodeAnalysis.CSharp.SyntaxFactory.ParseSyntaxTree(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Text.SourceText>(text), options == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ParseOptions>(options), path, cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxFactory_ParseToken(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         int offset,

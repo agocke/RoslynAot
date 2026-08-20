@@ -38,17 +38,21 @@ namespace Microsoft.CodeAnalysis
 
             public override GeneratedKind IsGenerated(SyntaxTree tree, System.Threading.CancellationToken cancellationToken)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ISyntaxTreeOptionsProviderVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.SyntaxTreeOptionsProvider_IsGenerated(__RoslynAotGetHandle(), tree.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out int result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return (GeneratedKind)result;
             }
 
             public override bool TryGetDiagnosticValue(SyntaxTree tree, string diagnosticId, System.Threading.CancellationToken cancellationToken, out ReportDiagnostic severity)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. ref, in, and out parameters are not supported.");
             }
 
             public override bool TryGetGlobalDiagnosticValue(string diagnosticId, System.Threading.CancellationToken cancellationToken, out ReportDiagnostic severity)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. ref, in, and out parameters are not supported.");
             }
         }
 

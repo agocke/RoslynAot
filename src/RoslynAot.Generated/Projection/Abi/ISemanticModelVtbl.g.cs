@@ -12,9 +12,59 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("82fb1da4-d488-54d7-848b-713b609d405c")]
+[Guid("493ee8ce-1a2f-53a2-8cd5-9785f69f229b")]
 public partial interface ISemanticModelVtbl
 {
+
+    [PreserveSig]
+    int SemanticModel_GetConstantValue(
+        long receiver,
+        long node,
+        long cancellationToken,
+        out RoslynConstantKind constantKind,
+        out long constantLow,
+        out long constantHigh
+    );
+
+    [PreserveSig]
+    int SemanticModel_GetDeclarationDiagnostics(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_GetDiagnostics(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_GetEnclosingSymbol(
+        long receiver,
+        int position,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_GetImportScopes(
+        long receiver,
+        int position,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_GetMethodBodyDiagnostics(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result
+    );
 
     [PreserveSig]
     int SemanticModel_GetNullableContext(
@@ -24,9 +74,25 @@ public partial interface ISemanticModelVtbl
     );
 
     [PreserveSig]
+    int SemanticModel_GetOperation(
+        long receiver,
+        long node,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
     int SemanticModel_GetPreprocessingSymbolInfo(
         long receiver,
         long nameSyntax,
+        out long result
+    );
+
+    [PreserveSig]
+    int SemanticModel_GetSyntaxDiagnostics(
+        long receiver,
+        long span,
+        long cancellationToken,
         out long result
     );
 

@@ -101,6 +101,66 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         }
     }
 
+    public int ModelExtensions_GetAliasInfo(
+        long semanticModel,
+        long nameSyntax,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5935);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.ModelExtensions.GetAliasInfo(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(nameSyntax), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ModelExtensions_GetDeclaredSymbol(
+        long semanticModel,
+        long declaration,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5936);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(global::Microsoft.CodeAnalysis.ModelExtensions.GetDeclaredSymbol(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(declaration), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ModelExtensions_GetMemberGroup(
+        long semanticModel,
+        long node,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5937);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(global::Microsoft.CodeAnalysis.ModelExtensions.GetMemberGroup(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(node), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ModelExtensions_GetSpeculativeAliasInfo(
         long semanticModel,
         int position,
@@ -156,6 +216,46 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         try
         {
             result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.ModelExtensions.GetSpeculativeTypeInfo(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), position, _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(expression), (global::Microsoft.CodeAnalysis.SpeculativeBindingOption)bindingOption));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ModelExtensions_GetSymbolInfo(
+        long semanticModel,
+        long node,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5938);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.ModelExtensions.GetSymbolInfo(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(node), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ModelExtensions_GetTypeInfo(
+        long semanticModel,
+        long node,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5939);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.ModelExtensions.GetTypeInfo(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(node), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

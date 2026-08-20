@@ -88,15 +88,24 @@ boundary is now `IsObjectType` at 778,492 calls — cast-time type resolution,
 which migration Step 4 deliberately left alone.
 
 The honest headline from that measurement: of the module's 37 rules,
-**14 pass, 20 fail against a named unimplemented member, and 3 are not yet
-exercised by the corpus**. `IOperation.ConstantValue` used to block 7 rules and
-is now implemented — the first piece of Step 5's wire grammar, a tagged union
-carrying a boxed C# constant by value because the analyzer pattern-matches the
-result against real framework types. Three of those seven rules now pass
-(CA1802, CA1805, CA1855); the other four moved on to their next blocker, which
-is the honest shape of a burn-down. `SyntaxReference.GetSyntax` still blocks 6.
-Roughly half of all failures are rooted in generics. Details and the ordered
-plan to close them are in the
+**18 pass, 15 fail against a named unimplemented member, and 4 are not yet
+exercised by the corpus**. Two blockers have been cleared so far, and both
+moved several rules at once. `IOperation.ConstantValue` blocked 7 — the first
+piece of Step 5's wire grammar, a tagged union carrying a boxed C# constant by
+value because the analyzer pattern-matches the result against real framework
+types. `CancellationToken` blocked 12, which is 60% of the burn-down in a
+single foreign type, and is now the first foreign type to cross (Step 7).
+
+Neither cleared every rule it blocked, which is the honest shape of a
+burn-down: a blocker is removed, and what was behind it becomes visible.
+Constants moved 3 rules to green and 4 to their next blocker; cancellation
+moved 4 to green (CA1515, CA2020, CA2352, CA2353) and the rest onward.
+
+What is behind them is now almost entirely one thing. **12 of the remaining 15
+failures are generics** — 6 on generic methods, 6 on generic returns — and the
+other 3 are cancellation tokens in the opposite direction, which needs a
+compiler-to-analyzer call the analyzer ABI does not yet have. Details and the
+ordered plan to close them are in the
 [analyzer remoting migration plan](docs/ANALYZER-REMOTING-MIGRATION.md).
 
 Two measurement defects were found while doing that work, both of which had

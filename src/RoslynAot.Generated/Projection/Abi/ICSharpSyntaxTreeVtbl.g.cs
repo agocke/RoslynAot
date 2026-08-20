@@ -12,9 +12,16 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b3905e7e-68bf-5037-8625-28eeda7df35b")]
+[Guid("b9d0c135-2528-5334-b06f-51586bed1060")]
 public partial interface ICSharpSyntaxTreeVtbl : ISyntaxTreeVtbl
 {
+
+    [PreserveSig]
+    int CSharpSyntaxTree_GetCompilationUnitRoot(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
 
     [PreserveSig]
     int CSharpSyntaxTree_GetDiagnostics_3eec09dc(
@@ -45,9 +52,47 @@ public partial interface ICSharpSyntaxTreeVtbl : ISyntaxTreeVtbl
     );
 
     [PreserveSig]
+    int CSharpSyntaxTree_GetDiagnostics_f82eff5c(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpSyntaxTree_GetLineSpan(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpSyntaxTree_GetLineVisibility(
+        long receiver,
+        int position,
+        long cancellationToken,
+        out int result
+    );
+
+    [PreserveSig]
     int CSharpSyntaxTree_GetLocation(
         long receiver,
         long span,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpSyntaxTree_GetMappedLineSpan(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpSyntaxTree_GetRoot(
+        long receiver,
+        long cancellationToken,
         out long result
     );
 

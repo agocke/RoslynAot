@@ -48,17 +48,29 @@ namespace Microsoft.CodeAnalysis
 
         public static IAliasSymbol? GetAliasInfo(this SemanticModel semanticModel, SyntaxNode nameSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IModelExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetModelExtensionsVtbl(controlVtbl);
+            int status = vtbl.ModelExtensions_GetAliasInfo(semanticModel.__RoslynAotGetHandle(), nameSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IAliasSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ISymbol? GetDeclaredSymbol(this SemanticModel semanticModel, SyntaxNode declaration, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IModelExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetModelExtensionsVtbl(controlVtbl);
+            int status = vtbl.ModelExtensions_GetDeclaredSymbol(semanticModel.__RoslynAotGetHandle(), declaration.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static System.Collections.Immutable.ImmutableArray<ISymbol> GetMemberGroup(this SemanticModel semanticModel, SyntaxNode node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IModelExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetModelExtensionsVtbl(controlVtbl);
+            int status = vtbl.ModelExtensions_GetMemberGroup(semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public static IAliasSymbol? GetSpeculativeAliasInfo(this SemanticModel semanticModel, int position, SyntaxNode nameSyntax, SpeculativeBindingOption bindingOption)
@@ -90,12 +102,20 @@ namespace Microsoft.CodeAnalysis
 
         public static SymbolInfo GetSymbolInfo(this SemanticModel semanticModel, SyntaxNode node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IModelExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetModelExtensionsVtbl(controlVtbl);
+            int status = vtbl.ModelExtensions_GetSymbolInfo(semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SymbolInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static TypeInfo GetTypeInfo(this SemanticModel semanticModel, SyntaxNode node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IModelExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetModelExtensionsVtbl(controlVtbl);
+            int status = vtbl.ModelExtensions_GetTypeInfo(semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return TypeInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
     }
 }

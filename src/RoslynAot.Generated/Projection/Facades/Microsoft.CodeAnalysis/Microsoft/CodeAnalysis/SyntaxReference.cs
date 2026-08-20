@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis
         public abstract SyntaxNode GetSyntax(System.Threading.CancellationToken cancellationToken = default);
         public virtual System.Threading.Tasks.Task<SyntaxNode> GetSyntaxAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         internal SyntaxReference()
@@ -44,7 +44,11 @@ namespace Microsoft.CodeAnalysis
 
             public override SyntaxNode GetSyntax(System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ISyntaxReferenceVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.SyntaxReference_GetSyntax(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return SyntaxNode.__RoslynAotCreateProxy(controlVtbl, result);
             }
 
             public override Text.TextSpan Span

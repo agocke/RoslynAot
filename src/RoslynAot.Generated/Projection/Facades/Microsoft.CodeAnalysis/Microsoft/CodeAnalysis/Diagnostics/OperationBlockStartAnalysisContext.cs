@@ -20,7 +20,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: A cancellation token can only cross into the compiler. Delivering the cancel edge the other way needs a compiler-to-analyzer call outside an action dispatch, which the analyzer ABI does not have.");
             }
         }
 

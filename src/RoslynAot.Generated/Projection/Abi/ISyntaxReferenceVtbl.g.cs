@@ -12,9 +12,16 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("9a121755-ed1b-5e6c-9ece-d8f7001adf4f")]
+[Guid("8372faa4-0815-5671-b9c2-5243a6c22ec3")]
 public partial interface ISyntaxReferenceVtbl
 {
+
+    [PreserveSig]
+    int SyntaxReference_GetSyntax(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
 
     [PreserveSig]
     int SyntaxReference_get_Span(

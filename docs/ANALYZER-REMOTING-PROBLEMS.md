@@ -313,8 +313,19 @@ Analyzers have already required:
 - Syntax trees and parse options
 - Diagnostic reporting
 
-Returning `CancellationToken.None` may be a temporary compatibility measure,
-but real cancellation and all context-specific state need defined transport.
+`CancellationToken` now crosses **into** the compiler, so a token an analyzer
+passes to a Roslyn member is honoured rather than withdrawing the member from
+the ABI. The context properties in this list are the other direction and are
+still unsupported.
+
+That asymmetry is in the mechanism, not the effort. The edge is delivered by
+the side holding the token registering on it and calling the other side;
+analyzer-to-compiler is the direction calls already run in, so nothing new was
+needed. Delivering an edge the other way needs the compiler to call into an
+analyzer module outside an action dispatch, and `IAnalyzerHost` carries
+`RegisterAction` and `ReportDiagnostic` and nothing else. Closing it means
+widening that interface, which is why it belongs with the rest of Step 7's
+callback work rather than with the transport change that landed.
 
 ### 13. Analyzer-created values must cross back correctly
 
@@ -668,13 +679,20 @@ acquiring whatever the derivation guessed.
   so it crosses by the Proxy rule — and rebuild with
   `CreateRange(keyComparer, valueComparer, pairs)`. Neither "copy and lose it"
   nor "leave it unsupported forever" is the end state.
-- `CancellationToken` is the largest unimplemented foreign type in the surface:
-  **239 uses, 0 supported**, and unrepresentable. Its behavior is a live
-  registration list on a source the other side owns, so a clone is a token that
-  never cancels and never fires a callback — which is worse than not having one
-  because it looks like it works. Step 7's plan to round-trip
-  `IsCancellationRequested` is a *declared degradation*, and this table is where
-  it has to be written down when it lands.
+- `CancellationToken` **was** the largest unimplemented foreign type in the
+  surface at 239 uses and 0 supported, and is now the first foreign type to
+  cross. It is not a clone of the value — it is a clone of the one edge the
+  value carries. The struct is a single field over a
+  `CancellationTokenSource`, its members read that source's private state
+  directly, and nothing on the source is virtual, so the receiver can only hold
+  a real source of its own and the sender drives it. Faithful for the
+  observable surface because cancellation is monotonic, `Cancel` is idempotent,
+  and registering on an already-cancelled token fires synchronously. Handle 0
+  is `default`, which is what keeps `CanBeCanceled` false rather than minting a
+  source that reports true — the one part of this that would have been a silent
+  wrong answer. The declared degradation is written into the entry, as this
+  table requires: the edge is one-way per crossing. Analyzer-to-compiler only;
+  see problem 12 for why the reverse is harder.
 - Delegates are 9 distinct types and 0 supported uses, which is the size of the
   callback gap Step 7 closes.
 

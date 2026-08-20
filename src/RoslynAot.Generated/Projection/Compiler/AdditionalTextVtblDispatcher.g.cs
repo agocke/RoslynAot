@@ -23,6 +23,25 @@ internal sealed partial class AdditionalTextVtblDispatcher : IAdditionalTextVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int AdditionalText_GetText(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5913);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.AdditionalText>(receiver).GetText(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public unsafe int AdditionalText_get_Path(
         long receiver,
         nint buffer,

@@ -23,6 +23,46 @@ internal sealed partial class ControlFlowGraphVtblDispatcher : IControlFlowGraph
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int ControlFlowGraph_GetAnonymousFunctionControlFlowGraph(
+        long receiver,
+        long anonymousFunction,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5930);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph>(receiver).GetAnonymousFunctionControlFlowGraph(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.IFlowAnonymousFunctionOperation>(anonymousFunction), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int ControlFlowGraph_GetLocalFunctionControlFlowGraph(
+        long receiver,
+        long localFunction,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5931);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph>(receiver).GetLocalFunctionControlFlowGraph(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IMethodSymbol>(localFunction), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int ControlFlowGraph_get_Blocks(
         long receiver,
         out long result)

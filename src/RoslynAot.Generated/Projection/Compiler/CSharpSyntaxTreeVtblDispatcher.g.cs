@@ -99,6 +99,65 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
+    public int SyntaxTree_GetDiagnostics_af8a9251(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5949);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetDiagnostics(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_GetLineSpan(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5950);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetLineSpan(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_GetLineVisibility(
+        long receiver,
+        int position,
+        long cancellationToken,
+        out int result)
+    {
+        RoslynCallCounters.Record(5951);
+        result = default;
+
+        try
+        {
+            result = (int)_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetLineVisibility(position, cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxTree_GetLocation(
         long receiver,
         long span,
@@ -118,6 +177,26 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
+    public int SyntaxTree_GetMappedLineSpan(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5952);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetMappedLineSpan(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SyntaxTree_GetReference(
         long receiver,
         long node,
@@ -129,6 +208,44 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetReference(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(node)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_GetRoot(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5953);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetRoot(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SyntaxTree_GetText(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5954);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(receiver).GetText(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -339,6 +456,25 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
+    public int CSharpSyntaxTree_GetCompilationUnitRoot(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5905);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).GetCompilationUnitRoot(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CSharpSyntaxTree_GetDiagnostics_3eec09dc(
         long receiver,
         long node,
@@ -415,6 +551,65 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
+    public int CSharpSyntaxTree_GetDiagnostics_f82eff5c(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5906);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).GetDiagnostics(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpSyntaxTree_GetLineSpan(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5907);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).GetLineSpan(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpSyntaxTree_GetLineVisibility(
+        long receiver,
+        int position,
+        long cancellationToken,
+        out int result)
+    {
+        RoslynCallCounters.Record(5908);
+        result = default;
+
+        try
+        {
+            result = (int)_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).GetLineVisibility(position, cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CSharpSyntaxTree_GetLocation(
         long receiver,
         long span,
@@ -426,6 +621,45 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).GetLocation(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpSyntaxTree_GetMappedLineSpan(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5909);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).GetMappedLineSpan(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpSyntaxTree_GetRoot(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5910);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree>(receiver).GetRoot(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

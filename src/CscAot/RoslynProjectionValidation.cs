@@ -131,6 +131,65 @@ internal static class RoslynProjectionValidation
         {
         }
 
+        // A cancellation token crosses as a mirror source the compiler owns,
+        // and handle 0 is exactly default. Both halves are checked here
+        // because the differential corpus can only reach the first: every
+        // analyzer call site in it omits the optional argument, so the
+        // compiler only ever sees 0. Nothing else would exercise a real
+        // mirror until an analyzer that threads a live token appears.
+        var syntaxTreeVtbl = new SyntaxTreeVtblDispatcher(interop);
+        long treeHandle = interop.AddObject(root.SyntaxTree);
+        AssertSuccess(
+            syntaxTreeVtbl.SyntaxTree_GetRoot(
+                treeHandle,
+                cancellationToken: 0,
+                out long uncancelledRootHandle));
+        if (uncancelledRootHandle == 0)
+        {
+            throw new InvalidOperationException(
+                "A zero cancellation token handle did not resolve to " +
+                "default(CancellationToken).");
+        }
+
+        AssertSuccess(
+            interop.CreateCancellationTokenSource(out long cancellationHandle));
+        var mirror = interop.Objects
+            .GetObject<System.Threading.CancellationTokenSource>(
+                cancellationHandle);
+        if (!mirror.Token.CanBeCanceled || mirror.IsCancellationRequested)
+        {
+            throw new InvalidOperationException(
+                "A new cancellation mirror was not a live, uncancelled " +
+                "source.");
+        }
+
+        // The non-zero path: a live mirror handle has to resolve to its
+        // source and produce a usable token, not merely be accepted.
+        AssertSuccess(
+            syntaxTreeVtbl.SyntaxTree_GetRoot(
+                treeHandle,
+                cancellationHandle,
+                out long mirroredRootHandle));
+        if (mirroredRootHandle == 0)
+        {
+            throw new InvalidOperationException(
+                "A live cancellation mirror handle did not resolve to a " +
+                "usable token.");
+        }
+
+        AssertSuccess(
+            interop.CancelCancellationTokenSource(cancellationHandle));
+        if (!mirror.IsCancellationRequested)
+        {
+            throw new InvalidOperationException(
+                "The cancel edge did not reach the mirror source.");
+        }
+
+        // Idempotence is what lets the transport ignore a duplicated or
+        // replayed edge rather than deduplicate one.
+        AssertSuccess(
+            interop.CancelCancellationTokenSource(cancellationHandle));
+
         AssertSuccess(
             parseOptionsTypeVtbl.CSharpParseOptions_get_Default(
                 out long optionsHandle));

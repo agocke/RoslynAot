@@ -22,4 +22,24 @@ internal sealed partial class SyntaxTreeOptionsProviderVtblDispatcher : ISyntaxT
     {
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
+
+    public int SyntaxTreeOptionsProvider_IsGenerated(
+        long receiver,
+        long tree,
+        long cancellationToken,
+        out int result)
+    {
+        RoslynCallCounters.Record(5955);
+        result = default;
+
+        try
+        {
+            result = (int)_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider>(receiver).IsGenerated(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(tree), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token);
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
 }

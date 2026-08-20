@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("2afa16cc-06fa-5ccd-a55c-1e361f518944")]
+[Guid("a5185f5e-d459-582e-8f92-a26dd427d613")]
 public partial interface ISyntaxTreeVtbl
 {
 
@@ -45,6 +45,29 @@ public partial interface ISyntaxTreeVtbl
     );
 
     [PreserveSig]
+    int SyntaxTree_GetDiagnostics_af8a9251(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_GetLineSpan(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_GetLineVisibility(
+        long receiver,
+        int position,
+        long cancellationToken,
+        out int result
+    );
+
+    [PreserveSig]
     int SyntaxTree_GetLocation(
         long receiver,
         long span,
@@ -52,9 +75,31 @@ public partial interface ISyntaxTreeVtbl
     );
 
     [PreserveSig]
+    int SyntaxTree_GetMappedLineSpan(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
     int SyntaxTree_GetReference(
         long receiver,
         long node,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_GetRoot(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxTree_GetText(
+        long receiver,
+        long cancellationToken,
         out long result
     );
 
