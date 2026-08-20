@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3220c154-7738-565b-9a8c-cfe845740d58")]
+[Guid("5c3ad43a-7a91-57b3-b1f7-a7167ed5f0dd")]
 public partial interface IAssemblyIdentityComparerVtbl
 {
 
@@ -25,7 +25,7 @@ public partial interface IAssemblyIdentityComparerVtbl
     );
 
     [PreserveSig]
-    int AssemblyIdentityComparer_ReferenceMatchesDefinition_0539a3af(
+    int AssemblyIdentityComparer_ReferenceMatchesDefinition_5365274e(
         long receiver,
         long reference,
         long definition,
@@ -33,7 +33,7 @@ public partial interface IAssemblyIdentityComparerVtbl
     );
 
     [PreserveSig]
-    int AssemblyIdentityComparer_ReferenceMatchesDefinition_af7b523b(
+    int AssemblyIdentityComparer_ReferenceMatchesDefinition_c297003d(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string referenceDisplayName,
         long definition,

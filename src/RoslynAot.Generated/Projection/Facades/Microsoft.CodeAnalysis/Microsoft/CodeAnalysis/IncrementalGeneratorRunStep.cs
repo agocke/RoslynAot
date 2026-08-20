@@ -51,7 +51,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IncrementalGeneratorRunStep __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IncrementalGeneratorRunStep)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("7147e41d-94ad-5872-9eb1-cb45362cd639")]
+        [System.Runtime.InteropServices.Guid("83bfe168-a81f-5e94-a235-aa1cfc6110ba")]
         internal partial interface __RoslynAotImplementation : IncrementalGeneratorRunStep
         {
         }

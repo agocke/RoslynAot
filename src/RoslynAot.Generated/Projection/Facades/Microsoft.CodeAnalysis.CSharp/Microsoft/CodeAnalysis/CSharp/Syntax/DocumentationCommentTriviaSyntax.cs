@@ -34,7 +34,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IDocumentationCommentTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.DocumentationCommentTriviaSyntax_Accept_2e8842af(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.DocumentationCommentTriviaSyntax_Accept_07317390(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -77,7 +77,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static DocumentationCommentTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (DocumentationCommentTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("3e07f356-2427-52eb-9cf4-df00cb807b0a")]
+        [System.Runtime.InteropServices.Guid("14a5b581-2c41-5751-9c5c-af21fead11b7")]
         internal partial interface __RoslynAotImplementation : DocumentationCommentTriviaSyntax
         {
         }

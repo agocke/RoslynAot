@@ -27,7 +27,7 @@ internal sealed partial class IInterpolatedStringTextOperationVtblDispatcher : I
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1107);
+        RoslynCallCounters.Record(1102);
         result = default;
 
         try

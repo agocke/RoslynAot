@@ -140,7 +140,6 @@ namespace Microsoft.CodeAnalysis
         Attribute = 125,
         InlineArrayAccess = 126,
         CollectionExpression = 127,
-        Spread = 128,
-        CollectionExpressionElementsPlaceholder = 129
+        Spread = 128
     }
 }

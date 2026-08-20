@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IExternAliasDirectiveSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ExternAliasDirectiveSyntax_Accept_a36cd6f5(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ExternAliasDirectiveSyntax_Accept_7db33d9a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -122,7 +122,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ExternAliasDirectiveSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ExternAliasDirectiveSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("20505a11-d246-5beb-90bb-4b444ec0d214")]
+        [System.Runtime.InteropServices.Guid("42a88911-352e-5524-9b69-7b9136421b22")]
         internal partial interface __RoslynAotImplementation : ExternAliasDirectiveSyntax
         {
         }

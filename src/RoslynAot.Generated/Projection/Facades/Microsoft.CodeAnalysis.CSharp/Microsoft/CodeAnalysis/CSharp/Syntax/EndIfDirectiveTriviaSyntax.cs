@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IEndIfDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.EndIfDirectiveTriviaSyntax_Accept_563db3d2(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.EndIfDirectiveTriviaSyntax_Accept_58411382(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -122,7 +122,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static EndIfDirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (EndIfDirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("b356e193-1205-5fbf-9494-1e8cd42d1991")]
+        [System.Runtime.InteropServices.Guid("e21310a7-753d-5e2f-bc96-cabd2e5461c8")]
         internal partial interface __RoslynAotImplementation : EndIfDirectiveTriviaSyntax
         {
         }

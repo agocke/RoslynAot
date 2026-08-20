@@ -23,7 +23,7 @@ internal sealed partial class AssemblyIdentityVtblDispatcher : IAssemblyIdentity
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int AssemblyIdentity_Equals_8ec1fb2f(
+    public int AssemblyIdentity_Equals_c982e776(
         long receiver,
         long obj,
         out int result)

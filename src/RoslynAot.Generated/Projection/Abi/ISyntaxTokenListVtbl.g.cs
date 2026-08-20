@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ca988caa-8966-58bf-8ceb-8f50c6f2dac4")]
+[Guid("1a309e09-7d38-55c8-832f-1802c5b52e66")]
 public partial interface ISyntaxTokenListVtbl
 {
 
@@ -30,7 +30,7 @@ public partial interface ISyntaxTokenListVtbl
     );
 
     [PreserveSig]
-    int SyntaxTokenList_Equals_27ced153(
+    int SyntaxTokenList_Equals_180937a4(
         long receiver,
         long other,
         out int result

@@ -27,7 +27,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(995);
+        RoslynCallCounters.Record(990);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(996);
+        RoslynCallCounters.Record(991);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(997);
+        RoslynCallCounters.Record(992);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(998);
+        RoslynCallCounters.Record(993);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(999);
+        RoslynCallCounters.Record(994);
         result = default;
 
         try
@@ -117,7 +117,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1000);
+        RoslynCallCounters.Record(995);
         result = default;
 
         try
@@ -135,7 +135,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1001);
+        RoslynCallCounters.Record(996);
         result = default;
 
         try
@@ -153,7 +153,7 @@ internal sealed partial class IBinaryOperationVtblDispatcher : IIBinaryOperation
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1002);
+        RoslynCallCounters.Record(997);
         result = default;
 
         try

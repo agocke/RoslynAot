@@ -58,7 +58,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IArrayRankSpecifierSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ArrayRankSpecifierSyntax_Accept_2e42d392(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ArrayRankSpecifierSyntax_Accept_350c6a09(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -110,7 +110,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ArrayRankSpecifierSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ArrayRankSpecifierSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("dc8a22cb-7e00-5306-bd06-c57a33af45da")]
+        [System.Runtime.InteropServices.Guid("d654a962-fd92-5cde-a87b-767644ef0de5")]
         internal partial interface __RoslynAotImplementation : ArrayRankSpecifierSyntax
         {
         }

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f79f658a-5d2c-5571-8877-8a0f5e546544")]
+[Guid("0d2c9ce4-a9ea-5d9a-a925-ae3f50f780ce")]
 public partial interface IRuntimeRudeEditTypeVtbl
 {
 
     [PreserveSig]
-    int RuntimeRudeEdit_ctor_f0820610(
+    int RuntimeRudeEdit_ctor_22fadd92(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string message,
         int errorCode,
         out long result

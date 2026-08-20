@@ -117,7 +117,6 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             return FlowAnalysis.ControlFlowGraph.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
-        [System.Runtime.CompilerServices.OverloadResolutionPriority(-1)]
         public void RegisterOperationAction(System.Action<OperationAnalysisContext> action, params OperationKind[] operationKinds)
         {
             System.ArgumentNullException.ThrowIfNull(action);
@@ -125,7 +124,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             RegisterOperationAction(action, System.Collections.Immutable.ImmutableArray.CreateRange(operationKinds));
         }
 
-        public abstract void RegisterOperationAction(System.Action<OperationAnalysisContext> action, params System.Collections.Immutable.ImmutableArray<OperationKind> operationKinds);
+        public abstract void RegisterOperationAction(System.Action<OperationAnalysisContext> action, System.Collections.Immutable.ImmutableArray<OperationKind> operationKinds);
         public abstract void RegisterOperationBlockEndAction(System.Action<OperationBlockAnalysisContext> action);
         internal OperationBlockStartAnalysisContext()
         {
@@ -150,7 +149,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             {
             }
 
-            public override void RegisterOperationAction(System.Action<OperationAnalysisContext> action, params System.Collections.Immutable.ImmutableArray<OperationKind> operationKinds)
+            public override void RegisterOperationAction(System.Action<OperationAnalysisContext> action, System.Collections.Immutable.ImmutableArray<OperationKind> operationKinds)
             {
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
             }

@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL001", UrlFormat = "https://github.com/dotnet/roslyn/issues/70609")]
     [System.Flags]
     public enum SemanticModelOptions
     {

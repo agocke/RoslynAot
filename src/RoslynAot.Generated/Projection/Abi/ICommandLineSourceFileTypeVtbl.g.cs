@@ -12,19 +12,19 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("05e2eeef-4a59-5a92-bb09-ea5a1d30637c")]
+[Guid("38880aef-be69-5ae6-9715-762e7e846b88")]
 public partial interface ICommandLineSourceFileTypeVtbl
 {
 
     [PreserveSig]
-    int CommandLineSourceFile_ctor_566b9c02(
+    int CommandLineSourceFile_ctor_a9081338(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         int isScript,
         out long result
     );
 
     [PreserveSig]
-    int CommandLineSourceFile_ctor_dfdf1cda(
+    int CommandLineSourceFile_ctor_5dfbeda0(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         int isScript,
         int isInputRedirected,

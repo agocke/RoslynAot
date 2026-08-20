@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISpreadElementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SpreadElementSyntax_Accept_51c9a67f(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.SpreadElementSyntax_Accept_854af60d(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SpreadElementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SpreadElementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("df3ee336-16da-5487-bc3d-dc4e94012b66")]
+        [System.Runtime.InteropServices.Guid("7d5d2249-48db-5cd6-b1ff-2971fb5b3308")]
         internal partial interface __RoslynAotImplementation : SpreadElementSyntax
         {
         }

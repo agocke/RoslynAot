@@ -23,11 +23,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CSharpSyntaxVisitor_DefaultVisit_ae0b3c67(
+    public int CSharpSyntaxVisitor_DefaultVisit_d702e622(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2288);
+        RoslynCallCounters.Record(2281);
 
         try
         {
@@ -40,11 +40,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAccessorDeclaration_15d38887(
+    public int CSharpSyntaxVisitor_VisitAccessorDeclaration_a1fbc65b(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2289);
+        RoslynCallCounters.Record(2282);
 
         try
         {
@@ -57,11 +57,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAccessorList_b9fd21eb(
+    public int CSharpSyntaxVisitor_VisitAccessorList_a7c02e07(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2290);
+        RoslynCallCounters.Record(2283);
 
         try
         {
@@ -74,11 +74,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAliasQualifiedName_fe5bf45e(
+    public int CSharpSyntaxVisitor_VisitAliasQualifiedName_f4f2e881(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2291);
+        RoslynCallCounters.Record(2284);
 
         try
         {
@@ -91,11 +91,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAllowsConstraintClause_f222ec6e(
+    public int CSharpSyntaxVisitor_VisitAllowsConstraintClause_eb2e702f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2292);
+        RoslynCallCounters.Record(2285);
 
         try
         {
@@ -108,11 +108,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAnonymousMethodExpression_30e1b41e(
+    public int CSharpSyntaxVisitor_VisitAnonymousMethodExpression_b917cb20(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2293);
+        RoslynCallCounters.Record(2286);
 
         try
         {
@@ -125,11 +125,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAnonymousObjectCreationExpression_3d87ff5b(
+    public int CSharpSyntaxVisitor_VisitAnonymousObjectCreationExpression_45452305(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2294);
+        RoslynCallCounters.Record(2287);
 
         try
         {
@@ -142,11 +142,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAnonymousObjectMemberDeclarator_92876121(
+    public int CSharpSyntaxVisitor_VisitAnonymousObjectMemberDeclarator_3f8a145a(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2295);
+        RoslynCallCounters.Record(2288);
 
         try
         {
@@ -159,11 +159,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArgumentList_a17e7034(
+    public int CSharpSyntaxVisitor_VisitArgumentList_72184e29(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2296);
+        RoslynCallCounters.Record(2289);
 
         try
         {
@@ -176,11 +176,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArgument_792c4010(
+    public int CSharpSyntaxVisitor_VisitArgument_53f7924e(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2297);
+        RoslynCallCounters.Record(2290);
 
         try
         {
@@ -193,11 +193,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArrayCreationExpression_8ddd21cd(
+    public int CSharpSyntaxVisitor_VisitArrayCreationExpression_e4416c62(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2298);
+        RoslynCallCounters.Record(2291);
 
         try
         {
@@ -210,11 +210,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArrayRankSpecifier_e7ee5730(
+    public int CSharpSyntaxVisitor_VisitArrayRankSpecifier_6edcb417(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2299);
+        RoslynCallCounters.Record(2292);
 
         try
         {
@@ -227,11 +227,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArrayType_2cb0362f(
+    public int CSharpSyntaxVisitor_VisitArrayType_27b0b841(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2300);
+        RoslynCallCounters.Record(2293);
 
         try
         {
@@ -244,11 +244,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitArrowExpressionClause_50e5f4ca(
+    public int CSharpSyntaxVisitor_VisitArrowExpressionClause_f7aebbb1(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2301);
+        RoslynCallCounters.Record(2294);
 
         try
         {
@@ -261,11 +261,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAssignmentExpression_d67b84a7(
+    public int CSharpSyntaxVisitor_VisitAssignmentExpression_b4e1b38b(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2302);
+        RoslynCallCounters.Record(2295);
 
         try
         {
@@ -278,11 +278,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAttributeArgumentList_dbf25f62(
+    public int CSharpSyntaxVisitor_VisitAttributeArgumentList_dc8ab933(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2303);
+        RoslynCallCounters.Record(2296);
 
         try
         {
@@ -295,11 +295,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAttributeArgument_1953d366(
+    public int CSharpSyntaxVisitor_VisitAttributeArgument_8957858d(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2304);
+        RoslynCallCounters.Record(2297);
 
         try
         {
@@ -312,11 +312,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAttributeList_07c878c0(
+    public int CSharpSyntaxVisitor_VisitAttributeList_efee39dd(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2305);
+        RoslynCallCounters.Record(2298);
 
         try
         {
@@ -329,11 +329,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAttributeTargetSpecifier_47f1058a(
+    public int CSharpSyntaxVisitor_VisitAttributeTargetSpecifier_5f94a3b2(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2306);
+        RoslynCallCounters.Record(2299);
 
         try
         {
@@ -346,11 +346,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAttribute_04000905(
+    public int CSharpSyntaxVisitor_VisitAttribute_82539d88(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2307);
+        RoslynCallCounters.Record(2300);
 
         try
         {
@@ -363,11 +363,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitAwaitExpression_128f0bac(
+    public int CSharpSyntaxVisitor_VisitAwaitExpression_e3af35f6(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2308);
+        RoslynCallCounters.Record(2301);
 
         try
         {
@@ -380,11 +380,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBadDirectiveTrivia_ad099b1d(
+    public int CSharpSyntaxVisitor_VisitBadDirectiveTrivia_90961106(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2309);
+        RoslynCallCounters.Record(2302);
 
         try
         {
@@ -397,11 +397,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBaseExpression_1308c9c0(
+    public int CSharpSyntaxVisitor_VisitBaseExpression_f1e13899(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2310);
+        RoslynCallCounters.Record(2303);
 
         try
         {
@@ -414,11 +414,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBaseList_fd45e5f9(
+    public int CSharpSyntaxVisitor_VisitBaseList_3817af2a(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2311);
+        RoslynCallCounters.Record(2304);
 
         try
         {
@@ -431,11 +431,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBinaryExpression_3fe5e333(
+    public int CSharpSyntaxVisitor_VisitBinaryExpression_7ff4040e(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2312);
+        RoslynCallCounters.Record(2305);
 
         try
         {
@@ -448,11 +448,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBinaryPattern_30286fed(
+    public int CSharpSyntaxVisitor_VisitBinaryPattern_e5d90ab4(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2313);
+        RoslynCallCounters.Record(2306);
 
         try
         {
@@ -465,11 +465,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBlock_22e9ef47(
+    public int CSharpSyntaxVisitor_VisitBlock_5094a622(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2314);
+        RoslynCallCounters.Record(2307);
 
         try
         {
@@ -482,11 +482,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBracketedArgumentList_ef14f6ec(
+    public int CSharpSyntaxVisitor_VisitBracketedArgumentList_f65f7cd5(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2315);
+        RoslynCallCounters.Record(2308);
 
         try
         {
@@ -499,11 +499,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBracketedParameterList_ddc50967(
+    public int CSharpSyntaxVisitor_VisitBracketedParameterList_668dea7f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2316);
+        RoslynCallCounters.Record(2309);
 
         try
         {
@@ -516,11 +516,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitBreakStatement_fa50a591(
+    public int CSharpSyntaxVisitor_VisitBreakStatement_30da7889(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2317);
+        RoslynCallCounters.Record(2310);
 
         try
         {
@@ -533,11 +533,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCasePatternSwitchLabel_92b73baa(
+    public int CSharpSyntaxVisitor_VisitCasePatternSwitchLabel_1ba25373(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2318);
+        RoslynCallCounters.Record(2311);
 
         try
         {
@@ -550,11 +550,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCaseSwitchLabel_ccc40c42(
+    public int CSharpSyntaxVisitor_VisitCaseSwitchLabel_ccd474ca(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2319);
+        RoslynCallCounters.Record(2312);
 
         try
         {
@@ -567,11 +567,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCastExpression_42eda634(
+    public int CSharpSyntaxVisitor_VisitCastExpression_9d5c22dc(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2320);
+        RoslynCallCounters.Record(2313);
 
         try
         {
@@ -584,11 +584,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCatchClause_0e0e5a2b(
+    public int CSharpSyntaxVisitor_VisitCatchClause_ecfd423b(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2321);
+        RoslynCallCounters.Record(2314);
 
         try
         {
@@ -601,11 +601,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCatchDeclaration_3a2d785a(
+    public int CSharpSyntaxVisitor_VisitCatchDeclaration_a32af0ce(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2322);
+        RoslynCallCounters.Record(2315);
 
         try
         {
@@ -618,11 +618,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCatchFilterClause_d09c609b(
+    public int CSharpSyntaxVisitor_VisitCatchFilterClause_c21ab58c(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2323);
+        RoslynCallCounters.Record(2316);
 
         try
         {
@@ -635,11 +635,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCheckedExpression_4aeda533(
+    public int CSharpSyntaxVisitor_VisitCheckedExpression_8567a70a(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2324);
+        RoslynCallCounters.Record(2317);
 
         try
         {
@@ -652,11 +652,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCheckedStatement_7d1ec90b(
+    public int CSharpSyntaxVisitor_VisitCheckedStatement_bd94e71b(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2325);
+        RoslynCallCounters.Record(2318);
 
         try
         {
@@ -669,11 +669,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitClassDeclaration_fa4e2c93(
+    public int CSharpSyntaxVisitor_VisitClassDeclaration_4e851eb1(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2326);
+        RoslynCallCounters.Record(2319);
 
         try
         {
@@ -686,11 +686,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitClassOrStructConstraint_514a0484(
+    public int CSharpSyntaxVisitor_VisitClassOrStructConstraint_5b59d3db(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2327);
+        RoslynCallCounters.Record(2320);
 
         try
         {
@@ -703,11 +703,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCollectionExpression_2d14a83c(
+    public int CSharpSyntaxVisitor_VisitCollectionExpression_8ce052d2(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2328);
+        RoslynCallCounters.Record(2321);
 
         try
         {
@@ -720,11 +720,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCompilationUnit_01813651(
+    public int CSharpSyntaxVisitor_VisitCompilationUnit_77de7cdc(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2329);
+        RoslynCallCounters.Record(2322);
 
         try
         {
@@ -737,11 +737,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConditionalAccessExpression_54acf481(
+    public int CSharpSyntaxVisitor_VisitConditionalAccessExpression_a8ed84b4(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2330);
+        RoslynCallCounters.Record(2323);
 
         try
         {
@@ -754,11 +754,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConditionalExpression_e7c5b85b(
+    public int CSharpSyntaxVisitor_VisitConditionalExpression_9856d7ff(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2331);
+        RoslynCallCounters.Record(2324);
 
         try
         {
@@ -771,11 +771,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConstantPattern_bac38db3(
+    public int CSharpSyntaxVisitor_VisitConstantPattern_2e2783fe(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2332);
+        RoslynCallCounters.Record(2325);
 
         try
         {
@@ -788,11 +788,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConstructorConstraint_9d2c2281(
+    public int CSharpSyntaxVisitor_VisitConstructorConstraint_6344c31e(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2333);
+        RoslynCallCounters.Record(2326);
 
         try
         {
@@ -805,11 +805,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConstructorDeclaration_5c1847aa(
+    public int CSharpSyntaxVisitor_VisitConstructorDeclaration_ec586a1e(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2334);
+        RoslynCallCounters.Record(2327);
 
         try
         {
@@ -822,11 +822,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConstructorInitializer_e221c236(
+    public int CSharpSyntaxVisitor_VisitConstructorInitializer_0750fe74(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2335);
+        RoslynCallCounters.Record(2328);
 
         try
         {
@@ -839,11 +839,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitContinueStatement_88a17af0(
+    public int CSharpSyntaxVisitor_VisitContinueStatement_0e4d4edf(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2336);
+        RoslynCallCounters.Record(2329);
 
         try
         {
@@ -856,11 +856,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConversionOperatorDeclaration_e1c958b3(
+    public int CSharpSyntaxVisitor_VisitConversionOperatorDeclaration_02cb0436(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2337);
+        RoslynCallCounters.Record(2330);
 
         try
         {
@@ -873,11 +873,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitConversionOperatorMemberCref_86e27fb7(
+    public int CSharpSyntaxVisitor_VisitConversionOperatorMemberCref_85d4b88f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2338);
+        RoslynCallCounters.Record(2331);
 
         try
         {
@@ -890,11 +890,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCrefBracketedParameterList_a58d3d73(
+    public int CSharpSyntaxVisitor_VisitCrefBracketedParameterList_e8a7bd91(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2339);
+        RoslynCallCounters.Record(2332);
 
         try
         {
@@ -907,11 +907,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCrefParameterList_a586dee2(
+    public int CSharpSyntaxVisitor_VisitCrefParameterList_cef1496a(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2340);
+        RoslynCallCounters.Record(2333);
 
         try
         {
@@ -924,11 +924,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitCrefParameter_8de36407(
+    public int CSharpSyntaxVisitor_VisitCrefParameter_539cdbe2(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2341);
+        RoslynCallCounters.Record(2334);
 
         try
         {
@@ -941,11 +941,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDeclarationExpression_72c60fb7(
+    public int CSharpSyntaxVisitor_VisitDeclarationExpression_958ea075(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2342);
+        RoslynCallCounters.Record(2335);
 
         try
         {
@@ -958,11 +958,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDeclarationPattern_7b20e1ee(
+    public int CSharpSyntaxVisitor_VisitDeclarationPattern_d91580cc(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2343);
+        RoslynCallCounters.Record(2336);
 
         try
         {
@@ -975,11 +975,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDefaultConstraint_975b1c00(
+    public int CSharpSyntaxVisitor_VisitDefaultConstraint_45a6e700(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2344);
+        RoslynCallCounters.Record(2337);
 
         try
         {
@@ -992,11 +992,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDefaultExpression_8d983304(
+    public int CSharpSyntaxVisitor_VisitDefaultExpression_646cbe74(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2345);
+        RoslynCallCounters.Record(2338);
 
         try
         {
@@ -1009,11 +1009,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDefaultSwitchLabel_be60cf71(
+    public int CSharpSyntaxVisitor_VisitDefaultSwitchLabel_fc611436(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2346);
+        RoslynCallCounters.Record(2339);
 
         try
         {
@@ -1026,11 +1026,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDefineDirectiveTrivia_df0636c9(
+    public int CSharpSyntaxVisitor_VisitDefineDirectiveTrivia_0d93e123(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2347);
+        RoslynCallCounters.Record(2340);
 
         try
         {
@@ -1043,11 +1043,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDelegateDeclaration_c43544f9(
+    public int CSharpSyntaxVisitor_VisitDelegateDeclaration_5f7d5832(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2348);
+        RoslynCallCounters.Record(2341);
 
         try
         {
@@ -1060,11 +1060,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDestructorDeclaration_be09eb90(
+    public int CSharpSyntaxVisitor_VisitDestructorDeclaration_72e3d4de(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2349);
+        RoslynCallCounters.Record(2342);
 
         try
         {
@@ -1077,11 +1077,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDiscardDesignation_a8765962(
+    public int CSharpSyntaxVisitor_VisitDiscardDesignation_a57fe3b9(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2350);
+        RoslynCallCounters.Record(2343);
 
         try
         {
@@ -1094,11 +1094,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDiscardPattern_c0cd7b33(
+    public int CSharpSyntaxVisitor_VisitDiscardPattern_dd5a4bbc(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2351);
+        RoslynCallCounters.Record(2344);
 
         try
         {
@@ -1111,11 +1111,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDoStatement_637a80fa(
+    public int CSharpSyntaxVisitor_VisitDoStatement_7ef2f7bb(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2352);
+        RoslynCallCounters.Record(2345);
 
         try
         {
@@ -1128,11 +1128,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitDocumentationCommentTrivia_a1ba0336(
+    public int CSharpSyntaxVisitor_VisitDocumentationCommentTrivia_bdb4b738(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2353);
+        RoslynCallCounters.Record(2346);
 
         try
         {
@@ -1145,11 +1145,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitElementAccessExpression_9ffee593(
+    public int CSharpSyntaxVisitor_VisitElementAccessExpression_39c736ce(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2354);
+        RoslynCallCounters.Record(2347);
 
         try
         {
@@ -1162,11 +1162,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitElementBindingExpression_d77dbda0(
+    public int CSharpSyntaxVisitor_VisitElementBindingExpression_95542bd7(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2355);
+        RoslynCallCounters.Record(2348);
 
         try
         {
@@ -1179,11 +1179,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitElifDirectiveTrivia_a5492c75(
+    public int CSharpSyntaxVisitor_VisitElifDirectiveTrivia_59383339(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2356);
+        RoslynCallCounters.Record(2349);
 
         try
         {
@@ -1196,11 +1196,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitElseClause_ddaf3a8a(
+    public int CSharpSyntaxVisitor_VisitElseClause_772d8348(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2357);
+        RoslynCallCounters.Record(2350);
 
         try
         {
@@ -1213,11 +1213,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitElseDirectiveTrivia_f5866eb7(
+    public int CSharpSyntaxVisitor_VisitElseDirectiveTrivia_6d5fa4bd(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2358);
+        RoslynCallCounters.Record(2351);
 
         try
         {
@@ -1230,11 +1230,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEmptyStatement_adfb3188(
+    public int CSharpSyntaxVisitor_VisitEmptyStatement_6886567a(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2359);
+        RoslynCallCounters.Record(2352);
 
         try
         {
@@ -1247,11 +1247,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEndIfDirectiveTrivia_44286501(
+    public int CSharpSyntaxVisitor_VisitEndIfDirectiveTrivia_c1d11ee4(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2360);
+        RoslynCallCounters.Record(2353);
 
         try
         {
@@ -1264,11 +1264,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEndRegionDirectiveTrivia_c8e563f6(
+    public int CSharpSyntaxVisitor_VisitEndRegionDirectiveTrivia_3fe7acdc(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2361);
+        RoslynCallCounters.Record(2354);
 
         try
         {
@@ -1281,11 +1281,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEnumDeclaration_d9117d38(
+    public int CSharpSyntaxVisitor_VisitEnumDeclaration_254523fd(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2362);
+        RoslynCallCounters.Record(2355);
 
         try
         {
@@ -1298,11 +1298,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEnumMemberDeclaration_6ae6681a(
+    public int CSharpSyntaxVisitor_VisitEnumMemberDeclaration_89977e30(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2363);
+        RoslynCallCounters.Record(2356);
 
         try
         {
@@ -1315,11 +1315,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEqualsValueClause_3f0525d4(
+    public int CSharpSyntaxVisitor_VisitEqualsValueClause_dc85cc32(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2364);
+        RoslynCallCounters.Record(2357);
 
         try
         {
@@ -1332,11 +1332,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitErrorDirectiveTrivia_814fb692(
+    public int CSharpSyntaxVisitor_VisitErrorDirectiveTrivia_c4701c69(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2365);
+        RoslynCallCounters.Record(2358);
 
         try
         {
@@ -1349,11 +1349,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEventDeclaration_0267a561(
+    public int CSharpSyntaxVisitor_VisitEventDeclaration_b2d86119(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2366);
+        RoslynCallCounters.Record(2359);
 
         try
         {
@@ -1366,11 +1366,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitEventFieldDeclaration_8780a630(
+    public int CSharpSyntaxVisitor_VisitEventFieldDeclaration_ad44747a(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2367);
+        RoslynCallCounters.Record(2360);
 
         try
         {
@@ -1383,11 +1383,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExplicitInterfaceSpecifier_a5043772(
+    public int CSharpSyntaxVisitor_VisitExplicitInterfaceSpecifier_2cfb526b(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2368);
+        RoslynCallCounters.Record(2361);
 
         try
         {
@@ -1400,11 +1400,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExpressionColon_bbb4be5c(
+    public int CSharpSyntaxVisitor_VisitExpressionColon_30704bd9(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2369);
+        RoslynCallCounters.Record(2362);
 
         try
         {
@@ -1417,11 +1417,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExpressionElement_ce6b3f2c(
+    public int CSharpSyntaxVisitor_VisitExpressionElement_3f5e9d20(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2370);
+        RoslynCallCounters.Record(2363);
 
         try
         {
@@ -1434,11 +1434,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExpressionStatement_e019467d(
+    public int CSharpSyntaxVisitor_VisitExpressionStatement_d8ec8513(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2371);
+        RoslynCallCounters.Record(2364);
 
         try
         {
@@ -1451,11 +1451,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExtensionBlockDeclaration_05d5e7da(
+    public int CSharpSyntaxVisitor_VisitExtensionBlockDeclaration_eebb27c7(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2372);
+        RoslynCallCounters.Record(2365);
 
         try
         {
@@ -1468,11 +1468,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExtensionMemberCref_35e5daff(
+    public int CSharpSyntaxVisitor_VisitExtensionMemberCref_1ee1893d(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2373);
+        RoslynCallCounters.Record(2366);
 
         try
         {
@@ -1485,11 +1485,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitExternAliasDirective_18a9ffbe(
+    public int CSharpSyntaxVisitor_VisitExternAliasDirective_8984fc46(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2374);
+        RoslynCallCounters.Record(2367);
 
         try
         {
@@ -1502,11 +1502,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFieldDeclaration_1905db42(
+    public int CSharpSyntaxVisitor_VisitFieldDeclaration_32b4a256(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2375);
+        RoslynCallCounters.Record(2368);
 
         try
         {
@@ -1519,11 +1519,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFieldExpression_b33c52e5(
+    public int CSharpSyntaxVisitor_VisitFieldExpression_5508b193(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2376);
+        RoslynCallCounters.Record(2369);
 
         try
         {
@@ -1536,11 +1536,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFileScopedNamespaceDeclaration_3964f20f(
+    public int CSharpSyntaxVisitor_VisitFileScopedNamespaceDeclaration_1fc9b9b6(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2377);
+        RoslynCallCounters.Record(2370);
 
         try
         {
@@ -1553,11 +1553,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFinallyClause_007250b0(
+    public int CSharpSyntaxVisitor_VisitFinallyClause_7fbd80a0(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2378);
+        RoslynCallCounters.Record(2371);
 
         try
         {
@@ -1570,11 +1570,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFixedStatement_00263eb0(
+    public int CSharpSyntaxVisitor_VisitFixedStatement_cd525c04(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2379);
+        RoslynCallCounters.Record(2372);
 
         try
         {
@@ -1587,11 +1587,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitForEachStatement_d77364f0(
+    public int CSharpSyntaxVisitor_VisitForEachStatement_f383963d(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2380);
+        RoslynCallCounters.Record(2373);
 
         try
         {
@@ -1604,11 +1604,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitForEachVariableStatement_ed2df607(
+    public int CSharpSyntaxVisitor_VisitForEachVariableStatement_ac5842fb(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2381);
+        RoslynCallCounters.Record(2374);
 
         try
         {
@@ -1621,11 +1621,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitForStatement_371b01ba(
+    public int CSharpSyntaxVisitor_VisitForStatement_5f122cab(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2382);
+        RoslynCallCounters.Record(2375);
 
         try
         {
@@ -1638,11 +1638,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFromClause_e04f5e2c(
+    public int CSharpSyntaxVisitor_VisitFromClause_cb4b7ef9(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2383);
+        RoslynCallCounters.Record(2376);
 
         try
         {
@@ -1655,11 +1655,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerCallingConvention_cf9db9d4(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerCallingConvention_dee8b9f5(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2384);
+        RoslynCallCounters.Record(2377);
 
         try
         {
@@ -1672,11 +1672,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerParameterList_4565fd08(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerParameterList_169a307d(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2385);
+        RoslynCallCounters.Record(2378);
 
         try
         {
@@ -1689,11 +1689,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerParameter_91c5c6f1(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerParameter_3ea802f4(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2386);
+        RoslynCallCounters.Record(2379);
 
         try
         {
@@ -1706,11 +1706,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerType_87cf9662(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerType_8e42b89b(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2387);
+        RoslynCallCounters.Record(2380);
 
         try
         {
@@ -1723,11 +1723,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConventionList_daaa8309(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConventionList_01d7665f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2388);
+        RoslynCallCounters.Record(2381);
 
         try
         {
@@ -1740,11 +1740,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConvention_af864005(
+    public int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConvention_c73518da(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2389);
+        RoslynCallCounters.Record(2382);
 
         try
         {
@@ -1757,11 +1757,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitGenericName_ba716826(
+    public int CSharpSyntaxVisitor_VisitGenericName_ca935de7(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2390);
+        RoslynCallCounters.Record(2383);
 
         try
         {
@@ -1774,11 +1774,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitGlobalStatement_27765632(
+    public int CSharpSyntaxVisitor_VisitGlobalStatement_65571f0f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2391);
+        RoslynCallCounters.Record(2384);
 
         try
         {
@@ -1791,11 +1791,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitGotoStatement_30dc7b92(
+    public int CSharpSyntaxVisitor_VisitGotoStatement_edb6d48f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2392);
+        RoslynCallCounters.Record(2385);
 
         try
         {
@@ -1808,11 +1808,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitGroupClause_45aec9e1(
+    public int CSharpSyntaxVisitor_VisitGroupClause_bebacb88(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2393);
+        RoslynCallCounters.Record(2386);
 
         try
         {
@@ -1825,11 +1825,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIdentifierName_86e25be0(
+    public int CSharpSyntaxVisitor_VisitIdentifierName_2e8c438e(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2394);
+        RoslynCallCounters.Record(2387);
 
         try
         {
@@ -1842,11 +1842,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIfDirectiveTrivia_48e2706c(
+    public int CSharpSyntaxVisitor_VisitIfDirectiveTrivia_8de8c1fe(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2395);
+        RoslynCallCounters.Record(2388);
 
         try
         {
@@ -1859,11 +1859,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIfStatement_5c5c3ff1(
+    public int CSharpSyntaxVisitor_VisitIfStatement_3e92f30a(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2396);
+        RoslynCallCounters.Record(2389);
 
         try
         {
@@ -1876,11 +1876,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIgnoredDirectiveTrivia_064599fb(
+    public int CSharpSyntaxVisitor_VisitIgnoredDirectiveTrivia_747fe64f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2397);
+        RoslynCallCounters.Record(2390);
 
         try
         {
@@ -1893,11 +1893,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitImplicitArrayCreationExpression_34f81ab7(
+    public int CSharpSyntaxVisitor_VisitImplicitArrayCreationExpression_6b2b9487(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2398);
+        RoslynCallCounters.Record(2391);
 
         try
         {
@@ -1910,11 +1910,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitImplicitElementAccess_9b64e1a5(
+    public int CSharpSyntaxVisitor_VisitImplicitElementAccess_15b10ecd(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2399);
+        RoslynCallCounters.Record(2392);
 
         try
         {
@@ -1927,11 +1927,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitImplicitObjectCreationExpression_5a6dbe74(
+    public int CSharpSyntaxVisitor_VisitImplicitObjectCreationExpression_2bd03991(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2400);
+        RoslynCallCounters.Record(2393);
 
         try
         {
@@ -1944,11 +1944,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitImplicitStackAllocArrayCreationExpression_de8aaf66(
+    public int CSharpSyntaxVisitor_VisitImplicitStackAllocArrayCreationExpression_387d4311(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2401);
+        RoslynCallCounters.Record(2394);
 
         try
         {
@@ -1961,11 +1961,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIncompleteMember_0b9642f9(
+    public int CSharpSyntaxVisitor_VisitIncompleteMember_a309d256(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2402);
+        RoslynCallCounters.Record(2395);
 
         try
         {
@@ -1978,11 +1978,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIndexerDeclaration_f7ac3b15(
+    public int CSharpSyntaxVisitor_VisitIndexerDeclaration_5dcb19d0(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2403);
+        RoslynCallCounters.Record(2396);
 
         try
         {
@@ -1995,11 +1995,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIndexerMemberCref_2300fbe8(
+    public int CSharpSyntaxVisitor_VisitIndexerMemberCref_dc7b3a5d(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2404);
+        RoslynCallCounters.Record(2397);
 
         try
         {
@@ -2012,11 +2012,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInitializerExpression_845fe5e5(
+    public int CSharpSyntaxVisitor_VisitInitializerExpression_a57b898b(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2405);
+        RoslynCallCounters.Record(2398);
 
         try
         {
@@ -2029,11 +2029,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterfaceDeclaration_c5594cd3(
+    public int CSharpSyntaxVisitor_VisitInterfaceDeclaration_dfa929b0(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2406);
+        RoslynCallCounters.Record(2399);
 
         try
         {
@@ -2046,11 +2046,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterpolatedStringExpression_1eafedfb(
+    public int CSharpSyntaxVisitor_VisitInterpolatedStringExpression_72173ece(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2407);
+        RoslynCallCounters.Record(2400);
 
         try
         {
@@ -2063,11 +2063,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterpolatedStringText_dce2338a(
+    public int CSharpSyntaxVisitor_VisitInterpolatedStringText_d514aa68(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2408);
+        RoslynCallCounters.Record(2401);
 
         try
         {
@@ -2080,11 +2080,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterpolationAlignmentClause_b69d1a5c(
+    public int CSharpSyntaxVisitor_VisitInterpolationAlignmentClause_e364080d(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2409);
+        RoslynCallCounters.Record(2402);
 
         try
         {
@@ -2097,11 +2097,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterpolationFormatClause_1852a074(
+    public int CSharpSyntaxVisitor_VisitInterpolationFormatClause_3220322c(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2410);
+        RoslynCallCounters.Record(2403);
 
         try
         {
@@ -2114,11 +2114,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInterpolation_f2ca2d1b(
+    public int CSharpSyntaxVisitor_VisitInterpolation_c884ce45(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2411);
+        RoslynCallCounters.Record(2404);
 
         try
         {
@@ -2131,11 +2131,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitInvocationExpression_763a030b(
+    public int CSharpSyntaxVisitor_VisitInvocationExpression_337afd5c(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2412);
+        RoslynCallCounters.Record(2405);
 
         try
         {
@@ -2148,11 +2148,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitIsPatternExpression_97f88bc9(
+    public int CSharpSyntaxVisitor_VisitIsPatternExpression_fad25131(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2413);
+        RoslynCallCounters.Record(2406);
 
         try
         {
@@ -2165,11 +2165,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitJoinClause_44dc385d(
+    public int CSharpSyntaxVisitor_VisitJoinClause_d9df92e0(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2414);
+        RoslynCallCounters.Record(2407);
 
         try
         {
@@ -2182,11 +2182,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitJoinIntoClause_6190fc7c(
+    public int CSharpSyntaxVisitor_VisitJoinIntoClause_e6266506(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2415);
+        RoslynCallCounters.Record(2408);
 
         try
         {
@@ -2199,11 +2199,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLabeledStatement_5a7db1e4(
+    public int CSharpSyntaxVisitor_VisitLabeledStatement_0076932e(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2416);
+        RoslynCallCounters.Record(2409);
 
         try
         {
@@ -2216,11 +2216,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLetClause_3ad403f4(
+    public int CSharpSyntaxVisitor_VisitLetClause_e223b444(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2417);
+        RoslynCallCounters.Record(2410);
 
         try
         {
@@ -2233,11 +2233,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLineDirectivePosition_dca28662(
+    public int CSharpSyntaxVisitor_VisitLineDirectivePosition_99a26c9f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2418);
+        RoslynCallCounters.Record(2411);
 
         try
         {
@@ -2250,11 +2250,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLineDirectiveTrivia_5020b88b(
+    public int CSharpSyntaxVisitor_VisitLineDirectiveTrivia_b819224d(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2419);
+        RoslynCallCounters.Record(2412);
 
         try
         {
@@ -2267,11 +2267,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLineSpanDirectiveTrivia_d6867f14(
+    public int CSharpSyntaxVisitor_VisitLineSpanDirectiveTrivia_54afbe91(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2420);
+        RoslynCallCounters.Record(2413);
 
         try
         {
@@ -2284,11 +2284,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitListPattern_9a021370(
+    public int CSharpSyntaxVisitor_VisitListPattern_3ac3945e(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2421);
+        RoslynCallCounters.Record(2414);
 
         try
         {
@@ -2301,11 +2301,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLiteralExpression_c522aba8(
+    public int CSharpSyntaxVisitor_VisitLiteralExpression_af777344(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2422);
+        RoslynCallCounters.Record(2415);
 
         try
         {
@@ -2318,11 +2318,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLoadDirectiveTrivia_fc4e0e81(
+    public int CSharpSyntaxVisitor_VisitLoadDirectiveTrivia_436dc7f5(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2423);
+        RoslynCallCounters.Record(2416);
 
         try
         {
@@ -2335,11 +2335,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLocalDeclarationStatement_a837e274(
+    public int CSharpSyntaxVisitor_VisitLocalDeclarationStatement_ea830ea8(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2424);
+        RoslynCallCounters.Record(2417);
 
         try
         {
@@ -2352,11 +2352,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLocalFunctionStatement_cec9866b(
+    public int CSharpSyntaxVisitor_VisitLocalFunctionStatement_eeadf5cd(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2425);
+        RoslynCallCounters.Record(2418);
 
         try
         {
@@ -2369,11 +2369,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitLockStatement_20649c54(
+    public int CSharpSyntaxVisitor_VisitLockStatement_43066410(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2426);
+        RoslynCallCounters.Record(2419);
 
         try
         {
@@ -2386,11 +2386,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitMakeRefExpression_3ecfdc2d(
+    public int CSharpSyntaxVisitor_VisitMakeRefExpression_a2da06e1(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2427);
+        RoslynCallCounters.Record(2420);
 
         try
         {
@@ -2403,11 +2403,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitMemberAccessExpression_9a707624(
+    public int CSharpSyntaxVisitor_VisitMemberAccessExpression_78eb5e49(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2428);
+        RoslynCallCounters.Record(2421);
 
         try
         {
@@ -2420,11 +2420,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitMemberBindingExpression_7d444686(
+    public int CSharpSyntaxVisitor_VisitMemberBindingExpression_7e7f2ede(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2429);
+        RoslynCallCounters.Record(2422);
 
         try
         {
@@ -2437,11 +2437,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitMethodDeclaration_3e0b68d8(
+    public int CSharpSyntaxVisitor_VisitMethodDeclaration_d5d1dd24(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2430);
+        RoslynCallCounters.Record(2423);
 
         try
         {
@@ -2454,11 +2454,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNameColon_7712f8de(
+    public int CSharpSyntaxVisitor_VisitNameColon_72e30503(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2431);
+        RoslynCallCounters.Record(2424);
 
         try
         {
@@ -2471,11 +2471,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNameEquals_433d4145(
+    public int CSharpSyntaxVisitor_VisitNameEquals_6091b3d8(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2432);
+        RoslynCallCounters.Record(2425);
 
         try
         {
@@ -2488,11 +2488,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNameMemberCref_fc868c41(
+    public int CSharpSyntaxVisitor_VisitNameMemberCref_4162c1d7(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2433);
+        RoslynCallCounters.Record(2426);
 
         try
         {
@@ -2505,11 +2505,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNamespaceDeclaration_0c1d8b32(
+    public int CSharpSyntaxVisitor_VisitNamespaceDeclaration_1acd6778(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2434);
+        RoslynCallCounters.Record(2427);
 
         try
         {
@@ -2522,11 +2522,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNullableDirectiveTrivia_765ef1c8(
+    public int CSharpSyntaxVisitor_VisitNullableDirectiveTrivia_1f4e6c7f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2435);
+        RoslynCallCounters.Record(2428);
 
         try
         {
@@ -2539,11 +2539,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitNullableType_24a4c337(
+    public int CSharpSyntaxVisitor_VisitNullableType_18aeb7fd(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2436);
+        RoslynCallCounters.Record(2429);
 
         try
         {
@@ -2556,11 +2556,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitObjectCreationExpression_ae25bcf5(
+    public int CSharpSyntaxVisitor_VisitObjectCreationExpression_5fc7da46(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2437);
+        RoslynCallCounters.Record(2430);
 
         try
         {
@@ -2573,11 +2573,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOmittedArraySizeExpression_f337d471(
+    public int CSharpSyntaxVisitor_VisitOmittedArraySizeExpression_33db03fd(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2438);
+        RoslynCallCounters.Record(2431);
 
         try
         {
@@ -2590,11 +2590,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOmittedTypeArgument_60815307(
+    public int CSharpSyntaxVisitor_VisitOmittedTypeArgument_ca753069(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2439);
+        RoslynCallCounters.Record(2432);
 
         try
         {
@@ -2607,11 +2607,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOperatorDeclaration_5efff785(
+    public int CSharpSyntaxVisitor_VisitOperatorDeclaration_a85ba15f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2440);
+        RoslynCallCounters.Record(2433);
 
         try
         {
@@ -2624,11 +2624,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOperatorMemberCref_2aa9544c(
+    public int CSharpSyntaxVisitor_VisitOperatorMemberCref_6fa41aa1(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2441);
+        RoslynCallCounters.Record(2434);
 
         try
         {
@@ -2641,11 +2641,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOrderByClause_623995f3(
+    public int CSharpSyntaxVisitor_VisitOrderByClause_54611c4d(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2442);
+        RoslynCallCounters.Record(2435);
 
         try
         {
@@ -2658,11 +2658,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitOrdering_30a46812(
+    public int CSharpSyntaxVisitor_VisitOrdering_f1bf71e6(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2443);
+        RoslynCallCounters.Record(2436);
 
         try
         {
@@ -2675,11 +2675,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParameterList_9ce7ca82(
+    public int CSharpSyntaxVisitor_VisitParameterList_53ea00d0(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2444);
+        RoslynCallCounters.Record(2437);
 
         try
         {
@@ -2692,11 +2692,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParameter_64158c4a(
+    public int CSharpSyntaxVisitor_VisitParameter_1ec75a19(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2445);
+        RoslynCallCounters.Record(2438);
 
         try
         {
@@ -2709,11 +2709,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParenthesizedExpression_bd0bb69e(
+    public int CSharpSyntaxVisitor_VisitParenthesizedExpression_61684a57(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2446);
+        RoslynCallCounters.Record(2439);
 
         try
         {
@@ -2726,11 +2726,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParenthesizedLambdaExpression_352397d2(
+    public int CSharpSyntaxVisitor_VisitParenthesizedLambdaExpression_ddc04295(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2447);
+        RoslynCallCounters.Record(2440);
 
         try
         {
@@ -2743,11 +2743,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParenthesizedPattern_18f2083e(
+    public int CSharpSyntaxVisitor_VisitParenthesizedPattern_f6487f26(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2448);
+        RoslynCallCounters.Record(2441);
 
         try
         {
@@ -2760,11 +2760,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitParenthesizedVariableDesignation_cbc2d338(
+    public int CSharpSyntaxVisitor_VisitParenthesizedVariableDesignation_863be0f1(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2449);
+        RoslynCallCounters.Record(2442);
 
         try
         {
@@ -2777,11 +2777,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPointerType_2b4b75cc(
+    public int CSharpSyntaxVisitor_VisitPointerType_8a7a5f35(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2450);
+        RoslynCallCounters.Record(2443);
 
         try
         {
@@ -2794,11 +2794,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPositionalPatternClause_8e1452e9(
+    public int CSharpSyntaxVisitor_VisitPositionalPatternClause_425f54b4(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2451);
+        RoslynCallCounters.Record(2444);
 
         try
         {
@@ -2811,11 +2811,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPostfixUnaryExpression_ff131343(
+    public int CSharpSyntaxVisitor_VisitPostfixUnaryExpression_2f38953f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2452);
+        RoslynCallCounters.Record(2445);
 
         try
         {
@@ -2828,11 +2828,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPragmaChecksumDirectiveTrivia_a6b167f7(
+    public int CSharpSyntaxVisitor_VisitPragmaChecksumDirectiveTrivia_90a90353(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2453);
+        RoslynCallCounters.Record(2446);
 
         try
         {
@@ -2845,11 +2845,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPragmaWarningDirectiveTrivia_56dc3bec(
+    public int CSharpSyntaxVisitor_VisitPragmaWarningDirectiveTrivia_a0649a52(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2454);
+        RoslynCallCounters.Record(2447);
 
         try
         {
@@ -2862,11 +2862,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPredefinedType_523e01d4(
+    public int CSharpSyntaxVisitor_VisitPredefinedType_622f18ea(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2455);
+        RoslynCallCounters.Record(2448);
 
         try
         {
@@ -2879,11 +2879,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPrefixUnaryExpression_c30e4e0e(
+    public int CSharpSyntaxVisitor_VisitPrefixUnaryExpression_b756a192(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2456);
+        RoslynCallCounters.Record(2449);
 
         try
         {
@@ -2896,11 +2896,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPrimaryConstructorBaseType_eb96771e(
+    public int CSharpSyntaxVisitor_VisitPrimaryConstructorBaseType_a5616f33(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2457);
+        RoslynCallCounters.Record(2450);
 
         try
         {
@@ -2913,11 +2913,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPropertyDeclaration_96cc0e70(
+    public int CSharpSyntaxVisitor_VisitPropertyDeclaration_11f7d58e(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2458);
+        RoslynCallCounters.Record(2451);
 
         try
         {
@@ -2930,11 +2930,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitPropertyPatternClause_4d36ee09(
+    public int CSharpSyntaxVisitor_VisitPropertyPatternClause_52ed1b76(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2459);
+        RoslynCallCounters.Record(2452);
 
         try
         {
@@ -2947,11 +2947,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitQualifiedCref_56d1b4e6(
+    public int CSharpSyntaxVisitor_VisitQualifiedCref_b70e2743(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2460);
+        RoslynCallCounters.Record(2453);
 
         try
         {
@@ -2964,11 +2964,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitQualifiedName_20d9cb05(
+    public int CSharpSyntaxVisitor_VisitQualifiedName_2d4e7d8b(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2461);
+        RoslynCallCounters.Record(2454);
 
         try
         {
@@ -2981,11 +2981,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitQueryBody_746c218b(
+    public int CSharpSyntaxVisitor_VisitQueryBody_7fee1032(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2462);
+        RoslynCallCounters.Record(2455);
 
         try
         {
@@ -2998,11 +2998,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitQueryContinuation_cf937efd(
+    public int CSharpSyntaxVisitor_VisitQueryContinuation_2ee2b4f1(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2463);
+        RoslynCallCounters.Record(2456);
 
         try
         {
@@ -3015,11 +3015,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitQueryExpression_1448243b(
+    public int CSharpSyntaxVisitor_VisitQueryExpression_b2e529f1(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2464);
+        RoslynCallCounters.Record(2457);
 
         try
         {
@@ -3032,11 +3032,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRangeExpression_42d9d747(
+    public int CSharpSyntaxVisitor_VisitRangeExpression_3ef57fd5(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2465);
+        RoslynCallCounters.Record(2458);
 
         try
         {
@@ -3049,11 +3049,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRecordDeclaration_166eb550(
+    public int CSharpSyntaxVisitor_VisitRecordDeclaration_d6533764(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2466);
+        RoslynCallCounters.Record(2459);
 
         try
         {
@@ -3066,11 +3066,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRecursivePattern_0f95ef4a(
+    public int CSharpSyntaxVisitor_VisitRecursivePattern_2928f580(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2467);
+        RoslynCallCounters.Record(2460);
 
         try
         {
@@ -3083,11 +3083,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRefExpression_c498cc93(
+    public int CSharpSyntaxVisitor_VisitRefExpression_81ead925(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2468);
+        RoslynCallCounters.Record(2461);
 
         try
         {
@@ -3100,11 +3100,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRefStructConstraint_b27aefb1(
+    public int CSharpSyntaxVisitor_VisitRefStructConstraint_537bd556(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2469);
+        RoslynCallCounters.Record(2462);
 
         try
         {
@@ -3117,11 +3117,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRefTypeExpression_b2ada09d(
+    public int CSharpSyntaxVisitor_VisitRefTypeExpression_1b246cd1(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2470);
+        RoslynCallCounters.Record(2463);
 
         try
         {
@@ -3134,11 +3134,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRefType_e62b4eb5(
+    public int CSharpSyntaxVisitor_VisitRefType_7998e744(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2471);
+        RoslynCallCounters.Record(2464);
 
         try
         {
@@ -3151,11 +3151,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRefValueExpression_20e6f15c(
+    public int CSharpSyntaxVisitor_VisitRefValueExpression_152ca291(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2472);
+        RoslynCallCounters.Record(2465);
 
         try
         {
@@ -3168,11 +3168,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitReferenceDirectiveTrivia_5aaf7cc1(
+    public int CSharpSyntaxVisitor_VisitReferenceDirectiveTrivia_62d7a97a(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2473);
+        RoslynCallCounters.Record(2466);
 
         try
         {
@@ -3185,11 +3185,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRegionDirectiveTrivia_5bd752d7(
+    public int CSharpSyntaxVisitor_VisitRegionDirectiveTrivia_a3ecfbd3(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2474);
+        RoslynCallCounters.Record(2467);
 
         try
         {
@@ -3202,11 +3202,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitRelationalPattern_041a1eef(
+    public int CSharpSyntaxVisitor_VisitRelationalPattern_d73a95f8(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2475);
+        RoslynCallCounters.Record(2468);
 
         try
         {
@@ -3219,11 +3219,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitReturnStatement_22ab3a4a(
+    public int CSharpSyntaxVisitor_VisitReturnStatement_855052d9(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2476);
+        RoslynCallCounters.Record(2469);
 
         try
         {
@@ -3236,11 +3236,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitScopedType_3bd7bda0(
+    public int CSharpSyntaxVisitor_VisitScopedType_a000d1ec(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2477);
+        RoslynCallCounters.Record(2470);
 
         try
         {
@@ -3253,11 +3253,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSelectClause_a6e3407c(
+    public int CSharpSyntaxVisitor_VisitSelectClause_da15a13b(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2478);
+        RoslynCallCounters.Record(2471);
 
         try
         {
@@ -3270,11 +3270,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitShebangDirectiveTrivia_4a23d43b(
+    public int CSharpSyntaxVisitor_VisitShebangDirectiveTrivia_d21caa67(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2479);
+        RoslynCallCounters.Record(2472);
 
         try
         {
@@ -3287,11 +3287,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSimpleBaseType_d132c1a1(
+    public int CSharpSyntaxVisitor_VisitSimpleBaseType_4e995d79(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2480);
+        RoslynCallCounters.Record(2473);
 
         try
         {
@@ -3304,11 +3304,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSimpleLambdaExpression_23014a3c(
+    public int CSharpSyntaxVisitor_VisitSimpleLambdaExpression_92b13c54(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2481);
+        RoslynCallCounters.Record(2474);
 
         try
         {
@@ -3321,11 +3321,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSingleVariableDesignation_60e85511(
+    public int CSharpSyntaxVisitor_VisitSingleVariableDesignation_ad7f7110(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2482);
+        RoslynCallCounters.Record(2475);
 
         try
         {
@@ -3338,11 +3338,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSizeOfExpression_935e80d9(
+    public int CSharpSyntaxVisitor_VisitSizeOfExpression_eec729aa(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2483);
+        RoslynCallCounters.Record(2476);
 
         try
         {
@@ -3355,11 +3355,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSkippedTokensTrivia_f32b150a(
+    public int CSharpSyntaxVisitor_VisitSkippedTokensTrivia_667f87b2(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2484);
+        RoslynCallCounters.Record(2477);
 
         try
         {
@@ -3372,11 +3372,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSlicePattern_61bd03dc(
+    public int CSharpSyntaxVisitor_VisitSlicePattern_ecd62981(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2485);
+        RoslynCallCounters.Record(2478);
 
         try
         {
@@ -3389,11 +3389,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSpreadElement_67a03623(
+    public int CSharpSyntaxVisitor_VisitSpreadElement_1e480dea(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2486);
+        RoslynCallCounters.Record(2479);
 
         try
         {
@@ -3406,11 +3406,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitStackAllocArrayCreationExpression_9a086e6b(
+    public int CSharpSyntaxVisitor_VisitStackAllocArrayCreationExpression_20f8a2f2(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2487);
+        RoslynCallCounters.Record(2480);
 
         try
         {
@@ -3423,11 +3423,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitStructDeclaration_b7987bb1(
+    public int CSharpSyntaxVisitor_VisitStructDeclaration_701de94e(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2488);
+        RoslynCallCounters.Record(2481);
 
         try
         {
@@ -3440,11 +3440,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSubpattern_5d3d45a6(
+    public int CSharpSyntaxVisitor_VisitSubpattern_ec4fbaf1(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2489);
+        RoslynCallCounters.Record(2482);
 
         try
         {
@@ -3457,11 +3457,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSwitchExpressionArm_62a60f75(
+    public int CSharpSyntaxVisitor_VisitSwitchExpressionArm_57911871(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2490);
+        RoslynCallCounters.Record(2483);
 
         try
         {
@@ -3474,11 +3474,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSwitchExpression_ce6991c3(
+    public int CSharpSyntaxVisitor_VisitSwitchExpression_f6eb8b81(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2491);
+        RoslynCallCounters.Record(2484);
 
         try
         {
@@ -3491,11 +3491,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSwitchSection_c0e3c5f7(
+    public int CSharpSyntaxVisitor_VisitSwitchSection_744c407e(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2492);
+        RoslynCallCounters.Record(2485);
 
         try
         {
@@ -3508,11 +3508,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitSwitchStatement_b165c7c4(
+    public int CSharpSyntaxVisitor_VisitSwitchStatement_3e65f9b0(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2493);
+        RoslynCallCounters.Record(2486);
 
         try
         {
@@ -3525,11 +3525,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitThisExpression_0ebb2cba(
+    public int CSharpSyntaxVisitor_VisitThisExpression_6dfbd512(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2494);
+        RoslynCallCounters.Record(2487);
 
         try
         {
@@ -3542,11 +3542,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitThrowExpression_d92c9396(
+    public int CSharpSyntaxVisitor_VisitThrowExpression_0de8c1c3(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2495);
+        RoslynCallCounters.Record(2488);
 
         try
         {
@@ -3559,11 +3559,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitThrowStatement_823b47e1(
+    public int CSharpSyntaxVisitor_VisitThrowStatement_5aa7b8d0(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2496);
+        RoslynCallCounters.Record(2489);
 
         try
         {
@@ -3576,11 +3576,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTryStatement_7e2540c9(
+    public int CSharpSyntaxVisitor_VisitTryStatement_4e5ed3f5(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2497);
+        RoslynCallCounters.Record(2490);
 
         try
         {
@@ -3593,11 +3593,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTupleElement_b55fbaba(
+    public int CSharpSyntaxVisitor_VisitTupleElement_95cfb423(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2498);
+        RoslynCallCounters.Record(2491);
 
         try
         {
@@ -3610,11 +3610,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTupleExpression_a3b0fc17(
+    public int CSharpSyntaxVisitor_VisitTupleExpression_a94a8bc4(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2499);
+        RoslynCallCounters.Record(2492);
 
         try
         {
@@ -3627,11 +3627,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTupleType_3b44c37f(
+    public int CSharpSyntaxVisitor_VisitTupleType_904d0fd2(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2500);
+        RoslynCallCounters.Record(2493);
 
         try
         {
@@ -3644,11 +3644,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeArgumentList_a75bda0c(
+    public int CSharpSyntaxVisitor_VisitTypeArgumentList_aaa5b782(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2501);
+        RoslynCallCounters.Record(2494);
 
         try
         {
@@ -3661,11 +3661,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeConstraint_55699f1f(
+    public int CSharpSyntaxVisitor_VisitTypeConstraint_6103ebb6(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2502);
+        RoslynCallCounters.Record(2495);
 
         try
         {
@@ -3678,11 +3678,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeCref_7bad1a02(
+    public int CSharpSyntaxVisitor_VisitTypeCref_16012d4f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2503);
+        RoslynCallCounters.Record(2496);
 
         try
         {
@@ -3695,11 +3695,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeOfExpression_0a914de4(
+    public int CSharpSyntaxVisitor_VisitTypeOfExpression_0f8d6feb(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2504);
+        RoslynCallCounters.Record(2497);
 
         try
         {
@@ -3712,11 +3712,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeParameterConstraintClause_de6c1619(
+    public int CSharpSyntaxVisitor_VisitTypeParameterConstraintClause_f398a41d(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2505);
+        RoslynCallCounters.Record(2498);
 
         try
         {
@@ -3729,11 +3729,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeParameterList_3403899f(
+    public int CSharpSyntaxVisitor_VisitTypeParameterList_f19d41ac(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2506);
+        RoslynCallCounters.Record(2499);
 
         try
         {
@@ -3746,11 +3746,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypeParameter_18927372(
+    public int CSharpSyntaxVisitor_VisitTypeParameter_ada7739a(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2507);
+        RoslynCallCounters.Record(2500);
 
         try
         {
@@ -3763,11 +3763,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitTypePattern_d0e322c5(
+    public int CSharpSyntaxVisitor_VisitTypePattern_462e375e(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2508);
+        RoslynCallCounters.Record(2501);
 
         try
         {
@@ -3780,11 +3780,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitUnaryPattern_8ce1b489(
+    public int CSharpSyntaxVisitor_VisitUnaryPattern_eb28ba7f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2509);
+        RoslynCallCounters.Record(2502);
 
         try
         {
@@ -3797,11 +3797,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitUndefDirectiveTrivia_9bf72733(
+    public int CSharpSyntaxVisitor_VisitUndefDirectiveTrivia_5dedd85d(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2510);
+        RoslynCallCounters.Record(2503);
 
         try
         {
@@ -3814,11 +3814,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitUnsafeStatement_81d05914(
+    public int CSharpSyntaxVisitor_VisitUnsafeStatement_269026af(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2511);
+        RoslynCallCounters.Record(2504);
 
         try
         {
@@ -3831,11 +3831,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitUsingDirective_0ffd1939(
+    public int CSharpSyntaxVisitor_VisitUsingDirective_59a64312(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2512);
+        RoslynCallCounters.Record(2505);
 
         try
         {
@@ -3848,11 +3848,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitUsingStatement_25344c1a(
+    public int CSharpSyntaxVisitor_VisitUsingStatement_e54b1e3b(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2513);
+        RoslynCallCounters.Record(2506);
 
         try
         {
@@ -3865,11 +3865,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitVarPattern_1054162b(
+    public int CSharpSyntaxVisitor_VisitVarPattern_ecdbc735(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2514);
+        RoslynCallCounters.Record(2507);
 
         try
         {
@@ -3882,11 +3882,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitVariableDeclaration_8bdd06f4(
+    public int CSharpSyntaxVisitor_VisitVariableDeclaration_2f3a61ec(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2515);
+        RoslynCallCounters.Record(2508);
 
         try
         {
@@ -3899,11 +3899,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitVariableDeclarator_4e589429(
+    public int CSharpSyntaxVisitor_VisitVariableDeclarator_553898ad(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2516);
+        RoslynCallCounters.Record(2509);
 
         try
         {
@@ -3916,11 +3916,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitWarningDirectiveTrivia_a7a25701(
+    public int CSharpSyntaxVisitor_VisitWarningDirectiveTrivia_fdbedf37(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2517);
+        RoslynCallCounters.Record(2510);
 
         try
         {
@@ -3933,11 +3933,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitWhenClause_3630d78c(
+    public int CSharpSyntaxVisitor_VisitWhenClause_9440ecf2(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2518);
+        RoslynCallCounters.Record(2511);
 
         try
         {
@@ -3950,11 +3950,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitWhereClause_98134ece(
+    public int CSharpSyntaxVisitor_VisitWhereClause_46c8af96(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2519);
+        RoslynCallCounters.Record(2512);
 
         try
         {
@@ -3967,11 +3967,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitWhileStatement_59913348(
+    public int CSharpSyntaxVisitor_VisitWhileStatement_890d83f0(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2520);
+        RoslynCallCounters.Record(2513);
 
         try
         {
@@ -3984,11 +3984,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitWithExpression_96546f9e(
+    public int CSharpSyntaxVisitor_VisitWithExpression_f8afef22(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2521);
+        RoslynCallCounters.Record(2514);
 
         try
         {
@@ -4001,11 +4001,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlCDataSection_9ff50ec5(
+    public int CSharpSyntaxVisitor_VisitXmlCDataSection_a36011a3(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2522);
+        RoslynCallCounters.Record(2515);
 
         try
         {
@@ -4018,11 +4018,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlComment_bc8af0fa(
+    public int CSharpSyntaxVisitor_VisitXmlComment_0bbdbf4b(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2523);
+        RoslynCallCounters.Record(2516);
 
         try
         {
@@ -4035,11 +4035,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlCrefAttribute_fdf7453e(
+    public int CSharpSyntaxVisitor_VisitXmlCrefAttribute_95581af8(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2524);
+        RoslynCallCounters.Record(2517);
 
         try
         {
@@ -4052,11 +4052,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlElementEndTag_84bf6280(
+    public int CSharpSyntaxVisitor_VisitXmlElementEndTag_4df2c1a5(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2525);
+        RoslynCallCounters.Record(2518);
 
         try
         {
@@ -4069,11 +4069,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlElementStartTag_67ec8166(
+    public int CSharpSyntaxVisitor_VisitXmlElementStartTag_d1579666(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2526);
+        RoslynCallCounters.Record(2519);
 
         try
         {
@@ -4086,11 +4086,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlElement_947b085c(
+    public int CSharpSyntaxVisitor_VisitXmlElement_aad38f7c(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2527);
+        RoslynCallCounters.Record(2520);
 
         try
         {
@@ -4103,11 +4103,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlEmptyElement_93242c2a(
+    public int CSharpSyntaxVisitor_VisitXmlEmptyElement_372dc9e8(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2528);
+        RoslynCallCounters.Record(2521);
 
         try
         {
@@ -4120,11 +4120,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlNameAttribute_51ae205a(
+    public int CSharpSyntaxVisitor_VisitXmlNameAttribute_f2e70540(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2529);
+        RoslynCallCounters.Record(2522);
 
         try
         {
@@ -4137,11 +4137,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlName_66ab43b7(
+    public int CSharpSyntaxVisitor_VisitXmlName_b47e5426(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2530);
+        RoslynCallCounters.Record(2523);
 
         try
         {
@@ -4154,11 +4154,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlPrefix_03834aaf(
+    public int CSharpSyntaxVisitor_VisitXmlPrefix_64ff06d7(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2531);
+        RoslynCallCounters.Record(2524);
 
         try
         {
@@ -4171,11 +4171,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlProcessingInstruction_ce943f6a(
+    public int CSharpSyntaxVisitor_VisitXmlProcessingInstruction_0318510f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2532);
+        RoslynCallCounters.Record(2525);
 
         try
         {
@@ -4188,11 +4188,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlTextAttribute_c0a7e6a0(
+    public int CSharpSyntaxVisitor_VisitXmlTextAttribute_2697ed0c(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2533);
+        RoslynCallCounters.Record(2526);
 
         try
         {
@@ -4205,11 +4205,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitXmlText_cbc56576(
+    public int CSharpSyntaxVisitor_VisitXmlText_3faf536f(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2534);
+        RoslynCallCounters.Record(2527);
 
         try
         {
@@ -4222,11 +4222,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_VisitYieldStatement_9e8a268a(
+    public int CSharpSyntaxVisitor_VisitYieldStatement_95fe1bbd(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2535);
+        RoslynCallCounters.Record(2528);
 
         try
         {
@@ -4239,11 +4239,11 @@ internal sealed partial class CSharpSyntaxVisitorVtblDispatcher : ICSharpSyntaxV
         }
     }
 
-    public int CSharpSyntaxVisitor_Visit_8a42da0a(
+    public int CSharpSyntaxVisitor_Visit_d0bb6f27(
         long receiver,
         long node)
     {
-        RoslynCallCounters.Record(2536);
+        RoslynCallCounters.Record(2529);
 
         try
         {

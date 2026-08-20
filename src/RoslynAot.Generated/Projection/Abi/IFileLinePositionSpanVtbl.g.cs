@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("115b7a3f-8a78-5dde-83f9-6f42835b59b7")]
+[Guid("6fd3ca41-3349-5bd7-8723-f09f3b0ac86b")]
 public partial interface IFileLinePositionSpanVtbl
 {
 
     [PreserveSig]
-    int FileLinePositionSpan_Equals_e5b7b4e8(
+    int FileLinePositionSpan_Equals_d45642e1(
         long receiver,
         long other,
         out int result

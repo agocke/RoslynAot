@@ -94,7 +94,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IFileScopedNamespaceDeclarationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.FileScopedNamespaceDeclarationSyntax_Accept_66214fc6(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.FileScopedNamespaceDeclarationSyntax_Accept_9e50fd60(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -211,7 +211,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static FileScopedNamespaceDeclarationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (FileScopedNamespaceDeclarationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("39cce694-7bc9-57ed-b1b1-07d547ab15c2")]
+        [System.Runtime.InteropServices.Guid("e5f361a4-e991-5020-8454-a7a1ebe543d6")]
         internal partial interface __RoslynAotImplementation : FileScopedNamespaceDeclarationSyntax
         {
         }

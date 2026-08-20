@@ -490,7 +490,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIMethodSymbolVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IMethodSymbol_Construct_a3a3773d(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(typeArguments, item => item.__RoslynAotGetHandle())), out long result);
+            int status = vtbl.IMethodSymbol_Construct_22ba9338(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(typeArguments, item => item.__RoslynAotGetHandle())), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -527,15 +527,6 @@ namespace Microsoft.CodeAnalysis
             return result == 0 ? null : ITypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
-        IMethodSymbol? ReduceExtensionMember(ITypeSymbol receiverType)
-        {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IIMethodSymbolVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IMethodSymbol_ReduceExtensionMember(__RoslynAotGetHandle(), receiverType.__RoslynAotGetHandle(), out long result);
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-            return result == 0 ? null : __RoslynAotCreateProxy(controlVtbl, result);
-        }
-
         IMethodSymbol? ReduceExtensionMethod(ITypeSymbol receiverType)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
@@ -551,7 +542,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IMethodSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IMethodSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("e1989d65-6a6c-5531-90a4-8f73a204bf47")]
+        [System.Runtime.InteropServices.Guid("4a8c7a9c-4c5d-5f22-b9d5-d47b010dbffd")]
         internal partial interface __RoslynAotImplementation : IMethodSymbol
         {
         }

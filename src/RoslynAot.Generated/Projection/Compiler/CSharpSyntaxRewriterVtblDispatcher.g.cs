@@ -28,7 +28,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2024);
+        RoslynCallCounters.Record(2017);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2025);
+        RoslynCallCounters.Record(2018);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2026);
+        RoslynCallCounters.Record(2019);
         result = default;
 
         try
@@ -85,7 +85,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2027);
+        RoslynCallCounters.Record(2020);
         result = default;
 
         try
@@ -104,7 +104,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2028);
+        RoslynCallCounters.Record(2021);
         result = default;
 
         try
@@ -123,7 +123,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2029);
+        RoslynCallCounters.Record(2022);
         result = default;
 
         try
@@ -142,7 +142,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2030);
+        RoslynCallCounters.Record(2023);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2031);
+        RoslynCallCounters.Record(2024);
         result = default;
 
         try
@@ -180,7 +180,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2032);
+        RoslynCallCounters.Record(2025);
         result = default;
 
         try
@@ -199,7 +199,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2033);
+        RoslynCallCounters.Record(2026);
         result = default;
 
         try
@@ -218,7 +218,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2034);
+        RoslynCallCounters.Record(2027);
         result = default;
 
         try
@@ -237,7 +237,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2035);
+        RoslynCallCounters.Record(2028);
         result = default;
 
         try
@@ -256,7 +256,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2036);
+        RoslynCallCounters.Record(2029);
         result = default;
 
         try
@@ -275,7 +275,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2037);
+        RoslynCallCounters.Record(2030);
         result = default;
 
         try
@@ -294,7 +294,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2038);
+        RoslynCallCounters.Record(2031);
         result = default;
 
         try
@@ -313,7 +313,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2039);
+        RoslynCallCounters.Record(2032);
         result = default;
 
         try
@@ -332,7 +332,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2040);
+        RoslynCallCounters.Record(2033);
         result = default;
 
         try
@@ -351,7 +351,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2041);
+        RoslynCallCounters.Record(2034);
         result = default;
 
         try
@@ -370,7 +370,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2042);
+        RoslynCallCounters.Record(2035);
         result = default;
 
         try
@@ -389,7 +389,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2043);
+        RoslynCallCounters.Record(2036);
         result = default;
 
         try
@@ -408,7 +408,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2044);
+        RoslynCallCounters.Record(2037);
         result = default;
 
         try
@@ -427,7 +427,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2045);
+        RoslynCallCounters.Record(2038);
         result = default;
 
         try
@@ -446,7 +446,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2046);
+        RoslynCallCounters.Record(2039);
         result = default;
 
         try
@@ -465,7 +465,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2047);
+        RoslynCallCounters.Record(2040);
         result = default;
 
         try
@@ -484,7 +484,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2048);
+        RoslynCallCounters.Record(2041);
         result = default;
 
         try
@@ -503,7 +503,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2049);
+        RoslynCallCounters.Record(2042);
         result = default;
 
         try
@@ -522,7 +522,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2050);
+        RoslynCallCounters.Record(2043);
         result = default;
 
         try
@@ -541,7 +541,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2051);
+        RoslynCallCounters.Record(2044);
         result = default;
 
         try
@@ -560,7 +560,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2052);
+        RoslynCallCounters.Record(2045);
         result = default;
 
         try
@@ -579,7 +579,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2053);
+        RoslynCallCounters.Record(2046);
         result = default;
 
         try
@@ -598,7 +598,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2054);
+        RoslynCallCounters.Record(2047);
         result = default;
 
         try
@@ -617,7 +617,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2055);
+        RoslynCallCounters.Record(2048);
         result = default;
 
         try
@@ -636,7 +636,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2056);
+        RoslynCallCounters.Record(2049);
         result = default;
 
         try
@@ -655,7 +655,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2057);
+        RoslynCallCounters.Record(2050);
         result = default;
 
         try
@@ -674,7 +674,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2058);
+        RoslynCallCounters.Record(2051);
         result = default;
 
         try
@@ -693,7 +693,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2059);
+        RoslynCallCounters.Record(2052);
         result = default;
 
         try
@@ -712,7 +712,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2060);
+        RoslynCallCounters.Record(2053);
         result = default;
 
         try
@@ -731,7 +731,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2061);
+        RoslynCallCounters.Record(2054);
         result = default;
 
         try
@@ -750,7 +750,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2062);
+        RoslynCallCounters.Record(2055);
         result = default;
 
         try
@@ -769,7 +769,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2063);
+        RoslynCallCounters.Record(2056);
         result = default;
 
         try
@@ -788,7 +788,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2064);
+        RoslynCallCounters.Record(2057);
         result = default;
 
         try
@@ -807,7 +807,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2065);
+        RoslynCallCounters.Record(2058);
         result = default;
 
         try
@@ -826,7 +826,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2066);
+        RoslynCallCounters.Record(2059);
         result = default;
 
         try
@@ -845,7 +845,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2067);
+        RoslynCallCounters.Record(2060);
         result = default;
 
         try
@@ -864,7 +864,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2068);
+        RoslynCallCounters.Record(2061);
         result = default;
 
         try
@@ -883,7 +883,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2069);
+        RoslynCallCounters.Record(2062);
         result = default;
 
         try
@@ -902,7 +902,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2070);
+        RoslynCallCounters.Record(2063);
         result = default;
 
         try
@@ -921,7 +921,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2071);
+        RoslynCallCounters.Record(2064);
         result = default;
 
         try
@@ -940,7 +940,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2072);
+        RoslynCallCounters.Record(2065);
         result = default;
 
         try
@@ -959,7 +959,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2073);
+        RoslynCallCounters.Record(2066);
         result = default;
 
         try
@@ -978,7 +978,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2074);
+        RoslynCallCounters.Record(2067);
         result = default;
 
         try
@@ -997,7 +997,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2075);
+        RoslynCallCounters.Record(2068);
         result = default;
 
         try
@@ -1016,7 +1016,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2076);
+        RoslynCallCounters.Record(2069);
         result = default;
 
         try
@@ -1035,7 +1035,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2077);
+        RoslynCallCounters.Record(2070);
         result = default;
 
         try
@@ -1054,7 +1054,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2078);
+        RoslynCallCounters.Record(2071);
         result = default;
 
         try
@@ -1073,7 +1073,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2079);
+        RoslynCallCounters.Record(2072);
         result = default;
 
         try
@@ -1092,7 +1092,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2080);
+        RoslynCallCounters.Record(2073);
         result = default;
 
         try
@@ -1111,7 +1111,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2081);
+        RoslynCallCounters.Record(2074);
         result = default;
 
         try
@@ -1130,7 +1130,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2082);
+        RoslynCallCounters.Record(2075);
         result = default;
 
         try
@@ -1149,7 +1149,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2083);
+        RoslynCallCounters.Record(2076);
         result = default;
 
         try
@@ -1168,7 +1168,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2084);
+        RoslynCallCounters.Record(2077);
         result = default;
 
         try
@@ -1187,7 +1187,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2085);
+        RoslynCallCounters.Record(2078);
         result = default;
 
         try
@@ -1206,7 +1206,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2086);
+        RoslynCallCounters.Record(2079);
         result = default;
 
         try
@@ -1225,7 +1225,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2087);
+        RoslynCallCounters.Record(2080);
         result = default;
 
         try
@@ -1244,7 +1244,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2088);
+        RoslynCallCounters.Record(2081);
         result = default;
 
         try
@@ -1263,7 +1263,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2089);
+        RoslynCallCounters.Record(2082);
         result = default;
 
         try
@@ -1282,7 +1282,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2090);
+        RoslynCallCounters.Record(2083);
         result = default;
 
         try
@@ -1301,7 +1301,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2091);
+        RoslynCallCounters.Record(2084);
         result = default;
 
         try
@@ -1320,7 +1320,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2092);
+        RoslynCallCounters.Record(2085);
         result = default;
 
         try
@@ -1339,7 +1339,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2093);
+        RoslynCallCounters.Record(2086);
         result = default;
 
         try
@@ -1358,7 +1358,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2094);
+        RoslynCallCounters.Record(2087);
         result = default;
 
         try
@@ -1377,7 +1377,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2095);
+        RoslynCallCounters.Record(2088);
         result = default;
 
         try
@@ -1396,7 +1396,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2096);
+        RoslynCallCounters.Record(2089);
         result = default;
 
         try
@@ -1415,7 +1415,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2097);
+        RoslynCallCounters.Record(2090);
         result = default;
 
         try
@@ -1434,7 +1434,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2098);
+        RoslynCallCounters.Record(2091);
         result = default;
 
         try
@@ -1453,7 +1453,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2099);
+        RoslynCallCounters.Record(2092);
         result = default;
 
         try
@@ -1472,7 +1472,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2100);
+        RoslynCallCounters.Record(2093);
         result = default;
 
         try
@@ -1491,7 +1491,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2101);
+        RoslynCallCounters.Record(2094);
         result = default;
 
         try
@@ -1510,7 +1510,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2102);
+        RoslynCallCounters.Record(2095);
         result = default;
 
         try
@@ -1529,7 +1529,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2103);
+        RoslynCallCounters.Record(2096);
         result = default;
 
         try
@@ -1548,7 +1548,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2104);
+        RoslynCallCounters.Record(2097);
         result = default;
 
         try
@@ -1567,7 +1567,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2105);
+        RoslynCallCounters.Record(2098);
         result = default;
 
         try
@@ -1586,7 +1586,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2106);
+        RoslynCallCounters.Record(2099);
         result = default;
 
         try
@@ -1605,7 +1605,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2107);
+        RoslynCallCounters.Record(2100);
         result = default;
 
         try
@@ -1624,7 +1624,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2108);
+        RoslynCallCounters.Record(2101);
         result = default;
 
         try
@@ -1643,7 +1643,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2109);
+        RoslynCallCounters.Record(2102);
         result = default;
 
         try
@@ -1662,7 +1662,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2110);
+        RoslynCallCounters.Record(2103);
         result = default;
 
         try
@@ -1681,7 +1681,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2111);
+        RoslynCallCounters.Record(2104);
         result = default;
 
         try
@@ -1700,7 +1700,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2112);
+        RoslynCallCounters.Record(2105);
         result = default;
 
         try
@@ -1719,7 +1719,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2113);
+        RoslynCallCounters.Record(2106);
         result = default;
 
         try
@@ -1738,7 +1738,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2114);
+        RoslynCallCounters.Record(2107);
         result = default;
 
         try
@@ -1757,7 +1757,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2115);
+        RoslynCallCounters.Record(2108);
         result = default;
 
         try
@@ -1776,7 +1776,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2116);
+        RoslynCallCounters.Record(2109);
         result = default;
 
         try
@@ -1795,7 +1795,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2117);
+        RoslynCallCounters.Record(2110);
         result = default;
 
         try
@@ -1814,7 +1814,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2118);
+        RoslynCallCounters.Record(2111);
         result = default;
 
         try
@@ -1833,7 +1833,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2119);
+        RoslynCallCounters.Record(2112);
         result = default;
 
         try
@@ -1852,7 +1852,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2120);
+        RoslynCallCounters.Record(2113);
         result = default;
 
         try
@@ -1871,7 +1871,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2121);
+        RoslynCallCounters.Record(2114);
         result = default;
 
         try
@@ -1890,7 +1890,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2122);
+        RoslynCallCounters.Record(2115);
         result = default;
 
         try
@@ -1909,7 +1909,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2123);
+        RoslynCallCounters.Record(2116);
         result = default;
 
         try
@@ -1928,7 +1928,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2124);
+        RoslynCallCounters.Record(2117);
         result = default;
 
         try
@@ -1947,7 +1947,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2125);
+        RoslynCallCounters.Record(2118);
         result = default;
 
         try
@@ -1966,7 +1966,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2126);
+        RoslynCallCounters.Record(2119);
         result = default;
 
         try
@@ -1985,7 +1985,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2127);
+        RoslynCallCounters.Record(2120);
         result = default;
 
         try
@@ -2004,7 +2004,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2128);
+        RoslynCallCounters.Record(2121);
         result = default;
 
         try
@@ -2023,7 +2023,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2129);
+        RoslynCallCounters.Record(2122);
         result = default;
 
         try
@@ -2042,7 +2042,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2130);
+        RoslynCallCounters.Record(2123);
         result = default;
 
         try
@@ -2061,7 +2061,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2131);
+        RoslynCallCounters.Record(2124);
         result = default;
 
         try
@@ -2080,7 +2080,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2132);
+        RoslynCallCounters.Record(2125);
         result = default;
 
         try
@@ -2099,7 +2099,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2133);
+        RoslynCallCounters.Record(2126);
         result = default;
 
         try
@@ -2118,7 +2118,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2134);
+        RoslynCallCounters.Record(2127);
         result = default;
 
         try
@@ -2137,7 +2137,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2135);
+        RoslynCallCounters.Record(2128);
         result = default;
 
         try
@@ -2156,7 +2156,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2136);
+        RoslynCallCounters.Record(2129);
         result = default;
 
         try
@@ -2175,7 +2175,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2137);
+        RoslynCallCounters.Record(2130);
         result = default;
 
         try
@@ -2194,7 +2194,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2138);
+        RoslynCallCounters.Record(2131);
         result = default;
 
         try
@@ -2213,7 +2213,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2139);
+        RoslynCallCounters.Record(2132);
         result = default;
 
         try
@@ -2232,7 +2232,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2140);
+        RoslynCallCounters.Record(2133);
         result = default;
 
         try
@@ -2251,7 +2251,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2141);
+        RoslynCallCounters.Record(2134);
         result = default;
 
         try
@@ -2270,7 +2270,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2142);
+        RoslynCallCounters.Record(2135);
         result = default;
 
         try
@@ -2289,7 +2289,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2143);
+        RoslynCallCounters.Record(2136);
         result = default;
 
         try
@@ -2308,7 +2308,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2144);
+        RoslynCallCounters.Record(2137);
         result = default;
 
         try
@@ -2327,7 +2327,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2145);
+        RoslynCallCounters.Record(2138);
         result = default;
 
         try
@@ -2346,7 +2346,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2146);
+        RoslynCallCounters.Record(2139);
         result = default;
 
         try
@@ -2365,7 +2365,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2147);
+        RoslynCallCounters.Record(2140);
         result = default;
 
         try
@@ -2384,7 +2384,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2148);
+        RoslynCallCounters.Record(2141);
         result = default;
 
         try
@@ -2403,7 +2403,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2149);
+        RoslynCallCounters.Record(2142);
         result = default;
 
         try
@@ -2422,7 +2422,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2150);
+        RoslynCallCounters.Record(2143);
         result = default;
 
         try
@@ -2441,7 +2441,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2151);
+        RoslynCallCounters.Record(2144);
         result = default;
 
         try
@@ -2460,7 +2460,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2152);
+        RoslynCallCounters.Record(2145);
         result = default;
 
         try
@@ -2479,7 +2479,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2153);
+        RoslynCallCounters.Record(2146);
         result = default;
 
         try
@@ -2498,7 +2498,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2154);
+        RoslynCallCounters.Record(2147);
         result = default;
 
         try
@@ -2517,7 +2517,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2155);
+        RoslynCallCounters.Record(2148);
         result = default;
 
         try
@@ -2531,12 +2531,12 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         }
     }
 
-    public int CSharpSyntaxRewriter_VisitListElement_2b07669a(
+    public int CSharpSyntaxRewriter_VisitListElement_c7baf79c(
         long receiver,
         long element,
         out long result)
     {
-        RoslynCallCounters.Record(2156);
+        RoslynCallCounters.Record(2149);
         result = default;
 
         try
@@ -2555,7 +2555,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2157);
+        RoslynCallCounters.Record(2150);
         result = default;
 
         try
@@ -2574,7 +2574,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long separator,
         out long result)
     {
-        RoslynCallCounters.Record(2158);
+        RoslynCallCounters.Record(2151);
         result = default;
 
         try
@@ -2588,12 +2588,12 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         }
     }
 
-    public int CSharpSyntaxRewriter_VisitList_6f52c4e7(
+    public int CSharpSyntaxRewriter_VisitList_fbf0527b(
         long receiver,
         long list,
         out long result)
     {
-        RoslynCallCounters.Record(2159);
+        RoslynCallCounters.Record(2152);
         result = default;
 
         try
@@ -2607,12 +2607,12 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         }
     }
 
-    public int CSharpSyntaxRewriter_VisitList_131e5e69(
+    public int CSharpSyntaxRewriter_VisitList_fd253111(
         long receiver,
         long list,
         out long result)
     {
-        RoslynCallCounters.Record(2160);
+        RoslynCallCounters.Record(2153);
         result = default;
 
         try
@@ -2631,7 +2631,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2161);
+        RoslynCallCounters.Record(2154);
         result = default;
 
         try
@@ -2650,7 +2650,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2162);
+        RoslynCallCounters.Record(2155);
         result = default;
 
         try
@@ -2669,7 +2669,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2163);
+        RoslynCallCounters.Record(2156);
         result = default;
 
         try
@@ -2688,7 +2688,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2164);
+        RoslynCallCounters.Record(2157);
         result = default;
 
         try
@@ -2707,7 +2707,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2165);
+        RoslynCallCounters.Record(2158);
         result = default;
 
         try
@@ -2726,7 +2726,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2166);
+        RoslynCallCounters.Record(2159);
         result = default;
 
         try
@@ -2745,7 +2745,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2167);
+        RoslynCallCounters.Record(2160);
         result = default;
 
         try
@@ -2764,7 +2764,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2168);
+        RoslynCallCounters.Record(2161);
         result = default;
 
         try
@@ -2783,7 +2783,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2169);
+        RoslynCallCounters.Record(2162);
         result = default;
 
         try
@@ -2802,7 +2802,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2170);
+        RoslynCallCounters.Record(2163);
         result = default;
 
         try
@@ -2821,7 +2821,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2171);
+        RoslynCallCounters.Record(2164);
         result = default;
 
         try
@@ -2840,7 +2840,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2172);
+        RoslynCallCounters.Record(2165);
         result = default;
 
         try
@@ -2859,7 +2859,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2173);
+        RoslynCallCounters.Record(2166);
         result = default;
 
         try
@@ -2878,7 +2878,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2174);
+        RoslynCallCounters.Record(2167);
         result = default;
 
         try
@@ -2897,7 +2897,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2175);
+        RoslynCallCounters.Record(2168);
         result = default;
 
         try
@@ -2916,7 +2916,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2176);
+        RoslynCallCounters.Record(2169);
         result = default;
 
         try
@@ -2935,7 +2935,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2177);
+        RoslynCallCounters.Record(2170);
         result = default;
 
         try
@@ -2954,7 +2954,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2178);
+        RoslynCallCounters.Record(2171);
         result = default;
 
         try
@@ -2973,7 +2973,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2179);
+        RoslynCallCounters.Record(2172);
         result = default;
 
         try
@@ -2992,7 +2992,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2180);
+        RoslynCallCounters.Record(2173);
         result = default;
 
         try
@@ -3011,7 +3011,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2181);
+        RoslynCallCounters.Record(2174);
         result = default;
 
         try
@@ -3030,7 +3030,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2182);
+        RoslynCallCounters.Record(2175);
         result = default;
 
         try
@@ -3049,7 +3049,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2183);
+        RoslynCallCounters.Record(2176);
         result = default;
 
         try
@@ -3068,7 +3068,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2184);
+        RoslynCallCounters.Record(2177);
         result = default;
 
         try
@@ -3087,7 +3087,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2185);
+        RoslynCallCounters.Record(2178);
         result = default;
 
         try
@@ -3106,7 +3106,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2186);
+        RoslynCallCounters.Record(2179);
         result = default;
 
         try
@@ -3125,7 +3125,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2187);
+        RoslynCallCounters.Record(2180);
         result = default;
 
         try
@@ -3144,7 +3144,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2188);
+        RoslynCallCounters.Record(2181);
         result = default;
 
         try
@@ -3163,7 +3163,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2189);
+        RoslynCallCounters.Record(2182);
         result = default;
 
         try
@@ -3182,7 +3182,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2190);
+        RoslynCallCounters.Record(2183);
         result = default;
 
         try
@@ -3201,7 +3201,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2191);
+        RoslynCallCounters.Record(2184);
         result = default;
 
         try
@@ -3220,7 +3220,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2192);
+        RoslynCallCounters.Record(2185);
         result = default;
 
         try
@@ -3239,7 +3239,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2193);
+        RoslynCallCounters.Record(2186);
         result = default;
 
         try
@@ -3258,7 +3258,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2194);
+        RoslynCallCounters.Record(2187);
         result = default;
 
         try
@@ -3277,7 +3277,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2195);
+        RoslynCallCounters.Record(2188);
         result = default;
 
         try
@@ -3296,7 +3296,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2196);
+        RoslynCallCounters.Record(2189);
         result = default;
 
         try
@@ -3315,7 +3315,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2197);
+        RoslynCallCounters.Record(2190);
         result = default;
 
         try
@@ -3334,7 +3334,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2198);
+        RoslynCallCounters.Record(2191);
         result = default;
 
         try
@@ -3353,7 +3353,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2199);
+        RoslynCallCounters.Record(2192);
         result = default;
 
         try
@@ -3372,7 +3372,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2200);
+        RoslynCallCounters.Record(2193);
         result = default;
 
         try
@@ -3391,7 +3391,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2201);
+        RoslynCallCounters.Record(2194);
         result = default;
 
         try
@@ -3410,7 +3410,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2202);
+        RoslynCallCounters.Record(2195);
         result = default;
 
         try
@@ -3429,7 +3429,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2203);
+        RoslynCallCounters.Record(2196);
         result = default;
 
         try
@@ -3448,7 +3448,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2204);
+        RoslynCallCounters.Record(2197);
         result = default;
 
         try
@@ -3467,7 +3467,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2205);
+        RoslynCallCounters.Record(2198);
         result = default;
 
         try
@@ -3486,7 +3486,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2206);
+        RoslynCallCounters.Record(2199);
         result = default;
 
         try
@@ -3505,7 +3505,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2207);
+        RoslynCallCounters.Record(2200);
         result = default;
 
         try
@@ -3524,7 +3524,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2208);
+        RoslynCallCounters.Record(2201);
         result = default;
 
         try
@@ -3543,7 +3543,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2209);
+        RoslynCallCounters.Record(2202);
         result = default;
 
         try
@@ -3562,7 +3562,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2210);
+        RoslynCallCounters.Record(2203);
         result = default;
 
         try
@@ -3581,7 +3581,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2211);
+        RoslynCallCounters.Record(2204);
         result = default;
 
         try
@@ -3600,7 +3600,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2212);
+        RoslynCallCounters.Record(2205);
         result = default;
 
         try
@@ -3619,7 +3619,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2213);
+        RoslynCallCounters.Record(2206);
         result = default;
 
         try
@@ -3638,7 +3638,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2214);
+        RoslynCallCounters.Record(2207);
         result = default;
 
         try
@@ -3657,7 +3657,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2215);
+        RoslynCallCounters.Record(2208);
         result = default;
 
         try
@@ -3676,7 +3676,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2216);
+        RoslynCallCounters.Record(2209);
         result = default;
 
         try
@@ -3695,7 +3695,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2217);
+        RoslynCallCounters.Record(2210);
         result = default;
 
         try
@@ -3714,7 +3714,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2218);
+        RoslynCallCounters.Record(2211);
         result = default;
 
         try
@@ -3733,7 +3733,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2219);
+        RoslynCallCounters.Record(2212);
         result = default;
 
         try
@@ -3752,7 +3752,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2220);
+        RoslynCallCounters.Record(2213);
         result = default;
 
         try
@@ -3771,7 +3771,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2221);
+        RoslynCallCounters.Record(2214);
         result = default;
 
         try
@@ -3790,7 +3790,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2222);
+        RoslynCallCounters.Record(2215);
         result = default;
 
         try
@@ -3809,7 +3809,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2223);
+        RoslynCallCounters.Record(2216);
         result = default;
 
         try
@@ -3828,7 +3828,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2224);
+        RoslynCallCounters.Record(2217);
         result = default;
 
         try
@@ -3847,7 +3847,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2225);
+        RoslynCallCounters.Record(2218);
         result = default;
 
         try
@@ -3866,7 +3866,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2226);
+        RoslynCallCounters.Record(2219);
         result = default;
 
         try
@@ -3885,7 +3885,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2227);
+        RoslynCallCounters.Record(2220);
         result = default;
 
         try
@@ -3904,7 +3904,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2228);
+        RoslynCallCounters.Record(2221);
         result = default;
 
         try
@@ -3923,7 +3923,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2229);
+        RoslynCallCounters.Record(2222);
         result = default;
 
         try
@@ -3942,7 +3942,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2230);
+        RoslynCallCounters.Record(2223);
         result = default;
 
         try
@@ -3961,7 +3961,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2231);
+        RoslynCallCounters.Record(2224);
         result = default;
 
         try
@@ -3980,7 +3980,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2232);
+        RoslynCallCounters.Record(2225);
         result = default;
 
         try
@@ -3999,7 +3999,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2233);
+        RoslynCallCounters.Record(2226);
         result = default;
 
         try
@@ -4018,7 +4018,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2234);
+        RoslynCallCounters.Record(2227);
         result = default;
 
         try
@@ -4037,7 +4037,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2235);
+        RoslynCallCounters.Record(2228);
         result = default;
 
         try
@@ -4056,7 +4056,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(2236);
+        RoslynCallCounters.Record(2229);
         result = default;
 
         try
@@ -4075,7 +4075,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long trivia,
         out long result)
     {
-        RoslynCallCounters.Record(2237);
+        RoslynCallCounters.Record(2230);
         result = default;
 
         try
@@ -4094,7 +4094,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2238);
+        RoslynCallCounters.Record(2231);
         result = default;
 
         try
@@ -4113,7 +4113,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2239);
+        RoslynCallCounters.Record(2232);
         result = default;
 
         try
@@ -4132,7 +4132,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2240);
+        RoslynCallCounters.Record(2233);
         result = default;
 
         try
@@ -4151,7 +4151,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2241);
+        RoslynCallCounters.Record(2234);
         result = default;
 
         try
@@ -4170,7 +4170,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2242);
+        RoslynCallCounters.Record(2235);
         result = default;
 
         try
@@ -4189,7 +4189,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2243);
+        RoslynCallCounters.Record(2236);
         result = default;
 
         try
@@ -4208,7 +4208,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2244);
+        RoslynCallCounters.Record(2237);
         result = default;
 
         try
@@ -4227,7 +4227,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2245);
+        RoslynCallCounters.Record(2238);
         result = default;
 
         try
@@ -4246,7 +4246,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2246);
+        RoslynCallCounters.Record(2239);
         result = default;
 
         try
@@ -4265,7 +4265,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2247);
+        RoslynCallCounters.Record(2240);
         result = default;
 
         try
@@ -4284,7 +4284,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2248);
+        RoslynCallCounters.Record(2241);
         result = default;
 
         try
@@ -4303,7 +4303,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2249);
+        RoslynCallCounters.Record(2242);
         result = default;
 
         try
@@ -4322,7 +4322,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2250);
+        RoslynCallCounters.Record(2243);
         result = default;
 
         try
@@ -4341,7 +4341,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2251);
+        RoslynCallCounters.Record(2244);
         result = default;
 
         try
@@ -4360,7 +4360,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2252);
+        RoslynCallCounters.Record(2245);
         result = default;
 
         try
@@ -4379,7 +4379,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2253);
+        RoslynCallCounters.Record(2246);
         result = default;
 
         try
@@ -4398,7 +4398,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2254);
+        RoslynCallCounters.Record(2247);
         result = default;
 
         try
@@ -4417,7 +4417,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2255);
+        RoslynCallCounters.Record(2248);
         result = default;
 
         try
@@ -4436,7 +4436,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2256);
+        RoslynCallCounters.Record(2249);
         result = default;
 
         try
@@ -4455,7 +4455,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2257);
+        RoslynCallCounters.Record(2250);
         result = default;
 
         try
@@ -4474,7 +4474,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2258);
+        RoslynCallCounters.Record(2251);
         result = default;
 
         try
@@ -4493,7 +4493,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2259);
+        RoslynCallCounters.Record(2252);
         result = default;
 
         try
@@ -4512,7 +4512,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2260);
+        RoslynCallCounters.Record(2253);
         result = default;
 
         try
@@ -4531,7 +4531,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2261);
+        RoslynCallCounters.Record(2254);
         result = default;
 
         try
@@ -4550,7 +4550,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2262);
+        RoslynCallCounters.Record(2255);
         result = default;
 
         try
@@ -4569,7 +4569,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2263);
+        RoslynCallCounters.Record(2256);
         result = default;
 
         try
@@ -4588,7 +4588,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2264);
+        RoslynCallCounters.Record(2257);
         result = default;
 
         try
@@ -4607,7 +4607,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2265);
+        RoslynCallCounters.Record(2258);
         result = default;
 
         try
@@ -4626,7 +4626,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2266);
+        RoslynCallCounters.Record(2259);
         result = default;
 
         try
@@ -4645,7 +4645,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2267);
+        RoslynCallCounters.Record(2260);
         result = default;
 
         try
@@ -4664,7 +4664,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2268);
+        RoslynCallCounters.Record(2261);
         result = default;
 
         try
@@ -4683,7 +4683,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2269);
+        RoslynCallCounters.Record(2262);
         result = default;
 
         try
@@ -4702,7 +4702,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2270);
+        RoslynCallCounters.Record(2263);
         result = default;
 
         try
@@ -4721,7 +4721,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2271);
+        RoslynCallCounters.Record(2264);
         result = default;
 
         try
@@ -4740,7 +4740,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2272);
+        RoslynCallCounters.Record(2265);
         result = default;
 
         try
@@ -4759,7 +4759,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2273);
+        RoslynCallCounters.Record(2266);
         result = default;
 
         try
@@ -4778,7 +4778,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2274);
+        RoslynCallCounters.Record(2267);
         result = default;
 
         try
@@ -4797,7 +4797,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2275);
+        RoslynCallCounters.Record(2268);
         result = default;
 
         try
@@ -4816,7 +4816,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2276);
+        RoslynCallCounters.Record(2269);
         result = default;
 
         try
@@ -4835,7 +4835,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2277);
+        RoslynCallCounters.Record(2270);
         result = default;
 
         try
@@ -4853,7 +4853,7 @@ internal sealed partial class CSharpSyntaxRewriterVtblDispatcher : ICSharpSyntax
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2278);
+        RoslynCallCounters.Record(2271);
         result = default;
 
         try

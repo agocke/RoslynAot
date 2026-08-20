@@ -23,12 +23,12 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SemanticEdit_Equals_927c4ffc(
+    public int SemanticEdit_Equals_0e00ff3a(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(508);
+        RoslynCallCounters.Record(507);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(509);
+        RoslynCallCounters.Record(508);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(510);
+        RoslynCallCounters.Record(509);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(511);
+        RoslynCallCounters.Record(510);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(512);
+        RoslynCallCounters.Record(511);
         result = default;
 
         try
@@ -118,7 +118,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(513);
+        RoslynCallCounters.Record(512);
         result = default;
 
         try
@@ -136,7 +136,7 @@ internal sealed partial class SemanticEditVtblDispatcher : ISemanticEditVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(514);
+        RoslynCallCounters.Record(513);
         result = default;
 
         try

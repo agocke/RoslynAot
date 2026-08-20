@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis
             this = default;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICommandLineSourceFileTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileTypeVtbl(controlVtbl);
-            int status = vtbl.CommandLineSourceFile_ctor_dfdf1cda(path, isScript ? 1 : 0, isInputRedirected ? 1 : 0, out long result);
+            int status = vtbl.CommandLineSourceFile_ctor_5dfbeda0(path, isScript ? 1 : 0, isInputRedirected ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileVtbl(controlVtbl);
@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis
             this = default;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICommandLineSourceFileTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileTypeVtbl(controlVtbl);
-            int status = vtbl.CommandLineSourceFile_ctor_566b9c02(path, isScript ? 1 : 0, out long result);
+            int status = vtbl.CommandLineSourceFile_ctor_a9081338(path, isScript ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCommandLineSourceFileVtbl(controlVtbl);

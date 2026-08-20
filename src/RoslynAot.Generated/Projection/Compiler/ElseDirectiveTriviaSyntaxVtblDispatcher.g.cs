@@ -28,7 +28,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1550);
+        RoslynCallCounters.Record(1545);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1551);
+        RoslynCallCounters.Record(1546);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1552);
+        RoslynCallCounters.Record(1547);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1553);
+        RoslynCallCounters.Record(1548);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1554);
+        RoslynCallCounters.Record(1549);
         result = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int rawKind,
         out int result)
     {
-        RoslynCallCounters.Record(1555);
+        RoslynCallCounters.Record(1550);
         result = default;
 
         try
@@ -140,7 +140,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long node,
         out int result)
     {
-        RoslynCallCounters.Record(1556);
+        RoslynCallCounters.Record(1551);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int getInnermostNodeForTie,
         out long result)
     {
-        RoslynCallCounters.Record(1557);
+        RoslynCallCounters.Record(1552);
         result = default;
 
         try
@@ -181,7 +181,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1558);
+        RoslynCallCounters.Record(1553);
         result = default;
 
         try
@@ -195,13 +195,13 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         }
     }
 
-    public int SyntaxNode_FindTrivia_77d2dcea(
+    public int SyntaxNode_FindTrivia_4df38632(
         long receiver,
         int position,
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1559);
+        RoslynCallCounters.Record(1554);
         result = default;
 
         try
@@ -215,12 +215,12 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         }
     }
 
-    public int SyntaxNode_GetAnnotatedNodes_01e7ee64(
+    public int SyntaxNode_GetAnnotatedNodes_9faf7329(
         long receiver,
         long syntaxAnnotation,
         out long result)
     {
-        RoslynCallCounters.Record(1560);
+        RoslynCallCounters.Record(1555);
         result = default;
 
         try
@@ -234,12 +234,12 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         }
     }
 
-    public int SyntaxNode_GetAnnotatedNodes_b1864f23(
+    public int SyntaxNode_GetAnnotatedNodes_6bfe4f62(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1561);
+        RoslynCallCounters.Record(1556);
         result = default;
 
         try
@@ -253,12 +253,12 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         }
     }
 
-    public int SyntaxNode_GetAnnotations_58d1040b(
+    public int SyntaxNode_GetAnnotations_06632e87(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1562);
+        RoslynCallCounters.Record(1557);
         result = default;
 
         try
@@ -276,7 +276,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1563);
+        RoslynCallCounters.Record(1558);
         result = default;
 
         try
@@ -298,7 +298,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1564);
+        RoslynCallCounters.Record(1559);
         result = default;
 
         try
@@ -320,7 +320,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1565);
+        RoslynCallCounters.Record(1560);
         result = default;
 
         try
@@ -338,7 +338,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1566);
+        RoslynCallCounters.Record(1561);
         result = default;
 
         try
@@ -356,7 +356,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1567);
+        RoslynCallCounters.Record(1562);
         result = default;
 
         try
@@ -374,7 +374,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1568);
+        RoslynCallCounters.Record(1563);
         result = default;
 
         try
@@ -392,7 +392,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1569);
+        RoslynCallCounters.Record(1564);
         result = default;
 
         try
@@ -411,7 +411,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1570);
+        RoslynCallCounters.Record(1565);
         result = default;
 
         try
@@ -425,12 +425,12 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         }
     }
 
-    public int SyntaxNode_HasAnnotations_c7b9640f(
+    public int SyntaxNode_HasAnnotations_df998836(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1571);
+        RoslynCallCounters.Record(1566);
         result = default;
 
         try
@@ -444,12 +444,12 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_8d5726aa(
+    public int SyntaxNode_IsEquivalentTo_d60824bb(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1572);
+        RoslynCallCounters.Record(1567);
         result = default;
 
         try
@@ -463,13 +463,13 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_99548ef5(
+    public int SyntaxNode_IsEquivalentTo_5ef9167a(
         long receiver,
         long node,
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(1573);
+        RoslynCallCounters.Record(1568);
         result = default;
 
         try
@@ -488,7 +488,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1574);
+        RoslynCallCounters.Record(1569);
         result = default;
 
         try
@@ -506,7 +506,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1575);
+        RoslynCallCounters.Record(1570);
         result = default;
 
         try
@@ -526,7 +526,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1576);
+        RoslynCallCounters.Record(1571);
         requiredLength = default;
 
         try
@@ -552,7 +552,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1577);
+        RoslynCallCounters.Record(1572);
         requiredLength = default;
 
         try
@@ -576,7 +576,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1578);
+        RoslynCallCounters.Record(1573);
         result = default;
 
         try
@@ -594,7 +594,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1579);
+        RoslynCallCounters.Record(1574);
         result = default;
 
         try
@@ -612,7 +612,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1580);
+        RoslynCallCounters.Record(1575);
         result = default;
 
         try
@@ -630,7 +630,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1581);
+        RoslynCallCounters.Record(1576);
         result = default;
 
         try
@@ -648,7 +648,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1582);
+        RoslynCallCounters.Record(1577);
         result = default;
 
         try
@@ -666,7 +666,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1583);
+        RoslynCallCounters.Record(1578);
         result = default;
 
         try
@@ -684,7 +684,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1584);
+        RoslynCallCounters.Record(1579);
         result = default;
 
         try
@@ -702,7 +702,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1585);
+        RoslynCallCounters.Record(1580);
         result = default;
 
         try
@@ -720,7 +720,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1586);
+        RoslynCallCounters.Record(1581);
         result = default;
 
         try
@@ -738,7 +738,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1587);
+        RoslynCallCounters.Record(1582);
         result = default;
 
         try
@@ -758,7 +758,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1588);
+        RoslynCallCounters.Record(1583);
         requiredLength = default;
 
         try
@@ -782,7 +782,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1589);
+        RoslynCallCounters.Record(1584);
         result = default;
 
         try
@@ -800,7 +800,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1590);
+        RoslynCallCounters.Record(1585);
         result = default;
 
         try
@@ -818,7 +818,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1591);
+        RoslynCallCounters.Record(1586);
         result = default;
 
         try
@@ -836,7 +836,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1592);
+        RoslynCallCounters.Record(1587);
         result = default;
 
         try
@@ -854,7 +854,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1593);
+        RoslynCallCounters.Record(1588);
         result = default;
 
         try
@@ -872,7 +872,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1594);
+        RoslynCallCounters.Record(1589);
         result = default;
 
         try
@@ -886,11 +886,11 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         }
     }
 
-    public int CSharpSyntaxNode_Accept_e101478d(
+    public int CSharpSyntaxNode_Accept_c31df31f(
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(2013);
+        RoslynCallCounters.Record(2006);
 
         try
         {
@@ -909,7 +909,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(2014);
+        RoslynCallCounters.Record(2007);
         result = default;
 
         try
@@ -923,13 +923,13 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         }
     }
 
-    public int CSharpSyntaxNode_FindTrivia_59a4cbf4(
+    public int CSharpSyntaxNode_FindTrivia_09c524df(
         long receiver,
         int position,
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(2015);
+        RoslynCallCounters.Record(2008);
         result = default;
 
         try
@@ -947,7 +947,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2016);
+        RoslynCallCounters.Record(2009);
         result = default;
 
         try
@@ -969,7 +969,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(2017);
+        RoslynCallCounters.Record(2010);
         result = default;
 
         try
@@ -991,7 +991,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(2018);
+        RoslynCallCounters.Record(2011);
         result = default;
 
         try
@@ -1009,7 +1009,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2019);
+        RoslynCallCounters.Record(2012);
         result = default;
 
         try
@@ -1027,7 +1027,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2020);
+        RoslynCallCounters.Record(2013);
         result = default;
 
         try
@@ -1045,7 +1045,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2021);
+        RoslynCallCounters.Record(2014);
         result = default;
 
         try
@@ -1063,7 +1063,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out ushort result)
     {
-        RoslynCallCounters.Record(2022);
+        RoslynCallCounters.Record(2015);
         result = default;
 
         try
@@ -1083,7 +1083,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2023);
+        RoslynCallCounters.Record(2016);
         requiredLength = default;
 
         try
@@ -1107,7 +1107,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4714);
+        RoslynCallCounters.Record(4705);
         result = default;
 
         try
@@ -1126,7 +1126,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long endOfDirectiveToken,
         out long result)
     {
-        RoslynCallCounters.Record(3274);
+        RoslynCallCounters.Record(3265);
         result = default;
 
         try
@@ -1145,7 +1145,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long hashToken,
         out long result)
     {
-        RoslynCallCounters.Record(3275);
+        RoslynCallCounters.Record(3266);
         result = default;
 
         try
@@ -1163,7 +1163,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3276);
+        RoslynCallCounters.Record(3267);
         result = default;
 
         try
@@ -1181,7 +1181,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3277);
+        RoslynCallCounters.Record(3268);
         result = default;
 
         try
@@ -1199,7 +1199,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3278);
+        RoslynCallCounters.Record(3269);
         result = default;
 
         try
@@ -1217,7 +1217,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(3279);
+        RoslynCallCounters.Record(3270);
         result = default;
 
         try
@@ -1236,7 +1236,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long endOfDirectiveToken,
         out long result)
     {
-        RoslynCallCounters.Record(2910);
+        RoslynCallCounters.Record(2901);
         result = default;
 
         try
@@ -1255,7 +1255,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long hashToken,
         out long result)
     {
-        RoslynCallCounters.Record(2911);
+        RoslynCallCounters.Record(2902);
         result = default;
 
         try
@@ -1273,7 +1273,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2912);
+        RoslynCallCounters.Record(2903);
         result = default;
 
         try
@@ -1287,11 +1287,11 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         }
     }
 
-    public int ElseDirectiveTriviaSyntax_Accept_d2669715(
+    public int ElseDirectiveTriviaSyntax_Accept_86d2c68b(
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(3343);
+        RoslynCallCounters.Record(3334);
 
         try
         {
@@ -1313,7 +1313,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int branchTaken,
         out long result)
     {
-        RoslynCallCounters.Record(3344);
+        RoslynCallCounters.Record(3335);
         result = default;
 
         try
@@ -1332,7 +1332,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int branchTaken,
         out long result)
     {
-        RoslynCallCounters.Record(3345);
+        RoslynCallCounters.Record(3336);
         result = default;
 
         try
@@ -1351,7 +1351,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long elseKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(3346);
+        RoslynCallCounters.Record(3337);
         result = default;
 
         try
@@ -1370,7 +1370,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long endOfDirectiveToken,
         out long result)
     {
-        RoslynCallCounters.Record(3347);
+        RoslynCallCounters.Record(3338);
         result = default;
 
         try
@@ -1389,7 +1389,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long hashToken,
         out long result)
     {
-        RoslynCallCounters.Record(3348);
+        RoslynCallCounters.Record(3339);
         result = default;
 
         try
@@ -1408,7 +1408,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(3349);
+        RoslynCallCounters.Record(3340);
         result = default;
 
         try
@@ -1426,7 +1426,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(3350);
+        RoslynCallCounters.Record(3341);
         result = default;
 
         try
@@ -1444,7 +1444,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3351);
+        RoslynCallCounters.Record(3342);
         result = default;
 
         try
@@ -1462,7 +1462,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3352);
+        RoslynCallCounters.Record(3343);
         result = default;
 
         try
@@ -1480,7 +1480,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3353);
+        RoslynCallCounters.Record(3344);
         result = default;
 
         try
@@ -1498,7 +1498,7 @@ internal sealed partial class ElseDirectiveTriviaSyntaxVtblDispatcher : IElseDir
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(3354);
+        RoslynCallCounters.Record(3345);
         result = default;
 
         try

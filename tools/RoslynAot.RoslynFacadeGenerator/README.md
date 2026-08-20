@@ -21,17 +21,12 @@ dotnet run \
   path/to/Microsoft.CodeAnalysis.CSharp.dll
 ```
 
-Generate executable facade sources and their synchronized ABI, compiler
-dispatch, and manifest outputs with:
-
-```bash
-dotnet run \
-  --project tools/RoslynAot.RoslynFacadeGenerator \
-  -- generate \
-  --output artifacts/generated/roslyn-facade \
-  path/to/Microsoft.CodeAnalysis.dll \
-  path/to/Microsoft.CodeAnalysis.CSharp.dll
-```
+The generate command writes executable facade sources and their synchronized
+ABI, compiler dispatch, and manifest outputs. Its input assemblies and its
+`--reference` set are not free choices — they decide every generated vtbl id
+and operation name — so the invocation that reproduces the checked-in tree is
+given under [Regenerating the checked-in
+tree](#regenerating-the-checked-in-tree) rather than sketched here.
 
 The generated types are partial. Members covered by the initial projection
 receive executable COM proxy bodies. Other concrete constructors, methods,
@@ -43,8 +38,8 @@ these facades must execute.
 
 Coverage is whatever the model's rules currently classify as supported, and
 the exact numbers are the first lines of
-`Projection/Manifest/ProjectionInventory.txt` — 5,833 supported calls and
-2,897 unsupported across 700 types at the time of writing. Read them there
+`Projection/Manifest/ProjectionInventory.txt` — 5,824 supported calls and
+2,804 unsupported across 695 types at the time of writing. Read them there
 rather than from prose here: they change with every projection rule, and the
 manifest is checked in so the change is a reviewable diff. The generated
 facade projects under `src/RoslynAot.GeneratedFacade*` compile the complete
@@ -81,6 +76,77 @@ Each assembly receives its own root directory. Namespace components become
 directories, and each top-level type receives a source file. Nested types stay
 in the file containing their declaring type. Generic arity is appended only
 when needed to distinguish legal same-name types such as `Name` and `Name<T>`.
+
+## Regenerating the checked-in tree
+
+`src/RoslynAot.Generated/Projection` is generator output that is committed, so
+a clean regeneration must be byte-identical to what is in the tree. It is not
+only a convenience copy: `ManifestIdentity` in `Abi/RoslynControlVtbl.g.cs` is
+the constant the analyzer hands back to the compiler to assert that both sides
+were built from the same projection. Anything that moves the model owes a
+regeneration in the same commit — a projection rule, a table entry, or just an
+override's reason string, because the reasons are hashed into the identity.
+
+### Baseline inputs
+
+The projection is generated from the NuGet `Microsoft.CodeAnalysis.Common` and
+`Microsoft.CodeAnalysis.CSharp` **5.0.0** packages. Both are named as
+`PackageReference`s with `GeneratePathProperty="true"` in
+`RoslynAot.RoslynFacadeGenerator.csproj`, so the baseline is pinned in the
+project file and the regeneration command reads the paths back out rather than
+hunting for assemblies.
+
+That package version is the Roslyn analyzers themselves compile against — the
+sample analyzer references `Microsoft.CodeAnalysis.CSharp` 5.0.0 — and it is
+what gives the generated facades their `AssemblyVersion` of `5.0.0.0`, the
+version an analyzer's strong-name reference asks for. The .NET SDK's own
+Roslyn under `$(RoslynTargetsPath)/bincore` is deliberately not the baseline:
+it is whatever the installed SDK happens to ship (5.10.0.0 today), so
+generating from it would move vtbl GUIDs and operation-name hashes across most
+of the tree every time the SDK moved. The compiler side still compiles the
+generated dispatch against the SDK's Roslyn; the baseline surface has to stay a
+subset it can satisfy.
+
+The `net11.0` reference pack passed with `--reference` is required, not an
+optimization. Without it the run fails projection validation with one
+`Declared foreign type ... appears in no projected signature.` error per
+declared foreign type, because nothing the projection declares as foreign
+resolves.
+
+### The invocation
+
+Run from the repository root:
+
+```bash
+generator=tools/RoslynAot.RoslynFacadeGenerator/RoslynAot.RoslynFacadeGenerator.csproj
+common="$(dotnet msbuild $generator \
+  -getProperty:PkgMicrosoft_CodeAnalysis_Common)"
+csharp="$(dotnet msbuild $generator \
+  -getProperty:PkgMicrosoft_CodeAnalysis_CSharp)"
+packs="$(dotnet msbuild src/CscAot/CscAot.csproj \
+  -getProperty:NetCoreTargetingPackRoot)"
+runtime="$(dotnet msbuild src/CscAot/CscAot.csproj \
+  -getProperty:BundledNETCoreAppPackageVersion)"
+references="$packs/Microsoft.NETCore.App.Ref/$runtime/ref/net11.0"
+
+reference_arguments=()
+for assembly in "$references"/*.dll; do
+    reference_arguments+=(--reference "$assembly")
+done
+
+dotnet run \
+  --project tools/RoslynAot.RoslynFacadeGenerator -c Release \
+  -- generate \
+  --output src/RoslynAot.Generated/Projection \
+  "${reference_arguments[@]}" \
+  "$common/lib/netstandard2.0/Microsoft.CodeAnalysis.dll" \
+  "$csharp/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll"
+```
+
+The output directory is the checked-in tree itself. Every subdirectory the
+generator owns — `Facades`, `Abi`, `Compiler`, `AnalyzerRuntime`, `Manifest` —
+is recreated on each run, so stale files cannot survive a regeneration, and
+`git status` is the diff to review. A run takes roughly two minutes.
 
 ## Source generation
 

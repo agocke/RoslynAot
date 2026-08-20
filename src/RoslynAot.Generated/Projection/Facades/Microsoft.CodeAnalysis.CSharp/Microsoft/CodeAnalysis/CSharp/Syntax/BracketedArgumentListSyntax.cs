@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IBracketedArgumentListSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.BracketedArgumentListSyntax_Accept_78477561(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.BracketedArgumentListSyntax_Accept_e560fa1f(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -98,7 +98,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static BracketedArgumentListSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (BracketedArgumentListSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("b43b6871-60e0-53dc-a5c4-075d3a99a27e")]
+        [System.Runtime.InteropServices.Guid("adba4d65-ce31-5529-8a3c-42c74b5716a7")]
         internal partial interface __RoslynAotImplementation : BracketedArgumentListSyntax
         {
         }

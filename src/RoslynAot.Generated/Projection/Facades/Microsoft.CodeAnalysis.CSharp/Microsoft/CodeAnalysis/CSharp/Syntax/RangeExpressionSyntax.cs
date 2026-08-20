@@ -50,7 +50,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IRangeExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.RangeExpressionSyntax_Accept_b6745eba(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.RangeExpressionSyntax_Accept_ea44d753(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -101,7 +101,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static RangeExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (RangeExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("af1f571b-e54e-5760-87c2-37cd9814574e")]
+        [System.Runtime.InteropServices.Guid("1ab5feeb-af18-5833-986f-f1d3784fa8af")]
         internal partial interface __RoslynAotImplementation : RangeExpressionSyntax
         {
         }

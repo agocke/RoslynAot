@@ -23,12 +23,12 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxTree_GetDiagnostics_9c96c6b5(
+    public int SyntaxTree_GetDiagnostics_fb1f0db2(
         long receiver,
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(1720);
+        RoslynCallCounters.Record(1715);
         result = default;
 
         try
@@ -42,12 +42,12 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int SyntaxTree_GetDiagnostics_9b5e0ed5(
+    public int SyntaxTree_GetDiagnostics_e0fb7f1a(
         long receiver,
         long nodeOrToken,
         out long result)
     {
-        RoslynCallCounters.Record(1721);
+        RoslynCallCounters.Record(1716);
         result = default;
 
         try
@@ -61,12 +61,12 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int SyntaxTree_GetDiagnostics_7430056a(
+    public int SyntaxTree_GetDiagnostics_c3f32d32(
         long receiver,
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(1722);
+        RoslynCallCounters.Record(1717);
         result = default;
 
         try
@@ -80,12 +80,12 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int SyntaxTree_GetDiagnostics_a57880a1(
+    public int SyntaxTree_GetDiagnostics_f1599cc6(
         long receiver,
         long trivia,
         out long result)
     {
-        RoslynCallCounters.Record(1723);
+        RoslynCallCounters.Record(1718);
         result = default;
 
         try
@@ -104,7 +104,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long span,
         out long result)
     {
-        RoslynCallCounters.Record(1724);
+        RoslynCallCounters.Record(1719);
         result = default;
 
         try
@@ -123,7 +123,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(1725);
+        RoslynCallCounters.Record(1720);
         result = default;
 
         try
@@ -141,7 +141,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1726);
+        RoslynCallCounters.Record(1721);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(1727);
+        RoslynCallCounters.Record(1722);
         result = default;
 
         try
@@ -181,7 +181,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1728);
+        RoslynCallCounters.Record(1723);
         requiredLength = default;
 
         try
@@ -206,7 +206,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long newText,
         out long result)
     {
-        RoslynCallCounters.Record(1729);
+        RoslynCallCounters.Record(1724);
         result = default;
 
         try
@@ -225,7 +225,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         out long result)
     {
-        RoslynCallCounters.Record(1730);
+        RoslynCallCounters.Record(1725);
         result = default;
 
         try
@@ -245,7 +245,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long options,
         out long result)
     {
-        RoslynCallCounters.Record(1731);
+        RoslynCallCounters.Record(1726);
         result = default;
 
         try
@@ -265,7 +265,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1732);
+        RoslynCallCounters.Record(1727);
         requiredLength = default;
 
         try
@@ -289,7 +289,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1733);
+        RoslynCallCounters.Record(1728);
         result = default;
 
         try
@@ -307,7 +307,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1734);
+        RoslynCallCounters.Record(1729);
         result = default;
 
         try
@@ -325,7 +325,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1735);
+        RoslynCallCounters.Record(1730);
         result = default;
 
         try
@@ -339,12 +339,12 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int CSharpSyntaxTree_GetDiagnostics_e0554d29(
+    public int CSharpSyntaxTree_GetDiagnostics_d0ad2a84(
         long receiver,
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(2279);
+        RoslynCallCounters.Record(2272);
         result = default;
 
         try
@@ -358,12 +358,12 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int CSharpSyntaxTree_GetDiagnostics_c3bb13c5(
+    public int CSharpSyntaxTree_GetDiagnostics_0d851128(
         long receiver,
         long nodeOrToken,
         out long result)
     {
-        RoslynCallCounters.Record(2280);
+        RoslynCallCounters.Record(2273);
         result = default;
 
         try
@@ -377,12 +377,12 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int CSharpSyntaxTree_GetDiagnostics_f53ea487(
+    public int CSharpSyntaxTree_GetDiagnostics_ba3a32fe(
         long receiver,
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(2281);
+        RoslynCallCounters.Record(2274);
         result = default;
 
         try
@@ -396,12 +396,12 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         }
     }
 
-    public int CSharpSyntaxTree_GetDiagnostics_f1636b3b(
+    public int CSharpSyntaxTree_GetDiagnostics_c942e1aa(
         long receiver,
         long trivia,
         out long result)
     {
-        RoslynCallCounters.Record(2282);
+        RoslynCallCounters.Record(2275);
         result = default;
 
         try
@@ -420,7 +420,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long span,
         out long result)
     {
-        RoslynCallCounters.Record(2283);
+        RoslynCallCounters.Record(2276);
         result = default;
 
         try
@@ -438,7 +438,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2284);
+        RoslynCallCounters.Record(2277);
         result = default;
 
         try
@@ -458,7 +458,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(2285);
+        RoslynCallCounters.Record(2278);
         result = default;
 
         try
@@ -477,7 +477,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long newText,
         out long result)
     {
-        RoslynCallCounters.Record(2286);
+        RoslynCallCounters.Record(2279);
         result = default;
 
         try
@@ -495,7 +495,7 @@ internal sealed partial class CSharpSyntaxTreeVtblDispatcher : ICSharpSyntaxTree
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2287);
+        RoslynCallCounters.Record(2280);
         result = default;
 
         try

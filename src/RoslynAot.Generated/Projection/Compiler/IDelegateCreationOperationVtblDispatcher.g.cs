@@ -27,7 +27,7 @@ internal sealed partial class IDelegateCreationOperationVtblDispatcher : IIDeleg
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1048);
+        RoslynCallCounters.Record(1043);
         result = default;
 
         try

@@ -60,8 +60,6 @@ namespace Microsoft.CodeAnalysis
         public const string GetResult = "GetResult";
         public const string GreaterThanOperatorName = "op_GreaterThan";
         public const string GreaterThanOrEqualOperatorName = "op_GreaterThanOrEqual";
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82567")]
-        public const string HasValuePropertyName = "HasValue";
         public const string ImplicitConversionName = "op_Implicit";
         public const string IncrementAssignmentOperatorName = "op_IncrementAssignment";
         public const string IncrementOperatorName = "op_Increment";
@@ -100,8 +98,6 @@ namespace Microsoft.CodeAnalysis
         public const string TopLevelStatementsEntryPointMethodName = "<Main>$";
         public const string TopLevelStatementsEntryPointTypeName = "Program";
         public const string TrueOperatorName = "op_True";
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82567")]
-        public const string TryGetValueMethodName = "TryGetValue";
         public const string UnaryNegationOperatorName = "op_UnaryNegation";
         public const string UnaryPlusOperatorName = "op_UnaryPlus";
         public const string UnsignedLeftShiftOperatorName = "op_UnsignedLeftShift";

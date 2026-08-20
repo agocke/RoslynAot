@@ -29,7 +29,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IAnalyzerAssemblyLoader __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IAnalyzerAssemblyLoader)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("c91ca051-c740-55e2-8d9e-f533833e1b5d")]
+        [System.Runtime.InteropServices.Guid("fc4a330a-5c4f-5191-b127-95b73fc72fd8")]
         internal partial interface __RoslynAotImplementation : IAnalyzerAssemblyLoader
         {
         }

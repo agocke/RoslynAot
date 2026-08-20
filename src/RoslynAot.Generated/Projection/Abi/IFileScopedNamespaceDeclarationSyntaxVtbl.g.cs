@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("39cce694-7bc9-57ed-b1b1-07d547ab15c2")]
+[Guid("e5f361a4-e991-5020-8454-a7a1ebe543d6")]
 public partial interface IFileScopedNamespaceDeclarationSyntaxVtbl : IBaseNamespaceDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int FileScopedNamespaceDeclarationSyntax_Accept_66214fc6(
+    int FileScopedNamespaceDeclarationSyntax_Accept_9e50fd60(
         long receiver,
         long visitor
     );

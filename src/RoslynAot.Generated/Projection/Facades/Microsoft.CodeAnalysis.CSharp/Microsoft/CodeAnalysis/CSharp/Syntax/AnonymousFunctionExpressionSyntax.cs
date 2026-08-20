@@ -144,7 +144,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static AnonymousFunctionExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AnonymousFunctionExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("821eef36-eb9c-5078-944a-c1a7811b43d3")]
+        [System.Runtime.InteropServices.Guid("7a7ecb2e-f623-5b8a-b7f0-f685c5774bb4")]
         internal partial interface __RoslynAotImplementation : AnonymousFunctionExpressionSyntax
         {
         }

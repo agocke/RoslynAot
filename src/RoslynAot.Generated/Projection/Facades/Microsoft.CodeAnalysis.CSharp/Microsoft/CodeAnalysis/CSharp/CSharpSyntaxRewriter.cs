@@ -1228,7 +1228,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxRewriter_VisitList_6f52c4e7(__RoslynAotGetHandle(), list.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.CSharpSyntaxRewriter_VisitList_fbf0527b(__RoslynAotGetHandle(), list.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTokenList.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1237,7 +1237,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxRewriter_VisitList_131e5e69(__RoslynAotGetHandle(), list.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.CSharpSyntaxRewriter_VisitList_fd253111(__RoslynAotGetHandle(), list.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTriviaList.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1258,7 +1258,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxRewriter_VisitListElement_2b07669a(__RoslynAotGetHandle(), element.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.CSharpSyntaxRewriter_VisitListElement_c7baf79c(__RoslynAotGetHandle(), element.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -2106,18 +2106,6 @@ namespace Microsoft.CodeAnalysis.CSharp
             return result == 0 ? null : SyntaxNode.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82567")]
-        public override SyntaxNode? VisitUnionDeclaration(Syntax.UnionDeclarationSyntax node)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82789")]
-        public override SyntaxNode? VisitUnsafeExpression(Syntax.UnsafeExpressionSyntax node)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
         public override SyntaxNode? VisitUnsafeStatement(Syntax.UnsafeStatementSyntax node)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
@@ -2206,12 +2194,6 @@ namespace Microsoft.CodeAnalysis.CSharp
             int status = vtbl.CSharpSyntaxRewriter_VisitWhileStatement(__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result == 0 ? null : SyntaxNode.__RoslynAotCreateProxy(controlVtbl, result);
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82210")]
-        public override SyntaxNode? VisitWithElement(Syntax.WithElementSyntax node)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
         public override SyntaxNode? VisitWithExpression(Syntax.WithExpressionSyntax node)

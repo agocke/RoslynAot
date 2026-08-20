@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("88bd9cde-c220-5e9c-ad2f-72df0926d1a6")]
+[Guid("82cad4c0-f3d9-55bb-9519-bf7642a94f5b")]
 public partial interface IDiagnosticDescriptorVtbl
 {
 
     [PreserveSig]
-    int DiagnosticDescriptor_Equals_7497f57f(
+    int DiagnosticDescriptor_Equals_2faa2ca8(
         long receiver,
         long other,
         out int result

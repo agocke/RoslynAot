@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IParenthesizedVariableDesignationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ParenthesizedVariableDesignationSyntax_Accept_99f4d65e(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ParenthesizedVariableDesignationSyntax_Accept_ccb78dbf(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -98,7 +98,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ParenthesizedVariableDesignationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ParenthesizedVariableDesignationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("47fdea66-bfef-58d1-b355-41abc65f5f4c")]
+        [System.Runtime.InteropServices.Guid("00d0336e-2f91-5e1d-9a93-f55c2cb86dc5")]
         internal partial interface __RoslynAotImplementation : ParenthesizedVariableDesignationSyntax
         {
         }

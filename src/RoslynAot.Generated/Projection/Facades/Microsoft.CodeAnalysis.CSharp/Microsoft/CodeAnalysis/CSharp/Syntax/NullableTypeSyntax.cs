@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.INullableTypeSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.NullableTypeSyntax_Accept_c39ee931(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.NullableTypeSyntax_Accept_4aef178a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static NullableTypeSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (NullableTypeSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("980c6c29-21b1-51ad-aff8-5dc74c1bd7c5")]
+        [System.Runtime.InteropServices.Guid("291778f8-216a-532f-9e05-c5ac8efa0321")]
         internal partial interface __RoslynAotImplementation : NullableTypeSyntax
         {
         }

@@ -23,7 +23,7 @@ internal sealed partial class AnalyzerConfigOptionsProviderVtblDispatcher : IAna
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int AnalyzerConfigOptionsProvider_GetOptions_df6d0fc5(
+    public int AnalyzerConfigOptionsProvider_GetOptions_beed9d0f(
         long receiver,
         long textFile,
         out long result)
@@ -42,7 +42,7 @@ internal sealed partial class AnalyzerConfigOptionsProviderVtblDispatcher : IAna
         }
     }
 
-    public int AnalyzerConfigOptionsProvider_GetOptions_dacab0fe(
+    public int AnalyzerConfigOptionsProvider_GetOptions_1ed7181a(
         long receiver,
         long tree,
         out long result)

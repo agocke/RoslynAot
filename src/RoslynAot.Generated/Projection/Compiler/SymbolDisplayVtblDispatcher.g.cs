@@ -23,14 +23,14 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public unsafe int SymbolDisplay_FormatLiteral_15828359(
+    public unsafe int SymbolDisplay_FormatLiteral_ccfe448a(
         ushort c,
         int quote,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2605);
+        RoslynCallCounters.Record(2596);
         requiredLength = default;
 
         try
@@ -50,14 +50,14 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_FormatLiteral_9bbcd1a2(
+    public unsafe int SymbolDisplay_FormatLiteral_6ca7e2f0(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         int quote,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2606);
+        RoslynCallCounters.Record(2597);
         requiredLength = default;
 
         try
@@ -77,14 +77,14 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToDisplayString_4f7fdcfa(
+    public unsafe int SymbolDisplay_ToDisplayString_5dc8308c(
         long symbol,
         long format,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2607);
+        RoslynCallCounters.Record(2598);
         requiredLength = default;
 
         try
@@ -104,7 +104,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToDisplayString_30d0480a(
+    public unsafe int SymbolDisplay_ToDisplayString_ef578861(
         long symbol,
         byte nullableAnnotation,
         long format,
@@ -112,7 +112,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2608);
+        RoslynCallCounters.Record(2599);
         requiredLength = default;
 
         try
@@ -132,7 +132,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToDisplayString_e75e5202(
+    public unsafe int SymbolDisplay_ToDisplayString_6ea1fcea(
         long symbol,
         byte nullableFlowState,
         long format,
@@ -140,7 +140,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2609);
+        RoslynCallCounters.Record(2600);
         requiredLength = default;
 
         try
@@ -160,7 +160,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToMinimalDisplayString_cc43ae84(
+    public unsafe int SymbolDisplay_ToMinimalDisplayString_3ac2b801(
         long symbol,
         long semanticModel,
         int position,
@@ -169,7 +169,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2610);
+        RoslynCallCounters.Record(2601);
         requiredLength = default;
 
         try
@@ -189,7 +189,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToMinimalDisplayString_35efd54e(
+    public unsafe int SymbolDisplay_ToMinimalDisplayString_c6296590(
         long symbol,
         byte nullableAnnotation,
         long semanticModel,
@@ -199,7 +199,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2611);
+        RoslynCallCounters.Record(2602);
         requiredLength = default;
 
         try
@@ -219,7 +219,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         }
     }
 
-    public unsafe int SymbolDisplay_ToMinimalDisplayString_ac559369(
+    public unsafe int SymbolDisplay_ToMinimalDisplayString_befad715(
         long symbol,
         byte nullableFlowState,
         long semanticModel,
@@ -229,7 +229,7 @@ internal sealed partial class SymbolDisplayVtblDispatcher : ISymbolDisplayVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2612);
+        RoslynCallCounters.Record(2603);
         requiredLength = default;
 
         try

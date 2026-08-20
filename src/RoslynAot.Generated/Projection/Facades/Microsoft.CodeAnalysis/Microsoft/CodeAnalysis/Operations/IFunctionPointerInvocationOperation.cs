@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis.Operations
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IFunctionPointerInvocationOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IFunctionPointerInvocationOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("7af7e918-efe8-54c9-ace0-ab03f6413e87")]
+        [System.Runtime.InteropServices.Guid("9d74f305-cdc5-535c-8cf3-5e1ad9b9b835")]
         internal partial interface __RoslynAotImplementation : IFunctionPointerInvocationOperation
         {
         }

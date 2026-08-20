@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IFunctionPointerCallingConventionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.FunctionPointerCallingConventionSyntax_Accept_26f97efd(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.FunctionPointerCallingConventionSyntax_Accept_e1837f93(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -89,7 +89,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static FunctionPointerCallingConventionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (FunctionPointerCallingConventionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("9999cffc-9ccf-59e4-8dcc-9caba3078fdd")]
+        [System.Runtime.InteropServices.Guid("cc1d346f-ac8d-555f-b01b-39c207065869")]
         internal partial interface __RoslynAotImplementation : FunctionPointerCallingConventionSyntax
         {
         }

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f263d8bd-09a5-5b59-aa1c-f52d72c5f5da")]
+[Guid("bc577b46-cb13-5ab7-934f-19a5a6101ec9")]
 public partial interface IPostfixUnaryExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int PostfixUnaryExpressionSyntax_Accept_c8f3e8bf(
+    int PostfixUnaryExpressionSyntax_Accept_ab05939f(
         long receiver,
         long visitor
     );

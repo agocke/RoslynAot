@@ -56,7 +56,6 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         public abstract void RegisterCodeBlockStartAction<TLanguageKindEnum>(System.Action<CodeBlockStartAnalysisContext<TLanguageKindEnum>> action)
             where TLanguageKindEnum : struct;
         public abstract void RegisterCompilationEndAction(System.Action<CompilationAnalysisContext> action);
-        [System.Runtime.CompilerServices.OverloadResolutionPriority(-1)]
         public void RegisterOperationAction(System.Action<OperationAnalysisContext> action, params OperationKind[] operationKinds)
         {
             System.ArgumentNullException.ThrowIfNull(action);
@@ -64,7 +63,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             RegisterOperationAction(action, System.Collections.Immutable.ImmutableArray.CreateRange(operationKinds));
         }
 
-        public virtual void RegisterOperationAction(System.Action<OperationAnalysisContext> action, params System.Collections.Immutable.ImmutableArray<OperationKind> operationKinds)
+        public virtual void RegisterOperationAction(System.Action<OperationAnalysisContext> action, System.Collections.Immutable.ImmutableArray<OperationKind> operationKinds)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
@@ -80,7 +79,6 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         }
 
         public abstract void RegisterSemanticModelAction(System.Action<SemanticModelAnalysisContext> action);
-        [System.Runtime.CompilerServices.OverloadResolutionPriority(-1)]
         public void RegisterSymbolAction(System.Action<SymbolAnalysisContext> action, params SymbolKind[] symbolKinds)
         {
             System.ArgumentNullException.ThrowIfNull(action);
@@ -88,13 +86,12 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             RegisterSymbolAction(action, System.Collections.Immutable.ImmutableArray.CreateRange(symbolKinds));
         }
 
-        public abstract void RegisterSymbolAction(System.Action<SymbolAnalysisContext> action, params System.Collections.Immutable.ImmutableArray<SymbolKind> symbolKinds);
+        public abstract void RegisterSymbolAction(System.Action<SymbolAnalysisContext> action, System.Collections.Immutable.ImmutableArray<SymbolKind> symbolKinds);
         public virtual void RegisterSymbolStartAction(System.Action<SymbolStartAnalysisContext> action, SymbolKind symbolKind)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        [System.Runtime.CompilerServices.OverloadResolutionPriority(-1)]
         public void RegisterSyntaxNodeAction<TLanguageKindEnum>(System.Action<SyntaxNodeAnalysisContext> action, params TLanguageKindEnum[] syntaxKinds)
             where TLanguageKindEnum : struct
         {
@@ -103,7 +100,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
             RegisterSyntaxNodeAction(action, System.Collections.Immutable.ImmutableArray.CreateRange(syntaxKinds));
         }
 
-        public abstract void RegisterSyntaxNodeAction<TLanguageKindEnum>(System.Action<SyntaxNodeAnalysisContext> action, params System.Collections.Immutable.ImmutableArray<TLanguageKindEnum> syntaxKinds)
+        public abstract void RegisterSyntaxNodeAction<TLanguageKindEnum>(System.Action<SyntaxNodeAnalysisContext> action, System.Collections.Immutable.ImmutableArray<TLanguageKindEnum> syntaxKinds)
             where TLanguageKindEnum : struct;
         public abstract void RegisterSyntaxTreeAction(System.Action<SyntaxTreeAnalysisContext> action);
         public bool TryGetValue<TValue>(AdditionalText text, AdditionalTextValueProvider<TValue> valueProvider, out TValue value)
@@ -164,12 +161,12 @@ namespace Microsoft.CodeAnalysis.Diagnostics
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
             }
 
-            public override void RegisterSymbolAction(System.Action<SymbolAnalysisContext> action, params System.Collections.Immutable.ImmutableArray<SymbolKind> symbolKinds)
+            public override void RegisterSymbolAction(System.Action<SymbolAnalysisContext> action, System.Collections.Immutable.ImmutableArray<SymbolKind> symbolKinds)
             {
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
             }
 
-            public override void RegisterSyntaxNodeAction<TLanguageKindEnum>(System.Action<SyntaxNodeAnalysisContext> action, params System.Collections.Immutable.ImmutableArray<TLanguageKindEnum> syntaxKinds)
+            public override void RegisterSyntaxNodeAction<TLanguageKindEnum>(System.Action<SyntaxNodeAnalysisContext> action, System.Collections.Immutable.ImmutableArray<TLanguageKindEnum> syntaxKinds)
             {
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
             }

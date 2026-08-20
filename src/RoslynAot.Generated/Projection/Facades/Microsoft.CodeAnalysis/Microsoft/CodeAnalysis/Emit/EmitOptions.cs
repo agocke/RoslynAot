@@ -29,7 +29,7 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IEmitOptionsTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetEmitOptionsTypeVtbl(controlVtbl);
-            int status = vtbl.EmitOptions_ctor_910d9a8c(metadataOnly ? 1 : 0, (int)debugInformationFormat, pdbFilePath, outputNameOverride, fileAlignment, baseAddress, highEntropyVirtualAddressSpace ? 1 : 0, subsystemVersion.__RoslynAotGetHandle(), runtimeMetadataVersion, tolerateErrors ? 1 : 0, includePrivateMembers ? 1 : 0, out long result);
+            int status = vtbl.EmitOptions_ctor_63a85567(metadataOnly ? 1 : 0, (int)debugInformationFormat, pdbFilePath, outputNameOverride, fileAlignment, baseAddress, highEntropyVirtualAddressSpace ? 1 : 0, subsystemVersion.__RoslynAotGetHandle(), runtimeMetadataVersion, tolerateErrors ? 1 : 0, includePrivateMembers ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetEmitOptionsVtbl(controlVtbl);
@@ -201,7 +201,7 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IEmitOptionsVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.EmitOptions_Equals_6cab27c9(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.EmitOptions_Equals_050e2781(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

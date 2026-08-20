@@ -23,12 +23,12 @@ internal sealed partial class TypeInfoVtblDispatcher : ITypeInfoVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int TypeInfo_Equals_ed067506(
+    public int TypeInfo_Equals_2d56f7f9(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1869);
+        RoslynCallCounters.Record(1864);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class TypeInfoVtblDispatcher : ITypeInfoVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1870);
+        RoslynCallCounters.Record(1865);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class TypeInfoVtblDispatcher : ITypeInfoVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1871);
+        RoslynCallCounters.Record(1866);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class TypeInfoVtblDispatcher : ITypeInfoVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1872);
+        RoslynCallCounters.Record(1867);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class TypeInfoVtblDispatcher : ITypeInfoVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1873);
+        RoslynCallCounters.Record(1868);
         result = default;
 
         try
@@ -118,7 +118,7 @@ internal sealed partial class TypeInfoVtblDispatcher : ITypeInfoVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1874);
+        RoslynCallCounters.Record(1869);
         result = default;
 
         try

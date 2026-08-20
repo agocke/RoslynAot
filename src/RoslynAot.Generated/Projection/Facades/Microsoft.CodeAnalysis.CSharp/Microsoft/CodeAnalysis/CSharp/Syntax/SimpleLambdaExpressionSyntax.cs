@@ -94,7 +94,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISimpleLambdaExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SimpleLambdaExpressionSyntax_Accept_83282f5c(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.SimpleLambdaExpressionSyntax_Accept_ccd6d4ab(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -158,7 +158,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISimpleLambdaExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SimpleLambdaExpressionSyntax_Update_6f561333(__RoslynAotGetHandle(), asyncKeyword.__RoslynAotGetHandle(), parameter.__RoslynAotGetHandle(), arrowToken.__RoslynAotGetHandle(), body.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.SimpleLambdaExpressionSyntax_Update_1df87b4c(__RoslynAotGetHandle(), asyncKeyword.__RoslynAotGetHandle(), parameter.__RoslynAotGetHandle(), arrowToken.__RoslynAotGetHandle(), body.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -167,7 +167,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISimpleLambdaExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SimpleLambdaExpressionSyntax_Update_8574cb37(__RoslynAotGetHandle(), asyncKeyword.__RoslynAotGetHandle(), parameter.__RoslynAotGetHandle(), arrowToken.__RoslynAotGetHandle(), block is null ? 0L : block.__RoslynAotGetHandle(), expressionBody is null ? 0L : expressionBody.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.SimpleLambdaExpressionSyntax_Update_e5c98d73(__RoslynAotGetHandle(), asyncKeyword.__RoslynAotGetHandle(), parameter.__RoslynAotGetHandle(), arrowToken.__RoslynAotGetHandle(), block is null ? 0L : block.__RoslynAotGetHandle(), expressionBody is null ? 0L : expressionBody.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -176,7 +176,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISimpleLambdaExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SimpleLambdaExpressionSyntax_Update_e1ace10a(__RoslynAotGetHandle(), modifiers.__RoslynAotGetHandle(), parameter.__RoslynAotGetHandle(), arrowToken.__RoslynAotGetHandle(), block is null ? 0L : block.__RoslynAotGetHandle(), expressionBody is null ? 0L : expressionBody.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.SimpleLambdaExpressionSyntax_Update_0ed05747(__RoslynAotGetHandle(), modifiers.__RoslynAotGetHandle(), parameter.__RoslynAotGetHandle(), arrowToken.__RoslynAotGetHandle(), block is null ? 0L : block.__RoslynAotGetHandle(), expressionBody is null ? 0L : expressionBody.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -255,7 +255,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SimpleLambdaExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SimpleLambdaExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("15d6a87b-5467-5274-8363-f90248644868")]
+        [System.Runtime.InteropServices.Guid("3834bff2-10fe-5275-b13b-0f4d4a6c5f06")]
         internal partial interface __RoslynAotImplementation : SimpleLambdaExpressionSyntax
         {
         }

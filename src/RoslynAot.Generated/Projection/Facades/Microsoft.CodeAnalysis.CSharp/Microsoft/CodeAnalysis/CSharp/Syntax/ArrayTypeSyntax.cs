@@ -34,7 +34,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IArrayTypeSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ArrayTypeSyntax_Accept_10e22c5a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ArrayTypeSyntax_Accept_cd0957c5(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -77,7 +77,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ArrayTypeSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ArrayTypeSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("e959337f-5a77-5324-8e3f-13f9cf9d46fd")]
+        [System.Runtime.InteropServices.Guid("2ea76960-53a8-559f-bd3e-ea1120dba6c0")]
         internal partial interface __RoslynAotImplementation : ArrayTypeSyntax
         {
         }

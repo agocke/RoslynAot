@@ -262,22 +262,13 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        IPropertySymbol? ReduceExtensionMember(ITypeSymbol receiverType)
-        {
-            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-            global::RoslynAot.Abi.IIPropertySymbolVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IPropertySymbol_ReduceExtensionMember(__RoslynAotGetHandle(), receiverType.__RoslynAotGetHandle(), out long result);
-            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-            return result == 0 ? null : __RoslynAotCreateProxy(controlVtbl, result);
-        }
-
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
         public global::RoslynAot.Abi.IIPropertySymbolVtbl __RoslynAotGetVtbl() => global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetIPropertySymbolVtbl(__RoslynAotGetControlVtbl());
         public global::RoslynAot.Abi.IRoslynControlVtbl __RoslynAotGetControlVtbl() => __RoslynAotGetProxy().ControlVtbl;
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IPropertySymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IPropertySymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("9630497f-cbb7-5286-8708-1e3ab0d4e840")]
+        [System.Runtime.InteropServices.Guid("bf21a8a2-b399-5a14-9cdc-c6a4c70ee4ab")]
         internal partial interface __RoslynAotImplementation : IPropertySymbol
         {
         }

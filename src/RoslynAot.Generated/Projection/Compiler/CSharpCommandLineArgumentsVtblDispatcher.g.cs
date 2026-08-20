@@ -895,7 +895,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1897);
+        RoslynCallCounters.Record(1892);
         result = default;
 
         try
@@ -913,7 +913,7 @@ internal sealed partial class CSharpCommandLineArgumentsVtblDispatcher : ICSharp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1898);
+        RoslynCallCounters.Record(1893);
         result = default;
 
         try

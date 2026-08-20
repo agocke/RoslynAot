@@ -204,9 +204,6 @@ namespace Microsoft.CodeAnalysis.CSharp
         FileKeyword = 8449,
         AllowsKeyword = 8450,
         ExtensionKeyword = 8451,
-        UnionKeyword = 8452,
-        ClosedKeyword = 8453,
-        SafeKeyword = 8454,
         ElifKeyword = 8467,
         EndIfKeyword = 8468,
         RegionKeyword = 8469,
@@ -413,7 +410,6 @@ namespace Microsoft.CodeAnalysis.CSharp
         MakeRefExpression = 8765,
         RefValueExpression = 8766,
         RefTypeExpression = 8767,
-        UnsafeExpression = 8769,
         QueryExpression = 8774,
         QueryBody = 8775,
         FromClause = 8776,
@@ -583,8 +579,6 @@ namespace Microsoft.CodeAnalysis.CSharp
         ExpressionElement = 9077,
         SpreadElement = 9078,
         ExtensionBlockDeclaration = 9079,
-        IgnoredDirectiveTrivia = 9080,
-        WithElement = 9081,
-        UnionDeclaration = 9082
+        IgnoredDirectiveTrivia = 9080
     }
 }

@@ -27,7 +27,7 @@ internal sealed partial class IErrorTypeSymbolVtblDispatcher : IIErrorTypeSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(626);
+        RoslynCallCounters.Record(625);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IErrorTypeSymbolVtblDispatcher : IIErrorTypeSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(627);
+        RoslynCallCounters.Record(626);
         result = default;
 
         try

@@ -50,7 +50,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAssignmentExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AssignmentExpressionSyntax_Accept_5b0163e8(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.AssignmentExpressionSyntax_Accept_bc72d47a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -101,7 +101,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static AssignmentExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AssignmentExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("b3b15d19-431e-5fbf-a9fe-0a4e629ce89d")]
+        [System.Runtime.InteropServices.Guid("c9d8ea70-81af-5e68-b6c3-268716adfde2")]
         internal partial interface __RoslynAotImplementation : AssignmentExpressionSyntax
         {
         }

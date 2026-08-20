@@ -27,7 +27,7 @@ internal sealed partial class IReDimOperationVtblDispatcher : IIReDimOperationVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1177);
+        RoslynCallCounters.Record(1172);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IReDimOperationVtblDispatcher : IIReDimOperationVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1178);
+        RoslynCallCounters.Record(1173);
         result = default;
 
         try

@@ -27,7 +27,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(553);
+        RoslynCallCounters.Record(552);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(554);
+        RoslynCallCounters.Record(553);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(555);
+        RoslynCallCounters.Record(554);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(556);
+        RoslynCallCounters.Record(555);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(557);
+        RoslynCallCounters.Record(556);
         result = default;
 
         try
@@ -117,7 +117,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(558);
+        RoslynCallCounters.Record(557);
         result = default;
 
         try
@@ -135,7 +135,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(559);
+        RoslynCallCounters.Record(558);
         result = default;
 
         try
@@ -153,7 +153,7 @@ internal sealed partial class ControlFlowRegionVtblDispatcher : IControlFlowRegi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(560);
+        RoslynCallCounters.Record(559);
         result = default;
 
         try

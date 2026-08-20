@@ -23,7 +23,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int Compilation_AddReferences_d8b5bb13(
+    public int Compilation_AddReferences_1dc6f2bd(
         long receiver,
         long references,
         out long result)
@@ -42,7 +42,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_AddSyntaxTrees_a5e5d20b(
+    public int Compilation_AddSyntaxTrees_e998fef3(
         long receiver,
         long trees,
         out long result)
@@ -118,7 +118,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_CreateArrayTypeSymbol_802ac640(
+    public int Compilation_CreateArrayTypeSymbol_9c42fb46(
         long receiver,
         long elementType,
         int rank,
@@ -138,7 +138,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_CreateArrayTypeSymbol_ddad4542(
+    public int Compilation_CreateArrayTypeSymbol_0a70aa8d(
         long receiver,
         long elementType,
         int rank,
@@ -159,7 +159,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_CreateBuiltinOperator_ac54cb29(
+    public int Compilation_CreateBuiltinOperator_3a58e2c3(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         long returnType,
@@ -180,7 +180,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_CreateBuiltinOperator_7136aa71(
+    public int Compilation_CreateBuiltinOperator_9b476975(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         long returnType,
@@ -357,7 +357,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_GetSemanticModel_a8a9169c(
+    public int Compilation_GetSemanticModel_09967ca5(
         long receiver,
         long syntaxTree,
         int ignoreAccessibility,
@@ -530,7 +530,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_RemoveReferences_23d005fe(
+    public int Compilation_RemoveReferences_6bf9685c(
         long receiver,
         long references,
         out long result)
@@ -549,7 +549,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_RemoveSyntaxTrees_2da6617e(
+    public int Compilation_RemoveSyntaxTrees_7ffe04ec(
         long receiver,
         long trees,
         out long result)
@@ -665,7 +665,7 @@ internal sealed partial class CompilationVtblDispatcher : ICompilationVtbl
         }
     }
 
-    public int Compilation_WithReferences_cac2bd12(
+    public int Compilation_WithReferences_ea2bb507(
         long receiver,
         long newReferences,
         out long result)

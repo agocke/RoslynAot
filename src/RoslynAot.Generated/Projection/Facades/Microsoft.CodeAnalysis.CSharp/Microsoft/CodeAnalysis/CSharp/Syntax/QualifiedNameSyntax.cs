@@ -50,7 +50,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IQualifiedNameSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.QualifiedNameSyntax_Accept_e154af2f(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.QualifiedNameSyntax_Accept_13562d18(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -101,7 +101,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static QualifiedNameSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (QualifiedNameSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("20a0c34c-7a8e-501d-a02f-0093ef9d61d8")]
+        [System.Runtime.InteropServices.Guid("00978048-553d-5fec-9ee7-fe903c5ecd71")]
         internal partial interface __RoslynAotImplementation : QualifiedNameSyntax
         {
         }

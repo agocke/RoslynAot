@@ -44,7 +44,7 @@ namespace Microsoft.CodeAnalysis.Emit
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static EmitDifferenceResult __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (EmitDifferenceResult)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f4b2dcc2-7da4-5fc7-8676-0c09e282379f")]
+        [System.Runtime.InteropServices.Guid("8fbad4cb-f842-5901-ac29-7fa7395ca16c")]
         internal partial interface __RoslynAotImplementation : EmitDifferenceResult
         {
         }

@@ -27,7 +27,7 @@ internal sealed partial class XmlFileResolverVtblDispatcher : IXmlFileResolverVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1888);
+        RoslynCallCounters.Record(1883);
         result = default;
 
         try
@@ -49,7 +49,7 @@ internal sealed partial class XmlFileResolverVtblDispatcher : IXmlFileResolverVt
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1889);
+        RoslynCallCounters.Record(1884);
         requiredLength = default;
 
         try
@@ -73,7 +73,7 @@ internal sealed partial class XmlFileResolverVtblDispatcher : IXmlFileResolverVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1884);
+        RoslynCallCounters.Record(1879);
         result = default;
 
         try
@@ -95,7 +95,7 @@ internal sealed partial class XmlFileResolverVtblDispatcher : IXmlFileResolverVt
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1885);
+        RoslynCallCounters.Record(1880);
         requiredLength = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class XmlFileResolverVtblDispatcher : IXmlFileResolverVt
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1886);
+        RoslynCallCounters.Record(1881);
         requiredLength = default;
 
         try

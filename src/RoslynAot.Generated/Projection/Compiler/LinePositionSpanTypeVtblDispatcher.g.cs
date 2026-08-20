@@ -28,7 +28,7 @@ internal sealed partial class LinePositionSpanTypeVtblDispatcher : ILinePosition
         long end,
         out long result)
     {
-        RoslynCallCounters.Record(1798);
+        RoslynCallCounters.Record(1793);
         result = default;
 
         try

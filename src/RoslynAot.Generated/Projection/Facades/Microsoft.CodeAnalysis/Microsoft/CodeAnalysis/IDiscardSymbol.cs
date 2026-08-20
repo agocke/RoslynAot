@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IDiscardSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IDiscardSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("caedf7aa-0214-5506-98a3-b05b9fb67187")]
+        [System.Runtime.InteropServices.Guid("c809afc4-66f9-5a2d-a89e-017c0e3ab4d8")]
         internal partial interface __RoslynAotImplementation : IDiscardSymbol
         {
         }

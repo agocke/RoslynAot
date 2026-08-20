@@ -36,11 +36,8 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, "ParentModel")]
         public abstract bool IsSpeculativeSemanticModel { get; }
         public abstract string Language { get; }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL001", UrlFormat = "https://github.com/dotnet/roslyn/issues/70609")]
         public abstract bool NullableAnalysisIsDisabled { get; }
         public abstract int OriginalPositionForSpeculation { get; }
 

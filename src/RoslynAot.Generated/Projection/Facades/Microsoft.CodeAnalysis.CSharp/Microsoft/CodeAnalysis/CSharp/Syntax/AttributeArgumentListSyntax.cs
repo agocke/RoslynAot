@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAttributeArgumentListSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AttributeArgumentListSyntax_Accept_b03cef07(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.AttributeArgumentListSyntax_Accept_7447459f(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -98,7 +98,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static AttributeArgumentListSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AttributeArgumentListSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("1a0842d4-ee35-590b-b403-de2c970cacfe")]
+        [System.Runtime.InteropServices.Guid("a7f782bb-16d3-5f09-bed6-42427f36229a")]
         internal partial interface __RoslynAotImplementation : AttributeArgumentListSyntax
         {
         }

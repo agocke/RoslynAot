@@ -12,19 +12,19 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c1b60234-120f-5bac-93f1-18cd20d52bf1")]
+[Guid("3cf78838-7551-532a-aacc-b61c76699407")]
 public partial interface ICSharpExtensionsVtbl_00cd3a63
 {
 
     [PreserveSig]
-    int CSharpExtensions_AnalyzeControlFlow_6f2a4c2f(
+    int CSharpExtensions_AnalyzeControlFlow_3f786fa1(
         long semanticModel,
         long statement,
         out long result
     );
 
     [PreserveSig]
-    int CSharpExtensions_AnalyzeControlFlow_89be6329(
+    int CSharpExtensions_AnalyzeControlFlow_3fc70600(
         long semanticModel,
         long firstStatement,
         long lastStatement,
@@ -32,35 +32,35 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_AnalyzeDataFlow_a88feb29(
+    int CSharpExtensions_AnalyzeDataFlow_1c8218bd(
         long semanticModel,
         long constructorInitializer,
         out long result
     );
 
     [PreserveSig]
-    int CSharpExtensions_AnalyzeDataFlow_1d0577fa(
+    int CSharpExtensions_AnalyzeDataFlow_17b1d9e1(
         long semanticModel,
         long expression,
         out long result
     );
 
     [PreserveSig]
-    int CSharpExtensions_AnalyzeDataFlow_b48425e4(
+    int CSharpExtensions_AnalyzeDataFlow_c83ac0e1(
         long semanticModel,
         long primaryConstructorBaseType,
         out long result
     );
 
     [PreserveSig]
-    int CSharpExtensions_AnalyzeDataFlow_8d425945(
+    int CSharpExtensions_AnalyzeDataFlow_af86d59a(
         long semanticModel,
         long statement,
         out long result
     );
 
     [PreserveSig]
-    int CSharpExtensions_AnalyzeDataFlow_098b1a6e(
+    int CSharpExtensions_AnalyzeDataFlow_7ad717f3(
         long semanticModel,
         long firstStatement,
         long lastStatement,
@@ -68,7 +68,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_ClassifyConversion_fca6ff01(
+    int CSharpExtensions_ClassifyConversion_39fe5e07(
         long compilation,
         long source,
         long destination,
@@ -76,7 +76,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_ClassifyConversion_a6e6c47d(
+    int CSharpExtensions_ClassifyConversion_78bbf9b5(
         long semanticModel,
         long expression,
         long destination,
@@ -85,7 +85,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_ClassifyConversion_499d0cde(
+    int CSharpExtensions_ClassifyConversion_53716cb5(
         long semanticModel,
         int position,
         long expression,
@@ -95,41 +95,27 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetAwaitExpressionInfo_92b4f83b(
+    int CSharpExtensions_GetAwaitExpressionInfo(
         long semanticModel,
         long awaitExpression,
         out long result
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetAwaitExpressionInfo_22748588(
-        long semanticModel,
-        long awaitUsingDeclaration,
-        out long result
-    );
-
-    [PreserveSig]
-    int CSharpExtensions_GetAwaitExpressionInfo_94d3ebf9(
-        long semanticModel,
-        long awaitUsingStatement,
-        out long result
-    );
-
-    [PreserveSig]
-    int CSharpExtensions_GetConversion_f5b5a25f(
+    int CSharpExtensions_GetConversion_063d5077(
         long conversionExpression,
         out long result
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetDeconstructionInfo_5fc2d6fb(
+    int CSharpExtensions_GetDeconstructionInfo_618e46a8(
         long semanticModel,
         long assignment,
         out long result
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetDeconstructionInfo_e9dc1cb8(
+    int CSharpExtensions_GetDeconstructionInfo_147c95ba(
         long semanticModel,
         long @foreach,
         out long result
@@ -142,14 +128,14 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetForEachStatementInfo_f36c627c(
+    int CSharpExtensions_GetForEachStatementInfo_7f6f7415(
         long semanticModel,
         long forEachStatement,
         out long result
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetForEachStatementInfo_760c72cc(
+    int CSharpExtensions_GetForEachStatementInfo_b3f20dc6(
         long semanticModel,
         long forEachStatement,
         out long result
@@ -194,7 +180,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_2c643751(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_1c55ad47(
         long semanticModel,
         int position,
         long attribute,
@@ -202,7 +188,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_94a2bcee(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_792e83ff(
         long semanticModel,
         int position,
         long constructorInitializer,
@@ -210,7 +196,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_0f8f0756(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_e9255f68(
         long semanticModel,
         int position,
         long expression,
@@ -219,7 +205,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_b8de0754(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_974b8fe0(
         long semanticModel,
         int position,
         long expression,
@@ -228,7 +214,7 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_GetSpeculativeSymbolInfo_ebe2f354(
+    int CSharpExtensions_GetSpeculativeSymbolInfo_f8d5c993(
         long semanticModel,
         int position,
         long constructorInitializer,
@@ -275,31 +261,31 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
-    int CSharpExtensions_Kind_296e8872(
+    int CSharpExtensions_Kind_f60e3894(
         long node,
         out ushort result
     );
 
     [PreserveSig]
-    int CSharpExtensions_Kind_b72d31c4(
+    int CSharpExtensions_Kind_cf91ca00(
         long nodeOrToken,
         out ushort result
     );
 
     [PreserveSig]
-    int CSharpExtensions_Kind_650f6473(
+    int CSharpExtensions_Kind_d12aed8c(
         long token,
         out ushort result
     );
 
     [PreserveSig]
-    int CSharpExtensions_Kind_0587f7d2(
+    int CSharpExtensions_Kind_6726cf86(
         long trivia,
         out ushort result
     );
 
     [PreserveSig]
-    int CSharpExtensions_ReplaceTrivia_68992dd3(
+    int CSharpExtensions_ReplaceTrivia_c678cd9b(
         long token,
         long oldTrivia,
         long newTrivia,

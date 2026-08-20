@@ -23,12 +23,12 @@ internal sealed partial class GeneratorPostInitializationContextVtblDispatcher :
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int GeneratorPostInitializationContext_AddSource_5d629e1f(
+    public int GeneratorPostInitializationContext_AddSource_1868e172(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         long sourceText)
     {
-        RoslynCallCounters.Record(596);
+        RoslynCallCounters.Record(595);
 
         try
         {
@@ -41,12 +41,12 @@ internal sealed partial class GeneratorPostInitializationContextVtblDispatcher :
         }
     }
 
-    public int GeneratorPostInitializationContext_AddSource_b5276201(
+    public int GeneratorPostInitializationContext_AddSource_07f0e961(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)
     {
-        RoslynCallCounters.Record(597);
+        RoslynCallCounters.Record(596);
 
         try
         {

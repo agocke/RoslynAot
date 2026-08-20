@@ -23,12 +23,12 @@ internal sealed partial class LocalizableStringVtblDispatcher : ILocalizableStri
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int LocalizableString_Equals_5694416a(
+    public int LocalizableString_Equals_a0bd6a22(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(912);
+        RoslynCallCounters.Record(907);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class LocalizableStringVtblDispatcher : ILocalizableStri
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(913);
+        RoslynCallCounters.Record(908);
         result = default;
 
         try
@@ -60,13 +60,13 @@ internal sealed partial class LocalizableStringVtblDispatcher : ILocalizableStri
         }
     }
 
-    public unsafe int LocalizableString_ToString_a1eaba99(
+    public unsafe int LocalizableString_ToString_fc76bb38(
         long receiver,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(914);
+        RoslynCallCounters.Record(909);
         requiredLength = default;
 
         try

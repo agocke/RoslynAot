@@ -30,15 +30,6 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/83266")]
-        public IdentifierNameSyntax? Name
-        {
-            get
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-            }
-        }
-
         public SyntaxToken SemicolonToken
         {
             get
@@ -55,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IBreakStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.BreakStatementSyntax_Accept_dac7b59d(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.BreakStatementSyntax_Accept_0b31a4ae(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -73,12 +64,6 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/83266")]
-        public BreakStatementSyntax Update(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken breakKeyword, IdentifierNameSyntax? name, SyntaxToken semicolonToken)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
         public BreakStatementSyntax Update(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken breakKeyword, SyntaxToken semicolonToken)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
@@ -88,7 +73,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IBreakStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.BreakStatementSyntax_Update_88cc298f(__RoslynAotGetHandle(), breakKeyword.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.BreakStatementSyntax_Update_b356d913(__RoslynAotGetHandle(), breakKeyword.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -107,12 +92,6 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/83266")]
-        public BreakStatementSyntax WithName(IdentifierNameSyntax? name)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
         public BreakStatementSyntax WithSemicolonToken(SyntaxToken semicolonToken)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
@@ -128,7 +107,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static BreakStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (BreakStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("a33c0b20-b39f-56d2-a9fc-5d17a3a6f4d5")]
+        [System.Runtime.InteropServices.Guid("3b5ff7e6-0032-5859-9bfd-ac9530ed9fee")]
         internal partial interface __RoslynAotImplementation : BreakStatementSyntax
         {
         }

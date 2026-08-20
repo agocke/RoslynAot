@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3a4252ce-4627-50b5-8bc6-21fe6264c9b3")]
+[Guid("a99f40e4-bb59-50be-925c-6fcc122722ae")]
 public partial interface IBranchingDirectiveTriviaSyntaxVtbl : IDirectiveTriviaSyntaxVtbl
 {
 

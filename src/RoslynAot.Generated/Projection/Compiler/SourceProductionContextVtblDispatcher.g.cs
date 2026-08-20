@@ -23,12 +23,12 @@ internal sealed partial class SourceProductionContextVtblDispatcher : ISourcePro
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SourceProductionContext_AddSource_3c2311fa(
+    public int SourceProductionContext_AddSource_0b734881(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         long sourceText)
     {
-        RoslynCallCounters.Record(1447);
+        RoslynCallCounters.Record(1442);
 
         try
         {
@@ -41,12 +41,12 @@ internal sealed partial class SourceProductionContextVtblDispatcher : ISourcePro
         }
     }
 
-    public int SourceProductionContext_AddSource_94ef099b(
+    public int SourceProductionContext_AddSource_7a1c7b6c(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)
     {
-        RoslynCallCounters.Record(1448);
+        RoslynCallCounters.Record(1443);
 
         try
         {
@@ -63,7 +63,7 @@ internal sealed partial class SourceProductionContextVtblDispatcher : ISourcePro
         long receiver,
         long diagnostic)
     {
-        RoslynCallCounters.Record(1449);
+        RoslynCallCounters.Record(1444);
 
         try
         {

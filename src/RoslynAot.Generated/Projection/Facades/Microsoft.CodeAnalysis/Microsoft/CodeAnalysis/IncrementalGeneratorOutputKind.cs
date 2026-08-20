@@ -15,7 +15,6 @@ namespace Microsoft.CodeAnalysis
         Source = 1,
         PostInit = 2,
         Implementation = 4,
-        Host = 8,
-        PreCompilation = 16
+        Host = 8
     }
 }

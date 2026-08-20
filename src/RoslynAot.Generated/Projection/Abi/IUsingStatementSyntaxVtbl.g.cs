@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7712ef30-d1ae-5bc2-bd77-a685e13d17da")]
+[Guid("32696c83-028d-5dcb-a8f7-b040440d8921")]
 public partial interface IUsingStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int UsingStatementSyntax_Accept_4f4000e5(
+    int UsingStatementSyntax_Accept_3ce9c2b8(
         long receiver,
         long visitor
     );
@@ -30,7 +30,7 @@ public partial interface IUsingStatementSyntaxVtbl : IStatementSyntaxVtbl
     );
 
     [PreserveSig]
-    int UsingStatementSyntax_Update_b30a5fba(
+    int UsingStatementSyntax_Update_63c7a915(
         long receiver,
         long usingKeyword,
         long openParenToken,
@@ -42,7 +42,7 @@ public partial interface IUsingStatementSyntaxVtbl : IStatementSyntaxVtbl
     );
 
     [PreserveSig]
-    int UsingStatementSyntax_Update_f788969f(
+    int UsingStatementSyntax_Update_af3f6e58(
         long receiver,
         long awaitKeyword,
         long usingKeyword,

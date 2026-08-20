@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    [System.Runtime.CompilerServices.CollectionBuilder(typeof(SyntaxNodeOrTokenList), "Create")]
     public readonly partial struct SyntaxNodeOrTokenList : System.IEquatable<SyntaxNodeOrTokenList>, System.Collections.Generic.IReadOnlyCollection<SyntaxNodeOrToken>, System.Collections.Generic.IEnumerable<SyntaxNodeOrToken>, System.Collections.IEnumerable
     {
         private readonly object _dummy;
@@ -103,7 +102,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxNodeOrTokenListVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxNodeOrTokenList_Equals_70f8e904(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.SyntaxNodeOrTokenList_Equals_c417d796(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

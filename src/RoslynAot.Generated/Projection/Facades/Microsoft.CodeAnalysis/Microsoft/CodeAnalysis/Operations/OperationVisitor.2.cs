@@ -116,12 +116,6 @@ namespace Microsoft.CodeAnalysis.Operations
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82210")]
-        public virtual TResult? VisitCollectionExpressionElementsPlaceholder(ICollectionExpressionElementsPlaceholderOperation operation, TArgument argument)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
         public virtual TResult? VisitCompoundAssignment(ICompoundAssignmentOperation operation, TArgument argument)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");

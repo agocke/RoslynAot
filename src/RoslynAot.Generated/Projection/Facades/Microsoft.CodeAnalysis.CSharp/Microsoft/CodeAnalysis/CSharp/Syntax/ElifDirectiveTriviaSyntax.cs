@@ -98,7 +98,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IElifDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ElifDirectiveTriviaSyntax_Accept_4f04ad07(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ElifDirectiveTriviaSyntax_Accept_6803d1b4(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -185,7 +185,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ElifDirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ElifDirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("37b00b2c-56fa-55ad-9d92-df6fe39cb1a8")]
+        [System.Runtime.InteropServices.Guid("a9872d9b-38ad-521a-a80d-d620a43f9175")]
         internal partial interface __RoslynAotImplementation : ElifDirectiveTriviaSyntax
         {
         }

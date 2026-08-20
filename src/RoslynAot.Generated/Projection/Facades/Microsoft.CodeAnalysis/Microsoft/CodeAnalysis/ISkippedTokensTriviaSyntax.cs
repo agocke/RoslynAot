@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ISkippedTokensTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ISkippedTokensTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("91f29ade-2c61-5b81-8976-837fb9ddef25")]
+        [System.Runtime.InteropServices.Guid("6d27e7e9-9c40-5cb4-b390-9fedc131483d")]
         internal partial interface __RoslynAotImplementation : ISkippedTokensTriviaSyntax
         {
         }

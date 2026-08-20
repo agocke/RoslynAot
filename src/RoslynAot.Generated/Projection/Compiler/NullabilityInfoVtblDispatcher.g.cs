@@ -23,12 +23,12 @@ internal sealed partial class NullabilityInfoVtblDispatcher : INullabilityInfoVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int NullabilityInfo_Equals_9cc98f3d(
+    public int NullabilityInfo_Equals_74e8bf1f(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(958);
+        RoslynCallCounters.Record(953);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class NullabilityInfoVtblDispatcher : INullabilityInfoVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(959);
+        RoslynCallCounters.Record(954);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class NullabilityInfoVtblDispatcher : INullabilityInfoVt
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(960);
+        RoslynCallCounters.Record(955);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class NullabilityInfoVtblDispatcher : INullabilityInfoVt
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(961);
+        RoslynCallCounters.Record(956);
         result = default;
 
         try

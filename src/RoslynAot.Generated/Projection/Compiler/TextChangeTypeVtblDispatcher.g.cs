@@ -28,7 +28,7 @@ internal sealed partial class TextChangeTypeVtblDispatcher : ITextChangeTypeVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string newText,
         out long result)
     {
-        RoslynCallCounters.Record(1818);
+        RoslynCallCounters.Record(1813);
         result = default;
 
         try

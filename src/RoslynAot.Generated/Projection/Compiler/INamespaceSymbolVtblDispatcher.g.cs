@@ -23,11 +23,11 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int INamespaceSymbol_GetMembers_b2cc9712(
+    public int INamespaceSymbol_GetMembers_ccae1490(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(758);
+        RoslynCallCounters.Record(756);
         result = default;
 
         try
@@ -41,12 +41,12 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         }
     }
 
-    public int INamespaceSymbol_GetMembers_943d81e8(
+    public int INamespaceSymbol_GetMembers_dd408db8(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(759);
+        RoslynCallCounters.Record(757);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(760);
+        RoslynCallCounters.Record(758);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(761);
+        RoslynCallCounters.Record(759);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(762);
+        RoslynCallCounters.Record(760);
         result = default;
 
         try
@@ -118,7 +118,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(763);
+        RoslynCallCounters.Record(761);
         result = default;
 
         try
@@ -136,7 +136,7 @@ internal sealed partial class INamespaceSymbolVtblDispatcher : IINamespaceSymbol
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(764);
+        RoslynCallCounters.Record(762);
         result = default;
 
         try

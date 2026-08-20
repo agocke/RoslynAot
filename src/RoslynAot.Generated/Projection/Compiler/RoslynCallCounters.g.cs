@@ -19,7 +19,7 @@ namespace RoslynAot.Csc;
 /// </summary>
 internal static class RoslynCallCounters
 {
-    public const int MemberCount = 5852;
+    public const int MemberCount = 5843;
 
     private static readonly long[] s_counts = new long[MemberCount];
 
@@ -501,7 +501,6 @@ internal static class RoslynCallCounters
         "Microsoft.CodeAnalysis.Emit.EmitBaseline.get_OriginalMetadata",
         "Microsoft.CodeAnalysis.Emit.EmitDifferenceOptions..ctor",
         "Microsoft.CodeAnalysis.Emit.EmitDifferenceOptions.get_EmitFieldRva",
-        "Microsoft.CodeAnalysis.Emit.EmitDifferenceOptions.get_MethodImplEntriesSupported",
         "Microsoft.CodeAnalysis.Emit.EmitDifferenceResult.get_Baseline",
         "Microsoft.CodeAnalysis.Emit.EmitOptions..ctor",
         "Microsoft.CodeAnalysis.Emit.EmitOptions.Equals",
@@ -703,7 +702,6 @@ internal static class RoslynCallCounters
         "Microsoft.CodeAnalysis.IMethodSymbol.GetDllImportData",
         "Microsoft.CodeAnalysis.IMethodSymbol.GetReturnTypeAttributes",
         "Microsoft.CodeAnalysis.IMethodSymbol.GetTypeInferredDuringReduction",
-        "Microsoft.CodeAnalysis.IMethodSymbol.ReduceExtensionMember",
         "Microsoft.CodeAnalysis.IMethodSymbol.ReduceExtensionMethod",
         "Microsoft.CodeAnalysis.IMethodSymbol.get_Arity",
         "Microsoft.CodeAnalysis.IMethodSymbol.get_AssociatedAnonymousDelegate",
@@ -828,7 +826,6 @@ internal static class RoslynCallCounters
         "Microsoft.CodeAnalysis.IParameterSymbol.get_Type",
         "Microsoft.CodeAnalysis.IPointerTypeSymbol.get_CustomModifiers",
         "Microsoft.CodeAnalysis.IPointerTypeSymbol.get_PointedAtType",
-        "Microsoft.CodeAnalysis.IPropertySymbol.ReduceExtensionMember",
         "Microsoft.CodeAnalysis.IPropertySymbol.get_ExplicitInterfaceImplementations",
         "Microsoft.CodeAnalysis.IPropertySymbol.get_GetMethod",
         "Microsoft.CodeAnalysis.IPropertySymbol.get_IsIndexer",
@@ -906,10 +903,8 @@ internal static class RoslynCallCounters
         "Microsoft.CodeAnalysis.ITypeSymbol.WithNullableAnnotation",
         "Microsoft.CodeAnalysis.ITypeSymbol.get_AllInterfaces",
         "Microsoft.CodeAnalysis.ITypeSymbol.get_BaseType",
-        "Microsoft.CodeAnalysis.ITypeSymbol.get_ExtensionParameter",
         "Microsoft.CodeAnalysis.ITypeSymbol.get_Interfaces",
         "Microsoft.CodeAnalysis.ITypeSymbol.get_IsAnonymousType",
-        "Microsoft.CodeAnalysis.ITypeSymbol.get_IsExtension",
         "Microsoft.CodeAnalysis.ITypeSymbol.get_IsNativeIntegerType",
         "Microsoft.CodeAnalysis.ITypeSymbol.get_IsReadOnly",
         "Microsoft.CodeAnalysis.ITypeSymbol.get_IsRecord",
@@ -1993,8 +1988,6 @@ internal static class RoslynCallCounters
         "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.ClassifyConversion",
         "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.ClassifyConversion",
         "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetAwaitExpressionInfo",
-        "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetAwaitExpressionInfo",
-        "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetAwaitExpressionInfo",
         "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetConversion",
         "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetDeconstructionInfo",
         "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetDeconstructionInfo",
@@ -2611,13 +2604,11 @@ internal static class RoslynCallCounters
         "Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.GetHashCode",
         "Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.get_CurrentConversion",
         "Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.get_CurrentProperty",
-        "Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.get_DisposeAwaitableInfo",
         "Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.get_DisposeMethod",
         "Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.get_ElementConversion",
         "Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.get_ElementType",
         "Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.get_GetEnumeratorMethod",
         "Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.get_IsAsynchronous",
-        "Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.get_MoveNextAwaitableInfo",
         "Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.get_MoveNextMethod",
         "Microsoft.CodeAnalysis.CSharp.InterceptableLocation.Equals",
         "Microsoft.CodeAnalysis.CSharp.InterceptableLocation.GetDisplayLocation",
@@ -5883,25 +5874,25 @@ internal static class RoslynCallCounters
     /// Ordinals for the control vtbl, which is hand-written and
     /// so records against these rather than an emitted literal.
     /// </summary>
-    public const int ControlGetManifestIdentity = 5833;
-    public const int ControlGetVtbl = 5834;
-    public const int ControlCopyLastErrorUtf16 = 5835;
-    public const int ControlCreateSourceTextUtf16 = 5836;
-    public const int ControlIsObjectType = 5837;
-    public const int ControlCreateObjectCollection = 5838;
-    public const int ControlGetCollectionCount = 5839;
-    public const int ControlGetObjectCollectionItem = 5840;
-    public const int ControlCopyStringCollectionItemUtf16 = 5841;
-    public const int ControlStringCollectionContains = 5842;
-    public const int ControlSnapshotStringCollection = 5843;
-    public const int ControlGetWellKnownObject = 5844;
-    public const int ControlSymbolEqualityComparerEquals = 5845;
-    public const int ControlSymbolEqualityComparerGetHashCode = 5846;
-    public const int ControlCopyObjectToStringUtf16 = 5847;
-    public const int ControlGetObjectRuntimeVtblId = 5848;
-    public const int ControlCopyConstantStringUtf16 = 5849;
-    public const int ControlObjectEquals = 5850;
-    public const int ControlObjectGetHashCode = 5851;
+    public const int ControlGetManifestIdentity = 5824;
+    public const int ControlGetVtbl = 5825;
+    public const int ControlCopyLastErrorUtf16 = 5826;
+    public const int ControlCreateSourceTextUtf16 = 5827;
+    public const int ControlIsObjectType = 5828;
+    public const int ControlCreateObjectCollection = 5829;
+    public const int ControlGetCollectionCount = 5830;
+    public const int ControlGetObjectCollectionItem = 5831;
+    public const int ControlCopyStringCollectionItemUtf16 = 5832;
+    public const int ControlStringCollectionContains = 5833;
+    public const int ControlSnapshotStringCollection = 5834;
+    public const int ControlGetWellKnownObject = 5835;
+    public const int ControlSymbolEqualityComparerEquals = 5836;
+    public const int ControlSymbolEqualityComparerGetHashCode = 5837;
+    public const int ControlCopyObjectToStringUtf16 = 5838;
+    public const int ControlGetObjectRuntimeVtblId = 5839;
+    public const int ControlCopyConstantStringUtf16 = 5840;
+    public const int ControlObjectEquals = 5841;
+    public const int ControlObjectGetHashCode = 5842;
 
     public static void Record(int ordinal) =>
         Interlocked.Increment(ref s_counts[ordinal]);

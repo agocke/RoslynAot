@@ -97,7 +97,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static DirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (DirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("97311aad-a3da-5b7b-a7ea-fcc06f00ee93")]
+        [System.Runtime.InteropServices.Guid("8e78cdc5-a6cb-5f59-8bd6-4c61e51c42f5")]
         internal partial interface __RoslynAotImplementation : DirectiveTriviaSyntax
         {
         }

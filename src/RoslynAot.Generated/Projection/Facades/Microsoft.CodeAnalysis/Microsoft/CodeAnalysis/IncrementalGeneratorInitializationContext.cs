@@ -64,13 +64,11 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL004", UrlFormat = "https://github.com/dotnet/roslyn/issues/74753")]
         public readonly void RegisterHostOutput<TSource>(IncrementalValueProvider<TSource> source, System.Action<HostOutputProductionContext, TSource> action)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL004", UrlFormat = "https://github.com/dotnet/roslyn/issues/74753")]
         public readonly void RegisterHostOutput<TSource>(IncrementalValuesProvider<TSource> source, System.Action<HostOutputProductionContext, TSource> action)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
@@ -87,18 +85,6 @@ namespace Microsoft.CodeAnalysis
         }
 
         public readonly void RegisterPostInitializationOutput(System.Action<IncrementalGeneratorPostInitializationContext> callback)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL007", UrlFormat = "https://github.com/dotnet/roslyn/issues/83089")]
-        public readonly void RegisterPreCompilationSourceOutput<TSource>(IncrementalValueProvider<TSource> source, System.Action<PreCompilationSourceProductionContext, TSource> action)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL007", UrlFormat = "https://github.com/dotnet/roslyn/issues/83089")]
-        public readonly void RegisterPreCompilationSourceOutput<TSource>(IncrementalValuesProvider<TSource> source, System.Action<PreCompilationSourceProductionContext, TSource> action)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }

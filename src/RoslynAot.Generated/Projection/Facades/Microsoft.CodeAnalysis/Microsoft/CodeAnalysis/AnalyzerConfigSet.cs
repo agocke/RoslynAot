@@ -49,7 +49,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static AnalyzerConfigSet __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AnalyzerConfigSet)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("806a0d3b-0bb2-5d2e-8d5d-949a80ff7040")]
+        [System.Runtime.InteropServices.Guid("44a71901-88ae-56fb-a168-525839b08e15")]
         internal partial interface __RoslynAotImplementation : AnalyzerConfigSet
         {
         }

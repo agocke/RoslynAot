@@ -48,7 +48,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static GeneratorDriverRunResult __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (GeneratorDriverRunResult)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("4f1d7ad2-c562-53c3-9980-3f922e12b11b")]
+        [System.Runtime.InteropServices.Guid("ef76abdc-2d8c-5001-a9e4-27a7491af077")]
         internal partial interface __RoslynAotImplementation : GeneratorDriverRunResult
         {
         }

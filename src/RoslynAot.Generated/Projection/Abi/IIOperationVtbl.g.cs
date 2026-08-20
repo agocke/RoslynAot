@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ed8bb721-8852-5d01-8b8a-b5b214b8a687")]
+[Guid("0c46e227-67a5-523d-84f1-ec1f13ede116")]
 public partial interface IIOperationVtbl
 {
 
     [PreserveSig]
-    int IOperation_Accept_72e7eb92(
+    int IOperation_Accept_f2a81e8b(
         long receiver,
         long visitor
     );

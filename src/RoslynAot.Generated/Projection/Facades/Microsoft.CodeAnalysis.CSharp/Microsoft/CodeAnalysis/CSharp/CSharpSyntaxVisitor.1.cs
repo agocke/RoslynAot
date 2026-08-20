@@ -1130,18 +1130,6 @@ namespace Microsoft.CodeAnalysis.CSharp
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82567")]
-        public virtual TResult? VisitUnionDeclaration(Syntax.UnionDeclarationSyntax node)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82789")]
-        public virtual TResult? VisitUnsafeExpression(Syntax.UnsafeExpressionSyntax node)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
         public virtual TResult? VisitUnsafeStatement(Syntax.UnsafeStatementSyntax node)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
@@ -1188,12 +1176,6 @@ namespace Microsoft.CodeAnalysis.CSharp
         }
 
         public virtual TResult? VisitWhileStatement(Syntax.WhileStatementSyntax node)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82210")]
-        public virtual TResult? VisitWithElement(Syntax.WithElementSyntax node)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }

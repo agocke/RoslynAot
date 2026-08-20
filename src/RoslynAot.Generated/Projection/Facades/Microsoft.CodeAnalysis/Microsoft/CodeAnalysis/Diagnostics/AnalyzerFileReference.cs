@@ -84,7 +84,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAnalyzerFileReferenceVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AnalyzerFileReference_Equals_4d319b66(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.AnalyzerFileReference_Equals_0e0c6a6b(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -93,7 +93,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAnalyzerFileReferenceVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AnalyzerFileReference_Equals_a165dbf5(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.AnalyzerFileReference_Equals_f0b6fa87(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -136,7 +136,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAnalyzerFileReferenceVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AnalyzerFileReference_GetGenerators_87697947(__RoslynAotGetHandle(), language, out long result);
+            int status = vtbl.AnalyzerFileReference_GetGenerators_37c35b4f(__RoslynAotGetHandle(), language, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISourceGenerator>(controlVtbl, result, static (controlVtbl, handle) => ISourceGenerator.__RoslynAotCreateProxy(controlVtbl, handle)));
         }

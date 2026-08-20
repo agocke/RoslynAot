@@ -122,7 +122,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILineSpanDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LineSpanDirectiveTriviaSyntax_Accept_af35f377(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.LineSpanDirectiveTriviaSyntax_Accept_7583791f(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -227,7 +227,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static LineSpanDirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (LineSpanDirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("b2a2c79f-ec13-5b90-8a2c-fb009b4c3b64")]
+        [System.Runtime.InteropServices.Guid("d92563fa-209d-5903-9a63-25ec785bfccf")]
         internal partial interface __RoslynAotImplementation : LineSpanDirectiveTriviaSyntax
         {
         }

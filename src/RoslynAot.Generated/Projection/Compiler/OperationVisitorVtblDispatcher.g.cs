@@ -23,11 +23,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int OperationVisitor_DefaultVisit_e29857e1(
+    public int OperationVisitor_DefaultVisit_e5aa6792(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1264);
+        RoslynCallCounters.Record(1259);
 
         try
         {
@@ -40,11 +40,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitAddressOf_164428ba(
+    public int OperationVisitor_VisitAddressOf_875ed2df(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1265);
+        RoslynCallCounters.Record(1260);
 
         try
         {
@@ -57,11 +57,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitAnonymousFunction_f77e4908(
+    public int OperationVisitor_VisitAnonymousFunction_98264707(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1266);
+        RoslynCallCounters.Record(1261);
 
         try
         {
@@ -74,11 +74,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitAnonymousObjectCreation_d60508d5(
+    public int OperationVisitor_VisitAnonymousObjectCreation_14a42f56(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1267);
+        RoslynCallCounters.Record(1262);
 
         try
         {
@@ -91,11 +91,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitArgument_f31a4fc1(
+    public int OperationVisitor_VisitArgument_228b702e(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1268);
+        RoslynCallCounters.Record(1263);
 
         try
         {
@@ -108,11 +108,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitArrayCreation_6e015dda(
+    public int OperationVisitor_VisitArrayCreation_1d3d82cf(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1269);
+        RoslynCallCounters.Record(1264);
 
         try
         {
@@ -125,11 +125,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitArrayElementReference_92a91978(
+    public int OperationVisitor_VisitArrayElementReference_6682e8fe(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1270);
+        RoslynCallCounters.Record(1265);
 
         try
         {
@@ -142,11 +142,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitArrayInitializer_f31720d1(
+    public int OperationVisitor_VisitArrayInitializer_df7156ba(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1271);
+        RoslynCallCounters.Record(1266);
 
         try
         {
@@ -159,11 +159,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitAttribute_bfbe60f3(
+    public int OperationVisitor_VisitAttribute_fc83932a(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1272);
+        RoslynCallCounters.Record(1267);
 
         try
         {
@@ -176,11 +176,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitAwait_6129a319(
+    public int OperationVisitor_VisitAwait_d435612a(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1273);
+        RoslynCallCounters.Record(1268);
 
         try
         {
@@ -193,11 +193,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitBinaryOperator_f8e6584e(
+    public int OperationVisitor_VisitBinaryOperator_80885144(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1274);
+        RoslynCallCounters.Record(1269);
 
         try
         {
@@ -210,11 +210,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitBinaryPattern_e1fa3e6b(
+    public int OperationVisitor_VisitBinaryPattern_c0ad9102(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1275);
+        RoslynCallCounters.Record(1270);
 
         try
         {
@@ -227,11 +227,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitBlock_28caac6a(
+    public int OperationVisitor_VisitBlock_4eb5e378(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1276);
+        RoslynCallCounters.Record(1271);
 
         try
         {
@@ -244,11 +244,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitBranch_53800272(
+    public int OperationVisitor_VisitBranch_5b1975f1(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1277);
+        RoslynCallCounters.Record(1272);
 
         try
         {
@@ -261,11 +261,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitCatchClause_98f8a20b(
+    public int OperationVisitor_VisitCatchClause_f11d3650(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1278);
+        RoslynCallCounters.Record(1273);
 
         try
         {
@@ -278,11 +278,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitCaughtException_2ca1ea6b(
+    public int OperationVisitor_VisitCaughtException_52daaac9(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1279);
+        RoslynCallCounters.Record(1274);
 
         try
         {
@@ -295,11 +295,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitCoalesceAssignment_b99e4782(
+    public int OperationVisitor_VisitCoalesceAssignment_ad5013ee(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1280);
+        RoslynCallCounters.Record(1275);
 
         try
         {
@@ -312,11 +312,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitCoalesce_e773e6b3(
+    public int OperationVisitor_VisitCoalesce_541371ca(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1281);
+        RoslynCallCounters.Record(1276);
 
         try
         {
@@ -329,11 +329,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitCollectionExpression_9d39ec63(
+    public int OperationVisitor_VisitCollectionExpression_f0b098db(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1282);
+        RoslynCallCounters.Record(1277);
 
         try
         {
@@ -346,11 +346,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitCompoundAssignment_c68fe9cd(
+    public int OperationVisitor_VisitCompoundAssignment_c6875007(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1283);
+        RoslynCallCounters.Record(1278);
 
         try
         {
@@ -363,11 +363,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitConditionalAccessInstance_3c159643(
+    public int OperationVisitor_VisitConditionalAccessInstance_d63b0feb(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1284);
+        RoslynCallCounters.Record(1279);
 
         try
         {
@@ -380,11 +380,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitConditionalAccess_c2c11d2b(
+    public int OperationVisitor_VisitConditionalAccess_d5f855dd(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1285);
+        RoslynCallCounters.Record(1280);
 
         try
         {
@@ -397,11 +397,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitConditional_92e252b6(
+    public int OperationVisitor_VisitConditional_58ec52d7(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1286);
+        RoslynCallCounters.Record(1281);
 
         try
         {
@@ -414,11 +414,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitConstantPattern_efed05e8(
+    public int OperationVisitor_VisitConstantPattern_7c2a47b6(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1287);
+        RoslynCallCounters.Record(1282);
 
         try
         {
@@ -431,11 +431,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitConstructorBodyOperation_6613dd25(
+    public int OperationVisitor_VisitConstructorBodyOperation_dbd37f84(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1288);
+        RoslynCallCounters.Record(1283);
 
         try
         {
@@ -448,11 +448,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitConversion_83a7e324(
+    public int OperationVisitor_VisitConversion_e8398312(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1289);
+        RoslynCallCounters.Record(1284);
 
         try
         {
@@ -465,11 +465,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDeclarationExpression_72f780cb(
+    public int OperationVisitor_VisitDeclarationExpression_b83b4e7d(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1290);
+        RoslynCallCounters.Record(1285);
 
         try
         {
@@ -482,11 +482,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDeclarationPattern_b19cc9ee(
+    public int OperationVisitor_VisitDeclarationPattern_decb0a58(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1291);
+        RoslynCallCounters.Record(1286);
 
         try
         {
@@ -499,11 +499,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDeconstructionAssignment_5799f6d1(
+    public int OperationVisitor_VisitDeconstructionAssignment_857df0f9(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1292);
+        RoslynCallCounters.Record(1287);
 
         try
         {
@@ -516,11 +516,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDefaultCaseClause_0cfb7f53(
+    public int OperationVisitor_VisitDefaultCaseClause_2d63ffba(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1293);
+        RoslynCallCounters.Record(1288);
 
         try
         {
@@ -533,11 +533,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDefaultValue_3df4c823(
+    public int OperationVisitor_VisitDefaultValue_bd42fd2f(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1294);
+        RoslynCallCounters.Record(1289);
 
         try
         {
@@ -550,11 +550,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDelegateCreation_42fc83e9(
+    public int OperationVisitor_VisitDelegateCreation_2f2e1153(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1295);
+        RoslynCallCounters.Record(1290);
 
         try
         {
@@ -567,11 +567,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDiscardOperation_ecb44614(
+    public int OperationVisitor_VisitDiscardOperation_56c04dfe(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1296);
+        RoslynCallCounters.Record(1291);
 
         try
         {
@@ -584,11 +584,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDiscardPattern_fb042769(
+    public int OperationVisitor_VisitDiscardPattern_bd994611(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1297);
+        RoslynCallCounters.Record(1292);
 
         try
         {
@@ -601,11 +601,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDynamicIndexerAccess_c6293f85(
+    public int OperationVisitor_VisitDynamicIndexerAccess_e2938911(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1298);
+        RoslynCallCounters.Record(1293);
 
         try
         {
@@ -618,11 +618,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDynamicInvocation_92554fa5(
+    public int OperationVisitor_VisitDynamicInvocation_a61efe4e(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1299);
+        RoslynCallCounters.Record(1294);
 
         try
         {
@@ -635,11 +635,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDynamicMemberReference_61c97eff(
+    public int OperationVisitor_VisitDynamicMemberReference_52f649ca(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1300);
+        RoslynCallCounters.Record(1295);
 
         try
         {
@@ -652,11 +652,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitDynamicObjectCreation_b9f347c3(
+    public int OperationVisitor_VisitDynamicObjectCreation_14d309ad(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1301);
+        RoslynCallCounters.Record(1296);
 
         try
         {
@@ -669,11 +669,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitEmpty_179a7ec7(
+    public int OperationVisitor_VisitEmpty_0987b2c6(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1302);
+        RoslynCallCounters.Record(1297);
 
         try
         {
@@ -686,11 +686,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitEnd_7816047d(
+    public int OperationVisitor_VisitEnd_40a470f2(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1303);
+        RoslynCallCounters.Record(1298);
 
         try
         {
@@ -703,11 +703,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitEventAssignment_92185086(
+    public int OperationVisitor_VisitEventAssignment_92ee5c35(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1304);
+        RoslynCallCounters.Record(1299);
 
         try
         {
@@ -720,11 +720,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitEventReference_671f6948(
+    public int OperationVisitor_VisitEventReference_601d65ba(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1305);
+        RoslynCallCounters.Record(1300);
 
         try
         {
@@ -737,11 +737,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitExpressionStatement_2d16f50e(
+    public int OperationVisitor_VisitExpressionStatement_61f80df9(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1306);
+        RoslynCallCounters.Record(1301);
 
         try
         {
@@ -754,11 +754,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitFieldInitializer_27969861(
+    public int OperationVisitor_VisitFieldInitializer_eaf9f266(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1307);
+        RoslynCallCounters.Record(1302);
 
         try
         {
@@ -771,11 +771,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitFieldReference_f45b6394(
+    public int OperationVisitor_VisitFieldReference_3964ea0f(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1308);
+        RoslynCallCounters.Record(1303);
 
         try
         {
@@ -788,11 +788,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitFlowAnonymousFunction_a1642ad1(
+    public int OperationVisitor_VisitFlowAnonymousFunction_76f1b128(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1309);
+        RoslynCallCounters.Record(1304);
 
         try
         {
@@ -805,11 +805,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitFlowCaptureReference_f7082d54(
+    public int OperationVisitor_VisitFlowCaptureReference_b6f35f1b(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1310);
+        RoslynCallCounters.Record(1305);
 
         try
         {
@@ -822,11 +822,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitFlowCapture_7b46dfb6(
+    public int OperationVisitor_VisitFlowCapture_82fa398e(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1311);
+        RoslynCallCounters.Record(1306);
 
         try
         {
@@ -839,11 +839,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitForEachLoop_556dab3b(
+    public int OperationVisitor_VisitForEachLoop_d93b5c1f(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1312);
+        RoslynCallCounters.Record(1307);
 
         try
         {
@@ -856,11 +856,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitForLoop_c5977019(
+    public int OperationVisitor_VisitForLoop_6f88219b(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1313);
+        RoslynCallCounters.Record(1308);
 
         try
         {
@@ -873,11 +873,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitForToLoop_52341cad(
+    public int OperationVisitor_VisitForToLoop_63e9278a(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1314);
+        RoslynCallCounters.Record(1309);
 
         try
         {
@@ -890,11 +890,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitFunctionPointerInvocation_a55ae459(
+    public int OperationVisitor_VisitFunctionPointerInvocation_63a2c99c(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1315);
+        RoslynCallCounters.Record(1310);
 
         try
         {
@@ -907,11 +907,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitImplicitIndexerReference_b35b5ad2(
+    public int OperationVisitor_VisitImplicitIndexerReference_b92720dc(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1316);
+        RoslynCallCounters.Record(1311);
 
         try
         {
@@ -924,11 +924,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitIncrementOrDecrement_7a5fda31(
+    public int OperationVisitor_VisitIncrementOrDecrement_1c325b4a(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1317);
+        RoslynCallCounters.Record(1312);
 
         try
         {
@@ -941,11 +941,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitInlineArrayAccess_486a7422(
+    public int OperationVisitor_VisitInlineArrayAccess_0e878da6(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1318);
+        RoslynCallCounters.Record(1313);
 
         try
         {
@@ -958,11 +958,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitInstanceReference_f0c993f2(
+    public int OperationVisitor_VisitInstanceReference_4f61d8c8(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1319);
+        RoslynCallCounters.Record(1314);
 
         try
         {
@@ -975,11 +975,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedStringAddition_c88a8911(
+    public int OperationVisitor_VisitInterpolatedStringAddition_f7734631(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1320);
+        RoslynCallCounters.Record(1315);
 
         try
         {
@@ -992,11 +992,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedStringAppend_28f7f764(
+    public int OperationVisitor_VisitInterpolatedStringAppend_03c17a2c(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1321);
+        RoslynCallCounters.Record(1316);
 
         try
         {
@@ -1009,11 +1009,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedStringHandlerArgumentPlaceholder_235e9507(
+    public int OperationVisitor_VisitInterpolatedStringHandlerArgumentPlaceholder_64a81133(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1322);
+        RoslynCallCounters.Record(1317);
 
         try
         {
@@ -1026,11 +1026,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedStringHandlerCreation_90d42729(
+    public int OperationVisitor_VisitInterpolatedStringHandlerCreation_fa5f42b3(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1323);
+        RoslynCallCounters.Record(1318);
 
         try
         {
@@ -1043,11 +1043,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedStringText_d9bd7906(
+    public int OperationVisitor_VisitInterpolatedStringText_c4d0f8fb(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1324);
+        RoslynCallCounters.Record(1319);
 
         try
         {
@@ -1060,11 +1060,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitInterpolatedString_6b08297e(
+    public int OperationVisitor_VisitInterpolatedString_79e15704(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1325);
+        RoslynCallCounters.Record(1320);
 
         try
         {
@@ -1077,11 +1077,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitInterpolation_52e167f5(
+    public int OperationVisitor_VisitInterpolation_b44004cc(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1326);
+        RoslynCallCounters.Record(1321);
 
         try
         {
@@ -1094,11 +1094,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitInvalid_b1fc80ca(
+    public int OperationVisitor_VisitInvalid_2b166282(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1327);
+        RoslynCallCounters.Record(1322);
 
         try
         {
@@ -1111,11 +1111,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitInvocation_05578a4c(
+    public int OperationVisitor_VisitInvocation_5a0a40b7(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1328);
+        RoslynCallCounters.Record(1323);
 
         try
         {
@@ -1128,11 +1128,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitIsNull_c97ab8c2(
+    public int OperationVisitor_VisitIsNull_fab091c4(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1329);
+        RoslynCallCounters.Record(1324);
 
         try
         {
@@ -1145,11 +1145,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitIsPattern_03a5d754(
+    public int OperationVisitor_VisitIsPattern_294aa62f(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1330);
+        RoslynCallCounters.Record(1325);
 
         try
         {
@@ -1162,11 +1162,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitIsType_edc7f8be(
+    public int OperationVisitor_VisitIsType_1b78ff78(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1331);
+        RoslynCallCounters.Record(1326);
 
         try
         {
@@ -1179,11 +1179,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitLabeled_e027d40c(
+    public int OperationVisitor_VisitLabeled_381791bf(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1332);
+        RoslynCallCounters.Record(1327);
 
         try
         {
@@ -1196,11 +1196,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitListPattern_7b1e25e7(
+    public int OperationVisitor_VisitListPattern_5bc67d3b(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1333);
+        RoslynCallCounters.Record(1328);
 
         try
         {
@@ -1213,11 +1213,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitLiteral_382a09b7(
+    public int OperationVisitor_VisitLiteral_ecd477c8(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1334);
+        RoslynCallCounters.Record(1329);
 
         try
         {
@@ -1230,11 +1230,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitLocalFunction_efb7d219(
+    public int OperationVisitor_VisitLocalFunction_13213181(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1335);
+        RoslynCallCounters.Record(1330);
 
         try
         {
@@ -1247,11 +1247,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitLocalReference_d035121e(
+    public int OperationVisitor_VisitLocalReference_f092efc7(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1336);
+        RoslynCallCounters.Record(1331);
 
         try
         {
@@ -1264,11 +1264,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitLock_912c71b0(
+    public int OperationVisitor_VisitLock_8d4e008c(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1337);
+        RoslynCallCounters.Record(1332);
 
         try
         {
@@ -1281,11 +1281,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitMemberInitializer_e25bde91(
+    public int OperationVisitor_VisitMemberInitializer_627db16f(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1338);
+        RoslynCallCounters.Record(1333);
 
         try
         {
@@ -1298,11 +1298,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitMethodBodyOperation_399b4434(
+    public int OperationVisitor_VisitMethodBodyOperation_1301faaa(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1339);
+        RoslynCallCounters.Record(1334);
 
         try
         {
@@ -1315,11 +1315,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitMethodReference_dbe55764(
+    public int OperationVisitor_VisitMethodReference_42c355a5(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1340);
+        RoslynCallCounters.Record(1335);
 
         try
         {
@@ -1332,11 +1332,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitNameOf_6eabea12(
+    public int OperationVisitor_VisitNameOf_55663e3c(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1341);
+        RoslynCallCounters.Record(1336);
 
         try
         {
@@ -1349,11 +1349,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitNegatedPattern_c4c8182f(
+    public int OperationVisitor_VisitNegatedPattern_f8ba2b4a(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1342);
+        RoslynCallCounters.Record(1337);
 
         try
         {
@@ -1366,11 +1366,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitObjectCreation_55e28efc(
+    public int OperationVisitor_VisitObjectCreation_827642d3(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1343);
+        RoslynCallCounters.Record(1338);
 
         try
         {
@@ -1383,11 +1383,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitObjectOrCollectionInitializer_43f4e32d(
+    public int OperationVisitor_VisitObjectOrCollectionInitializer_8d30b2a1(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1344);
+        RoslynCallCounters.Record(1339);
 
         try
         {
@@ -1400,11 +1400,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitOmittedArgument_e8aeb880(
+    public int OperationVisitor_VisitOmittedArgument_e1409885(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1345);
+        RoslynCallCounters.Record(1340);
 
         try
         {
@@ -1417,11 +1417,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitParameterInitializer_50e189a2(
+    public int OperationVisitor_VisitParameterInitializer_c3c265ac(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1346);
+        RoslynCallCounters.Record(1341);
 
         try
         {
@@ -1434,11 +1434,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitParameterReference_030c6bc7(
+    public int OperationVisitor_VisitParameterReference_b9fd1b2e(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1347);
+        RoslynCallCounters.Record(1342);
 
         try
         {
@@ -1451,11 +1451,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitParenthesized_db15577c(
+    public int OperationVisitor_VisitParenthesized_0170b7a4(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1348);
+        RoslynCallCounters.Record(1343);
 
         try
         {
@@ -1468,11 +1468,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitPatternCaseClause_4dbae5be(
+    public int OperationVisitor_VisitPatternCaseClause_165681f3(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1349);
+        RoslynCallCounters.Record(1344);
 
         try
         {
@@ -1485,11 +1485,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitPropertyInitializer_db5b2e05(
+    public int OperationVisitor_VisitPropertyInitializer_28866242(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1350);
+        RoslynCallCounters.Record(1345);
 
         try
         {
@@ -1502,11 +1502,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitPropertyReference_69778c25(
+    public int OperationVisitor_VisitPropertyReference_c79d317b(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1351);
+        RoslynCallCounters.Record(1346);
 
         try
         {
@@ -1519,11 +1519,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitPropertySubpattern_3d19dc66(
+    public int OperationVisitor_VisitPropertySubpattern_4795cd1c(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1352);
+        RoslynCallCounters.Record(1347);
 
         try
         {
@@ -1536,11 +1536,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitRaiseEvent_6c1c10d6(
+    public int OperationVisitor_VisitRaiseEvent_44907787(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1353);
+        RoslynCallCounters.Record(1348);
 
         try
         {
@@ -1553,11 +1553,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitRangeCaseClause_c0fbe074(
+    public int OperationVisitor_VisitRangeCaseClause_7c29e92f(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1354);
+        RoslynCallCounters.Record(1349);
 
         try
         {
@@ -1570,11 +1570,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitRangeOperation_5a6b56ad(
+    public int OperationVisitor_VisitRangeOperation_93b5a940(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1355);
+        RoslynCallCounters.Record(1350);
 
         try
         {
@@ -1587,11 +1587,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitReDimClause_aec444c4(
+    public int OperationVisitor_VisitReDimClause_eab8edc0(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1356);
+        RoslynCallCounters.Record(1351);
 
         try
         {
@@ -1604,11 +1604,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitReDim_6cdc3a0a(
+    public int OperationVisitor_VisitReDim_f573db78(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1357);
+        RoslynCallCounters.Record(1352);
 
         try
         {
@@ -1621,11 +1621,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitRecursivePattern_b4947d8e(
+    public int OperationVisitor_VisitRecursivePattern_9cc5b4df(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1358);
+        RoslynCallCounters.Record(1353);
 
         try
         {
@@ -1638,11 +1638,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitRelationalCaseClause_058b9852(
+    public int OperationVisitor_VisitRelationalCaseClause_af25ac2c(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1359);
+        RoslynCallCounters.Record(1354);
 
         try
         {
@@ -1655,11 +1655,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitRelationalPattern_ba15b412(
+    public int OperationVisitor_VisitRelationalPattern_3bd0f582(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1360);
+        RoslynCallCounters.Record(1355);
 
         try
         {
@@ -1672,11 +1672,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitReturn_15065235(
+    public int OperationVisitor_VisitReturn_5864164a(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1361);
+        RoslynCallCounters.Record(1356);
 
         try
         {
@@ -1689,11 +1689,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitSimpleAssignment_af9040e6(
+    public int OperationVisitor_VisitSimpleAssignment_be118873(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1362);
+        RoslynCallCounters.Record(1357);
 
         try
         {
@@ -1706,11 +1706,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitSingleValueCaseClause_8a17517e(
+    public int OperationVisitor_VisitSingleValueCaseClause_cb07c5ba(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1363);
+        RoslynCallCounters.Record(1358);
 
         try
         {
@@ -1723,11 +1723,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitSizeOf_971b0211(
+    public int OperationVisitor_VisitSizeOf_baddf9d3(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1364);
+        RoslynCallCounters.Record(1359);
 
         try
         {
@@ -1740,11 +1740,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitSlicePattern_c59f6c7c(
+    public int OperationVisitor_VisitSlicePattern_b02af8b2(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1365);
+        RoslynCallCounters.Record(1360);
 
         try
         {
@@ -1757,11 +1757,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitSpread_f2dcd648(
+    public int OperationVisitor_VisitSpread_b8d280cb(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1366);
+        RoslynCallCounters.Record(1361);
 
         try
         {
@@ -1774,11 +1774,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitStaticLocalInitializationSemaphore_d4013b4f(
+    public int OperationVisitor_VisitStaticLocalInitializationSemaphore_fd1c6cc3(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1367);
+        RoslynCallCounters.Record(1362);
 
         try
         {
@@ -1791,11 +1791,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitStop_c9cf57c1(
+    public int OperationVisitor_VisitStop_5c4181cf(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1368);
+        RoslynCallCounters.Record(1363);
 
         try
         {
@@ -1808,11 +1808,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitSwitchCase_aceee7ab(
+    public int OperationVisitor_VisitSwitchCase_6d8badd0(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1369);
+        RoslynCallCounters.Record(1364);
 
         try
         {
@@ -1825,11 +1825,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitSwitchExpressionArm_d34aa767(
+    public int OperationVisitor_VisitSwitchExpressionArm_042e47e6(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1370);
+        RoslynCallCounters.Record(1365);
 
         try
         {
@@ -1842,11 +1842,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitSwitchExpression_5878cc0d(
+    public int OperationVisitor_VisitSwitchExpression_eeeca943(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1371);
+        RoslynCallCounters.Record(1366);
 
         try
         {
@@ -1859,11 +1859,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitSwitch_3003e920(
+    public int OperationVisitor_VisitSwitch_2a803594(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1372);
+        RoslynCallCounters.Record(1367);
 
         try
         {
@@ -1876,11 +1876,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitThrow_786beab1(
+    public int OperationVisitor_VisitThrow_99856311(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1373);
+        RoslynCallCounters.Record(1368);
 
         try
         {
@@ -1893,11 +1893,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitTranslatedQuery_7b137e9f(
+    public int OperationVisitor_VisitTranslatedQuery_250008a2(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1374);
+        RoslynCallCounters.Record(1369);
 
         try
         {
@@ -1910,11 +1910,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitTry_9f01acaf(
+    public int OperationVisitor_VisitTry_165b2dae(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1375);
+        RoslynCallCounters.Record(1370);
 
         try
         {
@@ -1927,11 +1927,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitTupleBinaryOperator_130560cf(
+    public int OperationVisitor_VisitTupleBinaryOperator_107b05a5(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1376);
+        RoslynCallCounters.Record(1371);
 
         try
         {
@@ -1944,11 +1944,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitTuple_34d83ef3(
+    public int OperationVisitor_VisitTuple_bef5e487(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1377);
+        RoslynCallCounters.Record(1372);
 
         try
         {
@@ -1961,11 +1961,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitTypeOf_90bf0d2c(
+    public int OperationVisitor_VisitTypeOf_d97910ce(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1378);
+        RoslynCallCounters.Record(1373);
 
         try
         {
@@ -1978,11 +1978,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitTypeParameterObjectCreation_892dd5b2(
+    public int OperationVisitor_VisitTypeParameterObjectCreation_0b26f17b(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1379);
+        RoslynCallCounters.Record(1374);
 
         try
         {
@@ -1995,11 +1995,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitTypePattern_d6b56e81(
+    public int OperationVisitor_VisitTypePattern_24166948(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1380);
+        RoslynCallCounters.Record(1375);
 
         try
         {
@@ -2012,11 +2012,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitUnaryOperator_e2fd23ef(
+    public int OperationVisitor_VisitUnaryOperator_ad22191c(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1381);
+        RoslynCallCounters.Record(1376);
 
         try
         {
@@ -2029,11 +2029,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitUsingDeclaration_a69631c1(
+    public int OperationVisitor_VisitUsingDeclaration_2014c9c6(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1382);
+        RoslynCallCounters.Record(1377);
 
         try
         {
@@ -2046,11 +2046,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitUsing_85f70ce1(
+    public int OperationVisitor_VisitUsing_cabb8817(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1383);
+        RoslynCallCounters.Record(1378);
 
         try
         {
@@ -2063,11 +2063,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitUtf8String_9adda4bf(
+    public int OperationVisitor_VisitUtf8String_80bc001b(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1384);
+        RoslynCallCounters.Record(1379);
 
         try
         {
@@ -2080,11 +2080,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitVariableDeclarationGroup_d378db6e(
+    public int OperationVisitor_VisitVariableDeclarationGroup_6e44afe0(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1385);
+        RoslynCallCounters.Record(1380);
 
         try
         {
@@ -2097,11 +2097,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitVariableDeclaration_0040f96e(
+    public int OperationVisitor_VisitVariableDeclaration_5a174916(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1386);
+        RoslynCallCounters.Record(1381);
 
         try
         {
@@ -2114,11 +2114,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitVariableDeclarator_74a8d945(
+    public int OperationVisitor_VisitVariableDeclarator_2ed993a5(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1387);
+        RoslynCallCounters.Record(1382);
 
         try
         {
@@ -2131,11 +2131,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitVariableInitializer_fd85660a(
+    public int OperationVisitor_VisitVariableInitializer_50a0f2fb(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1388);
+        RoslynCallCounters.Record(1383);
 
         try
         {
@@ -2148,11 +2148,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitWhileLoop_171a0752(
+    public int OperationVisitor_VisitWhileLoop_ef07f707(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1389);
+        RoslynCallCounters.Record(1384);
 
         try
         {
@@ -2165,11 +2165,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_VisitWith_5ff37e4a(
+    public int OperationVisitor_VisitWith_ce65adf2(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1390);
+        RoslynCallCounters.Record(1385);
 
         try
         {
@@ -2182,11 +2182,11 @@ internal sealed partial class OperationVisitorVtblDispatcher : IOperationVisitor
         }
     }
 
-    public int OperationVisitor_Visit_b07d2116(
+    public int OperationVisitor_Visit_0b9b7ffd(
         long receiver,
         long operation)
     {
-        RoslynCallCounters.Record(1391);
+        RoslynCallCounters.Record(1386);
 
         try
         {

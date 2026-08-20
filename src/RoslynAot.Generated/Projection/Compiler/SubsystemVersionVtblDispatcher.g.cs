@@ -23,12 +23,12 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SubsystemVersion_Equals_c2f4d260(
+    public int SubsystemVersion_Equals_269a434d(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1456);
+        RoslynCallCounters.Record(1451);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1457);
+        RoslynCallCounters.Record(1452);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1458);
+        RoslynCallCounters.Record(1453);
         requiredLength = default;
 
         try
@@ -90,7 +90,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1459);
+        RoslynCallCounters.Record(1454);
         result = default;
 
         try
@@ -108,7 +108,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1460);
+        RoslynCallCounters.Record(1455);
         result = default;
 
         try
@@ -126,7 +126,7 @@ internal sealed partial class SubsystemVersionVtblDispatcher : ISubsystemVersion
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1461);
+        RoslynCallCounters.Record(1456);
         result = default;
 
         try

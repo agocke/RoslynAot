@@ -23,11 +23,11 @@ internal sealed partial class CSharpGeneratorDriverTypeVtblDispatcher : ICSharpG
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CSharpGeneratorDriver_Create_e323a1e2(
+    public int CSharpGeneratorDriver_Create_03af5102(
         long incrementalGenerators,
         out long result)
     {
-        RoslynCallCounters.Record(1998);
+        RoslynCallCounters.Record(1991);
         result = default;
 
         try
@@ -41,11 +41,11 @@ internal sealed partial class CSharpGeneratorDriverTypeVtblDispatcher : ICSharpG
         }
     }
 
-    public int CSharpGeneratorDriver_Create_2c97a384(
+    public int CSharpGeneratorDriver_Create_16f4ea7d(
         long generators,
         out long result)
     {
-        RoslynCallCounters.Record(1999);
+        RoslynCallCounters.Record(1992);
         result = default;
 
         try

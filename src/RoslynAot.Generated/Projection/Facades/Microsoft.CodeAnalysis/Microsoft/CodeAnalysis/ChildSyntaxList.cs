@@ -49,7 +49,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IChildSyntaxListVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ChildSyntaxList_Equals_827abeac(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.ChildSyntaxList_Equals_1b84856b(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -136,7 +136,6 @@ namespace Microsoft.CodeAnalysis
                 }
             }
 
-            [System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, "_node")]
             public bool MoveNext()
             {
                 throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
@@ -188,7 +187,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IChildSyntaxListReversedVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ChildSyntaxList_Reversed_Equals_a34ce046(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+                int status = vtbl.ChildSyntaxList_Reversed_Equals_26c111ae(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
@@ -238,7 +237,6 @@ namespace Microsoft.CodeAnalysis
                     }
                 }
 
-                [System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, "_node")]
                 public bool MoveNext()
                 {
                     throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");

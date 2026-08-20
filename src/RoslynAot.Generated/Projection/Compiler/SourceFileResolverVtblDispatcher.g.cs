@@ -27,7 +27,7 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1450);
+        RoslynCallCounters.Record(1445);
         result = default;
 
         try
@@ -49,7 +49,7 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1451);
+        RoslynCallCounters.Record(1446);
         requiredLength = default;
 
         try
@@ -74,7 +74,7 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string resolvedPath,
         out long result)
     {
-        RoslynCallCounters.Record(1452);
+        RoslynCallCounters.Record(1447);
         result = default;
 
         try
@@ -96,7 +96,7 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1453);
+        RoslynCallCounters.Record(1448);
         requiredLength = default;
 
         try
@@ -116,12 +116,12 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         }
     }
 
-    public int SourceFileResolver_Equals_2690b0f9(
+    public int SourceFileResolver_Equals_8337d0f5(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1441);
+        RoslynCallCounters.Record(1436);
         result = default;
 
         try
@@ -139,7 +139,7 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1442);
+        RoslynCallCounters.Record(1437);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1443);
+        RoslynCallCounters.Record(1438);
         requiredLength = default;
 
         try
@@ -189,7 +189,7 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1444);
+        RoslynCallCounters.Record(1439);
         requiredLength = default;
 
         try
@@ -215,7 +215,7 @@ internal sealed partial class SourceFileResolverVtblDispatcher : ISourceFileReso
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1445);
+        RoslynCallCounters.Record(1440);
         requiredLength = default;
 
         try

@@ -27,7 +27,7 @@ internal sealed partial class IPointerTypeSymbolVtblDispatcher : IIPointerTypeSy
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(801);
+        RoslynCallCounters.Record(799);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IPointerTypeSymbolVtblDispatcher : IIPointerTypeSy
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(802);
+        RoslynCallCounters.Record(800);
         result = default;
 
         try

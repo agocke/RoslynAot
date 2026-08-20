@@ -12,19 +12,19 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b86577bc-7a59-5f15-a7cc-3d47300fbf17")]
+[Guid("58cfbe9e-b6fa-5e12-abe0-f9fef0d6528a")]
 public partial interface IAnalyzerConfigTypeVtbl
 {
 
     [PreserveSig]
-    int AnalyzerConfig_Parse_e3f35f9a(
+    int AnalyzerConfig_Parse_7a0a51a9(
         long text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string pathToFile,
         out long result
     );
 
     [PreserveSig]
-    int AnalyzerConfig_Parse_ba446165(
+    int AnalyzerConfig_Parse_ec60e9db(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string pathToFile,
         out long result

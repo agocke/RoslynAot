@@ -27,7 +27,7 @@ internal sealed partial class IExpressionStatementOperationVtblDispatcher : IIEx
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1064);
+        RoslynCallCounters.Record(1059);
         result = default;
 
         try

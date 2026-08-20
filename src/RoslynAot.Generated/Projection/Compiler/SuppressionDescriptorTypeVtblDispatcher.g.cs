@@ -23,13 +23,13 @@ internal sealed partial class SuppressionDescriptorTypeVtblDispatcher : ISuppres
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SuppressionDescriptor_ctor_cd3f1d62(
+    public int SuppressionDescriptor_ctor_6fe4591e(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string id,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string suppressedDiagnosticId,
         long justification,
         out long result)
     {
-        RoslynCallCounters.Record(1468);
+        RoslynCallCounters.Record(1463);
         result = default;
 
         try
@@ -43,13 +43,13 @@ internal sealed partial class SuppressionDescriptorTypeVtblDispatcher : ISuppres
         }
     }
 
-    public int SuppressionDescriptor_ctor_d9a058e6(
+    public int SuppressionDescriptor_ctor_039197bc(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string id,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string suppressedDiagnosticId,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string justification,
         out long result)
     {
-        RoslynCallCounters.Record(1469);
+        RoslynCallCounters.Record(1464);
         result = default;
 
         try

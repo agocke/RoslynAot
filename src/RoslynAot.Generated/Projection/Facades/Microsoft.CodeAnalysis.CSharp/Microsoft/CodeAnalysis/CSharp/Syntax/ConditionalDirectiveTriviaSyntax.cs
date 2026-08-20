@@ -49,7 +49,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ConditionalDirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ConditionalDirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f0a3159b-db42-5547-a184-c78ead19e8ba")]
+        [System.Runtime.InteropServices.Guid("c8a52d6d-f833-52da-83a2-82207335d95a")]
         internal partial interface __RoslynAotImplementation : ConditionalDirectiveTriviaSyntax
         {
         }

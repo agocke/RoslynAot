@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIncompleteMemberSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IncompleteMemberSyntax_Accept_007326c6(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.IncompleteMemberSyntax_Accept_3e315c1a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -103,7 +103,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IncompleteMemberSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IncompleteMemberSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("58c03b97-c112-5651-bc4c-f177499b451b")]
+        [System.Runtime.InteropServices.Guid("402a566a-e28e-5bd2-a805-4ebf753ccdb4")]
         internal partial interface __RoslynAotImplementation : IncompleteMemberSyntax
         {
         }

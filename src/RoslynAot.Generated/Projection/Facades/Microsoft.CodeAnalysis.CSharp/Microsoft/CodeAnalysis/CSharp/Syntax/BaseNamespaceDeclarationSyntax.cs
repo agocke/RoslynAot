@@ -152,7 +152,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static BaseNamespaceDeclarationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (BaseNamespaceDeclarationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("44218f49-911e-5ab5-99cf-bbe6a7f0d576")]
+        [System.Runtime.InteropServices.Guid("69930f57-cfac-5a5c-b813-caf31339b234")]
         internal partial interface __RoslynAotImplementation : BaseNamespaceDeclarationSyntax
         {
         }

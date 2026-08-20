@@ -23,11 +23,11 @@ internal sealed partial class SyntaxTokenListTypeVtblDispatcher : ISyntaxTokenLi
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxTokenList_ctor_c350cef3(
+    public int SyntaxTokenList_ctor_1404dc02(
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(1699);
+        RoslynCallCounters.Record(1694);
         result = default;
 
         try
@@ -41,11 +41,11 @@ internal sealed partial class SyntaxTokenListTypeVtblDispatcher : ISyntaxTokenLi
         }
     }
 
-    public int SyntaxTokenList_Create_4c13b69a(
+    public int SyntaxTokenList_Create_8777969f(
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(1702);
+        RoslynCallCounters.Record(1697);
         result = default;
 
         try

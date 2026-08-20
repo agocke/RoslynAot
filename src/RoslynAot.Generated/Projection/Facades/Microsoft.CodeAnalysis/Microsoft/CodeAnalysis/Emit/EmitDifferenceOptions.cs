@@ -29,23 +29,6 @@ namespace Microsoft.CodeAnalysis.Emit
             }
         }
 
-        public bool MethodImplEntriesSupported
-        {
-            get
-            {
-                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-                global::RoslynAot.Abi.IEmitDifferenceOptionsVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.EmitDifferenceOptions_get_MethodImplEntriesSupported(__RoslynAotGetHandle(), out int result);
-                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-                return result != 0;
-            }
-
-            init
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-            }
-        }
-
         private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;
         private readonly global::RoslynAot.Abi.IEmitDifferenceOptionsVtbl? __roslynAotVtbl;
         private readonly long __roslynAotHandle;

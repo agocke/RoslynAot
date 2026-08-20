@@ -35,7 +35,6 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, "LinkedResourceFileName")]
         public bool IsLinked
         {
             get

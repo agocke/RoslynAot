@@ -29,7 +29,6 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, "SourceTree")]
         public bool IsInSource
         {
             get
@@ -105,7 +104,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ILocationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetLocationTypeVtbl(controlVtbl);
-            int status = vtbl.Location_Create_8a5c1903(filePath, textSpan.__RoslynAotGetHandle(), lineSpan.__RoslynAotGetHandle(), mappedFilePath, mappedLineSpan.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.Location_Create_f1cd4cc8(filePath, textSpan.__RoslynAotGetHandle(), lineSpan.__RoslynAotGetHandle(), mappedFilePath, mappedLineSpan.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -114,7 +113,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ILocationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetLocationTypeVtbl(controlVtbl);
-            int status = vtbl.Location_Create_a6e44ea2(filePath, textSpan.__RoslynAotGetHandle(), lineSpan.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.Location_Create_b413dfe8(filePath, textSpan.__RoslynAotGetHandle(), lineSpan.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }

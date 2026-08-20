@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICatchClauseSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CatchClauseSyntax_Accept_8518ca66(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.CatchClauseSyntax_Accept_b60752ec(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -140,7 +140,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static CatchClauseSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CatchClauseSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("dedbace7-0cdb-5109-8477-044ed466ea48")]
+        [System.Runtime.InteropServices.Guid("ec7f49b7-6ae7-5086-92ee-2b2e320b74ea")]
         internal partial interface __RoslynAotImplementation : CatchClauseSyntax
         {
         }

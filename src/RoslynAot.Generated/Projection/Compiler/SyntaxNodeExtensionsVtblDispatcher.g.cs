@@ -23,11 +23,11 @@ internal sealed partial class SyntaxNodeExtensionsVtblDispatcher : ISyntaxNodeEx
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxNodeExtensions_WithoutTrivia_faf6e132(
+    public int SyntaxNodeExtensions_WithoutTrivia_660d9cea(
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(1595);
+        RoslynCallCounters.Record(1590);
         result = default;
 
         try

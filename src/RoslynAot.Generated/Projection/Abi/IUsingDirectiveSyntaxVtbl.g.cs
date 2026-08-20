@@ -12,18 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("43ece9d0-1b08-557b-ab8c-a078608cc1f3")]
+[Guid("e9b6deb9-db8a-57ab-b323-fc33ed2ce399")]
 public partial interface IUsingDirectiveSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int UsingDirectiveSyntax_Accept_4c6f3612(
+    int UsingDirectiveSyntax_Accept_8a67f1ec(
         long receiver,
         long visitor
     );
 
     [PreserveSig]
-    int UsingDirectiveSyntax_Update_338f5fc5(
+    int UsingDirectiveSyntax_Update_6df18c40(
         long receiver,
         long usingKeyword,
         long staticKeyword,
@@ -34,7 +34,7 @@ public partial interface IUsingDirectiveSyntaxVtbl : ICSharpSyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int UsingDirectiveSyntax_Update_f7383a8d(
+    int UsingDirectiveSyntax_Update_b1ada964(
         long receiver,
         long globalKeyword,
         long usingKeyword,
@@ -46,7 +46,7 @@ public partial interface IUsingDirectiveSyntaxVtbl : ICSharpSyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int UsingDirectiveSyntax_Update_07b8742b(
+    int UsingDirectiveSyntax_Update_2448c023(
         long receiver,
         long globalKeyword,
         long usingKeyword,

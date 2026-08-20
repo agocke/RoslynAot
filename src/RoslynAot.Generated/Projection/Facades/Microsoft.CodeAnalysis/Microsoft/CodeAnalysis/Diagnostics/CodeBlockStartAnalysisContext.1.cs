@@ -82,12 +82,11 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         }
 
         public abstract void RegisterCodeBlockEndAction(System.Action<CodeBlockAnalysisContext> action);
-        [System.Runtime.CompilerServices.OverloadResolutionPriority(-1)]
         public void RegisterSyntaxNodeAction(System.Action<SyntaxNodeAnalysisContext> action, params TLanguageKindEnum[] syntaxKinds)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        public abstract void RegisterSyntaxNodeAction(System.Action<SyntaxNodeAnalysisContext> action, params System.Collections.Immutable.ImmutableArray<TLanguageKindEnum> syntaxKinds);
+        public abstract void RegisterSyntaxNodeAction(System.Action<SyntaxNodeAnalysisContext> action, System.Collections.Immutable.ImmutableArray<TLanguageKindEnum> syntaxKinds);
     }
 }

@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL004", UrlFormat = "https://github.com/dotnet/roslyn/issues/74753")]
     public readonly partial struct HostOutputProductionContext
     {
         private readonly object _dummy;

@@ -70,7 +70,6 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, "ConstantValue")]
         bool HasConstantValue
         {
             get
@@ -221,7 +220,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IFieldSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IFieldSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("e1b9920e-9fd8-5c8f-817e-b84e6cdd678d")]
+        [System.Runtime.InteropServices.Guid("a8e5edaa-a1c9-55e9-964e-1d5cf54b8b65")]
         internal partial interface __RoslynAotImplementation : IFieldSymbol
         {
         }

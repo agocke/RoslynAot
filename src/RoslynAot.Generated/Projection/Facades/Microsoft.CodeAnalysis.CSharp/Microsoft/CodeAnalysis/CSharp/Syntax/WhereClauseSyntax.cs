@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IWhereClauseSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.WhereClauseSyntax_Accept_ca12306f(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.WhereClauseSyntax_Accept_4f78f750(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static WhereClauseSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (WhereClauseSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("6eb668c7-4308-57bc-9944-dea12f4cb7b7")]
+        [System.Runtime.InteropServices.Guid("007913ef-d874-55b6-a311-af361d528ed6")]
         internal partial interface __RoslynAotImplementation : WhereClauseSyntax
         {
         }

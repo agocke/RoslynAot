@@ -12,18 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("13aba885-7ab7-5c19-87fd-9a69249f4fe3")]
+[Guid("6d752b9e-86b4-55a8-8ee5-1372a4c8d2f0")]
 public partial interface IAnalysisResultVtbl
 {
 
     [PreserveSig]
-    int AnalysisResult_GetAllDiagnostics_f3f018a2(
+    int AnalysisResult_GetAllDiagnostics_311fa3e7(
         long receiver,
         out long result
     );
 
     [PreserveSig]
-    int AnalysisResult_GetAllDiagnostics_b6692b45(
+    int AnalysisResult_GetAllDiagnostics_3b9f118b(
         long receiver,
         long analyzer,
         out long result

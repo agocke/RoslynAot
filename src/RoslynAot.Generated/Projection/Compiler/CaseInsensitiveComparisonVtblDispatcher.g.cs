@@ -23,7 +23,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CaseInsensitiveComparison_Compare_e1a3ffb4(
+    public int CaseInsensitiveComparison_Compare_06b0feb1(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string left,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
         out int result)
@@ -61,7 +61,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         }
     }
 
-    public int CaseInsensitiveComparison_Equals_a37f5eb5(
+    public int CaseInsensitiveComparison_Equals_de5169ec(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string left,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
         out int result)
@@ -117,7 +117,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         }
     }
 
-    public int CaseInsensitiveComparison_ToLower_8c71e35e(
+    public int CaseInsensitiveComparison_ToLower_4973b581(
         ushort c,
         out ushort result)
     {
@@ -135,7 +135,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         }
     }
 
-    public unsafe int CaseInsensitiveComparison_ToLower_1414d7b2(
+    public unsafe int CaseInsensitiveComparison_ToLower_80bfb4c8(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         nint buffer,
         int bufferLength,

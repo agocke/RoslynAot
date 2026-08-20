@@ -23,7 +23,7 @@ internal sealed partial class AnalysisResultVtblDispatcher : IAnalysisResultVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int AnalysisResult_GetAllDiagnostics_f3f018a2(
+    public int AnalysisResult_GetAllDiagnostics_311fa3e7(
         long receiver,
         out long result)
     {
@@ -41,7 +41,7 @@ internal sealed partial class AnalysisResultVtblDispatcher : IAnalysisResultVtbl
         }
     }
 
-    public int AnalysisResult_GetAllDiagnostics_b6692b45(
+    public int AnalysisResult_GetAllDiagnostics_3b9f118b(
         long receiver,
         long analyzer,
         out long result)

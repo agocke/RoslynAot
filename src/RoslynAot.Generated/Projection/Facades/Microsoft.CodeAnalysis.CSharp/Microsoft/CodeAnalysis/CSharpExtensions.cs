@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_Any_b082ecfa(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_Any_0d2cef88(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -23,7 +23,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_Any_aef0a5fc(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_Any_f2ee305f(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -53,7 +53,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IndexOf_ab8b5d8c(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IndexOf_4745058d(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IndexOf_06e4c7db(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IndexOf_1c2be11e(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -83,7 +83,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IsKind_8a92d4f3(node is null ? 0L : node.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IsKind_8b4a2bad(node is null ? 0L : node.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -92,7 +92,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IsKind_5be19b92(nodeOrToken.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IsKind_a8505fef(nodeOrToken.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -101,7 +101,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IsKind_129f15c5(token.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IsKind_6d54c817(token.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -110,7 +110,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IsKind_b3b67b11(trivia.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IsKind_94b93f60(trivia.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

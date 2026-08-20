@@ -27,7 +27,7 @@ internal sealed partial class SourceReferenceResolverVtblDispatcher : ISourceRef
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1450);
+        RoslynCallCounters.Record(1445);
         result = default;
 
         try
@@ -49,7 +49,7 @@ internal sealed partial class SourceReferenceResolverVtblDispatcher : ISourceRef
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1451);
+        RoslynCallCounters.Record(1446);
         requiredLength = default;
 
         try
@@ -74,7 +74,7 @@ internal sealed partial class SourceReferenceResolverVtblDispatcher : ISourceRef
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string resolvedPath,
         out long result)
     {
-        RoslynCallCounters.Record(1452);
+        RoslynCallCounters.Record(1447);
         result = default;
 
         try
@@ -96,7 +96,7 @@ internal sealed partial class SourceReferenceResolverVtblDispatcher : ISourceRef
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1453);
+        RoslynCallCounters.Record(1448);
         requiredLength = default;
 
         try

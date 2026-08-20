@@ -24,7 +24,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IGeneratorPostInitializationContextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.GeneratorPostInitializationContext_AddSource_5d629e1f(__RoslynAotGetHandle(), hintName, sourceText.__RoslynAotGetHandle());
+            int status = vtbl.GeneratorPostInitializationContext_AddSource_1868e172(__RoslynAotGetHandle(), hintName, sourceText.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -32,7 +32,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IGeneratorPostInitializationContextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.GeneratorPostInitializationContext_AddSource_b5276201(__RoslynAotGetHandle(), hintName, source);
+            int status = vtbl.GeneratorPostInitializationContext_AddSource_07f0e961(__RoslynAotGetHandle(), hintName, source);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 

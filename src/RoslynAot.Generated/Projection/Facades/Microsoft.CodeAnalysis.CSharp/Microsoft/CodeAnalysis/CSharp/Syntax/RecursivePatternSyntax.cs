@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IRecursivePatternSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.RecursivePatternSyntax_Accept_736e6a0e(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.RecursivePatternSyntax_Accept_afaf15be(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -140,7 +140,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static RecursivePatternSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (RecursivePatternSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("25c0a9f9-4ea5-5e29-b3dc-6492227d6a3a")]
+        [System.Runtime.InteropServices.Guid("61b3232f-7e75-50f1-99ab-01424ac2d4f5")]
         internal partial interface __RoslynAotImplementation : RecursivePatternSyntax
         {
         }

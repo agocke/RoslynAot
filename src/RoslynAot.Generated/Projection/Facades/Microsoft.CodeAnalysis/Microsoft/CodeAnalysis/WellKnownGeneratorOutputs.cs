@@ -11,7 +11,6 @@ namespace Microsoft.CodeAnalysis
     public static partial class WellKnownGeneratorOutputs
     {
         public const string ImplementationSourceOutput = "ImplementationSourceOutput";
-        public const string PreCompilationSourceOutput = "PreCompilationSourceOutput";
         public const string SourceOutput = "SourceOutput";
     }
 }

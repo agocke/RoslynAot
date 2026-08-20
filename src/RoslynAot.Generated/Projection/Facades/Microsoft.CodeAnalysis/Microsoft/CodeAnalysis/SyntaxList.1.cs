@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    [System.Runtime.CompilerServices.CollectionBuilder(typeof(SyntaxList), "Create")]
     public readonly partial struct SyntaxList<TNode> : System.Collections.Generic.IReadOnlyList<TNode>, System.Collections.Generic.IEnumerable<TNode>, System.Collections.IEnumerable, System.Collections.Generic.IReadOnlyCollection<TNode>, System.IEquatable<SyntaxList<TNode>> where TNode : SyntaxNode
     {
         private readonly object _dummy;

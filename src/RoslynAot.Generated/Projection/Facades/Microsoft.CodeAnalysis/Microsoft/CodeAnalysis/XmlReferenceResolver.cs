@@ -67,7 +67,7 @@ namespace Microsoft.CodeAnalysis
 
         internal static XmlReferenceResolver __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6061793248684524715L, 1176493549687507614L)is XmlReferenceResolver __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6767567853916275751L, -4207152318958652518L)is XmlReferenceResolver __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetXmlReferenceResolverVtbl(controlVtbl), handle);
         }

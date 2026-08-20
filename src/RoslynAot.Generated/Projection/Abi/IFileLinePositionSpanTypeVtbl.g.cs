@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e1397552-e45b-52f0-88e2-cd3f636e6c71")]
+[Guid("dc27cf75-5f87-596e-9c6a-5dcf795f3dc1")]
 public partial interface IFileLinePositionSpanTypeVtbl
 {
 
     [PreserveSig]
-    int FileLinePositionSpan_ctor_376e92d9(
+    int FileLinePositionSpan_ctor_5deacbc8(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         long start,
         long end,
@@ -25,7 +25,7 @@ public partial interface IFileLinePositionSpanTypeVtbl
     );
 
     [PreserveSig]
-    int FileLinePositionSpan_ctor_ce8e0eb2(
+    int FileLinePositionSpan_ctor_539ce908(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         long span,
         out long result

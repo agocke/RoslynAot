@@ -23,12 +23,12 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int IMethodSymbol_Construct_a3a3773d(
+    public int IMethodSymbol_Construct_22ba9338(
         long receiver,
         long typeArguments,
         out long result)
     {
-        RoslynCallCounters.Record(674);
+        RoslynCallCounters.Record(673);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(675);
+        RoslynCallCounters.Record(674);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(676);
+        RoslynCallCounters.Record(675);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long reducedFromTypeParameter,
         out long result)
     {
-        RoslynCallCounters.Record(677);
+        RoslynCallCounters.Record(676);
         result = default;
 
         try
@@ -97,31 +97,12 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         }
     }
 
-    public int IMethodSymbol_ReduceExtensionMember(
-        long receiver,
-        long receiverType,
-        out long result)
-    {
-        RoslynCallCounters.Record(678);
-        result = default;
-
-        try
-        {
-            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IMethodSymbol>(receiver).ReduceExtensionMember(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.ITypeSymbol>(receiverType)));
-            return RoslynAbi.Success;
-        }
-        catch (global::System.Exception exception)
-        {
-            return _owner.SetError(exception);
-        }
-    }
-
     public int IMethodSymbol_ReduceExtensionMethod(
         long receiver,
         long receiverType,
         out long result)
     {
-        RoslynCallCounters.Record(679);
+        RoslynCallCounters.Record(677);
         result = default;
 
         try
@@ -139,7 +120,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(680);
+        RoslynCallCounters.Record(678);
         result = default;
 
         try
@@ -157,7 +138,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(681);
+        RoslynCallCounters.Record(679);
         result = default;
 
         try
@@ -175,7 +156,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(682);
+        RoslynCallCounters.Record(680);
         result = default;
 
         try
@@ -193,7 +174,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(683);
+        RoslynCallCounters.Record(681);
         result = default;
 
         try
@@ -211,7 +192,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(684);
+        RoslynCallCounters.Record(682);
         result = default;
 
         try
@@ -229,7 +210,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(685);
+        RoslynCallCounters.Record(683);
         result = default;
 
         try
@@ -247,7 +228,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(686);
+        RoslynCallCounters.Record(684);
         result = default;
 
         try
@@ -265,7 +246,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(687);
+        RoslynCallCounters.Record(685);
         result = default;
 
         try
@@ -283,7 +264,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(688);
+        RoslynCallCounters.Record(686);
         result = default;
 
         try
@@ -301,7 +282,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(689);
+        RoslynCallCounters.Record(687);
         result = default;
 
         try
@@ -319,7 +300,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(690);
+        RoslynCallCounters.Record(688);
         result = default;
 
         try
@@ -337,7 +318,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(691);
+        RoslynCallCounters.Record(689);
         result = default;
 
         try
@@ -355,7 +336,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(692);
+        RoslynCallCounters.Record(690);
         result = default;
 
         try
@@ -373,7 +354,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(693);
+        RoslynCallCounters.Record(691);
         result = default;
 
         try
@@ -391,7 +372,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(694);
+        RoslynCallCounters.Record(692);
         result = default;
 
         try
@@ -409,7 +390,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(695);
+        RoslynCallCounters.Record(693);
         result = default;
 
         try
@@ -427,7 +408,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(696);
+        RoslynCallCounters.Record(694);
         result = default;
 
         try
@@ -445,7 +426,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(697);
+        RoslynCallCounters.Record(695);
         result = default;
 
         try
@@ -463,7 +444,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(698);
+        RoslynCallCounters.Record(696);
         result = default;
 
         try
@@ -481,7 +462,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(699);
+        RoslynCallCounters.Record(697);
         result = default;
 
         try
@@ -499,7 +480,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(700);
+        RoslynCallCounters.Record(698);
         result = default;
 
         try
@@ -517,7 +498,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(701);
+        RoslynCallCounters.Record(699);
         result = default;
 
         try
@@ -535,7 +516,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(702);
+        RoslynCallCounters.Record(700);
         result = default;
 
         try
@@ -553,7 +534,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(703);
+        RoslynCallCounters.Record(701);
         result = default;
 
         try
@@ -571,7 +552,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(704);
+        RoslynCallCounters.Record(702);
         result = default;
 
         try
@@ -589,7 +570,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(705);
+        RoslynCallCounters.Record(703);
         result = default;
 
         try
@@ -607,7 +588,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(706);
+        RoslynCallCounters.Record(704);
         result = default;
 
         try
@@ -625,7 +606,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(707);
+        RoslynCallCounters.Record(705);
         result = default;
 
         try
@@ -643,7 +624,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(708);
+        RoslynCallCounters.Record(706);
         result = default;
 
         try
@@ -661,7 +642,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(709);
+        RoslynCallCounters.Record(707);
         result = default;
 
         try
@@ -679,7 +660,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(710);
+        RoslynCallCounters.Record(708);
         result = default;
 
         try
@@ -697,7 +678,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(711);
+        RoslynCallCounters.Record(709);
         result = default;
 
         try
@@ -715,7 +696,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(712);
+        RoslynCallCounters.Record(710);
         result = default;
 
         try
@@ -733,7 +714,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(713);
+        RoslynCallCounters.Record(711);
         result = default;
 
         try
@@ -751,7 +732,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(714);
+        RoslynCallCounters.Record(712);
         result = default;
 
         try
@@ -769,7 +750,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(715);
+        RoslynCallCounters.Record(713);
         result = default;
 
         try
@@ -787,7 +768,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(716);
+        RoslynCallCounters.Record(714);
         result = default;
 
         try
@@ -805,7 +786,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(717);
+        RoslynCallCounters.Record(715);
         result = default;
 
         try
@@ -823,7 +804,7 @@ internal sealed partial class IMethodSymbolVtblDispatcher : IIMethodSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(718);
+        RoslynCallCounters.Record(716);
         result = default;
 
         try

@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IFunctionPointerTypeSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IFunctionPointerTypeSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("a8749631-b84a-5910-a2eb-ae48e7845aa9")]
+        [System.Runtime.InteropServices.Guid("74585225-8db4-59cb-a91b-e29face05ca9")]
         internal partial interface __RoslynAotImplementation : IFunctionPointerTypeSymbol
         {
         }

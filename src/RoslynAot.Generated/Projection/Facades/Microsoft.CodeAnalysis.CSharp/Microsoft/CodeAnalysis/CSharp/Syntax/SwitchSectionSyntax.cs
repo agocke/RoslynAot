@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISwitchSectionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SwitchSectionSyntax_Accept_f172f8d3(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.SwitchSectionSyntax_Accept_63c2836f(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -78,7 +78,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SwitchSectionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SwitchSectionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("9f7407c0-9b20-5bb7-9be5-4593ee6a70ba")]
+        [System.Runtime.InteropServices.Guid("6008a4e4-5e86-5809-8ed8-ac71513415cf")]
         internal partial interface __RoslynAotImplementation : SwitchSectionSyntax
         {
         }

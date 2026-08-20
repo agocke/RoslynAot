@@ -27,7 +27,7 @@ internal sealed partial class IStructuredTriviaSyntaxVtblDispatcher : IIStructur
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(827);
+        RoslynCallCounters.Record(824);
         result = default;
 
         try

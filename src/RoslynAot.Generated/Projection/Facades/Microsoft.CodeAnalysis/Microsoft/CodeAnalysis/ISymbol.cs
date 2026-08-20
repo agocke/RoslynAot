@@ -299,7 +299,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IISymbolVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ISymbol_Accept_85bdf9de(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ISymbol_Accept_bbd8b8b9(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -372,7 +372,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ISymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ISymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("6d0cb1d6-c325-58fe-9d21-13a3855838c0")]
+        [System.Runtime.InteropServices.Guid("001f74ef-9210-59f6-a426-3a82bd515110")]
         internal partial interface __RoslynAotImplementation : ISymbol
         {
         }

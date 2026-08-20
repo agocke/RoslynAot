@@ -52,7 +52,7 @@ namespace Microsoft.CodeAnalysis.Operations
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ISwitchCaseOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ISwitchCaseOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("955d2e8b-a53b-549e-97e5-2c5623c633d5")]
+        [System.Runtime.InteropServices.Guid("92057090-b935-51f2-90ef-0eb00c4c6431")]
         internal partial interface __RoslynAotImplementation : ISwitchCaseOperation
         {
         }

@@ -384,14 +384,6 @@ namespace Microsoft.CodeAnalysis.CSharp
             }
         }
 
-        public bool IsUnion
-        {
-            get
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-            }
-        }
-
         public bool IsUserDefined
         {
             get
@@ -420,7 +412,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IConversionVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.Conversion_Equals_acba79f2(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.Conversion_Equals_dfd5a1a2(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

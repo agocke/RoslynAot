@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITupleExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TupleExpressionSyntax_Accept_146ae86a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.TupleExpressionSyntax_Accept_fdc94590(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -98,7 +98,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static TupleExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (TupleExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("57716632-63cf-56dd-9756-df1fadda1752")]
+        [System.Runtime.InteropServices.Guid("f7fa6cdf-8407-5e6e-944f-f888b4984340")]
         internal partial interface __RoslynAotImplementation : TupleExpressionSyntax
         {
         }

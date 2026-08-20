@@ -47,7 +47,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SuppressionInfo __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SuppressionInfo)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f56c94de-76d9-546f-b54c-e9b0362fbd08")]
+        [System.Runtime.InteropServices.Guid("9c985b76-409e-51e5-86a0-4ddf80e13c41")]
         internal partial interface __RoslynAotImplementation : SuppressionInfo
         {
         }

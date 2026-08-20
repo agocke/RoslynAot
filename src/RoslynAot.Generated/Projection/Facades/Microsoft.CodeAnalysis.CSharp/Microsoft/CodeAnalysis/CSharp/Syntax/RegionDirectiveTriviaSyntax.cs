@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IRegionDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.RegionDirectiveTriviaSyntax_Accept_a9943098(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.RegionDirectiveTriviaSyntax_Accept_9ecc03b0(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -122,7 +122,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static RegionDirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (RegionDirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("547f824f-95b7-5b1f-8f80-de7617fe00f7")]
+        [System.Runtime.InteropServices.Guid("e676ba87-d60b-5a1b-83a9-d8cc4d91085e")]
         internal partial interface __RoslynAotImplementation : RegionDirectiveTriviaSyntax
         {
         }

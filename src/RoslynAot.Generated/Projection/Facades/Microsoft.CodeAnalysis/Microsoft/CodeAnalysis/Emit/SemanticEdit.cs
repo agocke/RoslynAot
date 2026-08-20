@@ -79,7 +79,6 @@ namespace Microsoft.CodeAnalysis.Emit
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, "SyntaxMap")]
         public bool PreserveLocalVariables
         {
             get
@@ -112,7 +111,7 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISemanticEditVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SemanticEdit_Equals_927c4ffc(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.SemanticEdit_Equals_0e00ff3a(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

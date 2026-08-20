@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("27f641f6-f08a-5475-ac23-6439cece27ad")]
+[Guid("a6659a71-b2b6-5354-b182-2e4a105f86cb")]
 public partial interface IExpressionColonSyntaxVtbl : IBaseExpressionColonSyntaxVtbl
 {
 
     [PreserveSig]
-    int ExpressionColonSyntax_Accept_31185d34(
+    int ExpressionColonSyntax_Accept_dcaca827(
         long receiver,
         long visitor
     );

@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IPostfixUnaryExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.PostfixUnaryExpressionSyntax_Accept_c8f3e8bf(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.PostfixUnaryExpressionSyntax_Accept_ab05939f(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static PostfixUnaryExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (PostfixUnaryExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f263d8bd-09a5-5b59-aa1c-f52d72c5f5da")]
+        [System.Runtime.InteropServices.Guid("bc577b46-cb13-5ab7-934f-19a5a6101ec9")]
         internal partial interface __RoslynAotImplementation : PostfixUnaryExpressionSyntax
         {
         }

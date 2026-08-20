@@ -31,17 +31,16 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IAssemblyMetadataTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAssemblyMetadataTypeVtbl(controlVtbl);
-            int status = vtbl.AssemblyMetadata_Create_7ba6a262(@module.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.AssemblyMetadata_Create_e1130125(@module.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
-        [System.Runtime.CompilerServices.OverloadResolutionPriority(-1)]
         public static AssemblyMetadata Create(params ModuleMetadata[] modules)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IAssemblyMetadataTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAssemblyMetadataTypeVtbl(controlVtbl);
-            int status = vtbl.AssemblyMetadata_Create_f1a4ccc3(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(modules, item => item.__RoslynAotGetHandle())), out long result);
+            int status = vtbl.AssemblyMetadata_Create_0ce64e57(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(modules, item => item.__RoslynAotGetHandle())), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -51,7 +50,7 @@ namespace Microsoft.CodeAnalysis
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
-        public static AssemblyMetadata Create(params System.Collections.Immutable.ImmutableArray<ModuleMetadata> modules)
+        public static AssemblyMetadata Create(System.Collections.Immutable.ImmutableArray<ModuleMetadata> modules)
         {
             throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
@@ -113,7 +112,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static AssemblyMetadata __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AssemblyMetadata)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("d886afa0-661c-5b7e-b6a8-0fb55b8960d8")]
+        [System.Runtime.InteropServices.Guid("d48ebc45-59c3-53a3-89bd-183e21e6d5d4")]
         internal partial interface __RoslynAotImplementation : AssemblyMetadata
         {
         }

@@ -27,7 +27,7 @@ internal sealed partial class IRaiseEventOperationVtblDispatcher : IIRaiseEventO
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1167);
+        RoslynCallCounters.Record(1162);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IRaiseEventOperationVtblDispatcher : IIRaiseEventO
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1168);
+        RoslynCallCounters.Record(1163);
         result = default;
 
         try

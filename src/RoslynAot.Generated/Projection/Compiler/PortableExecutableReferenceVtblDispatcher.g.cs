@@ -28,7 +28,7 @@ internal sealed partial class PortableExecutableReferenceVtblDispatcher : IPorta
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(934);
+        RoslynCallCounters.Record(929);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class PortableExecutableReferenceVtblDispatcher : IPorta
         long properties,
         out long result)
     {
-        RoslynCallCounters.Record(935);
+        RoslynCallCounters.Record(930);
         result = default;
 
         try
@@ -67,7 +67,7 @@ internal sealed partial class PortableExecutableReferenceVtblDispatcher : IPorta
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(936);
+        RoslynCallCounters.Record(931);
         requiredLength = default;
 
         try
@@ -91,7 +91,7 @@ internal sealed partial class PortableExecutableReferenceVtblDispatcher : IPorta
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(937);
+        RoslynCallCounters.Record(932);
         result = default;
 
         try
@@ -109,7 +109,7 @@ internal sealed partial class PortableExecutableReferenceVtblDispatcher : IPorta
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1404);
+        RoslynCallCounters.Record(1399);
         result = default;
 
         try
@@ -127,7 +127,7 @@ internal sealed partial class PortableExecutableReferenceVtblDispatcher : IPorta
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1405);
+        RoslynCallCounters.Record(1400);
         result = default;
 
         try
@@ -146,7 +146,7 @@ internal sealed partial class PortableExecutableReferenceVtblDispatcher : IPorta
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(1406);
+        RoslynCallCounters.Record(1401);
         result = default;
 
         try
@@ -165,7 +165,7 @@ internal sealed partial class PortableExecutableReferenceVtblDispatcher : IPorta
         long properties,
         out long result)
     {
-        RoslynCallCounters.Record(1407);
+        RoslynCallCounters.Record(1402);
         result = default;
 
         try
@@ -185,7 +185,7 @@ internal sealed partial class PortableExecutableReferenceVtblDispatcher : IPorta
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1408);
+        RoslynCallCounters.Record(1403);
         requiredLength = default;
 
         try
@@ -211,7 +211,7 @@ internal sealed partial class PortableExecutableReferenceVtblDispatcher : IPorta
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1409);
+        RoslynCallCounters.Record(1404);
         requiredLength = default;
 
         try

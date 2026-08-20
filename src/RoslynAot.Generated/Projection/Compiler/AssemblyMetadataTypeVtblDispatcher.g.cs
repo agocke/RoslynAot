@@ -41,7 +41,7 @@ internal sealed partial class AssemblyMetadataTypeVtblDispatcher : IAssemblyMeta
         }
     }
 
-    public int AssemblyMetadata_Create_7ba6a262(
+    public int AssemblyMetadata_Create_e1130125(
         long @module,
         out long result)
     {
@@ -59,7 +59,7 @@ internal sealed partial class AssemblyMetadataTypeVtblDispatcher : IAssemblyMeta
         }
     }
 
-    public int AssemblyMetadata_Create_f1a4ccc3(
+    public int AssemblyMetadata_Create_0ce64e57(
         long modules,
         out long result)
     {

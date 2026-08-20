@@ -23,12 +23,12 @@ internal sealed partial class SuppressionDescriptorVtblDispatcher : ISuppression
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SuppressionDescriptor_Equals_6d7d7e69(
+    public int SuppressionDescriptor_Equals_5379236c(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1470);
+        RoslynCallCounters.Record(1465);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SuppressionDescriptorVtblDispatcher : ISuppression
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1471);
+        RoslynCallCounters.Record(1466);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class SuppressionDescriptorVtblDispatcher : ISuppression
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1472);
+        RoslynCallCounters.Record(1467);
         requiredLength = default;
 
         try
@@ -90,7 +90,7 @@ internal sealed partial class SuppressionDescriptorVtblDispatcher : ISuppression
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1473);
+        RoslynCallCounters.Record(1468);
         result = default;
 
         try
@@ -110,7 +110,7 @@ internal sealed partial class SuppressionDescriptorVtblDispatcher : ISuppression
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1474);
+        RoslynCallCounters.Record(1469);
         requiredLength = default;
 
         try

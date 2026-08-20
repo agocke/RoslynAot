@@ -23,12 +23,12 @@ internal sealed partial class TextChangeVtblDispatcher : ITextChangeVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int TextChange_Equals_e34eea4e(
+    public int TextChange_Equals_a91dd04f(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1819);
+        RoslynCallCounters.Record(1814);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class TextChangeVtblDispatcher : ITextChangeVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1820);
+        RoslynCallCounters.Record(1815);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class TextChangeVtblDispatcher : ITextChangeVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1821);
+        RoslynCallCounters.Record(1816);
         requiredLength = default;
 
         try
@@ -92,7 +92,7 @@ internal sealed partial class TextChangeVtblDispatcher : ITextChangeVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1822);
+        RoslynCallCounters.Record(1817);
         requiredLength = default;
 
         try
@@ -116,7 +116,7 @@ internal sealed partial class TextChangeVtblDispatcher : ITextChangeVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1823);
+        RoslynCallCounters.Record(1818);
         result = default;
 
         try

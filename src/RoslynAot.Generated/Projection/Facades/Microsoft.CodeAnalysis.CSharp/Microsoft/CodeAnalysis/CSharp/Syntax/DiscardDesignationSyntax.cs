@@ -26,7 +26,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IDiscardDesignationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.DiscardDesignationSyntax_Accept_5050323a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.DiscardDesignationSyntax_Accept_9b33f589(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -59,7 +59,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static DiscardDesignationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (DiscardDesignationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("bb07c076-3f87-5893-9c2b-731391977b20")]
+        [System.Runtime.InteropServices.Guid("f9e9eb9b-6abf-5dd7-b78c-0fce92681daf")]
         internal partial interface __RoslynAotImplementation : DiscardDesignationSyntax
         {
         }

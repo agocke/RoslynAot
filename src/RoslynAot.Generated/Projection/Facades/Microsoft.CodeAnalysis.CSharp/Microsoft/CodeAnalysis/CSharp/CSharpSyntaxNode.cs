@@ -33,7 +33,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxNodeVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxNode_Accept_e101478d(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxNode_Accept_c31df31f(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -66,7 +66,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxNodeVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxNode_FindTrivia_59a4cbf4(__RoslynAotGetHandle(), position, findInsideTrivia ? 1 : 0, out long result);
+            int status = vtbl.CSharpSyntaxNode_FindTrivia_09c524df(__RoslynAotGetHandle(), position, findInsideTrivia ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -210,7 +210,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static CSharpSyntaxNode __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CSharpSyntaxNode)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("0b9c074c-efe3-5a44-8a8e-35de4424b346")]
+        [System.Runtime.InteropServices.Guid("8678f7a9-ccce-5547-b09e-731b15c99825")]
         internal partial interface __RoslynAotImplementation : CSharpSyntaxNode
         {
         }

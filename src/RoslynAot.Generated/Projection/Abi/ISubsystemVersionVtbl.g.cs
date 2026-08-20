@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e306c54e-0c61-55de-b3ca-c52c6512bb9b")]
+[Guid("0a1d4cfe-a49c-5056-98c3-758b8e3dbf6d")]
 public partial interface ISubsystemVersionVtbl
 {
 
     [PreserveSig]
-    int SubsystemVersion_Equals_c2f4d260(
+    int SubsystemVersion_Equals_269a434d(
         long receiver,
         long other,
         out int result

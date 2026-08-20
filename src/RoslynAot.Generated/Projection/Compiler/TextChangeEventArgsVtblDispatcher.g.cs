@@ -27,7 +27,7 @@ internal sealed partial class TextChangeEventArgsVtblDispatcher : ITextChangeEve
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1824);
+        RoslynCallCounters.Record(1819);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class TextChangeEventArgsVtblDispatcher : ITextChangeEve
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1825);
+        RoslynCallCounters.Record(1820);
         result = default;
 
         try

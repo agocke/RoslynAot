@@ -23,12 +23,12 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int InterceptableLocation_Equals_ddbefe89(
+    public int InterceptableLocation_Equals_0edbd635(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(2594);
+        RoslynCallCounters.Record(2585);
         result = default;
 
         try
@@ -48,7 +48,7 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2595);
+        RoslynCallCounters.Record(2586);
         requiredLength = default;
 
         try
@@ -72,7 +72,7 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2596);
+        RoslynCallCounters.Record(2587);
         result = default;
 
         try
@@ -92,7 +92,7 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2597);
+        RoslynCallCounters.Record(2588);
         requiredLength = default;
 
         try
@@ -116,7 +116,7 @@ internal sealed partial class InterceptableLocationVtblDispatcher : IInterceptab
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2598);
+        RoslynCallCounters.Record(2589);
         result = default;
 
         try

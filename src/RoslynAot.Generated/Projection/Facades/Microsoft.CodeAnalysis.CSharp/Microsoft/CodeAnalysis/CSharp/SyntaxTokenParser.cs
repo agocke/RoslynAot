@@ -128,7 +128,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SyntaxTokenParser __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SyntaxTokenParser)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("ed244468-267a-5950-b688-869ad19791e0")]
+        [System.Runtime.InteropServices.Guid("b8285227-b3f9-5241-a891-2d62f6ed4299")]
         internal partial interface __RoslynAotImplementation : SyntaxTokenParser
         {
         }
