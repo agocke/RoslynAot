@@ -304,7 +304,7 @@ roslyn-facade/
     SyntaxFactoryVtblDispatcher.g.cs
     SyntaxTokenParserVtblDispatcher.g.cs
   Manifest/
-    RoslynProjection.json
+    ProjectionInventory.txt
 ```
 
 The generator emits one instance vtbl interface per projected facade type and
@@ -586,19 +586,27 @@ stable identity scheme is the canonical id described under
 
 ## The model
 
-Everything the emitters do is decided by `ProjectionModel`, and everything the
-model decides is written out under `Projection/Manifest/` — `RoslynProjection.json`
-in full, `ProjectionInventory.txt` as one greppable line per type and per call.
+Everything the emitters do is decided by `ProjectionModel`, and what the model
+decides is written out to `Projection/Manifest/ProjectionInventory.txt` as one
+greppable line per type and per call.
 
-Read them for two things, and read the generated code for everything else. The
-first is the counts in the inventory's header: when a rule change touches a
-thousand files, `supported=`, `unsupported=`, `vtbls=` and `types=` are how you
-see the size and direction of what you did. The second is a specific member —
-grep its canonical id to see the strategy and wire signature the model chose.
-What these files are *not* is a review medium. A change to the projected Roslyn
-version rewrites the disambiguating hash on every overloaded operation name, so
-the inventory diff can run to thousands of lines with a handful of meaningful
-ones in it; the generated C# is where a reviewer who knows Roslyn should look.
+Read it for two things, and read the generated code for everything else. The
+first is the counts in its header: when a rule change touches a thousand files,
+`supported=`, `unsupported=`, `vtbls=` and `types=` are how you see the size and
+direction of what you did. The second is a specific member — grep its canonical
+id to see the strategy and wire signature the model chose. What the file is
+*not* is a review medium. A change to the projected Roslyn version rewrites the
+disambiguating hash on every overloaded operation name, so the inventory diff
+can run to thousands of lines with a handful of meaningful ones in it; the
+generated C# is where a reviewer who knows Roslyn should look.
+
+There was a second manifest, `RoslynProjection.json`, holding the same model in
+full. Nothing read it — not the compiler, not the analyzer runtime, not the
+harnesses — and it cost 21 MB of the repository and of the shipped package. It
+held two things the inventory did not, and both were moved rather than dropped:
+the reason each unsupported member could not be projected, which now travels in
+the exception that member throws, and the reason behind each type's ownership,
+which is now the `ownershipReason=` field on the inventory's `TYPE` lines.
 
 Members are keyed by **canonical id**: `[Assembly]M:Ns.Type.Member(Params)~Return`,
 built from `DocumentationCommentId`. The assembly prefix is there because a

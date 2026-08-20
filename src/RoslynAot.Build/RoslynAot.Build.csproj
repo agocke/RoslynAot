@@ -66,9 +66,6 @@
     <None Include="../RoslynAot.Generated/Projection/Compiler/**/*.cs"
           Pack="true"
           PackagePath="tools/compiler/Generated/Roslyn/Compiler/" />
-    <None Include="../RoslynAot.Generated/Projection/Manifest/RoslynProjection.json"
-          Pack="true"
-          PackagePath="tools/compiler/Generated/Roslyn/Manifest/" />
     <None Include="../../eng/Roslyn.Test.public.snk"
           Pack="true"
           PackagePath="tools/compiler/" />
