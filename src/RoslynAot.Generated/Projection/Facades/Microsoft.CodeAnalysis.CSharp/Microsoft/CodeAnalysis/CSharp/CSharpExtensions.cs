@@ -102,7 +102,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static IAliasSymbol? GetAliasInfo(this SemanticModel? semanticModel, Syntax.IdentifierNameSyntax nameSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetAliasInfo(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), nameSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IAliasSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static AwaitExpressionInfo GetAwaitExpressionInfo(this SemanticModel? semanticModel, Syntax.AwaitExpressionSyntax awaitExpression)
@@ -116,17 +120,29 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SymbolInfo GetCollectionInitializerSymbolInfo(this SemanticModel? semanticModel, Syntax.ExpressionSyntax expression, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetCollectionInitializerSymbolInfo(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SymbolInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Syntax.CompilationUnitSyntax GetCompilationUnitRoot(this SyntaxTree tree, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetCompilationUnitRoot(tree.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Syntax.CompilationUnitSyntax.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static Optional<object> GetConstantValue(this SemanticModel? semanticModel, Syntax.ExpressionSyntax expression, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetConstantValue(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out global::RoslynAot.Abi.RoslynConstantKind constantKind, out long constantLow, out long constantHigh);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return constantKind == global::RoslynAot.Abi.RoslynConstantKind.NoValue ? default : new Optional<object?>(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadConstant(controlVtbl, constantKind, constantLow, constantHigh));
         }
 
         public static Conversion GetConversion(this Operations.IConversionOperation conversionExpression)
@@ -140,167 +156,299 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static Conversion GetConversion(this SemanticModel? semanticModel, SyntaxNode expression, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetConversion_1a43f9a8(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return Conversion.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IMethodSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.AccessorDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_a6729ce0(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static INamedTypeSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.AnonymousObjectCreationExpressionSyntax declaratorSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_165aecd6(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declaratorSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IPropertySymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.AnonymousObjectMemberDeclaratorSyntax declaratorSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_88397ffa(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declaratorSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IPropertySymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ISymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.ArgumentSyntax declaratorSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_3d0ddfb9(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declaratorSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IMethodSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.BaseMethodDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_0c880abb(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ISymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.BasePropertyDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_ce8dd472(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static INamedTypeSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.BaseTypeDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_8b7a0239(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ILocalSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.CatchDeclarationSyntax catchDeclaration, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_5fb915ae(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), catchDeclaration.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ILocalSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IMethodSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.CompilationUnitSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_d76ea983(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static INamedTypeSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.DelegateDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_ae1b1fdb(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IFieldSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.EnumMemberDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_1ac4f6c1(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IFieldSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IEventSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.EventDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_42da5e89(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IEventSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IAliasSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.ExternAliasDirectiveSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_f1dc67c3(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IAliasSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static INamespaceSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.FileScopedNamespaceDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_7ed79469(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : INamespaceSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ILocalSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.ForEachStatementSyntax forEachStatement, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_2fd6a497(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), forEachStatement.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ILocalSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IPropertySymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.IndexerDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_c3357bbc(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IPropertySymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IRangeVariableSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.JoinIntoClauseSyntax node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_2a5f2309(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IRangeVariableSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ILabelSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.LabeledStatementSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_a8f6d69a(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ILabelSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IMethodSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.LocalFunctionStatementSyntax node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_5f1dbb1d(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ISymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.MemberDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_3ce84b8f(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static INamespaceSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.NamespaceDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_d8a277dc(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : INamespaceSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IParameterSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.ParameterSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_29cf26cf(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IParameterSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IPropertySymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.PropertyDeclarationSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_8f17bd9b(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IPropertySymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IRangeVariableSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.QueryClauseSyntax queryClause, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_4f390a2b(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), queryClause.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IRangeVariableSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IRangeVariableSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.QueryContinuationSyntax node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_6b1a7d05(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IRangeVariableSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ISymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.SingleVariableDesignationSyntax designationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_e07ad603(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), designationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ILabelSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.SwitchLabelSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_fe200295(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ILabelSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ISymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.TupleElementSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_a400de82(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static INamedTypeSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.TupleExpressionSyntax declaratorSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_1408cc2c(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declaratorSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : INamedTypeSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ITypeParameterSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.TypeParameterSyntax typeParameter, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_4d7c580f(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), typeParameter.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ITypeParameterSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IAliasSymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.UsingDirectiveSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_dea2d790(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IAliasSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ISymbol? GetDeclaredSymbol(this SemanticModel? semanticModel, Syntax.VariableDeclaratorSyntax declarationSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetDeclaredSymbol_b2e5e9bf(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), declarationSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static DeconstructionInfo GetDeconstructionInfo(this SemanticModel? semanticModel, Syntax.AssignmentExpressionSyntax assignment)
@@ -364,17 +512,29 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static System.Collections.Immutable.ImmutableArray<IPropertySymbol> GetIndexerGroup(this SemanticModel? semanticModel, Syntax.ExpressionSyntax expression, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetIndexerGroup(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<IPropertySymbol>(controlVtbl, result, static (controlVtbl, handle) => IPropertySymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public static InterceptableLocation? GetInterceptableLocation(this SemanticModel? semanticModel, Syntax.InvocationExpressionSyntax node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetInterceptableLocation(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : InterceptableLocation.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IMethodSymbol? GetInterceptorMethod(this SemanticModel? semanticModel, Syntax.InvocationExpressionSyntax node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetInterceptorMethod(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : IMethodSymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static string GetInterceptsLocationAttributeSyntax(this InterceptableLocation location)
@@ -391,17 +551,29 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static System.Collections.Immutable.ImmutableArray<ISymbol> GetMemberGroup(this SemanticModel? semanticModel, Syntax.AttributeSyntax attribute, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetMemberGroup_2fceef90(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), attribute.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public static System.Collections.Immutable.ImmutableArray<ISymbol> GetMemberGroup(this SemanticModel? semanticModel, Syntax.ConstructorInitializerSyntax initializer, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetMemberGroup_7a1e4754(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), initializer.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public static System.Collections.Immutable.ImmutableArray<ISymbol> GetMemberGroup(this SemanticModel? semanticModel, Syntax.ExpressionSyntax expression, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetMemberGroup_c55b1cfd(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public static Conversion GetOutConversion(this Operations.ICompoundAssignmentOperation compoundAssignment)
@@ -415,7 +587,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static QueryClauseInfo GetQueryClauseInfo(this SemanticModel? semanticModel, Syntax.QueryClauseSyntax node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetQueryClauseInfo(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return QueryClauseInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static IAliasSymbol? GetSpeculativeAliasInfo(this SemanticModel? semanticModel, int position, Syntax.IdentifierNameSyntax nameSyntax, SpeculativeBindingOption bindingOption)
@@ -492,57 +668,101 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SymbolInfo GetSymbolInfo(this SemanticModel? semanticModel, Syntax.AttributeSyntax attributeSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetSymbolInfo_49c34403(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), attributeSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SymbolInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SymbolInfo GetSymbolInfo(this SemanticModel? semanticModel, Syntax.ConstructorInitializerSyntax constructorInitializer, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetSymbolInfo_9572bf2c(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), constructorInitializer.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SymbolInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SymbolInfo GetSymbolInfo(this SemanticModel? semanticModel, Syntax.CrefSyntax crefSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetSymbolInfo_d8e5565d(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), crefSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SymbolInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SymbolInfo GetSymbolInfo(this SemanticModel? semanticModel, Syntax.ExpressionSyntax expression, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetSymbolInfo_f1d12946(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SymbolInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SymbolInfo GetSymbolInfo(this SemanticModel? semanticModel, Syntax.OrderingSyntax node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetSymbolInfo_ee531bc5(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SymbolInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SymbolInfo GetSymbolInfo(this SemanticModel? semanticModel, Syntax.PrimaryConstructorBaseTypeSyntax constructorInitializer, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetSymbolInfo_80ceb885(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), constructorInitializer.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SymbolInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SymbolInfo GetSymbolInfo(this SemanticModel? semanticModel, Syntax.SelectOrGroupClauseSyntax node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetSymbolInfo_a3be89fd(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SymbolInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static TypeInfo GetTypeInfo(this SemanticModel? semanticModel, Syntax.AttributeSyntax attributeSyntax, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetTypeInfo_c65830e0(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), attributeSyntax.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return TypeInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static TypeInfo GetTypeInfo(this SemanticModel? semanticModel, Syntax.ConstructorInitializerSyntax constructorInitializer, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetTypeInfo_085c5d82(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), constructorInitializer.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return TypeInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static TypeInfo GetTypeInfo(this SemanticModel? semanticModel, Syntax.ExpressionSyntax expression, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetTypeInfo_6e65e0cf(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return TypeInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static TypeInfo GetTypeInfo(this SemanticModel? semanticModel, Syntax.SelectOrGroupClauseSyntax node, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ICSharpExtensionsVtbl_00cd3a63 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_00cd3a63(controlVtbl);
+            int status = vtbl.CSharpExtensions_GetTypeInfo_45365a70(semanticModel is null ? 0L : semanticModel.__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return TypeInfo.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxTokenList Insert(this SyntaxTokenList list, int index, params SyntaxToken[] items)

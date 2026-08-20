@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("0ac60316-4938-53f8-9379-d1371128ac19")]
+[Guid("ad63dc56-880d-5e06-8c7f-893a0edb0d45")]
 public partial interface ICSharpCompilationVtbl : ICompilationVtbl
 {
 
@@ -53,10 +53,33 @@ public partial interface ICSharpCompilationVtbl : ICompilationVtbl
     );
 
     [PreserveSig]
+    int CSharpCompilation_ContainsSymbolsWithName_c4ea110d(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int filter,
+        long cancellationToken,
+        out int result
+    );
+
+    [PreserveSig]
     int CSharpCompilation_ContainsSyntaxTree(
         long receiver,
         long syntaxTree,
         out int result
+    );
+
+    [PreserveSig]
+    int CSharpCompilation_GetDeclarationDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpCompilation_GetDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result
     );
 
     [PreserveSig]
@@ -74,10 +97,40 @@ public partial interface ICSharpCompilationVtbl : ICompilationVtbl
     );
 
     [PreserveSig]
+    int CSharpCompilation_GetMethodBodyDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpCompilation_GetParseDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
     int CSharpCompilation_GetSemanticModel_c4696b5c(
         long receiver,
         long syntaxTree,
         int ignoreAccessibility,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpCompilation_GetSymbolsWithName_c68ddbea(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int filter,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpCompilation_GetUsedAssemblyReferences(
+        long receiver,
+        long cancellationToken,
         out long result
     );
 

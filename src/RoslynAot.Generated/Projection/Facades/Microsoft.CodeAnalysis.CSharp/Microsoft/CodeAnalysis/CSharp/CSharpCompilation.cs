@@ -379,7 +379,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public bool ContainsSymbolsWithName(string name, SymbolFilter filter = SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilation_ContainsSymbolsWithName_c4ea110d(__RoslynAotGetHandle(), name, (int)filter, global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result != 0;
         }
 
         public new bool ContainsSyntaxTree(SyntaxTree? syntaxTree)
@@ -403,12 +407,20 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public System.Collections.Immutable.ImmutableArray<Diagnostic> GetDeclarationDiagnostics(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilation_GetDeclarationDiagnostics(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public System.Collections.Immutable.ImmutableArray<Diagnostic> GetDiagnostics(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilation_GetDiagnostics(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public MetadataReference? GetDirectiveReference(Syntax.ReferenceDirectiveTriviaSyntax directive)
@@ -431,12 +443,20 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public System.Collections.Immutable.ImmutableArray<Diagnostic> GetMethodBodyDiagnostics(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilation_GetMethodBodyDiagnostics(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public System.Collections.Immutable.ImmutableArray<Diagnostic> GetParseDiagnostics(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilation_GetParseDiagnostics(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public new SemanticModel GetSemanticModel(SyntaxTree syntaxTree, SemanticModelOptions options)
@@ -460,12 +480,20 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public System.Collections.Generic.IEnumerable<ISymbol> GetSymbolsWithName(string name, SymbolFilter filter = SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilation_GetSymbolsWithName_c68ddbea(__RoslynAotGetHandle(), name, (int)filter, global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle));
         }
 
         public System.Collections.Immutable.ImmutableArray<MetadataReference> GetUsedAssemblyReferences(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ICSharpCompilationVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.CSharpCompilation_GetUsedAssemblyReferences(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<MetadataReference>(controlVtbl, result, static (controlVtbl, handle) => MetadataReference.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         public new CSharpCompilation RemoveAllReferences()
@@ -584,7 +612,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static CSharpCompilation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CSharpCompilation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("0ac60316-4938-53f8-9379-d1371128ac19")]
+        [System.Runtime.InteropServices.Guid("ad63dc56-880d-5e06-8c7f-893a0edb0d45")]
         internal partial interface __RoslynAotImplementation : CSharpCompilation
         {
         }

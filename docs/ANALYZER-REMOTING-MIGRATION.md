@@ -830,6 +830,82 @@ firing with correct arguments. Initialization success is no longer the signal.
 
 **Closes:** 11, 12.
 
+### Started (2026-08-19): cancellation into the compiler
+
+Taken ahead of the rest of Step 7 for the same reason constants were taken
+ahead of Step 5's order: it was the burn-down's largest single blocker.
+`CancellationToken` blocked **12 of 20 failing rules** across five apparently
+unrelated members — 60% of the burn-down in one foreign type, and the only
+remaining blocker that was not generics.
+
+The blocking mechanism is worth recording because it is not what the ranked
+member list suggests. `SyntaxReference.GetSyntax` led that list at 6 rules and
+has nothing to do with syntax nodes: an **optional** `CancellationToken`
+parameter withdraws the whole member from the ABI, so `ISyntaxReferenceVtbl`
+carried `get_Span` and `get_SyntaxTree` and no `GetSyntax` slot at all. Every
+call site in the corpus omits the argument entirely and lets the compiler
+synthesize `default`. 134 members were unsupported on such a parameter.
+
+**A token cannot cross as a value and cannot be proxied.** It is one field over
+a `CancellationTokenSource`, its members read that source's private state
+directly, and nothing on the source is virtual — subclassing it yields only
+`Dispose(bool)`. So the receiving side can only hold a real source of its own,
+and that source can only be moved by someone calling `Cancel` on it. The
+transport is therefore a **one-shot edge, not a mirrored value**: the analyzer
+registers on its own token, and the compiler cancels its mirror when the edge
+arrives.
+
+Three measured properties are what make that exact rather than approximate:
+
+- Cancellation is monotonic and `Cancel` is idempotent, so a late edge is late
+  and never wrong, and a duplicated edge needs no deduplication.
+- Registering on an **already-cancelled** token invokes the callback
+  synchronously, so that case delivers its own edge and no separate state read
+  crosses.
+- `default` and a token over a fresh source are distinguishable —
+  `CanBeCanceled` is false and true respectively — so **handle 0 is exactly
+  `default`**. Minting a source unconditionally would tell Roslyn a token can
+  be cancelled where the analyzer said it cannot, changing the path Roslyn
+  takes and reporting nothing. That is problem 22's shape, and it is the one
+  part of this the corpus could not have caught.
+
+Two details that are requirements rather than style: the callback uses
+`Register`, not `UnsafeRegister`, because the control vtbl is reached through
+an ambient `AsyncLocal` and only `Register` captures and restores the
+`ExecutionContext` carrying it. And it swallows every exception, because it
+runs inside the analyzer's own call to `Cancel`, which invokes registrations
+synchronously and wraps failures in an `AggregateException` — a throw there
+would surface in analyzer code, attributed to the analyzer, for a boundary
+failure it has no part in.
+
+Mirrors are keyed on the token rather than minted per call. `CancellationToken`
+equality is its source's identity, so one analyzer token owns one mirror
+however many times it crosses; registering per call site would accumulate a
+live registration per crossing on members as hot as `GetSyntax`.
+
+**Result:** 14 → 18 passing. CA1515, CA2020, CA2352, and CA2353 pass; the other
+eight moved to their next blocker, which is generics for all but one. Supported
+calls 5,824 → 5,937. Module cost: whole-assembly +136,576 bytes (+1.43%), floor
++12,560 (+0.46%).
+
+**Only the analyzer-to-compiler direction.** The edge is delivered by the side
+holding the token calling the other, and analyzer-to-compiler is the direction
+calls already run in. The reverse needs the compiler to call into an analyzer
+module outside an action dispatch, which the ABI has no path for —
+`IAnalyzerHost` carries `RegisterAction` and `ReportDiagnostic` and nothing
+else. Return position is therefore still unsupported, with that as its stated
+reason, and it is what CA1812, CA1825, and CA2234 are now blocked on.
+
+**Declared degradation**, recorded in the foreign-type entry as problem 23
+requires: the edge is one-way per crossing, so a token the compiler cancels
+does not propagate back to the analyzer.
+
+**Coverage gap worth naming.** The corpus exercises handle 0 heavily and the
+mirror path not at all, because every analyzer call site in it omits the
+argument. The mirror is instead covered by the compiler's projection
+self-check, which round-trips a live mirror through `SyntaxTree.GetRoot` and
+asserts the edge, its idempotence, and that handle 0 resolves to `default`.
+
 ---
 
 ## Step 8 — Generics

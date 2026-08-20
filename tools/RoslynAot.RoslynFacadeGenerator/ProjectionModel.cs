@@ -46,6 +46,35 @@ internal enum AbiTypeKind
     ConstantUnion,
 
     /// <summary>
+    /// <c>System.Threading.CancellationToken</c>, crossing as a handle to a
+    /// mirror source the receiving side owns.
+    /// </summary>
+    /// <remarks>
+    /// It cannot cross as a value and it cannot be proxied. The token is a
+    /// one-field struct over a <c>CancellationTokenSource</c>, every member
+    /// reads that source's private state directly, and nothing on the source
+    /// is virtual - so the receiving side can only be given a real token over
+    /// a real source it owns, and that source can only be moved by someone
+    /// calling <c>Cancel</c> on it.
+    ///
+    /// That makes the transport a one-shot edge rather than a mirrored value.
+    /// The sender registers on its own token; the receiver holds a source and
+    /// cancels it when the edge arrives. Two properties make this exact rather
+    /// than approximate: cancellation is monotonic and <c>Cancel</c> is
+    /// idempotent, so a late edge is only late, never wrong; and registering
+    /// on an already-cancelled token invokes the callback synchronously, so an
+    /// already-cancelled token delivers its own edge with no separate state
+    /// read.
+    ///
+    /// Handle 0 is exactly <c>default</c>. That is not an optimization: a
+    /// token over a fresh source reports <c>CanBeCanceled</c> true where
+    /// <c>default</c> reports false, and Roslyn takes different paths on that
+    /// flag, so minting a source unconditionally would be a silent behaviour
+    /// change of problem 22's shape.
+    /// </remarks>
+    CancellationToken,
+
+    /// <summary>
     /// <see cref="ConstantUnion"/> wrapped in
     /// <c>Microsoft.CodeAnalysis.Optional&lt;T&gt;</c>. Three states, not two:
     /// no value, a value that is null, and a value. Collapsing the first two
@@ -1746,6 +1775,30 @@ internal sealed class AbiTypeClassifier
                 "Generic substitutions are not supported.");
         }
 
+        if (IsCancellationToken(namedType))
+        {
+            // Parameter position only, and the asymmetry is in the mechanism
+            // rather than in the effort spent. The edge is delivered by the
+            // side that holds the token registering on it and calling the
+            // other; analyzer-to-compiler is the direction calls already run
+            // in, so the analyzer registers and the compiler cancels. The
+            // reverse needs the compiler to call into an analyzer module
+            // outside an action dispatch, which the ABI has no path for -
+            // IAnalyzerHost carries RegisterAction and ReportDiagnostic and
+            // nothing else.
+            return position == AbiTypePosition.Parameter
+                ? Supported(
+                    AbiTypeKind.CancellationToken,
+                    "long",
+                    type)
+                : Unsupported(
+                    type,
+                    "A cancellation token can only cross into the compiler. " +
+                    "Delivering the cancel edge the other way needs a " +
+                    "compiler-to-analyzer call outside an action dispatch, " +
+                    "which the analyzer ABI does not have.");
+        }
+
         if (!_facadeAssemblies.Contains(
                 namedType.ContainingAssembly.Name))
         {
@@ -1894,6 +1947,22 @@ internal sealed class AbiTypeClassifier
                 }
             }
             }
+        };
+
+    private static bool IsCancellationToken(
+        INamedTypeSymbol type) =>
+        type is
+        {
+            Name: "CancellationToken",
+            ContainingNamespace:
+            {
+                Name: "Threading",
+                ContainingNamespace:
+                {
+                    Name: "System",
+                    ContainingNamespace.IsGlobalNamespace: true,
+                },
+            },
         };
 
     private static bool IsOptional(

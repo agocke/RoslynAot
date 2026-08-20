@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("92f2ed55-d87f-5e22-beaf-6f12c50ecfcc")]
+[Guid("89418171-4cb9-54f6-8cf5-17cb8f98bdb6")]
 public partial interface ISyntaxFactoryVtbl
 {
 
@@ -2647,6 +2647,15 @@ public partial interface ISyntaxFactoryVtbl
         int offset,
         long options,
         int consumeFullText,
+        out long result
+    );
+
+    [PreserveSig]
+    int SyntaxFactory_ParseSyntaxTree_b7815f8f(
+        long text,
+        long options,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
+        long cancellationToken,
         out long result
     );
 

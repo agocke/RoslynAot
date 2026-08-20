@@ -21,10 +21,10 @@ internal static class RoslynDispatcherRegistry
             (6259014060537408448L, 3222434785862186649L) => new CSharpCommandLineParserVtblDispatcher(owner),
             (6122986339247897740L, 7206823415468030637L) => new CSharpCommandLineParserTypeVtblDispatcher(owner),
             (6330788001369362933L, 1833791196878623887L) => new CSharpCompilationOptionsVtblDispatcher(owner),
-            (6050666604420006678L, 1849897601358461331L) => new CSharpCompilationVtblDispatcher(owner),
+            (6775252281750445142L, 4975874017472380812L) => new CSharpCompilationVtblDispatcher(owner),
             (5989628894161898704L, 1578727213959738249L) => new CSharpDiagnosticFormatterVtblDispatcher(owner),
             (6455906139968586518L, 341862505346484671L) => new CSharpDiagnosticFormatterTypeVtblDispatcher(owner),
-            (6275567033260139214L, -1241323937981996911L) => new CSharpExtensionsVtbl_00cd3a63Dispatcher(owner),
+            (5789634266544810675L, -1451058034611892317L) => new CSharpExtensionsVtbl_00cd3a63Dispatcher(owner),
             (5792381882888769229L, -5365207419229665883L) => new CSharpGeneratorDriverVtblDispatcher(owner),
             (6458495059308316024L, 8593362207167302831L) => new CSharpGeneratorDriverTypeVtblDispatcher(owner),
             (6324306602196097939L, -7973058128339903810L) => new CSharpParseOptionsVtblDispatcher(owner),
@@ -32,7 +32,8 @@ internal static class RoslynDispatcherRegistry
             (5784058841520946297L, -3472904706982809671L) => new CSharpScriptCompilationInfoVtblDispatcher(owner),
             (6679717598487117741L, -7544394417659560817L) => new CSharpSyntaxNodeVtblDispatcher(owner),
             (6070001590576051063L, 7915326243709191072L) => new CSharpSyntaxRewriterVtblDispatcher(owner),
-            (5780203819313946238L, 6625777856044082566L) => new CSharpSyntaxTreeVtblDispatcher(owner),
+            (5995457860783358261L, 6922293672567467952L) => new CSharpSyntaxTreeVtblDispatcher(owner),
+            (6464402609604761706L, -6549968396235074371L) => new CSharpSyntaxTreeTypeVtblDispatcher(owner),
             (5879864711761015701L, -2943349498361703264L) => new CSharpSyntaxVisitorVtblDispatcher(owner),
             (5798941240884917114L, 3488527090767569584L) => new CSharpSyntaxWalkerVtblDispatcher(owner),
             (6190457774915445769L, 1268626584008331656L) => new ConversionVtblDispatcher(owner),
@@ -332,13 +333,13 @@ internal static class RoslynDispatcherRegistry
             (5941087829750335646L, -1424458288819541569L) => new XmlTextSyntaxVtblDispatcher(owner),
             (6821043630956414188L, -6767955395555307077L) => new YieldStatementSyntaxVtblDispatcher(owner),
             (6906695670399544279L, 66823291386315938L) => new SyntaxExtensionsVtblDispatcher(owner),
-            (6783222031211228501L, -3688713330212491330L) => new SyntaxFactoryVtblDispatcher(owner),
+            (6122165103212200305L, -5278895444853262964L) => new SyntaxFactoryVtblDispatcher(owner),
             (6422160260796588617L, -1784370584669230160L) => new SyntaxFactsVtblDispatcher(owner),
             (6466781995583005024L, 5559881825133147539L) => new SyntaxTokenParserResultVtblDispatcher(owner),
             (6098482534826596334L, -904762057336626503L) => new SyntaxTokenParserVtblDispatcher(owner),
             (6877715224471358506L, -3178082006712043596L) => new TypedConstantExtensionsVtblDispatcher(owner),
             (6751980507570151104L, -1345524997878893657L) => new CSharpExtensionsVtbl_66985417Dispatcher(owner),
-            (6084738887592764794L, 3692911566952031641L) => new AdditionalTextVtblDispatcher(owner),
+            (6476471212961182332L, 1943641393977745043L) => new AdditionalTextVtblDispatcher(owner),
             (6688159365033580212L, 1631580600775359161L) => new AnalyzerConfigOptionsResultVtblDispatcher(owner),
             (6717050123778960293L, -6762393599734794874L) => new AnalyzerConfigSetVtblDispatcher(owner),
             (6024297944993335436L, -7065923222341436998L) => new AnalyzerConfigVtblDispatcher(owner),
@@ -366,7 +367,7 @@ internal static class RoslynDispatcherRegistry
             (5810724898432291000L, -8351248963655892070L) => new CommandLineSourceFileTypeVtblDispatcher(owner),
             (6051877633432401859L, -7361254524798083687L) => new CompilationOptionsVtblDispatcher(owner),
             (6126745097736462577L, -6121906743401199718L) => new CompilationReferenceVtblDispatcher(owner),
-            (5990517842810451800L, -7748502764516140663L) => new CompilationVtblDispatcher(owner),
+            (6832893011855403459L, 5523154511068147128L) => new CompilationVtblDispatcher(owner),
             (6054461657412109330L, 3270125782611413426L) => new CompilationTypeVtblDispatcher(owner),
             (6045451736313059067L, 4391986793448779443L) => new ControlFlowAnalysisVtblDispatcher(owner),
             (6326026562441409598L, 1811295599068102544L) => new CustomModifierVtblDispatcher(owner),
@@ -436,7 +437,9 @@ internal static class RoslynDispatcherRegistry
             (5921438912091861781L, 4024794609432886691L) => new BasicBlockVtblDispatcher(owner),
             (6899974190535501462L, -3843516857160256128L) => new CaptureIdVtblDispatcher(owner),
             (6911455229123460639L, -2773923543869248366L) => new ControlFlowBranchVtblDispatcher(owner),
-            (6487313566459071245L, -4797659846901864771L) => new ControlFlowGraphVtblDispatcher(owner),
+            (5862856985807614587L, 156160952618118589L) => new ControlFlowGraphExtensionsVtblDispatcher(owner),
+            (5828252980994276345L, -3940355166042930753L) => new ControlFlowGraphVtblDispatcher(owner),
+            (6352829162428310182L, -1781416030193991492L) => new ControlFlowGraphTypeVtblDispatcher(owner),
             (6870322294812494851L, -3107233837940045126L) => new ControlFlowRegionVtblDispatcher(owner),
             (6220667445067610340L, -1009132934905424992L) => new ICaughtExceptionOperationVtblDispatcher(owner),
             (6218440649254350061L, -6193061645264360282L) => new IFlowAnonymousFunctionOperationVtblDispatcher(owner),
@@ -450,7 +453,7 @@ internal static class RoslynDispatcherRegistry
             (6438485682545683463L, 5879513970395804038L) => new GeneratorAttributeTypeVtblDispatcher(owner),
             (6358755686992407925L, -8080224264017349741L) => new GeneratorDriverRunResultVtblDispatcher(owner),
             (6432812283819326214L, 3647156556124188835L) => new GeneratorDriverTimingInfoVtblDispatcher(owner),
-            (6557777869651643890L, 1560909678486397338L) => new GeneratorDriverVtblDispatcher(owner),
+            (5913174731094460318L, 5904739188119359633L) => new GeneratorDriverVtblDispatcher(owner),
             (6700710317925067055L, -3101851685109549636L) => new GeneratorExecutionContextVtblDispatcher(owner),
             (6199524570609663440L, -5555604415179756110L) => new GeneratorExtensionsVtblDispatcher(owner),
             (6110505586471892145L, 903968694057947055L) => new GeneratorFilterContextVtblDispatcher(owner),
@@ -514,7 +517,7 @@ internal static class RoslynDispatcherRegistry
             (6798624647272510207L, -5071322913194470214L) => new MetadataReferenceVtblDispatcher(owner),
             (6222629791075756789L, -4980362463057257034L) => new MetadataReferenceTypeVtblDispatcher(owner),
             (6785562079480899409L, -8427998340353520200L) => new MetadataVtblDispatcher(owner),
-            (6408131675831384512L, 2983227550911081097L) => new ModelExtensionsVtblDispatcher(owner),
+            (6757742340487088550L, -5478049897936571252L) => new ModelExtensionsVtblDispatcher(owner),
             (6171242122019731112L, 5062387250572082623L) => new ModuleMetadataVtblDispatcher(owner),
             (6792873782211159126L, 7931513665635049622L) => new ModuleMetadataTypeVtblDispatcher(owner),
             (6813828836504948057L, 5597604341227153080L) => new NullabilityInfoVtblDispatcher(owner),
@@ -661,7 +664,7 @@ internal static class RoslynDispatcherRegistry
             (6130819745528447385L, -5867126651095620958L) => new RuleSetVtblDispatcher(owner),
             (6800958700071452827L, 4864401232597551776L) => new RuleSetTypeVtblDispatcher(owner),
             (5840879927733254484L, 9168873283432094360L) => new ScriptCompilationInfoVtblDispatcher(owner),
-            (6113588701956873636L, 6647486086638570372L) => new SemanticModelVtblDispatcher(owner),
+            (6026408041769789646L, -7268070967470467700L) => new SemanticModelVtblDispatcher(owner),
             (6262730979457078166L, 520725010237951929L) => new SourceFileResolverVtblDispatcher(owner),
             (6747442347413089206L, -8852602897261775687L) => new SourceFileResolverTypeVtblDispatcher(owner),
             (6455414186672156760L, 4170865793443723147L) => new SourceProductionContextVtblDispatcher(owner),
@@ -685,7 +688,7 @@ internal static class RoslynDispatcherRegistry
             (5942768687392697224L, 5540184864039628946L) => new SyntaxNodeOrTokenVtblDispatcher(owner),
             (6121901050286853197L, 2898778452773120647L) => new SyntaxNodeOrTokenTypeVtblDispatcher(owner),
             (6597850618135550739L, 3449100778133299109L) => new SyntaxNodeVtblDispatcher(owner),
-            (6804073839854753621L, 5755347440263286430L) => new SyntaxReferenceVtblDispatcher(owner),
+            (6228768648122792612L, -4382351368035056967L) => new SyntaxReferenceVtblDispatcher(owner),
             (6596614943216537977L, 2407831442512891012L) => new SyntaxTokenListEnumeratorVtblDispatcher(owner),
             (6067174981872309196L, 3618268030815367049L) => new SyntaxTokenListReversedEnumeratorVtblDispatcher(owner),
             (6714726838738355892L, -7177820199272775787L) => new SyntaxTokenListReversedVtblDispatcher(owner),
@@ -693,8 +696,8 @@ internal static class RoslynDispatcherRegistry
             (6752962488986342510L, 2295792858381982594L) => new SyntaxTokenListVtblDispatcher(owner),
             (6511690514095405801L, 6511218069274546585L) => new SyntaxTokenListTypeVtblDispatcher(owner),
             (6839652595037324094L, 7541130447470861444L) => new SyntaxTokenVtblDispatcher(owner),
-            (6730944937249305724L, -2380146906168220996L) => new SyntaxTreeOptionsProviderVtblDispatcher(owner),
-            (6687008693247678156L, 4938567660882255013L) => new SyntaxTreeVtblDispatcher(owner),
+            (6609103120049023606L, 2126899248612205454L) => new SyntaxTreeOptionsProviderVtblDispatcher(owner),
+            (6354249605753364318L, 1429373725062632079L) => new SyntaxTreeVtblDispatcher(owner),
             (6738450257627352820L, 4058941006121375908L) => new SyntaxTriviaListEnumeratorVtblDispatcher(owner),
             (6333983920135102765L, 566118357684082834L) => new SyntaxTriviaListReversedEnumeratorVtblDispatcher(owner),
             (6901363929508833230L, 1745977166984195004L) => new SyntaxTriviaListReversedVtblDispatcher(owner),
@@ -1049,12 +1052,12 @@ internal static class RoslynDispatcherRegistry
             (5996471553027514508L, 4701251417201702566L) => value is global::Microsoft.CodeAnalysis.AssemblyIdentity,
             (5982718567555520975L, -2681234809525433189L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpCommandLineArguments,
             (6259014060537408448L, 3222434785862186649L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser,
-            (6050666604420006678L, 1849897601358461331L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation,
+            (6775252281750445142L, 4975874017472380812L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation,
             (5989628894161898704L, 1578727213959738249L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpDiagnosticFormatter,
             (5792381882888769229L, -5365207419229665883L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpGeneratorDriver,
             (5784058841520946297L, -3472904706982809671L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpScriptCompilationInfo,
             (6070001590576051063L, 7915326243709191072L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter,
-            (5780203819313946238L, 6625777856044082566L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree,
+            (5995457860783358261L, 6922293672567467952L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree,
             (5798941240884917114L, 3488527090767569584L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker,
             (6754051928516294902L, -470194058169145164L) => value is global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation,
             (6098482534826596334L, -904762057336626503L) => value is global::Microsoft.CodeAnalysis.CSharp.SyntaxTokenParser,
@@ -1129,7 +1132,7 @@ internal static class RoslynDispatcherRegistry
             (6624964556865124113L, -6222292667291326019L) => value is global::Microsoft.CodeAnalysis.Text.TextChangeEventArgs,
             (5839900208743938630L, 4741735123229158042L) => value is global::Microsoft.CodeAnalysis.UnresolvedMetadataReference,
             (5887309302188627221L, 6764082601767496321L) => value is global::Microsoft.CodeAnalysis.XmlFileResolver,
-            (6084738887592764794L, 3692911566952031641L) => value is global::Microsoft.CodeAnalysis.AdditionalText,
+            (6476471212961182332L, 1943641393977745043L) => value is global::Microsoft.CodeAnalysis.AdditionalText,
             (6024297944993335436L, -7065923222341436998L) => value is global::Microsoft.CodeAnalysis.AnalyzerConfig,
             (6717050123778960293L, -6762393599734794874L) => value is global::Microsoft.CodeAnalysis.AnalyzerConfigSet,
             (6660097939550069446L, 5776084435973522353L) => value is global::Microsoft.CodeAnalysis.AssemblyIdentityComparer,
@@ -1137,7 +1140,7 @@ internal static class RoslynDispatcherRegistry
             (5879864711761015701L, -2943349498361703264L) => value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor,
             (6401097728906243178L, 3451007884583936139L) => value is global::Microsoft.CodeAnalysis.CommandLineArguments,
             (6349933110489488382L, 223764789649756819L) => value is global::Microsoft.CodeAnalysis.CommandLineParser,
-            (5990517842810451800L, -7748502764516140663L) => value is global::Microsoft.CodeAnalysis.Compilation,
+            (6832893011855403459L, 5523154511068147128L) => value is global::Microsoft.CodeAnalysis.Compilation,
             (6051877633432401859L, -7361254524798083687L) => value is global::Microsoft.CodeAnalysis.CompilationOptions,
             (6045451736313059067L, 4391986793448779443L) => value is global::Microsoft.CodeAnalysis.ControlFlowAnalysis,
             (6778493067070798230L, 4943460826682868913L) => value is global::Microsoft.CodeAnalysis.DataFlowAnalysis,
@@ -1163,7 +1166,7 @@ internal static class RoslynDispatcherRegistry
             (5886274941982058512L, -5512169540606121042L) => value is global::Microsoft.CodeAnalysis.ErrorLogOptions,
             (5921438912091861781L, 4024794609432886691L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock,
             (6911455229123460639L, -2773923543869248366L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch,
-            (6487313566459071245L, -4797659846901864771L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph,
+            (5828252980994276345L, -3940355166042930753L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph,
             (6870322294812494851L, -3107233837940045126L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion,
             (6220667445067610340L, -1009132934905424992L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.ICaughtExceptionOperation,
             (6218440649254350061L, -6193061645264360282L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.IFlowAnonymousFunctionOperation,
@@ -1171,7 +1174,7 @@ internal static class RoslynDispatcherRegistry
             (6099675779027387732L, -1616096673178244191L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.IFlowCaptureReferenceOperation,
             (6545808817115459462L, 7291643358036944293L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.IIsNullOperation,
             (6733393976725918900L, 1361308820797903537L) => value is global::Microsoft.CodeAnalysis.FlowAnalysis.IStaticLocalInitializationSemaphoreOperation,
-            (6557777869651643890L, 1560909678486397338L) => value is global::Microsoft.CodeAnalysis.GeneratorDriver,
+            (5913174731094460318L, 5904739188119359633L) => value is global::Microsoft.CodeAnalysis.GeneratorDriver,
             (6358755686992407925L, -8080224264017349741L) => value is global::Microsoft.CodeAnalysis.GeneratorDriverRunResult,
             (6307251526629362449L, -7268558009289836410L) => value is global::Microsoft.CodeAnalysis.ISymbol,
             (6580531003013084278L, -2082345827748254059L) => value is global::Microsoft.CodeAnalysis.IncrementalGeneratorRunStep,
@@ -1276,15 +1279,15 @@ internal static class RoslynDispatcherRegistry
             (6130819745528447385L, -5867126651095620958L) => value is global::Microsoft.CodeAnalysis.RuleSet,
             (6849951732491675093L, 3573927096151042486L) => value is global::Microsoft.CodeAnalysis.RuleSetInclude,
             (5840879927733254484L, 9168873283432094360L) => value is global::Microsoft.CodeAnalysis.ScriptCompilationInfo,
-            (6113588701956873636L, 6647486086638570372L) => value is global::Microsoft.CodeAnalysis.SemanticModel,
+            (6026408041769789646L, -7268070967470467700L) => value is global::Microsoft.CodeAnalysis.SemanticModel,
             (5979497240805481802L, 1783107786087387582L) => value is global::Microsoft.CodeAnalysis.SourceReferenceResolver,
             (6416783825437372526L, -797065960049252723L) => value is global::Microsoft.CodeAnalysis.StrongNameProvider,
             (5809328056008126382L, 572414262352314281L) => value is global::Microsoft.CodeAnalysis.SymbolDisplayFormat,
             (6648486856101798533L, 7982623440663575998L) => value is global::Microsoft.CodeAnalysis.SymbolVisitor,
             (6597850618135550739L, 3449100778133299109L) => value is global::Microsoft.CodeAnalysis.SyntaxNode,
-            (6804073839854753621L, 5755347440263286430L) => value is global::Microsoft.CodeAnalysis.SyntaxReference,
-            (6687008693247678156L, 4938567660882255013L) => value is global::Microsoft.CodeAnalysis.SyntaxTree,
-            (6730944937249305724L, -2380146906168220996L) => value is global::Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider,
+            (6228768648122792612L, -4382351368035056967L) => value is global::Microsoft.CodeAnalysis.SyntaxReference,
+            (6354249605753364318L, 1429373725062632079L) => value is global::Microsoft.CodeAnalysis.SyntaxTree,
+            (6609103120049023606L, 2126899248612205454L) => value is global::Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider,
             (6099815488220600284L, 865797375384720787L) => value is global::Microsoft.CodeAnalysis.SyntaxWalker,
             (5853228071497527639L, 1221183758432017053L) => value is global::Microsoft.CodeAnalysis.Text.SourceText,
             (6750518946759575310L, 6496504992761142678L) => value is global::Microsoft.CodeAnalysis.Text.SourceTextContainer,
@@ -1640,12 +1643,12 @@ internal static class RoslynDispatcherRegistry
         if (value is global::Microsoft.CodeAnalysis.AssemblyIdentity) return (5996471553027514508L, 4701251417201702566L);
         if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpCommandLineArguments) return (5982718567555520975L, -2681234809525433189L);
         if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser) return (6259014060537408448L, 3222434785862186649L);
-        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation) return (6050666604420006678L, 1849897601358461331L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation) return (6775252281750445142L, 4975874017472380812L);
         if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpDiagnosticFormatter) return (5989628894161898704L, 1578727213959738249L);
         if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpGeneratorDriver) return (5792381882888769229L, -5365207419229665883L);
         if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpScriptCompilationInfo) return (5784058841520946297L, -3472904706982809671L);
         if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter) return (6070001590576051063L, 7915326243709191072L);
-        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree) return (5780203819313946238L, 6625777856044082566L);
+        if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree) return (5995457860783358261L, 6922293672567467952L);
         if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker) return (5798941240884917114L, 3488527090767569584L);
         if (value is global::Microsoft.CodeAnalysis.CSharp.InterceptableLocation) return (6754051928516294902L, -470194058169145164L);
         if (value is global::Microsoft.CodeAnalysis.CSharp.SyntaxTokenParser) return (6098482534826596334L, -904762057336626503L);
@@ -1720,7 +1723,7 @@ internal static class RoslynDispatcherRegistry
         if (value is global::Microsoft.CodeAnalysis.Text.TextChangeEventArgs) return (6624964556865124113L, -6222292667291326019L);
         if (value is global::Microsoft.CodeAnalysis.UnresolvedMetadataReference) return (5839900208743938630L, 4741735123229158042L);
         if (value is global::Microsoft.CodeAnalysis.XmlFileResolver) return (5887309302188627221L, 6764082601767496321L);
-        if (value is global::Microsoft.CodeAnalysis.AdditionalText) return (6084738887592764794L, 3692911566952031641L);
+        if (value is global::Microsoft.CodeAnalysis.AdditionalText) return (6476471212961182332L, 1943641393977745043L);
         if (value is global::Microsoft.CodeAnalysis.AnalyzerConfig) return (6024297944993335436L, -7065923222341436998L);
         if (value is global::Microsoft.CodeAnalysis.AnalyzerConfigSet) return (6717050123778960293L, -6762393599734794874L);
         if (value is global::Microsoft.CodeAnalysis.AssemblyIdentityComparer) return (6660097939550069446L, 5776084435973522353L);
@@ -1728,7 +1731,7 @@ internal static class RoslynDispatcherRegistry
         if (value is global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor) return (5879864711761015701L, -2943349498361703264L);
         if (value is global::Microsoft.CodeAnalysis.CommandLineArguments) return (6401097728906243178L, 3451007884583936139L);
         if (value is global::Microsoft.CodeAnalysis.CommandLineParser) return (6349933110489488382L, 223764789649756819L);
-        if (value is global::Microsoft.CodeAnalysis.Compilation) return (5990517842810451800L, -7748502764516140663L);
+        if (value is global::Microsoft.CodeAnalysis.Compilation) return (6832893011855403459L, 5523154511068147128L);
         if (value is global::Microsoft.CodeAnalysis.CompilationOptions) return (6051877633432401859L, -7361254524798083687L);
         if (value is global::Microsoft.CodeAnalysis.ControlFlowAnalysis) return (6045451736313059067L, 4391986793448779443L);
         if (value is global::Microsoft.CodeAnalysis.DataFlowAnalysis) return (6778493067070798230L, 4943460826682868913L);
@@ -1754,7 +1757,7 @@ internal static class RoslynDispatcherRegistry
         if (value is global::Microsoft.CodeAnalysis.ErrorLogOptions) return (5886274941982058512L, -5512169540606121042L);
         if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock) return (5921438912091861781L, 4024794609432886691L);
         if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch) return (6911455229123460639L, -2773923543869248366L);
-        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph) return (6487313566459071245L, -4797659846901864771L);
+        if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph) return (5828252980994276345L, -3940355166042930753L);
         if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion) return (6870322294812494851L, -3107233837940045126L);
         if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.ICaughtExceptionOperation) return (6220667445067610340L, -1009132934905424992L);
         if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.IFlowAnonymousFunctionOperation) return (6218440649254350061L, -6193061645264360282L);
@@ -1762,7 +1765,7 @@ internal static class RoslynDispatcherRegistry
         if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.IFlowCaptureReferenceOperation) return (6099675779027387732L, -1616096673178244191L);
         if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.IIsNullOperation) return (6545808817115459462L, 7291643358036944293L);
         if (value is global::Microsoft.CodeAnalysis.FlowAnalysis.IStaticLocalInitializationSemaphoreOperation) return (6733393976725918900L, 1361308820797903537L);
-        if (value is global::Microsoft.CodeAnalysis.GeneratorDriver) return (6557777869651643890L, 1560909678486397338L);
+        if (value is global::Microsoft.CodeAnalysis.GeneratorDriver) return (5913174731094460318L, 5904739188119359633L);
         if (value is global::Microsoft.CodeAnalysis.GeneratorDriverRunResult) return (6358755686992407925L, -8080224264017349741L);
         if (value is global::Microsoft.CodeAnalysis.ISymbol) return (6307251526629362449L, -7268558009289836410L);
         if (value is global::Microsoft.CodeAnalysis.IncrementalGeneratorRunStep) return (6580531003013084278L, -2082345827748254059L);
@@ -1867,15 +1870,15 @@ internal static class RoslynDispatcherRegistry
         if (value is global::Microsoft.CodeAnalysis.RuleSet) return (6130819745528447385L, -5867126651095620958L);
         if (value is global::Microsoft.CodeAnalysis.RuleSetInclude) return (6849951732491675093L, 3573927096151042486L);
         if (value is global::Microsoft.CodeAnalysis.ScriptCompilationInfo) return (5840879927733254484L, 9168873283432094360L);
-        if (value is global::Microsoft.CodeAnalysis.SemanticModel) return (6113588701956873636L, 6647486086638570372L);
+        if (value is global::Microsoft.CodeAnalysis.SemanticModel) return (6026408041769789646L, -7268070967470467700L);
         if (value is global::Microsoft.CodeAnalysis.SourceReferenceResolver) return (5979497240805481802L, 1783107786087387582L);
         if (value is global::Microsoft.CodeAnalysis.StrongNameProvider) return (6416783825437372526L, -797065960049252723L);
         if (value is global::Microsoft.CodeAnalysis.SymbolDisplayFormat) return (5809328056008126382L, 572414262352314281L);
         if (value is global::Microsoft.CodeAnalysis.SymbolVisitor) return (6648486856101798533L, 7982623440663575998L);
         if (value is global::Microsoft.CodeAnalysis.SyntaxNode) return (6597850618135550739L, 3449100778133299109L);
-        if (value is global::Microsoft.CodeAnalysis.SyntaxReference) return (6804073839854753621L, 5755347440263286430L);
-        if (value is global::Microsoft.CodeAnalysis.SyntaxTree) return (6687008693247678156L, 4938567660882255013L);
-        if (value is global::Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider) return (6730944937249305724L, -2380146906168220996L);
+        if (value is global::Microsoft.CodeAnalysis.SyntaxReference) return (6228768648122792612L, -4382351368035056967L);
+        if (value is global::Microsoft.CodeAnalysis.SyntaxTree) return (6354249605753364318L, 1429373725062632079L);
+        if (value is global::Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider) return (6609103120049023606L, 2126899248612205454L);
         if (value is global::Microsoft.CodeAnalysis.SyntaxWalker) return (6099815488220600284L, 865797375384720787L);
         if (value is global::Microsoft.CodeAnalysis.Text.SourceText) return (5853228071497527639L, 1221183758432017053L);
         if (value is global::Microsoft.CodeAnalysis.Text.SourceTextContainer) return (6750518946759575310L, 6496504992761142678L);

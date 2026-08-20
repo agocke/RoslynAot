@@ -99,6 +99,27 @@ internal sealed partial class CSharpCompilationVtblDispatcher : ICSharpCompilati
         }
     }
 
+    public int Compilation_ContainsSymbolsWithName_b1c77b04(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int filter,
+        long cancellationToken,
+        out int result)
+    {
+        RoslynCallCounters.Record(5914);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(receiver).ContainsSymbolsWithName(name, (global::Microsoft.CodeAnalysis.SymbolFilter)filter, cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int Compilation_ContainsSyntaxTree(
         long receiver,
         long syntaxTree,
@@ -338,6 +359,63 @@ internal sealed partial class CSharpCompilationVtblDispatcher : ICSharpCompilati
         }
     }
 
+    public int Compilation_GetDeclarationDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5915);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(receiver).GetDeclarationDiagnostics(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Compilation_GetDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5916);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(receiver).GetDiagnostics(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Compilation_GetEntryPoint(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5917);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(receiver).GetEntryPoint(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int Compilation_GetMetadataReference(
         long receiver,
         long assemblySymbol,
@@ -349,6 +427,44 @@ internal sealed partial class CSharpCompilationVtblDispatcher : ICSharpCompilati
         try
         {
             result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(receiver).GetMetadataReference(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.IAssemblySymbol>(assemblySymbol)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Compilation_GetMethodBodyDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5918);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(receiver).GetMethodBodyDiagnostics(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Compilation_GetParseDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5919);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(receiver).GetParseDiagnostics(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -388,6 +504,27 @@ internal sealed partial class CSharpCompilationVtblDispatcher : ICSharpCompilati
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(receiver).GetSpecialType((global::Microsoft.CodeAnalysis.SpecialType)specialType));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Compilation_GetSymbolsWithName_07bd39c5(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int filter,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5920);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(receiver).GetSymbolsWithName(name, (global::Microsoft.CodeAnalysis.SymbolFilter)filter, cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -445,6 +582,25 @@ internal sealed partial class CSharpCompilationVtblDispatcher : ICSharpCompilati
         try
         {
             result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(receiver).GetUnreferencedAssemblyIdentities(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Diagnostic>(diagnostic))).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int Compilation_GetUsedAssemblyReferences(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5921);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(receiver).GetUsedAssemblyReferences(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -1103,6 +1259,27 @@ internal sealed partial class CSharpCompilationVtblDispatcher : ICSharpCompilati
         }
     }
 
+    public int CSharpCompilation_ContainsSymbolsWithName_c4ea110d(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int filter,
+        long cancellationToken,
+        out int result)
+    {
+        RoslynCallCounters.Record(5843);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation>(receiver).ContainsSymbolsWithName(name, (global::Microsoft.CodeAnalysis.SymbolFilter)filter, cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CSharpCompilation_ContainsSyntaxTree(
         long receiver,
         long syntaxTree,
@@ -1114,6 +1291,44 @@ internal sealed partial class CSharpCompilationVtblDispatcher : ICSharpCompilati
         try
         {
             result = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation>(receiver).ContainsSyntaxTree(syntaxTree == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(syntaxTree)) ? 1 : 0;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpCompilation_GetDeclarationDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5844);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation>(receiver).GetDeclarationDiagnostics(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpCompilation_GetDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5845);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation>(receiver).GetDiagnostics(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
@@ -1160,6 +1375,44 @@ internal sealed partial class CSharpCompilationVtblDispatcher : ICSharpCompilati
         }
     }
 
+    public int CSharpCompilation_GetMethodBodyDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5846);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation>(receiver).GetMethodBodyDiagnostics(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpCompilation_GetParseDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5847);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation>(receiver).GetParseDiagnostics(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int CSharpCompilation_GetSemanticModel_c4696b5c(
         long receiver,
         long syntaxTree,
@@ -1172,6 +1425,46 @@ internal sealed partial class CSharpCompilationVtblDispatcher : ICSharpCompilati
         try
         {
             result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation>(receiver).GetSemanticModel(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxTree>(syntaxTree), ignoreAccessibility != 0));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpCompilation_GetSymbolsWithName_c68ddbea(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int filter,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5848);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation>(receiver).GetSymbolsWithName(name, (global::Microsoft.CodeAnalysis.SymbolFilter)filter, cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int CSharpCompilation_GetUsedAssemblyReferences(
+        long receiver,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5849);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.CSharpCompilation>(receiver).GetUsedAssemblyReferences(cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

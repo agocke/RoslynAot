@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("295b3758-983d-5322-8919-e2fbc9c97794")]
+[Guid("f7e3e9c3-4ffd-5ed3-b82d-d0cfc32fa64c")]
 public partial interface ICompilationVtbl
 {
 
@@ -42,6 +42,15 @@ public partial interface ICompilationVtbl
     int Compilation_Clone(
         long receiver,
         out long result
+    );
+
+    [PreserveSig]
+    int Compilation_ContainsSymbolsWithName_b1c77b04(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int filter,
+        long cancellationToken,
+        out int result
     );
 
     [PreserveSig]
@@ -140,9 +149,44 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
+    int Compilation_GetDeclarationDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int Compilation_GetDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int Compilation_GetEntryPoint(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
     int Compilation_GetMetadataReference(
         long receiver,
         long assemblySymbol,
+        out long result
+    );
+
+    [PreserveSig]
+    int Compilation_GetMethodBodyDiagnostics(
+        long receiver,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int Compilation_GetParseDiagnostics(
+        long receiver,
+        long cancellationToken,
         out long result
     );
 
@@ -158,6 +202,15 @@ public partial interface ICompilationVtbl
     int Compilation_GetSpecialType(
         long receiver,
         sbyte specialType,
+        out long result
+    );
+
+    [PreserveSig]
+    int Compilation_GetSymbolsWithName_07bd39c5(
+        long receiver,
+        [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
+        int filter,
+        long cancellationToken,
         out long result
     );
 
@@ -179,6 +232,13 @@ public partial interface ICompilationVtbl
     int Compilation_GetUnreferencedAssemblyIdentities(
         long receiver,
         long diagnostic,
+        out long result
+    );
+
+    [PreserveSig]
+    int Compilation_GetUsedAssemblyReferences(
+        long receiver,
+        long cancellationToken,
         out long result
     );
 

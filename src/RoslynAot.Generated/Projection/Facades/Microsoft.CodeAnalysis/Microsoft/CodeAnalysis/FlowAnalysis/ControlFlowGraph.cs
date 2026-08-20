@@ -72,52 +72,92 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
 
         public static ControlFlowGraph Create(Operations.IAttributeOperation attribute, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IControlFlowGraphTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetControlFlowGraphTypeVtbl(controlVtbl);
+            int status = vtbl.ControlFlowGraph_Create_f7b635a2(attribute.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ControlFlowGraph Create(Operations.IBlockOperation body, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IControlFlowGraphTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetControlFlowGraphTypeVtbl(controlVtbl);
+            int status = vtbl.ControlFlowGraph_Create_22af261f(body.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ControlFlowGraph Create(Operations.IConstructorBodyOperation constructorBody, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IControlFlowGraphTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetControlFlowGraphTypeVtbl(controlVtbl);
+            int status = vtbl.ControlFlowGraph_Create_eb22a482(constructorBody.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ControlFlowGraph Create(Operations.IFieldInitializerOperation initializer, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IControlFlowGraphTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetControlFlowGraphTypeVtbl(controlVtbl);
+            int status = vtbl.ControlFlowGraph_Create_270d5a1b(initializer.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ControlFlowGraph Create(Operations.IMethodBodyOperation methodBody, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IControlFlowGraphTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetControlFlowGraphTypeVtbl(controlVtbl);
+            int status = vtbl.ControlFlowGraph_Create_d35aacc4(methodBody.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ControlFlowGraph Create(Operations.IParameterInitializerOperation initializer, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IControlFlowGraphTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetControlFlowGraphTypeVtbl(controlVtbl);
+            int status = vtbl.ControlFlowGraph_Create_c6cbdcc0(initializer.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ControlFlowGraph Create(Operations.IPropertyInitializerOperation initializer, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IControlFlowGraphTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetControlFlowGraphTypeVtbl(controlVtbl);
+            int status = vtbl.ControlFlowGraph_Create_101a2b2e(initializer.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static ControlFlowGraph? Create(SyntaxNode node, SemanticModel semanticModel, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.IControlFlowGraphTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetControlFlowGraphTypeVtbl(controlVtbl);
+            int status = vtbl.ControlFlowGraph_Create_cf22403e(node.__RoslynAotGetHandle(), semanticModel.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return result == 0 ? null : __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public ControlFlowGraph GetAnonymousFunctionControlFlowGraph(IFlowAnonymousFunctionOperation anonymousFunction, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IControlFlowGraphVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.ControlFlowGraph_GetAnonymousFunctionControlFlowGraph(__RoslynAotGetHandle(), anonymousFunction.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public ControlFlowGraph GetLocalFunctionControlFlowGraph(IMethodSymbol localFunction, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IControlFlowGraphVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.ControlFlowGraph_GetLocalFunctionControlFlowGraph(__RoslynAotGetHandle(), localFunction.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
@@ -126,7 +166,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ControlFlowGraph __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ControlFlowGraph)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("435d8b0d-9151-5a07-bd66-42d0c9496bbd")]
+        [System.Runtime.InteropServices.Guid("f1467bf9-1d34-50e2-bfc1-2277da0b51c9")]
         internal partial interface __RoslynAotImplementation : ControlFlowGraph
         {
         }

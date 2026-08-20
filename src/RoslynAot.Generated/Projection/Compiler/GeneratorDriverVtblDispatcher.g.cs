@@ -98,6 +98,26 @@ internal sealed partial class GeneratorDriverVtblDispatcher : IGeneratorDriverVt
         }
     }
 
+    public int GeneratorDriver_RunGenerators_8d103b4e(
+        long receiver,
+        long compilation,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5934);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.GeneratorDriver>(receiver).RunGenerators(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.Compilation>(compilation), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int GeneratorDriver_WithUpdatedAnalyzerConfigOptions(
         long receiver,
         long newOptions,

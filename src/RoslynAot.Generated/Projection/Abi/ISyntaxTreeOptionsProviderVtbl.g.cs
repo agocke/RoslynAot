@@ -12,7 +12,15 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("2375747c-1ec2-5d69-bc22-99d8ff04f8de")]
+[Guid("6a72aa76-4045-5bb8-8e63-930a9943841d")]
 public partial interface ISyntaxTreeOptionsProviderVtbl
 {
+
+    [PreserveSig]
+    int SyntaxTreeOptionsProvider_IsGenerated(
+        long receiver,
+        long tree,
+        long cancellationToken,
+        out int result
+    );
 }

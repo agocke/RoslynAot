@@ -327,16 +327,25 @@ internal static class ProjectionForeignTypes
             "A delegate over analyzer state, reached only through the " +
             "Begin/End pattern on Roslyn's own delegate types."),
 
-        // ---- Unrepresentable ------------------------------------------------
-
         ["[System.Runtime]T:System.Threading.CancellationToken"] = new(
-            ForeignTransport.Unrepresentable,
-            "A struct whose behaviour is a live registration list on a source " +
-            "the other side owns. A clone is a token that never cancels and " +
-            "never fires a callback, which is worse than not having one " +
-            "because it looks like it works. The v1 answer is a degradation " +
-            "that has to be declared here when it lands: round-trip " +
-            "IsCancellationRequested and admit that Register does nothing."),
+            ForeignTransport.Clone,
+            "Not a clone of the value - a clone of the one edge the value " +
+            "carries. The struct is a single field over a " +
+            "CancellationTokenSource, every member reads that source's " +
+            "private state directly, and nothing on the source is virtual, so " +
+            "the receiver can only hold a real source of its own. The sender " +
+            "registers on its token and the receiver cancels its source when " +
+            "the edge arrives. Faithful for the observable surface because " +
+            "cancellation is monotonic and Cancel is idempotent, so a late " +
+            "edge is late and never wrong, and because registering on an " +
+            "already-cancelled token fires synchronously, so the " +
+            "already-cancelled case needs no separate state read. Handle 0 is " +
+            "default, which keeps CanBeCanceled false rather than minting a " +
+            "source that reports true. Declared degradation: the edge is " +
+            "one-way per crossing, so a token the receiver cancels does not " +
+            "propagate back to the sender."),
+
+        // ---- Unrepresentable ------------------------------------------------
 
         ["[System.Runtime]T:System.Threading.Tasks.Task`1"] = new(
             ForeignTransport.Unrepresentable,

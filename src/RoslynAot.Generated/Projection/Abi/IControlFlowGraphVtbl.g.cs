@@ -12,9 +12,25 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("435d8b0d-9151-5a07-bd66-42d0c9496bbd")]
+[Guid("f1467bf9-1d34-50e2-bfc1-2277da0b51c9")]
 public partial interface IControlFlowGraphVtbl
 {
+
+    [PreserveSig]
+    int ControlFlowGraph_GetAnonymousFunctionControlFlowGraph(
+        long receiver,
+        long anonymousFunction,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int ControlFlowGraph_GetLocalFunctionControlFlowGraph(
+        long receiver,
+        long localFunction,
+        long cancellationToken,
+        out long result
+    );
 
     [PreserveSig]
     int ControlFlowGraph_get_Blocks(

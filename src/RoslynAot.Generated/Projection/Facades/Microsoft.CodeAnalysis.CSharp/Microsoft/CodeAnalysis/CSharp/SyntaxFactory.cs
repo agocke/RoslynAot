@@ -4311,7 +4311,11 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static SyntaxTree ParseSyntaxTree(Text.SourceText text, ParseOptions? options = null, string path = "", System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
+            global::RoslynAot.Abi.ISyntaxFactoryVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactoryVtbl(controlVtbl);
+            int status = vtbl.SyntaxFactory_ParseSyntaxTree_b7815f8f(text.__RoslynAotGetHandle(), options is null ? 0L : options.__RoslynAotGetHandle(), path, global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return CodeAnalysis.SyntaxTree.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]

@@ -123,6 +123,62 @@ internal sealed partial class RoslynInterop : IRoslynControlVtbl
         }
     }
 
+    /// <summary>
+    /// Mints the compiler-side source standing in for an analyzer's token.
+    /// </summary>
+    /// <remarks>
+    /// The source, not the token, is what the handle names: a token is a
+    /// readonly view over it, so holding the source is what lets
+    /// <see cref="CancelCancellationTokenSource"/> move it later. Roslyn
+    /// receives <c>source.Token</c>, an ordinary token over an ordinary
+    /// source, and cannot tell it from the driver's own.
+    /// </remarks>
+    public int CreateCancellationTokenSource(out long result)
+    {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlCreateCancellationTokenSource);
+        result = default;
+        try
+        {
+            result = _objects.AddObject(new CancellationTokenSource());
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
+    /// <summary>
+    /// Delivers the one edge a remoted cancellation token carries.
+    /// </summary>
+    /// <remarks>
+    /// Idempotent because <see cref="CancellationTokenSource.Cancel()"/> is,
+    /// which is what makes a duplicated or replayed edge harmless rather than
+    /// something the transport has to deduplicate.
+    ///
+    /// <see cref="CancellationTokenSource.Cancel()"/> runs Roslyn's own
+    /// registrations synchronously on this thread and wraps their failures in
+    /// an <see cref="AggregateException"/>. That is caught here like any other
+    /// failure and reported through the boundary rather than left to unwind
+    /// into the analyzer's call to <c>Cancel</c>, where it would be attributed
+    /// to the analyzer.
+    /// </remarks>
+    public int CancelCancellationTokenSource(long handle)
+    {
+        RoslynCallCounters.Record(
+            RoslynCallCounters.ControlCancelCancellationTokenSource);
+        try
+        {
+            _objects.GetObject<CancellationTokenSource>(handle).Cancel();
+            return RoslynAbi.Success;
+        }
+        catch (Exception exception)
+        {
+            return SetError(exception);
+        }
+    }
+
     public int IsObjectType(
         long handle,
         long vtblIdLow,

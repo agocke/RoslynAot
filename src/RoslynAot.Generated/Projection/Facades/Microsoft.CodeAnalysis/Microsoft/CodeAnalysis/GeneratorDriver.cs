@@ -74,7 +74,11 @@ namespace Microsoft.CodeAnalysis
 
         public GeneratorDriver RunGenerators(Compilation compilation, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.IGeneratorDriverVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.GeneratorDriver_RunGenerators_8d103b4e(__RoslynAotGetHandle(), compilation.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public GeneratorDriver RunGenerators(Compilation compilation)
@@ -115,7 +119,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static GeneratorDriver __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (GeneratorDriver)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("54810df2-e83a-5b01-9aa1-a6201577a915")]
+        [System.Runtime.InteropServices.Guid("adb3879e-d116-520f-91d0-2ec701d9f151")]
         internal partial interface __RoslynAotImplementation : GeneratorDriver
         {
         }

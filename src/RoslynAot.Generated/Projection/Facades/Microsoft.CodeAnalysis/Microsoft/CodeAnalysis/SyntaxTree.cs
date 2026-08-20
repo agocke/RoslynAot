@@ -50,7 +50,11 @@ namespace Microsoft.CodeAnalysis
         public abstract FileLinePositionSpan GetLineSpan(Text.TextSpan span, System.Threading.CancellationToken cancellationToken = default);
         public virtual LineVisibility GetLineVisibility(int position, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISyntaxTreeVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SyntaxTree_GetLineVisibility(__RoslynAotGetHandle(), position, global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out int result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return (LineVisibility)result;
         }
 
         public abstract Location GetLocation(Text.TextSpan span);
@@ -58,12 +62,16 @@ namespace Microsoft.CodeAnalysis
         public abstract SyntaxReference GetReference(SyntaxNode node);
         public SyntaxNode GetRoot(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+            global::RoslynAot.Abi.ISyntaxTreeVtbl vtbl = __RoslynAotGetVtbl();
+            int status = vtbl.SyntaxTree_GetRoot(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+            global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+            return SyntaxNode.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public System.Threading.Tasks.Task<SyntaxNode> GetRootAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         protected abstract System.Threading.Tasks.Task<SyntaxNode> GetRootAsyncCore(System.Threading.CancellationToken cancellationToken);
@@ -71,7 +79,7 @@ namespace Microsoft.CodeAnalysis
         public abstract Text.SourceText GetText(System.Threading.CancellationToken cancellationToken = default);
         public virtual System.Threading.Tasks.Task<Text.SourceText> GetTextAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public abstract bool HasHiddenRegions();
@@ -171,17 +179,25 @@ namespace Microsoft.CodeAnalysis
 
             public override System.Collections.Generic.IEnumerable<Diagnostic> GetDiagnostics(System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ISyntaxTreeVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.SyntaxTree_GetDiagnostics_af8a9251(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<Diagnostic>(controlVtbl, result, static (controlVtbl, handle) => Diagnostic.__RoslynAotCreateProxy(controlVtbl, handle));
             }
 
             public override System.Collections.Generic.IEnumerable<LineMapping> GetLineMappings(System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
 
             public override FileLinePositionSpan GetLineSpan(Text.TextSpan span, System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ISyntaxTreeVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.SyntaxTree_GetLineSpan(__RoslynAotGetHandle(), span.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return FileLinePositionSpan.__RoslynAotCreateProxy(controlVtbl, result);
             }
 
             public override Location GetLocation(Text.TextSpan span)
@@ -195,7 +211,11 @@ namespace Microsoft.CodeAnalysis
 
             public override FileLinePositionSpan GetMappedLineSpan(Text.TextSpan span, System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ISyntaxTreeVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.SyntaxTree_GetMappedLineSpan(__RoslynAotGetHandle(), span.__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return FileLinePositionSpan.__RoslynAotCreateProxy(controlVtbl, result);
             }
 
             public override SyntaxReference GetReference(SyntaxNode node)
@@ -219,7 +239,11 @@ namespace Microsoft.CodeAnalysis
 
             public override Text.SourceText GetText(System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
+                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
+                global::RoslynAot.Abi.ISyntaxTreeVtbl vtbl = __RoslynAotGetVtbl();
+                int status = vtbl.SyntaxTree_GetText(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateCancellationTokenHandle(controlVtbl, cancellationToken), out long result);
+                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
+                return Text.SourceText.__RoslynAotCreateProxy(controlVtbl, result);
             }
 
             public override bool HasHiddenRegions()
@@ -331,7 +355,7 @@ namespace Microsoft.CodeAnalysis
 
         internal static SyntaxTree __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6687008693247678156L, 4938567660882255013L)is SyntaxTree __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6354249605753364318L, 1429373725062632079L)is SyntaxTree __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxTreeVtbl(controlVtbl), handle);
         }

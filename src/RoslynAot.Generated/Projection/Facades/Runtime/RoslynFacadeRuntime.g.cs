@@ -636,6 +636,91 @@ public static unsafe class RoslynFacadeRuntime
             });
     }
 
+    /// <summary>
+    /// The compiler-side source mirroring an analyzer-side token,
+    /// keyed so that one analyzer token owns one mirror however many
+    /// times it crosses.
+    /// </summary>
+    /// <remarks>
+    /// Keyed rather than per-call because the registration below must
+    /// outlive neither more nor less than the token it watches.
+    /// Registering per call site would accumulate one live
+    /// registration per crossing on members as hot as
+    /// <c>SyntaxReference.GetSyntax</c>; CancellationToken's equality
+    /// is its source's identity, so the map collapses those to one.
+    /// </remarks>
+    private static readonly
+        global::System.Collections.Generic.Dictionary<
+            global::System.Threading.CancellationToken, long>
+        s_cancellationMirrors = new();
+
+    /// <summary>
+    /// Hands the compiler a token equivalent to an analyzer's.
+    /// </summary>
+    /// <remarks>
+    /// Handle 0 is <c>default</c>, and a token that cannot be
+    /// cancelled is exactly that. Minting a source for it would report
+    /// <c>CanBeCanceled</c> true to Roslyn where the analyzer said
+    /// false, which changes the path Roslyn takes and reports nothing.
+    ///
+    /// <c>Register</c> rather than <c>UnsafeRegister</c> is required,
+    /// not stylistic: the control vtbl is reached through an ambient
+    /// <c>AsyncLocal</c>, the callback runs on whichever thread calls
+    /// <c>Cancel</c>, and only <c>Register</c> captures and restores
+    /// the <c>ExecutionContext</c> that carries it.
+    ///
+    /// The callback swallows everything. It runs inside the analyzer's
+    /// own call to <c>Cancel</c>, which invokes registrations
+    /// synchronously and wraps failures in an
+    /// <c>AggregateException</c> - so a throw here would surface in
+    /// analyzer code, attributed to the analyzer, for a boundary
+    /// failure it has no part in. A cancel that cannot be delivered
+    /// leaves the compiler doing work it would have stopped, which is
+    /// the same outcome as no cancellation at all.
+    /// </remarks>
+    public static long CreateCancellationTokenHandle(
+        IRoslynControlVtbl controlVtbl,
+        global::System.Threading.CancellationToken cancellationToken)
+    {
+        if (!cancellationToken.CanBeCanceled)
+        {
+            return 0;
+        }
+
+        long handle;
+        lock (s_cancellationMirrors)
+        {
+            if (s_cancellationMirrors.TryGetValue(
+                    cancellationToken,
+                    out handle))
+            {
+                return handle;
+            }
+
+            int status =
+                controlVtbl.CreateCancellationTokenSource(out handle);
+            ThrowIfFailed(controlVtbl, status);
+            s_cancellationMirrors.Add(cancellationToken, handle);
+        }
+
+        cancellationToken.Register(
+            static state =>
+            {
+                var (vtbl, mirror) =
+                    ((IRoslynControlVtbl, long))state!;
+                try
+                {
+                    vtbl.CancelCancellationTokenSource(mirror);
+                }
+                catch
+                {
+                }
+            },
+            (controlVtbl, handle));
+
+        return handle;
+    }
+
     public static long CreateSourceTextHandle(
         IRoslynControlVtbl controlVtbl,
         string text,

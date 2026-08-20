@@ -74,15 +74,7 @@
     },
     {
       "ruleId": "CA1515",
-      "analyzerType": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpMakeTypesInternal",
-      "status": "Fail",
-      "reason": {
-        "kind": "AnalyzerException",
-        "case": "CA1515/Basic",
-        "actionKind": "Symbol",
-        "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
-      }
+      "status": "Pass"
     },
     {
       "ruleId": "CA1516",
@@ -141,7 +133,7 @@
         "case": "CA1851/Basic",
         "actionKind": "OperationBlock",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph.Create"
+        "failingMember": "Microsoft.CodeAnalysis.IOperation.Accept[TArgument,TResult]"
       }
     },
     {
@@ -154,10 +146,10 @@
       "status": "Fail",
       "reason": {
         "kind": "AnalyzerException",
-        "case": "CA1856/Basic",
+        "case": "CA1857/Basic",
         "actionKind": "SyntaxNode",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetDeclaredSymbol"
+        "failingMember": "Microsoft.CodeAnalysis.AttributeData.get_NamedArguments"
       }
     },
     {
@@ -166,10 +158,10 @@
       "status": "Fail",
       "reason": {
         "kind": "AnalyzerException",
-        "case": "CA1856/Basic",
+        "case": "CA1857/Basic",
         "actionKind": "SyntaxNode",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetDeclaredSymbol"
+        "failingMember": "Microsoft.CodeAnalysis.AttributeData.get_NamedArguments"
       }
     },
     {
@@ -238,15 +230,7 @@
     },
     {
       "ruleId": "CA2020",
-      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Runtime.CSharpPreventNumericIntPtrUIntPtrBehavioralChanges",
-      "status": "Fail",
-      "reason": {
-        "kind": "AnalyzerException",
-        "case": "CA2020/Basic",
-        "actionKind": "Operation",
-        "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
-      }
+      "status": "Pass"
     },
     {
       "ruleId": "CA2234",
@@ -281,7 +265,7 @@
         "case": "CA2260/Basic",
         "actionKind": "Symbol",
         "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
+        "failingMember": "Microsoft.CodeAnalysis.CSharp.Syntax.BaseListSyntax.get_Types"
       }
     },
     {
@@ -302,27 +286,11 @@
     },
     {
       "ruleId": "CA2352",
-      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Security.CSharpDataSetDataTableInSerializableTypeAnalyzer",
-      "status": "Fail",
-      "reason": {
-        "kind": "AnalyzerException",
-        "case": "CA2352/Basic",
-        "actionKind": "Symbol",
-        "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
-      }
+      "status": "Pass"
     },
     {
       "ruleId": "CA2353",
-      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Security.CSharpDataSetDataTableInSerializableTypeAnalyzer",
-      "status": "Fail",
-      "reason": {
-        "kind": "AnalyzerException",
-        "case": "CA2352/Basic",
-        "actionKind": "Symbol",
-        "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
-      }
+      "status": "Pass"
     },
     {
       "ruleId": "CA2354",
@@ -338,15 +306,7 @@
     },
     {
       "ruleId": "CA2362",
-      "analyzerType": "Microsoft.NetCore.CSharp.Analyzers.Security.CSharpDataSetDataTableInSerializableTypeAnalyzer",
-      "status": "Fail",
-      "reason": {
-        "kind": "AnalyzerException",
-        "case": "CA2352/Basic",
-        "actionKind": "Symbol",
-        "exceptionType": "System.PlatformNotSupportedException",
-        "failingMember": "Microsoft.CodeAnalysis.SyntaxReference.GetSyntax"
-      }
+      "status": "NotExercised"
     }
   ]
 }

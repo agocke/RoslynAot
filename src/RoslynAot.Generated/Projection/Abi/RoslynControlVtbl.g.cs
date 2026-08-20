@@ -19,9 +19,9 @@ public static unsafe class RoslynAbi
     public const int Unsupported = unchecked((int)0x80131515);
     public const int Failure = unchecked((int)0x80004005);
 
-    public const string ManifestIdentity = "45bcd9faa1169d6864f3460f80d83f78f63f5e925a48d684634645a216a61368";
-    public const long ManifestIdentityLow = 7538206236242197573L;
-    public const long ManifestIdentityHigh = 8664882252607845220L;
+    public const string ManifestIdentity = "f38f8feb858ea6004884803618c4b5de6124cab262bbdf844af753b275d535ba";
+    public const long ManifestIdentityLow = 46881551967817715L;
+    public const long ManifestIdentityHigh = -2398795618232269752L;
 
     public static uint Release(nint instance)
     {
@@ -118,6 +118,22 @@ public partial interface IRoslynControlVtbl
         int utf16Length,
         int checksumAlgorithm,
         out long result);
+
+    // A CancellationToken cannot cross as a value and cannot be
+    // proxied: it is one field over a CancellationTokenSource, its
+    // members read that source's private state directly, and nothing
+    // on the source is virtual. So the compiler holds a source of its
+    // own and the analyzer drives it. Only the cancel edge crosses -
+    // monotonic, idempotent, and self-delivering for a token that was
+    // already cancelled, because Register fires synchronously in that
+    // case.
+    [PreserveSig]
+    int CreateCancellationTokenSource(
+        out long result);
+
+    [PreserveSig]
+    int CancelCancellationTokenSource(
+        long handle);
 
     [PreserveSig]
     int IsObjectType(

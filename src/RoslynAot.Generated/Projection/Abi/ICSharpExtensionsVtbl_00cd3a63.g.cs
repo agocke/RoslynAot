@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("a59f62ce-4af7-5717-91e0-648974eec5ee")]
+[Guid("ccd52ab3-e9b0-5058-a34f-7bd267cedceb")]
 public partial interface ICSharpExtensionsVtbl_00cd3a63
 {
 
@@ -95,6 +95,14 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
+    int CSharpExtensions_GetAliasInfo(
+        long semanticModel,
+        long nameSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
     int CSharpExtensions_GetAwaitExpressionInfo(
         long semanticModel,
         long awaitExpression,
@@ -102,8 +110,297 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
+    int CSharpExtensions_GetCollectionInitializerSymbolInfo(
+        long semanticModel,
+        long expression,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetCompilationUnitRoot(
+        long tree,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetConstantValue(
+        long semanticModel,
+        long expression,
+        long cancellationToken,
+        out RoslynConstantKind constantKind,
+        out long constantLow,
+        out long constantHigh
+    );
+
+    [PreserveSig]
     int CSharpExtensions_GetConversion_cd280968(
         long conversionExpression,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetConversion_1a43f9a8(
+        long semanticModel,
+        long expression,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_a6729ce0(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_165aecd6(
+        long semanticModel,
+        long declaratorSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_88397ffa(
+        long semanticModel,
+        long declaratorSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_3d0ddfb9(
+        long semanticModel,
+        long declaratorSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_0c880abb(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_ce8dd472(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_8b7a0239(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_5fb915ae(
+        long semanticModel,
+        long catchDeclaration,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_d76ea983(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_ae1b1fdb(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_1ac4f6c1(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_42da5e89(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_f1dc67c3(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_7ed79469(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_2fd6a497(
+        long semanticModel,
+        long forEachStatement,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_c3357bbc(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_2a5f2309(
+        long semanticModel,
+        long node,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_a8f6d69a(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_5f1dbb1d(
+        long semanticModel,
+        long node,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_3ce84b8f(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_d8a277dc(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_29cf26cf(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_8f17bd9b(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_4f390a2b(
+        long semanticModel,
+        long queryClause,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_6b1a7d05(
+        long semanticModel,
+        long node,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_e07ad603(
+        long semanticModel,
+        long designationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_fe200295(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_a400de82(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_1408cc2c(
+        long semanticModel,
+        long declaratorSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_4d7c580f(
+        long semanticModel,
+        long typeParameter,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_dea2d790(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetDeclaredSymbol_b2e5e9bf(
+        long semanticModel,
+        long declarationSyntax,
+        long cancellationToken,
         out long result
     );
 
@@ -148,6 +445,30 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
+    int CSharpExtensions_GetIndexerGroup(
+        long semanticModel,
+        long expression,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetInterceptableLocation(
+        long semanticModel,
+        long node,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetInterceptorMethod(
+        long semanticModel,
+        long node,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
     int CSharpExtensions_GetInterceptsLocationAttributeSyntax(
         long location,
         nint buffer,
@@ -156,8 +477,40 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
     );
 
     [PreserveSig]
+    int CSharpExtensions_GetMemberGroup_2fceef90(
+        long semanticModel,
+        long attribute,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetMemberGroup_7a1e4754(
+        long semanticModel,
+        long initializer,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetMemberGroup_c55b1cfd(
+        long semanticModel,
+        long expression,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
     int CSharpExtensions_GetOutConversion(
         long compoundAssignment,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetQueryClauseInfo(
+        long semanticModel,
+        long node,
+        long cancellationToken,
         out long result
     );
 
@@ -227,6 +580,94 @@ public partial interface ICSharpExtensionsVtbl_00cd3a63
         int position,
         long expression,
         int bindingOption,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetSymbolInfo_49c34403(
+        long semanticModel,
+        long attributeSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetSymbolInfo_9572bf2c(
+        long semanticModel,
+        long constructorInitializer,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetSymbolInfo_d8e5565d(
+        long semanticModel,
+        long crefSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetSymbolInfo_f1d12946(
+        long semanticModel,
+        long expression,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetSymbolInfo_ee531bc5(
+        long semanticModel,
+        long node,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetSymbolInfo_80ceb885(
+        long semanticModel,
+        long constructorInitializer,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetSymbolInfo_a3be89fd(
+        long semanticModel,
+        long node,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetTypeInfo_c65830e0(
+        long semanticModel,
+        long attributeSyntax,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetTypeInfo_085c5d82(
+        long semanticModel,
+        long constructorInitializer,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetTypeInfo_6e65e0cf(
+        long semanticModel,
+        long expression,
+        long cancellationToken,
+        out long result
+    );
+
+    [PreserveSig]
+    int CSharpExtensions_GetTypeInfo_45365a70(
+        long semanticModel,
+        long node,
+        long cancellationToken,
         out long result
     );
 

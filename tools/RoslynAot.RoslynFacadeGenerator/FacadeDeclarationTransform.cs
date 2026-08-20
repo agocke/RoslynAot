@@ -1285,6 +1285,9 @@ internal static class FacadeBodyEmitter
                 parameter.AbiType.IsNullable
                     ? $"{name} is null ? 0L : {name}.__RoslynAotGetHandle()"
                     : $"{name}.__RoslynAotGetHandle()",
+            AbiTypeKind.CancellationToken =>
+                "global::RoslynAot.RoslynFacade.RoslynFacadeRuntime." +
+                $"CreateCancellationTokenHandle(controlVtbl, {name})",
             AbiTypeKind.ValueHandle =>
                 $"{name}.__RoslynAotGetHandle()",
             AbiTypeKind.NullableHandle =>

@@ -23,6 +23,131 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
+    public int SemanticModel_GetConstantValue(
+        long receiver,
+        long node,
+        long cancellationToken,
+        out RoslynConstantKind constantKind,
+        out long constantLow,
+        out long constantHigh)
+    {
+        RoslynCallCounters.Record(5940);
+        constantKind = default;
+        constantLow = default;
+        constantHigh = default;
+
+        try
+        {
+            var __roslynAotOptional = _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).GetConstantValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(node), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token);
+            if (__roslynAotOptional.HasValue) _owner.WriteConstant(__roslynAotOptional.Value, out constantKind, out constantLow, out constantHigh); else constantKind = RoslynConstantKind.NoValue;
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_GetDeclarationDiagnostics(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5941);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).GetDeclarationDiagnostics(span == 0 ? null : _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_GetDiagnostics(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5942);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).GetDiagnostics(span == 0 ? null : _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_GetEnclosingSymbol(
+        long receiver,
+        int position,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5943);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).GetEnclosingSymbol(position, cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_GetImportScopes(
+        long receiver,
+        int position,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5944);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).GetImportScopes(position, cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_GetMethodBodyDiagnostics(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5945);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).GetMethodBodyDiagnostics(span == 0 ? null : _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SemanticModel_GetNullableContext(
         long receiver,
         int position,
@@ -42,6 +167,26 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         }
     }
 
+    public int SemanticModel_GetOperation(
+        long receiver,
+        long node,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5946);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddNullableObject(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).GetOperation(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(node), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
     public int SemanticModel_GetPreprocessingSymbolInfo(
         long receiver,
         long nameSyntax,
@@ -53,6 +198,26 @@ internal sealed partial class SemanticModelVtblDispatcher : ISemanticModelVtbl
         try
         {
             result = _owner.Objects.AddValue(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).GetPreprocessingSymbolInfo(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SyntaxNode>(nameSyntax)));
+            return RoslynAbi.Success;
+        }
+        catch (global::System.Exception exception)
+        {
+            return _owner.SetError(exception);
+        }
+    }
+
+    public int SemanticModel_GetSyntaxDiagnostics(
+        long receiver,
+        long span,
+        long cancellationToken,
+        out long result)
+    {
+        RoslynCallCounters.Record(5947);
+        result = default;
+
+        try
+        {
+            result = _owner.Objects.AddObject(global::System.Linq.Enumerable.Cast<object>(_owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(receiver).GetSyntaxDiagnostics(span == 0 ? null : _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Text.TextSpan>(span), cancellationToken == 0 ? global::System.Threading.CancellationToken.None : _owner.Objects.GetObject<global::System.Threading.CancellationTokenSource>(cancellationToken).Token)).ToArray());
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)
