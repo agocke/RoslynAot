@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis
     {
         public static string ToDisplayString(this System.Collections.Immutable.ImmutableArray<SymbolDisplayPart> parts)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'parts' is unsupported: Generic substitutions are not supported.");
         }
     }
 }

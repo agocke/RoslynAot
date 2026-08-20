@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -142,13 +142,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IConversionOperatorDeclarationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ConversionOperatorDeclarationSyntax_Accept_576ff7fd(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ConversionOperatorDeclarationSyntax_Accept_3cfcdf3b(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public new ConversionOperatorDeclarationSyntax AddAttributeLists(params AttributeListSyntax[] items)
@@ -180,7 +180,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public new ConversionOperatorDeclarationSyntax AddModifiers(params SyntaxToken[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'items' is unsupported: Arrays are not supported.");
         }
 
         public new ConversionOperatorDeclarationSyntax AddParameterListParameters(params ParameterSyntax[] items)
@@ -194,22 +194,22 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public ConversionOperatorDeclarationSyntax Update(SyntaxList<AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, SyntaxToken implicitOrExplicitKeyword, ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier, SyntaxToken operatorKeyword, TypeSyntax type, ParameterListSyntax parameterList, BlockSyntax? body, ArrowExpressionClauseSyntax? expressionBody, SyntaxToken semicolonToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public ConversionOperatorDeclarationSyntax Update(SyntaxList<AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, SyntaxToken implicitOrExplicitKeyword, ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier, SyntaxToken operatorKeyword, SyntaxToken checkedKeyword, TypeSyntax type, ParameterListSyntax parameterList, BlockSyntax? body, ArrowExpressionClauseSyntax? expressionBody, SyntaxToken semicolonToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public ConversionOperatorDeclarationSyntax Update(SyntaxList<AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, SyntaxToken implicitOrExplicitKeyword, SyntaxToken operatorKeyword, TypeSyntax type, ParameterListSyntax parameterList, BlockSyntax? body, ArrowExpressionClauseSyntax? expressionBody, SyntaxToken semicolonToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public new ConversionOperatorDeclarationSyntax WithAttributeLists(SyntaxList<AttributeListSyntax> attributeLists)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public new ConversionOperatorDeclarationSyntax WithBody(BlockSyntax? body)
@@ -308,7 +308,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ConversionOperatorDeclarationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ConversionOperatorDeclarationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("a16c602a-2a9e-5059-9ad5-015e167addc7")]
+        [System.Runtime.InteropServices.Guid("80ea7354-e17b-557c-aee1-858c382301b7")]
         internal partial interface __RoslynAotImplementation : ConversionOperatorDeclarationSyntax
         {
         }

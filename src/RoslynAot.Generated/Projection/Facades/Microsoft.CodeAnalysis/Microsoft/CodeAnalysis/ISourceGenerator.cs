@@ -13,13 +13,13 @@ namespace Microsoft.CodeAnalysis
         [System.Obsolete("ISourceGenerator is deprecated and should not be implemented. Please implement IIncrementalGenerator instead. See https://github.com/dotnet/roslyn/blob/main/docs/features/incremental-generators.md.")]
         void Execute(GeneratorExecutionContext context)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         [System.Obsolete("ISourceGenerator is deprecated and should not be implemented. Please implement IIncrementalGenerator instead. See https://github.com/dotnet/roslyn/blob/main/docs/features/incremental-generators.md.")]
         void Initialize(GeneratorInitializationContext context)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;

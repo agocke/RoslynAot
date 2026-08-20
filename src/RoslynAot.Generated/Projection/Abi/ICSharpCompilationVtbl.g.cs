@@ -12,19 +12,19 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f2f55631-db75-5a65-819a-4d06c151a263")]
+[Guid("0ac60316-4938-53f8-9379-d1371128ac19")]
 public partial interface ICSharpCompilationVtbl : ICompilationVtbl
 {
 
     [PreserveSig]
-    int CSharpCompilation_AddReferences_2cc146fc(
+    int CSharpCompilation_AddReferences_f07720a2(
         long receiver,
         long references,
         out long result
     );
 
     [PreserveSig]
-    int CSharpCompilation_AddSyntaxTrees_d918fe05(
+    int CSharpCompilation_AddSyntaxTrees_be48a304(
         long receiver,
         long trees,
         out long result
@@ -74,7 +74,7 @@ public partial interface ICSharpCompilationVtbl : ICompilationVtbl
     );
 
     [PreserveSig]
-    int CSharpCompilation_GetSemanticModel_af50c169(
+    int CSharpCompilation_GetSemanticModel_c4696b5c(
         long receiver,
         long syntaxTree,
         int ignoreAccessibility,
@@ -94,14 +94,14 @@ public partial interface ICSharpCompilationVtbl : ICompilationVtbl
     );
 
     [PreserveSig]
-    int CSharpCompilation_RemoveReferences_24d1a9b8(
+    int CSharpCompilation_RemoveReferences_03aa98d4(
         long receiver,
         long references,
         out long result
     );
 
     [PreserveSig]
-    int CSharpCompilation_RemoveSyntaxTrees_1ea34b2e(
+    int CSharpCompilation_RemoveSyntaxTrees_6f3a901e(
         long receiver,
         long trees,
         out long result
@@ -138,7 +138,7 @@ public partial interface ICSharpCompilationVtbl : ICompilationVtbl
     );
 
     [PreserveSig]
-    int CSharpCompilation_WithReferences_1c925e65(
+    int CSharpCompilation_WithReferences_90c094c8(
         long receiver,
         long references,
         out long result

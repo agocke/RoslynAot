@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis.CSharp
     {
         public static CodeAnalysis.Emit.EmitResult Emit(this CSharpCompilation compilation, string outputPath, string? pdbPath = null, string? xmlDocumentationPath = null, string? win32ResourcesPath = null, System.Collections.Generic.IEnumerable<ResourceDescription>? manifestResources = null, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'manifestResources' is unsupported: Generic substitutions are not supported.");
         }
     }
 }

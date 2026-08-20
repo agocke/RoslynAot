@@ -62,13 +62,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IRegionDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.RegionDirectiveTriviaSyntax_Accept_a9943098(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.RegionDirectiveTriviaSyntax_Accept_b3368062(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public RegionDirectiveTriviaSyntax Update(SyntaxToken hashToken, SyntaxToken regionKeyword, SyntaxToken endOfDirectiveToken, bool isActive)
@@ -122,7 +122,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static RegionDirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (RegionDirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("547f824f-95b7-5b1f-8f80-de7617fe00f7")]
+        [System.Runtime.InteropServices.Guid("0f12c011-24d2-5032-b12b-2015bdbe595e")]
         internal partial interface __RoslynAotImplementation : RegionDirectiveTriviaSyntax
         {
         }

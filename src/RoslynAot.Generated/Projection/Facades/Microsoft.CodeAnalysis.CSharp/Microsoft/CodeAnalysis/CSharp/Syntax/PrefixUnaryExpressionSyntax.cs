@@ -38,13 +38,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IPrefixUnaryExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.PrefixUnaryExpressionSyntax_Accept_5293b23a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.PrefixUnaryExpressionSyntax_Accept_274e4364(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public PrefixUnaryExpressionSyntax Update(SyntaxToken operatorToken, ExpressionSyntax operand)
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static PrefixUnaryExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (PrefixUnaryExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("b03854c3-803c-58b2-afb2-ea0e6f7cbab4")]
+        [System.Runtime.InteropServices.Guid("cf2bc36a-e5d3-5fb5-92d6-ce969f8f2e50")]
         internal partial interface __RoslynAotImplementation : PrefixUnaryExpressionSyntax
         {
         }

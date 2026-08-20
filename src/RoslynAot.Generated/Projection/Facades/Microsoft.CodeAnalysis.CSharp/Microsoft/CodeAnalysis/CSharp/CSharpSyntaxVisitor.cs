@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_DefaultVisit_ae0b3c67(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_DefaultVisit_4c7cdd70(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -22,7 +22,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_Visit_8a42da0a(__RoslynAotGetHandle(), node is null ? 0L : node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_Visit_6a327ad1(__RoslynAotGetHandle(), node is null ? 0L : node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAccessorDeclaration_15d38887(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAccessorDeclaration_840c0875(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAccessorList_b9fd21eb(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAccessorList_22000fd2(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAliasQualifiedName_fe5bf45e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAliasQualifiedName_ed5fe2d5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -54,7 +54,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAllowsConstraintClause_f222ec6e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAllowsConstraintClause_18c48865(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAnonymousMethodExpression_30e1b41e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAnonymousMethodExpression_43fab10c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -70,7 +70,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAnonymousObjectCreationExpression_3d87ff5b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAnonymousObjectCreationExpression_8a14f00d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -78,7 +78,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAnonymousObjectMemberDeclarator_92876121(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAnonymousObjectMemberDeclarator_e9677de4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -86,7 +86,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitArgument_792c4010(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitArgument_6afff0b8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -94,7 +94,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitArgumentList_a17e7034(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitArgumentList_4622fc98(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -102,7 +102,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitArrayCreationExpression_8ddd21cd(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitArrayCreationExpression_c4a86407(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -110,7 +110,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitArrayRankSpecifier_e7ee5730(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitArrayRankSpecifier_144af787(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -118,7 +118,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitArrayType_2cb0362f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitArrayType_914e39ab(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -126,7 +126,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitArrowExpressionClause_50e5f4ca(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitArrowExpressionClause_2857d8e0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -134,7 +134,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAssignmentExpression_d67b84a7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAssignmentExpression_c62c7790(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -142,7 +142,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAttribute_04000905(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAttribute_4aa4f89f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -150,7 +150,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAttributeArgument_1953d366(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAttributeArgument_6179c0cf(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -158,7 +158,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAttributeArgumentList_dbf25f62(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAttributeArgumentList_350f43f3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -166,7 +166,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAttributeList_07c878c0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAttributeList_6ba24ae8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -174,7 +174,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAttributeTargetSpecifier_47f1058a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAttributeTargetSpecifier_5addea3e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -182,7 +182,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitAwaitExpression_128f0bac(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitAwaitExpression_988b2428(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -190,7 +190,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitBadDirectiveTrivia_ad099b1d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitBadDirectiveTrivia_34eee06e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -198,7 +198,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitBaseExpression_1308c9c0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitBaseExpression_5c3eec42(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -206,7 +206,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitBaseList_fd45e5f9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitBaseList_e11401dd(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -214,7 +214,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitBinaryExpression_3fe5e333(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitBinaryExpression_c771e264(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -222,7 +222,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitBinaryPattern_30286fed(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitBinaryPattern_3056325e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -230,7 +230,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitBlock_22e9ef47(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitBlock_1dd9d0a7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -238,7 +238,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitBracketedArgumentList_ef14f6ec(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitBracketedArgumentList_cc5ae77a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -246,7 +246,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitBracketedParameterList_ddc50967(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitBracketedParameterList_adbb9543(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -254,7 +254,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitBreakStatement_fa50a591(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitBreakStatement_7edec58d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -262,7 +262,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCasePatternSwitchLabel_92b73baa(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCasePatternSwitchLabel_32e8cf8b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -270,7 +270,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCaseSwitchLabel_ccc40c42(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCaseSwitchLabel_8deb65e8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -278,7 +278,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCastExpression_42eda634(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCastExpression_2bf6a17c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -286,7 +286,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCatchClause_0e0e5a2b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCatchClause_60fe402c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -294,7 +294,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCatchDeclaration_3a2d785a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCatchDeclaration_da4b60bf(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -302,7 +302,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCatchFilterClause_d09c609b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCatchFilterClause_5a26b94d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -310,7 +310,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCheckedExpression_4aeda533(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCheckedExpression_c57d0610(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -318,7 +318,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCheckedStatement_7d1ec90b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCheckedStatement_61077acf(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -326,7 +326,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitClassDeclaration_fa4e2c93(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitClassDeclaration_4edf738a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -334,7 +334,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitClassOrStructConstraint_514a0484(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitClassOrStructConstraint_6a2baf4c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -342,7 +342,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCollectionExpression_2d14a83c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCollectionExpression_5f751308(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -350,7 +350,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCompilationUnit_01813651(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCompilationUnit_23a3d662(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -358,7 +358,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitConditionalAccessExpression_54acf481(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitConditionalAccessExpression_ca65f3b5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -366,7 +366,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitConditionalExpression_e7c5b85b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitConditionalExpression_728e4d44(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -374,7 +374,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitConstantPattern_bac38db3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitConstantPattern_1abdb40b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -382,7 +382,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitConstructorConstraint_9d2c2281(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitConstructorConstraint_db1a9d55(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -390,7 +390,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitConstructorDeclaration_5c1847aa(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitConstructorDeclaration_82255b3c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -398,7 +398,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitConstructorInitializer_e221c236(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitConstructorInitializer_d3d62211(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -406,7 +406,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitContinueStatement_88a17af0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitContinueStatement_0a11eb09(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -414,7 +414,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitConversionOperatorDeclaration_e1c958b3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitConversionOperatorDeclaration_8c52ff12(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -422,7 +422,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitConversionOperatorMemberCref_86e27fb7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitConversionOperatorMemberCref_5e9a839a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -430,7 +430,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCrefBracketedParameterList_a58d3d73(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCrefBracketedParameterList_e60cd013(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -438,7 +438,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCrefParameter_8de36407(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCrefParameter_1b5e1ecf(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -446,7 +446,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitCrefParameterList_a586dee2(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitCrefParameterList_0d4f5c97(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -454,7 +454,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDeclarationExpression_72c60fb7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDeclarationExpression_2649bc92(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -462,7 +462,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDeclarationPattern_7b20e1ee(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDeclarationPattern_a452a39b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -470,7 +470,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDefaultConstraint_975b1c00(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDefaultConstraint_deb644c8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -478,7 +478,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDefaultExpression_8d983304(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDefaultExpression_b6f75b52(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -486,7 +486,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDefaultSwitchLabel_be60cf71(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDefaultSwitchLabel_9b8ab3cf(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -494,7 +494,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDefineDirectiveTrivia_df0636c9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDefineDirectiveTrivia_f3572b00(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -502,7 +502,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDelegateDeclaration_c43544f9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDelegateDeclaration_09e88889(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -510,7 +510,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDestructorDeclaration_be09eb90(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDestructorDeclaration_c3ad949d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -518,7 +518,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDiscardDesignation_a8765962(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDiscardDesignation_6a25ba7a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -526,7 +526,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDiscardPattern_c0cd7b33(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDiscardPattern_936584ac(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -534,7 +534,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDocumentationCommentTrivia_a1ba0336(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDocumentationCommentTrivia_1d1b58af(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -542,7 +542,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitDoStatement_637a80fa(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitDoStatement_2c1dc973(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -550,7 +550,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitElementAccessExpression_9ffee593(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitElementAccessExpression_af90c83c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -558,7 +558,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitElementBindingExpression_d77dbda0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitElementBindingExpression_eef52c34(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -566,7 +566,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitElifDirectiveTrivia_a5492c75(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitElifDirectiveTrivia_d502cddf(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -574,7 +574,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitElseClause_ddaf3a8a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitElseClause_608b147d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -582,7 +582,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitElseDirectiveTrivia_f5866eb7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitElseDirectiveTrivia_43aa1b06(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -590,7 +590,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitEmptyStatement_adfb3188(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitEmptyStatement_41672854(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -598,7 +598,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitEndIfDirectiveTrivia_44286501(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitEndIfDirectiveTrivia_bd5c92c8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -606,7 +606,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitEndRegionDirectiveTrivia_c8e563f6(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitEndRegionDirectiveTrivia_33ed7247(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -614,7 +614,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitEnumDeclaration_d9117d38(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitEnumDeclaration_5eb38fb7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -622,7 +622,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitEnumMemberDeclaration_6ae6681a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitEnumMemberDeclaration_616403d4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -630,7 +630,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitEqualsValueClause_3f0525d4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitEqualsValueClause_74a1f333(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -638,7 +638,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitErrorDirectiveTrivia_814fb692(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitErrorDirectiveTrivia_ee7015b8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -646,7 +646,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitEventDeclaration_0267a561(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitEventDeclaration_a9003f27(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -654,7 +654,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitEventFieldDeclaration_8780a630(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitEventFieldDeclaration_8a7b38ba(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -662,7 +662,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitExplicitInterfaceSpecifier_a5043772(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitExplicitInterfaceSpecifier_00f1664a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -670,7 +670,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitExpressionColon_bbb4be5c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitExpressionColon_23c04ce7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -678,7 +678,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitExpressionElement_ce6b3f2c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitExpressionElement_29e4c4cf(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -686,7 +686,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitExpressionStatement_e019467d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitExpressionStatement_d4ba5fae(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -694,7 +694,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitExtensionBlockDeclaration_05d5e7da(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitExtensionBlockDeclaration_9b89d001(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -702,7 +702,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitExtensionMemberCref_35e5daff(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitExtensionMemberCref_49503182(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -710,7 +710,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitExternAliasDirective_18a9ffbe(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitExternAliasDirective_21bb03df(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -718,7 +718,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFieldDeclaration_1905db42(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFieldDeclaration_a6f8a91c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -726,7 +726,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFieldExpression_b33c52e5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFieldExpression_e85b3c2e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -734,7 +734,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFileScopedNamespaceDeclaration_3964f20f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFileScopedNamespaceDeclaration_871721bc(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -742,7 +742,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFinallyClause_007250b0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFinallyClause_3616247a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -750,7 +750,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFixedStatement_00263eb0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFixedStatement_303c3e78(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -758,7 +758,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitForEachStatement_d77364f0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitForEachStatement_54e4cc41(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -766,7 +766,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitForEachVariableStatement_ed2df607(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitForEachVariableStatement_ee48fe2b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -774,7 +774,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitForStatement_371b01ba(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitForStatement_e809048c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -782,7 +782,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFromClause_e04f5e2c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFromClause_88645df3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -790,7 +790,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerCallingConvention_cf9db9d4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerCallingConvention_ccc2cbcf(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -798,7 +798,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerParameter_91c5c6f1(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerParameter_61a8ac24(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -806,7 +806,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerParameterList_4565fd08(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerParameterList_b31e60ef(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -814,7 +814,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerType_87cf9662(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerType_65155193(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -822,7 +822,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConvention_af864005(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConvention_4c376ef3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -830,7 +830,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConventionList_daaa8309(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConventionList_1584ade4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -838,7 +838,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitGenericName_ba716826(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitGenericName_aa28c8f8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -846,7 +846,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitGlobalStatement_27765632(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitGlobalStatement_3786c3b1(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -854,7 +854,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitGotoStatement_30dc7b92(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitGotoStatement_edbff3d4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -862,7 +862,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitGroupClause_45aec9e1(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitGroupClause_99dfbcdd(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -870,7 +870,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitIdentifierName_86e25be0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitIdentifierName_0f51e73f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -878,7 +878,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitIfDirectiveTrivia_48e2706c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitIfDirectiveTrivia_135baaa8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -886,7 +886,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitIfStatement_5c5c3ff1(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitIfStatement_8baba9e5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -894,7 +894,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitIgnoredDirectiveTrivia_064599fb(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitIgnoredDirectiveTrivia_8e06b5d0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -902,7 +902,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitImplicitArrayCreationExpression_34f81ab7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitImplicitArrayCreationExpression_3fef2ef0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -910,7 +910,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitImplicitElementAccess_9b64e1a5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitImplicitElementAccess_13c8663a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -918,7 +918,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitImplicitObjectCreationExpression_5a6dbe74(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitImplicitObjectCreationExpression_f4cabded(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -926,7 +926,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitImplicitStackAllocArrayCreationExpression_de8aaf66(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitImplicitStackAllocArrayCreationExpression_4819ba7d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -934,7 +934,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitIncompleteMember_0b9642f9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitIncompleteMember_7e4f7b19(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -942,7 +942,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitIndexerDeclaration_f7ac3b15(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitIndexerDeclaration_b6c354e8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -950,7 +950,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitIndexerMemberCref_2300fbe8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitIndexerMemberCref_1e2af18e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -958,7 +958,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitInitializerExpression_845fe5e5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitInitializerExpression_a12d4e8c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -966,7 +966,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitInterfaceDeclaration_c5594cd3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitInterfaceDeclaration_2f38c523(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -974,7 +974,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitInterpolatedStringExpression_1eafedfb(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitInterpolatedStringExpression_8d6b248a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -982,7 +982,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitInterpolatedStringText_dce2338a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitInterpolatedStringText_cfeeb218(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -990,7 +990,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitInterpolation_f2ca2d1b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitInterpolation_5dbad78b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -998,7 +998,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitInterpolationAlignmentClause_b69d1a5c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitInterpolationAlignmentClause_1bbcda71(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1006,7 +1006,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitInterpolationFormatClause_1852a074(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitInterpolationFormatClause_9e84c6b4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1014,7 +1014,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitInvocationExpression_763a030b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitInvocationExpression_21102e3b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1022,7 +1022,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitIsPatternExpression_97f88bc9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitIsPatternExpression_bb7bc3cb(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1030,7 +1030,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitJoinClause_44dc385d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitJoinClause_9284f5a3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1038,7 +1038,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitJoinIntoClause_6190fc7c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitJoinIntoClause_b1c74644(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1046,7 +1046,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitLabeledStatement_5a7db1e4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitLabeledStatement_98efcd19(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1054,7 +1054,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitLetClause_3ad403f4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitLetClause_8ddce83d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1062,7 +1062,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitLineDirectivePosition_dca28662(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitLineDirectivePosition_1d0ed319(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1070,7 +1070,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitLineDirectiveTrivia_5020b88b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitLineDirectiveTrivia_9544a4d5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1078,7 +1078,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitLineSpanDirectiveTrivia_d6867f14(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitLineSpanDirectiveTrivia_b4c7c91f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1086,7 +1086,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitListPattern_9a021370(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitListPattern_e260a981(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1094,7 +1094,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitLiteralExpression_c522aba8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitLiteralExpression_3e49cc23(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1102,7 +1102,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitLoadDirectiveTrivia_fc4e0e81(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitLoadDirectiveTrivia_c1daa9ed(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1110,7 +1110,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitLocalDeclarationStatement_a837e274(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitLocalDeclarationStatement_4fd31ac2(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1118,7 +1118,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitLocalFunctionStatement_cec9866b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitLocalFunctionStatement_e589afe3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1126,7 +1126,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitLockStatement_20649c54(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitLockStatement_4a38f36b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1134,7 +1134,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitMakeRefExpression_3ecfdc2d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitMakeRefExpression_309da0b9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1142,7 +1142,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitMemberAccessExpression_9a707624(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitMemberAccessExpression_8f7a3c54(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1150,7 +1150,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitMemberBindingExpression_7d444686(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitMemberBindingExpression_dd6690e2(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1158,7 +1158,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitMethodDeclaration_3e0b68d8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitMethodDeclaration_d4d69901(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1166,7 +1166,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitNameColon_7712f8de(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitNameColon_a3b428f2(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1174,7 +1174,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitNameEquals_433d4145(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitNameEquals_801cfe33(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1182,7 +1182,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitNameMemberCref_fc868c41(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitNameMemberCref_300e01de(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1190,7 +1190,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitNamespaceDeclaration_0c1d8b32(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitNamespaceDeclaration_1c6b602b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1198,7 +1198,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitNullableDirectiveTrivia_765ef1c8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitNullableDirectiveTrivia_1dfadd2e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1206,7 +1206,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitNullableType_24a4c337(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitNullableType_7073ca65(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1214,7 +1214,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitObjectCreationExpression_ae25bcf5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitObjectCreationExpression_545806fd(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1222,7 +1222,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitOmittedArraySizeExpression_f337d471(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitOmittedArraySizeExpression_adf5b9a5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1230,7 +1230,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitOmittedTypeArgument_60815307(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitOmittedTypeArgument_52f1d1fb(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1238,7 +1238,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitOperatorDeclaration_5efff785(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitOperatorDeclaration_2acbf34d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1246,7 +1246,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitOperatorMemberCref_2aa9544c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitOperatorMemberCref_0ac03bed(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1254,7 +1254,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitOrderByClause_623995f3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitOrderByClause_fd0f8f7d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1262,7 +1262,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitOrdering_30a46812(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitOrdering_64caa07c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1270,7 +1270,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitParameter_64158c4a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitParameter_cdafcbd0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1278,7 +1278,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitParameterList_9ce7ca82(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitParameterList_de1429fb(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1286,7 +1286,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitParenthesizedExpression_bd0bb69e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitParenthesizedExpression_801f6225(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1294,7 +1294,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitParenthesizedLambdaExpression_352397d2(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitParenthesizedLambdaExpression_fbe12065(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1302,7 +1302,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitParenthesizedPattern_18f2083e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitParenthesizedPattern_2d913a01(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1310,7 +1310,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitParenthesizedVariableDesignation_cbc2d338(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitParenthesizedVariableDesignation_5a533eff(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1318,7 +1318,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitPointerType_2b4b75cc(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitPointerType_9eeeda24(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1326,7 +1326,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitPositionalPatternClause_8e1452e9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitPositionalPatternClause_017b94e3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1334,7 +1334,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitPostfixUnaryExpression_ff131343(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitPostfixUnaryExpression_b42a608c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1342,7 +1342,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitPragmaChecksumDirectiveTrivia_a6b167f7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitPragmaChecksumDirectiveTrivia_2f9d72f3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1350,7 +1350,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitPragmaWarningDirectiveTrivia_56dc3bec(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitPragmaWarningDirectiveTrivia_e17b4b43(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1358,7 +1358,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitPredefinedType_523e01d4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitPredefinedType_09baea66(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1366,7 +1366,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitPrefixUnaryExpression_c30e4e0e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitPrefixUnaryExpression_a6292d16(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1374,7 +1374,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitPrimaryConstructorBaseType_eb96771e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitPrimaryConstructorBaseType_9fd6f970(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1382,7 +1382,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitPropertyDeclaration_96cc0e70(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitPropertyDeclaration_a23105c8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1390,7 +1390,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitPropertyPatternClause_4d36ee09(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitPropertyPatternClause_8645b026(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1398,7 +1398,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitQualifiedCref_56d1b4e6(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitQualifiedCref_ad3509a5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1406,7 +1406,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitQualifiedName_20d9cb05(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitQualifiedName_2ffde7a7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1414,7 +1414,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitQueryBody_746c218b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitQueryBody_95cc36b3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1422,7 +1422,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitQueryContinuation_cf937efd(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitQueryContinuation_09e44967(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1430,7 +1430,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitQueryExpression_1448243b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitQueryExpression_a60e13c3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1438,7 +1438,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitRangeExpression_42d9d747(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitRangeExpression_7d4c9589(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1446,7 +1446,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitRecordDeclaration_166eb550(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitRecordDeclaration_bdcfd344(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1454,7 +1454,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitRecursivePattern_0f95ef4a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitRecursivePattern_68c993d5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1462,7 +1462,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitReferenceDirectiveTrivia_5aaf7cc1(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitReferenceDirectiveTrivia_68adc5f2(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1470,7 +1470,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitRefExpression_c498cc93(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitRefExpression_7ae5e424(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1478,7 +1478,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitRefStructConstraint_b27aefb1(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitRefStructConstraint_9ee817e9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1486,7 +1486,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitRefType_e62b4eb5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitRefType_e50838cf(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1494,7 +1494,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitRefTypeExpression_b2ada09d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitRefTypeExpression_01d20590(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1502,7 +1502,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitRefValueExpression_20e6f15c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitRefValueExpression_e048d70d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1510,7 +1510,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitRegionDirectiveTrivia_5bd752d7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitRegionDirectiveTrivia_837e36b7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1518,7 +1518,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitRelationalPattern_041a1eef(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitRelationalPattern_042940a8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1526,7 +1526,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitReturnStatement_22ab3a4a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitReturnStatement_4051ddfd(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1534,7 +1534,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitScopedType_3bd7bda0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitScopedType_e652e2be(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1542,7 +1542,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSelectClause_a6e3407c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSelectClause_d42fb3bd(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1550,7 +1550,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitShebangDirectiveTrivia_4a23d43b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitShebangDirectiveTrivia_305d3bcc(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1558,7 +1558,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSimpleBaseType_d132c1a1(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSimpleBaseType_8e347567(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1566,7 +1566,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSimpleLambdaExpression_23014a3c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSimpleLambdaExpression_f93df685(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1574,7 +1574,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSingleVariableDesignation_60e85511(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSingleVariableDesignation_eb8749b0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1582,7 +1582,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSizeOfExpression_935e80d9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSizeOfExpression_df2e424b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1590,7 +1590,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSkippedTokensTrivia_f32b150a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSkippedTokensTrivia_7b481f00(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1598,7 +1598,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSlicePattern_61bd03dc(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSlicePattern_9c103ce9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1606,7 +1606,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSpreadElement_67a03623(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSpreadElement_5293c41a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1614,7 +1614,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitStackAllocArrayCreationExpression_9a086e6b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitStackAllocArrayCreationExpression_b9b4390d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1622,7 +1622,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitStructDeclaration_b7987bb1(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitStructDeclaration_dc3e7b3f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1630,7 +1630,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSubpattern_5d3d45a6(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSubpattern_ac453756(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1638,7 +1638,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSwitchExpression_ce6991c3(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSwitchExpression_befe0fbe(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1646,7 +1646,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSwitchExpressionArm_62a60f75(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSwitchExpressionArm_2b4ebd5b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1654,7 +1654,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSwitchSection_c0e3c5f7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSwitchSection_35a00ce2(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1662,7 +1662,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitSwitchStatement_b165c7c4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitSwitchStatement_0f10807f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1670,7 +1670,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitThisExpression_0ebb2cba(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitThisExpression_66bb6aa9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1678,7 +1678,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitThrowExpression_d92c9396(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitThrowExpression_bcfb5f23(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1686,7 +1686,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitThrowStatement_823b47e1(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitThrowStatement_bf3659ef(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1694,7 +1694,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTryStatement_7e2540c9(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTryStatement_5e9a198b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1702,7 +1702,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTupleElement_b55fbaba(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTupleElement_09a8b81b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1710,7 +1710,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTupleExpression_a3b0fc17(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTupleExpression_6cdc2226(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1718,7 +1718,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTupleType_3b44c37f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTupleType_4b24a6f4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1726,7 +1726,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTypeArgumentList_a75bda0c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTypeArgumentList_1721e9f4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1734,7 +1734,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTypeConstraint_55699f1f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTypeConstraint_8c4c9528(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1742,7 +1742,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTypeCref_7bad1a02(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTypeCref_f92b93cf(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1750,7 +1750,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTypeOfExpression_0a914de4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTypeOfExpression_6cbfa820(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1758,7 +1758,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTypeParameter_18927372(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTypeParameter_05a549f8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1766,7 +1766,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTypeParameterConstraintClause_de6c1619(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTypeParameterConstraintClause_e5e70ade(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1774,7 +1774,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTypeParameterList_3403899f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTypeParameterList_3b26d35c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1782,7 +1782,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitTypePattern_d0e322c5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitTypePattern_af61850e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1790,7 +1790,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitUnaryPattern_8ce1b489(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitUnaryPattern_a879b4a8(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1798,27 +1798,15 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitUndefDirectiveTrivia_9bf72733(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitUndefDirectiveTrivia_92b25c0f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82567")]
-        public virtual void VisitUnionDeclaration(Syntax.UnionDeclarationSyntax node)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82789")]
-        public virtual void VisitUnsafeExpression(Syntax.UnsafeExpressionSyntax node)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
         public virtual void VisitUnsafeStatement(Syntax.UnsafeStatementSyntax node)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitUnsafeStatement_81d05914(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitUnsafeStatement_f9b4b0fe(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1826,7 +1814,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitUsingDirective_0ffd1939(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitUsingDirective_d31575d5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1834,7 +1822,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitUsingStatement_25344c1a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitUsingStatement_af7053ec(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1842,7 +1830,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitVariableDeclaration_8bdd06f4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitVariableDeclaration_ea95c83f(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1850,7 +1838,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitVariableDeclarator_4e589429(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitVariableDeclarator_d62a1eaa(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1858,7 +1846,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitVarPattern_1054162b(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitVarPattern_d3d95b17(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1866,7 +1854,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitWarningDirectiveTrivia_a7a25701(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitWarningDirectiveTrivia_d663a0ea(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1874,7 +1862,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitWhenClause_3630d78c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitWhenClause_8d8964ba(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1882,7 +1870,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitWhereClause_98134ece(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitWhereClause_5c5e5a47(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1890,21 +1878,15 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitWhileStatement_59913348(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitWhileStatement_dfb24af5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82210")]
-        public virtual void VisitWithElement(Syntax.WithElementSyntax node)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
         }
 
         public virtual void VisitWithExpression(Syntax.WithExpressionSyntax node)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitWithExpression_96546f9e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitWithExpression_205c3277(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1912,7 +1894,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlCDataSection_9ff50ec5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlCDataSection_03b78665(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1920,7 +1902,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlComment_bc8af0fa(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlComment_4d623f97(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1928,7 +1910,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlCrefAttribute_fdf7453e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlCrefAttribute_7320ae50(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1936,7 +1918,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlElement_947b085c(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlElement_1a2eb181(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1944,7 +1926,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlElementEndTag_84bf6280(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlElementEndTag_6bb68f25(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1952,7 +1934,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlElementStartTag_67ec8166(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlElementStartTag_8bff2db0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1960,7 +1942,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlEmptyElement_93242c2a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlEmptyElement_1589d22a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1968,7 +1950,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlName_66ab43b7(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlName_d1325122(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1976,7 +1958,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlNameAttribute_51ae205a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlNameAttribute_6011262e(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1984,7 +1966,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlPrefix_03834aaf(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlPrefix_fd30996d(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -1992,7 +1974,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlProcessingInstruction_ce943f6a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlProcessingInstruction_9fd042e4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -2000,7 +1982,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlText_cbc56576(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlText_6a6e2066(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -2008,7 +1990,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitXmlTextAttribute_c0a7e6a0(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitXmlTextAttribute_128278da(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -2016,7 +1998,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxVisitorVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxVisitor_VisitYieldStatement_9e8a268a(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
+            int status = vtbl.CSharpSyntaxVisitor_VisitYieldStatement_1104e4f4(__RoslynAotGetHandle(), node.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 

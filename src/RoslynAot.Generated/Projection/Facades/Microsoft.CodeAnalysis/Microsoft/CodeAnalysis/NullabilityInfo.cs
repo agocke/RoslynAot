@@ -40,14 +40,14 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.INullabilityInfoVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.NullabilityInfo_Equals_9cc98f3d(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.NullabilityInfo_Equals_34934d28(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public override readonly bool Equals(object? other)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'other' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override readonly int GetHashCode()

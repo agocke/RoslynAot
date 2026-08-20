@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -41,12 +41,12 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public MemberDeclarationSyntax AddModifiers(params SyntaxToken[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'items' is unsupported: Arrays are not supported.");
         }
 
         public MemberDeclarationSyntax WithAttributeLists(SyntaxList<AttributeListSyntax> attributeLists)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public MemberDeclarationSyntax WithModifiers(SyntaxTokenList modifiers)
@@ -64,7 +64,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static MemberDeclarationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (MemberDeclarationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("9de30877-c705-5103-8319-2045397ea6e3")]
+        [System.Runtime.InteropServices.Guid("e9a5ea07-6beb-58e3-99a4-4a1a293bd9c9")]
         internal partial interface __RoslynAotImplementation : MemberDeclarationSyntax
         {
         }

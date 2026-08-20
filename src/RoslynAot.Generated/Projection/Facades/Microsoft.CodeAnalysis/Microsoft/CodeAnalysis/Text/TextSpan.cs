@@ -87,7 +87,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITextSpanVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TextSpan_Contains_280d6f3d(__RoslynAotGetHandle(), span.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.TextSpan_Contains_a127a3da(__RoslynAotGetHandle(), span.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -96,7 +96,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITextSpanVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TextSpan_Contains_6dd56088(__RoslynAotGetHandle(), position, out int result);
+            int status = vtbl.TextSpan_Contains_254055d5(__RoslynAotGetHandle(), position, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -105,14 +105,14 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITextSpanVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TextSpan_Equals_f0c3d453(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.TextSpan_Equals_444d5377(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public override readonly bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public static TextSpan FromBounds(int start, int end)
@@ -146,7 +146,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITextSpanVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TextSpan_IntersectsWith_a6c6b98b(__RoslynAotGetHandle(), span.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.TextSpan_IntersectsWith_b3a4ec3e(__RoslynAotGetHandle(), span.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -155,19 +155,19 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITextSpanVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TextSpan_IntersectsWith_173790fd(__RoslynAotGetHandle(), position, out int result);
+            int status = vtbl.TextSpan_IntersectsWith_4213aaf8(__RoslynAotGetHandle(), position, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public static bool operator ==(TextSpan left, TextSpan right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(TextSpan left, TextSpan right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public readonly TextSpan? Overlap(TextSpan span)

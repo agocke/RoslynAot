@@ -1,5 +1,4 @@
 using System.Text;
-using System.Text.Json;
 using Microsoft.CodeAnalysis;
 using Microsoft.DotNet.GenAPI;
 using StaticCs;
@@ -54,9 +53,6 @@ internal static class ProjectionOutputEmitter
                 analyzerRuntimeDirectory,
                 "RoslynProxyFactory.g.cs"),
             EmitAnalyzerRuntimeProxyFactory());
-        WriteManifest(
-            Path.Combine(manifestDirectory, "RoslynProjection.json"),
-            model);
         File.WriteAllText(
             Path.Combine(
                 manifestDirectory,
@@ -1722,8 +1718,20 @@ internal static class ProjectionOutputEmitter
                     identityLow != RoslynAbi.ManifestIdentityLow ||
                     identityHigh != RoslynAbi.ManifestIdentityHigh)
                 {
+                    // The one check that a native analyzer module and the
+                    // compiler it was loaded into were built from the same
+                    // projection. Both identities go in the message: knowing
+                    // that they differ is not actionable, knowing which two
+                    // they are points at the mismatched package.
                     throw new InvalidOperationException(
-                        "The compiler Roslyn projection manifest is incompatible.");
+                        "This analyzer was built against Roslyn projection " +
+                        $"manifest {FormatIdentity(RoslynAbi.ManifestIdentityLow, RoslynAbi.ManifestIdentityHigh)}, " +
+                        "but the compiler provides " +
+                        $"{(status == RoslynAbi.Success ? FormatIdentity(identityLow, identityHigh) : "no readable identity")}. " +
+                        "Rebuild the analyzer against the compiler's RoslynAot package.")
+                    {
+                        HResult = AnalyzerAbi.IncompatibleVersion,
+                    };
                 }
 
                 s_controlVtbl ??= controlVtbl;
@@ -1745,6 +1753,17 @@ internal static class ProjectionOutputEmitter
 
                 return controlVtbl;
             }
+
+            /// <summary>
+            /// Renders the identity halves the way the manifest records
+            /// them, so a mismatch can be matched against the identity= line
+            /// of ProjectionInventory.txt by eye.
+            /// </summary>
+            private static string FormatIdentity(long low, long high) =>
+                Convert.ToHexString(BitConverter.GetBytes(low))
+                    .ToLowerInvariant() +
+                Convert.ToHexString(BitConverter.GetBytes(high))
+                    .ToLowerInvariant();
 
             public static IRoslynControlVtbl GetCurrentControlVtbl() =>
                 s_current.Value ?? throw new InvalidOperationException(
@@ -2185,208 +2204,6 @@ internal static class ProjectionOutputEmitter
         return builder.ToString();
     }
 
-    private static void WriteManifest(string path, ProjectionModel model)
-    {
-        using FileStream stream = File.Create(path);
-        using var writer = new Utf8JsonWriter(
-            stream,
-            new JsonWriterOptions { Indented = true });
-        writer.WriteStartObject();
-        writer.WriteString("identity", model.Identity);
-        writer.WriteString(
-            "controlVtblId",
-            model.ControlVtblId);
-        writer.WriteStartArray("vtbls");
-        foreach (VtblProjection vtbl in model.Vtbls)
-        {
-            writer.WriteStartObject();
-            writer.WriteString("name", vtbl.Name);
-            writer.WriteString(
-                "vtblId",
-                vtbl.VtblId);
-            writer.WriteString(
-                "facadeType",
-                CanonicalSignatureBuilder.GetMetadataTypeName(
-                    vtbl.FacadeType));
-            writer.WriteString(
-                "kind",
-                vtbl.IsTypeVtbl
-                    ? "type"
-                    : "instance");
-            writer.WriteNumber(
-                "memberCount",
-                vtbl.Members.Count);
-            if (vtbl.BaseVtbl is not null)
-            {
-                writer.WriteString(
-                    "baseVtbl",
-                    vtbl.BaseVtbl.Name);
-            }
-            writer.WriteEndObject();
-        }
-
-        writer.WriteEndArray();
-        writer.WriteStartArray("assemblies");
-        foreach (IAssemblySymbol assembly in model.Assemblies)
-        {
-            writer.WriteStartObject();
-            writer.WriteString("name", assembly.Identity.Name);
-            writer.WriteString("version", assembly.Identity.Version.ToString());
-            writer.WriteString(
-                "publicKeyToken",
-                assembly.Identity.PublicKeyToken.IsDefaultOrEmpty
-                    ? string.Empty
-                    : Convert.ToHexString(
-                        assembly.Identity.PublicKeyToken.AsSpan())
-                        .ToLowerInvariant());
-            writer.WriteEndObject();
-        }
-
-        writer.WriteEndArray();
-        writer.WriteStartArray("types");
-        foreach (TypeProjection type in model.Types)
-        {
-            writer.WriteStartObject();
-            writer.WriteString("canonicalId", type.CanonicalId);
-            writer.WriteString("shape", type.Shape);
-            writer.WriteString("ownership", type.Ownership.ToString());
-            writer.WriteBoolean("ownershipDeclared", type.OwnershipDeclared);
-            writer.WriteString("ownershipReason", type.OwnershipReason);
-
-            writer.WriteBoolean("reachable", type.IsReachable);
-            if (type.ReachedBy is not null)
-            {
-                writer.WriteString("reachedBy", type.ReachedBy);
-            }
-
-            writer.WriteBoolean("requiresProxy", type.RequiresProxy);
-            writer.WriteBoolean(
-                "dynamicInterfaceProxy",
-                type.UsesDynamicInterfaceProxy);
-            if (type.InstanceVtbl is not null)
-            {
-                writer.WriteString("instanceVtbl", type.InstanceVtbl.Name);
-            }
-
-            if (type.TypeVtbl is not null)
-            {
-                writer.WriteString("typeVtbl", type.TypeVtbl.Name);
-            }
-
-            writer.WriteEndObject();
-        }
-
-        writer.WriteEndArray();
-        writer.WriteStartArray("members");
-        foreach (MemberProjection member in model.Members)
-        {
-            writer.WriteStartObject();
-            writer.WriteString("canonicalId", member.CanonicalId);
-            writer.WriteString("canonicalSignature", member.CanonicalSignature);
-            writer.WriteBoolean("supported", member.IsSupported);
-            if (member.UnsupportedReason is not null)
-            {
-                writer.WriteString(
-                    "unsupportedReason",
-                    member.UnsupportedReason);
-            }
-
-            writer.WriteStartArray("calls");
-            foreach (ProjectedCall operation in member.Calls
-                .OrderBy(
-                    operation => operation.CanonicalSignature,
-                    StringComparer.Ordinal))
-            {
-                writer.WriteStartObject();
-                writer.WriteString("canonicalId", operation.CanonicalId);
-                writer.WriteString(
-                    "canonicalSignature",
-                    operation.CanonicalSignature);
-                writer.WriteString("wireSignature", operation.WireSignature);
-                writer.WriteString("generatedName", operation.GeneratedName);
-                writer.WriteBoolean("supported", operation.IsSupported);
-                writer.WriteString(
-                    "strategy",
-                    operation.Strategy.ToString());
-                if (operation.Vtbl is not null)
-                {
-                    writer.WriteString(
-                        "vtbl",
-                        operation.Vtbl.Name);
-                    writer.WriteString(
-                        "vtblId",
-                        operation.Vtbl.VtblId);
-                }
-                WriteAbiPlan(writer, "receiver", operation.Receiver);
-                writer.WriteStartArray("parameters");
-                foreach (ParameterProjection parameter in operation.Parameters)
-                {
-                    writer.WriteStartObject();
-                    writer.WriteString("name", parameter.Symbol.Name);
-                    WriteAbiPlan(writer, "abi", parameter.AbiType);
-                    writer.WriteEndObject();
-                }
-
-                writer.WriteEndArray();
-                WriteAbiPlan(
-                    writer,
-                    "return",
-                    operation.ReturnValue);
-                if (operation.UnsupportedReason is not null)
-                {
-                    writer.WriteString(
-                        "unsupportedReason",
-                        operation.UnsupportedReason);
-                }
-
-                if (operation.OverrideReason is not null)
-                {
-                    writer.WriteString(
-                        "overrideReason",
-                        operation.OverrideReason);
-                }
-
-                writer.WriteEndObject();
-            }
-
-            writer.WriteEndArray();
-            writer.WriteEndObject();
-        }
-
-        writer.WriteEndArray();
-        writer.WriteEndObject();
-        writer.Flush();
-        stream.WriteByte((byte)'\n');
-    }
-
-    private static void WriteAbiPlan(
-        Utf8JsonWriter writer,
-        string propertyName,
-        AbiTypePlan? plan)
-    {
-        if (plan is null)
-        {
-            writer.WriteNull(propertyName);
-            return;
-        }
-
-        writer.WriteStartObject(propertyName);
-        writer.WriteString("kind", plan.Kind.ToString());
-        if (plan.IsSupported)
-        {
-            writer.WriteString("abiType", plan.AbiType);
-            writer.WriteBoolean("nullable", plan.IsNullable);
-        }
-        else
-        {
-            writer.WriteString(
-                "unsupportedReason",
-                plan.UnsupportedReason);
-        }
-
-        writer.WriteEndObject();
-    }
-
     private static string EmitInventory(ProjectionModel model)
     {
         var builder = new StringBuilder();
@@ -2468,6 +2285,11 @@ internal static class ProjectionOutputEmitter
             builder.Append(type.TypeVtbl?.Name ?? "none");
             builder.Append(" reachedBy=");
             builder.Append(type.ReachedBy ?? "unreachable");
+            // The ownership reason is last because it is the one free-text
+            // field on the line: every entry needs one, and until the JSON
+            // manifest was removed this was the only place it was recorded.
+            builder.Append(" ownershipReason=");
+            builder.Append(type.OwnershipReason);
             builder.Append(" id=");
             builder.AppendLine(type.CanonicalId);
         }

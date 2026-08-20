@@ -27,7 +27,7 @@ internal sealed partial class IAnalyzerAssemblyLoaderVtblDispatcher : IIAnalyzer
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string fullPath)
     {
-        RoslynCallCounters.Record(604);
+        RoslynCallCounters.Record(4542);
 
         try
         {

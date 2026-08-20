@@ -15,7 +15,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxAnnotationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationTypeVtbl(controlVtbl);
-            int status = vtbl.SyntaxAnnotation_ctor_706a5ffb(out long result);
+            int status = vtbl.SyntaxAnnotation_ctor_910af2fe(out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationVtbl(controlVtbl);
@@ -26,7 +26,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxAnnotationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationTypeVtbl(controlVtbl);
-            int status = vtbl.SyntaxAnnotation_ctor_ca78ae06(kind, data, out long result);
+            int status = vtbl.SyntaxAnnotation_ctor_70ab33d6(kind, data, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationVtbl(controlVtbl);
@@ -37,7 +37,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxAnnotationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationTypeVtbl(controlVtbl);
-            int status = vtbl.SyntaxAnnotation_ctor_6d2856e8(kind, out long result);
+            int status = vtbl.SyntaxAnnotation_ctor_03fc3ae7(kind, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxAnnotationVtbl(controlVtbl);
@@ -82,14 +82,14 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxAnnotationVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxAnnotation_Equals_ae21757d(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.SyntaxAnnotation_Equals_8c7caee1(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public override bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override int GetHashCode()
@@ -103,12 +103,12 @@ namespace Microsoft.CodeAnalysis
 
         public static bool operator ==(SyntaxAnnotation? left, SyntaxAnnotation? right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(SyntaxAnnotation? left, SyntaxAnnotation? right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         private global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;

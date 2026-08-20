@@ -21,30 +21,29 @@ dotnet run \
   path/to/Microsoft.CodeAnalysis.CSharp.dll
 ```
 
-Generate executable facade sources and their synchronized ABI, compiler
-dispatch, and manifest outputs with:
-
-```bash
-dotnet run \
-  --project tools/RoslynAot.RoslynFacadeGenerator \
-  -- generate \
-  --output artifacts/generated/roslyn-facade \
-  path/to/Microsoft.CodeAnalysis.dll \
-  path/to/Microsoft.CodeAnalysis.CSharp.dll
-```
+The generate command writes executable facade sources and their synchronized
+ABI, compiler dispatch, and inventory outputs. Its input assemblies and its
+`--reference` set are not free choices — they decide every generated vtbl id
+and operation name — so the invocation that reproduces the checked-in tree is
+given under [Regenerating the checked-in
+tree](#regenerating-the-checked-in-tree) rather than sketched here.
 
 The generated types are partial. Members covered by the initial projection
 receive executable COM proxy bodies. Other concrete constructors, methods,
-operators, and accessors throw `PlatformNotSupportedException`; abstract and
-interface members retain declaration-only bodies. Binding-relevant assembly
+operators, and accessors throw `PlatformNotSupportedException` carrying the
+model's reason for the member being unsupported — `Return type is unsupported:
+Generic substitutions are not supported.` rather than a bare "not implemented",
+so an analyzer author who hits one can tell a per-member gap from a whole class
+of API without going to the manifest. Abstract and interface members retain
+declaration-only bodies. Binding-relevant assembly
 attributes, including Roslyn friend-assembly declarations, are preserved.
 GenAPI's usual `ReferenceAssemblyAttribute` is deliberately omitted because
 these facades must execute.
 
 Coverage is whatever the model's rules currently classify as supported, and
 the exact numbers are the first lines of
-`Projection/Manifest/ProjectionInventory.txt` — 5,833 supported calls and
-2,897 unsupported across 700 types at the time of writing. Read them there
+`Projection/Manifest/ProjectionInventory.txt` — 5,824 supported calls and
+2,804 unsupported across 695 types at the time of writing. Read them there
 rather than from prose here: they change with every projection rule, and the
 manifest is checked in so the change is a reviewable diff. The generated
 facade projects under `src/RoslynAot.GeneratedFacade*` compile the complete
@@ -81,6 +80,89 @@ Each assembly receives its own root directory. Namespace components become
 directories, and each top-level type receives a source file. Nested types stay
 in the file containing their declaring type. Generic arity is appended only
 when needed to distinguish legal same-name types such as `Name` and `Name<T>`.
+
+## The contract
+
+The generated tree is the contract between the compiler and the analyzer. The
+compiler builds `Abi/` and `Compiler/` into itself; the analyzer builds against
+the facade assemblies. `ManifestIdentity` in `Abi/RoslynControlVtbl.g.cs` is
+checked when the two meet, and asserts they came from the same contract.
+
+The contract is generated from the NuGet `Microsoft.CodeAnalysis.Common` and
+`Microsoft.CodeAnalysis.CSharp` **5.0.0** packages, and that version is the
+contract's, not the compiler's. The compiler links whatever Roslyn its SDK
+ships — 5.1000.26.38203 today — and implements the 5.0 contract on top of it.
+Roslyn floats, the contract holds still, and an analyzer built once keeps
+working as SDKs move. It also gives the facades their `AssemblyVersion` of
+`5.0.0.0`, which is what an analyzer's strong-name reference asks for.
+
+That places one obligation on the contract: its surface has to stay something a
+newer Roslyn can still satisfy, because `Compiler/` compiles against the real
+assemblies. If Roslyn ever drops or re-signatures a member the contract names,
+the compiler side stops building — an ordinary C# error, here, rather than a
+failure in somebody's analyzer.
+
+Moving the contract means regenerating from a newer baseline and shipping both
+halves together; analyzers rebuild against the new package. Nothing else moves
+the ABI.
+
+## Regenerating the checked-in tree
+
+`src/RoslynAot.Generated/Projection` is committed generator output, and nothing
+rebuilds it during a normal build. Regenerate when you move a projection rule
+or a table entry, in the same commit, so the tables and the tree agree. A clean
+regen reproduces the tree byte for byte, which is what keeps the diff worth
+reading.
+
+### Baseline inputs
+
+Both packages are named as `PackageReference`s with `GeneratePathProperty="true"`
+in `RoslynAot.RoslynFacadeGenerator.csproj`, so the version is pinned in the
+project file and the command below reads the paths back out rather than hunting
+for assemblies. (The GenAPI fork under `Upstream/` references the same version
+for its own compilation; the three are not centrally pinned, so moving one means
+moving all of them.)
+
+The `net11.0` reference pack passed with `--reference` is required, not an
+optimization. Without it the run fails projection validation with one
+`Declared foreign type ... appears in no projected signature.` error per
+declared foreign type, because nothing the projection declares as foreign
+resolves.
+
+### The invocation
+
+Run from the repository root:
+
+```bash
+generator=tools/RoslynAot.RoslynFacadeGenerator/RoslynAot.RoslynFacadeGenerator.csproj
+common="$(dotnet msbuild $generator \
+  -getProperty:PkgMicrosoft_CodeAnalysis_Common)"
+csharp="$(dotnet msbuild $generator \
+  -getProperty:PkgMicrosoft_CodeAnalysis_CSharp)"
+packs="$(dotnet msbuild src/CscAot/CscAot.csproj \
+  -getProperty:NetCoreTargetingPackRoot)"
+runtime="$(dotnet msbuild src/CscAot/CscAot.csproj \
+  -getProperty:BundledNETCoreAppPackageVersion)"
+references="$packs/Microsoft.NETCore.App.Ref/$runtime/ref/net11.0"
+
+reference_arguments=()
+for assembly in "$references"/*.dll; do
+    reference_arguments+=(--reference "$assembly")
+done
+
+dotnet run \
+  --project tools/RoslynAot.RoslynFacadeGenerator -c Release \
+  -- generate \
+  --output src/RoslynAot.Generated/Projection \
+  "${reference_arguments[@]}" \
+  "$common/lib/netstandard2.0/Microsoft.CodeAnalysis.dll" \
+  "$csharp/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll"
+```
+
+The output directory is the checked-in tree itself. Every subdirectory the
+generator owns — `Facades`, `Abi`, `Compiler`, `AnalyzerRuntime`, `Manifest` —
+is recreated on each run, so stale files cannot survive a regeneration, and
+`git status` is the diff to review. A run takes roughly two minutes.
 
 ## Source generation
 
@@ -223,7 +305,7 @@ roslyn-facade/
     SyntaxFactoryVtblDispatcher.g.cs
     SyntaxTokenParserVtblDispatcher.g.cs
   Manifest/
-    RoslynProjection.json
+    ProjectionInventory.txt
 ```
 
 The generator emits one instance vtbl interface per projected facade type and
@@ -505,11 +587,27 @@ stable identity scheme is the canonical id described under
 
 ## The model
 
-Everything the emitters do is decided by `ProjectionModel`, and everything the
-model decides is written out under `Projection/Manifest/` — `RoslynProjection.json`
-in full, `ProjectionInventory.txt` as one greppable line per type and per call.
-Both are checked in, so a change to a projection rule shows up as a reviewable
-diff rather than as an analyzer failing on someone's machine.
+Everything the emitters do is decided by `ProjectionModel`, and what the model
+decides is written out to `Projection/Manifest/ProjectionInventory.txt` as one
+greppable line per type and per call.
+
+Read it for two things, and read the generated code for everything else. The
+first is the counts in its header: when a rule change touches a thousand files,
+`supported=`, `unsupported=`, `vtbls=` and `types=` are how you see the size and
+direction of what you did. The second is a specific member — grep its canonical
+id to see the strategy and wire signature the model chose. What the file is
+*not* is a review medium. A change to the projected Roslyn version rewrites the
+disambiguating hash on every overloaded operation name, so the inventory diff
+can run to thousands of lines with a handful of meaningful ones in it; the
+generated C# is where a reviewer who knows Roslyn should look.
+
+There was a second manifest, `RoslynProjection.json`, holding the same model in
+full. Nothing read it — not the compiler, not the analyzer runtime, not the
+harnesses — and it cost 21 MB of the repository and of the shipped package. It
+held two things the inventory did not, and both were moved rather than dropped:
+the reason each unsupported member could not be projected, which now travels in
+the exception that member throws, and the reason behind each type's ownership,
+which is now the `ownershipReason=` field on the inventory's `TYPE` lines.
 
 Members are keyed by **canonical id**: `[Assembly]M:Ns.Type.Member(Params)~Return`,
 built from `DocumentationCommentId`. The assembly prefix is there because a

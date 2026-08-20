@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -107,7 +107,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public new BaseMethodDeclarationSyntax AddModifiers(params SyntaxToken[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'items' is unsupported: Arrays are not supported.");
         }
 
         public BaseMethodDeclarationSyntax AddParameterListParameters(params ParameterSyntax[] items)
@@ -121,7 +121,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public new BaseMethodDeclarationSyntax WithAttributeLists(SyntaxList<AttributeListSyntax> attributeLists)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public BaseMethodDeclarationSyntax WithBody(BlockSyntax? body)
@@ -175,7 +175,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static BaseMethodDeclarationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (BaseMethodDeclarationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("6fb74d11-ec3f-5067-b180-d09437f1aac2")]
+        [System.Runtime.InteropServices.Guid("01ab2948-fdfa-5c72-b177-af686f892ced")]
         internal partial interface __RoslynAotImplementation : BaseMethodDeclarationSyntax
         {
         }

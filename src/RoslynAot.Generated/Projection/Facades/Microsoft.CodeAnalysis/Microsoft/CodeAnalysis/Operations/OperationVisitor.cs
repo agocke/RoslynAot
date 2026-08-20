@@ -26,97 +26,97 @@ namespace Microsoft.CodeAnalysis.Operations
                 case (6220667445067610340L, -1009132934905424992L):
                     VisitCaughtException((FlowAnalysis.ICaughtExceptionOperation)operation);
                     return;
-                case (6678057089087607817L, -4773701337688282476L):
+                case (6218440649254350061L, -6193061645264360282L):
                     VisitFlowAnonymousFunction((FlowAnalysis.IFlowAnonymousFunctionOperation)operation);
                     return;
-                case (6680641790851881254L, 1436419002512444057L):
+                case (6866529458015687539L, 3021485317560595364L):
                     VisitFlowCapture((FlowAnalysis.IFlowCaptureOperation)operation);
                     return;
-                case (6661187455956838096L, -8539655738072444743L):
+                case (6099675779027387732L, -1616096673178244191L):
                     VisitFlowCaptureReference((FlowAnalysis.IFlowCaptureReferenceOperation)operation);
                     return;
-                case (6754606469936391932L, 1821369774094577800L):
+                case (6545808817115459462L, 7291643358036944293L):
                     VisitIsNull((FlowAnalysis.IIsNullOperation)operation);
                     return;
-                case (6132020520475098606L, -2906436670734327930L):
+                case (6733393976725918900L, 1361308820797903537L):
                     VisitStaticLocalInitializationSemaphore((FlowAnalysis.IStaticLocalInitializationSemaphoreOperation)operation);
                     return;
-                case (5819483989918896948L, 7605087328275120522L):
+                case (6084782764269668728L, -3421999974818268994L):
                     VisitAddressOf((IAddressOfOperation)operation);
                     return;
-                case (6885926471103929494L, -4143799750330633305L):
+                case (6726991287645280428L, 2540202875302394539L):
                     VisitAnonymousFunction((IAnonymousFunctionOperation)operation);
                     return;
-                case (6085553791434465174L, -2045473698406146657L):
+                case (6385573553520246896L, 718804953082192573L):
                     VisitAnonymousObjectCreation((IAnonymousObjectCreationOperation)operation);
                     return;
-                case (5933649356924830061L, -8028898167493389898L):
+                case (6916854698593929298L, -311956654521232235L):
                     VisitArgument((IArgumentOperation)operation);
                     return;
-                case (6533941479356021612L, -9023410392256180075L):
+                case (6062195497768389010L, -6322540958628924016L):
                     VisitArrayCreation((IArrayCreationOperation)operation);
                     return;
-                case (6863797967115798996L, 8482795963786436764L):
+                case (6322109747411964625L, 1870169825613156242L):
                     VisitArrayElementReference((IArrayElementReferenceOperation)operation);
                     return;
-                case (6894866530894694262L, -3820142029190010455L):
+                case (6335457077065483297L, 6943720691736013197L):
                     VisitArrayInitializer((IArrayInitializerOperation)operation);
                     return;
-                case (6439384789911717975L, -7388235860300431208L):
+                case (6250948635534402011L, -2699172019958764907L):
                     VisitAttribute((IAttributeOperation)operation);
                     return;
-                case (6893744925584339599L, 3879663848084901273L):
+                case (6431189426997518753L, 2915768653914582188L):
                     VisitAwait((IAwaitOperation)operation);
                     return;
-                case (6004763933982645628L, 3064068070453088447L):
+                case (6258542132157231867L, 485874131410843819L):
                     VisitBinaryOperator((IBinaryOperation)operation);
                     return;
-                case (6578246491093762371L, -2158760389432596575L):
+                case (6588008092636685981L, 4343354424014495373L):
                     VisitBinaryPattern((IBinaryPatternOperation)operation);
                     return;
-                case (6427340112392841237L, 8085813449968167323L):
+                case (6266716157060372065L, 4711475724515479460L):
                     VisitBlock((IBlockOperation)operation);
                     return;
-                case (6197656800996718861L, -3395092733510154622L):
+                case (6407554642013547418L, 5225472301277107100L):
                     VisitBranch((IBranchOperation)operation);
                     return;
-                case (6432388520737123982L, 6053660367014050237L):
+                case (6467879616103465878L, -7915723367604503117L):
                     VisitCatchClause((ICatchClauseOperation)operation);
                     return;
                 case (6430377446401711066L, -3741233849196465273L):
                     VisitCoalesceAssignment((ICoalesceAssignmentOperation)operation);
                     return;
-                case (6179048968382301125L, 3259588789209741212L):
+                case (6792471257440020498L, 5669417581044137872L):
                     VisitCoalesce((ICoalesceOperation)operation);
                     return;
-                case (6723470031175650030L, -804889918192233553L):
+                case (6229310919061480153L, -5827995221061220418L):
                     VisitCollectionExpression((ICollectionExpressionOperation)operation);
                     return;
-                case (6269722265082360484L, 3878392023010161325L):
+                case (5904536146738844555L, -7982476943977595984L):
                     VisitCompoundAssignment((ICompoundAssignmentOperation)operation);
                     return;
                 case (5808234929654641927L, -7156460690318292547L):
                     VisitConditionalAccessInstance((IConditionalAccessInstanceOperation)operation);
                     return;
-                case (5938127315978003756L, -8623920270765908064L):
+                case (6037056023070573358L, 2976934461167606437L):
                     VisitConditionalAccess((IConditionalAccessOperation)operation);
                     return;
-                case (6384108859944595548L, 6056731019479164314L):
+                case (6508962700066996053L, -6955496604320835396L):
                     VisitConditional((IConditionalOperation)operation);
                     return;
-                case (6824831494064002278L, 5420114252080888478L):
+                case (6625040599089882982L, 5625208486952875904L):
                     VisitConstantPattern((IConstantPatternOperation)operation);
                     return;
-                case (6248952735378422523L, 1478668721558234558L):
+                case (6632013915860486201L, 1017419978525073582L):
                     VisitConstructorBodyOperation((IConstructorBodyOperation)operation);
                     return;
-                case (6266076142523367182L, -226608117089679445L):
+                case (6068859784873826870L, -2644251796816108102L):
                     VisitConversion((IConversionOperation)operation);
                     return;
-                case (5912483307568739122L, 6703307496026951306L):
+                case (6749689206148225654L, 6107065497521639858L):
                     VisitDeclarationExpression((IDeclarationExpressionOperation)operation);
                     return;
-                case (6478521530882938884L, -5530286830515677772L):
+                case (6674827039084965527L, 7237780829046074557L):
                     VisitDeclarationPattern((IDeclarationPatternOperation)operation);
                     return;
                 case (5872348033292937152L, -5095270401365280329L):
@@ -128,25 +128,25 @@ namespace Microsoft.CodeAnalysis.Operations
                 case (6826364055310057955L, -4895151606382450815L):
                     VisitDefaultValue((IDefaultValueOperation)operation);
                     return;
-                case (5998238115483430132L, 3215775174225257366L):
+                case (5902531779989395058L, 3860661060976938149L):
                     VisitDelegateCreation((IDelegateCreationOperation)operation);
                     return;
-                case (6391369264946657146L, -4297130426174178660L):
+                case (6602972154762943358L, -8331992821903877738L):
                     VisitDiscardOperation((IDiscardOperation)operation);
                     return;
                 case (6213541281055457759L, 1420065244176037520L):
                     VisitDiscardPattern((IDiscardPatternOperation)operation);
                     return;
-                case (5843914439839394069L, 7967534499879739266L):
+                case (6851808515262600478L, 4201569699310590603L):
                     VisitDynamicIndexerAccess((IDynamicIndexerAccessOperation)operation);
                     return;
-                case (6812267521197333360L, -452810855911613049L):
+                case (6690118475625575469L, -6244366457234306681L):
                     VisitDynamicInvocation((IDynamicInvocationOperation)operation);
                     return;
-                case (6627993350390204748L, -6280089344469916021L):
+                case (5856879997823095236L, -3080946720865316443L):
                     VisitDynamicMemberReference((IDynamicMemberReferenceOperation)operation);
                     return;
-                case (6570722489711244511L, 6666312242077433012L):
+                case (6416494462753804943L, -807413341357267317L):
                     VisitDynamicObjectCreation((IDynamicObjectCreationOperation)operation);
                     return;
                 case (5832995659858143126L, -7959430782451214415L):
@@ -155,250 +155,250 @@ namespace Microsoft.CodeAnalysis.Operations
                 case (5844430072025155390L, -6489298840172991052L):
                     VisitEnd((IEndOperation)operation);
                     return;
-                case (6116464473492838818L, 5630356878778717089L):
+                case (6615984427205727582L, 8553337534583152825L):
                     VisitEventAssignment((IEventAssignmentOperation)operation);
                     return;
-                case (5998587415654015289L, -5143347829054695254L):
+                case (6087211862410303301L, -465821476885706819L):
                     VisitEventReference((IEventReferenceOperation)operation);
                     return;
-                case (5860685175969034522L, -7854748898097245027L):
+                case (6147419418231349602L, 8958005329815961225L):
                     VisitExpressionStatement((IExpressionStatementOperation)operation);
                     return;
-                case (6736709989877889166L, -7525742199261115722L):
+                case (6375886628157000567L, -4159311443650795088L):
                     VisitFieldInitializer((IFieldInitializerOperation)operation);
                     return;
-                case (5871209120158250676L, -9107769725290181734L):
+                case (6654641953111369851L, 6220394310120058537L):
                     VisitFieldReference((IFieldReferenceOperation)operation);
                     return;
-                case (6559976443206196190L, -6060058214304398149L):
+                case (6336925252769546901L, -7659731926651497339L):
                     VisitForEachLoop((IForEachLoopOperation)operation);
                     return;
-                case (6403905979414878155L, -3149134805620239940L):
+                case (6424485157924136302L, 420942426815423130L):
                     VisitForLoop((IForLoopOperation)operation);
                     return;
-                case (6632486365177572997L, 2451103833718737589L):
+                case (6784939569662959336L, -1091477099072519511L):
                     VisitForToLoop((IForToLoopOperation)operation);
                     return;
-                case (6109678151279307032L, -8701444905153863508L):
+                case (5899062643903123918L, -5937615860147928175L):
                     VisitFunctionPointerInvocation((IFunctionPointerInvocationOperation)operation);
                     return;
-                case (5961417316989814215L, 5746188385712854463L):
+                case (6067168553910964442L, 4509673731954330556L):
                     VisitImplicitIndexerReference((IImplicitIndexerReferenceOperation)operation);
                     return;
-                case (6773218015101381947L, 9194510519169771397L):
+                case (6662556218451434633L, -4893110735590177918L):
                     VisitIncrementOrDecrement((IIncrementOrDecrementOperation)operation);
                     return;
-                case (6288756728618427591L, 5532751018363514787L):
+                case (6137182418563288132L, -4840838718492420444L):
                     VisitInlineArrayAccess((IInlineArrayAccessOperation)operation);
                     return;
-                case (6234482690598257498L, -971882216968220737L):
+                case (6415674561002627022L, 6784638277133463730L):
                     VisitInstanceReference((IInstanceReferenceOperation)operation);
                     return;
-                case (6546713265073102030L, -4950832223161245551L):
+                case (6007919540859129973L, 1371677892325109386L):
                     VisitInterpolatedStringAddition((IInterpolatedStringAdditionOperation)operation);
                     return;
-                case (6236719439420526500L, -4032558093336766077L):
+                case (6016639310087074130L, 2973825473534314880L):
                     VisitInterpolatedStringAppend((IInterpolatedStringAppendOperation)operation);
                     return;
-                case (6858686332434926876L, -882252148887598182L):
+                case (6096012440927553776L, 1080576765770973082L):
                     VisitInterpolatedStringHandlerArgumentPlaceholder((IInterpolatedStringHandlerArgumentPlaceholderOperation)operation);
                     return;
-                case (5952288198349022703L, 121298990134254996L):
+                case (6018207987302824410L, 9066530599679358345L):
                     VisitInterpolatedStringHandlerCreation((IInterpolatedStringHandlerCreationOperation)operation);
                     return;
-                case (5967394405903538064L, 7034572447859216045L):
+                case (6227371928969373427L, 5710212854523554438L):
                     VisitInterpolatedString((IInterpolatedStringOperation)operation);
                     return;
-                case (5893567695697328316L, 5281872073452129726L):
+                case (6259829681830240157L, -2090977171368204649L):
                     VisitInterpolatedStringText((IInterpolatedStringTextOperation)operation);
                     return;
-                case (6277162119877450606L, 9001636320537298563L):
+                case (5842928501510458835L, 2659419337914803638L):
                     VisitInterpolation((IInterpolationOperation)operation);
                     return;
                 case (6399662568722519984L, -5183289192604555647L):
                     VisitInvalid((IInvalidOperation)operation);
                     return;
-                case (6710803507406972704L, 3673527752225131711L):
+                case (5799410888529116989L, -2607758537674826110L):
                     VisitInvocation((IInvocationOperation)operation);
                     return;
-                case (6092447603591283137L, -7793821421758891380L):
+                case (6313847977908154228L, 499778006248091316L):
                     VisitIsPattern((IIsPatternOperation)operation);
                     return;
-                case (6666523425168528001L, -4375456139644762211L):
+                case (6310265179029852126L, 5963171224706703016L):
                     VisitIsType((IIsTypeOperation)operation);
                     return;
-                case (6558512024121172878L, 6465484794973771401L):
+                case (5858694376351718177L, 398494203370060205L):
                     VisitLabeled((ILabeledOperation)operation);
                     return;
-                case (5799968126543671658L, 2748167786024855741L):
+                case (6859188728255193074L, 248069605452996739L):
                     VisitListPattern((IListPatternOperation)operation);
                     return;
                 case (6326628092952737127L, -9036152339025956992L):
                     VisitLiteral((ILiteralOperation)operation);
                     return;
-                case (6567006521321825903L, 514039708876082571L):
+                case (6570366175990815684L, -2510241993323528273L):
                     VisitLocalFunction((ILocalFunctionOperation)operation);
                     return;
-                case (5822384531544886461L, 308214680519557814L):
+                case (6703189814658442336L, 6394610157452124063L):
                     VisitLocalReference((ILocalReferenceOperation)operation);
                     return;
-                case (6380403136630967751L, -8711106330929960524L):
+                case (6834893425690553899L, 743859363234463155L):
                     VisitLock((ILockOperation)operation);
                     return;
-                case (6610795313350356038L, 3892482375589184408L):
+                case (6640436813271486696L, -192449400149869129L):
                     VisitMemberInitializer((IMemberInitializerOperation)operation);
                     return;
                 case (6627173927677138462L, -1735655602070206079L):
                     VisitMethodBodyOperation((IMethodBodyOperation)operation);
                     return;
-                case (6657692720800439896L, -2707819179842156147L):
+                case (6877089978650695683L, -1804271819686413933L):
                     VisitMethodReference((IMethodReferenceOperation)operation);
                     return;
-                case (6733026025438044548L, 6494050522952151467L):
+                case (5807248573318526735L, 7189302634590045604L):
                     VisitNameOf((INameOfOperation)operation);
                     return;
-                case (6513750130606680651L, 3590202332471553444L):
+                case (6052171287603751365L, 7722501324906396561L):
                     VisitNegatedPattern((INegatedPatternOperation)operation);
                     return;
-                case (6719692122703252321L, -4980252727643479394L):
+                case (6417186926293233625L, -5498420176222110554L):
                     VisitObjectCreation((IObjectCreationOperation)operation);
                     return;
-                case (6071994419942166607L, 4703288211271550880L):
+                case (5961008055905899069L, -5060810467979646053L):
                     VisitObjectOrCollectionInitializer((IObjectOrCollectionInitializerOperation)operation);
                     return;
                 case (6096682761421464670L, 3755015795917004717L):
                     VisitOmittedArgument((IOmittedArgumentOperation)operation);
                     return;
-                case (6883333905145853321L, -5363749039359186760L):
+                case (6584395961460081327L, -7888669147316875373L):
                     VisitParameterInitializer((IParameterInitializerOperation)operation);
                     return;
-                case (6894350033315732372L, -7618930119897447778L):
+                case (5882640763802605301L, -4686592817850114159L):
                     VisitParameterReference((IParameterReferenceOperation)operation);
                     return;
-                case (6478317660056340908L, -2752326843348942412L):
+                case (6590621825893834232L, 8858656824820592261L):
                     VisitParenthesized((IParenthesizedOperation)operation);
                     return;
-                case (6023085261137150986L, 4315787478287386022L):
+                case (6640722152420865384L, -300583567997812303L):
                     VisitPatternCaseClause((IPatternCaseClauseOperation)operation);
                     return;
-                case (6070807031940069204L, 2261926793824819347L):
+                case (6164102325453013046L, 4302859448285114016L):
                     VisitPropertyInitializer((IPropertyInitializerOperation)operation);
                     return;
-                case (6863696222180759294L, 7108591833129500043L):
+                case (6117067927644167539L, 8420350961086712215L):
                     VisitPropertyReference((IPropertyReferenceOperation)operation);
                     return;
-                case (6396276235815500893L, -4689168751995956056L):
+                case (5789182490135772606L, -3312873097309324633L):
                     VisitPropertySubpattern((IPropertySubpatternOperation)operation);
                     return;
-                case (5814591805460267295L, 3651372407029561994L):
+                case (6154499410019665311L, 8183967618913067432L):
                     VisitRaiseEvent((IRaiseEventOperation)operation);
                     return;
-                case (6493163821295039800L, -8983376660323639388L):
+                case (6145454411824574305L, -6059842130781981038L):
                     VisitRangeCaseClause((IRangeCaseClauseOperation)operation);
                     return;
-                case (5794535122713732793L, -9197387767690199361L):
+                case (6762680716501291755L, -4954511951793315914L):
                     VisitRangeOperation((IRangeOperation)operation);
                     return;
-                case (5934346448901334731L, -22491926413553267L):
+                case (6419795783424976694L, -7066800604225506678L):
                     VisitReDimClause((IReDimClauseOperation)operation);
                     return;
-                case (5943089550205875120L, -2155787957041631574L):
+                case (6601203846571384521L, 3849482356754974894L):
                     VisitReDim((IReDimOperation)operation);
                     return;
-                case (6192512159543473658L, -6363759721179314779L):
+                case (5848724561735601713L, -5732063055389349727L):
                     VisitRecursivePattern((IRecursivePatternOperation)operation);
                     return;
-                case (5830623764759236904L, -8705997439286331971L):
+                case (6733030926349494068L, 2724415096268637098L):
                     VisitRelationalCaseClause((IRelationalCaseClauseOperation)operation);
                     return;
-                case (5903861547148688241L, -6962474170935462470L):
+                case (6131621146121309567L, -3983408696454510680L):
                     VisitRelationalPattern((IRelationalPatternOperation)operation);
                     return;
-                case (6450289644650019473L, 7680762458572365953L):
+                case (6378373759170316337L, -7514412458703066482L):
                     VisitReturn((IReturnOperation)operation);
                     return;
-                case (6089052141803516454L, 524747722967322526L):
+                case (6901249557690949303L, 2055844966433396105L):
                     VisitSimpleAssignment((ISimpleAssignmentOperation)operation);
                     return;
-                case (5961523559752316360L, -7779859883904832876L):
+                case (6700343644620889855L, -3370261667758900554L):
                     VisitSingleValueCaseClause((ISingleValueCaseClauseOperation)operation);
                     return;
-                case (6692672273600084885L, 1639170800939663009L):
+                case (6092515412106778800L, 8219079249929768865L):
                     VisitSizeOf((ISizeOfOperation)operation);
                     return;
-                case (6009401141553220573L, -6490042901831717998L):
+                case (5987850424094247468L, 9202499883858509711L):
                     VisitSlicePattern((ISlicePatternOperation)operation);
                     return;
-                case (5957758391893859493L, 7351657444641114498L):
+                case (6662489285147033942L, 3201078366084378519L):
                     VisitSpread((ISpreadOperation)operation);
                     return;
                 case (5852279335599146097L, -2868870892398157154L):
                     VisitStop((IStopOperation)operation);
                     return;
-                case (6097492620833795723L, -3083903464746719849L):
+                case (6314099390976452695L, 3068745160559336871L):
                     VisitSwitchCase((ISwitchCaseOperation)operation);
                     return;
-                case (6038368567526306462L, -1512630046971592557L):
+                case (6308505660195109921L, 6272341124826282125L):
                     VisitSwitchExpressionArm((ISwitchExpressionArmOperation)operation);
                     return;
-                case (6612528017602281101L, 597052537326796684L):
+                case (6499753289635528421L, 3491518664383848894L):
                     VisitSwitchExpression((ISwitchExpressionOperation)operation);
                     return;
-                case (6046666670977480267L, -5130542608863632705L):
+                case (6382711299819104493L, -6309303579540602232L):
                     VisitSwitch((ISwitchOperation)operation);
                     return;
-                case (6187893280065838465L, 5163014571094186667L):
+                case (6680716244238691333L, 6174838811078683308L):
                     VisitThrow((IThrowOperation)operation);
                     return;
-                case (5913176787045295526L, 6154447440161960124L):
+                case (6669351765403532233L, 5605834607110409865L):
                     VisitTranslatedQuery((ITranslatedQueryOperation)operation);
                     return;
-                case (6803168616149464088L, 3611503728052015767L):
+                case (5913677456786022733L, -3429932657786211964L):
                     VisitTry((ITryOperation)operation);
                     return;
-                case (6161601382753285111L, -6010533265229994366L):
+                case (6697204366036202754L, -8176206963810496612L):
                     VisitTupleBinaryOperator((ITupleBinaryOperation)operation);
                     return;
-                case (5871375534495651296L, -5957160814836229478L):
+                case (6264737011249823140L, 8863684759953210044L):
                     VisitTuple((ITupleOperation)operation);
                     return;
-                case (6732353058514663028L, 1655463322438650281L):
+                case (5895054444708426489L, -8539987128286201409L):
                     VisitTypeOf((ITypeOfOperation)operation);
                     return;
-                case (6578135450878091133L, -742537805189493119L):
+                case (6249819765742128275L, -8935548673873858892L):
                     VisitTypeParameterObjectCreation((ITypeParameterObjectCreationOperation)operation);
                     return;
-                case (6141139821035079832L, -6352358911203212646L):
+                case (5932790004518727358L, 4892522235059849373L):
                     VisitTypePattern((ITypePatternOperation)operation);
                     return;
-                case (6187359070647693571L, 8278806960769751217L):
+                case (5957596339786890251L, -1582828853075046978L):
                     VisitUnaryOperator((IUnaryOperation)operation);
                     return;
-                case (5852660651562082570L, -4289536609779083637L):
+                case (6821623494638830548L, 8987582076582448781L):
                     VisitUsingDeclaration((IUsingDeclarationOperation)operation);
                     return;
-                case (6595121719885254081L, 7850876676627693232L):
+                case (6397588669224899260L, 4338980181740584865L):
                     VisitUsing((IUsingOperation)operation);
                     return;
-                case (6754927942868001177L, 8862123401264811703L):
+                case (6585651629875035180L, -4864002893551189844L):
                     VisitUtf8String((IUtf8StringOperation)operation);
                     return;
-                case (6780893301687205566L, -6006521906552441186L):
+                case (5915808652921425827L, -9166988704838259583L):
                     VisitVariableDeclarationGroup((IVariableDeclarationGroupOperation)operation);
                     return;
-                case (5989677096909150766L, 8871742291939027364L):
+                case (6019880458698964317L, -4674028649516389216L):
                     VisitVariableDeclaration((IVariableDeclarationOperation)operation);
                     return;
-                case (6018247234738779367L, -2897580766173799746L):
+                case (6883935932788874947L, -7942505754144800580L):
                     VisitVariableDeclarator((IVariableDeclaratorOperation)operation);
                     return;
                 case (6210307353862596862L, 2756701874172601781L):
                     VisitVariableInitializer((IVariableInitializerOperation)operation);
                     return;
-                case (6406682449354667659L, -2271321167872915563L):
+                case (6761091885136794950L, -1952796601931019611L):
                     VisitWhileLoop((IWhileLoopOperation)operation);
                     return;
-                case (6834691663733262993L, -3637164163635034440L):
+                case (6375656062706704465L, -8042296306610408563L):
                     VisitWith((IWithOperation)operation);
                     return;
                 default:
@@ -499,12 +499,6 @@ namespace Microsoft.CodeAnalysis.Operations
         }
 
         public virtual void VisitCollectionExpression(ICollectionExpressionOperation operation)
-        {
-            DefaultVisit(operation);
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82210")]
-        public virtual void VisitCollectionExpressionElementsPlaceholder(ICollectionExpressionElementsPlaceholderOperation operation)
         {
             DefaultVisit(operation);
         }

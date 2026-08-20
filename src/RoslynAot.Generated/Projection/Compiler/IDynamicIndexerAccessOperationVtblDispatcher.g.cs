@@ -27,7 +27,7 @@ internal sealed partial class IDynamicIndexerAccessOperationVtblDispatcher : IID
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1050);
+        RoslynCallCounters.Record(4984);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IDynamicIndexerAccessOperationVtblDispatcher : IID
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1051);
+        RoslynCallCounters.Record(4985);
         result = default;
 
         try

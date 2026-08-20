@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -46,13 +46,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITupleExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TupleExpressionSyntax_Accept_146ae86a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.TupleExpressionSyntax_Accept_6cddbd4a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public TupleExpressionSyntax AddArguments(params ArgumentSyntax[] items)
@@ -66,12 +66,12 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public TupleExpressionSyntax Update(SyntaxToken openParenToken, SeparatedSyntaxList<ArgumentSyntax> arguments, SyntaxToken closeParenToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'arguments' is unsupported: Generic substitutions are not supported.");
         }
 
         public TupleExpressionSyntax WithArguments(SeparatedSyntaxList<ArgumentSyntax> arguments)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'arguments' is unsupported: Generic substitutions are not supported.");
         }
 
         public TupleExpressionSyntax WithCloseParenToken(SyntaxToken closeParenToken)
@@ -98,7 +98,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static TupleExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (TupleExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("57716632-63cf-56dd-9756-df1fadda1752")]
+        [System.Runtime.InteropServices.Guid("deb1a0a6-3276-5eea-b017-9293e9e2ce48")]
         internal partial interface __RoslynAotImplementation : TupleExpressionSyntax
         {
         }

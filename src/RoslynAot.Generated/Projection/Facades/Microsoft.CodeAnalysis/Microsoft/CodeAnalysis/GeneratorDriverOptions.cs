@@ -16,24 +16,24 @@ namespace Microsoft.CodeAnalysis
         public readonly bool TrackIncrementalGeneratorSteps;
         public GeneratorDriverOptions(IncrementalGeneratorOutputKind disabledOutputs = IncrementalGeneratorOutputKind.None, bool trackIncrementalGeneratorSteps = false, string? baseDirectory = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Facade types with externally visible non-const instance fields require field-state mirroring.");
         }
 
         public GeneratorDriverOptions(IncrementalGeneratorOutputKind disabledOutputs, bool trackIncrementalGeneratorSteps)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Facade types with externally visible non-const instance fields require field-state mirroring.");
         }
 
         public GeneratorDriverOptions(IncrementalGeneratorOutputKind disabledOutputs)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Facade types with externally visible non-const instance fields require field-state mirroring.");
         }
 
         public string? BaseDirectory
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Facade types with externally visible non-const instance fields require field-state mirroring.");
             }
         }
     }

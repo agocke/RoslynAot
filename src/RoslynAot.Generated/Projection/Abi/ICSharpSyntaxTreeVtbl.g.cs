@@ -12,33 +12,33 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("2fbb6d6c-d76d-5dc7-b8ba-55a31ea28d1e")]
+[Guid("b3905e7e-68bf-5037-8625-28eeda7df35b")]
 public partial interface ICSharpSyntaxTreeVtbl : ISyntaxTreeVtbl
 {
 
     [PreserveSig]
-    int CSharpSyntaxTree_GetDiagnostics_e0554d29(
+    int CSharpSyntaxTree_GetDiagnostics_3eec09dc(
         long receiver,
         long node,
         out long result
     );
 
     [PreserveSig]
-    int CSharpSyntaxTree_GetDiagnostics_c3bb13c5(
+    int CSharpSyntaxTree_GetDiagnostics_7c051836(
         long receiver,
         long nodeOrToken,
         out long result
     );
 
     [PreserveSig]
-    int CSharpSyntaxTree_GetDiagnostics_f53ea487(
+    int CSharpSyntaxTree_GetDiagnostics_26ae4016(
         long receiver,
         long token,
         out long result
     );
 
     [PreserveSig]
-    int CSharpSyntaxTree_GetDiagnostics_f1636b3b(
+    int CSharpSyntaxTree_GetDiagnostics_2f26461c(
         long receiver,
         long trivia,
         out long result

@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -24,7 +24,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -32,7 +32,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -48,7 +48,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -64,53 +64,39 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL004", UrlFormat = "https://github.com/dotnet/roslyn/issues/74753")]
         public readonly void RegisterHostOutput<TSource>(IncrementalValueProvider<TSource> source, System.Action<HostOutputProductionContext, TSource> action)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Experimental APIs are not projected into compiler dispatch.");
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL004", UrlFormat = "https://github.com/dotnet/roslyn/issues/74753")]
         public readonly void RegisterHostOutput<TSource>(IncrementalValuesProvider<TSource> source, System.Action<HostOutputProductionContext, TSource> action)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Experimental APIs are not projected into compiler dispatch.");
         }
 
         public readonly void RegisterImplementationSourceOutput<TSource>(IncrementalValueProvider<TSource> source, System.Action<SourceProductionContext, TSource> action)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public readonly void RegisterImplementationSourceOutput<TSource>(IncrementalValuesProvider<TSource> source, System.Action<SourceProductionContext, TSource> action)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public readonly void RegisterPostInitializationOutput(System.Action<IncrementalGeneratorPostInitializationContext> callback)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL007", UrlFormat = "https://github.com/dotnet/roslyn/issues/83089")]
-        public readonly void RegisterPreCompilationSourceOutput<TSource>(IncrementalValueProvider<TSource> source, System.Action<PreCompilationSourceProductionContext, TSource> action)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL007", UrlFormat = "https://github.com/dotnet/roslyn/issues/83089")]
-        public readonly void RegisterPreCompilationSourceOutput<TSource>(IncrementalValuesProvider<TSource> source, System.Action<PreCompilationSourceProductionContext, TSource> action)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'callback' is unsupported: Delegates are not supported.");
         }
 
         public readonly void RegisterSourceOutput<TSource>(IncrementalValueProvider<TSource> source, System.Action<SourceProductionContext, TSource> action)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public readonly void RegisterSourceOutput<TSource>(IncrementalValuesProvider<TSource> source, System.Action<SourceProductionContext, TSource> action)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;

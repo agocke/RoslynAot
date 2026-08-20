@@ -23,12 +23,12 @@ internal sealed partial class ChildSyntaxListReversedVtblDispatcher : IChildSynt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int ChildSyntaxList_Reversed_Equals_a34ce046(
+    public int ChildSyntaxList_Reversed_Equals_74ed5c25(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(37);
+        RoslynCallCounters.Record(3976);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class ChildSyntaxListReversedVtblDispatcher : IChildSynt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(38);
+        RoslynCallCounters.Record(3977);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class ChildSyntaxListReversedVtblDispatcher : IChildSynt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(39);
+        RoslynCallCounters.Record(3978);
         result = default;
 
         try

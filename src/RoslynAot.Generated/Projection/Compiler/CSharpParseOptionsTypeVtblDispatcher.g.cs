@@ -26,7 +26,7 @@ internal sealed partial class CSharpParseOptionsTypeVtblDispatcher : ICSharpPars
     public int CSharpParseOptions_get_Default(
         out long result)
     {
-        RoslynCallCounters.Record(2006);
+        RoslynCallCounters.Record(114);
         result = default;
 
         try

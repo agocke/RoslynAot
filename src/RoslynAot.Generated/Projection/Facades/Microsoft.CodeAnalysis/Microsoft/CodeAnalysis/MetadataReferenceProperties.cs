@@ -14,14 +14,14 @@ namespace Microsoft.CodeAnalysis
         private int _dummyPrimitive;
         public MetadataReferenceProperties(MetadataImageKind kind = MetadataImageKind.Assembly, System.Collections.Immutable.ImmutableArray<string> aliases = default, bool embedInteropTypes = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'aliases' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Immutable.ImmutableArray<string> Aliases
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
         }
 
@@ -41,7 +41,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
         }
 
@@ -59,7 +59,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
         }
 
@@ -77,42 +77,42 @@ namespace Microsoft.CodeAnalysis
 
         public bool Equals(MetadataReferenceProperties other)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
         }
 
         public override bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
         }
 
         public override int GetHashCode()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
         }
 
         public static bool operator ==(MetadataReferenceProperties left, MetadataReferenceProperties right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(MetadataReferenceProperties left, MetadataReferenceProperties right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public MetadataReferenceProperties WithAliases(System.Collections.Generic.IEnumerable<string> aliases)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
         }
 
         public MetadataReferenceProperties WithAliases(System.Collections.Immutable.ImmutableArray<string> aliases)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
         }
 
         public MetadataReferenceProperties WithEmbedInteropTypes(bool embedInteropTypes)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
         }
 
         private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;

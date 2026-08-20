@@ -20,7 +20,7 @@ namespace Microsoft.CodeAnalysis
 
         System.Reflection.Assembly LoadFromPath(string fullPath)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
@@ -29,7 +29,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IAnalyzerAssemblyLoader __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IAnalyzerAssemblyLoader)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("c91ca051-c740-55e2-8d9e-f533833e1b5d")]
+        [System.Runtime.InteropServices.Guid("5fb21f7f-5440-5ecd-bc43-87ce45c2a4a6")]
         internal partial interface __RoslynAotImplementation : IAnalyzerAssemblyLoader
         {
         }

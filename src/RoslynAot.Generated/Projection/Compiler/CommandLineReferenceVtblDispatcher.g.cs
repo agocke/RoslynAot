@@ -23,12 +23,12 @@ internal sealed partial class CommandLineReferenceVtblDispatcher : ICommandLineR
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CommandLineReference_Equals_e07b61cf(
+    public int CommandLineReference_Equals_fb1af00d(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(95);
+        RoslynCallCounters.Record(4034);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class CommandLineReferenceVtblDispatcher : ICommandLineR
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(96);
+        RoslynCallCounters.Record(4035);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class CommandLineReferenceVtblDispatcher : ICommandLineR
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(97);
+        RoslynCallCounters.Record(4036);
         result = default;
 
         try
@@ -84,7 +84,7 @@ internal sealed partial class CommandLineReferenceVtblDispatcher : ICommandLineR
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(98);
+        RoslynCallCounters.Record(4037);
         requiredLength = default;
 
         try

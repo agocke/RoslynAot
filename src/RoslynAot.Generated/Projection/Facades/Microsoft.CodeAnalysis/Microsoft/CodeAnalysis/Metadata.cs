@@ -36,7 +36,7 @@ namespace Microsoft.CodeAnalysis
 
         protected Metadata CommonCopy()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public Metadata Copy()
@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static Metadata __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (Metadata)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("cfffade2-4536-5589-9389-72c81f0b4c33")]
+        [System.Runtime.InteropServices.Guid("84d1e751-28c2-5e2b-b88d-a5b329bc098b")]
         internal partial interface __RoslynAotImplementation : Metadata
         {
         }

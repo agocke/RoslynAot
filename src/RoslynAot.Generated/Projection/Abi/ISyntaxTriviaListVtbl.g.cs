@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("90b43755-d326-5cd7-8eab-01b8fd618a52")]
+[Guid("afbde1f1-b3fb-53ad-a29b-a1f09da1aca6")]
 public partial interface ISyntaxTriviaListVtbl
 {
 
@@ -37,7 +37,7 @@ public partial interface ISyntaxTriviaListVtbl
     );
 
     [PreserveSig]
-    int SyntaxTriviaList_Equals_2b3c7141(
+    int SyntaxTriviaList_Equals_e042d43d(
         long receiver,
         long other,
         out int result

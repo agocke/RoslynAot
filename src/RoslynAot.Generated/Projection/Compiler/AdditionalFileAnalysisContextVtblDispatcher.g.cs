@@ -27,7 +27,7 @@ internal sealed partial class AdditionalFileAnalysisContextVtblDispatcher : IAdd
         long receiver,
         long diagnostic)
     {
-        RoslynCallCounters.Record(266);
+        RoslynCallCounters.Record(4205);
 
         try
         {
@@ -44,7 +44,7 @@ internal sealed partial class AdditionalFileAnalysisContextVtblDispatcher : IAdd
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(267);
+        RoslynCallCounters.Record(4206);
         result = default;
 
         try
@@ -62,7 +62,7 @@ internal sealed partial class AdditionalFileAnalysisContextVtblDispatcher : IAdd
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(268);
+        RoslynCallCounters.Record(4207);
         result = default;
 
         try
@@ -80,7 +80,7 @@ internal sealed partial class AdditionalFileAnalysisContextVtblDispatcher : IAdd
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(269);
+        RoslynCallCounters.Record(4208);
         result = default;
 
         try
@@ -98,7 +98,7 @@ internal sealed partial class AdditionalFileAnalysisContextVtblDispatcher : IAdd
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(270);
+        RoslynCallCounters.Record(4209);
         result = default;
 
         try

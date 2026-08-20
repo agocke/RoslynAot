@@ -12,19 +12,19 @@ namespace Microsoft.CodeAnalysis.Text
     {
         public TextChangeEventArgs(SourceText oldText, SourceText newText, params TextChangeRange[] changes)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'changes' is unsupported: Arrays are not supported.");
         }
 
         public TextChangeEventArgs(SourceText oldText, SourceText newText, System.Collections.Generic.IEnumerable<TextChangeRange> changes)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'changes' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Generic.IReadOnlyList<TextChangeRange> Changes
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 

@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis.Text
     {
         protected SourceText(System.Collections.Immutable.ImmutableArray<byte> checksum = default, SourceHashAlgorithm checksumAlgorithm = SourceHashAlgorithm.Sha1, SourceTextContainer? container = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public bool CanBeEmbedded
@@ -80,67 +80,67 @@ namespace Microsoft.CodeAnalysis.Text
 
         protected virtual bool ContentEqualsImpl(SourceText other)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public abstract void CopyTo(int sourceIndex, char[] destination, int destinationIndex, int count);
         public static SourceText From(byte[] buffer, int length, System.Text.Encoding? encoding = null, SourceHashAlgorithm checksumAlgorithm = SourceHashAlgorithm.Sha1, bool throwIfBinaryDetected = false, bool canBeEmbedded = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'buffer' is unsupported: Arrays are not supported.");
         }
 
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public static SourceText From(byte[] buffer, int length, System.Text.Encoding? encoding, SourceHashAlgorithm checksumAlgorithm, bool throwIfBinaryDetected)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'buffer' is unsupported: Arrays are not supported.");
         }
 
         public static SourceText From(System.IO.Stream stream, System.Text.Encoding? encoding = null, SourceHashAlgorithm checksumAlgorithm = SourceHashAlgorithm.Sha1, bool throwIfBinaryDetected = false, bool canBeEmbedded = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'stream' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public static SourceText From(System.IO.Stream stream, System.Text.Encoding? encoding, SourceHashAlgorithm checksumAlgorithm, bool throwIfBinaryDetected)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'stream' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public static SourceText From(System.IO.TextReader reader, int length, System.Text.Encoding? encoding = null, SourceHashAlgorithm checksumAlgorithm = SourceHashAlgorithm.Sha1)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'reader' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public static SourceText From(string text, System.Text.Encoding? encoding = null, SourceHashAlgorithm checksumAlgorithm = SourceHashAlgorithm.Sha1)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'encoding' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public virtual System.Collections.Generic.IReadOnlyList<TextChangeRange> GetChangeRanges(SourceText oldText)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Immutable.ImmutableArray<byte> GetChecksum()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Immutable.ImmutableArray<byte> GetContentHash()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         protected virtual TextLineCollection GetLinesCore()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public virtual SourceText GetSubText(TextSpan span)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISourceTextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SourceText_GetSubText_cd9710a5(__RoslynAotGetHandle(), span.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.SourceText_GetSubText_bb43bab4(__RoslynAotGetHandle(), span.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -149,21 +149,21 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISourceTextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SourceText_GetSubText_3c347ab9(__RoslynAotGetHandle(), start, out long result);
+            int status = vtbl.SourceText_GetSubText_7dfab838(__RoslynAotGetHandle(), start, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public virtual System.Collections.Generic.IReadOnlyList<TextChange> GetTextChanges(SourceText oldText)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public SourceText Replace(TextSpan span, string newText)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISourceTextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SourceText_Replace_14f7bfb1(__RoslynAotGetHandle(), span.__RoslynAotGetHandle(), newText, out long result);
+            int status = vtbl.SourceText_Replace_1ee2c658(__RoslynAotGetHandle(), span.__RoslynAotGetHandle(), newText, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -172,7 +172,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISourceTextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SourceText_Replace_9540c2f4(__RoslynAotGetHandle(), start, length, newText, out long result);
+            int status = vtbl.SourceText_Replace_11f4d056(__RoslynAotGetHandle(), start, length, newText, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -182,7 +182,7 @@ namespace Microsoft.CodeAnalysis.Text
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISourceTextVtbl vtbl = __RoslynAotGetVtbl();
             long __roslynAotReceiver = __RoslynAotGetHandle();
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_36435385(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_88f730d0(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
         public virtual string ToString(TextSpan span)
@@ -190,27 +190,27 @@ namespace Microsoft.CodeAnalysis.Text
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISourceTextVtbl vtbl = __RoslynAotGetVtbl();
             long __roslynAotReceiver = __RoslynAotGetHandle();
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_b3c549ee(__roslynAotReceiver, span.__RoslynAotGetHandle(), buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SourceText_ToString_6e17be8a(__roslynAotReceiver, span.__RoslynAotGetHandle(), buffer, bufferLength, out requiredLength))!;
         }
 
         public SourceText WithChanges(params TextChange[] changes)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'changes' is unsupported: Arrays are not supported.");
         }
 
         public virtual SourceText WithChanges(System.Collections.Generic.IEnumerable<TextChange> changes)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'changes' is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual void Write(System.IO.TextWriter writer, TextSpan span, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'writer' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public void Write(System.IO.TextWriter textWriter, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'textWriter' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         internal SourceText()
@@ -238,14 +238,14 @@ namespace Microsoft.CodeAnalysis.Text
 
             public override void CopyTo(int sourceIndex, char[] destination, int destinationIndex, int count)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'destination' is unsupported: Arrays are not supported.");
             }
 
             public override System.Text.Encoding? Encoding
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
                 }
             }
 

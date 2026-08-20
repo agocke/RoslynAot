@@ -12,14 +12,14 @@ namespace Microsoft.CodeAnalysis.CSharp
     {
         protected CSharpSyntaxWalker(SyntaxWalkerDepth depth = SyntaxWalkerDepth.Node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         protected SyntaxWalkerDepth Depth
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
         }
 

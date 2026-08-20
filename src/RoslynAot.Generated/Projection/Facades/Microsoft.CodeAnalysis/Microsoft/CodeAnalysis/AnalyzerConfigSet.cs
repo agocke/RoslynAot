@@ -25,13 +25,13 @@ namespace Microsoft.CodeAnalysis
         public static AnalyzerConfigSet Create<TList>(TList analyzerConfigs, out System.Collections.Immutable.ImmutableArray<Diagnostic> diagnostics)
             where TList : System.Collections.Generic.IReadOnlyCollection<AnalyzerConfig>
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static AnalyzerConfigSet Create<TList>(TList analyzerConfigs)
             where TList : System.Collections.Generic.IReadOnlyCollection<AnalyzerConfig>
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public AnalyzerConfigOptionsResult GetOptionsForSourcePath(string sourcePath)
@@ -49,7 +49,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static AnalyzerConfigSet __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AnalyzerConfigSet)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("806a0d3b-0bb2-5d2e-8d5d-949a80ff7040")]
+        [System.Runtime.InteropServices.Guid("c656aba5-c17f-5d37-86b5-6e88d92627a2")]
         internal partial interface __RoslynAotImplementation : AnalyzerConfigSet
         {
         }

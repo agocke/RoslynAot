@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -46,13 +46,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICheckedStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CheckedStatementSyntax_Accept_5fac0bd7(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.CheckedStatementSyntax_Accept_acdc642e(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public new CheckedStatementSyntax AddAttributeLists(params AttributeListSyntax[] items)
@@ -84,21 +84,21 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public CheckedStatementSyntax Update(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken keyword, BlockSyntax block)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public CheckedStatementSyntax Update(SyntaxToken keyword, BlockSyntax block)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICheckedStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CheckedStatementSyntax_Update_7c5681b3(__RoslynAotGetHandle(), keyword.__RoslynAotGetHandle(), block.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.CheckedStatementSyntax_Update_8524d09b(__RoslynAotGetHandle(), keyword.__RoslynAotGetHandle(), block.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public new CheckedStatementSyntax WithAttributeLists(SyntaxList<AttributeListSyntax> attributeLists)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public CheckedStatementSyntax WithBlock(BlockSyntax block)
@@ -125,7 +125,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static CheckedStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CheckedStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("aaa6b4c1-50dc-5900-a775-7881be2dba3e")]
+        [System.Runtime.InteropServices.Guid("11e1058b-cdb2-538e-8665-42ee0dc5945b")]
         internal partial interface __RoslynAotImplementation : CheckedStatementSyntax
         {
         }

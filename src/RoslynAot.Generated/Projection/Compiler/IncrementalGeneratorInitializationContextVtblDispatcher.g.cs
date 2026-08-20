@@ -27,7 +27,7 @@ internal sealed partial class IncrementalGeneratorInitializationContextVtblDispa
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(901);
+        RoslynCallCounters.Record(4835);
         result = default;
 
         try

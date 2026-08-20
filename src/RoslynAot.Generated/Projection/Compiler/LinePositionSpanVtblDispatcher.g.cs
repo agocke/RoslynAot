@@ -23,12 +23,12 @@ internal sealed partial class LinePositionSpanVtblDispatcher : ILinePositionSpan
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int LinePositionSpan_Equals_bfda8c1e(
+    public int LinePositionSpan_Equals_8fff4729(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1799);
+        RoslynCallCounters.Record(5733);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class LinePositionSpanVtblDispatcher : ILinePositionSpan
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1800);
+        RoslynCallCounters.Record(5734);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class LinePositionSpanVtblDispatcher : ILinePositionSpan
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1801);
+        RoslynCallCounters.Record(5735);
         requiredLength = default;
 
         try
@@ -90,7 +90,7 @@ internal sealed partial class LinePositionSpanVtblDispatcher : ILinePositionSpan
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1802);
+        RoslynCallCounters.Record(5736);
         result = default;
 
         try
@@ -108,7 +108,7 @@ internal sealed partial class LinePositionSpanVtblDispatcher : ILinePositionSpan
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1803);
+        RoslynCallCounters.Record(5737);
         result = default;
 
         try

@@ -15,14 +15,14 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         [System.Obsolete("Use CompilationWithAnalyzers instead. See https://github.com/dotnet/roslyn/issues/63440 for more details.")]
         public SymbolAnalysisContext(ISymbol symbol, Compilation compilation, AnalyzerOptions options, System.Action<Diagnostic> reportDiagnostic, System.Func<Diagnostic, bool> isSupportedDiagnostic, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public System.Threading.CancellationToken CancellationToken
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
         }
 

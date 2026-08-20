@@ -23,12 +23,12 @@ internal sealed partial class SyntaxAnnotationVtblDispatcher : ISyntaxAnnotation
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxAnnotation_Equals_ae21757d(
+    public int SyntaxAnnotation_Equals_8c7caee1(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1545);
+        RoslynCallCounters.Record(5479);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SyntaxAnnotationVtblDispatcher : ISyntaxAnnotation
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1546);
+        RoslynCallCounters.Record(5480);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class SyntaxAnnotationVtblDispatcher : ISyntaxAnnotation
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1547);
+        RoslynCallCounters.Record(5481);
         requiredLength = default;
 
         try
@@ -92,7 +92,7 @@ internal sealed partial class SyntaxAnnotationVtblDispatcher : ISyntaxAnnotation
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1549);
+        RoslynCallCounters.Record(5483);
         requiredLength = default;
 
         try

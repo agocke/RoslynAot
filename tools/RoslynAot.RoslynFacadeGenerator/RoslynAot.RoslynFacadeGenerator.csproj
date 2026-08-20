@@ -12,6 +12,15 @@
     <EmbeddedResource Remove="Upstream/**/*.resx" />
     <PackageReference Include="StaticCS.IndentingBuilder" Version="0.3.0"
                       PrivateAssets="all" />
+    <!-- The baseline Roslyn the facade projection is generated from. The
+         generator already compiles against these through GenAPI; naming them
+         here pins the baseline in one place and exposes the package paths the
+         regeneration command feeds back in as its input assemblies. Moving
+         these versions rewrites the entire generated tree. -->
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="5.0.0"
+                      GeneratePathProperty="true" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.0.0"
+                      GeneratePathProperty="true" />
     <ProjectReference Include="Upstream/Microsoft.DotNet.GenAPI/Microsoft.DotNet.GenAPI.csproj" />
     <Reference Include="System.Reflection.MetadataLoadContext">
       <HintPath>$(MSBuildBinPath)/System.Reflection.MetadataLoadContext.dll</HintPath>

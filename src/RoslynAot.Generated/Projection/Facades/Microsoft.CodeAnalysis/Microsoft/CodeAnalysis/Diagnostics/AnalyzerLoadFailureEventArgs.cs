@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     {
         public AnalyzerLoadFailureEventArgs(FailureErrorCode errorCode, string message, System.Exception? exceptionOpt = null, string? typeNameOpt = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'exceptionOpt' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public FailureErrorCode ErrorCode
@@ -31,7 +31,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
         }
 
@@ -50,7 +50,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
         }
 

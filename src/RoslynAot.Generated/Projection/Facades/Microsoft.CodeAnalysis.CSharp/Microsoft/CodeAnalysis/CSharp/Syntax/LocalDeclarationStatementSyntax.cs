@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -94,13 +94,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocalDeclarationStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LocalDeclarationStatementSyntax_Accept_64598d74(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.LocalDeclarationStatementSyntax_Accept_9834a221(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public new LocalDeclarationStatementSyntax AddAttributeLists(params AttributeListSyntax[] items)
@@ -123,19 +123,19 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public LocalDeclarationStatementSyntax AddModifiers(params SyntaxToken[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'items' is unsupported: Arrays are not supported.");
         }
 
         public LocalDeclarationStatementSyntax Update(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken awaitKeyword, SyntaxToken usingKeyword, SyntaxTokenList modifiers, VariableDeclarationSyntax declaration, SyntaxToken semicolonToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public LocalDeclarationStatementSyntax Update(SyntaxToken awaitKeyword, SyntaxToken usingKeyword, SyntaxTokenList modifiers, VariableDeclarationSyntax declaration, SyntaxToken semicolonToken)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocalDeclarationStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LocalDeclarationStatementSyntax_Update_3b738252(__RoslynAotGetHandle(), awaitKeyword.__RoslynAotGetHandle(), usingKeyword.__RoslynAotGetHandle(), modifiers.__RoslynAotGetHandle(), declaration.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.LocalDeclarationStatementSyntax_Update_e77c00c1(__RoslynAotGetHandle(), awaitKeyword.__RoslynAotGetHandle(), usingKeyword.__RoslynAotGetHandle(), modifiers.__RoslynAotGetHandle(), declaration.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -144,14 +144,14 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocalDeclarationStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LocalDeclarationStatementSyntax_Update_142ffcf7(__RoslynAotGetHandle(), modifiers.__RoslynAotGetHandle(), declaration.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.LocalDeclarationStatementSyntax_Update_085df852(__RoslynAotGetHandle(), modifiers.__RoslynAotGetHandle(), declaration.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public new LocalDeclarationStatementSyntax WithAttributeLists(SyntaxList<AttributeListSyntax> attributeLists)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public LocalDeclarationStatementSyntax WithAwaitKeyword(SyntaxToken awaitKeyword)
@@ -205,7 +205,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static LocalDeclarationStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (LocalDeclarationStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("923d9e2e-21a4-5dad-bea7-5680a1326a24")]
+        [System.Runtime.InteropServices.Guid("a290d9de-11ff-5735-a991-0610ab0bf3c4")]
         internal partial interface __RoslynAotImplementation : LocalDeclarationStatementSyntax
         {
         }

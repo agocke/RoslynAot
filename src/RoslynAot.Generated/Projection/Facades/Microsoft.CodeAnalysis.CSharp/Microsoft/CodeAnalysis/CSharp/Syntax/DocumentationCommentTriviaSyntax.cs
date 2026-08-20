@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -34,13 +34,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IDocumentationCommentTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.DocumentationCommentTriviaSyntax_Accept_2e8842af(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.DocumentationCommentTriviaSyntax_Accept_ee88fd73(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public DocumentationCommentTriviaSyntax AddContent(params XmlNodeSyntax[] items)
@@ -54,12 +54,12 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public DocumentationCommentTriviaSyntax Update(SyntaxList<XmlNodeSyntax> content, SyntaxToken endOfComment)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'content' is unsupported: Generic substitutions are not supported.");
         }
 
         public DocumentationCommentTriviaSyntax WithContent(SyntaxList<XmlNodeSyntax> content)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'content' is unsupported: Generic substitutions are not supported.");
         }
 
         public DocumentationCommentTriviaSyntax WithEndOfComment(SyntaxToken endOfComment)
@@ -77,7 +77,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static DocumentationCommentTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (DocumentationCommentTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("3e07f356-2427-52eb-9cf4-df00cb807b0a")]
+        [System.Runtime.InteropServices.Guid("f5543b5c-717c-581e-8ca4-e43d0c79bb6f")]
         internal partial interface __RoslynAotImplementation : DocumentationCommentTriviaSyntax
         {
         }

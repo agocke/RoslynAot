@@ -27,7 +27,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(305);
+        RoslynCallCounters.Record(4244);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)
     {
-        RoslynCallCounters.Record(306);
+        RoslynCallCounters.Record(4245);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(307);
+        RoslynCallCounters.Record(4246);
         result = default;
 
         try
@@ -78,12 +78,12 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         }
     }
 
-    public int AnalyzerReference_GetGenerators_a8f136d3(
+    public int AnalyzerReference_GetGenerators_d2b8011a(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)
     {
-        RoslynCallCounters.Record(308);
+        RoslynCallCounters.Record(4247);
         result = default;
 
         try
@@ -103,7 +103,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(309);
+        RoslynCallCounters.Record(4248);
         requiredLength = default;
 
         try
@@ -129,7 +129,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(310);
+        RoslynCallCounters.Record(4249);
         requiredLength = default;
 
         try
@@ -155,7 +155,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         out long constantLow,
         out long constantHigh)
     {
-        RoslynCallCounters.Record(311);
+        RoslynCallCounters.Record(4250);
         constantKind = default;
         constantLow = default;
         constantHigh = default;
@@ -175,7 +175,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(451);
+        RoslynCallCounters.Record(4390);
         result = default;
 
         try
@@ -194,7 +194,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)
     {
-        RoslynCallCounters.Record(452);
+        RoslynCallCounters.Record(4391);
         result = default;
 
         try
@@ -214,7 +214,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(453);
+        RoslynCallCounters.Record(4392);
         requiredLength = default;
 
         try
@@ -240,7 +240,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(454);
+        RoslynCallCounters.Record(4393);
         requiredLength = default;
 
         try
@@ -266,7 +266,7 @@ internal sealed partial class UnresolvedAnalyzerReferenceVtblDispatcher : IUnres
         out long constantLow,
         out long constantHigh)
     {
-        RoslynCallCounters.Record(455);
+        RoslynCallCounters.Record(4394);
         constantKind = default;
         constantLow = default;
         constantHigh = default;

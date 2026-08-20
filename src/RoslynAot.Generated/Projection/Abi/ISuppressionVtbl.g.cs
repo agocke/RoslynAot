@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7e8d3f70-5ccd-5452-ae95-9f61be1b6c47")]
+[Guid("70420965-4a2d-5848-bf2d-6121f00d1a4b")]
 public partial interface ISuppressionVtbl
 {
 
     [PreserveSig]
-    int Suppression_Equals_661a2ff9(
+    int Suppression_Equals_ef267f20(
         long receiver,
         long other,
         out int result

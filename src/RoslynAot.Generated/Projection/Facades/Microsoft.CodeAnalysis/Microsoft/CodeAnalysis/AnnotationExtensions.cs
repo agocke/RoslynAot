@@ -13,31 +13,31 @@ namespace Microsoft.CodeAnalysis
         public static TNode WithAdditionalAnnotations<TNode>(this TNode node, params SyntaxAnnotation[] annotations)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TNode WithAdditionalAnnotations<TNode>(this TNode node, System.Collections.Generic.IEnumerable<SyntaxAnnotation> annotations)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TNode WithoutAnnotations<TNode>(this TNode node, params SyntaxAnnotation[] annotations)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TNode WithoutAnnotations<TNode>(this TNode node, System.Collections.Generic.IEnumerable<SyntaxAnnotation> annotations)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TNode WithoutAnnotations<TNode>(this TNode node, string annotationKind)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
     }
 }

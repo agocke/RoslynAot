@@ -323,12 +323,13 @@ the closure bullet.**
 - Introduce the model as a checked-in artifact. Per type: ownership, shape,
   nullability overrides. Per member: canonical id, wire signature, support
   status, unsupported reason.
-  - **Done.** `RoslynProjection.json` gained a `types` section (663 entries:
-    shape, ownership, reachability, proxy kind, vtbls) and every member and call
-    gained `canonicalId`; calls also carry `wireSignature`.
-    `ProjectionInventory.txt` carries the same as one line per type and per
-    call. Both were already checked in; what changed is that they now record
-    the model rather than a summary of the emitters' behavior.
+  - **Done.** The manifest gained a `types` section (663 entries: shape,
+    ownership, reachability, proxy kind, vtbls) and every member and call
+    gained `canonicalId`; calls also carry `wireSignature`. What changed is
+    that the manifest records the model rather than a summary of the emitters'
+    behavior. This landed in both `RoslynProjection.json` and
+    `ProjectionInventory.txt`; the JSON has since been removed as unread, and
+    the inventory is the surviving record.
 - **Canonical member identity** from `DocumentationCommentId`, hashed. This
   alone makes overload misassociation and the `GetTypeMembers` body class of bug
   unrepresentable rather than fixed case by case.

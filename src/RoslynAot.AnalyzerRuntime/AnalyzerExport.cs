@@ -406,20 +406,16 @@ internal sealed unsafe partial class AnalyzerTransport : IAnalyzerTransport
             return false;
         }
 
-        try
-        {
-            // GetOrCreateControlVtbl is where the module establishes
-            // its one control and rejects a second, so there is
-            // nothing left to check per transport here.
-            controlVtbl = RoslynFacadeRuntime.GetOrCreateControlVtbl(
-                interopPointer);
-            return true;
-        }
-        catch (InvalidOperationException)
-        {
-            controlVtbl = null!;
-            return false;
-        }
+        // GetOrCreateControlVtbl is where the module establishes its one
+        // control and rejects a second, so there is nothing left to check
+        // per transport here. Its failures are not caught: a manifest
+        // mismatch and a second control both throw messages that name what
+        // is wrong, and Initialize's handler reports them through
+        // CopyLastErrorUtf16. Catching them here would replace the only
+        // useful diagnosis with the caller's generic one.
+        controlVtbl = RoslynFacadeRuntime.GetOrCreateControlVtbl(
+            interopPointer);
+        return true;
     }
 
     private DiagnosticAnalyzer EnsureAnalyzer(nint roslynInteropPointer)

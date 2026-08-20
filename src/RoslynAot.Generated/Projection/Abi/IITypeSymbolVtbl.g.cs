@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("00289a33-aa80-5f56-a214-7c8d04d85cd0")]
+[Guid("49d17cb5-779f-55d7-b15c-cfae258ea06b")]
 public partial interface IITypeSymbolVtbl
 {
 
@@ -65,12 +65,6 @@ public partial interface IITypeSymbolVtbl
     );
 
     [PreserveSig]
-    int ITypeSymbol_get_ExtensionParameter(
-        long receiver,
-        out long result
-    );
-
-    [PreserveSig]
     int ITypeSymbol_get_Interfaces(
         long receiver,
         out long result
@@ -78,12 +72,6 @@ public partial interface IITypeSymbolVtbl
 
     [PreserveSig]
     int ITypeSymbol_get_IsAnonymousType(
-        long receiver,
-        out int result
-    );
-
-    [PreserveSig]
-    int ITypeSymbol_get_IsExtension(
         long receiver,
         out int result
     );

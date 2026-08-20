@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e6d1c985-1200-5257-a0e5-bcf585b71c80")]
+[Guid("925b2b88-f4a2-5278-92f0-13dbc7b0e24c")]
 public partial interface ISyntaxNodeOrTokenVtbl
 {
 
@@ -35,14 +35,14 @@ public partial interface ISyntaxNodeOrTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_Equals_1ae3035a(
+    int SyntaxNodeOrToken_Equals_266b08d6(
         long receiver,
         long other,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_GetAnnotations_caa6e658(
+    int SyntaxNodeOrToken_GetAnnotations_224e6f98(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result
@@ -98,7 +98,7 @@ public partial interface ISyntaxNodeOrTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_HasAnnotations_b26c4330(
+    int SyntaxNodeOrToken_HasAnnotations_71aa3f36(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result
@@ -135,21 +135,21 @@ public partial interface ISyntaxNodeOrTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_WithAdditionalAnnotations_8b8d5e4a(
+    int SyntaxNodeOrToken_WithAdditionalAnnotations_34403fdf(
         long receiver,
         long annotations,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_WithoutAnnotations_ce80e751(
+    int SyntaxNodeOrToken_WithoutAnnotations_dac419ea(
         long receiver,
         long annotations,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxNodeOrToken_WithoutAnnotations_5f35ccca(
+    int SyntaxNodeOrToken_WithoutAnnotations_179d5d8f(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result

@@ -27,7 +27,7 @@ internal sealed partial class IObjectOrCollectionInitializerOperationVtblDispatc
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1153);
+        RoslynCallCounters.Record(5087);
         result = default;
 
         try

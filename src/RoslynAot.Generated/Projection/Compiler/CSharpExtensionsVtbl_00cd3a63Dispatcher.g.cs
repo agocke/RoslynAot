@@ -23,12 +23,12 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CSharpExtensions_AnalyzeControlFlow_6f2a4c2f(
+    public int CSharpExtensions_AnalyzeControlFlow_51fb685b(
         long semanticModel,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(1957);
+        RoslynCallCounters.Record(67);
         result = default;
 
         try
@@ -42,13 +42,13 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_AnalyzeControlFlow_89be6329(
+    public int CSharpExtensions_AnalyzeControlFlow_8fac5ca3(
         long semanticModel,
         long firstStatement,
         long lastStatement,
         out long result)
     {
-        RoslynCallCounters.Record(1958);
+        RoslynCallCounters.Record(68);
         result = default;
 
         try
@@ -62,12 +62,12 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_AnalyzeDataFlow_a88feb29(
+    public int CSharpExtensions_AnalyzeDataFlow_838bd7c6(
         long semanticModel,
         long constructorInitializer,
         out long result)
     {
-        RoslynCallCounters.Record(1959);
+        RoslynCallCounters.Record(69);
         result = default;
 
         try
@@ -81,12 +81,12 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_AnalyzeDataFlow_1d0577fa(
+    public int CSharpExtensions_AnalyzeDataFlow_788d4e54(
         long semanticModel,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(1960);
+        RoslynCallCounters.Record(70);
         result = default;
 
         try
@@ -100,12 +100,12 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_AnalyzeDataFlow_b48425e4(
+    public int CSharpExtensions_AnalyzeDataFlow_d09a0cb4(
         long semanticModel,
         long primaryConstructorBaseType,
         out long result)
     {
-        RoslynCallCounters.Record(1961);
+        RoslynCallCounters.Record(71);
         result = default;
 
         try
@@ -119,12 +119,12 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_AnalyzeDataFlow_8d425945(
+    public int CSharpExtensions_AnalyzeDataFlow_5f0f3ff5(
         long semanticModel,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(1962);
+        RoslynCallCounters.Record(72);
         result = default;
 
         try
@@ -138,13 +138,13 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_AnalyzeDataFlow_098b1a6e(
+    public int CSharpExtensions_AnalyzeDataFlow_ae906f4a(
         long semanticModel,
         long firstStatement,
         long lastStatement,
         out long result)
     {
-        RoslynCallCounters.Record(1963);
+        RoslynCallCounters.Record(73);
         result = default;
 
         try
@@ -158,13 +158,13 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_ClassifyConversion_fca6ff01(
+    public int CSharpExtensions_ClassifyConversion_f29b10f8(
         long compilation,
         long source,
         long destination,
         out long result)
     {
-        RoslynCallCounters.Record(1964);
+        RoslynCallCounters.Record(74);
         result = default;
 
         try
@@ -178,14 +178,14 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_ClassifyConversion_a6e6c47d(
+    public int CSharpExtensions_ClassifyConversion_24830433(
         long semanticModel,
         long expression,
         long destination,
         int isExplicitInSource,
         out long result)
     {
-        RoslynCallCounters.Record(1965);
+        RoslynCallCounters.Record(75);
         result = default;
 
         try
@@ -199,7 +199,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_ClassifyConversion_499d0cde(
+    public int CSharpExtensions_ClassifyConversion_26645b3b(
         long semanticModel,
         int position,
         long expression,
@@ -207,7 +207,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int isExplicitInSource,
         out long result)
     {
-        RoslynCallCounters.Record(1966);
+        RoslynCallCounters.Record(76);
         result = default;
 
         try
@@ -221,12 +221,12 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetAwaitExpressionInfo_92b4f83b(
+    public int CSharpExtensions_GetAwaitExpressionInfo(
         long semanticModel,
         long awaitExpression,
         out long result)
     {
-        RoslynCallCounters.Record(1967);
+        RoslynCallCounters.Record(77);
         result = default;
 
         try
@@ -240,49 +240,11 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetAwaitExpressionInfo_22748588(
-        long semanticModel,
-        long awaitUsingDeclaration,
-        out long result)
-    {
-        RoslynCallCounters.Record(1968);
-        result = default;
-
-        try
-        {
-            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetAwaitExpressionInfo(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax>(awaitUsingDeclaration)));
-            return RoslynAbi.Success;
-        }
-        catch (global::System.Exception exception)
-        {
-            return _owner.SetError(exception);
-        }
-    }
-
-    public int CSharpExtensions_GetAwaitExpressionInfo_94d3ebf9(
-        long semanticModel,
-        long awaitUsingStatement,
-        out long result)
-    {
-        RoslynCallCounters.Record(1969);
-        result = default;
-
-        try
-        {
-            result = _owner.Objects.AddValue(global::Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetAwaitExpressionInfo(semanticModel == 0 ? null : _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.SemanticModel>(semanticModel), _owner.Objects.GetObject<global::Microsoft.CodeAnalysis.CSharp.Syntax.UsingStatementSyntax>(awaitUsingStatement)));
-            return RoslynAbi.Success;
-        }
-        catch (global::System.Exception exception)
-        {
-            return _owner.SetError(exception);
-        }
-    }
-
-    public int CSharpExtensions_GetConversion_f5b5a25f(
+    public int CSharpExtensions_GetConversion_cd280968(
         long conversionExpression,
         out long result)
     {
-        RoslynCallCounters.Record(1970);
+        RoslynCallCounters.Record(78);
         result = default;
 
         try
@@ -296,12 +258,12 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetDeconstructionInfo_5fc2d6fb(
+    public int CSharpExtensions_GetDeconstructionInfo_cec5a9cb(
         long semanticModel,
         long assignment,
         out long result)
     {
-        RoslynCallCounters.Record(1971);
+        RoslynCallCounters.Record(79);
         result = default;
 
         try
@@ -315,12 +277,12 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetDeconstructionInfo_e9dc1cb8(
+    public int CSharpExtensions_GetDeconstructionInfo_e3ebebe1(
         long semanticModel,
         long @foreach,
         out long result)
     {
-        RoslynCallCounters.Record(1972);
+        RoslynCallCounters.Record(80);
         result = default;
 
         try
@@ -338,7 +300,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long spread,
         out long result)
     {
-        RoslynCallCounters.Record(1973);
+        RoslynCallCounters.Record(81);
         result = default;
 
         try
@@ -352,12 +314,12 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetForEachStatementInfo_f36c627c(
+    public int CSharpExtensions_GetForEachStatementInfo_8eea9986(
         long semanticModel,
         long forEachStatement,
         out long result)
     {
-        RoslynCallCounters.Record(1974);
+        RoslynCallCounters.Record(82);
         result = default;
 
         try
@@ -371,12 +333,12 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetForEachStatementInfo_760c72cc(
+    public int CSharpExtensions_GetForEachStatementInfo_3065e6a0(
         long semanticModel,
         long forEachStatement,
         out long result)
     {
-        RoslynCallCounters.Record(1975);
+        RoslynCallCounters.Record(83);
         result = default;
 
         try
@@ -394,7 +356,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long compoundAssignment,
         out long result)
     {
-        RoslynCallCounters.Record(1976);
+        RoslynCallCounters.Record(84);
         result = default;
 
         try
@@ -414,7 +376,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1977);
+        RoslynCallCounters.Record(85);
         requiredLength = default;
 
         try
@@ -438,7 +400,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long compoundAssignment,
         out long result)
     {
-        RoslynCallCounters.Record(1978);
+        RoslynCallCounters.Record(86);
         result = default;
 
         try
@@ -459,7 +421,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(1979);
+        RoslynCallCounters.Record(87);
         result = default;
 
         try
@@ -480,7 +442,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(1980);
+        RoslynCallCounters.Record(88);
         result = default;
 
         try
@@ -494,13 +456,13 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_2c643751(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_48ae7090(
         long semanticModel,
         int position,
         long attribute,
         out long result)
     {
-        RoslynCallCounters.Record(1981);
+        RoslynCallCounters.Record(89);
         result = default;
 
         try
@@ -514,13 +476,13 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_94a2bcee(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_38597879(
         long semanticModel,
         int position,
         long constructorInitializer,
         out long result)
     {
-        RoslynCallCounters.Record(1982);
+        RoslynCallCounters.Record(90);
         result = default;
 
         try
@@ -534,14 +496,14 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_0f8f0756(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_78dbc483(
         long semanticModel,
         int position,
         long expression,
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(1983);
+        RoslynCallCounters.Record(91);
         result = default;
 
         try
@@ -555,14 +517,14 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_b8de0754(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_d2caca48(
         long semanticModel,
         int position,
         long expression,
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(1984);
+        RoslynCallCounters.Record(92);
         result = default;
 
         try
@@ -576,13 +538,13 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_GetSpeculativeSymbolInfo_ebe2f354(
+    public int CSharpExtensions_GetSpeculativeSymbolInfo_563afbaf(
         long semanticModel,
         int position,
         long constructorInitializer,
         out long result)
     {
-        RoslynCallCounters.Record(1985);
+        RoslynCallCounters.Record(93);
         result = default;
 
         try
@@ -603,7 +565,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(1986);
+        RoslynCallCounters.Record(94);
         result = default;
 
         try
@@ -621,7 +583,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1987);
+        RoslynCallCounters.Record(95);
         result = default;
 
         try
@@ -639,7 +601,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1988);
+        RoslynCallCounters.Record(96);
         result = default;
 
         try
@@ -657,7 +619,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1989);
+        RoslynCallCounters.Record(97);
         result = default;
 
         try
@@ -675,7 +637,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1990);
+        RoslynCallCounters.Record(98);
         result = default;
 
         try
@@ -693,7 +655,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1991);
+        RoslynCallCounters.Record(99);
         result = default;
 
         try
@@ -707,11 +669,11 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_Kind_296e8872(
+    public int CSharpExtensions_Kind_71479083(
         long node,
         out ushort result)
     {
-        RoslynCallCounters.Record(1992);
+        RoslynCallCounters.Record(100);
         result = default;
 
         try
@@ -725,11 +687,11 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_Kind_b72d31c4(
+    public int CSharpExtensions_Kind_d9dec2f3(
         long nodeOrToken,
         out ushort result)
     {
-        RoslynCallCounters.Record(1993);
+        RoslynCallCounters.Record(101);
         result = default;
 
         try
@@ -743,11 +705,11 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_Kind_650f6473(
+    public int CSharpExtensions_Kind_5df66820(
         long token,
         out ushort result)
     {
-        RoslynCallCounters.Record(1994);
+        RoslynCallCounters.Record(102);
         result = default;
 
         try
@@ -761,11 +723,11 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_Kind_0587f7d2(
+    public int CSharpExtensions_Kind_95127b33(
         long trivia,
         out ushort result)
     {
-        RoslynCallCounters.Record(1995);
+        RoslynCallCounters.Record(103);
         result = default;
 
         try
@@ -779,13 +741,13 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_ReplaceTrivia_68992dd3(
+    public int CSharpExtensions_ReplaceTrivia_9c4afece(
         long token,
         long oldTrivia,
         long newTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1996);
+        RoslynCallCounters.Record(104);
         result = default;
 
         try
@@ -803,7 +765,7 @@ internal sealed partial class CSharpExtensionsVtbl_00cd3a63Dispatcher : ICSharpE
         long node,
         out short result)
     {
-        RoslynCallCounters.Record(1997);
+        RoslynCallCounters.Record(105);
         result = default;
 
         try

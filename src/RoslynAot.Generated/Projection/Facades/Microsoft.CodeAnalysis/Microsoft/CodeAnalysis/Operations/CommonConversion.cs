@@ -96,16 +96,6 @@ namespace Microsoft.CodeAnalysis.Operations
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, "MethodSymbol")]
-        public bool IsUnion
-        {
-            get
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-            }
-        }
-
-        [System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, "MethodSymbol")]
         public bool IsUserDefined
         {
             get

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d111e47e-f93d-5e33-a3ac-a0fc274db8cc")]
+[Guid("7e922452-609b-5af2-be41-94241b227460")]
 public partial interface ISuppressionDescriptorTypeVtbl
 {
 
     [PreserveSig]
-    int SuppressionDescriptor_ctor_cd3f1d62(
+    int SuppressionDescriptor_ctor_b367e490(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string id,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string suppressedDiagnosticId,
         long justification,
@@ -25,7 +25,7 @@ public partial interface ISuppressionDescriptorTypeVtbl
     );
 
     [PreserveSig]
-    int SuppressionDescriptor_ctor_d9a058e6(
+    int SuppressionDescriptor_ctor_f53b4109(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string id,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string suppressedDiagnosticId,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string justification,

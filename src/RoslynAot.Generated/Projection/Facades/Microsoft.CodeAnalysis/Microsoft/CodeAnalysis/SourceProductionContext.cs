@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
         }
 
@@ -24,7 +24,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISourceProductionContextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SourceProductionContext_AddSource_3c2311fa(__RoslynAotGetHandle(), hintName, sourceText.__RoslynAotGetHandle());
+            int status = vtbl.SourceProductionContext_AddSource_115b787e(__RoslynAotGetHandle(), hintName, sourceText.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -32,7 +32,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISourceProductionContextVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SourceProductionContext_AddSource_94ef099b(__RoslynAotGetHandle(), hintName, source);
+            int status = vtbl.SourceProductionContext_AddSource_8c0df6df(__RoslynAotGetHandle(), hintName, source);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 

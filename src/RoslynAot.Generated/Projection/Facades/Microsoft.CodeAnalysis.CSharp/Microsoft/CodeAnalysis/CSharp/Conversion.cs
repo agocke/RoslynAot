@@ -384,14 +384,6 @@ namespace Microsoft.CodeAnalysis.CSharp
             }
         }
 
-        public bool IsUnion
-        {
-            get
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-            }
-        }
-
         public bool IsUserDefined
         {
             get
@@ -420,14 +412,14 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IConversionVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.Conversion_Equals_acba79f2(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.Conversion_Equals_1f360da2(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public override readonly bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override readonly int GetHashCode()
@@ -441,12 +433,12 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static bool operator ==(Conversion left, Conversion right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(Conversion left, Conversion right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public readonly Operations.CommonConversion ToCommonConversion()

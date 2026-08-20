@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis
     {
         public RuleSet(string filePath, ReportDiagnostic generalOption, System.Collections.Immutable.ImmutableDictionary<string, ReportDiagnostic> specificOptions, System.Collections.Immutable.ImmutableArray<RuleSetInclude> includes)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'specificOptions' is unsupported: Generic substitutions are not supported.");
         }
 
         public string FilePath
@@ -54,18 +54,18 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
         public static ReportDiagnostic GetDiagnosticOptionsFromRulesetFile(string? rulesetFileFullPath, out System.Collections.Generic.Dictionary<string, ReportDiagnostic> specificDiagnosticOptions)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. ref, in, and out parameters are not supported.");
         }
 
         public static System.Collections.Immutable.ImmutableArray<string> GetEffectiveIncludesFromFile(string filePath)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static RuleSet LoadEffectiveRuleSetFromFile(string filePath)

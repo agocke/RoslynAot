@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public sealed override bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public sealed override int GetHashCode()
@@ -81,7 +81,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         internal static DiagnosticAnalyzer __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6820741406076592940L, -535778755247251559L)is DiagnosticAnalyzer __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6005773943544049501L, 6852678467076105615L)is DiagnosticAnalyzer __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetDiagnosticAnalyzerVtbl(controlVtbl), handle);
         }

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("82b78bb9-1a1a-5741-bc8f-88e2e5684533")]
+[Guid("9d034a02-ca74-545f-a662-d1a2d8d3186d")]
 public partial interface ICaseSwitchLabelSyntaxVtbl : ISwitchLabelSyntaxVtbl
 {
 
     [PreserveSig]
-    int CaseSwitchLabelSyntax_Accept_28a74eca(
+    int CaseSwitchLabelSyntax_Accept_3e346463(
         long receiver,
         long visitor
     );

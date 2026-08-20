@@ -12,25 +12,25 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("6a21b74f-07c0-53cd-9ef9-e2c8c8d2f2a0")]
+[Guid("42053bde-e0be-56b7-8b4f-f6e46637f2f9")]
 public partial interface IClassOrStructConstraintSyntaxVtbl : ITypeParameterConstraintSyntaxVtbl
 {
 
     [PreserveSig]
-    int ClassOrStructConstraintSyntax_Accept_7c65fbdc(
+    int ClassOrStructConstraintSyntax_Accept_ffbc362a(
         long receiver,
         long visitor
     );
 
     [PreserveSig]
-    int ClassOrStructConstraintSyntax_Update_c0272788(
+    int ClassOrStructConstraintSyntax_Update_beb5a027(
         long receiver,
         long classOrStructKeyword,
         out long result
     );
 
     [PreserveSig]
-    int ClassOrStructConstraintSyntax_Update_300af665(
+    int ClassOrStructConstraintSyntax_Update_822494ba(
         long receiver,
         long classOrStructKeyword,
         long questionToken,

@@ -27,7 +27,7 @@ internal sealed partial class GeneratorSyntaxContextVtblDispatcher : IGeneratorS
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(600);
+        RoslynCallCounters.Record(4538);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class GeneratorSyntaxContextVtblDispatcher : IGeneratorS
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(601);
+        RoslynCallCounters.Record(4539);
         result = default;
 
         try

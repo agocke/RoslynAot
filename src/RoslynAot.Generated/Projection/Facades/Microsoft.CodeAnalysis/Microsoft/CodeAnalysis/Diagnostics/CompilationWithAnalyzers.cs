@@ -14,17 +14,17 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public CompilationWithAnalyzers(Compilation compilation, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, AnalyzerOptions? options, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public CompilationWithAnalyzers(Compilation compilation, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, AnalyzerOptions? options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public CompilationWithAnalyzers(Compilation compilation, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, CompilationWithAnalyzersOptions analysisOptions)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public CompilationWithAnalyzersOptions AnalysisOptions
@@ -57,7 +57,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
             }
         }
 
@@ -76,157 +76,157 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         [System.Obsolete("This API is no longer required to be invoked. Analyzer state is automatically cleaned up when CompilationWithAnalyzers instance is released.")]
         public static void ClearAnalyzerState(System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAllDiagnosticsAsync()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAllDiagnosticsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(AdditionalText file, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(AdditionalText file, Text.TextSpan? filterSpan, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(AdditionalText file, Text.TextSpan? filterSpan, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(AdditionalText file, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(SemanticModel model, Text.TextSpan? filterSpan, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(SemanticModel model, Text.TextSpan? filterSpan, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(SyntaxTree tree, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(SyntaxTree tree, Text.TextSpan? filterSpan, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(SyntaxTree tree, Text.TextSpan? filterSpan, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(SyntaxTree tree, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<AnalysisResult> GetAnalysisResultAsync(System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         [System.Obsolete("This API was found to have performance issues and hence has been deprecated. Instead, invoke the API 'GetAnalysisResultAsync' and access the property 'CompilationDiagnostics' on the returned 'AnalysisResult' to fetch the compilation diagnostics.")]
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAnalyzerCompilationDiagnosticsAsync(System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         [System.Obsolete("This API was found to have performance issues and hence has been deprecated. Instead, invoke the API 'GetAnalysisResultAsync' and access the property 'CompilationDiagnostics' on the returned 'AnalysisResult' to fetch the compilation diagnostics.")]
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAnalyzerCompilationDiagnosticsAsync(System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAnalyzerDiagnosticsAsync()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAnalyzerDiagnosticsAsync(System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAnalyzerDiagnosticsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAnalyzerSemanticDiagnosticsAsync(SemanticModel model, Text.TextSpan? filterSpan, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAnalyzerSemanticDiagnosticsAsync(SemanticModel model, Text.TextSpan? filterSpan, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAnalyzerSyntaxDiagnosticsAsync(SyntaxTree tree, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAnalyzerSyntaxDiagnosticsAsync(SyntaxTree tree, Text.TextSpan? filterSpan, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAnalyzerSyntaxDiagnosticsAsync(SyntaxTree tree, Text.TextSpan? filterSpan, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Threading.Tasks.Task<System.Collections.Immutable.ImmutableArray<Diagnostic>> GetAnalyzerSyntaxDiagnosticsAsync(SyntaxTree tree, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Threading.Tasks.Task<Telemetry.AnalyzerTelemetryInfo> GetAnalyzerTelemetryInfoAsync(DiagnosticAnalyzer analyzer, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public static System.Collections.Generic.IEnumerable<Diagnostic> GetEffectiveDiagnostics(System.Collections.Generic.IEnumerable<Diagnostic> diagnostics, Compilation compilation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'diagnostics' is unsupported: Generic substitutions are not supported.");
         }
 
         public static System.Collections.Generic.IEnumerable<Diagnostic> GetEffectiveDiagnostics(System.Collections.Immutable.ImmutableArray<Diagnostic> diagnostics, Compilation compilation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'diagnostics' is unsupported: Generic substitutions are not supported.");
         }
 
         [System.Obsolete("This API is no longer supported. See https://github.com/dotnet/roslyn/issues/67592 for details")]
         public static bool IsDiagnosticAnalyzerSuppressed(DiagnosticAnalyzer analyzer, CompilationOptions options, System.Action<System.Exception, DiagnosticAnalyzer, Diagnostic>? onAnalyzerException = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         internal CompilationWithAnalyzers()

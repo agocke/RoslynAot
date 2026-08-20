@@ -27,7 +27,7 @@ internal sealed partial class ChildSyntaxListVtblDispatcher : IChildSyntaxListVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(40);
+        RoslynCallCounters.Record(3979);
         result = default;
 
         try
@@ -41,12 +41,12 @@ internal sealed partial class ChildSyntaxListVtblDispatcher : IChildSyntaxListVt
         }
     }
 
-    public int ChildSyntaxList_Equals_827abeac(
+    public int ChildSyntaxList_Equals_4305b2f7(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(41);
+        RoslynCallCounters.Record(3980);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class ChildSyntaxListVtblDispatcher : IChildSyntaxListVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(42);
+        RoslynCallCounters.Record(3981);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class ChildSyntaxListVtblDispatcher : IChildSyntaxListVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(43);
+        RoslynCallCounters.Record(3982);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class ChildSyntaxListVtblDispatcher : IChildSyntaxListVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(44);
+        RoslynCallCounters.Record(3983);
         result = default;
 
         try
@@ -118,7 +118,7 @@ internal sealed partial class ChildSyntaxListVtblDispatcher : IChildSyntaxListVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(45);
+        RoslynCallCounters.Record(3984);
         result = default;
 
         try
@@ -136,7 +136,7 @@ internal sealed partial class ChildSyntaxListVtblDispatcher : IChildSyntaxListVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(46);
+        RoslynCallCounters.Record(3985);
         result = default;
 
         try
@@ -154,7 +154,7 @@ internal sealed partial class ChildSyntaxListVtblDispatcher : IChildSyntaxListVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(47);
+        RoslynCallCounters.Record(3986);
         result = default;
 
         try
@@ -173,7 +173,7 @@ internal sealed partial class ChildSyntaxListVtblDispatcher : IChildSyntaxListVt
         int index,
         out long result)
     {
-        RoslynCallCounters.Record(48);
+        RoslynCallCounters.Record(3987);
         result = default;
 
         try

@@ -26,7 +26,7 @@ internal sealed partial class CSharpCommandLineParserTypeVtblDispatcher : ICShar
     public int CSharpCommandLineParser_get_Default(
         out long result)
     {
-        RoslynCallCounters.Record(1899);
+        RoslynCallCounters.Record(9);
         result = default;
 
         try
@@ -43,7 +43,7 @@ internal sealed partial class CSharpCommandLineParserTypeVtblDispatcher : ICShar
     public int CSharpCommandLineParser_get_Script(
         out long result)
     {
-        RoslynCallCounters.Record(1900);
+        RoslynCallCounters.Record(10);
         result = default;
 
         try

@@ -16,19 +16,19 @@ namespace Microsoft.CodeAnalysis.Emit
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public SemanticEdit(SemanticEditKind kind, ISymbol? oldSymbol, ISymbol? newSymbol, System.Func<SyntaxNode, SyntaxNode?>? syntaxMap, bool preserveLocalVariables, MethodInstrumentation instrumentation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         [System.Obsolete("Use other overload")]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public SemanticEdit(SemanticEditKind kind, ISymbol? oldSymbol, ISymbol? newSymbol, System.Func<SyntaxNode, SyntaxNode?>? syntaxMap, bool preserveLocalVariables)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public SemanticEdit(SemanticEditKind kind, ISymbol? oldSymbol, ISymbol? newSymbol, System.Func<SyntaxNode, SyntaxNode?>? syntaxMap = null, System.Func<SyntaxNode, RuntimeRudeEdit?>? runtimeRudeEdit = null, MethodInstrumentation instrumentation = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'syntaxMap' is unsupported: Delegates are not supported.");
         }
 
         public MethodInstrumentation Instrumentation
@@ -79,7 +79,6 @@ namespace Microsoft.CodeAnalysis.Emit
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, "SyntaxMap")]
         public bool PreserveLocalVariables
         {
             get
@@ -96,7 +95,7 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Delegates are not supported.");
             }
         }
 
@@ -104,7 +103,7 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Delegates are not supported.");
             }
         }
 
@@ -112,14 +111,14 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISemanticEditVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SemanticEdit_Equals_927c4ffc(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.SemanticEdit_Equals_0850820f(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public override readonly bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override readonly int GetHashCode()
@@ -133,12 +132,12 @@ namespace Microsoft.CodeAnalysis.Emit
 
         public static bool operator ==(SemanticEdit left, SemanticEdit right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(SemanticEdit left, SemanticEdit right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;

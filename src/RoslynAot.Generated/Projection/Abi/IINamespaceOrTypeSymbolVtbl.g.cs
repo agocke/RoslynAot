@@ -12,18 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("21840ef5-1c24-54bf-8f60-0a12fbd73802")]
+[Guid("c3e07717-ad7b-5d1c-88f9-220e6360530e")]
 public partial interface IINamespaceOrTypeSymbolVtbl
 {
 
     [PreserveSig]
-    int INamespaceOrTypeSymbol_GetMembers_af2000d5(
+    int INamespaceOrTypeSymbol_GetMembers_2cb701cb(
         long receiver,
         out long result
     );
 
     [PreserveSig]
-    int INamespaceOrTypeSymbol_GetMembers_ce52371b(
+    int INamespaceOrTypeSymbol_GetMembers_3a5d5ad2(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result

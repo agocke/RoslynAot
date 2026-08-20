@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static StructuredTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (StructuredTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("3fe5fceb-8bba-5254-b265-b11b28b4e1c6")]
+        [System.Runtime.InteropServices.Guid("273f3276-ed58-5448-b86c-b8897862823f")]
         internal partial interface __RoslynAotImplementation : StructuredTriviaSyntax
         {
         }

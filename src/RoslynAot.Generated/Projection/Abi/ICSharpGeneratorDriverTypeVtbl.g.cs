@@ -12,18 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("2511e823-d758-546f-85e3-1b75326e144b")]
+[Guid("b1b00578-2f09-59a1-af4c-79d865c14177")]
 public partial interface ICSharpGeneratorDriverTypeVtbl
 {
 
     [PreserveSig]
-    int CSharpGeneratorDriver_Create_e323a1e2(
+    int CSharpGeneratorDriver_Create_b609a3f1(
         long incrementalGenerators,
         out long result
     );
 
     [PreserveSig]
-    int CSharpGeneratorDriver_Create_2c97a384(
+    int CSharpGeneratorDriver_Create_5b18e47b(
         long generators,
         out long result
     );

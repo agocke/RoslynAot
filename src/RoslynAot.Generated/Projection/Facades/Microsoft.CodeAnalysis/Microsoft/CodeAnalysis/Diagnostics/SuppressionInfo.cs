@@ -37,7 +37,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -47,7 +47,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SuppressionInfo __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SuppressionInfo)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f56c94de-76d9-546f-b54c-e9b0362fbd08")]
+        [System.Runtime.InteropServices.Guid("972996bd-3a06-58dd-a048-d94f43d0f88d")]
         internal partial interface __RoslynAotImplementation : SuppressionInfo
         {
         }

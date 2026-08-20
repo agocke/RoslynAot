@@ -27,7 +27,7 @@ internal sealed partial class IFlowAnonymousFunctionOperationVtblDispatcher : II
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(561);
+        RoslynCallCounters.Record(4499);
         result = default;
 
         try

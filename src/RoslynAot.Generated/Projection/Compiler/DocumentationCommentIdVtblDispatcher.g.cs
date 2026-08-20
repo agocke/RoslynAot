@@ -29,7 +29,7 @@ internal sealed partial class DocumentationCommentIdVtblDispatcher : IDocumentat
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(462);
+        RoslynCallCounters.Record(4401);
         requiredLength = default;
 
         try
@@ -55,7 +55,7 @@ internal sealed partial class DocumentationCommentIdVtblDispatcher : IDocumentat
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(463);
+        RoslynCallCounters.Record(4402);
         requiredLength = default;
 
         try
@@ -80,7 +80,7 @@ internal sealed partial class DocumentationCommentIdVtblDispatcher : IDocumentat
         long compilation,
         out long result)
     {
-        RoslynCallCounters.Record(464);
+        RoslynCallCounters.Record(4403);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class DocumentationCommentIdVtblDispatcher : IDocumentat
         long compilation,
         out long result)
     {
-        RoslynCallCounters.Record(465);
+        RoslynCallCounters.Record(4404);
         result = default;
 
         try
@@ -118,7 +118,7 @@ internal sealed partial class DocumentationCommentIdVtblDispatcher : IDocumentat
         long compilation,
         out long result)
     {
-        RoslynCallCounters.Record(466);
+        RoslynCallCounters.Record(4405);
         result = default;
 
         try
@@ -137,7 +137,7 @@ internal sealed partial class DocumentationCommentIdVtblDispatcher : IDocumentat
         long compilation,
         out long result)
     {
-        RoslynCallCounters.Record(467);
+        RoslynCallCounters.Record(4406);
         result = default;
 
         try

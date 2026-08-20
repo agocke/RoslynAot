@@ -37,7 +37,7 @@ namespace Microsoft.CodeAnalysis
 
             public override bool Equals(object? other)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'other' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override int GetHashCode()
@@ -52,7 +52,7 @@ namespace Microsoft.CodeAnalysis
 
         internal static StrongNameProvider __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6032737276270416390L, 8744871423109662601L)is StrongNameProvider __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6416783825437372526L, -797065960049252723L)is StrongNameProvider __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetStrongNameProviderVtbl(controlVtbl), handle);
         }

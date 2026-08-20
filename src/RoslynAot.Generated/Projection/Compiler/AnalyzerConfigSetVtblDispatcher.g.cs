@@ -28,7 +28,7 @@ internal sealed partial class AnalyzerConfigSetVtblDispatcher : IAnalyzerConfigS
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string sourcePath,
         out long result)
     {
-        RoslynCallCounters.Record(4);
+        RoslynCallCounters.Record(3943);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class AnalyzerConfigSetVtblDispatcher : IAnalyzerConfigS
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(5);
+        RoslynCallCounters.Record(3944);
         result = default;
 
         try

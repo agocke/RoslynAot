@@ -14,17 +14,17 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public static CompilationWithAnalyzers WithAnalyzers(this Compilation compilation, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, AnalyzerOptions? options, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public static CompilationWithAnalyzers WithAnalyzers(this Compilation compilation, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, AnalyzerOptions? options = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public static CompilationWithAnalyzers WithAnalyzers(this Compilation compilation, System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, CompilationWithAnalyzersOptions analysisOptions)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
     }
 }

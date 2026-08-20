@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -46,13 +46,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IQueryBodySyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.QueryBodySyntax_Accept_ef5e9388(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.QueryBodySyntax_Accept_e0dbea9d(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public QueryBodySyntax AddClauses(params QueryClauseSyntax[] items)
@@ -66,12 +66,12 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public QueryBodySyntax Update(SyntaxList<QueryClauseSyntax> clauses, SelectOrGroupClauseSyntax selectOrGroup, QueryContinuationSyntax? continuation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'clauses' is unsupported: Generic substitutions are not supported.");
         }
 
         public QueryBodySyntax WithClauses(SyntaxList<QueryClauseSyntax> clauses)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'clauses' is unsupported: Generic substitutions are not supported.");
         }
 
         public QueryBodySyntax WithContinuation(QueryContinuationSyntax? continuation)
@@ -98,7 +98,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static QueryBodySyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (QueryBodySyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("280d9f68-d5b6-53fc-b4ee-16f8fad23c11")]
+        [System.Runtime.InteropServices.Guid("96dfb5d6-4676-5fcb-bc8e-1aceb42ebf03")]
         internal partial interface __RoslynAotImplementation : QueryBodySyntax
         {
         }

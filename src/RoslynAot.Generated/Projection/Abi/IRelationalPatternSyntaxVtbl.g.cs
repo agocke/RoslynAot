@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("33246abe-a012-5a5f-a2c2-e856fd222063")]
+[Guid("cdfe6562-e1cc-576f-bc1d-e9d3ea5a8503")]
 public partial interface IRelationalPatternSyntaxVtbl : IPatternSyntaxVtbl
 {
 
     [PreserveSig]
-    int RelationalPatternSyntax_Accept_91efe2a8(
+    int RelationalPatternSyntax_Accept_157b8fca(
         long receiver,
         long visitor
     );

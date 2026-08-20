@@ -23,12 +23,12 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CSharpExtensions_Any_b082ecfa(
+    public int CSharpExtensions_Any_ac7d5fb7(
         long list,
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5824);
+        RoslynCallCounters.Record(3930);
         result = default;
 
         try
@@ -42,12 +42,12 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_Any_aef0a5fc(
+    public int CSharpExtensions_Any_25289131(
         long list,
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5825);
+        RoslynCallCounters.Record(3931);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5826);
+        RoslynCallCounters.Record(3932);
         result = default;
 
         try
@@ -80,12 +80,12 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IndexOf_ab8b5d8c(
+    public int CSharpExtensions_IndexOf_21650d04(
         long list,
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5827);
+        RoslynCallCounters.Record(3933);
         result = default;
 
         try
@@ -99,12 +99,12 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IndexOf_06e4c7db(
+    public int CSharpExtensions_IndexOf_e0e5d687(
         long list,
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5828);
+        RoslynCallCounters.Record(3934);
         result = default;
 
         try
@@ -118,12 +118,12 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IsKind_8a92d4f3(
+    public int CSharpExtensions_IsKind_b45a1bbf(
         long node,
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5829);
+        RoslynCallCounters.Record(3935);
         result = default;
 
         try
@@ -137,12 +137,12 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IsKind_5be19b92(
+    public int CSharpExtensions_IsKind_e499372f(
         long nodeOrToken,
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5830);
+        RoslynCallCounters.Record(3936);
         result = default;
 
         try
@@ -156,12 +156,12 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IsKind_129f15c5(
+    public int CSharpExtensions_IsKind_ed182691(
         long token,
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5831);
+        RoslynCallCounters.Record(3937);
         result = default;
 
         try
@@ -175,12 +175,12 @@ internal sealed partial class CSharpExtensionsVtbl_66985417Dispatcher : ICSharpE
         }
     }
 
-    public int CSharpExtensions_IsKind_b3b67b11(
+    public int CSharpExtensions_IsKind_a02e6b26(
         long trivia,
         ushort kind,
         out int result)
     {
-        RoslynCallCounters.Record(5832);
+        RoslynCallCounters.Record(3938);
         result = default;
 
         try

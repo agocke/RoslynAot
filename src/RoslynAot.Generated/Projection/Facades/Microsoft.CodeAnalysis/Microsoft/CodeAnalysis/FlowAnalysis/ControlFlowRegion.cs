@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -120,7 +120,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ControlFlowRegion __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ControlFlowRegion)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("794ade8d-cb19-5d53-ab4e-4e4bd89fc0de")]
+        [System.Runtime.InteropServices.Guid("02becc03-49ba-5f58-ba8a-828749e3e0d4")]
         internal partial interface __RoslynAotImplementation : ControlFlowRegion
         {
         }

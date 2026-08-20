@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis
                 return other is not null && __RoslynAotAreEqual(other);
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocalizableStringVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LocalizableString_Equals_5694416a(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.LocalizableString_Equals_2df59e44(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -39,7 +39,7 @@ namespace Microsoft.CodeAnalysis
         {
             if (__RoslynAotIsLocal)
                 return other is not null && __RoslynAotAreEqual(other);
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'other' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         protected abstract int GetHash();
@@ -67,7 +67,7 @@ namespace Microsoft.CodeAnalysis
 
         string System.IFormattable.ToString(string? ignored, System.IFormatProvider? formatProvider)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
         }
 
         public sealed override string ToString()
@@ -77,14 +77,14 @@ namespace Microsoft.CodeAnalysis
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocalizableStringVtbl vtbl = __RoslynAotGetVtbl();
             long __roslynAotReceiver = __RoslynAotGetHandle();
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.LocalizableString_ToString_a1eaba99(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.LocalizableString_ToString_8f4eb01b(__roslynAotReceiver, buffer, bufferLength, out requiredLength))!;
         }
 
         public string ToString(System.IFormatProvider? formatProvider)
         {
             if (__RoslynAotIsLocal)
                 return __RoslynAotGetText(formatProvider);
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'formatProvider' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         internal LocalizableString()
@@ -112,17 +112,17 @@ namespace Microsoft.CodeAnalysis
 
             protected override bool AreEqual(object? other)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
 
             protected override int GetHash()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
 
             protected override string GetText(System.IFormatProvider? formatProvider)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
         }
 

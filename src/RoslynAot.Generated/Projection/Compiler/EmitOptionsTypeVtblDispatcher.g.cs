@@ -23,7 +23,7 @@ internal sealed partial class EmitOptionsTypeVtblDispatcher : IEmitOptionsTypeVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int EmitOptions_ctor_910d9a8c(
+    public int EmitOptions_ctor_095de26e(
         int metadataOnly,
         int debugInformationFormat,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string pdbFilePath,
@@ -37,7 +37,7 @@ internal sealed partial class EmitOptionsTypeVtblDispatcher : IEmitOptionsTypeVt
         int includePrivateMembers,
         out long result)
     {
-        RoslynCallCounters.Record(478);
+        RoslynCallCounters.Record(4416);
         result = default;
 
         try

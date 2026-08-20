@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f99ee617-196f-57ea-9e10-e3cfa2de9bbe")]
+[Guid("57f0a08c-bf1b-5337-a6f6-1b7241333e41")]
 public partial interface IAssemblyIdentityVtbl
 {
 
     [PreserveSig]
-    int AssemblyIdentity_Equals_8ec1fb2f(
+    int AssemblyIdentity_Equals_96532f19(
         long receiver,
         long obj,
         out int result

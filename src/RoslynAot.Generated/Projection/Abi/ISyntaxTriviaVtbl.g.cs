@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("a415f76a-8979-5e1e-9b09-d1dc5a29ff57")]
+[Guid("f08bf928-8ea6-5960-96fc-f4cd3ad2fe5f")]
 public partial interface ISyntaxTriviaVtbl
 {
 
@@ -24,14 +24,14 @@ public partial interface ISyntaxTriviaVtbl
     );
 
     [PreserveSig]
-    int SyntaxTrivia_Equals_193a4eaf(
+    int SyntaxTrivia_Equals_4e0b5275(
         long receiver,
         long other,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxTrivia_GetAnnotations_e2a3de3a(
+    int SyntaxTrivia_GetAnnotations_a9c696b9(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result
@@ -69,7 +69,7 @@ public partial interface ISyntaxTriviaVtbl
     );
 
     [PreserveSig]
-    int SyntaxTrivia_HasAnnotations_4841d9d0(
+    int SyntaxTrivia_HasAnnotations_1ca9aa64(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result
@@ -105,21 +105,21 @@ public partial interface ISyntaxTriviaVtbl
     );
 
     [PreserveSig]
-    int SyntaxTrivia_WithAdditionalAnnotations_cdddfe2a(
+    int SyntaxTrivia_WithAdditionalAnnotations_234c741d(
         long receiver,
         long annotations,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxTrivia_WithoutAnnotations_0be5e032(
+    int SyntaxTrivia_WithoutAnnotations_99815f0f(
         long receiver,
         long annotations,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxTrivia_WithoutAnnotations_fb97f0c2(
+    int SyntaxTrivia_WithoutAnnotations_35e84768(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result

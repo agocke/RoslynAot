@@ -12,774 +12,774 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("73908b5b-6bbb-5bb1-811e-3186b3079764")]
+[Guid("46da97b2-20c4-552d-969c-b27a19cc694f")]
 public partial interface IOperationVisitorVtbl
 {
 
     [PreserveSig]
-    int OperationVisitor_DefaultVisit_e29857e1(
+    int OperationVisitor_DefaultVisit_8808088d(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitAddressOf_164428ba(
+    int OperationVisitor_VisitAddressOf_40d73e19(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitAnonymousFunction_f77e4908(
+    int OperationVisitor_VisitAnonymousFunction_9ccbaa54(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitAnonymousObjectCreation_d60508d5(
+    int OperationVisitor_VisitAnonymousObjectCreation_05c9a1a7(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitArgument_f31a4fc1(
+    int OperationVisitor_VisitArgument_8de413d2(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitArrayCreation_6e015dda(
+    int OperationVisitor_VisitArrayCreation_3b25995d(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitArrayElementReference_92a91978(
+    int OperationVisitor_VisitArrayElementReference_6e82eeb1(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitArrayInitializer_f31720d1(
+    int OperationVisitor_VisitArrayInitializer_1929f0dd(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitAttribute_bfbe60f3(
+    int OperationVisitor_VisitAttribute_c8233f22(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitAwait_6129a319(
+    int OperationVisitor_VisitAwait_fb63b29d(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitBinaryOperator_f8e6584e(
+    int OperationVisitor_VisitBinaryOperator_c9bc8ddc(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitBinaryPattern_e1fa3e6b(
+    int OperationVisitor_VisitBinaryPattern_a70cb612(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitBlock_28caac6a(
+    int OperationVisitor_VisitBlock_3cbefe91(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitBranch_53800272(
+    int OperationVisitor_VisitBranch_bcd25375(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitCatchClause_98f8a20b(
+    int OperationVisitor_VisitCatchClause_ca99d30b(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitCaughtException_2ca1ea6b(
+    int OperationVisitor_VisitCaughtException_d611f426(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitCoalesceAssignment_b99e4782(
+    int OperationVisitor_VisitCoalesceAssignment_822a13bc(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitCoalesce_e773e6b3(
+    int OperationVisitor_VisitCoalesce_9beade90(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitCollectionExpression_9d39ec63(
+    int OperationVisitor_VisitCollectionExpression_2ba2bda2(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitCompoundAssignment_c68fe9cd(
+    int OperationVisitor_VisitCompoundAssignment_15ce283f(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitConditionalAccessInstance_3c159643(
+    int OperationVisitor_VisitConditionalAccessInstance_c245f1fd(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitConditionalAccess_c2c11d2b(
+    int OperationVisitor_VisitConditionalAccess_fb5322c1(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitConditional_92e252b6(
+    int OperationVisitor_VisitConditional_657a5110(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitConstantPattern_efed05e8(
+    int OperationVisitor_VisitConstantPattern_b14d1f39(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitConstructorBodyOperation_6613dd25(
+    int OperationVisitor_VisitConstructorBodyOperation_442f1bbb(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitConversion_83a7e324(
+    int OperationVisitor_VisitConversion_b0800c8e(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDeclarationExpression_72f780cb(
+    int OperationVisitor_VisitDeclarationExpression_a39785c3(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDeclarationPattern_b19cc9ee(
+    int OperationVisitor_VisitDeclarationPattern_f3f022de(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDeconstructionAssignment_5799f6d1(
+    int OperationVisitor_VisitDeconstructionAssignment_a83996f0(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDefaultCaseClause_0cfb7f53(
+    int OperationVisitor_VisitDefaultCaseClause_ed736f72(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDefaultValue_3df4c823(
+    int OperationVisitor_VisitDefaultValue_145a12e6(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDelegateCreation_42fc83e9(
+    int OperationVisitor_VisitDelegateCreation_40948f7c(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDiscardOperation_ecb44614(
+    int OperationVisitor_VisitDiscardOperation_a0894514(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDiscardPattern_fb042769(
+    int OperationVisitor_VisitDiscardPattern_2a028ec6(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDynamicIndexerAccess_c6293f85(
+    int OperationVisitor_VisitDynamicIndexerAccess_e1402f73(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDynamicInvocation_92554fa5(
+    int OperationVisitor_VisitDynamicInvocation_3ca842e7(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDynamicMemberReference_61c97eff(
+    int OperationVisitor_VisitDynamicMemberReference_844bfdc0(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitDynamicObjectCreation_b9f347c3(
+    int OperationVisitor_VisitDynamicObjectCreation_ed469b14(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitEmpty_179a7ec7(
+    int OperationVisitor_VisitEmpty_60ee498a(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitEnd_7816047d(
+    int OperationVisitor_VisitEnd_e150b99b(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitEventAssignment_92185086(
+    int OperationVisitor_VisitEventAssignment_f9d4caaa(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitEventReference_671f6948(
+    int OperationVisitor_VisitEventReference_42ef4f48(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitExpressionStatement_2d16f50e(
+    int OperationVisitor_VisitExpressionStatement_588d43a4(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitFieldInitializer_27969861(
+    int OperationVisitor_VisitFieldInitializer_a0d34f7f(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitFieldReference_f45b6394(
+    int OperationVisitor_VisitFieldReference_2487d4ed(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitFlowAnonymousFunction_a1642ad1(
+    int OperationVisitor_VisitFlowAnonymousFunction_e8115a0c(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitFlowCaptureReference_f7082d54(
+    int OperationVisitor_VisitFlowCaptureReference_e97a4523(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitFlowCapture_7b46dfb6(
+    int OperationVisitor_VisitFlowCapture_749ab58e(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitForEachLoop_556dab3b(
+    int OperationVisitor_VisitForEachLoop_c4db4191(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitForLoop_c5977019(
+    int OperationVisitor_VisitForLoop_cbf6aeb9(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitForToLoop_52341cad(
+    int OperationVisitor_VisitForToLoop_f15fe557(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitFunctionPointerInvocation_a55ae459(
+    int OperationVisitor_VisitFunctionPointerInvocation_3e290acb(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitImplicitIndexerReference_b35b5ad2(
+    int OperationVisitor_VisitImplicitIndexerReference_093e73d7(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitIncrementOrDecrement_7a5fda31(
+    int OperationVisitor_VisitIncrementOrDecrement_5a525314(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitInlineArrayAccess_486a7422(
+    int OperationVisitor_VisitInlineArrayAccess_c73ccf2c(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitInstanceReference_f0c993f2(
+    int OperationVisitor_VisitInstanceReference_27b9c362(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitInterpolatedStringAddition_c88a8911(
+    int OperationVisitor_VisitInterpolatedStringAddition_45f5323c(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitInterpolatedStringAppend_28f7f764(
+    int OperationVisitor_VisitInterpolatedStringAppend_7fd75085(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitInterpolatedStringHandlerArgumentPlaceholder_235e9507(
+    int OperationVisitor_VisitInterpolatedStringHandlerArgumentPlaceholder_9df8ec16(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitInterpolatedStringHandlerCreation_90d42729(
+    int OperationVisitor_VisitInterpolatedStringHandlerCreation_3995bbbf(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitInterpolatedStringText_d9bd7906(
+    int OperationVisitor_VisitInterpolatedStringText_3dab23e2(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitInterpolatedString_6b08297e(
+    int OperationVisitor_VisitInterpolatedString_41a52d72(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitInterpolation_52e167f5(
+    int OperationVisitor_VisitInterpolation_6c24d7ad(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitInvalid_b1fc80ca(
+    int OperationVisitor_VisitInvalid_ccfb431b(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitInvocation_05578a4c(
+    int OperationVisitor_VisitInvocation_be4f8189(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitIsNull_c97ab8c2(
+    int OperationVisitor_VisitIsNull_663efac0(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitIsPattern_03a5d754(
+    int OperationVisitor_VisitIsPattern_d2c0e4f8(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitIsType_edc7f8be(
+    int OperationVisitor_VisitIsType_d89be888(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitLabeled_e027d40c(
+    int OperationVisitor_VisitLabeled_31b98d4f(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitListPattern_7b1e25e7(
+    int OperationVisitor_VisitListPattern_f632470c(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitLiteral_382a09b7(
+    int OperationVisitor_VisitLiteral_36cc6db1(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitLocalFunction_efb7d219(
+    int OperationVisitor_VisitLocalFunction_80d030ff(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitLocalReference_d035121e(
+    int OperationVisitor_VisitLocalReference_4fd303d5(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitLock_912c71b0(
+    int OperationVisitor_VisitLock_f4abc3d2(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitMemberInitializer_e25bde91(
+    int OperationVisitor_VisitMemberInitializer_45db7cdd(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitMethodBodyOperation_399b4434(
+    int OperationVisitor_VisitMethodBodyOperation_dbcc89fb(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitMethodReference_dbe55764(
+    int OperationVisitor_VisitMethodReference_7d65677f(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitNameOf_6eabea12(
+    int OperationVisitor_VisitNameOf_281d98c4(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitNegatedPattern_c4c8182f(
+    int OperationVisitor_VisitNegatedPattern_fb9a7b9f(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitObjectCreation_55e28efc(
+    int OperationVisitor_VisitObjectCreation_bb59acee(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitObjectOrCollectionInitializer_43f4e32d(
+    int OperationVisitor_VisitObjectOrCollectionInitializer_52d78d4e(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitOmittedArgument_e8aeb880(
+    int OperationVisitor_VisitOmittedArgument_a300c673(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitParameterInitializer_50e189a2(
+    int OperationVisitor_VisitParameterInitializer_d13e3339(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitParameterReference_030c6bc7(
+    int OperationVisitor_VisitParameterReference_87c5ad23(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitParenthesized_db15577c(
+    int OperationVisitor_VisitParenthesized_1ff82173(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitPatternCaseClause_4dbae5be(
+    int OperationVisitor_VisitPatternCaseClause_45a2078f(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitPropertyInitializer_db5b2e05(
+    int OperationVisitor_VisitPropertyInitializer_535567be(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitPropertyReference_69778c25(
+    int OperationVisitor_VisitPropertyReference_6a114ca6(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitPropertySubpattern_3d19dc66(
+    int OperationVisitor_VisitPropertySubpattern_1aa3b6c5(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitRaiseEvent_6c1c10d6(
+    int OperationVisitor_VisitRaiseEvent_6cd1f931(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitRangeCaseClause_c0fbe074(
+    int OperationVisitor_VisitRangeCaseClause_dfa89b7a(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitRangeOperation_5a6b56ad(
+    int OperationVisitor_VisitRangeOperation_34322359(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitReDimClause_aec444c4(
+    int OperationVisitor_VisitReDimClause_494d5f68(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitReDim_6cdc3a0a(
+    int OperationVisitor_VisitReDim_8b471c3f(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitRecursivePattern_b4947d8e(
+    int OperationVisitor_VisitRecursivePattern_c77245a3(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitRelationalCaseClause_058b9852(
+    int OperationVisitor_VisitRelationalCaseClause_b35e6b07(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitRelationalPattern_ba15b412(
+    int OperationVisitor_VisitRelationalPattern_b0d88616(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitReturn_15065235(
+    int OperationVisitor_VisitReturn_5e90d23f(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitSimpleAssignment_af9040e6(
+    int OperationVisitor_VisitSimpleAssignment_ba43df13(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitSingleValueCaseClause_8a17517e(
+    int OperationVisitor_VisitSingleValueCaseClause_3adbd0c4(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitSizeOf_971b0211(
+    int OperationVisitor_VisitSizeOf_f82038f5(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitSlicePattern_c59f6c7c(
+    int OperationVisitor_VisitSlicePattern_26036768(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitSpread_f2dcd648(
+    int OperationVisitor_VisitSpread_e9d1b99b(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitStaticLocalInitializationSemaphore_d4013b4f(
+    int OperationVisitor_VisitStaticLocalInitializationSemaphore_d462d6ee(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitStop_c9cf57c1(
+    int OperationVisitor_VisitStop_c59e2786(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitSwitchCase_aceee7ab(
+    int OperationVisitor_VisitSwitchCase_9300445b(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitSwitchExpressionArm_d34aa767(
+    int OperationVisitor_VisitSwitchExpressionArm_10676ec9(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitSwitchExpression_5878cc0d(
+    int OperationVisitor_VisitSwitchExpression_9740f2de(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitSwitch_3003e920(
+    int OperationVisitor_VisitSwitch_81377d37(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitThrow_786beab1(
+    int OperationVisitor_VisitThrow_b25214b3(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitTranslatedQuery_7b137e9f(
+    int OperationVisitor_VisitTranslatedQuery_7d43bd54(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitTry_9f01acaf(
+    int OperationVisitor_VisitTry_3c8c5708(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitTupleBinaryOperator_130560cf(
+    int OperationVisitor_VisitTupleBinaryOperator_4ac8a441(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitTuple_34d83ef3(
+    int OperationVisitor_VisitTuple_9493707d(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitTypeOf_90bf0d2c(
+    int OperationVisitor_VisitTypeOf_46f5a4e8(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitTypeParameterObjectCreation_892dd5b2(
+    int OperationVisitor_VisitTypeParameterObjectCreation_336f7328(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitTypePattern_d6b56e81(
+    int OperationVisitor_VisitTypePattern_02f26e34(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitUnaryOperator_e2fd23ef(
+    int OperationVisitor_VisitUnaryOperator_d5a46010(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitUsingDeclaration_a69631c1(
+    int OperationVisitor_VisitUsingDeclaration_8ecba46d(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitUsing_85f70ce1(
+    int OperationVisitor_VisitUsing_05e732c2(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitUtf8String_9adda4bf(
+    int OperationVisitor_VisitUtf8String_38b5f39d(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitVariableDeclarationGroup_d378db6e(
+    int OperationVisitor_VisitVariableDeclarationGroup_b065912e(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitVariableDeclaration_0040f96e(
+    int OperationVisitor_VisitVariableDeclaration_50b31a48(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitVariableDeclarator_74a8d945(
+    int OperationVisitor_VisitVariableDeclarator_b8f77b0d(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitVariableInitializer_fd85660a(
+    int OperationVisitor_VisitVariableInitializer_5367d5e2(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitWhileLoop_171a0752(
+    int OperationVisitor_VisitWhileLoop_b0330f09(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_VisitWith_5ff37e4a(
+    int OperationVisitor_VisitWith_0b15984f(
         long receiver,
         long operation
     );
 
     [PreserveSig]
-    int OperationVisitor_Visit_b07d2116(
+    int OperationVisitor_Visit_b7ae6bdc(
         long receiver,
         long operation
     );

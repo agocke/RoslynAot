@@ -28,7 +28,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         int kind,
         out long result)
     {
-        RoslynCallCounters.Record(1394);
+        RoslynCallCounters.Record(5328);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1395);
+        RoslynCallCounters.Record(5329);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         byte documentationMode,
         out long result)
     {
-        RoslynCallCounters.Record(1396);
+        RoslynCallCounters.Record(5330);
         result = default;
 
         try
@@ -84,7 +84,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         int kind,
         out long result)
     {
-        RoslynCallCounters.Record(1397);
+        RoslynCallCounters.Record(5331);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         long receiver,
         out byte result)
     {
-        RoslynCallCounters.Record(1398);
+        RoslynCallCounters.Record(5332);
         result = default;
 
         try
@@ -120,7 +120,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1399);
+        RoslynCallCounters.Record(5333);
         result = default;
 
         try
@@ -138,7 +138,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1400);
+        RoslynCallCounters.Record(5334);
         result = default;
 
         try
@@ -158,7 +158,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1401);
+        RoslynCallCounters.Record(5335);
         requiredLength = default;
 
         try
@@ -182,7 +182,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1402);
+        RoslynCallCounters.Record(5336);
         result = default;
 
         try
@@ -200,7 +200,7 @@ internal sealed partial class ParseOptionsVtblDispatcher : IParseOptionsVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1403);
+        RoslynCallCounters.Record(5337);
         result = default;
 
         try

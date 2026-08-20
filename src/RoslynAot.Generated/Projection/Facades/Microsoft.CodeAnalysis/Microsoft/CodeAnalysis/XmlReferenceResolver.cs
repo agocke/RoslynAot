@@ -39,7 +39,7 @@ namespace Microsoft.CodeAnalysis
 
             public override bool Equals(object? other)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'other' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override int GetHashCode()
@@ -53,7 +53,7 @@ namespace Microsoft.CodeAnalysis
 
             public override System.IO.Stream OpenRead(string resolvedPath)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override string? ResolveReference(string path, string? baseFilePath)
@@ -67,7 +67,7 @@ namespace Microsoft.CodeAnalysis
 
         internal static XmlReferenceResolver __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6061793248684524715L, 1176493549687507614L)is XmlReferenceResolver __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 5965055738512290507L, -3888092662117348178L)is XmlReferenceResolver __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetXmlReferenceResolverVtbl(controlVtbl), handle);
         }

@@ -34,16 +34,12 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Obsolete("This API will be removed in the future. Use INamedTypeSymbol.ExtensionParameter instead.")]
         IParameterSymbol? ExtensionParameter
         {
             get
             {
-                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-                global::RoslynAot.Abi.IITypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ITypeSymbol_get_ExtensionParameter(__RoslynAotGetHandle(), out long result);
-                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-                return result == 0 ? null : IParameterSymbol.__RoslynAotCreateProxy(controlVtbl, result);
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
             }
         }
 
@@ -71,25 +67,12 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/83717")]
-        bool IsClosed
-        {
-            get
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-            }
-        }
-
-        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Obsolete("This API will be removed in the future. Use INamedTypeSymbol.IsExtension instead.")]
         bool IsExtension
         {
             get
             {
-                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-                global::RoslynAot.Abi.IITypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ITypeSymbol_get_IsExtension(__RoslynAotGetHandle(), out int result);
-                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-                return result != 0;
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
             }
         }
 
@@ -162,14 +145,6 @@ namespace Microsoft.CodeAnalysis
                 int status = vtbl.ITypeSymbol_get_IsTupleType(__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
-            }
-        }
-
-        bool IsUnion
-        {
-            get
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
             }
         }
 
@@ -254,15 +229,9 @@ namespace Microsoft.CodeAnalysis
             return result == 0 ? null : ISymbol.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/83717")]
-        ClosedDerivedTypeInfo GetClosedDerivedTypeInfo(System.Threading.CancellationToken cancellationToken)
-        {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-        }
-
         System.Collections.Immutable.ImmutableArray<SymbolDisplayPart> ToDisplayParts(NullableFlowState topLevelNullability, SymbolDisplayFormat? format = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         string ToDisplayString(NullableFlowState topLevelNullability, SymbolDisplayFormat? format = null)
@@ -275,7 +244,7 @@ namespace Microsoft.CodeAnalysis
 
         System.Collections.Immutable.ImmutableArray<SymbolDisplayPart> ToMinimalDisplayParts(SemanticModel semanticModel, NullableFlowState topLevelNullability, int position, SymbolDisplayFormat? format = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         string ToMinimalDisplayString(SemanticModel semanticModel, NullableFlowState topLevelNullability, int position, SymbolDisplayFormat? format = null)
@@ -301,7 +270,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ITypeSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ITypeSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("00289a33-aa80-5f56-a214-7c8d04d85cd0")]
+        [System.Runtime.InteropServices.Guid("49d17cb5-779f-55d7-b15c-cfae258ea06b")]
         internal partial interface __RoslynAotImplementation : ITypeSymbol
         {
         }

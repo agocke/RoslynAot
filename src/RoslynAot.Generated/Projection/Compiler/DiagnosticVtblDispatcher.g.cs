@@ -23,12 +23,12 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int Diagnostic_Equals_ce717ce2(
+    public int Diagnostic_Equals_895031df(
         long receiver,
         long obj,
         out int result)
     {
-        RoslynCallCounters.Record(241);
+        RoslynCallCounters.Record(4180);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(242);
+        RoslynCallCounters.Record(4181);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         long compilation,
         out long result)
     {
-        RoslynCallCounters.Record(243);
+        RoslynCallCounters.Record(4182);
         result = default;
 
         try
@@ -85,7 +85,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(244);
+        RoslynCallCounters.Record(4183);
         requiredLength = default;
 
         try
@@ -109,7 +109,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(245);
+        RoslynCallCounters.Record(4184);
         result = default;
 
         try
@@ -127,7 +127,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(246);
+        RoslynCallCounters.Record(4185);
         result = default;
 
         try
@@ -147,7 +147,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(247);
+        RoslynCallCounters.Record(4186);
         requiredLength = default;
 
         try
@@ -171,7 +171,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(248);
+        RoslynCallCounters.Record(4187);
         result = default;
 
         try
@@ -189,7 +189,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(249);
+        RoslynCallCounters.Record(4188);
         result = default;
 
         try
@@ -207,7 +207,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(250);
+        RoslynCallCounters.Record(4189);
         result = default;
 
         try
@@ -225,7 +225,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(251);
+        RoslynCallCounters.Record(4190);
         result = default;
 
         try
@@ -243,7 +243,7 @@ internal sealed partial class DiagnosticVtblDispatcher : IDiagnosticVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(252);
+        RoslynCallCounters.Record(4191);
         result = default;
 
         try

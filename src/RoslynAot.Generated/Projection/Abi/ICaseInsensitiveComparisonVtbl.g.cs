@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4f612a76-8dbe-511b-a5b6-28d5c8a501fd")]
+[Guid("fe4de7e3-0b67-591a-bcdb-2636a15edc13")]
 public partial interface ICaseInsensitiveComparisonVtbl
 {
 
     [PreserveSig]
-    int CaseInsensitiveComparison_Compare_e1a3ffb4(
+    int CaseInsensitiveComparison_Compare_2fc5336e(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string left,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
         out int result
@@ -31,7 +31,7 @@ public partial interface ICaseInsensitiveComparisonVtbl
     );
 
     [PreserveSig]
-    int CaseInsensitiveComparison_Equals_a37f5eb5(
+    int CaseInsensitiveComparison_Equals_053ef8b7(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string left,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
         out int result
@@ -51,13 +51,13 @@ public partial interface ICaseInsensitiveComparisonVtbl
     );
 
     [PreserveSig]
-    int CaseInsensitiveComparison_ToLower_8c71e35e(
+    int CaseInsensitiveComparison_ToLower_721fabe1(
         ushort c,
         out ushort result
     );
 
     [PreserveSig]
-    int CaseInsensitiveComparison_ToLower_1414d7b2(
+    int CaseInsensitiveComparison_ToLower_41ba8453(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         nint buffer,
         int bufferLength,

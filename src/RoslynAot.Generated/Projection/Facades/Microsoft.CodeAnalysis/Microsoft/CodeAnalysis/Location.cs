@@ -29,7 +29,6 @@ namespace Microsoft.CodeAnalysis
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, "SourceTree")]
         public bool IsInSource
         {
             get
@@ -105,7 +104,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ILocationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetLocationTypeVtbl(controlVtbl);
-            int status = vtbl.Location_Create_8a5c1903(filePath, textSpan.__RoslynAotGetHandle(), lineSpan.__RoslynAotGetHandle(), mappedFilePath, mappedLineSpan.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.Location_Create_c84951a7(filePath, textSpan.__RoslynAotGetHandle(), lineSpan.__RoslynAotGetHandle(), mappedFilePath, mappedLineSpan.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -114,7 +113,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ILocationTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetLocationTypeVtbl(controlVtbl);
-            int status = vtbl.Location_Create_a6e44ea2(filePath, textSpan.__RoslynAotGetHandle(), lineSpan.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.Location_Create_5ab307bc(filePath, textSpan.__RoslynAotGetHandle(), lineSpan.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -122,7 +121,7 @@ namespace Microsoft.CodeAnalysis
         public abstract override bool Equals(object? obj);
         protected virtual string GetDebuggerDisplay()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public abstract override int GetHashCode();
@@ -146,12 +145,12 @@ namespace Microsoft.CodeAnalysis
 
         public static bool operator ==(Location? left, Location? right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(Location? left, Location? right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public override string ToString()
@@ -185,7 +184,7 @@ namespace Microsoft.CodeAnalysis
             {
                 if (__RoslynAotIsLocal)
                     return ReferenceEquals(this, obj);
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override int GetHashCode()

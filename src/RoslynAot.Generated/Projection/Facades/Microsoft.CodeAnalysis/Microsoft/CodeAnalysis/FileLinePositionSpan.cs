@@ -18,7 +18,7 @@ namespace Microsoft.CodeAnalysis
             this = default;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IFileLinePositionSpanTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetFileLinePositionSpanTypeVtbl(controlVtbl);
-            int status = vtbl.FileLinePositionSpan_ctor_376e92d9(path, start.__RoslynAotGetHandle(), end.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.FileLinePositionSpan_ctor_270d2ce6(path, start.__RoslynAotGetHandle(), end.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetFileLinePositionSpanVtbl(controlVtbl);
@@ -30,7 +30,7 @@ namespace Microsoft.CodeAnalysis
             this = default;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IFileLinePositionSpanTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetFileLinePositionSpanTypeVtbl(controlVtbl);
-            int status = vtbl.FileLinePositionSpan_ctor_ce8e0eb2(path, span.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.FileLinePositionSpan_ctor_6d4c9aa3(path, span.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetFileLinePositionSpanVtbl(controlVtbl);
@@ -115,14 +115,14 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IFileLinePositionSpanVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.FileLinePositionSpan_Equals_e5b7b4e8(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.FileLinePositionSpan_Equals_4d9cd337(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public override readonly bool Equals(object? other)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'other' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override readonly int GetHashCode()
@@ -136,12 +136,12 @@ namespace Microsoft.CodeAnalysis
 
         public static bool operator ==(FileLinePositionSpan left, FileLinePositionSpan right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(FileLinePositionSpan left, FileLinePositionSpan right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public override readonly string ToString()

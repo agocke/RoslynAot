@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e1159ff9-c770-548e-9506-78b0a799709b")]
+[Guid("1d5a5e3b-c08b-585c-b98c-039843ef3265")]
 public partial interface IIncrementalGeneratorPostInitializationContextVtbl
 {
 
@@ -22,14 +22,14 @@ public partial interface IIncrementalGeneratorPostInitializationContextVtbl
     );
 
     [PreserveSig]
-    int IncrementalGeneratorPostInitializationContext_AddSource_7da845f5(
+    int IncrementalGeneratorPostInitializationContext_AddSource_a4d98e8b(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         long sourceText
     );
 
     [PreserveSig]
-    int IncrementalGeneratorPostInitializationContext_AddSource_d5ba85dc(
+    int IncrementalGeneratorPostInitializationContext_AddSource_0bfdbc1f(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source

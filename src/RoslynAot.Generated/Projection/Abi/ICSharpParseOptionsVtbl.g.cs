@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("888ef657-cdbd-555a-a540-0a98ac5ee084")]
+[Guid("da8e5b93-7358-57c4-be5a-c216e0015a91")]
 public partial interface ICSharpParseOptionsVtbl : IParseOptionsVtbl
 {
 
@@ -24,7 +24,7 @@ public partial interface ICSharpParseOptionsVtbl : IParseOptionsVtbl
     );
 
     [PreserveSig]
-    int CSharpParseOptions_Equals_51922c40(
+    int CSharpParseOptions_Equals_32907232(
         long receiver,
         long other,
         out int result

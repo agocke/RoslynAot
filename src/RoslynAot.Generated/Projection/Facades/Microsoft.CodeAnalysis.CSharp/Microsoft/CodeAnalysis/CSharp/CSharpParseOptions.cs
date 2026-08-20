@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis.CSharp
     {
         public CSharpParseOptions(LanguageVersion languageVersion = LanguageVersion.Default, DocumentationMode documentationMode = DocumentationMode.Parse, SourceCodeKind kind = SourceCodeKind.Regular, System.Collections.Generic.IEnumerable<string>? preprocessorSymbols = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'preprocessorSymbols' is unsupported: Generic substitutions are not supported.");
         }
 
         public static CSharpParseOptions Default
@@ -31,7 +31,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -84,12 +84,12 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         protected override ParseOptions CommonWithDocumentationMode(DocumentationMode documentationMode)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         protected override ParseOptions CommonWithFeatures(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, string>>? features)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public override ParseOptions CommonWithKind(SourceCodeKind kind)
@@ -105,14 +105,14 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpParseOptionsVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpParseOptions_Equals_51922c40(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.CSharpParseOptions_Equals_32907232(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public override bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override int GetHashCode()
@@ -135,7 +135,7 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public new CSharpParseOptions WithFeatures(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, string>>? features)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'features' is unsupported: Generic substitutions are not supported.");
         }
 
         public new CSharpParseOptions WithKind(SourceCodeKind kind)
@@ -158,17 +158,17 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public CSharpParseOptions WithPreprocessorSymbols(System.Collections.Generic.IEnumerable<string>? preprocessorSymbols)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'preprocessorSymbols' is unsupported: Generic substitutions are not supported.");
         }
 
         public CSharpParseOptions WithPreprocessorSymbols(System.Collections.Immutable.ImmutableArray<string> symbols)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'symbols' is unsupported: Generic substitutions are not supported.");
         }
 
         public CSharpParseOptions WithPreprocessorSymbols(params string[]? preprocessorSymbols)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'preprocessorSymbols' is unsupported: Arrays are not supported.");
         }
 
         internal CSharpParseOptions()

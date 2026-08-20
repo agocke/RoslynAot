@@ -26,18 +26,18 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISkippedTokensTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SkippedTokensTriviaSyntax_Accept_26985ace(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.SkippedTokensTriviaSyntax_Accept_97261484(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public SkippedTokensTriviaSyntax AddTokens(params SyntaxToken[] items)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'items' is unsupported: Arrays are not supported.");
         }
 
         public SkippedTokensTriviaSyntax Update(SyntaxTokenList tokens)
@@ -64,7 +64,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SkippedTokensTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SkippedTokensTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("20d8947e-d541-5f95-800b-38368b590003")]
+        [System.Runtime.InteropServices.Guid("f9088a1b-ba20-5a87-98e9-83f4e3fae86d")]
         internal partial interface __RoslynAotImplementation : SkippedTokensTriviaSyntax
         {
         }

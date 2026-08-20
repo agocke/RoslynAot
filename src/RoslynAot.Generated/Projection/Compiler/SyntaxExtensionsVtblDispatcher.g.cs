@@ -23,13 +23,13 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxExtensions_NormalizeWhitespace_9f59464b(
+    public int SyntaxExtensions_NormalizeWhitespace_2b27303c(
         long token,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         int elasticTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(5142);
+        RoslynCallCounters.Record(3248);
         result = default;
 
         try
@@ -43,14 +43,14 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         }
     }
 
-    public int SyntaxExtensions_NormalizeWhitespace_799da1df(
+    public int SyntaxExtensions_NormalizeWhitespace_db917b8c(
         long token,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string eol,
         int elasticTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(5143);
+        RoslynCallCounters.Record(3249);
         result = default;
 
         try
@@ -64,13 +64,13 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         }
     }
 
-    public int SyntaxExtensions_NormalizeWhitespace_682062f5(
+    public int SyntaxExtensions_NormalizeWhitespace_3943fd9d(
         long list,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         int elasticTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(5144);
+        RoslynCallCounters.Record(3250);
         result = default;
 
         try
@@ -84,14 +84,14 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         }
     }
 
-    public int SyntaxExtensions_NormalizeWhitespace_aec4c5f5(
+    public int SyntaxExtensions_NormalizeWhitespace_60efd197(
         long list,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string indentation,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string eol,
         int elasticTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(5145);
+        RoslynCallCounters.Record(3251);
         result = default;
 
         try
@@ -110,7 +110,7 @@ internal sealed partial class SyntaxExtensionsVtblDispatcher : ISyntaxExtensions
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5146);
+        RoslynCallCounters.Record(3252);
         result = default;
 
         try

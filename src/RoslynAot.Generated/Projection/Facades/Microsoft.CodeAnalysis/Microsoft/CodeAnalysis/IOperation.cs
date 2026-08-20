@@ -27,7 +27,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
             }
         }
 
@@ -130,13 +130,13 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIOperationVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IOperation_Accept_72e7eb92(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.IOperation_Accept_98f2a71f(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         sealed TResult? Accept<TArgument, TResult>(Operations.OperationVisitor<TArgument, TResult> visitor, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public readonly partial struct OperationList : System.Collections.Generic.IReadOnlyCollection<IOperation>, System.Collections.Generic.IEnumerable<IOperation>, System.Collections.IEnumerable
@@ -202,12 +202,12 @@ namespace Microsoft.CodeAnalysis
 
             readonly System.Collections.Generic.IEnumerator<IOperation> System.Collections.Generic.IEnumerable<IOperation>.GetEnumerator()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
             }
 
             readonly System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
             }
 
             public readonly System.Collections.Immutable.ImmutableArray<IOperation> ToImmutableArray()
@@ -227,18 +227,18 @@ namespace Microsoft.CodeAnalysis
                 {
                     get
                     {
-                        throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                        throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
                     }
                 }
 
                 public bool MoveNext()
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
                 }
 
                 public void Reset()
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
                 }
 
                 private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;
@@ -301,12 +301,12 @@ namespace Microsoft.CodeAnalysis
 
                 readonly System.Collections.Generic.IEnumerator<IOperation> System.Collections.Generic.IEnumerable<IOperation>.GetEnumerator()
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
                 }
 
                 readonly System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
                 }
 
                 public readonly System.Collections.Immutable.ImmutableArray<IOperation> ToImmutableArray()
@@ -326,18 +326,18 @@ namespace Microsoft.CodeAnalysis
                     {
                         get
                         {
-                            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
                         }
                     }
 
                     public bool MoveNext()
                     {
-                        throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                        throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
                     }
 
                     public void Reset()
                     {
-                        throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                        throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
                     }
 
                     private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;
@@ -445,7 +445,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("ed8bb721-8852-5d01-8b8a-b5b214b8a687")]
+        [System.Runtime.InteropServices.Guid("7899a83b-fdb3-52ae-b911-661ccbe86817")]
         internal partial interface __RoslynAotImplementation : IOperation
         {
         }

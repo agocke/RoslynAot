@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c1ac6cfe-c2b7-5745-a7aa-c42dd28d05f0")]
+[Guid("1247433e-53cc-5eeb-841c-62f62f7aa768")]
 public partial interface ISyntaxTokenVtbl
 {
 
@@ -24,14 +24,14 @@ public partial interface ISyntaxTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxToken_Equals_38ba030c(
+    int SyntaxToken_Equals_86dce369(
         long receiver,
         long other,
         out int result
     );
 
     [PreserveSig]
-    int SyntaxToken_GetAnnotations_33ced40e(
+    int SyntaxToken_GetAnnotations_7a5ee578(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result
@@ -83,7 +83,7 @@ public partial interface ISyntaxTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxToken_HasAnnotations_2ecdf813(
+    int SyntaxToken_HasAnnotations_6c3ba156(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result
@@ -126,21 +126,21 @@ public partial interface ISyntaxTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxToken_WithAdditionalAnnotations_05c0985e(
+    int SyntaxToken_WithAdditionalAnnotations_03fd660b(
         long receiver,
         long annotations,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxToken_WithLeadingTrivia_46a5b6f8(
+    int SyntaxToken_WithLeadingTrivia_4908b9a8(
         long receiver,
         long trivia,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxToken_WithTrailingTrivia_b0e4c3ef(
+    int SyntaxToken_WithTrailingTrivia_d87f8bc8(
         long receiver,
         long trivia,
         out long result
@@ -154,14 +154,14 @@ public partial interface ISyntaxTokenVtbl
     );
 
     [PreserveSig]
-    int SyntaxToken_WithoutAnnotations_5ce76586(
+    int SyntaxToken_WithoutAnnotations_16d8f5f5(
         long receiver,
         long annotations,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxToken_WithoutAnnotations_e869934d(
+    int SyntaxToken_WithoutAnnotations_4ea8848a(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result

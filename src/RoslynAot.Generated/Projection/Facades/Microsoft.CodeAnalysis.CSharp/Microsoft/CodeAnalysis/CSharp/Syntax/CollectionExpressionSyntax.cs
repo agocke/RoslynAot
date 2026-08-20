@@ -26,7 +26,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -46,13 +46,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICollectionExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CollectionExpressionSyntax_Accept_142afbf6(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.CollectionExpressionSyntax_Accept_f5ec451d(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public CollectionExpressionSyntax AddElements(params CollectionElementSyntax[] items)
@@ -66,7 +66,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public CollectionExpressionSyntax Update(SyntaxToken openBracketToken, SeparatedSyntaxList<CollectionElementSyntax> elements, SyntaxToken closeBracketToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'elements' is unsupported: Generic substitutions are not supported.");
         }
 
         public CollectionExpressionSyntax WithCloseBracketToken(SyntaxToken closeBracketToken)
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public CollectionExpressionSyntax WithElements(SeparatedSyntaxList<CollectionElementSyntax> elements)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'elements' is unsupported: Generic substitutions are not supported.");
         }
 
         public CollectionExpressionSyntax WithOpenBracketToken(SyntaxToken openBracketToken)
@@ -98,7 +98,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static CollectionExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CollectionExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("2d77efd8-cd5b-54c7-8300-987423d725b9")]
+        [System.Runtime.InteropServices.Guid("2f38e341-e459-546e-8751-1bbf1a6c3447")]
         internal partial interface __RoslynAotImplementation : CollectionExpressionSyntax
         {
         }

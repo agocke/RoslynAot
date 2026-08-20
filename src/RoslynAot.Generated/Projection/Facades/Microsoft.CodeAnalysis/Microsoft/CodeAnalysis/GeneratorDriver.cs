@@ -12,12 +12,12 @@ namespace Microsoft.CodeAnalysis
     {
         public GeneratorDriver AddAdditionalTexts(System.Collections.Immutable.ImmutableArray<AdditionalText> additionalTexts)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'additionalTexts' is unsupported: Generic substitutions are not supported.");
         }
 
         public GeneratorDriver AddGenerators(System.Collections.Immutable.ImmutableArray<ISourceGenerator> generators)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'generators' is unsupported: Generic substitutions are not supported.");
         }
 
         public GeneratorDriverRunResult GetRunResult()
@@ -40,12 +40,12 @@ namespace Microsoft.CodeAnalysis
 
         public GeneratorDriver RemoveAdditionalTexts(System.Collections.Immutable.ImmutableArray<AdditionalText> additionalTexts)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'additionalTexts' is unsupported: Generic substitutions are not supported.");
         }
 
         public GeneratorDriver RemoveGenerators(System.Collections.Immutable.ImmutableArray<ISourceGenerator> generators)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'generators' is unsupported: Generic substitutions are not supported.");
         }
 
         public GeneratorDriver ReplaceAdditionalText(AdditionalText oldText, AdditionalText newText)
@@ -59,36 +59,36 @@ namespace Microsoft.CodeAnalysis
 
         public GeneratorDriver ReplaceAdditionalTexts(System.Collections.Immutable.ImmutableArray<AdditionalText> newTexts)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'newTexts' is unsupported: Generic substitutions are not supported.");
         }
 
         public GeneratorDriver ReplaceGenerators(System.Collections.Immutable.ImmutableArray<ISourceGenerator> generators)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'generators' is unsupported: Generic substitutions are not supported.");
         }
 
         public GeneratorDriver RunGenerators(Compilation compilation, System.Func<GeneratorFilterContext, bool>? generatorFilter, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'generatorFilter' is unsupported: Delegates are not supported.");
         }
 
         public GeneratorDriver RunGenerators(Compilation compilation, System.Threading.CancellationToken cancellationToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public GeneratorDriver RunGenerators(Compilation compilation)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IGeneratorDriverVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.GeneratorDriver_RunGenerators_652ab369(__RoslynAotGetHandle(), compilation.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.GeneratorDriver_RunGenerators_107d01fa(__RoslynAotGetHandle(), compilation.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public GeneratorDriver RunGeneratorsAndUpdateCompilation(Compilation compilation, out Compilation outputCompilation, out System.Collections.Immutable.ImmutableArray<Diagnostic> diagnostics, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. ref, in, and out parameters are not supported.");
         }
 
         public GeneratorDriver WithUpdatedAnalyzerConfigOptions(Diagnostics.AnalyzerConfigOptionsProvider newOptions)
@@ -115,7 +115,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static GeneratorDriver __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (GeneratorDriver)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("2fb5248c-fe07-5ec5-9abb-8088dbc3fff7")]
+        [System.Runtime.InteropServices.Guid("54810df2-e83a-5b01-9aa1-a6201577a915")]
         internal partial interface __RoslynAotImplementation : GeneratorDriver
         {
         }

@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IINamespaceOrTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.INamespaceOrTypeSymbol_GetMembers_af2000d5(__RoslynAotGetHandle(), out long result);
+            int status = vtbl.INamespaceOrTypeSymbol_GetMembers_2cb701cb(__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
@@ -47,24 +47,24 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IINamespaceOrTypeSymbolVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.INamespaceOrTypeSymbol_GetMembers_ce52371b(__RoslynAotGetHandle(), name, out long result);
+            int status = vtbl.INamespaceOrTypeSymbol_GetMembers_3a5d5ad2(__RoslynAotGetHandle(), name, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISymbol>(controlVtbl, result, static (controlVtbl, handle) => ISymbol.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
 
         System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. The three overloads collide in the interface's projected vtbl, and the arity overload would silently answer for the other two. Withdrawn until overload identity reaches the vtbl slot rather than the name.");
         }
 
         System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers(string name, int arity)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. The three overloads collide in the interface's projected vtbl, and the arity overload would silently answer for the other two. Withdrawn until overload identity reaches the vtbl slot rather than the name.");
         }
 
         System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers(string name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. The three overloads collide in the interface's projected vtbl, and the arity overload would silently answer for the other two. Withdrawn until overload identity reaches the vtbl slot rather than the name.");
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
@@ -73,7 +73,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static INamespaceOrTypeSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (INamespaceOrTypeSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("21840ef5-1c24-54bf-8f60-0a12fbd73802")]
+        [System.Runtime.InteropServices.Guid("c3e07717-ad7b-5d1c-88f9-220e6360530e")]
         internal partial interface __RoslynAotImplementation : INamespaceOrTypeSymbol
         {
         }

@@ -23,12 +23,12 @@ internal sealed partial class QueryClauseInfoVtblDispatcher : IQueryClauseInfoVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int QueryClauseInfo_Equals_960e0ade(
+    public int QueryClauseInfo_Equals_6e055c70(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(2601);
+        RoslynCallCounters.Record(707);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class QueryClauseInfoVtblDispatcher : IQueryClauseInfoVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2602);
+        RoslynCallCounters.Record(708);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class QueryClauseInfoVtblDispatcher : IQueryClauseInfoVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2603);
+        RoslynCallCounters.Record(709);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class QueryClauseInfoVtblDispatcher : IQueryClauseInfoVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2604);
+        RoslynCallCounters.Record(710);
         result = default;
 
         try

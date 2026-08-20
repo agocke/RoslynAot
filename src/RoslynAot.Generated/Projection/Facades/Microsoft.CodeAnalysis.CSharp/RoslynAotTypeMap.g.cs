@@ -811,12 +811,6 @@
     typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.UndefDirectiveTriviaSyntax),
     typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.UndefDirectiveTriviaSyntax.__RoslynAotImplementation))]
 [assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
-    typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.UnionDeclarationSyntax),
-    typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.UnionDeclarationSyntax.__RoslynAotImplementation))]
-[assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
-    typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.UnsafeExpressionSyntax),
-    typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.UnsafeExpressionSyntax.__RoslynAotImplementation))]
-[assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
     typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.UnsafeStatementSyntax),
     typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.UnsafeStatementSyntax.__RoslynAotImplementation))]
 [assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
@@ -849,9 +843,6 @@
 [assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
     typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.WhileStatementSyntax),
     typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.WhileStatementSyntax.__RoslynAotImplementation))]
-[assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
-    typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.WithElementSyntax),
-    typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.WithElementSyntax.__RoslynAotImplementation))]
 [assembly: global::System.Runtime.InteropServices.TypeMapAssociation<global::RoslynAot.RoslynFacade.RoslynProxyTypeMap>(
     typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.WithExpressionSyntax),
     typeof(global::Microsoft.CodeAnalysis.CSharp.Syntax.WithExpressionSyntax.__RoslynAotImplementation))]

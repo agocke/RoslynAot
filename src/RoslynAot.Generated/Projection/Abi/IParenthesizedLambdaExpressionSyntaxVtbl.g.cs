@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ac2649f5-ee85-56e1-8ffd-235c3d6062bc")]
+[Guid("4a6a3a70-bf31-52ab-b5bb-4b32331af71a")]
 public partial interface IParenthesizedLambdaExpressionSyntaxVtbl : ILambdaExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int ParenthesizedLambdaExpressionSyntax_Accept_4241d1d7(
+    int ParenthesizedLambdaExpressionSyntax_Accept_a7ba76ef(
         long receiver,
         long visitor
     );
@@ -51,7 +51,7 @@ public partial interface IParenthesizedLambdaExpressionSyntaxVtbl : ILambdaExpre
     );
 
     [PreserveSig]
-    int ParenthesizedLambdaExpressionSyntax_Update_c1b3cd82(
+    int ParenthesizedLambdaExpressionSyntax_Update_7b9138b3(
         long receiver,
         long asyncKeyword,
         long parameterList,
@@ -61,7 +61,7 @@ public partial interface IParenthesizedLambdaExpressionSyntaxVtbl : ILambdaExpre
     );
 
     [PreserveSig]
-    int ParenthesizedLambdaExpressionSyntax_Update_9cf16bb6(
+    int ParenthesizedLambdaExpressionSyntax_Update_dd95c313(
         long receiver,
         long asyncKeyword,
         long parameterList,
@@ -72,7 +72,7 @@ public partial interface IParenthesizedLambdaExpressionSyntaxVtbl : ILambdaExpre
     );
 
     [PreserveSig]
-    int ParenthesizedLambdaExpressionSyntax_Update_aefe8077(
+    int ParenthesizedLambdaExpressionSyntax_Update_ddab0b79(
         long receiver,
         long modifiers,
         long parameterList,

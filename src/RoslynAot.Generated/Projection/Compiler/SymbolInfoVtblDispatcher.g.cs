@@ -23,12 +23,12 @@ internal sealed partial class SymbolInfoVtblDispatcher : ISymbolInfoVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SymbolInfo_Equals_450dbb25(
+    public int SymbolInfo_Equals_803acbc6(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1516);
+        RoslynCallCounters.Record(5450);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SymbolInfoVtblDispatcher : ISymbolInfoVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1517);
+        RoslynCallCounters.Record(5451);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class SymbolInfoVtblDispatcher : ISymbolInfoVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1518);
+        RoslynCallCounters.Record(5452);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class SymbolInfoVtblDispatcher : ISymbolInfoVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1519);
+        RoslynCallCounters.Record(5453);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class SymbolInfoVtblDispatcher : ISymbolInfoVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1520);
+        RoslynCallCounters.Record(5454);
         result = default;
 
         try

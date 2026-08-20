@@ -38,13 +38,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITupleElementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TupleElementSyntax_Accept_5f1e1a12(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.TupleElementSyntax_Accept_48a7044a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public TupleElementSyntax Update(TypeSyntax type, SyntaxToken identifier)
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static TupleElementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (TupleElementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("a1ddb68d-85ba-58c4-ac19-d494bb725b36")]
+        [System.Runtime.InteropServices.Guid("04e1f476-f5e9-55d4-b728-40bae4fc682a")]
         internal partial interface __RoslynAotImplementation : TupleElementSyntax
         {
         }

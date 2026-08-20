@@ -28,7 +28,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(1655);
+        RoslynCallCounters.Record(5589);
         result = default;
 
         try
@@ -42,12 +42,12 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_Equals_38ba030c(
+    public int SyntaxToken_Equals_86dce369(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1656);
+        RoslynCallCounters.Record(5590);
         result = default;
 
         try
@@ -61,12 +61,12 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_GetAnnotations_33ced40e(
+    public int SyntaxToken_GetAnnotations_7a5ee578(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1657);
+        RoslynCallCounters.Record(5591);
         result = default;
 
         try
@@ -84,7 +84,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1658);
+        RoslynCallCounters.Record(5592);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1659);
+        RoslynCallCounters.Record(5593);
         result = default;
 
         try
@@ -120,7 +120,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1660);
+        RoslynCallCounters.Record(5594);
         result = default;
 
         try
@@ -142,7 +142,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1661);
+        RoslynCallCounters.Record(5595);
         result = default;
 
         try
@@ -164,7 +164,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1662);
+        RoslynCallCounters.Record(5596);
         result = default;
 
         try
@@ -183,7 +183,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1663);
+        RoslynCallCounters.Record(5597);
         result = default;
 
         try
@@ -197,12 +197,12 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_HasAnnotations_2ecdf813(
+    public int SyntaxToken_HasAnnotations_6c3ba156(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1664);
+        RoslynCallCounters.Record(5598);
         result = default;
 
         try
@@ -221,7 +221,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1665);
+        RoslynCallCounters.Record(5599);
         result = default;
 
         try
@@ -240,7 +240,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long token,
         out int result)
     {
-        RoslynCallCounters.Record(1666);
+        RoslynCallCounters.Record(5600);
         result = default;
 
         try
@@ -258,7 +258,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1667);
+        RoslynCallCounters.Record(5601);
         result = default;
 
         try
@@ -278,7 +278,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1668);
+        RoslynCallCounters.Record(5602);
         requiredLength = default;
 
         try
@@ -304,7 +304,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1669);
+        RoslynCallCounters.Record(5603);
         requiredLength = default;
 
         try
@@ -324,12 +324,12 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_WithAdditionalAnnotations_05c0985e(
+    public int SyntaxToken_WithAdditionalAnnotations_03fd660b(
         long receiver,
         long annotations,
         out long result)
     {
-        RoslynCallCounters.Record(1670);
+        RoslynCallCounters.Record(5604);
         result = default;
 
         try
@@ -343,12 +343,12 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_WithLeadingTrivia_46a5b6f8(
+    public int SyntaxToken_WithLeadingTrivia_4908b9a8(
         long receiver,
         long trivia,
         out long result)
     {
-        RoslynCallCounters.Record(1671);
+        RoslynCallCounters.Record(5605);
         result = default;
 
         try
@@ -362,12 +362,12 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_WithTrailingTrivia_b0e4c3ef(
+    public int SyntaxToken_WithTrailingTrivia_d87f8bc8(
         long receiver,
         long trivia,
         out long result)
     {
-        RoslynCallCounters.Record(1672);
+        RoslynCallCounters.Record(5606);
         result = default;
 
         try
@@ -386,7 +386,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(1673);
+        RoslynCallCounters.Record(5607);
         result = default;
 
         try
@@ -400,12 +400,12 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_WithoutAnnotations_5ce76586(
+    public int SyntaxToken_WithoutAnnotations_16d8f5f5(
         long receiver,
         long annotations,
         out long result)
     {
-        RoslynCallCounters.Record(1674);
+        RoslynCallCounters.Record(5608);
         result = default;
 
         try
@@ -419,12 +419,12 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         }
     }
 
-    public int SyntaxToken_WithoutAnnotations_e869934d(
+    public int SyntaxToken_WithoutAnnotations_4ea8848a(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1675);
+        RoslynCallCounters.Record(5609);
         result = default;
 
         try
@@ -442,7 +442,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1676);
+        RoslynCallCounters.Record(5610);
         result = default;
 
         try
@@ -460,7 +460,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1677);
+        RoslynCallCounters.Record(5611);
         result = default;
 
         try
@@ -478,7 +478,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1678);
+        RoslynCallCounters.Record(5612);
         result = default;
 
         try
@@ -496,7 +496,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1679);
+        RoslynCallCounters.Record(5613);
         result = default;
 
         try
@@ -514,7 +514,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1680);
+        RoslynCallCounters.Record(5614);
         result = default;
 
         try
@@ -532,7 +532,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1681);
+        RoslynCallCounters.Record(5615);
         result = default;
 
         try
@@ -550,7 +550,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1682);
+        RoslynCallCounters.Record(5616);
         result = default;
 
         try
@@ -568,7 +568,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1683);
+        RoslynCallCounters.Record(5617);
         result = default;
 
         try
@@ -588,7 +588,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1684);
+        RoslynCallCounters.Record(5618);
         requiredLength = default;
 
         try
@@ -612,7 +612,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1685);
+        RoslynCallCounters.Record(5619);
         result = default;
 
         try
@@ -630,7 +630,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1686);
+        RoslynCallCounters.Record(5620);
         result = default;
 
         try
@@ -648,7 +648,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1687);
+        RoslynCallCounters.Record(5621);
         result = default;
 
         try
@@ -666,7 +666,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1688);
+        RoslynCallCounters.Record(5622);
         result = default;
 
         try
@@ -684,7 +684,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1689);
+        RoslynCallCounters.Record(5623);
         result = default;
 
         try
@@ -702,7 +702,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1690);
+        RoslynCallCounters.Record(5624);
         result = default;
 
         try
@@ -722,7 +722,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1691);
+        RoslynCallCounters.Record(5625);
         requiredLength = default;
 
         try
@@ -746,7 +746,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1692);
+        RoslynCallCounters.Record(5626);
         result = default;
 
         try
@@ -766,7 +766,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1693);
+        RoslynCallCounters.Record(5627);
         requiredLength = default;
 
         try
@@ -792,7 +792,7 @@ internal sealed partial class SyntaxTokenVtblDispatcher : ISyntaxTokenVtbl
         out long constantLow,
         out long constantHigh)
     {
-        RoslynCallCounters.Record(1694);
+        RoslynCallCounters.Record(5628);
         constantKind = default;
         constantLow = default;
         constantHigh = default;

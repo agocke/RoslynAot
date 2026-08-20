@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -46,13 +46,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAccessorListSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AccessorListSyntax_Accept_8afd5aff(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.AccessorListSyntax_Accept_1db4d8bf(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public AccessorListSyntax AddAccessors(params AccessorDeclarationSyntax[] items)
@@ -66,12 +66,12 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public AccessorListSyntax Update(SyntaxToken openBraceToken, SyntaxList<AccessorDeclarationSyntax> accessors, SyntaxToken closeBraceToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'accessors' is unsupported: Generic substitutions are not supported.");
         }
 
         public AccessorListSyntax WithAccessors(SyntaxList<AccessorDeclarationSyntax> accessors)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'accessors' is unsupported: Generic substitutions are not supported.");
         }
 
         public AccessorListSyntax WithCloseBraceToken(SyntaxToken closeBraceToken)
@@ -98,7 +98,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static AccessorListSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AccessorListSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("7fc1562c-fdd6-501d-91ee-145a80f2a9f4")]
+        [System.Runtime.InteropServices.Guid("1fcb04eb-d3dc-5d1b-af50-c38aa32ffd94")]
         internal partial interface __RoslynAotImplementation : AccessorListSyntax
         {
         }

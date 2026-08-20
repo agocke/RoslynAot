@@ -12,16 +12,9 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("9630497f-cbb7-5286-8708-1e3ab0d4e840")]
+[Guid("1a1b43ab-1a59-5568-b45d-f59ac88f7ffd")]
 public partial interface IIPropertySymbolVtbl
 {
-
-    [PreserveSig]
-    int IPropertySymbol_ReduceExtensionMember(
-        long receiver,
-        long receiverType,
-        out long result
-    );
 
     [PreserveSig]
     int IPropertySymbol_get_ExplicitInterfaceImplementations(

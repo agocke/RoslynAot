@@ -17,7 +17,7 @@ namespace Microsoft.CodeAnalysis.Emit
             this = default;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IRuntimeRudeEditTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuntimeRudeEditTypeVtbl(controlVtbl);
-            int status = vtbl.RuntimeRudeEdit_ctor_f0820610(message, errorCode, out long result);
+            int status = vtbl.RuntimeRudeEdit_ctor_c76b3dfd(message, errorCode, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuntimeRudeEditVtbl(controlVtbl);
@@ -27,7 +27,7 @@ namespace Microsoft.CodeAnalysis.Emit
         [System.Obsolete("Specify errorCode")]
         public RuntimeRudeEdit(string message)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public int ErrorCode

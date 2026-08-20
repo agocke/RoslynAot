@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis
     {
         protected MetadataReference(MetadataReferenceProperties properties)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public virtual string? Display
@@ -42,14 +42,14 @@ namespace Microsoft.CodeAnalysis
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public static MetadataReference CreateFromAssembly(System.Reflection.Assembly assembly, MetadataReferenceProperties properties, DocumentationProvider? documentation = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         [System.Obsolete("Use CreateFromFile(assembly.Location) instead", true)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public static MetadataReference CreateFromAssembly(System.Reflection.Assembly assembly)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public static PortableExecutableReference CreateFromFile(string path, MetadataReferenceProperties properties = default, DocumentationProvider? documentation = null)
@@ -63,27 +63,27 @@ namespace Microsoft.CodeAnalysis
 
         public static PortableExecutableReference CreateFromImage(System.Collections.Generic.IEnumerable<byte> peImage, MetadataReferenceProperties properties = default, DocumentationProvider? documentation = null, string? filePath = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peImage' is unsupported: Generic substitutions are not supported.");
         }
 
         public static PortableExecutableReference CreateFromImage(System.Collections.Immutable.ImmutableArray<byte> peImage, MetadataReferenceProperties properties = default, DocumentationProvider? documentation = null, string? filePath = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peImage' is unsupported: Generic substitutions are not supported.");
         }
 
         public static PortableExecutableReference CreateFromStream(System.IO.Stream peStream, MetadataReferenceProperties properties = default, DocumentationProvider? documentation = null, string? filePath = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peStream' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public MetadataReference WithAliases(System.Collections.Generic.IEnumerable<string> aliases)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'aliases' is unsupported: Generic substitutions are not supported.");
         }
 
         public MetadataReference WithAliases(System.Collections.Immutable.ImmutableArray<string> aliases)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'aliases' is unsupported: Generic substitutions are not supported.");
         }
 
         public MetadataReference WithEmbedInteropTypes(bool value)
@@ -130,7 +130,7 @@ namespace Microsoft.CodeAnalysis
 
         internal static MetadataReference __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6603965155313165831L, -501461725512585801L)is MetadataReference __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6798624647272510207L, -5071322913194470214L)is MetadataReference __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetMetadataReferenceVtbl(controlVtbl), handle);
         }

@@ -12,19 +12,19 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("811aaecc-b18d-53a5-9e6f-0c367949c718")]
+[Guid("e3c6e5a5-1836-58fe-996d-56e826259d9e")]
 public partial interface ILocationTypeVtbl
 {
 
     [PreserveSig]
-    int Location_Create_9ad8c7de(
+    int Location_Create_6a648459(
         long syntaxTree,
         long textSpan,
         out long result
     );
 
     [PreserveSig]
-    int Location_Create_a6e44ea2(
+    int Location_Create_5ab307bc(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string filePath,
         long textSpan,
         long lineSpan,
@@ -32,7 +32,7 @@ public partial interface ILocationTypeVtbl
     );
 
     [PreserveSig]
-    int Location_Create_8a5c1903(
+    int Location_Create_c84951a7(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string filePath,
         long textSpan,
         long lineSpan,

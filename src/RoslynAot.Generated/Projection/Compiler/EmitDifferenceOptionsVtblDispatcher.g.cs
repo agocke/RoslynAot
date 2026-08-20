@@ -27,30 +27,12 @@ internal sealed partial class EmitDifferenceOptionsVtblDispatcher : IEmitDiffere
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(475);
+        RoslynCallCounters.Record(4414);
         result = default;
 
         try
         {
             result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Emit.EmitDifferenceOptions>(receiver).EmitFieldRva ? 1 : 0;
-            return RoslynAbi.Success;
-        }
-        catch (global::System.Exception exception)
-        {
-            return _owner.SetError(exception);
-        }
-    }
-
-    public int EmitDifferenceOptions_get_MethodImplEntriesSupported(
-        long receiver,
-        out int result)
-    {
-        RoslynCallCounters.Record(476);
-        result = default;
-
-        try
-        {
-            result = _owner.Objects.GetValue<global::Microsoft.CodeAnalysis.Emit.EmitDifferenceOptions>(receiver).MethodImplEntriesSupported ? 1 : 0;
             return RoslynAbi.Success;
         }
         catch (global::System.Exception exception)

@@ -23,12 +23,12 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int ForEachStatementInfo_Equals_c22decb1(
+    public int ForEachStatementInfo_Equals_86fb9f81(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(2582);
+        RoslynCallCounters.Record(690);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2583);
+        RoslynCallCounters.Record(691);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2584);
+        RoslynCallCounters.Record(692);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2585);
+        RoslynCallCounters.Record(693);
         result = default;
 
         try
@@ -96,29 +96,11 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         }
     }
 
-    public int ForEachStatementInfo_get_DisposeAwaitableInfo(
-        long receiver,
-        out long result)
-    {
-        RoslynCallCounters.Record(2586);
-        result = default;
-
-        try
-        {
-            result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo>(receiver).DisposeAwaitableInfo);
-            return RoslynAbi.Success;
-        }
-        catch (global::System.Exception exception)
-        {
-            return _owner.SetError(exception);
-        }
-    }
-
     public int ForEachStatementInfo_get_DisposeMethod(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2587);
+        RoslynCallCounters.Record(694);
         result = default;
 
         try
@@ -136,7 +118,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2588);
+        RoslynCallCounters.Record(695);
         result = default;
 
         try
@@ -154,7 +136,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2589);
+        RoslynCallCounters.Record(696);
         result = default;
 
         try
@@ -172,7 +154,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2590);
+        RoslynCallCounters.Record(697);
         result = default;
 
         try
@@ -190,7 +172,7 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(2591);
+        RoslynCallCounters.Record(698);
         result = default;
 
         try
@@ -204,29 +186,11 @@ internal sealed partial class ForEachStatementInfoVtblDispatcher : IForEachState
         }
     }
 
-    public int ForEachStatementInfo_get_MoveNextAwaitableInfo(
-        long receiver,
-        out long result)
-    {
-        RoslynCallCounters.Record(2592);
-        result = default;
-
-        try
-        {
-            result = _owner.Objects.AddValue(_owner.Objects.GetValue<global::Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo>(receiver).MoveNextAwaitableInfo);
-            return RoslynAbi.Success;
-        }
-        catch (global::System.Exception exception)
-        {
-            return _owner.SetError(exception);
-        }
-    }
-
     public int ForEachStatementInfo_get_MoveNextMethod(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2593);
+        RoslynCallCounters.Record(699);
         result = default;
 
         try

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b92259eb-e4dd-51f1-8a51-4cc9388daa34")]
+[Guid("5f579070-ac47-5cf9-be5a-1be25c652d37")]
 public partial interface ISemanticEditVtbl
 {
 
     [PreserveSig]
-    int SemanticEdit_Equals_927c4ffc(
+    int SemanticEdit_Equals_0850820f(
         long receiver,
         long other,
         out int result

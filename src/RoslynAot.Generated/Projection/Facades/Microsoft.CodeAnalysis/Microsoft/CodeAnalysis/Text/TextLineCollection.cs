@@ -71,12 +71,12 @@ namespace Microsoft.CodeAnalysis.Text
         public abstract int IndexOf(int position);
         System.Collections.Generic.IEnumerator<TextLine> System.Collections.Generic.IEnumerable<TextLine>.GetEnumerator()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
         }
 
         public partial struct Enumerator : System.Collections.Generic.IEnumerator<TextLine>, System.Collections.IEnumerator, System.IDisposable
@@ -87,7 +87,7 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
                 }
             }
 
@@ -95,38 +95,38 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
                 }
             }
 
             public override bool Equals(object? obj)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
 
             public override int GetHashCode()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
 
             public bool MoveNext()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
 
             bool System.Collections.IEnumerator.MoveNext()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
             }
 
             void System.Collections.IEnumerator.Reset()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
             }
 
             void System.IDisposable.Dispose()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
             }
 
             private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;

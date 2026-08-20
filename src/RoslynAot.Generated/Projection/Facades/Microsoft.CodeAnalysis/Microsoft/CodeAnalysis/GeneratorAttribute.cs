@@ -15,7 +15,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IGeneratorAttributeTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorAttributeTypeVtbl(controlVtbl);
-            int status = vtbl.GeneratorAttribute_ctor_58e36c45(out long result);
+            int status = vtbl.GeneratorAttribute_ctor_cbc7ea9a(out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetGeneratorAttributeVtbl(controlVtbl);
@@ -24,14 +24,14 @@ namespace Microsoft.CodeAnalysis
 
         public GeneratorAttribute(string firstLanguage, params string[] additionalLanguages)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'additionalLanguages' is unsupported: Arrays are not supported.");
         }
 
         public string[] Languages
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Arrays are not supported.");
             }
         }
 

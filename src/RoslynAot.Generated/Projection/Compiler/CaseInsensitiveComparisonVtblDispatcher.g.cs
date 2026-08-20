@@ -23,12 +23,12 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CaseInsensitiveComparison_Compare_e1a3ffb4(
+    public int CaseInsensitiveComparison_Compare_2fc5336e(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string left,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
         out int result)
     {
-        RoslynCallCounters.Record(30);
+        RoslynCallCounters.Record(3969);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string possibleEnd,
         out int result)
     {
-        RoslynCallCounters.Record(31);
+        RoslynCallCounters.Record(3970);
         result = default;
 
         try
@@ -61,12 +61,12 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         }
     }
 
-    public int CaseInsensitiveComparison_Equals_a37f5eb5(
+    public int CaseInsensitiveComparison_Equals_053ef8b7(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string left,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string right,
         out int result)
     {
-        RoslynCallCounters.Record(32);
+        RoslynCallCounters.Record(3971);
         result = default;
 
         try
@@ -84,7 +84,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out int result)
     {
-        RoslynCallCounters.Record(33);
+        RoslynCallCounters.Record(3972);
         result = default;
 
         try
@@ -103,7 +103,7 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string possibleStart,
         out int result)
     {
-        RoslynCallCounters.Record(34);
+        RoslynCallCounters.Record(3973);
         result = default;
 
         try
@@ -117,11 +117,11 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         }
     }
 
-    public int CaseInsensitiveComparison_ToLower_8c71e35e(
+    public int CaseInsensitiveComparison_ToLower_721fabe1(
         ushort c,
         out ushort result)
     {
-        RoslynCallCounters.Record(35);
+        RoslynCallCounters.Record(3974);
         result = default;
 
         try
@@ -135,13 +135,13 @@ internal sealed partial class CaseInsensitiveComparisonVtblDispatcher : ICaseIns
         }
     }
 
-    public unsafe int CaseInsensitiveComparison_ToLower_1414d7b2(
+    public unsafe int CaseInsensitiveComparison_ToLower_41ba8453(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(36);
+        RoslynCallCounters.Record(3975);
         requiredLength = default;
 
         try

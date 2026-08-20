@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_Any_b082ecfa(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_Any_ac7d5fb7(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -23,7 +23,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_Any_aef0a5fc(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_Any_25289131(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -31,13 +31,13 @@ namespace Microsoft.CodeAnalysis
         public static bool Any<TNode>(this SeparatedSyntaxList<TNode> list, CSharp.SyntaxKind kind)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static bool Any<TNode>(this SyntaxList<TNode> list, CSharp.SyntaxKind kind)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static bool ContainsDirective(this SyntaxNode node, CSharp.SyntaxKind kind)
@@ -53,7 +53,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IndexOf_ab8b5d8c(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IndexOf_21650d04(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IndexOf_06e4c7db(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IndexOf_e0e5d687(list.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -70,20 +70,20 @@ namespace Microsoft.CodeAnalysis
         public static int IndexOf<TNode>(this SeparatedSyntaxList<TNode> list, CSharp.SyntaxKind kind)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static int IndexOf<TNode>(this SyntaxList<TNode> list, CSharp.SyntaxKind kind)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static bool IsKind(this SyntaxNode? node, CSharp.SyntaxKind kind)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IsKind_8a92d4f3(node is null ? 0L : node.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IsKind_b45a1bbf(node is null ? 0L : node.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -92,7 +92,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IsKind_5be19b92(nodeOrToken.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IsKind_e499372f(nodeOrToken.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -101,7 +101,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IsKind_129f15c5(token.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IsKind_ed182691(token.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -110,7 +110,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpExtensionsVtbl_66985417 vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpExtensionsVtbl_66985417(controlVtbl);
-            int status = vtbl.CSharpExtensions_IsKind_b3b67b11(trivia.__RoslynAotGetHandle(), (ushort)kind, out int result);
+            int status = vtbl.CSharpExtensions_IsKind_a02e6b26(trivia.__RoslynAotGetHandle(), (ushort)kind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }

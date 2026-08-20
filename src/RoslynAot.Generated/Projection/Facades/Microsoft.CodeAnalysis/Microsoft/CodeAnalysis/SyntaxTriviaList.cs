@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 namespace Microsoft.CodeAnalysis
 {
-    [System.Runtime.CompilerServices.CollectionBuilder(typeof(SyntaxTriviaList), "Create")]
     public readonly partial struct SyntaxTriviaList : System.IEquatable<SyntaxTriviaList>, System.Collections.Generic.IReadOnlyList<SyntaxTrivia>, System.Collections.Generic.IEnumerable<SyntaxTrivia>, System.Collections.IEnumerable, System.Collections.Generic.IReadOnlyCollection<SyntaxTrivia>
     {
         private readonly object _dummy;
@@ -18,7 +17,7 @@ namespace Microsoft.CodeAnalysis
             this = default;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxTriviaListTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxTriviaListTypeVtbl(controlVtbl);
-            int status = vtbl.SyntaxTriviaList_ctor_476e443c(trivia.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.SyntaxTriviaList_ctor_5a77ce48(trivia.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxTriviaListVtbl(controlVtbl);
@@ -27,12 +26,12 @@ namespace Microsoft.CodeAnalysis
 
         public SyntaxTriviaList(params SyntaxTrivia[] trivias)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'trivias' is unsupported: Arrays are not supported.");
         }
 
         public SyntaxTriviaList(System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivias)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'trivias' is unsupported: Generic substitutions are not supported.");
         }
 
         public int Count
@@ -106,7 +105,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxTriviaList AddRange(System.Collections.Generic.IEnumerable<SyntaxTrivia> trivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'trivia' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly bool Any()
@@ -122,14 +121,14 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxTriviaListTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxTriviaListTypeVtbl(controlVtbl);
-            int status = vtbl.SyntaxTriviaList_Create_bcf3c646(trivia.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.SyntaxTriviaList_Create_2357d37e(trivia.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxTriviaList Create(System.ReadOnlySpan<SyntaxTrivia> trivias)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'trivias' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly SyntaxTrivia ElementAt(int index)
@@ -145,14 +144,14 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxTriviaListVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxTriviaList_Equals_2b3c7141(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.SyntaxTriviaList_Equals_e042d43d(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public override readonly bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public readonly SyntaxTrivia First()
@@ -202,7 +201,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxTriviaList InsertRange(int index, System.Collections.Generic.IEnumerable<SyntaxTrivia> trivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'trivia' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly SyntaxTrivia Last()
@@ -216,12 +215,12 @@ namespace Microsoft.CodeAnalysis
 
         public static bool operator ==(SyntaxTriviaList left, SyntaxTriviaList right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(SyntaxTriviaList left, SyntaxTriviaList right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public readonly SyntaxTriviaList Remove(SyntaxTrivia triviaInList)
@@ -253,7 +252,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxTriviaList ReplaceRange(SyntaxTrivia triviaInList, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'newTrivia' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly Reversed Reverse()
@@ -267,12 +266,12 @@ namespace Microsoft.CodeAnalysis
 
         readonly System.Collections.Generic.IEnumerator<SyntaxTrivia> System.Collections.Generic.IEnumerable<SyntaxTrivia>.GetEnumerator()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
         }
 
         readonly System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
         }
 
         public readonly string ToFullString()
@@ -299,13 +298,13 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
                 }
             }
 
             public bool MoveNext()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
 
             private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;
@@ -361,14 +360,14 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.ISyntaxTriviaListReversedVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.SyntaxTriviaList_Reversed_Equals_998c05e7(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+                int status = vtbl.SyntaxTriviaList_Reversed_Equals_0d2370e6(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }
 
             public override readonly bool Equals(object? obj)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public readonly Enumerator GetEnumerator()
@@ -391,12 +390,12 @@ namespace Microsoft.CodeAnalysis
 
             readonly System.Collections.Generic.IEnumerator<SyntaxTrivia> System.Collections.Generic.IEnumerable<SyntaxTrivia>.GetEnumerator()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
             }
 
             readonly System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
             }
 
             public partial struct Enumerator
@@ -407,13 +406,13 @@ namespace Microsoft.CodeAnalysis
                 {
                     get
                     {
-                        throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                        throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
                     }
                 }
 
                 public bool MoveNext()
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
                 }
 
                 private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;

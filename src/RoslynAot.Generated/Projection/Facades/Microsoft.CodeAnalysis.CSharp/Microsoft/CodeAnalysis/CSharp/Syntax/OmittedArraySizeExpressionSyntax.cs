@@ -26,13 +26,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IOmittedArraySizeExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.OmittedArraySizeExpressionSyntax_Accept_ecfec616(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.OmittedArraySizeExpressionSyntax_Accept_465224ff(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public OmittedArraySizeExpressionSyntax Update(SyntaxToken omittedArraySizeExpressionToken)
@@ -59,7 +59,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static OmittedArraySizeExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (OmittedArraySizeExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("4e9a5cfe-c513-5b55-bef2-dd4d61b039f5")]
+        [System.Runtime.InteropServices.Guid("ca9684a9-b1e4-5f23-ae9c-65908b2b635e")]
         internal partial interface __RoslynAotImplementation : OmittedArraySizeExpressionSyntax
         {
         }

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("64f3c97d-9d4d-52bf-b45c-b1de2801611f")]
+[Guid("3938f9a2-55ad-5576-bee9-785c72e21cc8")]
 public partial interface IEventFieldDeclarationSyntaxVtbl : IBaseFieldDeclarationSyntaxVtbl
 {
 
     [PreserveSig]
-    int EventFieldDeclarationSyntax_Accept_b443693c(
+    int EventFieldDeclarationSyntax_Accept_bd3a539c(
         long receiver,
         long visitor
     );

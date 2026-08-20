@@ -12,12 +12,12 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     {
         public AnalyzerOptions(System.Collections.Immutable.ImmutableArray<AdditionalText> additionalFiles, AnalyzerConfigOptionsProvider optionsProvider)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'additionalFiles' is unsupported: Generic substitutions are not supported.");
         }
 
         public AnalyzerOptions(System.Collections.Immutable.ImmutableArray<AdditionalText> additionalFiles)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'additionalFiles' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Immutable.ImmutableArray<AdditionalText> AdditionalFiles
@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public override bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override int GetHashCode()
@@ -60,7 +60,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public AnalyzerOptions WithAdditionalFiles(System.Collections.Immutable.ImmutableArray<AdditionalText> additionalFiles)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'additionalFiles' is unsupported: Generic substitutions are not supported.");
         }
 
         internal AnalyzerOptions()

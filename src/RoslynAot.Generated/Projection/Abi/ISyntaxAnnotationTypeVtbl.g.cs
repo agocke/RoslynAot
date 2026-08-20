@@ -12,23 +12,23 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("f87e6c44-2293-5d96-a5d4-2839265a18c7")]
+[Guid("60118bf9-0696-58cf-9932-4945197d3773")]
 public partial interface ISyntaxAnnotationTypeVtbl
 {
 
     [PreserveSig]
-    int SyntaxAnnotation_ctor_706a5ffb(
+    int SyntaxAnnotation_ctor_910af2fe(
         out long result
     );
 
     [PreserveSig]
-    int SyntaxAnnotation_ctor_6d2856e8(
+    int SyntaxAnnotation_ctor_03fc3ae7(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string kind,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxAnnotation_ctor_ca78ae06(
+    int SyntaxAnnotation_ctor_70ab33d6(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string kind,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string data,
         out long result

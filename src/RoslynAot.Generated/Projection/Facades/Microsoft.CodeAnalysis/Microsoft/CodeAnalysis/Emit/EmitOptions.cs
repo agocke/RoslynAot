@@ -12,24 +12,24 @@ namespace Microsoft.CodeAnalysis.Emit
     {
         public EmitOptions(bool metadataOnly = false, DebugInformationFormat debugInformationFormat = 0, string? pdbFilePath = null, string? outputNameOverride = null, int fileAlignment = 0, ulong baseAddress = 0, bool highEntropyVirtualAddressSpace = false, SubsystemVersion subsystemVersion = default, string? runtimeMetadataVersion = null, bool tolerateErrors = false, bool includePrivateMembers = true, System.Collections.Immutable.ImmutableArray<InstrumentationKind> instrumentationKinds = default, System.Security.Cryptography.HashAlgorithmName? pdbChecksumAlgorithm = null, System.Text.Encoding? defaultSourceFileEncoding = null, System.Text.Encoding? fallbackSourceFileEncoding = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'instrumentationKinds' is unsupported: Generic substitutions are not supported.");
         }
 
         public EmitOptions(bool metadataOnly, DebugInformationFormat debugInformationFormat, string? pdbFilePath, string? outputNameOverride, int fileAlignment, ulong baseAddress, bool highEntropyVirtualAddressSpace, SubsystemVersion subsystemVersion, string? runtimeMetadataVersion, bool tolerateErrors, bool includePrivateMembers, System.Collections.Immutable.ImmutableArray<InstrumentationKind> instrumentationKinds, System.Security.Cryptography.HashAlgorithmName? pdbChecksumAlgorithm)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'instrumentationKinds' is unsupported: Generic substitutions are not supported.");
         }
 
         public EmitOptions(bool metadataOnly, DebugInformationFormat debugInformationFormat, string pdbFilePath, string outputNameOverride, int fileAlignment, ulong baseAddress, bool highEntropyVirtualAddressSpace, SubsystemVersion subsystemVersion, string runtimeMetadataVersion, bool tolerateErrors, bool includePrivateMembers, System.Collections.Immutable.ImmutableArray<InstrumentationKind> instrumentationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'instrumentationKinds' is unsupported: Generic substitutions are not supported.");
         }
 
         public EmitOptions(bool metadataOnly, DebugInformationFormat debugInformationFormat, string pdbFilePath, string outputNameOverride, int fileAlignment, ulong baseAddress, bool highEntropyVirtualAddressSpace, SubsystemVersion subsystemVersion, string runtimeMetadataVersion, bool tolerateErrors, bool includePrivateMembers)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IEmitOptionsTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetEmitOptionsTypeVtbl(controlVtbl);
-            int status = vtbl.EmitOptions_ctor_910d9a8c(metadataOnly ? 1 : 0, (int)debugInformationFormat, pdbFilePath, outputNameOverride, fileAlignment, baseAddress, highEntropyVirtualAddressSpace ? 1 : 0, subsystemVersion.__RoslynAotGetHandle(), runtimeMetadataVersion, tolerateErrors ? 1 : 0, includePrivateMembers ? 1 : 0, out long result);
+            int status = vtbl.EmitOptions_ctor_095de26e(metadataOnly ? 1 : 0, (int)debugInformationFormat, pdbFilePath, outputNameOverride, fileAlignment, baseAddress, highEntropyVirtualAddressSpace ? 1 : 0, subsystemVersion.__RoslynAotGetHandle(), runtimeMetadataVersion, tolerateErrors ? 1 : 0, includePrivateMembers ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetEmitOptionsVtbl(controlVtbl);
@@ -64,7 +64,7 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
         }
 
@@ -84,7 +84,7 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
         }
 
@@ -128,7 +128,7 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -147,7 +147,7 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
         }
 
@@ -201,14 +201,14 @@ namespace Microsoft.CodeAnalysis.Emit
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IEmitOptionsVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.EmitOptions_Equals_6cab27c9(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.EmitOptions_Equals_aeb1e085(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public override bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override int GetHashCode()
@@ -222,12 +222,12 @@ namespace Microsoft.CodeAnalysis.Emit
 
         public static bool operator ==(EmitOptions? left, EmitOptions? right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(EmitOptions? left, EmitOptions? right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public EmitOptions WithBaseAddress(ulong value)
@@ -250,7 +250,7 @@ namespace Microsoft.CodeAnalysis.Emit
 
         public EmitOptions WithDefaultSourceFileEncoding(System.Text.Encoding? defaultSourceFileEncoding)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'defaultSourceFileEncoding' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public EmitOptions WithEmitMetadataOnly(bool value)
@@ -264,7 +264,7 @@ namespace Microsoft.CodeAnalysis.Emit
 
         public EmitOptions WithFallbackSourceFileEncoding(System.Text.Encoding? fallbackSourceFileEncoding)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'fallbackSourceFileEncoding' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public EmitOptions WithFileAlignment(int value)
@@ -296,7 +296,7 @@ namespace Microsoft.CodeAnalysis.Emit
 
         public EmitOptions WithInstrumentationKinds(System.Collections.Immutable.ImmutableArray<InstrumentationKind> instrumentationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'instrumentationKinds' is unsupported: Generic substitutions are not supported.");
         }
 
         public EmitOptions WithOutputNameOverride(string outputName)
@@ -310,7 +310,7 @@ namespace Microsoft.CodeAnalysis.Emit
 
         public EmitOptions WithPdbChecksumAlgorithm(System.Security.Cryptography.HashAlgorithmName name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'name' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public EmitOptions WithPdbFilePath(string path)

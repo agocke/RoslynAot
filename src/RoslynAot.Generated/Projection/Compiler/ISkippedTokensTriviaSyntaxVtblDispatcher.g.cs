@@ -27,7 +27,7 @@ internal sealed partial class ISkippedTokensTriviaSyntaxVtblDispatcher : IISkipp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(825);
+        RoslynCallCounters.Record(4761);
         result = default;
 
         try

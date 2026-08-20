@@ -25,24 +25,7 @@ namespace Microsoft.CodeAnalysis.Emit
 
             init
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-            }
-        }
-
-        public bool MethodImplEntriesSupported
-        {
-            get
-            {
-                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-                global::RoslynAot.Abi.IEmitDifferenceOptionsVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.EmitDifferenceOptions_get_MethodImplEntriesSupported(__RoslynAotGetHandle(), out int result);
-                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-                return result != 0;
-            }
-
-            init
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
         }
 

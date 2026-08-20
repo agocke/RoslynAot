@@ -23,12 +23,12 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int AwaitExpressionInfo_Equals_ebfc1f36(
+    public int AwaitExpressionInfo_Equals_f03ec81b(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1890);
+        RoslynCallCounters.Record(0);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1891);
+        RoslynCallCounters.Record(1);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1892);
+        RoslynCallCounters.Record(2);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1893);
+        RoslynCallCounters.Record(3);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1894);
+        RoslynCallCounters.Record(4);
         result = default;
 
         try
@@ -118,7 +118,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1895);
+        RoslynCallCounters.Record(5);
         result = default;
 
         try
@@ -136,7 +136,7 @@ internal sealed partial class AwaitExpressionInfoVtblDispatcher : IAwaitExpressi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1896);
+        RoslynCallCounters.Record(6);
         result = default;
 
         try

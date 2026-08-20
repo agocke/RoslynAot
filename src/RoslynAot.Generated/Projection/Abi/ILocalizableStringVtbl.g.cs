@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("cd1b0226-3b8c-51f2-af32-4ca80984f4b6")]
+[Guid("2795d534-ba1c-508b-9df2-f433cb4f53c3")]
 public partial interface ILocalizableStringVtbl
 {
 
     [PreserveSig]
-    int LocalizableString_Equals_5694416a(
+    int LocalizableString_Equals_2df59e44(
         long receiver,
         long other,
         out int result
@@ -30,7 +30,7 @@ public partial interface ILocalizableStringVtbl
     );
 
     [PreserveSig]
-    int LocalizableString_ToString_a1eaba99(
+    int LocalizableString_ToString_8f4eb01b(
         long receiver,
         nint buffer,
         int bufferLength,

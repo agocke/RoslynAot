@@ -60,17 +60,17 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public DirectiveTriviaSyntax? GetNextDirective(System.Func<DirectiveTriviaSyntax, bool>? predicate = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'predicate' is unsupported: Delegates are not supported.");
         }
 
         public DirectiveTriviaSyntax? GetPreviousDirective(System.Func<DirectiveTriviaSyntax, bool>? predicate = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'predicate' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.List<DirectiveTriviaSyntax> GetRelatedDirectives()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public DirectiveTriviaSyntax WithEndOfDirectiveToken(SyntaxToken endOfDirectiveToken)
@@ -97,7 +97,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static DirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (DirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("97311aad-a3da-5b7b-a7ea-fcc06f00ee93")]
+        [System.Runtime.InteropServices.Guid("465b85c0-58e3-5f6c-a1ea-64ba03986e95")]
         internal partial interface __RoslynAotImplementation : DirectiveTriviaSyntax
         {
         }

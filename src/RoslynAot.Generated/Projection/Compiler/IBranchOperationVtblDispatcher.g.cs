@@ -27,7 +27,7 @@ internal sealed partial class IBranchOperationVtblDispatcher : IIBranchOperation
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1008);
+        RoslynCallCounters.Record(4942);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IBranchOperationVtblDispatcher : IIBranchOperation
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1009);
+        RoslynCallCounters.Record(4943);
         result = default;
 
         try

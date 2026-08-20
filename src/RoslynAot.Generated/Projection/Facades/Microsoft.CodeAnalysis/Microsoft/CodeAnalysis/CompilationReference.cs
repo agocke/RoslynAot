@@ -41,14 +41,14 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICompilationReferenceVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CompilationReference_Equals_776ef3ef(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.CompilationReference_Equals_7eebd428(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public override bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override int GetHashCode()
@@ -62,12 +62,12 @@ namespace Microsoft.CodeAnalysis
 
         public new CompilationReference WithAliases(System.Collections.Generic.IEnumerable<string> aliases)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'aliases' is unsupported: Generic substitutions are not supported.");
         }
 
         public new CompilationReference WithAliases(System.Collections.Immutable.ImmutableArray<string> aliases)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'aliases' is unsupported: Generic substitutions are not supported.");
         }
 
         public new CompilationReference WithEmbedInteropTypes(bool value)

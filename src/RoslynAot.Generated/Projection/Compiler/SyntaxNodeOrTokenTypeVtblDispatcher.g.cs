@@ -28,7 +28,7 @@ internal sealed partial class SyntaxNodeOrTokenTypeVtblDispatcher : ISyntaxNodeO
         int position,
         out int result)
     {
-        RoslynCallCounters.Record(1602);
+        RoslynCallCounters.Record(5536);
         result = default;
 
         try

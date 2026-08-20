@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
-            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_9f59464b(token.__RoslynAotGetHandle(), indentation, elasticTrivia ? 1 : 0, out long result);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_2b27303c(token.__RoslynAotGetHandle(), indentation, elasticTrivia ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -23,7 +23,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
-            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_799da1df(token.__RoslynAotGetHandle(), indentation, eol, elasticTrivia ? 1 : 0, out long result);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_db917b8c(token.__RoslynAotGetHandle(), indentation, eol, elasticTrivia ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -32,7 +32,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
-            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_682062f5(list.__RoslynAotGetHandle(), indentation, elasticTrivia ? 1 : 0, out long result);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_3943fd9d(list.__RoslynAotGetHandle(), indentation, elasticTrivia ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTriviaList.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -41,29 +41,29 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxExtensionsVtbl(controlVtbl);
-            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_aec4c5f5(list.__RoslynAotGetHandle(), indentation, eol, elasticTrivia ? 1 : 0, out long result);
+            int status = vtbl.SyntaxExtensions_NormalizeWhitespace_60efd197(list.__RoslynAotGetHandle(), indentation, eol, elasticTrivia ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTriviaList.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public static SyntaxTriviaList ToSyntaxTriviaList(this System.Collections.Generic.IEnumerable<SyntaxTrivia> sequence)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'sequence' is unsupported: Generic substitutions are not supported.");
         }
 
         public static Syntax.IndexerDeclarationSyntax Update(this Syntax.IndexerDeclarationSyntax syntax, SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, Syntax.TypeSyntax type, Syntax.ExplicitInterfaceSpecifierSyntax explicitInterfaceSpecifier, SyntaxToken thisKeyword, Syntax.BracketedParameterListSyntax parameterList, Syntax.AccessorListSyntax accessorList)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public static Syntax.MethodDeclarationSyntax Update(this Syntax.MethodDeclarationSyntax syntax, SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, Syntax.TypeSyntax returnType, Syntax.ExplicitInterfaceSpecifierSyntax explicitInterfaceSpecifier, SyntaxToken identifier, Syntax.TypeParameterListSyntax typeParameterList, Syntax.ParameterListSyntax parameterList, SyntaxList<Syntax.TypeParameterConstraintClauseSyntax> constraintClauses, Syntax.BlockSyntax block, SyntaxToken semicolonToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public static Syntax.OperatorDeclarationSyntax Update(this Syntax.OperatorDeclarationSyntax syntax, SyntaxList<Syntax.AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, Syntax.TypeSyntax returnType, SyntaxToken operatorKeyword, SyntaxToken operatorToken, Syntax.ParameterListSyntax parameterList, Syntax.BlockSyntax block, SyntaxToken semicolonToken)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public static Syntax.SimpleNameSyntax WithIdentifier(this Syntax.SimpleNameSyntax simpleName, SyntaxToken identifier)

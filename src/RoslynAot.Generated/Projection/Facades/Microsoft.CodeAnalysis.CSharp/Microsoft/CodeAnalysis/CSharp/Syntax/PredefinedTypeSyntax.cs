@@ -26,13 +26,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IPredefinedTypeSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.PredefinedTypeSyntax_Accept_9b7b70df(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.PredefinedTypeSyntax_Accept_1e758080(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public PredefinedTypeSyntax Update(SyntaxToken keyword)
@@ -59,7 +59,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static PredefinedTypeSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (PredefinedTypeSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("8efb9a3d-c967-5f50-8aa6-ad1ac9a20dab")]
+        [System.Runtime.InteropServices.Guid("03e32ef3-6c0d-5530-94d6-3dbb8eb6bce0")]
         internal partial interface __RoslynAotImplementation : PredefinedTypeSyntax
         {
         }

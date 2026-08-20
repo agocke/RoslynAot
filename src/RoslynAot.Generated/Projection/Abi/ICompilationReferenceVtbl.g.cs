@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("43e68619-73d2-5a2a-9cc0-5604505c9c62")]
+[Guid("9bf2a0f1-9234-5506-9ac7-808b409e0aab")]
 public partial interface ICompilationReferenceVtbl : IMetadataReferenceVtbl
 {
 
     [PreserveSig]
-    int CompilationReference_Equals_776ef3ef(
+    int CompilationReference_Equals_7eebd428(
         long receiver,
         long other,
         out int result

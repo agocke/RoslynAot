@@ -134,7 +134,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
         }
 
@@ -225,7 +225,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
         }
 
@@ -276,7 +276,7 @@ namespace Microsoft.CodeAnalysis
 
         public System.Collections.Generic.IEnumerable<SyntaxToken> ChildTokens()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public bool Contains(SyntaxNode? node)
@@ -300,72 +300,72 @@ namespace Microsoft.CodeAnalysis
         public sealed T? CopyAnnotationsTo<T>(T? node)
             where T : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNode> DescendantNodes(Text.TextSpan span, System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNode> DescendantNodes(System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNode> DescendantNodesAndSelf(Text.TextSpan span, System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNode> DescendantNodesAndSelf(System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNodeOrToken> DescendantNodesAndTokens(Text.TextSpan span, System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNodeOrToken> DescendantNodesAndTokens(System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNodeOrToken> DescendantNodesAndTokensAndSelf(Text.TextSpan span, System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNodeOrToken> DescendantNodesAndTokensAndSelf(System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxToken> DescendantTokens(Text.TextSpan span, System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxToken> DescendantTokens(System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxTrivia> DescendantTrivia(Text.TextSpan span, System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxTrivia> DescendantTrivia(System.Func<SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'descendIntoChildren' is unsupported: Delegates are not supported.");
         }
 
         protected bool EquivalentToCore(SyntaxNode other)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public SyntaxNode FindNode(Text.TextSpan span, bool findInsideTrivia = false, bool getInnermostNodeForTie = false)
@@ -388,50 +388,50 @@ namespace Microsoft.CodeAnalysis
 
         protected SyntaxToken FindTokenCore(int position, bool findInsideTrivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         protected SyntaxToken FindTokenCore(int position, System.Func<SyntaxTrivia, bool> stepInto)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public SyntaxTrivia FindTrivia(int position, bool findInsideTrivia = false)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxNodeVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxNode_FindTrivia_77d2dcea(__RoslynAotGetHandle(), position, findInsideTrivia ? 1 : 0, out long result);
+            int status = vtbl.SyntaxNode_FindTrivia_492be64f(__RoslynAotGetHandle(), position, findInsideTrivia ? 1 : 0, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }
 
         public SyntaxTrivia FindTrivia(int position, System.Func<SyntaxTrivia, bool>? stepInto)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'stepInto' is unsupported: Delegates are not supported.");
         }
 
         protected SyntaxTrivia FindTriviaCore(int position, bool findInsideTrivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public sealed TNode? FirstAncestorOrSelf<TNode>(System.Func<TNode, bool>? predicate = null, bool ascendOutOfTrivia = true)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public sealed TNode? FirstAncestorOrSelf<TNode, TArg>(System.Func<TNode, TArg, bool> predicate, TArg argument, bool ascendOutOfTrivia = true)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNode> GetAnnotatedNodes(SyntaxAnnotation syntaxAnnotation)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxNodeVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxNode_GetAnnotatedNodes_01e7ee64(__RoslynAotGetHandle(), syntaxAnnotation.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.SyntaxNode_GetAnnotatedNodes_b8ff998e(__RoslynAotGetHandle(), syntaxAnnotation.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<SyntaxNode>(controlVtbl, result, static (controlVtbl, handle) => SyntaxNode.__RoslynAotCreateProxy(controlVtbl, handle));
         }
@@ -440,61 +440,61 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxNodeVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxNode_GetAnnotatedNodes_b1864f23(__RoslynAotGetHandle(), annotationKind, out long result);
+            int status = vtbl.SyntaxNode_GetAnnotatedNodes_70fe6c46(__RoslynAotGetHandle(), annotationKind, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<SyntaxNode>(controlVtbl, result, static (controlVtbl, handle) => SyntaxNode.__RoslynAotCreateProxy(controlVtbl, handle));
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNodeOrToken> GetAnnotatedNodesAndTokens(SyntaxAnnotation annotation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNodeOrToken> GetAnnotatedNodesAndTokens(string annotationKind)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxNodeOrToken> GetAnnotatedNodesAndTokens(params string[] annotationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotationKinds' is unsupported: Arrays are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxToken> GetAnnotatedTokens(SyntaxAnnotation syntaxAnnotation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxToken> GetAnnotatedTokens(string annotationKind)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxTrivia> GetAnnotatedTrivia(SyntaxAnnotation annotation)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxTrivia> GetAnnotatedTrivia(string annotationKind)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxTrivia> GetAnnotatedTrivia(params string[] annotationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotationKinds' is unsupported: Arrays are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxAnnotation> GetAnnotations(System.Collections.Generic.IEnumerable<string> annotationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotationKinds' is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Collections.Generic.IEnumerable<SyntaxAnnotation> GetAnnotations(string annotationKind)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxNodeVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxNode_GetAnnotations_58d1040b(__RoslynAotGetHandle(), annotationKind, out long result);
+            int status = vtbl.SyntaxNode_GetAnnotations_58f716e4(__RoslynAotGetHandle(), annotationKind, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<SyntaxAnnotation>(controlVtbl, result, static (controlVtbl, handle) => SyntaxAnnotation.__RoslynAotCreateProxy(controlVtbl, handle));
         }
@@ -543,13 +543,13 @@ namespace Microsoft.CodeAnalysis
         protected sealed T? GetRed<T>(ref T? field, int slot)
             where T : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         protected sealed T? GetRedAtZero<T>(ref T? field)
             where T : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public SyntaxReference GetReference()
@@ -563,7 +563,7 @@ namespace Microsoft.CodeAnalysis
 
         public Text.SourceText GetText(System.Text.Encoding? encoding = null, Text.SourceHashAlgorithm checksumAlgorithm = Text.SourceHashAlgorithm.Sha1)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'encoding' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public SyntaxTriviaList GetTrailingTrivia()
@@ -586,38 +586,38 @@ namespace Microsoft.CodeAnalysis
 
         public bool HasAnnotations(System.Collections.Generic.IEnumerable<string> annotationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotationKinds' is unsupported: Generic substitutions are not supported.");
         }
 
         public bool HasAnnotations(string annotationKind)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxNodeVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxNode_HasAnnotations_c7b9640f(__RoslynAotGetHandle(), annotationKind, out int result);
+            int status = vtbl.SyntaxNode_HasAnnotations_62fde8c4(__RoslynAotGetHandle(), annotationKind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         protected internal SyntaxNode InsertNodesInListCore(SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<SyntaxNode> nodesToInsert, bool insertBefore)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         protected internal SyntaxNode InsertTokensInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens, bool insertBefore)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         protected internal SyntaxNode InsertTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia, bool insertBefore)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public bool IsEquivalentTo(SyntaxNode node, bool topLevel = false)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxNodeVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxNode_IsEquivalentTo_99548ef5(__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), topLevel ? 1 : 0, out int result);
+            int status = vtbl.SyntaxNode_IsEquivalentTo_bc722036(__RoslynAotGetHandle(), node.__RoslynAotGetHandle(), topLevel ? 1 : 0, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -626,14 +626,14 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxNodeVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxNode_IsEquivalentTo_8d5726aa(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.SyntaxNode_IsEquivalentTo_654f551e(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         protected bool IsEquivalentToCore(SyntaxNode node, bool topLevel = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public bool IsIncrementallyIdenticalTo(SyntaxNode? other)
@@ -656,39 +656,39 @@ namespace Microsoft.CodeAnalysis
 
         protected internal SyntaxNode NormalizeWhitespaceCore(string indentation, string eol, bool elasticTrivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         protected internal SyntaxNode? RemoveNodesCore(System.Collections.Generic.IEnumerable<SyntaxNode> nodes, SyntaxRemoveOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         protected internal sealed SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode>? nodes = null, System.Func<TNode, TNode, SyntaxNode>? computeReplacementNode = null, System.Collections.Generic.IEnumerable<SyntaxToken>? tokens = null, System.Func<SyntaxToken, SyntaxToken, SyntaxToken>? computeReplacementToken = null, System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia = null, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia>? computeReplacementTrivia = null)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         protected internal SyntaxNode ReplaceNodeInListCore(SyntaxNode originalNode, System.Collections.Generic.IEnumerable<SyntaxNode> replacementNodes)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         protected internal SyntaxNode ReplaceTokenInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         protected internal SyntaxNode ReplaceTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         [System.Obsolete("Syntax serialization support is no longer supported", true)]
         public void SerializeTo(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public string ToFullString()
@@ -709,7 +709,7 @@ namespace Microsoft.CodeAnalysis
 
         public void WriteTo(System.IO.TextWriter writer)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'writer' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;
@@ -718,7 +718,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SyntaxNode __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SyntaxNode)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("9a26df5c-02cc-5bec-850b-4fdc1aecd92d")]
+        [System.Runtime.InteropServices.Guid("270f9b13-462e-5b90-a59f-2833e2aadd2f")]
         internal partial interface __RoslynAotImplementation : SyntaxNode
         {
         }

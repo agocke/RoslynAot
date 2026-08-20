@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("26cec153-7641-5115-980b-75576848f7f0")]
+[Guid("c9c178f6-3671-5dbb-b428-54cbfe8879f9")]
 public partial interface IInterceptableLocationVtbl
 {
 
     [PreserveSig]
-    int InterceptableLocation_Equals_ddbefe89(
+    int InterceptableLocation_Equals_80c52ece(
         long receiver,
         long other,
         out int result

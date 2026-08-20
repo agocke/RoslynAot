@@ -27,7 +27,7 @@ internal sealed partial class ISymbolExtensionsVtblDispatcher : IISymbolExtensio
         long @method,
         out long result)
     {
-        RoslynCallCounters.Record(857);
+        RoslynCallCounters.Record(4793);
         result = default;
 
         try

@@ -23,11 +23,11 @@ internal sealed partial class SyntaxTriviaListTypeVtblDispatcher : ISyntaxTrivia
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxTriviaList_ctor_476e443c(
+    public int SyntaxTriviaList_ctor_5a77ce48(
         long trivia,
         out long result)
     {
-        RoslynCallCounters.Record(1766);
+        RoslynCallCounters.Record(5700);
         result = default;
 
         try
@@ -41,11 +41,11 @@ internal sealed partial class SyntaxTriviaListTypeVtblDispatcher : ISyntaxTrivia
         }
     }
 
-    public int SyntaxTriviaList_Create_bcf3c646(
+    public int SyntaxTriviaList_Create_2357d37e(
         long trivia,
         out long result)
     {
-        RoslynCallCounters.Record(1769);
+        RoslynCallCounters.Record(5703);
         result = default;
 
         try
@@ -62,7 +62,7 @@ internal sealed partial class SyntaxTriviaListTypeVtblDispatcher : ISyntaxTrivia
     public int SyntaxTriviaList_get_Empty(
         out long result)
     {
-        RoslynCallCounters.Record(1785);
+        RoslynCallCounters.Record(5719);
         result = default;
 
         try

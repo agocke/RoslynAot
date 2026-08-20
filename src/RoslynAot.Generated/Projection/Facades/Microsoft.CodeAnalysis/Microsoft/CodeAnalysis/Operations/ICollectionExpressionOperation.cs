@@ -10,15 +10,6 @@ namespace Microsoft.CodeAnalysis.Operations
 {
     public partial interface ICollectionExpressionOperation : IOperation
     {
-        [System.Diagnostics.CodeAnalysis.Experimental("RSEXPERIMENTAL006", UrlFormat = "https://github.com/dotnet/roslyn/issues/82210")]
-        System.Collections.Immutable.ImmutableArray<IOperation> ConstructArguments
-        {
-            get
-            {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
-            }
-        }
-
         IMethodSymbol? ConstructMethod
         {
             get
@@ -49,7 +40,7 @@ namespace Microsoft.CodeAnalysis.Operations
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ICollectionExpressionOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ICollectionExpressionOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f2358aee-905e-5d4e-afd3-db46e274d4f4")]
+        [System.Runtime.InteropServices.Guid("ce1f22d9-f546-5672-bec7-f87739cd1eaf")]
         internal partial interface __RoslynAotImplementation : ICollectionExpressionOperation
         {
         }

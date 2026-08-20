@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b2b0b3c8-6f71-54c9-88c1-e5743af9c1c0")]
+[Guid("3fdbb253-e7f2-56be-bb07-3ffdcdbb6ea1")]
 public partial interface IAdditionalFileAnalysisContextVtbl
 {
 

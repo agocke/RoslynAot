@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IINamespaceSymbolVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.INamespaceSymbol_GetMembers_b2cc9712(__RoslynAotGetHandle(), out long result);
+            int status = vtbl.INamespaceSymbol_GetMembers_ff191725(__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<INamespaceOrTypeSymbol>(controlVtbl, result, static (controlVtbl, handle) => INamespaceOrTypeSymbol.__RoslynAotCreateProxy(controlVtbl, handle));
         }
@@ -71,7 +71,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IINamespaceSymbolVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.INamespaceSymbol_GetMembers_943d81e8(__RoslynAotGetHandle(), name, out long result);
+            int status = vtbl.INamespaceSymbol_GetMembers_7236ffee(__RoslynAotGetHandle(), name, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<INamespaceOrTypeSymbol>(controlVtbl, result, static (controlVtbl, handle) => INamespaceOrTypeSymbol.__RoslynAotCreateProxy(controlVtbl, handle));
         }
@@ -91,7 +91,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static INamespaceSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (INamespaceSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("3198e978-b6ce-5fe8-86f4-894d1c75a776")]
+        [System.Runtime.InteropServices.Guid("444bded8-39ec-566a-b563-ffd5b7d806dc")]
         internal partial interface __RoslynAotImplementation : INamespaceSymbol
         {
         }

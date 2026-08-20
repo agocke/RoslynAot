@@ -38,13 +38,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISelectClauseSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SelectClauseSyntax_Accept_36f69a3b(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.SelectClauseSyntax_Accept_52afb107(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
         public sealed TResult? Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public SelectClauseSyntax Update(SyntaxToken selectKeyword, ExpressionSyntax expression)
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SelectClauseSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SelectClauseSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("155a61c0-2f23-5fc9-beba-9ecbdd430c55")]
+        [System.Runtime.InteropServices.Guid("ec0b4c30-4d7c-5953-8f92-6f2798e85c6a")]
         internal partial interface __RoslynAotImplementation : SelectClauseSyntax
         {
         }

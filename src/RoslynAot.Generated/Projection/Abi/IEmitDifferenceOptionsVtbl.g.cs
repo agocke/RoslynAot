@@ -12,18 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("41d043ad-7ea7-5c79-9af1-acbf51deeff1")]
+[Guid("b19eea43-734e-5fed-94e5-9d5729d911ed")]
 public partial interface IEmitDifferenceOptionsVtbl
 {
 
     [PreserveSig]
     int EmitDifferenceOptions_get_EmitFieldRva(
-        long receiver,
-        out int result
-    );
-
-    [PreserveSig]
-    int EmitDifferenceOptions_get_MethodImplEntriesSupported(
         long receiver,
         out int result
     );

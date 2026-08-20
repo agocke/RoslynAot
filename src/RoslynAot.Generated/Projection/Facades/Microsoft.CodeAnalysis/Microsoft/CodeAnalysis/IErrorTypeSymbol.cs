@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IErrorTypeSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IErrorTypeSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("16a4da6c-6301-5e73-9768-f393d5510130")]
+        [System.Runtime.InteropServices.Guid("22bf5e5f-845d-508c-858b-3d8b2410ab94")]
         internal partial interface __RoslynAotImplementation : IErrorTypeSymbol
         {
         }

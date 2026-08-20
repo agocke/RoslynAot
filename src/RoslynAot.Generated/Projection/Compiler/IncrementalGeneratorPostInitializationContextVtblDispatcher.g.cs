@@ -26,7 +26,7 @@ internal sealed partial class IncrementalGeneratorPostInitializationContextVtblD
     public int IncrementalGeneratorPostInitializationContext_AddEmbeddedAttributeDefinition(
         long receiver)
     {
-        RoslynCallCounters.Record(902);
+        RoslynCallCounters.Record(4836);
 
         try
         {
@@ -39,12 +39,12 @@ internal sealed partial class IncrementalGeneratorPostInitializationContextVtblD
         }
     }
 
-    public int IncrementalGeneratorPostInitializationContext_AddSource_7da845f5(
+    public int IncrementalGeneratorPostInitializationContext_AddSource_a4d98e8b(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         long sourceText)
     {
-        RoslynCallCounters.Record(903);
+        RoslynCallCounters.Record(4837);
 
         try
         {
@@ -57,12 +57,12 @@ internal sealed partial class IncrementalGeneratorPostInitializationContextVtblD
         }
     }
 
-    public int IncrementalGeneratorPostInitializationContext_AddSource_d5ba85dc(
+    public int IncrementalGeneratorPostInitializationContext_AddSource_0bfdbc1f(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string hintName,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string source)
     {
-        RoslynCallCounters.Record(904);
+        RoslynCallCounters.Record(4838);
 
         try
         {

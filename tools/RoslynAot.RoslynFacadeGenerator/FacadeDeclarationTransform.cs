@@ -10,9 +10,26 @@ namespace RoslynAot.RoslynFacadeGenerator;
 
 internal sealed class FacadeDeclarationTransform
 {
-    private const string UnsupportedStatement =
+    internal const string UnsupportedMessage =
+        "This Roslyn API is not implemented by RoslynAot.";
+
+    /// <summary>
+    /// The throw carries the model's reason for the member being unsupported,
+    /// not just the bare sentence. The reason is already computed and already
+    /// hashed into <c>ManifestIdentity</c>; the caller who hits the throw is
+    /// the one person who needs it, and it was previously recoverable only by
+    /// grepping ProjectionInventory.txt for the member's canonical id. A null
+    /// reason means the member has no projected call at all, so there is
+    /// nothing more specific to say than the sentence.
+    /// </summary>
+    internal static string GetUnsupportedStatement(string? reason) =>
         "throw new global::System.PlatformNotSupportedException(" +
-        "\"This Roslyn API is not implemented by RoslynAot.\");";
+        SymbolDisplay.FormatLiteral(
+            reason is null
+                ? UnsupportedMessage
+                : $"{UnsupportedMessage} {reason}",
+            quote: true) +
+        ");";
 
     private readonly ProjectionModel _model;
     private readonly SyntaxGenerator _syntaxGenerator;
@@ -749,10 +766,14 @@ internal sealed class FacadeDeclarationTransform
                     [
                         SyntaxFactory.AccessorDeclaration(
                                 SyntaxKind.AddAccessorDeclaration)
-                            .WithBody(GetUnsupportedBody()),
+                            .WithBody(
+                                GetUnsupportedBody(
+                                    projection?.UnsupportedReason)),
                         SyntaxFactory.AccessorDeclaration(
                                 SyntaxKind.RemoveAccessorDeclaration)
-                            .WithBody(GetUnsupportedBody()),
+                            .WithBody(
+                                GetUnsupportedBody(
+                                    projection?.UnsupportedReason)),
                     ])));
     }
 
@@ -769,9 +790,9 @@ internal sealed class FacadeDeclarationTransform
         return SyntaxFactory.TokenList(tokens);
     }
 
-    private static BlockSyntax GetUnsupportedBody() =>
+    private static BlockSyntax GetUnsupportedBody(string? reason) =>
         SyntaxFactory.Block(
-            SyntaxFactory.ParseStatement(UnsupportedStatement));
+            SyntaxFactory.ParseStatement(GetUnsupportedStatement(reason)));
 
     private ConstructorDeclarationSyntax RewriteConstructor(
         ConstructorDeclarationSyntax declaration,
@@ -974,8 +995,7 @@ internal sealed class FacadeDeclarationTransform
 
         if (operation is null || !operation.IsSupported)
         {
-            return SyntaxFactory.Block(
-                SyntaxFactory.ParseStatement(UnsupportedStatement));
+            return GetUnsupportedBody(operation?.UnsupportedReason);
         }
 
         return SyntaxFactory.Block(
@@ -1418,6 +1438,7 @@ internal static class AnalyzerLocalFacadeEmitter
             ? [.. FacadeBodyEmitter.GetStatements(operation)]
             :
             [
-                "throw new global::System.PlatformNotSupportedException(\"This Roslyn API is not implemented by RoslynAot.\");",
+                FacadeDeclarationTransform.GetUnsupportedStatement(
+                    operation.UnsupportedReason),
             ];
 }

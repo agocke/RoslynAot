@@ -14,20 +14,20 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
         }
 
         public static int Compare(System.ReadOnlySpan<char> left, System.ReadOnlySpan<char> right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'left' is unsupported: Generic substitutions are not supported.");
         }
 
         public static int Compare(string left, string right)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
-            int status = vtbl.CaseInsensitiveComparison_Compare_e1a3ffb4(left, right, out int result);
+            int status = vtbl.CaseInsensitiveComparison_Compare_2fc5336e(left, right, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result;
         }
@@ -43,14 +43,14 @@ namespace Microsoft.CodeAnalysis
 
         public static bool Equals(System.ReadOnlySpan<char> left, System.ReadOnlySpan<char> right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'left' is unsupported: Generic substitutions are not supported.");
         }
 
         public static bool Equals(string left, string right)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
-            int status = vtbl.CaseInsensitiveComparison_Equals_a37f5eb5(left, right, out int result);
+            int status = vtbl.CaseInsensitiveComparison_Equals_053ef8b7(left, right, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -77,7 +77,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
-            int status = vtbl.CaseInsensitiveComparison_ToLower_8c71e35e((ushort)c, out ushort result);
+            int status = vtbl.CaseInsensitiveComparison_ToLower_721fabe1((ushort)c, out ushort result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return (char)result;
         }
@@ -86,12 +86,12 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICaseInsensitiveComparisonVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCaseInsensitiveComparisonVtbl(controlVtbl);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CaseInsensitiveComparison_ToLower_1414d7b2(value, buffer, bufferLength, out requiredLength));
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.CaseInsensitiveComparison_ToLower_41ba8453(value, buffer, bufferLength, out requiredLength));
         }
 
         public static void ToLower(System.Text.StringBuilder builder)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'builder' is unsupported: The type is not part of a generated facade assembly.");
         }
     }
 }

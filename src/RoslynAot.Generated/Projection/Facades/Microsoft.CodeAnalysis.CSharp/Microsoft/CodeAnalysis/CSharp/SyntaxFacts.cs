@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -74,7 +74,7 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static System.Collections.Generic.IEnumerable<SyntaxKind> GetContextualKeywordKinds()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static SyntaxKind GetInstanceExpression(SyntaxKind token)
@@ -97,7 +97,7 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static System.Collections.Generic.IEnumerable<SyntaxKind> GetKeywordKinds()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static SyntaxKind GetLiteralExpression(SyntaxKind token)
@@ -147,7 +147,7 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static System.Collections.Generic.IEnumerable<SyntaxKind> GetPreprocessorKeywordKinds()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static SyntaxKind GetPrimaryFunction(SyntaxKind keyword)
@@ -161,12 +161,12 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static System.Collections.Generic.IEnumerable<SyntaxKind> GetPunctuationKinds()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static System.Collections.Generic.IEnumerable<SyntaxKind> GetReservedKeywordKinds()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static SyntaxKind GetSwitchLabelKind(SyntaxKind keyword)
@@ -182,14 +182,14 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactsVtbl(controlVtbl);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxFacts_GetText_4c6897c1((int)accessibility, buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxFacts_GetText_f270a3ea((int)accessibility, buffer, bufferLength, out requiredLength))!;
         }
 
         public static string GetText(SyntaxKind kind)
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxFactsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxFactsVtbl(controlVtbl);
-            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxFacts_GetText_96c87d32((ushort)kind, buffer, bufferLength, out requiredLength))!;
+            return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadUtf16String(controlVtbl, (nint buffer, int bufferLength, out int requiredLength) => vtbl.SyntaxFacts_GetText_5bb0e388((ushort)kind, buffer, bufferLength, out requiredLength))!;
         }
 
         public static SyntaxKind GetTypeDeclarationKind(SyntaxKind kind)
@@ -438,7 +438,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         [System.Obsolete("IsLambdaBody API is obsolete", true)]
         public static bool IsLambdaBody(SyntaxNode node)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public static bool IsLanguagePunctuation(SyntaxKind kind)

@@ -283,6 +283,12 @@ internal sealed class ProjectionModel
             type => (ISymbol)type.Symbol,
             SymbolEqualityComparer.Default);
 
+        // The full assembly identity belongs here, unlike in
+        // GetMemberSignature: this is the value both sides compare to
+        // decide they were built from the same projection, and a projection
+        // of Roslyn 5.0 is not the same contract as one of 5.10 even where
+        // no vtbl changed shape. Version-sensitivity is this hash's job and
+        // no vtbl id's.
         string identityInput = string.Join(
             "\n",
             assemblies
@@ -1979,35 +1985,47 @@ internal static class CanonicalSignatureBuilder
                 "No documentation comment id exists for " +
                 $"'{symbol.ToDisplayString()}'."));
 
+    /// <summary>
+    /// The signature that vtbl ids and disambiguating operation-name
+    /// suffixes are hashed from. The prefix is the assembly *name*, never
+    /// its full identity: a projection contains exactly one assembly of a
+    /// given name, so version, culture and public key token disambiguate
+    /// nothing, and carrying them would make every vtbl id a function of
+    /// the projected Roslyn's version. Whether the two sides agree on a
+    /// projection is ManifestIdentity's question, asked once; a vtbl id
+    /// answers whether two interfaces have the same shape. Matches
+    /// <see cref="GetCanonicalId"/> and <see cref="GetNamedTypeName"/>,
+    /// which have always used the name alone.
+    /// </summary>
     public static string GetMemberSignature(ISymbol symbol) =>
         symbol switch
         {
             INamedTypeSymbol type =>
-                $"{type.ContainingAssembly.Identity}::type:" +
+                $"{type.ContainingAssembly.Identity.Name}::type:" +
                 GetTypeName(type),
             IMethodSymbol method => GetOperationSignature(method),
             IPropertySymbol property =>
-                $"{property.ContainingAssembly.Identity}::property:" +
+                $"{property.ContainingAssembly.Identity.Name}::property:" +
                 $"{GetTypeName(property.ContainingType)}::" +
                 $"{property.MetadataName}" +
                 $"({string.Join(",", property.Parameters.Select(GetParameter))})" +
                 $":{GetTypeName(property.Type)}",
             IEventSymbol @event =>
-                $"{@event.ContainingAssembly.Identity}::event:" +
+                $"{@event.ContainingAssembly.Identity.Name}::event:" +
                 $"{GetTypeName(@event.ContainingType)}::" +
                 $"{@event.MetadataName}:{GetTypeName(@event.Type)}",
             IFieldSymbol field =>
-                $"{field.ContainingAssembly.Identity}::field:" +
+                $"{field.ContainingAssembly.Identity.Name}::field:" +
                 $"{GetTypeName(field.ContainingType)}::" +
                 $"{field.MetadataName}:{GetTypeName(field.Type)}",
             _ =>
-                $"{symbol.ContainingAssembly?.Identity}::{symbol.Kind}:" +
+                $"{symbol.ContainingAssembly?.Identity.Name}::{symbol.Kind}:" +
                 symbol.ToDisplayString(
                     SymbolDisplayFormat.FullyQualifiedFormat),
         };
 
     public static string GetOperationSignature(IMethodSymbol method) =>
-        $"{method.ContainingAssembly.Identity}::method:" +
+        $"{method.ContainingAssembly.Identity.Name}::method:" +
         $"{GetTypeName(method.ContainingType)}::{method.MetadataName}``" +
         $"{method.Arity}" +
         $"({string.Join(",", method.Parameters.Select(GetParameter))})" +

@@ -12,132 +12,132 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("6cbee307-d13d-5f91-9e08-a5f5ac8127a5")]
+[Guid("07cd2285-2b92-5c44-be7d-75bcb9f9c76e")]
 public partial interface ISymbolVisitorVtbl
 {
 
     [PreserveSig]
-    int SymbolVisitor_DefaultVisit_d281354f(
+    int SymbolVisitor_DefaultVisit_09b51b00(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitAlias_84c6158b(
+    int SymbolVisitor_VisitAlias_f752e245(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitArrayType_7815ab5f(
+    int SymbolVisitor_VisitArrayType_5b7abd1e(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitAssembly_7d69a90a(
+    int SymbolVisitor_VisitAssembly_5b970ef5(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitDiscard_1997debd(
+    int SymbolVisitor_VisitDiscard_edace507(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitDynamicType_5fd15c97(
+    int SymbolVisitor_VisitDynamicType_c1e183c4(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitEvent_790ec947(
+    int SymbolVisitor_VisitEvent_6c8a4dfb(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitField_3020f12b(
+    int SymbolVisitor_VisitField_6b91f589(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitFunctionPointerType_82035c67(
+    int SymbolVisitor_VisitFunctionPointerType_220da029(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitLabel_f455e18a(
+    int SymbolVisitor_VisitLabel_1e42480e(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitLocal_13a52542(
+    int SymbolVisitor_VisitLocal_8ab21beb(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitMethod_e3be520f(
+    int SymbolVisitor_VisitMethod_8a9d04bf(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitModule_1209bef2(
+    int SymbolVisitor_VisitModule_d22d9385(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitNamedType_8a2a4d2f(
+    int SymbolVisitor_VisitNamedType_3cc57517(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitNamespace_8cc36cc0(
+    int SymbolVisitor_VisitNamespace_7bdb03ac(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitParameter_a7988495(
+    int SymbolVisitor_VisitParameter_a94a1706(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitPointerType_a87aa150(
+    int SymbolVisitor_VisitPointerType_96d945c2(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitProperty_90561396(
+    int SymbolVisitor_VisitProperty_b5c3d4a0(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitRangeVariable_cc61555d(
+    int SymbolVisitor_VisitRangeVariable_bcbcf7ce(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_VisitTypeParameter_149e82c2(
+    int SymbolVisitor_VisitTypeParameter_18b1b346(
         long receiver,
         long symbol
     );
 
     [PreserveSig]
-    int SymbolVisitor_Visit_5f3bdc49(
+    int SymbolVisitor_Visit_fb9ed0d0(
         long receiver,
         long symbol
     );

@@ -23,12 +23,12 @@ internal sealed partial class SyntaxTokenListReversedVtblDispatcher : ISyntaxTok
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxTokenList_Reversed_Equals_d155bfc8(
+    public int SyntaxTokenList_Reversed_Equals_a321f37d(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1696);
+        RoslynCallCounters.Record(5630);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SyntaxTokenListReversedVtblDispatcher : ISyntaxTok
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1697);
+        RoslynCallCounters.Record(5631);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class SyntaxTokenListReversedVtblDispatcher : ISyntaxTok
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1698);
+        RoslynCallCounters.Record(5632);
         result = default;
 
         try

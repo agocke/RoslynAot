@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("85ca191b-751b-50c9-abc7-e11aab604e90")]
+[Guid("25cba9a8-39ba-5186-b43c-3cd2577163f5")]
 public partial interface IQueryClauseInfoVtbl
 {
 
     [PreserveSig]
-    int QueryClauseInfo_Equals_960e0ade(
+    int QueryClauseInfo_Equals_6e055c70(
         long receiver,
         long other,
         out int result

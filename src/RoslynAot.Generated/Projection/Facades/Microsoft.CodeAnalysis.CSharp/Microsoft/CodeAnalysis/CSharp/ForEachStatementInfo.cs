@@ -36,18 +36,6 @@ namespace Microsoft.CodeAnalysis.CSharp
             }
         }
 
-        public AwaitExpressionInfo DisposeAwaitableInfo
-        {
-            get
-            {
-                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-                global::RoslynAot.Abi.IForEachStatementInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ForEachStatementInfo_get_DisposeAwaitableInfo(__RoslynAotGetHandle(), out long result);
-                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-                return AwaitExpressionInfo.__RoslynAotCreateProxy(controlVtbl, result);
-            }
-        }
-
         public IMethodSymbol? DisposeMethod
         {
             get
@@ -108,18 +96,6 @@ namespace Microsoft.CodeAnalysis.CSharp
             }
         }
 
-        public AwaitExpressionInfo MoveNextAwaitableInfo
-        {
-            get
-            {
-                global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
-                global::RoslynAot.Abi.IForEachStatementInfoVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ForEachStatementInfo_get_MoveNextAwaitableInfo(__RoslynAotGetHandle(), out long result);
-                global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
-                return AwaitExpressionInfo.__RoslynAotCreateProxy(controlVtbl, result);
-            }
-        }
-
         public IMethodSymbol? MoveNextMethod
         {
             get
@@ -136,14 +112,14 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IForEachStatementInfoVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ForEachStatementInfo_Equals_c22decb1(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.ForEachStatementInfo_Equals_86fb9f81(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
 
         public override readonly bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override readonly int GetHashCode()
