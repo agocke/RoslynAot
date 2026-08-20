@@ -1718,8 +1718,20 @@ internal static class ProjectionOutputEmitter
                     identityLow != RoslynAbi.ManifestIdentityLow ||
                     identityHigh != RoslynAbi.ManifestIdentityHigh)
                 {
+                    // The one check that a native analyzer module and the
+                    // compiler it was loaded into were built from the same
+                    // projection. Both identities go in the message: knowing
+                    // that they differ is not actionable, knowing which two
+                    // they are points at the mismatched package.
                     throw new InvalidOperationException(
-                        "The compiler Roslyn projection manifest is incompatible.");
+                        "This analyzer was built against Roslyn projection " +
+                        $"manifest {FormatIdentity(RoslynAbi.ManifestIdentityLow, RoslynAbi.ManifestIdentityHigh)}, " +
+                        "but the compiler provides " +
+                        $"{(status == RoslynAbi.Success ? FormatIdentity(identityLow, identityHigh) : "no readable identity")}. " +
+                        "Rebuild the analyzer against the compiler's RoslynAot package.")
+                    {
+                        HResult = AnalyzerAbi.IncompatibleVersion,
+                    };
                 }
 
                 s_controlVtbl ??= controlVtbl;
@@ -1741,6 +1753,17 @@ internal static class ProjectionOutputEmitter
 
                 return controlVtbl;
             }
+
+            /// <summary>
+            /// Renders the identity halves the way the manifest records
+            /// them, so a mismatch can be matched against the identity= line
+            /// of ProjectionInventory.txt by eye.
+            /// </summary>
+            private static string FormatIdentity(long low, long high) =>
+                Convert.ToHexString(BitConverter.GetBytes(low))
+                    .ToLowerInvariant() +
+                Convert.ToHexString(BitConverter.GetBytes(high))
+                    .ToLowerInvariant();
 
             public static IRoslynControlVtbl GetCurrentControlVtbl() =>
                 s_current.Value ?? throw new InvalidOperationException(
