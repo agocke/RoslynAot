@@ -27,7 +27,7 @@ internal sealed partial class ISlicePatternOperationVtblDispatcher : IISlicePatt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1187);
+        RoslynCallCounters.Record(5126);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ISlicePatternOperationVtblDispatcher : IISlicePatt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1188);
+        RoslynCallCounters.Record(5127);
         result = default;
 
         try

@@ -12,18 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ca0c82ec-59be-5e56-8c84-d42f28dec365")]
+[Guid("dc9d3f02-368a-5316-a777-129fc02062a7")]
 public partial interface ISubpatternSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int SubpatternSyntax_Accept_9e035bec(
+    int SubpatternSyntax_Accept_355c2de1(
         long receiver,
         long visitor
     );
 
     [PreserveSig]
-    int SubpatternSyntax_Update_53580a5b(
+    int SubpatternSyntax_Update_b7a22113(
         long receiver,
         long expressionColon,
         long pattern,
@@ -31,7 +31,7 @@ public partial interface ISubpatternSyntaxVtbl : ICSharpSyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int SubpatternSyntax_Update_42427d8b(
+    int SubpatternSyntax_Update_1f847243(
         long receiver,
         long nameColon,
         long pattern,

@@ -26,7 +26,7 @@ internal sealed partial class CSharpDiagnosticFormatterTypeVtblDispatcher : ICSh
     public int CSharpDiagnosticFormatter_get_Instance(
         out long result)
     {
-        RoslynCallCounters.Record(1951);
+        RoslynCallCounters.Record(66);
         result = default;
 
         try

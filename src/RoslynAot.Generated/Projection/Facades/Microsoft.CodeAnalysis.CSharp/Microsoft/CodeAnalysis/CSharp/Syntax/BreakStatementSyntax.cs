@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IBreakStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.BreakStatementSyntax_Accept_0b31a4ae(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.BreakStatementSyntax_Accept_6568738c(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -73,7 +73,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IBreakStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.BreakStatementSyntax_Update_b356d913(__RoslynAotGetHandle(), breakKeyword.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.BreakStatementSyntax_Update_db4c21b5(__RoslynAotGetHandle(), breakKeyword.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -107,7 +107,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static BreakStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (BreakStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("3b5ff7e6-0032-5859-9bfd-ac9530ed9fee")]
+        [System.Runtime.InteropServices.Guid("1e38efac-a729-5e06-89ae-8bbd0eba24da")]
         internal partial interface __RoslynAotImplementation : BreakStatementSyntax
         {
         }

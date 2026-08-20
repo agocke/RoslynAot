@@ -110,7 +110,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IPragmaChecksumDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.PragmaChecksumDirectiveTriviaSyntax_Accept_eda65782(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.PragmaChecksumDirectiveTriviaSyntax_Accept_a8ee0618(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -206,7 +206,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static PragmaChecksumDirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (PragmaChecksumDirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("40d18273-8848-5d73-809b-3a5b33b01a97")]
+        [System.Runtime.InteropServices.Guid("1357c309-5975-5a9c-96b2-bb796ad04d10")]
         internal partial interface __RoslynAotImplementation : PragmaChecksumDirectiveTriviaSyntax
         {
         }

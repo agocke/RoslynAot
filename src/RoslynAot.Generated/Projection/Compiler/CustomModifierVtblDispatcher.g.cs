@@ -27,7 +27,7 @@ internal sealed partial class CustomModifierVtblDispatcher : ICustomModifierVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(221);
+        RoslynCallCounters.Record(4160);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class CustomModifierVtblDispatcher : ICustomModifierVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(222);
+        RoslynCallCounters.Record(4161);
         result = default;
 
         try

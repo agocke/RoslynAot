@@ -82,7 +82,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IWhileStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.WhileStatementSyntax_Accept_38d16219(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.WhileStatementSyntax_Accept_c7ec8003(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -109,7 +109,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IWhileStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.WhileStatementSyntax_Update_e422eee3(__RoslynAotGetHandle(), whileKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), condition.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.WhileStatementSyntax_Update_7b449f91(__RoslynAotGetHandle(), whileKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), condition.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -170,7 +170,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static WhileStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (WhileStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f31ebfa1-1dd3-5f8f-9947-20812425844f")]
+        [System.Runtime.InteropServices.Guid("589461f7-466c-5289-a6fa-0b9447c07397")]
         internal partial interface __RoslynAotImplementation : WhileStatementSyntax
         {
         }

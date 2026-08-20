@@ -14,7 +14,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpGeneratorDriverTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpGeneratorDriverTypeVtbl(controlVtbl);
-            int status = vtbl.CSharpGeneratorDriver_Create_03af5102(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(incrementalGenerators, item => item.__RoslynAotGetHandle())), out long result);
+            int status = vtbl.CSharpGeneratorDriver_Create_b609a3f1(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(incrementalGenerators, item => item.__RoslynAotGetHandle())), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -23,7 +23,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ICSharpGeneratorDriverTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCSharpGeneratorDriverTypeVtbl(controlVtbl);
-            int status = vtbl.CSharpGeneratorDriver_Create_16f4ea7d(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(generators, item => item.__RoslynAotGetHandle())), out long result);
+            int status = vtbl.CSharpGeneratorDriver_Create_5b18e47b(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(generators, item => item.__RoslynAotGetHandle())), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }

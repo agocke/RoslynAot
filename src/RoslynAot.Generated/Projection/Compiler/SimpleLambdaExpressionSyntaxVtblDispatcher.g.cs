@@ -28,7 +28,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1545);
+        RoslynCallCounters.Record(5484);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1546);
+        RoslynCallCounters.Record(5485);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1547);
+        RoslynCallCounters.Record(5486);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1548);
+        RoslynCallCounters.Record(5487);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1549);
+        RoslynCallCounters.Record(5488);
         result = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int rawKind,
         out int result)
     {
-        RoslynCallCounters.Record(1550);
+        RoslynCallCounters.Record(5489);
         result = default;
 
         try
@@ -140,7 +140,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long node,
         out int result)
     {
-        RoslynCallCounters.Record(1551);
+        RoslynCallCounters.Record(5490);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int getInnermostNodeForTie,
         out long result)
     {
-        RoslynCallCounters.Record(1552);
+        RoslynCallCounters.Record(5491);
         result = default;
 
         try
@@ -181,7 +181,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1553);
+        RoslynCallCounters.Record(5492);
         result = default;
 
         try
@@ -195,13 +195,13 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int SyntaxNode_FindTrivia_4df38632(
+    public int SyntaxNode_FindTrivia_492be64f(
         long receiver,
         int position,
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1554);
+        RoslynCallCounters.Record(5493);
         result = default;
 
         try
@@ -215,12 +215,12 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int SyntaxNode_GetAnnotatedNodes_9faf7329(
+    public int SyntaxNode_GetAnnotatedNodes_b8ff998e(
         long receiver,
         long syntaxAnnotation,
         out long result)
     {
-        RoslynCallCounters.Record(1555);
+        RoslynCallCounters.Record(5494);
         result = default;
 
         try
@@ -234,12 +234,12 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int SyntaxNode_GetAnnotatedNodes_6bfe4f62(
+    public int SyntaxNode_GetAnnotatedNodes_70fe6c46(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1556);
+        RoslynCallCounters.Record(5495);
         result = default;
 
         try
@@ -253,12 +253,12 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int SyntaxNode_GetAnnotations_06632e87(
+    public int SyntaxNode_GetAnnotations_58f716e4(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1557);
+        RoslynCallCounters.Record(5496);
         result = default;
 
         try
@@ -276,7 +276,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1558);
+        RoslynCallCounters.Record(5497);
         result = default;
 
         try
@@ -298,7 +298,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1559);
+        RoslynCallCounters.Record(5498);
         result = default;
 
         try
@@ -320,7 +320,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1560);
+        RoslynCallCounters.Record(5499);
         result = default;
 
         try
@@ -338,7 +338,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1561);
+        RoslynCallCounters.Record(5500);
         result = default;
 
         try
@@ -356,7 +356,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1562);
+        RoslynCallCounters.Record(5501);
         result = default;
 
         try
@@ -374,7 +374,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1563);
+        RoslynCallCounters.Record(5502);
         result = default;
 
         try
@@ -392,7 +392,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1564);
+        RoslynCallCounters.Record(5503);
         result = default;
 
         try
@@ -411,7 +411,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1565);
+        RoslynCallCounters.Record(5504);
         result = default;
 
         try
@@ -425,12 +425,12 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int SyntaxNode_HasAnnotations_df998836(
+    public int SyntaxNode_HasAnnotations_62fde8c4(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1566);
+        RoslynCallCounters.Record(5505);
         result = default;
 
         try
@@ -444,12 +444,12 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_d60824bb(
+    public int SyntaxNode_IsEquivalentTo_654f551e(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1567);
+        RoslynCallCounters.Record(5506);
         result = default;
 
         try
@@ -463,13 +463,13 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_5ef9167a(
+    public int SyntaxNode_IsEquivalentTo_bc722036(
         long receiver,
         long node,
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(1568);
+        RoslynCallCounters.Record(5507);
         result = default;
 
         try
@@ -488,7 +488,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1569);
+        RoslynCallCounters.Record(5508);
         result = default;
 
         try
@@ -506,7 +506,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1570);
+        RoslynCallCounters.Record(5509);
         result = default;
 
         try
@@ -526,7 +526,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1571);
+        RoslynCallCounters.Record(5510);
         requiredLength = default;
 
         try
@@ -552,7 +552,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1572);
+        RoslynCallCounters.Record(5511);
         requiredLength = default;
 
         try
@@ -576,7 +576,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1573);
+        RoslynCallCounters.Record(5512);
         result = default;
 
         try
@@ -594,7 +594,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1574);
+        RoslynCallCounters.Record(5513);
         result = default;
 
         try
@@ -612,7 +612,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1575);
+        RoslynCallCounters.Record(5514);
         result = default;
 
         try
@@ -630,7 +630,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1576);
+        RoslynCallCounters.Record(5515);
         result = default;
 
         try
@@ -648,7 +648,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1577);
+        RoslynCallCounters.Record(5516);
         result = default;
 
         try
@@ -666,7 +666,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1578);
+        RoslynCallCounters.Record(5517);
         result = default;
 
         try
@@ -684,7 +684,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1579);
+        RoslynCallCounters.Record(5518);
         result = default;
 
         try
@@ -702,7 +702,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1580);
+        RoslynCallCounters.Record(5519);
         result = default;
 
         try
@@ -720,7 +720,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1581);
+        RoslynCallCounters.Record(5520);
         result = default;
 
         try
@@ -738,7 +738,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1582);
+        RoslynCallCounters.Record(5521);
         result = default;
 
         try
@@ -758,7 +758,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1583);
+        RoslynCallCounters.Record(5522);
         requiredLength = default;
 
         try
@@ -782,7 +782,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1584);
+        RoslynCallCounters.Record(5523);
         result = default;
 
         try
@@ -800,7 +800,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1585);
+        RoslynCallCounters.Record(5524);
         result = default;
 
         try
@@ -818,7 +818,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1586);
+        RoslynCallCounters.Record(5525);
         result = default;
 
         try
@@ -836,7 +836,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1587);
+        RoslynCallCounters.Record(5526);
         result = default;
 
         try
@@ -854,7 +854,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1588);
+        RoslynCallCounters.Record(5527);
         result = default;
 
         try
@@ -872,7 +872,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1589);
+        RoslynCallCounters.Record(5528);
         result = default;
 
         try
@@ -886,11 +886,11 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int CSharpSyntaxNode_Accept_c31df31f(
+    public int CSharpSyntaxNode_Accept_c6820613(
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(2006);
+        RoslynCallCounters.Record(121);
 
         try
         {
@@ -909,7 +909,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(2007);
+        RoslynCallCounters.Record(122);
         result = default;
 
         try
@@ -923,13 +923,13 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int CSharpSyntaxNode_FindTrivia_09c524df(
+    public int CSharpSyntaxNode_FindTrivia_7dd8134f(
         long receiver,
         int position,
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(2008);
+        RoslynCallCounters.Record(123);
         result = default;
 
         try
@@ -947,7 +947,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2009);
+        RoslynCallCounters.Record(124);
         result = default;
 
         try
@@ -969,7 +969,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(2010);
+        RoslynCallCounters.Record(125);
         result = default;
 
         try
@@ -991,7 +991,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(2011);
+        RoslynCallCounters.Record(126);
         result = default;
 
         try
@@ -1009,7 +1009,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2012);
+        RoslynCallCounters.Record(127);
         result = default;
 
         try
@@ -1027,7 +1027,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2013);
+        RoslynCallCounters.Record(128);
         result = default;
 
         try
@@ -1045,7 +1045,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2014);
+        RoslynCallCounters.Record(129);
         result = default;
 
         try
@@ -1063,7 +1063,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out ushort result)
     {
-        RoslynCallCounters.Record(2015);
+        RoslynCallCounters.Record(130);
         result = default;
 
         try
@@ -1083,7 +1083,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2016);
+        RoslynCallCounters.Record(131);
         requiredLength = default;
 
         try
@@ -1108,7 +1108,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(2636);
+        RoslynCallCounters.Record(751);
         result = default;
 
         try
@@ -1127,7 +1127,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(2637);
+        RoslynCallCounters.Record(752);
         result = default;
 
         try
@@ -1146,7 +1146,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long asyncKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(2638);
+        RoslynCallCounters.Record(753);
         result = default;
 
         try
@@ -1165,7 +1165,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(2639);
+        RoslynCallCounters.Record(754);
         result = default;
 
         try
@@ -1184,7 +1184,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(2640);
+        RoslynCallCounters.Record(755);
         result = default;
 
         try
@@ -1203,7 +1203,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(2641);
+        RoslynCallCounters.Record(756);
         result = default;
 
         try
@@ -1222,7 +1222,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(2642);
+        RoslynCallCounters.Record(757);
         result = default;
 
         try
@@ -1240,7 +1240,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2643);
+        RoslynCallCounters.Record(758);
         result = default;
 
         try
@@ -1258,7 +1258,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2644);
+        RoslynCallCounters.Record(759);
         result = default;
 
         try
@@ -1276,7 +1276,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2645);
+        RoslynCallCounters.Record(760);
         result = default;
 
         try
@@ -1294,7 +1294,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2646);
+        RoslynCallCounters.Record(761);
         result = default;
 
         try
@@ -1312,7 +1312,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2647);
+        RoslynCallCounters.Record(762);
         result = default;
 
         try
@@ -1331,7 +1331,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3944);
+        RoslynCallCounters.Record(2059);
         result = default;
 
         try
@@ -1350,7 +1350,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3945);
+        RoslynCallCounters.Record(2060);
         result = default;
 
         try
@@ -1369,7 +1369,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(3946);
+        RoslynCallCounters.Record(2061);
         result = default;
 
         try
@@ -1388,7 +1388,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long arrowToken,
         out long result)
     {
-        RoslynCallCounters.Record(3947);
+        RoslynCallCounters.Record(2062);
         result = default;
 
         try
@@ -1407,7 +1407,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long asyncKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(3948);
+        RoslynCallCounters.Record(2063);
         result = default;
 
         try
@@ -1426,7 +1426,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(3949);
+        RoslynCallCounters.Record(2064);
         result = default;
 
         try
@@ -1445,7 +1445,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(3950);
+        RoslynCallCounters.Record(2065);
         result = default;
 
         try
@@ -1464,7 +1464,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(3951);
+        RoslynCallCounters.Record(2066);
         result = default;
 
         try
@@ -1483,7 +1483,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(3952);
+        RoslynCallCounters.Record(2067);
         result = default;
 
         try
@@ -1501,7 +1501,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3953);
+        RoslynCallCounters.Record(2068);
         result = default;
 
         try
@@ -1515,11 +1515,11 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int SimpleLambdaExpressionSyntax_Accept_ccd6d4ab(
+    public int SimpleLambdaExpressionSyntax_Accept_75efbca3(
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(4617);
+        RoslynCallCounters.Record(2732);
 
         try
         {
@@ -1537,7 +1537,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(4618);
+        RoslynCallCounters.Record(2733);
         result = default;
 
         try
@@ -1556,7 +1556,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(4619);
+        RoslynCallCounters.Record(2734);
         result = default;
 
         try
@@ -1575,7 +1575,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(4620);
+        RoslynCallCounters.Record(2735);
         result = default;
 
         try
@@ -1594,7 +1594,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long items,
         out long result)
     {
-        RoslynCallCounters.Record(4621);
+        RoslynCallCounters.Record(2736);
         result = default;
 
         try
@@ -1608,7 +1608,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int SimpleLambdaExpressionSyntax_Update_1df87b4c(
+    public int SimpleLambdaExpressionSyntax_Update_d6c50d22(
         long receiver,
         long asyncKeyword,
         long parameter,
@@ -1616,7 +1616,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(4622);
+        RoslynCallCounters.Record(2737);
         result = default;
 
         try
@@ -1630,7 +1630,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int SimpleLambdaExpressionSyntax_Update_e5c98d73(
+    public int SimpleLambdaExpressionSyntax_Update_2b92d06c(
         long receiver,
         long asyncKeyword,
         long parameter,
@@ -1639,7 +1639,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(4623);
+        RoslynCallCounters.Record(2738);
         result = default;
 
         try
@@ -1653,7 +1653,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         }
     }
 
-    public int SimpleLambdaExpressionSyntax_Update_0ed05747(
+    public int SimpleLambdaExpressionSyntax_Update_fba8f061(
         long receiver,
         long modifiers,
         long parameter,
@@ -1662,7 +1662,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(4624);
+        RoslynCallCounters.Record(2739);
         result = default;
 
         try
@@ -1681,7 +1681,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long arrowToken,
         out long result)
     {
-        RoslynCallCounters.Record(4625);
+        RoslynCallCounters.Record(2740);
         result = default;
 
         try
@@ -1700,7 +1700,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long asyncKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(4626);
+        RoslynCallCounters.Record(2741);
         result = default;
 
         try
@@ -1719,7 +1719,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(4627);
+        RoslynCallCounters.Record(2742);
         result = default;
 
         try
@@ -1738,7 +1738,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(4628);
+        RoslynCallCounters.Record(2743);
         result = default;
 
         try
@@ -1757,7 +1757,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(4629);
+        RoslynCallCounters.Record(2744);
         result = default;
 
         try
@@ -1776,7 +1776,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long modifiers,
         out long result)
     {
-        RoslynCallCounters.Record(4630);
+        RoslynCallCounters.Record(2745);
         result = default;
 
         try
@@ -1795,7 +1795,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long parameter,
         out long result)
     {
-        RoslynCallCounters.Record(4631);
+        RoslynCallCounters.Record(2746);
         result = default;
 
         try
@@ -1813,7 +1813,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4632);
+        RoslynCallCounters.Record(2747);
         result = default;
 
         try
@@ -1831,7 +1831,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4633);
+        RoslynCallCounters.Record(2748);
         result = default;
 
         try
@@ -1849,7 +1849,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4634);
+        RoslynCallCounters.Record(2749);
         result = default;
 
         try
@@ -1867,7 +1867,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4635);
+        RoslynCallCounters.Record(2750);
         result = default;
 
         try
@@ -1885,7 +1885,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4636);
+        RoslynCallCounters.Record(2751);
         result = default;
 
         try
@@ -1903,7 +1903,7 @@ internal sealed partial class SimpleLambdaExpressionSyntaxVtblDispatcher : ISimp
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4637);
+        RoslynCallCounters.Record(2752);
         result = default;
 
         try

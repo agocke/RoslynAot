@@ -23,11 +23,11 @@ internal sealed partial class AnalysisResultVtblDispatcher : IAnalysisResultVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int AnalysisResult_GetAllDiagnostics_311fa3e7(
+    public int AnalysisResult_GetAllDiagnostics_a5ee512b(
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(274);
+        RoslynCallCounters.Record(4213);
         result = default;
 
         try
@@ -41,12 +41,12 @@ internal sealed partial class AnalysisResultVtblDispatcher : IAnalysisResultVtbl
         }
     }
 
-    public int AnalysisResult_GetAllDiagnostics_3b9f118b(
+    public int AnalysisResult_GetAllDiagnostics_aba8fd94(
         long receiver,
         long analyzer,
         out long result)
     {
-        RoslynCallCounters.Record(275);
+        RoslynCallCounters.Record(4214);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class AnalysisResultVtblDispatcher : IAnalysisResultVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(276);
+        RoslynCallCounters.Record(4215);
         result = default;
 
         try

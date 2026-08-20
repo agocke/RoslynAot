@@ -74,7 +74,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IConversionOperatorMemberCrefSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ConversionOperatorMemberCrefSyntax_Accept_1e2bedb1(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ConversionOperatorMemberCrefSyntax_Accept_f8d450cb(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -96,7 +96,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IConversionOperatorMemberCrefSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ConversionOperatorMemberCrefSyntax_Update_1773769c(__RoslynAotGetHandle(), implicitOrExplicitKeyword.__RoslynAotGetHandle(), operatorKeyword.__RoslynAotGetHandle(), @type.__RoslynAotGetHandle(), parameters is null ? 0L : parameters.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.ConversionOperatorMemberCrefSyntax_Update_e392768f(__RoslynAotGetHandle(), implicitOrExplicitKeyword.__RoslynAotGetHandle(), operatorKeyword.__RoslynAotGetHandle(), @type.__RoslynAotGetHandle(), parameters is null ? 0L : parameters.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -105,7 +105,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IConversionOperatorMemberCrefSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ConversionOperatorMemberCrefSyntax_Update_125ea231(__RoslynAotGetHandle(), implicitOrExplicitKeyword.__RoslynAotGetHandle(), operatorKeyword.__RoslynAotGetHandle(), checkedKeyword.__RoslynAotGetHandle(), @type.__RoslynAotGetHandle(), parameters is null ? 0L : parameters.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.ConversionOperatorMemberCrefSyntax_Update_95aea824(__RoslynAotGetHandle(), implicitOrExplicitKeyword.__RoslynAotGetHandle(), operatorKeyword.__RoslynAotGetHandle(), checkedKeyword.__RoslynAotGetHandle(), @type.__RoslynAotGetHandle(), parameters is null ? 0L : parameters.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -161,7 +161,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ConversionOperatorMemberCrefSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ConversionOperatorMemberCrefSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("ffe2cc3d-cd0e-51b7-85f4-ea9977a9d803")]
+        [System.Runtime.InteropServices.Guid("4ecccb27-76e9-52e9-9ad9-c8df7cca22a3")]
         internal partial interface __RoslynAotImplementation : ConversionOperatorMemberCrefSyntax
         {
         }

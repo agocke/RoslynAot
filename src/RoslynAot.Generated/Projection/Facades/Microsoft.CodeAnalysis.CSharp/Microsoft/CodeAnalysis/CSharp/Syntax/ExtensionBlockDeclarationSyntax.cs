@@ -146,7 +146,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IExtensionBlockDeclarationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ExtensionBlockDeclarationSyntax_Accept_11adf678(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ExtensionBlockDeclarationSyntax_Accept_f96310bb(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -294,7 +294,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ExtensionBlockDeclarationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ExtensionBlockDeclarationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("abf643e0-c0e7-5bde-bb2f-fcfd6fad81b9")]
+        [System.Runtime.InteropServices.Guid("edd765a7-a9b9-5c27-9ad4-6ff44114d8b3")]
         internal partial interface __RoslynAotImplementation : ExtensionBlockDeclarationSyntax
         {
         }

@@ -13,9 +13,9 @@ internal static class RoslynAotDerivedProxies
     [global::System.Runtime.CompilerServices.ModuleInitializer]
     internal static void Register()
     {
-        global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.Register(5888310641099443978L, -6025039398404712057L, 6087684757126758118L, -484073451425396076L, 2, static (controlVtbl, handle) => global::Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.__RoslynAotCreateProxy(controlVtbl, handle));
+        global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.Register(6051877633432401859L, -7361254524798083687L, 6330788001369362933L, 1833791196878623887L, 2, static (controlVtbl, handle) => global::Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.__RoslynAotCreateProxy(controlVtbl, handle));
         global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.Register(6412420830151071932L, 4338889509376079787L, 5989628894161898704L, 1578727213959738249L, 2, static (controlVtbl, handle) => global::Microsoft.CodeAnalysis.CSharp.CSharpDiagnosticFormatter.__RoslynAotCreateProxy(controlVtbl, handle));
-        global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.Register(6898319471603002587L, -2738872740812865630L, 6071286748686226568L, -5057790472217548137L, 2, static (controlVtbl, handle) => global::Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.__RoslynAotCreateProxy(controlVtbl, handle));
-        global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.Register(5878323303849557775L, -2398624788155094124L, 6320686311941309976L, 1497616763426435241L, 2, static (controlVtbl, handle) => global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.__RoslynAotCreateProxy(controlVtbl, handle));
+        global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.Register(6336409622503262447L, -3013753246331118172L, 6324306602196097939L, -7973058128339903810L, 2, static (controlVtbl, handle) => global::Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.__RoslynAotCreateProxy(controlVtbl, handle));
+        global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.Register(6687008693247678156L, 4938567660882255013L, 5780203819313946238L, 6625777856044082566L, 2, static (controlVtbl, handle) => global::Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.__RoslynAotCreateProxy(controlVtbl, handle));
     }
 }

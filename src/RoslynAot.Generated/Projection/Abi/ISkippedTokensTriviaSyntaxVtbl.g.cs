@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("113b6962-2ff9-5618-9b93-585e00aec7c4")]
+[Guid("f9088a1b-ba20-5a87-98e9-83f4e3fae86d")]
 public partial interface ISkippedTokensTriviaSyntaxVtbl : IStructuredTriviaSyntaxVtbl
 {
 
     [PreserveSig]
-    int SkippedTokensTriviaSyntax_Accept_ee5b8ff8(
+    int SkippedTokensTriviaSyntax_Accept_97261484(
         long receiver,
         long visitor
     );

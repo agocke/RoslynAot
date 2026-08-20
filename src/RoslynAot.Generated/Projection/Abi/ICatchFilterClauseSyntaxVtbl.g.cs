@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e4209351-8c4e-5cbc-b069-2e4ee73abd89")]
+[Guid("65c7e1b6-8263-5ab5-b73c-3e55f135004e")]
 public partial interface ICatchFilterClauseSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int CatchFilterClauseSyntax_Accept_78d3c525(
+    int CatchFilterClauseSyntax_Accept_a0ad4c6e(
         long receiver,
         long visitor
     );

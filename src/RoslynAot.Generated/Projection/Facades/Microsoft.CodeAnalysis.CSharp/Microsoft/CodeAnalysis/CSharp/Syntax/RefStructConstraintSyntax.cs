@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IRefStructConstraintSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.RefStructConstraintSyntax_Accept_e2cc48b2(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.RefStructConstraintSyntax_Accept_ed12bf0d(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static RefStructConstraintSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (RefStructConstraintSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("7b66e4bf-4468-5109-90fe-e60242680cc9")]
+        [System.Runtime.InteropServices.Guid("4c2cbf27-a463-576a-9164-dc80f415c210")]
         internal partial interface __RoslynAotImplementation : RefStructConstraintSyntax
         {
         }

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b07d3546-5fde-54f1-ac9a-84457ff499d7")]
+[Guid("cf487000-768b-5620-a7af-fbdf5aa4cc65")]
 public partial interface ISymbolInfoVtbl
 {
 
     [PreserveSig]
-    int SymbolInfo_Equals_f1856e79(
+    int SymbolInfo_Equals_803acbc6(
         long receiver,
         long other,
         out int result

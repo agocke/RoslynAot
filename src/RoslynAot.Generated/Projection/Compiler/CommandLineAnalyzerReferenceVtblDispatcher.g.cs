@@ -23,12 +23,12 @@ internal sealed partial class CommandLineAnalyzerReferenceVtblDispatcher : IComm
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CommandLineAnalyzerReference_Equals_9bbeb5ec(
+    public int CommandLineAnalyzerReference_Equals_19a1498d(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(50);
+        RoslynCallCounters.Record(3989);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class CommandLineAnalyzerReferenceVtblDispatcher : IComm
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(51);
+        RoslynCallCounters.Record(3990);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class CommandLineAnalyzerReferenceVtblDispatcher : IComm
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(52);
+        RoslynCallCounters.Record(3991);
         requiredLength = default;
 
         try

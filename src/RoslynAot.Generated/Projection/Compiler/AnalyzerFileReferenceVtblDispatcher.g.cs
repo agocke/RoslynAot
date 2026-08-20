@@ -27,7 +27,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(305);
+        RoslynCallCounters.Record(4244);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)
     {
-        RoslynCallCounters.Record(306);
+        RoslynCallCounters.Record(4245);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(307);
+        RoslynCallCounters.Record(4246);
         result = default;
 
         try
@@ -78,12 +78,12 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         }
     }
 
-    public int AnalyzerReference_GetGenerators_4b9df097(
+    public int AnalyzerReference_GetGenerators_d2b8011a(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)
     {
-        RoslynCallCounters.Record(308);
+        RoslynCallCounters.Record(4247);
         result = default;
 
         try
@@ -103,7 +103,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(309);
+        RoslynCallCounters.Record(4248);
         requiredLength = default;
 
         try
@@ -129,7 +129,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(310);
+        RoslynCallCounters.Record(4249);
         requiredLength = default;
 
         try
@@ -155,7 +155,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         out long constantLow,
         out long constantHigh)
     {
-        RoslynCallCounters.Record(311);
+        RoslynCallCounters.Record(4250);
         constantKind = default;
         constantLow = default;
         constantHigh = default;
@@ -171,12 +171,12 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         }
     }
 
-    public int AnalyzerFileReference_Equals_0e0c6a6b(
+    public int AnalyzerFileReference_Equals_9b87d774(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(282);
+        RoslynCallCounters.Record(4221);
         result = default;
 
         try
@@ -190,12 +190,12 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         }
     }
 
-    public int AnalyzerFileReference_Equals_f0b6fa87(
+    public int AnalyzerFileReference_Equals_b911cee6(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(283);
+        RoslynCallCounters.Record(4222);
         result = default;
 
         try
@@ -213,7 +213,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(284);
+        RoslynCallCounters.Record(4223);
         result = default;
 
         try
@@ -232,7 +232,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)
     {
-        RoslynCallCounters.Record(285);
+        RoslynCallCounters.Record(4224);
         result = default;
 
         try
@@ -250,7 +250,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(286);
+        RoslynCallCounters.Record(4225);
         result = default;
 
         try
@@ -264,12 +264,12 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         }
     }
 
-    public int AnalyzerFileReference_GetGenerators_37c35b4f(
+    public int AnalyzerFileReference_GetGenerators_05fe27be(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string language,
         out long result)
     {
-        RoslynCallCounters.Record(287);
+        RoslynCallCounters.Record(4226);
         result = default;
 
         try
@@ -287,7 +287,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(288);
+        RoslynCallCounters.Record(4227);
         result = default;
 
         try
@@ -307,7 +307,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(289);
+        RoslynCallCounters.Record(4228);
         requiredLength = default;
 
         try
@@ -331,7 +331,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(290);
+        RoslynCallCounters.Record(4229);
         result = default;
 
         try
@@ -351,7 +351,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(291);
+        RoslynCallCounters.Record(4230);
         requiredLength = default;
 
         try
@@ -377,7 +377,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(292);
+        RoslynCallCounters.Record(4231);
         requiredLength = default;
 
         try
@@ -403,7 +403,7 @@ internal sealed partial class AnalyzerFileReferenceVtblDispatcher : IAnalyzerFil
         out long constantLow,
         out long constantHigh)
     {
-        RoslynCallCounters.Record(293);
+        RoslynCallCounters.Record(4232);
         constantKind = default;
         constantLow = default;
         constantHigh = default;

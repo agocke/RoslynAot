@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("40d18273-8848-5d73-809b-3a5b33b01a97")]
+[Guid("1357c309-5975-5a9c-96b2-bb796ad04d10")]
 public partial interface IPragmaChecksumDirectiveTriviaSyntaxVtbl : IDirectiveTriviaSyntaxVtbl
 {
 
     [PreserveSig]
-    int PragmaChecksumDirectiveTriviaSyntax_Accept_eda65782(
+    int PragmaChecksumDirectiveTriviaSyntax_Accept_a8ee0618(
         long receiver,
         long visitor
     );

@@ -34,7 +34,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IEmptyStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.EmptyStatementSyntax_Accept_6c0c69a0(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.EmptyStatementSyntax_Accept_1ed94e8e(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -61,7 +61,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IEmptyStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.EmptyStatementSyntax_Update_86e35435(__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.EmptyStatementSyntax_Update_8de8e7c5(__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -86,7 +86,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static EmptyStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (EmptyStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("5ad737dc-3c63-5602-a9f6-108d751bdb27")]
+        [System.Runtime.InteropServices.Guid("f747124c-9dcc-5e7e-86c0-db99b639f83b")]
         internal partial interface __RoslynAotImplementation : EmptyStatementSyntax
         {
         }

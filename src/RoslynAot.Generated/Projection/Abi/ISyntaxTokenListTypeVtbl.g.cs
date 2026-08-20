@@ -12,18 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("a4c8deef-d157-50aa-90cb-d4175d3116ac")]
+[Guid("abeffae9-2c05-5a5e-99d1-360a567e5c5a")]
 public partial interface ISyntaxTokenListTypeVtbl
 {
 
     [PreserveSig]
-    int SyntaxTokenList_ctor_1404dc02(
+    int SyntaxTokenList_ctor_e23e5738(
         long token,
         out long result
     );
 
     [PreserveSig]
-    int SyntaxTokenList_Create_8777969f(
+    int SyntaxTokenList_Create_17305c4d(
         long token,
         out long result
     );

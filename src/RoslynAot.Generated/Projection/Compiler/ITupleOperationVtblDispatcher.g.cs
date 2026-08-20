@@ -27,7 +27,7 @@ internal sealed partial class ITupleOperationVtblDispatcher : IITupleOperationVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1217);
+        RoslynCallCounters.Record(5156);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ITupleOperationVtblDispatcher : IITupleOperationVt
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1218);
+        RoslynCallCounters.Record(5157);
         result = default;
 
         try

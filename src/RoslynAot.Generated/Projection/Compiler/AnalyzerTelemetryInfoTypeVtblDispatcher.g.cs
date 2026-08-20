@@ -26,7 +26,7 @@ internal sealed partial class AnalyzerTelemetryInfoTypeVtblDispatcher : IAnalyze
     public int AnalyzerTelemetryInfo_ctor(
         out long result)
     {
-        RoslynCallCounters.Record(411);
+        RoslynCallCounters.Record(4350);
         result = default;
 
         try

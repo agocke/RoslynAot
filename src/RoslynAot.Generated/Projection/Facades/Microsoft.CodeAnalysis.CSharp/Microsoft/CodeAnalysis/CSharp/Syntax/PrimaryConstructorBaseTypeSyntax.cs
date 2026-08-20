@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IPrimaryConstructorBaseTypeSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.PrimaryConstructorBaseTypeSyntax_Accept_e9e4d1e7(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.PrimaryConstructorBaseTypeSyntax_Accept_ac5175ba(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -89,7 +89,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static PrimaryConstructorBaseTypeSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (PrimaryConstructorBaseTypeSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("d88c83a9-082a-5460-9421-6cb28702c476")]
+        [System.Runtime.InteropServices.Guid("98858efc-60ed-5106-96cc-30af78fc00de")]
         internal partial interface __RoslynAotImplementation : PrimaryConstructorBaseTypeSyntax
         {
         }

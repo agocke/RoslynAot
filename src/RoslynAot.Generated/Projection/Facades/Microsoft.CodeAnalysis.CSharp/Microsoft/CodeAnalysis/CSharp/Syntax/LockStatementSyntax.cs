@@ -82,7 +82,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILockStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LockStatementSyntax_Accept_80041233(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.LockStatementSyntax_Accept_674aac7b(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -109,7 +109,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILockStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LockStatementSyntax_Update_765f5c80(__RoslynAotGetHandle(), lockKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.LockStatementSyntax_Update_b0c49f7b(__RoslynAotGetHandle(), lockKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -170,7 +170,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static LockStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (LockStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("18cb3d41-66cd-58e1-9b61-783a5f173fd4")]
+        [System.Runtime.InteropServices.Guid("074295cb-924c-5eaf-af47-35295600ff91")]
         internal partial interface __RoslynAotImplementation : LockStatementSyntax
         {
         }

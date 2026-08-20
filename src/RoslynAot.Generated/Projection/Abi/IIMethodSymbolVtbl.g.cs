@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4a8c7a9c-4c5d-5f22-b9d5-d47b010dbffd")]
+[Guid("4c9d3d1c-c370-5293-a512-6fd5254c9229")]
 public partial interface IIMethodSymbolVtbl
 {
 
     [PreserveSig]
-    int IMethodSymbol_Construct_22ba9338(
+    int IMethodSymbol_Construct_c8e9cd5c(
         long receiver,
         long typeArguments,
         out long result

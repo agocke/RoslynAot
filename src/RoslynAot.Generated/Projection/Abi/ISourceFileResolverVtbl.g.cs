@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("368c5d11-a841-5266-8637-92a4989952c9")]
+[Guid("fa5f9396-b0a4-56e9-b90f-e54ca3fc3907")]
 public partial interface ISourceFileResolverVtbl : ISourceReferenceResolverVtbl
 {
 
     [PreserveSig]
-    int SourceFileResolver_Equals_8337d0f5(
+    int SourceFileResolver_Equals_8a8a0114(
         long receiver,
         long other,
         out int result

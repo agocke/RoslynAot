@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("8678f7a9-ccce-5547-b09e-731b15c99825")]
+[Guid("e1bfffad-1fc3-5cb3-8f3c-f6c13fed4c97")]
 public partial interface ICSharpSyntaxNodeVtbl : ISyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int CSharpSyntaxNode_Accept_c31df31f(
+    int CSharpSyntaxNode_Accept_c6820613(
         long receiver,
         long visitor
     );
@@ -31,7 +31,7 @@ public partial interface ICSharpSyntaxNodeVtbl : ISyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int CSharpSyntaxNode_FindTrivia_09c524df(
+    int CSharpSyntaxNode_FindTrivia_7dd8134f(
         long receiver,
         int position,
         int findInsideTrivia,

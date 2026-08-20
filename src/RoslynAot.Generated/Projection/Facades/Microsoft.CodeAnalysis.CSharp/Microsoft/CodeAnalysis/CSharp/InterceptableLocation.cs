@@ -37,7 +37,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IInterceptableLocationVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.InterceptableLocation_Equals_0edbd635(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.InterceptableLocation_Equals_80c52ece(__RoslynAotGetHandle(), other is null ? 0L : other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -70,7 +70,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static InterceptableLocation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (InterceptableLocation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("309c7110-1b54-5f22-8942-6735adcac952")]
+        [System.Runtime.InteropServices.Guid("c9c178f6-3671-5dbb-b428-54cbfe8879f9")]
         internal partial interface __RoslynAotImplementation : InterceptableLocation
         {
         }

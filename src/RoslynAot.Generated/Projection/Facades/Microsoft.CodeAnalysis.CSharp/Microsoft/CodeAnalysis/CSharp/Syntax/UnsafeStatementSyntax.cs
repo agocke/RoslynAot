@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IUnsafeStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.UnsafeStatementSyntax_Accept_e644a379(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.UnsafeStatementSyntax_Accept_454e161c(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -91,7 +91,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IUnsafeStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.UnsafeStatementSyntax_Update_32ecb7af(__RoslynAotGetHandle(), unsafeKeyword.__RoslynAotGetHandle(), block.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.UnsafeStatementSyntax_Update_aa78d1be(__RoslynAotGetHandle(), unsafeKeyword.__RoslynAotGetHandle(), block.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -125,7 +125,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static UnsafeStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (UnsafeStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("1862d67f-8f58-5003-b51f-10a5d5385969")]
+        [System.Runtime.InteropServices.Guid("88abbb34-bd96-5f35-b8bd-e84226be7c8e")]
         internal partial interface __RoslynAotImplementation : UnsafeStatementSyntax
         {
         }

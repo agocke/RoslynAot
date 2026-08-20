@@ -23,10 +23,10 @@ internal sealed partial class GeneratorAttributeTypeVtblDispatcher : IGeneratorA
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int GeneratorAttribute_ctor_c5744252(
+    public int GeneratorAttribute_ctor_cbc7ea9a(
         out long result)
     {
-        RoslynCallCounters.Record(570);
+        RoslynCallCounters.Record(4509);
         result = default;
 
         try

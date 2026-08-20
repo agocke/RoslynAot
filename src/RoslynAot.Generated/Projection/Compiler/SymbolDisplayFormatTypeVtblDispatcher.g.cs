@@ -37,7 +37,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
         int miscellaneousOptions,
         out long result)
     {
-        RoslynCallCounters.Record(1470);
+        RoslynCallCounters.Record(5409);
         result = default;
 
         try
@@ -54,7 +54,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_CSharpErrorMessageFormat(
         out long result)
     {
-        RoslynCallCounters.Record(1490);
+        RoslynCallCounters.Record(5429);
         result = default;
 
         try
@@ -71,7 +71,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_CSharpShortErrorMessageFormat(
         out long result)
     {
-        RoslynCallCounters.Record(1491);
+        RoslynCallCounters.Record(5430);
         result = default;
 
         try
@@ -88,7 +88,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_FullyQualifiedFormat(
         out long result)
     {
-        RoslynCallCounters.Record(1494);
+        RoslynCallCounters.Record(5433);
         result = default;
 
         try
@@ -105,7 +105,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_MinimallyQualifiedFormat(
         out long result)
     {
-        RoslynCallCounters.Record(1500);
+        RoslynCallCounters.Record(5439);
         result = default;
 
         try
@@ -122,7 +122,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_VisualBasicErrorMessageFormat(
         out long result)
     {
-        RoslynCallCounters.Record(1505);
+        RoslynCallCounters.Record(5444);
         result = default;
 
         try
@@ -139,7 +139,7 @@ internal sealed partial class SymbolDisplayFormatTypeVtblDispatcher : ISymbolDis
     public int SymbolDisplayFormat_get_VisualBasicShortErrorMessageFormat(
         out long result)
     {
-        RoslynCallCounters.Record(1506);
+        RoslynCallCounters.Record(5445);
         result = default;
 
         try

@@ -17,7 +17,7 @@ namespace Microsoft.CodeAnalysis.Emit
             this = default;
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IRuntimeRudeEditTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuntimeRudeEditTypeVtbl(controlVtbl);
-            int status = vtbl.RuntimeRudeEdit_ctor_22fadd92(message, errorCode, out long result);
+            int status = vtbl.RuntimeRudeEdit_ctor_c76b3dfd(message, errorCode, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             __roslynAotControlVtbl = controlVtbl;
             __roslynAotVtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetRuntimeRudeEditVtbl(controlVtbl);

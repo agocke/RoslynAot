@@ -27,7 +27,7 @@ internal sealed partial class DesktopStrongNameProviderVtblDispatcher : IDesktop
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1449);
+        RoslynCallCounters.Record(5388);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class DesktopStrongNameProviderVtblDispatcher : IDesktop
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(240);
+        RoslynCallCounters.Record(4179);
         result = default;
 
         try

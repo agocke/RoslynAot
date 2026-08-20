@@ -76,7 +76,7 @@ namespace Microsoft.CodeAnalysis.Operations
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IRecursivePatternOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IRecursivePatternOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("62ee734c-bd66-5c67-9372-08140ff66e16")]
+        [System.Runtime.InteropServices.Guid("435a4e31-d800-512a-a1a8-6059059f73b0")]
         internal partial interface __RoslynAotImplementation : IRecursivePatternOperation
         {
         }

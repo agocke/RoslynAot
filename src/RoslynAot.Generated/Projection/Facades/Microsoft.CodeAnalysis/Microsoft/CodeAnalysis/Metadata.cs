@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static Metadata __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (Metadata)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("3da07aac-2be1-5112-8046-ae5850331d8f")]
+        [System.Runtime.InteropServices.Guid("84d1e751-28c2-5e2b-b88d-a5b329bc098b")]
         internal partial interface __RoslynAotImplementation : Metadata
         {
         }

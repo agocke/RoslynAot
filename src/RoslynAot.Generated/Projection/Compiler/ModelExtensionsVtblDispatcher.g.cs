@@ -23,12 +23,12 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int ModelExtensions_AnalyzeControlFlow_60359e22(
+    public int ModelExtensions_AnalyzeControlFlow_e3b1d041(
         long semanticModel,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(940);
+        RoslynCallCounters.Record(4879);
         result = default;
 
         try
@@ -42,13 +42,13 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         }
     }
 
-    public int ModelExtensions_AnalyzeControlFlow_bd8ea2ed(
+    public int ModelExtensions_AnalyzeControlFlow_79ec334b(
         long semanticModel,
         long firstStatement,
         long lastStatement,
         out long result)
     {
-        RoslynCallCounters.Record(941);
+        RoslynCallCounters.Record(4880);
         result = default;
 
         try
@@ -62,12 +62,12 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         }
     }
 
-    public int ModelExtensions_AnalyzeDataFlow_13158217(
+    public int ModelExtensions_AnalyzeDataFlow_3f9d2c2d(
         long semanticModel,
         long statementOrExpression,
         out long result)
     {
-        RoslynCallCounters.Record(942);
+        RoslynCallCounters.Record(4881);
         result = default;
 
         try
@@ -81,13 +81,13 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         }
     }
 
-    public int ModelExtensions_AnalyzeDataFlow_530954c6(
+    public int ModelExtensions_AnalyzeDataFlow_2356859c(
         long semanticModel,
         long firstStatement,
         long lastStatement,
         out long result)
     {
-        RoslynCallCounters.Record(943);
+        RoslynCallCounters.Record(4882);
         result = default;
 
         try
@@ -108,7 +108,7 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(944);
+        RoslynCallCounters.Record(4883);
         result = default;
 
         try
@@ -129,7 +129,7 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(945);
+        RoslynCallCounters.Record(4884);
         result = default;
 
         try
@@ -150,7 +150,7 @@ internal sealed partial class ModelExtensionsVtblDispatcher : IModelExtensionsVt
         int bindingOption,
         out long result)
     {
-        RoslynCallCounters.Record(946);
+        RoslynCallCounters.Record(4885);
         result = default;
 
         try

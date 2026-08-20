@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("382e58d2-dbc7-51c2-8271-526378ec188a")]
+[Guid("da658dda-132c-51a7-a41e-c5f50971cd84")]
 public partial interface ISuppressionDescriptorVtbl
 {
 
     [PreserveSig]
-    int SuppressionDescriptor_Equals_5379236c(
+    int SuppressionDescriptor_Equals_e020b93e(
         long receiver,
         long other,
         out int result

@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1f65e632-b84c-5914-94ac-207f352e4c91")]
+[Guid("6b676ee9-6d6d-54d8-aef5-627dcaee2b9e")]
 public partial interface IGeneratorTimingInfoVtbl
 {
 

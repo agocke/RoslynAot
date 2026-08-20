@@ -27,7 +27,7 @@ internal sealed partial class IInterpolatedStringHandlerCreationOperationVtblDis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1097);
+        RoslynCallCounters.Record(5036);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IInterpolatedStringHandlerCreationOperationVtblDis
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1098);
+        RoslynCallCounters.Record(5037);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class IInterpolatedStringHandlerCreationOperationVtblDis
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1099);
+        RoslynCallCounters.Record(5038);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class IInterpolatedStringHandlerCreationOperationVtblDis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1100);
+        RoslynCallCounters.Record(5039);
         result = default;
 
         try

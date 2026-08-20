@@ -28,7 +28,7 @@ internal sealed partial class LinePositionVtblDispatcher : ILinePositionVtbl
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1786);
+        RoslynCallCounters.Record(5725);
         result = default;
 
         try
@@ -42,12 +42,12 @@ internal sealed partial class LinePositionVtblDispatcher : ILinePositionVtbl
         }
     }
 
-    public int LinePosition_Equals_f2483e6b(
+    public int LinePosition_Equals_5fc77747(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1787);
+        RoslynCallCounters.Record(5726);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class LinePositionVtblDispatcher : ILinePositionVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1788);
+        RoslynCallCounters.Record(5727);
         result = default;
 
         try
@@ -85,7 +85,7 @@ internal sealed partial class LinePositionVtblDispatcher : ILinePositionVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1789);
+        RoslynCallCounters.Record(5728);
         requiredLength = default;
 
         try
@@ -109,7 +109,7 @@ internal sealed partial class LinePositionVtblDispatcher : ILinePositionVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1790);
+        RoslynCallCounters.Record(5729);
         result = default;
 
         try
@@ -127,7 +127,7 @@ internal sealed partial class LinePositionVtblDispatcher : ILinePositionVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1791);
+        RoslynCallCounters.Record(5730);
         result = default;
 
         try

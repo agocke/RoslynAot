@@ -23,12 +23,12 @@ internal sealed partial class PreprocessingSymbolInfoVtblDispatcher : IPreproces
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int PreprocessingSymbolInfo_Equals_db9763cf(
+    public int PreprocessingSymbolInfo_Equals_b6b21a95(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1405);
+        RoslynCallCounters.Record(5344);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class PreprocessingSymbolInfoVtblDispatcher : IPreproces
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1406);
+        RoslynCallCounters.Record(5345);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class PreprocessingSymbolInfoVtblDispatcher : IPreproces
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1407);
+        RoslynCallCounters.Record(5346);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class PreprocessingSymbolInfoVtblDispatcher : IPreproces
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1408);
+        RoslynCallCounters.Record(5347);
         result = default;
 
         try

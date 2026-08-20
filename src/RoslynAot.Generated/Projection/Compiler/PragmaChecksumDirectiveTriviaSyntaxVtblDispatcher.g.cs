@@ -28,7 +28,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1545);
+        RoslynCallCounters.Record(5484);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int ascendOutOfTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1546);
+        RoslynCallCounters.Record(5485);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1547);
+        RoslynCallCounters.Record(5486);
         result = default;
 
         try
@@ -83,7 +83,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1548);
+        RoslynCallCounters.Record(5487);
         result = default;
 
         try
@@ -102,7 +102,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int position,
         out long result)
     {
-        RoslynCallCounters.Record(1549);
+        RoslynCallCounters.Record(5488);
         result = default;
 
         try
@@ -121,7 +121,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int rawKind,
         out int result)
     {
-        RoslynCallCounters.Record(1550);
+        RoslynCallCounters.Record(5489);
         result = default;
 
         try
@@ -140,7 +140,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long node,
         out int result)
     {
-        RoslynCallCounters.Record(1551);
+        RoslynCallCounters.Record(5490);
         result = default;
 
         try
@@ -161,7 +161,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int getInnermostNodeForTie,
         out long result)
     {
-        RoslynCallCounters.Record(1552);
+        RoslynCallCounters.Record(5491);
         result = default;
 
         try
@@ -181,7 +181,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1553);
+        RoslynCallCounters.Record(5492);
         result = default;
 
         try
@@ -195,13 +195,13 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         }
     }
 
-    public int SyntaxNode_FindTrivia_4df38632(
+    public int SyntaxNode_FindTrivia_492be64f(
         long receiver,
         int position,
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(1554);
+        RoslynCallCounters.Record(5493);
         result = default;
 
         try
@@ -215,12 +215,12 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         }
     }
 
-    public int SyntaxNode_GetAnnotatedNodes_9faf7329(
+    public int SyntaxNode_GetAnnotatedNodes_b8ff998e(
         long receiver,
         long syntaxAnnotation,
         out long result)
     {
-        RoslynCallCounters.Record(1555);
+        RoslynCallCounters.Record(5494);
         result = default;
 
         try
@@ -234,12 +234,12 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         }
     }
 
-    public int SyntaxNode_GetAnnotatedNodes_6bfe4f62(
+    public int SyntaxNode_GetAnnotatedNodes_70fe6c46(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1556);
+        RoslynCallCounters.Record(5495);
         result = default;
 
         try
@@ -253,12 +253,12 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         }
     }
 
-    public int SyntaxNode_GetAnnotations_06632e87(
+    public int SyntaxNode_GetAnnotations_58f716e4(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out long result)
     {
-        RoslynCallCounters.Record(1557);
+        RoslynCallCounters.Record(5496);
         result = default;
 
         try
@@ -276,7 +276,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1558);
+        RoslynCallCounters.Record(5497);
         result = default;
 
         try
@@ -298,7 +298,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1559);
+        RoslynCallCounters.Record(5498);
         result = default;
 
         try
@@ -320,7 +320,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(1560);
+        RoslynCallCounters.Record(5499);
         result = default;
 
         try
@@ -338,7 +338,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1561);
+        RoslynCallCounters.Record(5500);
         result = default;
 
         try
@@ -356,7 +356,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1562);
+        RoslynCallCounters.Record(5501);
         result = default;
 
         try
@@ -374,7 +374,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1563);
+        RoslynCallCounters.Record(5502);
         result = default;
 
         try
@@ -392,7 +392,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1564);
+        RoslynCallCounters.Record(5503);
         result = default;
 
         try
@@ -411,7 +411,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long annotation,
         out int result)
     {
-        RoslynCallCounters.Record(1565);
+        RoslynCallCounters.Record(5504);
         result = default;
 
         try
@@ -425,12 +425,12 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         }
     }
 
-    public int SyntaxNode_HasAnnotations_df998836(
+    public int SyntaxNode_HasAnnotations_62fde8c4(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string annotationKind,
         out int result)
     {
-        RoslynCallCounters.Record(1566);
+        RoslynCallCounters.Record(5505);
         result = default;
 
         try
@@ -444,12 +444,12 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_d60824bb(
+    public int SyntaxNode_IsEquivalentTo_654f551e(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1567);
+        RoslynCallCounters.Record(5506);
         result = default;
 
         try
@@ -463,13 +463,13 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         }
     }
 
-    public int SyntaxNode_IsEquivalentTo_5ef9167a(
+    public int SyntaxNode_IsEquivalentTo_bc722036(
         long receiver,
         long node,
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(1568);
+        RoslynCallCounters.Record(5507);
         result = default;
 
         try
@@ -488,7 +488,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1569);
+        RoslynCallCounters.Record(5508);
         result = default;
 
         try
@@ -506,7 +506,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1570);
+        RoslynCallCounters.Record(5509);
         result = default;
 
         try
@@ -526,7 +526,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1571);
+        RoslynCallCounters.Record(5510);
         requiredLength = default;
 
         try
@@ -552,7 +552,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1572);
+        RoslynCallCounters.Record(5511);
         requiredLength = default;
 
         try
@@ -576,7 +576,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1573);
+        RoslynCallCounters.Record(5512);
         result = default;
 
         try
@@ -594,7 +594,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1574);
+        RoslynCallCounters.Record(5513);
         result = default;
 
         try
@@ -612,7 +612,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1575);
+        RoslynCallCounters.Record(5514);
         result = default;
 
         try
@@ -630,7 +630,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1576);
+        RoslynCallCounters.Record(5515);
         result = default;
 
         try
@@ -648,7 +648,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1577);
+        RoslynCallCounters.Record(5516);
         result = default;
 
         try
@@ -666,7 +666,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1578);
+        RoslynCallCounters.Record(5517);
         result = default;
 
         try
@@ -684,7 +684,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1579);
+        RoslynCallCounters.Record(5518);
         result = default;
 
         try
@@ -702,7 +702,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1580);
+        RoslynCallCounters.Record(5519);
         result = default;
 
         try
@@ -720,7 +720,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1581);
+        RoslynCallCounters.Record(5520);
         result = default;
 
         try
@@ -738,7 +738,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1582);
+        RoslynCallCounters.Record(5521);
         result = default;
 
         try
@@ -758,7 +758,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1583);
+        RoslynCallCounters.Record(5522);
         requiredLength = default;
 
         try
@@ -782,7 +782,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1584);
+        RoslynCallCounters.Record(5523);
         result = default;
 
         try
@@ -800,7 +800,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1585);
+        RoslynCallCounters.Record(5524);
         result = default;
 
         try
@@ -818,7 +818,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1586);
+        RoslynCallCounters.Record(5525);
         result = default;
 
         try
@@ -836,7 +836,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1587);
+        RoslynCallCounters.Record(5526);
         result = default;
 
         try
@@ -854,7 +854,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1588);
+        RoslynCallCounters.Record(5527);
         result = default;
 
         try
@@ -872,7 +872,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1589);
+        RoslynCallCounters.Record(5528);
         result = default;
 
         try
@@ -886,11 +886,11 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         }
     }
 
-    public int CSharpSyntaxNode_Accept_c31df31f(
+    public int CSharpSyntaxNode_Accept_c6820613(
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(2006);
+        RoslynCallCounters.Record(121);
 
         try
         {
@@ -909,7 +909,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(2007);
+        RoslynCallCounters.Record(122);
         result = default;
 
         try
@@ -923,13 +923,13 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         }
     }
 
-    public int CSharpSyntaxNode_FindTrivia_09c524df(
+    public int CSharpSyntaxNode_FindTrivia_7dd8134f(
         long receiver,
         int position,
         int findInsideTrivia,
         out long result)
     {
-        RoslynCallCounters.Record(2008);
+        RoslynCallCounters.Record(123);
         result = default;
 
         try
@@ -947,7 +947,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2009);
+        RoslynCallCounters.Record(124);
         result = default;
 
         try
@@ -969,7 +969,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(2010);
+        RoslynCallCounters.Record(125);
         result = default;
 
         try
@@ -991,7 +991,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int includeDocumentationComments,
         out long result)
     {
-        RoslynCallCounters.Record(2011);
+        RoslynCallCounters.Record(126);
         result = default;
 
         try
@@ -1009,7 +1009,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2012);
+        RoslynCallCounters.Record(127);
         result = default;
 
         try
@@ -1027,7 +1027,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2013);
+        RoslynCallCounters.Record(128);
         result = default;
 
         try
@@ -1045,7 +1045,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(2014);
+        RoslynCallCounters.Record(129);
         result = default;
 
         try
@@ -1063,7 +1063,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out ushort result)
     {
-        RoslynCallCounters.Record(2015);
+        RoslynCallCounters.Record(130);
         result = default;
 
         try
@@ -1083,7 +1083,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(2016);
+        RoslynCallCounters.Record(131);
         requiredLength = default;
 
         try
@@ -1107,7 +1107,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4705);
+        RoslynCallCounters.Record(2820);
         result = default;
 
         try
@@ -1126,7 +1126,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long endOfDirectiveToken,
         out long result)
     {
-        RoslynCallCounters.Record(3265);
+        RoslynCallCounters.Record(1380);
         result = default;
 
         try
@@ -1145,7 +1145,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long hashToken,
         out long result)
     {
-        RoslynCallCounters.Record(3266);
+        RoslynCallCounters.Record(1381);
         result = default;
 
         try
@@ -1163,7 +1163,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3267);
+        RoslynCallCounters.Record(1382);
         result = default;
 
         try
@@ -1181,7 +1181,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3268);
+        RoslynCallCounters.Record(1383);
         result = default;
 
         try
@@ -1199,7 +1199,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(3269);
+        RoslynCallCounters.Record(1384);
         result = default;
 
         try
@@ -1217,7 +1217,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(3270);
+        RoslynCallCounters.Record(1385);
         result = default;
 
         try
@@ -1231,11 +1231,11 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         }
     }
 
-    public int PragmaChecksumDirectiveTriviaSyntax_Accept_eda65782(
+    public int PragmaChecksumDirectiveTriviaSyntax_Accept_a8ee0618(
         long receiver,
         long visitor)
     {
-        RoslynCallCounters.Record(4348);
+        RoslynCallCounters.Record(2463);
 
         try
         {
@@ -1260,7 +1260,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(4349);
+        RoslynCallCounters.Record(2464);
         result = default;
 
         try
@@ -1279,7 +1279,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long bytes,
         out long result)
     {
-        RoslynCallCounters.Record(4350);
+        RoslynCallCounters.Record(2465);
         result = default;
 
         try
@@ -1298,7 +1298,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long checksumKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(4351);
+        RoslynCallCounters.Record(2466);
         result = default;
 
         try
@@ -1317,7 +1317,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long endOfDirectiveToken,
         out long result)
     {
-        RoslynCallCounters.Record(4352);
+        RoslynCallCounters.Record(2467);
         result = default;
 
         try
@@ -1336,7 +1336,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long @file,
         out long result)
     {
-        RoslynCallCounters.Record(4353);
+        RoslynCallCounters.Record(2468);
         result = default;
 
         try
@@ -1355,7 +1355,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long guid,
         out long result)
     {
-        RoslynCallCounters.Record(4354);
+        RoslynCallCounters.Record(2469);
         result = default;
 
         try
@@ -1374,7 +1374,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long hashToken,
         out long result)
     {
-        RoslynCallCounters.Record(4355);
+        RoslynCallCounters.Record(2470);
         result = default;
 
         try
@@ -1393,7 +1393,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(4356);
+        RoslynCallCounters.Record(2471);
         result = default;
 
         try
@@ -1412,7 +1412,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long pragmaKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(4357);
+        RoslynCallCounters.Record(2472);
         result = default;
 
         try
@@ -1430,7 +1430,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4358);
+        RoslynCallCounters.Record(2473);
         result = default;
 
         try
@@ -1448,7 +1448,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4359);
+        RoslynCallCounters.Record(2474);
         result = default;
 
         try
@@ -1466,7 +1466,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4360);
+        RoslynCallCounters.Record(2475);
         result = default;
 
         try
@@ -1484,7 +1484,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4361);
+        RoslynCallCounters.Record(2476);
         result = default;
 
         try
@@ -1502,7 +1502,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4362);
+        RoslynCallCounters.Record(2477);
         result = default;
 
         try
@@ -1520,7 +1520,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4363);
+        RoslynCallCounters.Record(2478);
         result = default;
 
         try
@@ -1538,7 +1538,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(4364);
+        RoslynCallCounters.Record(2479);
         result = default;
 
         try
@@ -1556,7 +1556,7 @@ internal sealed partial class PragmaChecksumDirectiveTriviaSyntaxVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(4365);
+        RoslynCallCounters.Record(2480);
         result = default;
 
         try

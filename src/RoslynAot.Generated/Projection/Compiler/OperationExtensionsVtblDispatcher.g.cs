@@ -27,7 +27,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long operation,
         out long result)
     {
-        RoslynCallCounters.Record(1249);
+        RoslynCallCounters.Record(5188);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long operation,
         out long result)
     {
-        RoslynCallCounters.Record(1250);
+        RoslynCallCounters.Record(5189);
         result = default;
 
         try
@@ -59,14 +59,14 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         }
     }
 
-    public unsafe int OperationExtensions_GetArgumentName_72d8a01f(
+    public unsafe int OperationExtensions_GetArgumentName_bb82e034(
         long dynamicOperation,
         int index,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1251);
+        RoslynCallCounters.Record(5190);
         requiredLength = default;
 
         try
@@ -86,14 +86,14 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         }
     }
 
-    public unsafe int OperationExtensions_GetArgumentName_7fb3ddd1(
+    public unsafe int OperationExtensions_GetArgumentName_15a0582f(
         long dynamicOperation,
         int index,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1252);
+        RoslynCallCounters.Record(5191);
         requiredLength = default;
 
         try
@@ -113,14 +113,14 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         }
     }
 
-    public unsafe int OperationExtensions_GetArgumentName_96476486(
+    public unsafe int OperationExtensions_GetArgumentName_98ff6b42(
         long dynamicOperation,
         int index,
         nint buffer,
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1253);
+        RoslynCallCounters.Record(5192);
         requiredLength = default;
 
         try
@@ -144,7 +144,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long operation,
         out long result)
     {
-        RoslynCallCounters.Record(1254);
+        RoslynCallCounters.Record(5193);
         result = default;
 
         try
@@ -158,11 +158,11 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         }
     }
 
-    public int OperationExtensions_GetDeclaredVariables_5f2c88e6(
+    public int OperationExtensions_GetDeclaredVariables_c806b780(
         long declarationGroup,
         out long result)
     {
-        RoslynCallCounters.Record(1255);
+        RoslynCallCounters.Record(5194);
         result = default;
 
         try
@@ -176,11 +176,11 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         }
     }
 
-    public int OperationExtensions_GetDeclaredVariables_9ad378cf(
+    public int OperationExtensions_GetDeclaredVariables_df5cda8c(
         long declaration,
         out long result)
     {
-        RoslynCallCounters.Record(1256);
+        RoslynCallCounters.Record(5195);
         result = default;
 
         try
@@ -198,7 +198,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long functionPointer,
         out long result)
     {
-        RoslynCallCounters.Record(1257);
+        RoslynCallCounters.Record(5196);
         result = default;
 
         try
@@ -216,7 +216,7 @@ internal sealed partial class OperationExtensionsVtblDispatcher : IOperationExte
         long declarationOperation,
         out long result)
     {
-        RoslynCallCounters.Record(1258);
+        RoslynCallCounters.Record(5197);
         result = default;
 
         try

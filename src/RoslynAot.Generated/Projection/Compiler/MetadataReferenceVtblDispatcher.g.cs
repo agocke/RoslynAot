@@ -28,7 +28,7 @@ internal sealed partial class MetadataReferenceVtblDispatcher : IMetadataReferen
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(929);
+        RoslynCallCounters.Record(4868);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class MetadataReferenceVtblDispatcher : IMetadataReferen
         long properties,
         out long result)
     {
-        RoslynCallCounters.Record(930);
+        RoslynCallCounters.Record(4869);
         result = default;
 
         try
@@ -67,7 +67,7 @@ internal sealed partial class MetadataReferenceVtblDispatcher : IMetadataReferen
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(931);
+        RoslynCallCounters.Record(4870);
         requiredLength = default;
 
         try
@@ -91,7 +91,7 @@ internal sealed partial class MetadataReferenceVtblDispatcher : IMetadataReferen
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(932);
+        RoslynCallCounters.Record(4871);
         result = default;
 
         try

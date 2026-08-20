@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("100dad25-6e9f-563d-b77d-3d0d9a437b08")]
+[Guid("a692e7c1-9d24-5692-8e85-134a5a1eddb3")]
 public partial interface IAwaitExpressionInfoVtbl
 {
 
     [PreserveSig]
-    int AwaitExpressionInfo_Equals_b0a43d74(
+    int AwaitExpressionInfo_Equals_f03ec81b(
         long receiver,
         long other,
         out int result

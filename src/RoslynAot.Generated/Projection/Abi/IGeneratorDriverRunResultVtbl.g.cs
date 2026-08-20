@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ef76abdc-2d8c-5001-a9e4-27a7491af077")]
+[Guid("70ad6d75-d69b-583e-93f3-c0bdd746dd8f")]
 public partial interface IGeneratorDriverRunResultVtbl
 {
 

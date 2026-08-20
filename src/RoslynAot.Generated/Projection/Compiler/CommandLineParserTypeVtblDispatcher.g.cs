@@ -28,7 +28,7 @@ internal sealed partial class CommandLineParserTypeVtblDispatcher : ICommandLine
         int removeHashComments,
         out long result)
     {
-        RoslynCallCounters.Record(93);
+        RoslynCallCounters.Record(4032);
         result = default;
 
         try

@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAttributeTargetSpecifierSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AttributeTargetSpecifierSyntax_Accept_7ec78e2b(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.AttributeTargetSpecifierSyntax_Accept_90771d9e(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static AttributeTargetSpecifierSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AttributeTargetSpecifierSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("6347abb9-d1bc-54cd-8124-959cfe4fc3db")]
+        [System.Runtime.InteropServices.Guid("8daa0eff-7dcc-5522-85ed-f4b3196b7145")]
         internal partial interface __RoslynAotImplementation : AttributeTargetSpecifierSyntax
         {
         }

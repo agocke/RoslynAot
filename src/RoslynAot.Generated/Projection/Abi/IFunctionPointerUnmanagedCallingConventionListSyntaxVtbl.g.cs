@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("dd986069-be73-57a5-8781-055bea0b13c7")]
+[Guid("eea90b8d-a4af-565c-b271-6c24ab892f5c")]
 public partial interface IFunctionPointerUnmanagedCallingConventionListSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int FunctionPointerUnmanagedCallingConventionListSyntax_Accept_fd8f11ad(
+    int FunctionPointerUnmanagedCallingConventionListSyntax_Accept_ffdc19df(
         long receiver,
         long visitor
     );

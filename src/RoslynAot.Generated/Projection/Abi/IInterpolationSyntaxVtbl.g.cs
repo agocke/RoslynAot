@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("7f904974-adde-5348-8d8b-0dabf8a4b38b")]
+[Guid("cf2354fb-716f-5338-a9e1-54ee4fd0b856")]
 public partial interface IInterpolationSyntaxVtbl : IInterpolatedStringContentSyntaxVtbl
 {
 
     [PreserveSig]
-    int InterpolationSyntax_Accept_28a51242(
+    int InterpolationSyntax_Accept_7b4931df(
         long receiver,
         long visitor
     );

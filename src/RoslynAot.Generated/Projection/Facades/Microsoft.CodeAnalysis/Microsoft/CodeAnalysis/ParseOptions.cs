@@ -218,7 +218,7 @@ namespace Microsoft.CodeAnalysis
 
         internal static ParseOptions __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6898319471603002587L, -2738872740812865630L)is ParseOptions __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6336409622503262447L, -3013753246331118172L)is ParseOptions __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetParseOptionsVtbl(controlVtbl), handle);
         }

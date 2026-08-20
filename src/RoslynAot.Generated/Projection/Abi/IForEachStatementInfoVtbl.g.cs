@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ebac2bf6-3982-5744-8a8e-b5ddb04238ce")]
+[Guid("0ba7cc36-8955-540f-aea1-91433a2e1c61")]
 public partial interface IForEachStatementInfoVtbl
 {
 
     [PreserveSig]
-    int ForEachStatementInfo_Equals_2a1ff5c2(
+    int ForEachStatementInfo_Equals_86fb9f81(
         long receiver,
         long other,
         out int result

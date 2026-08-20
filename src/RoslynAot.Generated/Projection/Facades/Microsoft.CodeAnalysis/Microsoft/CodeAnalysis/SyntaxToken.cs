@@ -251,7 +251,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxTokenVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxToken_Equals_10d5919b(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.SyntaxToken_Equals_86dce369(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -275,7 +275,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxTokenVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxToken_GetAnnotations_3c1eb744(__RoslynAotGetHandle(), annotationKind, out long result);
+            int status = vtbl.SyntaxToken_GetAnnotations_7a5ee578(__RoslynAotGetHandle(), annotationKind, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<SyntaxAnnotation>(controlVtbl, result, static (controlVtbl, handle) => SyntaxAnnotation.__RoslynAotCreateProxy(controlVtbl, handle));
         }
@@ -343,7 +343,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxTokenVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxToken_HasAnnotations_4ba3b9f9(__RoslynAotGetHandle(), annotationKind, out int result);
+            int status = vtbl.SyntaxToken_HasAnnotations_6c3ba156(__RoslynAotGetHandle(), annotationKind, out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -410,7 +410,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxTokenVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxToken_WithAdditionalAnnotations_d33ba691(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(annotations, item => item.__RoslynAotGetHandle())), out long result);
+            int status = vtbl.SyntaxToken_WithAdditionalAnnotations_03fd660b(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(annotations, item => item.__RoslynAotGetHandle())), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -429,7 +429,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxTokenVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxToken_WithLeadingTrivia_7c8528b3(__RoslynAotGetHandle(), trivia.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.SyntaxToken_WithLeadingTrivia_4908b9a8(__RoslynAotGetHandle(), trivia.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -443,7 +443,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxTokenVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxToken_WithoutAnnotations_16e96888(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(annotations, item => item.__RoslynAotGetHandle())), out long result);
+            int status = vtbl.SyntaxToken_WithoutAnnotations_16d8f5f5(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(annotations, item => item.__RoslynAotGetHandle())), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -457,7 +457,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxTokenVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxToken_WithoutAnnotations_11e1375d(__RoslynAotGetHandle(), annotationKind, out long result);
+            int status = vtbl.SyntaxToken_WithoutAnnotations_4ea8848a(__RoslynAotGetHandle(), annotationKind, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -471,7 +471,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISyntaxTokenVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SyntaxToken_WithTrailingTrivia_cdccaf72(__RoslynAotGetHandle(), trivia.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.SyntaxToken_WithTrailingTrivia_d87f8bc8(__RoslynAotGetHandle(), trivia.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }

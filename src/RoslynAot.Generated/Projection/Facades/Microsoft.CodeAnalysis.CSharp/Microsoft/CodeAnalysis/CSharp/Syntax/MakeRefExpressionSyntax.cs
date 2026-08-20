@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IMakeRefExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.MakeRefExpressionSyntax_Accept_b151b683(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.MakeRefExpressionSyntax_Accept_da12ae92(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -122,7 +122,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static MakeRefExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (MakeRefExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("b5dfa772-b4f0-53b5-bbde-600632cbf4f8")]
+        [System.Runtime.InteropServices.Guid("087966ee-d0ab-5724-838e-c26be1bcd83d")]
         internal partial interface __RoslynAotImplementation : MakeRefExpressionSyntax
         {
         }

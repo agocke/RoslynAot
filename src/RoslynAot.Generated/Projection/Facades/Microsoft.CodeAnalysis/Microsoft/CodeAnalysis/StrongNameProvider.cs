@@ -52,7 +52,7 @@ namespace Microsoft.CodeAnalysis
 
         internal static StrongNameProvider __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 5937897903300839504L, 7705816396978332054L)is StrongNameProvider __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6416783825437372526L, -797065960049252723L)is StrongNameProvider __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetStrongNameProviderVtbl(controlVtbl), handle);
         }

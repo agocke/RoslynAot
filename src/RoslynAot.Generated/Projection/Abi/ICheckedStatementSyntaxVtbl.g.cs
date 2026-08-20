@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("4a66fe63-ff90-529f-8470-c152f71c42bd")]
+[Guid("11e1058b-cdb2-538e-8665-42ee0dc5945b")]
 public partial interface ICheckedStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int CheckedStatementSyntax_Accept_eed97577(
+    int CheckedStatementSyntax_Accept_acdc642e(
         long receiver,
         long visitor
     );
@@ -44,7 +44,7 @@ public partial interface ICheckedStatementSyntaxVtbl : IStatementSyntaxVtbl
     );
 
     [PreserveSig]
-    int CheckedStatementSyntax_Update_3f654dcb(
+    int CheckedStatementSyntax_Update_8524d09b(
         long receiver,
         long keyword,
         long block,

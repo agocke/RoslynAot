@@ -70,7 +70,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IYieldStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.YieldStatementSyntax_Accept_6edce146(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.YieldStatementSyntax_Accept_d233e4f2(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -97,7 +97,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IYieldStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.YieldStatementSyntax_Update_741126ff(__RoslynAotGetHandle(), yieldKeyword.__RoslynAotGetHandle(), returnOrBreakKeyword.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.YieldStatementSyntax_Update_9c376405(__RoslynAotGetHandle(), yieldKeyword.__RoslynAotGetHandle(), returnOrBreakKeyword.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -149,7 +149,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static YieldStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (YieldStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("bfb24381-7994-5f74-b58b-0d05adc06a93")]
+        [System.Runtime.InteropServices.Guid("fc9904ec-370a-5ea9-bbd1-3c086d6413a2")]
         internal partial interface __RoslynAotImplementation : YieldStatementSyntax
         {
         }

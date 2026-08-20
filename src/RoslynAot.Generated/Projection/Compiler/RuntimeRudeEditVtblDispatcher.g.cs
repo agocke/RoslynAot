@@ -27,7 +27,7 @@ internal sealed partial class RuntimeRudeEditVtblDispatcher : IRuntimeRudeEditVt
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(505);
+        RoslynCallCounters.Record(4444);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class RuntimeRudeEditVtblDispatcher : IRuntimeRudeEditVt
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(506);
+        RoslynCallCounters.Record(4445);
         requiredLength = default;
 
         try

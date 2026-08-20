@@ -38,7 +38,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IJoinIntoClauseSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.JoinIntoClauseSyntax_Accept_1d7b578d(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.JoinIntoClauseSyntax_Accept_511c66bd(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static JoinIntoClauseSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (JoinIntoClauseSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("ad220f8e-1593-57fd-b556-9cb81693ea1d")]
+        [System.Runtime.InteropServices.Guid("c07c408f-9c71-591c-9f95-a2abee3686bc")]
         internal partial interface __RoslynAotImplementation : JoinIntoClauseSyntax
         {
         }

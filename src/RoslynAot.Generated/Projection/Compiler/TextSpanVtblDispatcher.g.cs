@@ -28,7 +28,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1848);
+        RoslynCallCounters.Record(5787);
         result = default;
 
         try
@@ -42,12 +42,12 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         }
     }
 
-    public int TextSpan_Contains_6b8002cc(
+    public int TextSpan_Contains_a127a3da(
         long receiver,
         long span,
         out int result)
     {
-        RoslynCallCounters.Record(1849);
+        RoslynCallCounters.Record(5788);
         result = default;
 
         try
@@ -61,12 +61,12 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         }
     }
 
-    public int TextSpan_Contains_c890202e(
+    public int TextSpan_Contains_254055d5(
         long receiver,
         int position,
         out int result)
     {
-        RoslynCallCounters.Record(1850);
+        RoslynCallCounters.Record(5789);
         result = default;
 
         try
@@ -80,12 +80,12 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         }
     }
 
-    public int TextSpan_Equals_af7b3003(
+    public int TextSpan_Equals_444d5377(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1851);
+        RoslynCallCounters.Record(5790);
         result = default;
 
         try
@@ -103,7 +103,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1853);
+        RoslynCallCounters.Record(5792);
         result = default;
 
         try
@@ -122,7 +122,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         long span,
         out long result)
     {
-        RoslynCallCounters.Record(1854);
+        RoslynCallCounters.Record(5793);
         result = default;
 
         try
@@ -136,12 +136,12 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         }
     }
 
-    public int TextSpan_IntersectsWith_8bf7ab06(
+    public int TextSpan_IntersectsWith_b3a4ec3e(
         long receiver,
         long span,
         out int result)
     {
-        RoslynCallCounters.Record(1855);
+        RoslynCallCounters.Record(5794);
         result = default;
 
         try
@@ -155,12 +155,12 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         }
     }
 
-    public int TextSpan_IntersectsWith_a42bdd45(
+    public int TextSpan_IntersectsWith_4213aaf8(
         long receiver,
         int position,
         out int result)
     {
-        RoslynCallCounters.Record(1856);
+        RoslynCallCounters.Record(5795);
         result = default;
 
         try
@@ -179,7 +179,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         long span,
         out long result)
     {
-        RoslynCallCounters.Record(1857);
+        RoslynCallCounters.Record(5796);
         result = default;
 
         try
@@ -198,7 +198,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         long span,
         out int result)
     {
-        RoslynCallCounters.Record(1858);
+        RoslynCallCounters.Record(5797);
         result = default;
 
         try
@@ -218,7 +218,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1859);
+        RoslynCallCounters.Record(5798);
         requiredLength = default;
 
         try
@@ -242,7 +242,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1860);
+        RoslynCallCounters.Record(5799);
         result = default;
 
         try
@@ -260,7 +260,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1861);
+        RoslynCallCounters.Record(5800);
         result = default;
 
         try
@@ -278,7 +278,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1862);
+        RoslynCallCounters.Record(5801);
         result = default;
 
         try
@@ -296,7 +296,7 @@ internal sealed partial class TextSpanVtblDispatcher : ITextSpanVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1863);
+        RoslynCallCounters.Record(5802);
         result = default;
 
         try

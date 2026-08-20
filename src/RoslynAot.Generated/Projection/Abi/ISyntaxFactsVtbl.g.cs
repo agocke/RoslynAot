@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("c8551c93-e1b2-57b8-b45d-9292d6d4e8d7")]
+[Guid("2b692249-18bb-5920-b06b-224168a43ce7")]
 public partial interface ISyntaxFactsVtbl
 {
 
@@ -107,7 +107,7 @@ public partial interface ISyntaxFactsVtbl
     );
 
     [PreserveSig]
-    int SyntaxFacts_GetText_f42d85ae(
+    int SyntaxFacts_GetText_5bb0e388(
         ushort kind,
         nint buffer,
         int bufferLength,
@@ -115,7 +115,7 @@ public partial interface ISyntaxFactsVtbl
     );
 
     [PreserveSig]
-    int SyntaxFacts_GetText_14036ab5(
+    int SyntaxFacts_GetText_f270a3ea(
         int accessibility,
         nint buffer,
         int bufferLength,

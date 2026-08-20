@@ -490,7 +490,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIMethodSymbolVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IMethodSymbol_Construct_22ba9338(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(typeArguments, item => item.__RoslynAotGetHandle())), out long result);
+            int status = vtbl.IMethodSymbol_Construct_c8e9cd5c(__RoslynAotGetHandle(), global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(typeArguments, item => item.__RoslynAotGetHandle())), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -542,7 +542,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IMethodSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IMethodSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("4a8c7a9c-4c5d-5f22-b9d5-d47b010dbffd")]
+        [System.Runtime.InteropServices.Guid("4c9d3d1c-c370-5293-a512-6fd5254c9229")]
         internal partial interface __RoslynAotImplementation : IMethodSymbol
         {
         }

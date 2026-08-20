@@ -23,12 +23,12 @@ internal sealed partial class SuppressionVtblDispatcher : ISuppressionVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int Suppression_Equals_c04ee5c1(
+    public int Suppression_Equals_ef267f20(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(373);
+        RoslynCallCounters.Record(4312);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SuppressionVtblDispatcher : ISuppressionVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(374);
+        RoslynCallCounters.Record(4313);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class SuppressionVtblDispatcher : ISuppressionVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(375);
+        RoslynCallCounters.Record(4314);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class SuppressionVtblDispatcher : ISuppressionVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(376);
+        RoslynCallCounters.Record(4315);
         result = default;
 
         try

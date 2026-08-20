@@ -70,7 +70,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IEventFieldDeclarationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.EventFieldDeclarationSyntax_Accept_dbf99058(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.EventFieldDeclarationSyntax_Accept_bd3a539c(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -154,7 +154,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static EventFieldDeclarationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (EventFieldDeclarationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("eaee5ec2-a52f-58f3-a8d0-8bc13c10def0")]
+        [System.Runtime.InteropServices.Guid("3938f9a2-55ad-5576-bee9-785c72e21cc8")]
         internal partial interface __RoslynAotImplementation : EventFieldDeclarationSyntax
         {
         }

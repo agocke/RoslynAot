@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("576fb2b2-25da-5ad7-a639-48752e76e8ae")]
+[Guid("652b3d10-d3ed-53e9-91b5-eb0f6a96ae42")]
 public partial interface ITextChangeVtbl
 {
 
     [PreserveSig]
-    int TextChange_Equals_a91dd04f(
+    int TextChange_Equals_9cce3848(
         long receiver,
         long other,
         out int result

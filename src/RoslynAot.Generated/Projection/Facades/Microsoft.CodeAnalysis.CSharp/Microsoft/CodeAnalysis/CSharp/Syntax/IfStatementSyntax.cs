@@ -94,7 +94,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIfStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IfStatementSyntax_Accept_4bd27ab7(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.IfStatementSyntax_Accept_31feeb49(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -121,7 +121,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIfStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IfStatementSyntax_Update_52155d39(__RoslynAotGetHandle(), ifKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), condition.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), @else is null ? 0L : @else.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.IfStatementSyntax_Update_3acae86b(__RoslynAotGetHandle(), ifKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), condition.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), @else is null ? 0L : @else.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -191,7 +191,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IfStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IfStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("0d625ffb-1681-50c2-9152-bace478a6a38")]
+        [System.Runtime.InteropServices.Guid("fed1e4bb-5737-55bf-aad9-096d39005a87")]
         internal partial interface __RoslynAotImplementation : IfStatementSyntax
         {
         }

@@ -12,18 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1dae14b8-4d06-5954-9ea5-1e82b3caf913")]
+[Guid("926c890d-5bd1-5ae8-afc5-4c34797b37ee")]
 public partial interface IStackAllocArrayCreationExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int StackAllocArrayCreationExpressionSyntax_Accept_932bbfbd(
+    int StackAllocArrayCreationExpressionSyntax_Accept_238a5f3c(
         long receiver,
         long visitor
     );
 
     [PreserveSig]
-    int StackAllocArrayCreationExpressionSyntax_Update_fc98ea6c(
+    int StackAllocArrayCreationExpressionSyntax_Update_c7abfb83(
         long receiver,
         long stackAllocKeyword,
         long @type,
@@ -31,7 +31,7 @@ public partial interface IStackAllocArrayCreationExpressionSyntaxVtbl : IExpress
     );
 
     [PreserveSig]
-    int StackAllocArrayCreationExpressionSyntax_Update_c657ab2d(
+    int StackAllocArrayCreationExpressionSyntax_Update_f97a1ed1(
         long receiver,
         long stackAllocKeyword,
         long @type,

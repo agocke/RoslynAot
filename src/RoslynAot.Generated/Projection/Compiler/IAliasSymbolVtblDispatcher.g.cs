@@ -27,7 +27,7 @@ internal sealed partial class IAliasSymbolVtblDispatcher : IIAliasSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(602);
+        RoslynCallCounters.Record(4541);
         result = default;
 
         try

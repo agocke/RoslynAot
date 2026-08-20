@@ -58,7 +58,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IExpressionStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ExpressionStatementSyntax_Accept_3e1614ed(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ExpressionStatementSyntax_Accept_bc6f4291(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -80,7 +80,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IExpressionStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ExpressionStatementSyntax_Update_2e64ee31(__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.ExpressionStatementSyntax_Update_9f9706a4(__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -119,7 +119,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ExpressionStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ExpressionStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("274b6b14-a9e4-589e-a53a-fe2bc85c1dac")]
+        [System.Runtime.InteropServices.Guid("7d30ea40-5561-599f-89b7-510138d4c416")]
         internal partial interface __RoslynAotImplementation : ExpressionStatementSyntax
         {
         }

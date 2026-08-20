@@ -152,7 +152,7 @@ namespace Microsoft.CodeAnalysis
                     return ReferenceEquals(this, obj);
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IDiagnosticVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.Diagnostic_Equals_3d5ff999(__RoslynAotGetHandle(), obj is null ? 0L : obj.__RoslynAotGetHandle(), out int result);
+                int status = vtbl.Diagnostic_Equals_895031df(__RoslynAotGetHandle(), obj is null ? 0L : obj.__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }

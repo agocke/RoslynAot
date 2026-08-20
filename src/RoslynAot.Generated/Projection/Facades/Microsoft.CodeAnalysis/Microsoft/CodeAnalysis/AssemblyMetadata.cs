@@ -31,7 +31,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IAssemblyMetadataTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAssemblyMetadataTypeVtbl(controlVtbl);
-            int status = vtbl.AssemblyMetadata_Create_e1130125(@module.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.AssemblyMetadata_Create_56774268(@module.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.IAssemblyMetadataTypeVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAssemblyMetadataTypeVtbl(controlVtbl);
-            int status = vtbl.AssemblyMetadata_Create_0ce64e57(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(modules, item => item.__RoslynAotGetHandle())), out long result);
+            int status = vtbl.AssemblyMetadata_Create_2ab9e559(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.CreateObjectCollectionHandle(controlVtbl, System.Array.ConvertAll(modules, item => item.__RoslynAotGetHandle())), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -112,7 +112,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static AssemblyMetadata __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AssemblyMetadata)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("d48ebc45-59c3-53a3-89bd-183e21e6d5d4")]
+        [System.Runtime.InteropServices.Guid("82bb127f-6367-50d9-a3c5-66c750200c20")]
         internal partial interface __RoslynAotImplementation : AssemblyMetadata
         {
         }

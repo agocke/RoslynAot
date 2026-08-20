@@ -23,12 +23,12 @@ internal sealed partial class AnalyzerConfigTypeVtblDispatcher : IAnalyzerConfig
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int AnalyzerConfig_Parse_7a0a51a9(
+    public int AnalyzerConfig_Parse_367c3cd0(
         long text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string pathToFile,
         out long result)
     {
-        RoslynCallCounters.Record(1);
+        RoslynCallCounters.Record(3940);
         result = default;
 
         try
@@ -42,12 +42,12 @@ internal sealed partial class AnalyzerConfigTypeVtblDispatcher : IAnalyzerConfig
         }
     }
 
-    public int AnalyzerConfig_Parse_ec60e9db(
+    public int AnalyzerConfig_Parse_624fe798(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string pathToFile,
         out long result)
     {
-        RoslynCallCounters.Record(2);
+        RoslynCallCounters.Record(3941);
         result = default;
 
         try

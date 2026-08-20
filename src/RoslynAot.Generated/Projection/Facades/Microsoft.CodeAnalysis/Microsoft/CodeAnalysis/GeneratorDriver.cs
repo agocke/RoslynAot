@@ -81,7 +81,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IGeneratorDriverVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.GeneratorDriver_RunGenerators_9b21a671(__RoslynAotGetHandle(), compilation.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.GeneratorDriver_RunGenerators_107d01fa(__RoslynAotGetHandle(), compilation.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -115,7 +115,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static GeneratorDriver __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (GeneratorDriver)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("423150e4-1144-5f64-a925-2804fe8cced7")]
+        [System.Runtime.InteropServices.Guid("54810df2-e83a-5b01-9aa1-a6201577a915")]
         internal partial interface __RoslynAotImplementation : GeneratorDriver
         {
         }

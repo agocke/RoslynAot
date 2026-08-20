@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3b5ff7e6-0032-5859-9bfd-ac9530ed9fee")]
+[Guid("1e38efac-a729-5e06-89ae-8bbd0eba24da")]
 public partial interface IBreakStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int BreakStatementSyntax_Accept_0b31a4ae(
+    int BreakStatementSyntax_Accept_6568738c(
         long receiver,
         long visitor
     );
@@ -30,7 +30,7 @@ public partial interface IBreakStatementSyntaxVtbl : IStatementSyntaxVtbl
     );
 
     [PreserveSig]
-    int BreakStatementSyntax_Update_b356d913(
+    int BreakStatementSyntax_Update_db4c21b5(
         long receiver,
         long breakKeyword,
         long semicolonToken,

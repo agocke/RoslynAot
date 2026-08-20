@@ -100,7 +100,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ControlFlowBranch __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ControlFlowBranch)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("1366832c-bd22-5d53-a1bc-05b0a5216656")]
+        [System.Runtime.InteropServices.Guid("94eb7e1f-6be9-5fea-92ac-94d53b0b81d9")]
         internal partial interface __RoslynAotImplementation : ControlFlowBranch
         {
         }

@@ -70,7 +70,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISwitchExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SwitchExpressionSyntax_Accept_48e6007c(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.SwitchExpressionSyntax_Accept_b3d3d1ca(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -140,7 +140,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SwitchExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SwitchExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("cd280183-e5d7-5132-b405-f65a4b3f9e0f")]
+        [System.Runtime.InteropServices.Guid("269b72ea-c421-5cbd-bbf3-be972c4c0f32")]
         internal partial interface __RoslynAotImplementation : SwitchExpressionSyntax
         {
         }

@@ -27,7 +27,7 @@ internal sealed partial class IFlowCaptureOperationVtblDispatcher : IIFlowCaptur
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(561);
+        RoslynCallCounters.Record(4500);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IFlowCaptureOperationVtblDispatcher : IIFlowCaptur
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(562);
+        RoslynCallCounters.Record(4501);
         result = default;
 
         try

@@ -86,7 +86,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAnonymousMethodExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AnonymousMethodExpressionSyntax_Accept_89568460(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.AnonymousMethodExpressionSyntax_Accept_85508337(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -131,7 +131,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAnonymousMethodExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AnonymousMethodExpressionSyntax_Update_1e572891(__RoslynAotGetHandle(), asyncKeyword.__RoslynAotGetHandle(), delegateKeyword.__RoslynAotGetHandle(), parameterList.__RoslynAotGetHandle(), body.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.AnonymousMethodExpressionSyntax_Update_e51ddd01(__RoslynAotGetHandle(), asyncKeyword.__RoslynAotGetHandle(), delegateKeyword.__RoslynAotGetHandle(), parameterList.__RoslynAotGetHandle(), body.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -140,7 +140,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAnonymousMethodExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AnonymousMethodExpressionSyntax_Update_210d22c8(__RoslynAotGetHandle(), asyncKeyword.__RoslynAotGetHandle(), delegateKeyword.__RoslynAotGetHandle(), parameterList.__RoslynAotGetHandle(), block.__RoslynAotGetHandle(), expressionBody.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.AnonymousMethodExpressionSyntax_Update_5b681816(__RoslynAotGetHandle(), asyncKeyword.__RoslynAotGetHandle(), delegateKeyword.__RoslynAotGetHandle(), parameterList.__RoslynAotGetHandle(), block.__RoslynAotGetHandle(), expressionBody.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -149,7 +149,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAnonymousMethodExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AnonymousMethodExpressionSyntax_Update_ffc38c1c(__RoslynAotGetHandle(), modifiers.__RoslynAotGetHandle(), delegateKeyword.__RoslynAotGetHandle(), parameterList is null ? 0L : parameterList.__RoslynAotGetHandle(), block.__RoslynAotGetHandle(), expressionBody is null ? 0L : expressionBody.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.AnonymousMethodExpressionSyntax_Update_80772905(__RoslynAotGetHandle(), modifiers.__RoslynAotGetHandle(), delegateKeyword.__RoslynAotGetHandle(), parameterList is null ? 0L : parameterList.__RoslynAotGetHandle(), block.__RoslynAotGetHandle(), expressionBody is null ? 0L : expressionBody.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -223,7 +223,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static AnonymousMethodExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (AnonymousMethodExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("63c7f43a-d425-5b51-bee1-613a7d94bc12")]
+        [System.Runtime.InteropServices.Guid("c9ebd55f-4331-58a4-b907-a6aa529fb26f")]
         internal partial interface __RoslynAotImplementation : AnonymousMethodExpressionSyntax
         {
         }

@@ -27,7 +27,7 @@ internal sealed partial class IFunctionPointerInvocationOperationVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1077);
+        RoslynCallCounters.Record(5016);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IFunctionPointerInvocationOperationVtblDispatcher 
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1078);
+        RoslynCallCounters.Record(5017);
         result = default;
 
         try

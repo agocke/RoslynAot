@@ -27,7 +27,7 @@ internal sealed partial class IConversionOperationVtblDispatcher : IIConversionO
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1033);
+        RoslynCallCounters.Record(4972);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class IConversionOperationVtblDispatcher : IIConversionO
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1034);
+        RoslynCallCounters.Record(4973);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class IConversionOperationVtblDispatcher : IIConversionO
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1035);
+        RoslynCallCounters.Record(4974);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class IConversionOperationVtblDispatcher : IIConversionO
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1036);
+        RoslynCallCounters.Record(4975);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class IConversionOperationVtblDispatcher : IIConversionO
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1037);
+        RoslynCallCounters.Record(4976);
         result = default;
 
         try
@@ -117,7 +117,7 @@ internal sealed partial class IConversionOperationVtblDispatcher : IIConversionO
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1038);
+        RoslynCallCounters.Record(4977);
         result = default;
 
         try

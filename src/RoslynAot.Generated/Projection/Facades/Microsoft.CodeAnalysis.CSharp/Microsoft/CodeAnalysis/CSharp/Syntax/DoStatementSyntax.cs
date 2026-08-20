@@ -106,7 +106,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IDoStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.DoStatementSyntax_Accept_cea525a0(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.DoStatementSyntax_Accept_9dd29ca6(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -133,7 +133,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IDoStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.DoStatementSyntax_Update_f13ef559(__RoslynAotGetHandle(), doKeyword.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), whileKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), condition.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.DoStatementSyntax_Update_196e47d8(__RoslynAotGetHandle(), doKeyword.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), whileKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), condition.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -212,7 +212,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static DoStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (DoStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("90883ca4-d66e-51a8-b5b2-8c46604186e7")]
+        [System.Runtime.InteropServices.Guid("9f3d8229-5450-5b08-a5ce-15b011229fee")]
         internal partial interface __RoslynAotImplementation : DoStatementSyntax
         {
         }

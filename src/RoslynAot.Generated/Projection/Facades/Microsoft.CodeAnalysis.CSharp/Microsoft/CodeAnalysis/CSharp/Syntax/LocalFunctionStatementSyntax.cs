@@ -126,7 +126,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILocalFunctionStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LocalFunctionStatementSyntax_Accept_f553025c(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.LocalFunctionStatementSyntax_Accept_c05c85ae(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -292,7 +292,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static LocalFunctionStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (LocalFunctionStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("977325e3-d68e-5b75-a0fe-a03dbb106b11")]
+        [System.Runtime.InteropServices.Guid("7a422590-92d9-53c1-915d-e6439316da88")]
         internal partial interface __RoslynAotImplementation : LocalFunctionStatementSyntax
         {
         }

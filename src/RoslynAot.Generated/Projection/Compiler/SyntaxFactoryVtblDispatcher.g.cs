@@ -23,11 +23,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxFactory_AccessorDeclaration_231d3b87(
+    public int SyntaxFactory_AccessorDeclaration_b7eb862a(
         ushort kind,
         out long result)
     {
-        RoslynCallCounters.Record(5138);
+        RoslynCallCounters.Record(3253);
         result = default;
 
         try
@@ -41,12 +41,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AccessorDeclaration_d4225c9a(
+    public int SyntaxFactory_AccessorDeclaration_963281ab(
         ushort kind,
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5139);
+        RoslynCallCounters.Record(3254);
         result = default;
 
         try
@@ -60,12 +60,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AliasQualifiedName_4492027f(
+    public int SyntaxFactory_AliasQualifiedName_313c944b(
         long @alias,
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5140);
+        RoslynCallCounters.Record(3255);
         result = default;
 
         try
@@ -79,13 +79,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AliasQualifiedName_2ab9a4df(
+    public int SyntaxFactory_AliasQualifiedName_3a5ead33(
         long @alias,
         long colonColonToken,
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5141);
+        RoslynCallCounters.Record(3256);
         result = default;
 
         try
@@ -99,12 +99,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AliasQualifiedName_33d9f315(
+    public int SyntaxFactory_AliasQualifiedName_b24b80a8(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string @alias,
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5142);
+        RoslynCallCounters.Record(3257);
         result = default;
 
         try
@@ -118,10 +118,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AnonymousMethodExpression_980c8835(
+    public int SyntaxFactory_AnonymousMethodExpression_40df7f0c(
         out long result)
     {
-        RoslynCallCounters.Record(5143);
+        RoslynCallCounters.Record(3258);
         result = default;
 
         try
@@ -135,11 +135,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AnonymousMethodExpression_17fde35f(
+    public int SyntaxFactory_AnonymousMethodExpression_ba437c49(
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5144);
+        RoslynCallCounters.Record(3259);
         result = default;
 
         try
@@ -153,12 +153,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AnonymousMethodExpression_8655372f(
+    public int SyntaxFactory_AnonymousMethodExpression_97e124a1(
         long parameterList,
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5145);
+        RoslynCallCounters.Record(3260);
         result = default;
 
         try
@@ -172,14 +172,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AnonymousMethodExpression_6b64ce9f(
+    public int SyntaxFactory_AnonymousMethodExpression_28d6b4e1(
         long asyncKeyword,
         long delegateKeyword,
         long parameterList,
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5146);
+        RoslynCallCounters.Record(3261);
         result = default;
 
         try
@@ -193,7 +193,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AnonymousMethodExpression_fe41c9cf(
+    public int SyntaxFactory_AnonymousMethodExpression_5d48bb83(
         long asyncKeyword,
         long delegateKeyword,
         long parameterList,
@@ -201,7 +201,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(5147);
+        RoslynCallCounters.Record(3262);
         result = default;
 
         try
@@ -215,7 +215,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AnonymousMethodExpression_1abded28(
+    public int SyntaxFactory_AnonymousMethodExpression_6e2ba4e3(
         long modifiers,
         long delegateKeyword,
         long parameterList,
@@ -223,7 +223,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(5148);
+        RoslynCallCounters.Record(3263);
         result = default;
 
         try
@@ -237,11 +237,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AnonymousObjectMemberDeclarator_0a3a09b9(
+    public int SyntaxFactory_AnonymousObjectMemberDeclarator_cda105f9(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5149);
+        RoslynCallCounters.Record(3264);
         result = default;
 
         try
@@ -255,12 +255,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AnonymousObjectMemberDeclarator_722ae861(
+    public int SyntaxFactory_AnonymousObjectMemberDeclarator_749bb5a6(
         long nameEquals,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5150);
+        RoslynCallCounters.Record(3265);
         result = default;
 
         try
@@ -274,13 +274,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_74e4efe5(
+    public int SyntaxFactory_AreEquivalent_5375f775(
         long oldNode,
         long newNode,
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(5151);
+        RoslynCallCounters.Record(3266);
         result = default;
 
         try
@@ -294,12 +294,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_c0372dae(
+    public int SyntaxFactory_AreEquivalent_19cd82fd(
         long oldToken,
         long newToken,
         out int result)
     {
-        RoslynCallCounters.Record(5152);
+        RoslynCallCounters.Record(3267);
         result = default;
 
         try
@@ -313,12 +313,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_63588cc4(
+    public int SyntaxFactory_AreEquivalent_d3b42c18(
         long oldList,
         long newList,
         out int result)
     {
-        RoslynCallCounters.Record(5153);
+        RoslynCallCounters.Record(3268);
         result = default;
 
         try
@@ -332,13 +332,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AreEquivalent_c3a1a5dc(
+    public int SyntaxFactory_AreEquivalent_0d8c6605(
         long oldTree,
         long newTree,
         int topLevel,
         out int result)
     {
-        RoslynCallCounters.Record(5154);
+        RoslynCallCounters.Record(3269);
         result = default;
 
         try
@@ -352,11 +352,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Argument_a115f92f(
+    public int SyntaxFactory_Argument_d7a57c75(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5155);
+        RoslynCallCounters.Record(3270);
         result = default;
 
         try
@@ -370,13 +370,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Argument_abb766e9(
+    public int SyntaxFactory_Argument_6b2fd04c(
         long nameColon,
         long refKindKeyword,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5156);
+        RoslynCallCounters.Record(3271);
         result = default;
 
         try
@@ -390,11 +390,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ArrayCreationExpression_dc5c3915(
+    public int SyntaxFactory_ArrayCreationExpression_7c38b2a8(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5157);
+        RoslynCallCounters.Record(3272);
         result = default;
 
         try
@@ -408,12 +408,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ArrayCreationExpression_29dca43b(
+    public int SyntaxFactory_ArrayCreationExpression_8be61228(
         long @type,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5158);
+        RoslynCallCounters.Record(3273);
         result = default;
 
         try
@@ -427,13 +427,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ArrayCreationExpression_90f53ee3(
+    public int SyntaxFactory_ArrayCreationExpression_fd08b109(
         long newKeyword,
         long @type,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5159);
+        RoslynCallCounters.Record(3274);
         result = default;
 
         try
@@ -447,11 +447,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ArrayType_3f372a57(
+    public int SyntaxFactory_ArrayType_fbad6c24(
         long elementType,
         out long result)
     {
-        RoslynCallCounters.Record(5160);
+        RoslynCallCounters.Record(3275);
         result = default;
 
         try
@@ -465,11 +465,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ArrowExpressionClause_d33c6534(
+    public int SyntaxFactory_ArrowExpressionClause_271a48cc(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5161);
+        RoslynCallCounters.Record(3276);
         result = default;
 
         try
@@ -483,12 +483,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ArrowExpressionClause_695754cc(
+    public int SyntaxFactory_ArrowExpressionClause_b86bcb8f(
         long arrowToken,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5162);
+        RoslynCallCounters.Record(3277);
         result = default;
 
         try
@@ -502,13 +502,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AssignmentExpression_624f0451(
+    public int SyntaxFactory_AssignmentExpression_c5f3451d(
         ushort kind,
         long left,
         long right,
         out long result)
     {
-        RoslynCallCounters.Record(5163);
+        RoslynCallCounters.Record(3278);
         result = default;
 
         try
@@ -522,14 +522,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AssignmentExpression_91afac72(
+    public int SyntaxFactory_AssignmentExpression_44469e4c(
         ushort kind,
         long left,
         long operatorToken,
         long right,
         out long result)
     {
-        RoslynCallCounters.Record(5164);
+        RoslynCallCounters.Record(3279);
         result = default;
 
         try
@@ -543,11 +543,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AttributeArgument_6e858ca7(
+    public int SyntaxFactory_AttributeArgument_eb9c878b(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5165);
+        RoslynCallCounters.Record(3280);
         result = default;
 
         try
@@ -561,13 +561,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AttributeArgument_4539dabf(
+    public int SyntaxFactory_AttributeArgument_64cc16e0(
         long nameEquals,
         long nameColon,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5166);
+        RoslynCallCounters.Record(3281);
         result = default;
 
         try
@@ -581,11 +581,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AttributeTargetSpecifier_812d5f19(
+    public int SyntaxFactory_AttributeTargetSpecifier_5b224d50(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5167);
+        RoslynCallCounters.Record(3282);
         result = default;
 
         try
@@ -599,12 +599,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AttributeTargetSpecifier_f34bbb39(
+    public int SyntaxFactory_AttributeTargetSpecifier_7f47e0f2(
         long identifier,
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5168);
+        RoslynCallCounters.Record(3283);
         result = default;
 
         try
@@ -618,11 +618,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Attribute_dc887d8a(
+    public int SyntaxFactory_Attribute_212dbc3f(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5169);
+        RoslynCallCounters.Record(3284);
         result = default;
 
         try
@@ -636,12 +636,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Attribute_63b77fb2(
+    public int SyntaxFactory_Attribute_0d86935c(
         long name,
         long argumentList,
         out long result)
     {
-        RoslynCallCounters.Record(5170);
+        RoslynCallCounters.Record(3285);
         result = default;
 
         try
@@ -655,11 +655,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AwaitExpression_6e07dc59(
+    public int SyntaxFactory_AwaitExpression_c3f53331(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5171);
+        RoslynCallCounters.Record(3286);
         result = default;
 
         try
@@ -673,12 +673,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_AwaitExpression_bcd66ad6(
+    public int SyntaxFactory_AwaitExpression_dc4bcd04(
         long awaitKeyword,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5172);
+        RoslynCallCounters.Record(3287);
         result = default;
 
         try
@@ -692,14 +692,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BadDirectiveTrivia_daa9aee9(
+    public int SyntaxFactory_BadDirectiveTrivia_42527a28(
         long hashToken,
         long identifier,
         long endOfDirectiveToken,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5173);
+        RoslynCallCounters.Record(3288);
         result = default;
 
         try
@@ -713,12 +713,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BadDirectiveTrivia_d68ee993(
+    public int SyntaxFactory_BadDirectiveTrivia_03685f66(
         long identifier,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5174);
+        RoslynCallCounters.Record(3289);
         result = default;
 
         try
@@ -738,7 +738,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5175);
+        RoslynCallCounters.Record(3290);
         result = default;
 
         try
@@ -752,10 +752,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BaseExpression_1eb9c9ec(
+    public int SyntaxFactory_BaseExpression_72a08ab3(
         out long result)
     {
-        RoslynCallCounters.Record(5176);
+        RoslynCallCounters.Record(3291);
         result = default;
 
         try
@@ -769,11 +769,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BaseExpression_a2769755(
+    public int SyntaxFactory_BaseExpression_277c8391(
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(5177);
+        RoslynCallCounters.Record(3292);
         result = default;
 
         try
@@ -787,13 +787,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BinaryExpression_c87f3f3a(
+    public int SyntaxFactory_BinaryExpression_c80bfec3(
         ushort kind,
         long left,
         long right,
         out long result)
     {
-        RoslynCallCounters.Record(5178);
+        RoslynCallCounters.Record(3293);
         result = default;
 
         try
@@ -807,14 +807,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BinaryExpression_9f642820(
+    public int SyntaxFactory_BinaryExpression_bef3d0c0(
         ushort kind,
         long left,
         long operatorToken,
         long right,
         out long result)
     {
-        RoslynCallCounters.Record(5179);
+        RoslynCallCounters.Record(3294);
         result = default;
 
         try
@@ -828,13 +828,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BinaryPattern_fc8a6a89(
+    public int SyntaxFactory_BinaryPattern_69c5b0d9(
         ushort kind,
         long left,
         long right,
         out long result)
     {
-        RoslynCallCounters.Record(5180);
+        RoslynCallCounters.Record(3295);
         result = default;
 
         try
@@ -848,14 +848,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BinaryPattern_7714a761(
+    public int SyntaxFactory_BinaryPattern_16c2d38b(
         ushort kind,
         long left,
         long operatorToken,
         long right,
         out long result)
     {
-        RoslynCallCounters.Record(5181);
+        RoslynCallCounters.Record(3296);
         result = default;
 
         try
@@ -869,11 +869,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Block_5257645b(
+    public int SyntaxFactory_Block_f83ae613(
         long statements,
         out long result)
     {
-        RoslynCallCounters.Record(5182);
+        RoslynCallCounters.Record(3297);
         result = default;
 
         try
@@ -887,10 +887,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BreakStatement_9b8ea81f(
+    public int SyntaxFactory_BreakStatement_77625c20(
         out long result)
     {
-        RoslynCallCounters.Record(5183);
+        RoslynCallCounters.Record(3298);
         result = default;
 
         try
@@ -904,12 +904,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_BreakStatement_0d7ee0ba(
+    public int SyntaxFactory_BreakStatement_bffc833a(
         long breakKeyword,
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5184);
+        RoslynCallCounters.Record(3299);
         result = default;
 
         try
@@ -923,13 +923,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CasePatternSwitchLabel_73b0a7a5(
+    public int SyntaxFactory_CasePatternSwitchLabel_064dedcc(
         long pattern,
         long whenClause,
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5185);
+        RoslynCallCounters.Record(3300);
         result = default;
 
         try
@@ -943,12 +943,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CasePatternSwitchLabel_0cb8eea2(
+    public int SyntaxFactory_CasePatternSwitchLabel_e13c7604(
         long pattern,
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5186);
+        RoslynCallCounters.Record(3301);
         result = default;
 
         try
@@ -962,14 +962,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CasePatternSwitchLabel_527b4c21(
+    public int SyntaxFactory_CasePatternSwitchLabel_70e04a96(
         long keyword,
         long pattern,
         long whenClause,
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5187);
+        RoslynCallCounters.Record(3302);
         result = default;
 
         try
@@ -983,11 +983,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CaseSwitchLabel_c2b3c15d(
+    public int SyntaxFactory_CaseSwitchLabel_469bac6a(
         long value,
         out long result)
     {
-        RoslynCallCounters.Record(5188);
+        RoslynCallCounters.Record(3303);
         result = default;
 
         try
@@ -1001,12 +1001,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CaseSwitchLabel_a1647599(
+    public int SyntaxFactory_CaseSwitchLabel_1b47209b(
         long value,
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5189);
+        RoslynCallCounters.Record(3304);
         result = default;
 
         try
@@ -1020,13 +1020,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CaseSwitchLabel_f5cf0a10(
+    public int SyntaxFactory_CaseSwitchLabel_67da7655(
         long keyword,
         long value,
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5190);
+        RoslynCallCounters.Record(3305);
         result = default;
 
         try
@@ -1040,12 +1040,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CastExpression_4739cc18(
+    public int SyntaxFactory_CastExpression_c6788a4b(
         long @type,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5191);
+        RoslynCallCounters.Record(3306);
         result = default;
 
         try
@@ -1059,14 +1059,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CastExpression_d600adae(
+    public int SyntaxFactory_CastExpression_4a5870c1(
         long openParenToken,
         long @type,
         long closeParenToken,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5192);
+        RoslynCallCounters.Record(3307);
         result = default;
 
         try
@@ -1080,10 +1080,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CatchClause_f00adbaa(
+    public int SyntaxFactory_CatchClause_e190268b(
         out long result)
     {
-        RoslynCallCounters.Record(5193);
+        RoslynCallCounters.Record(3308);
         result = default;
 
         try
@@ -1097,13 +1097,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CatchClause_1ccdf9f8(
+    public int SyntaxFactory_CatchClause_c718fa0a(
         long declaration,
         long filter,
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(5194);
+        RoslynCallCounters.Record(3309);
         result = default;
 
         try
@@ -1117,14 +1117,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CatchClause_42ffbf9a(
+    public int SyntaxFactory_CatchClause_da6c4392(
         long catchKeyword,
         long declaration,
         long filter,
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(5195);
+        RoslynCallCounters.Record(3310);
         result = default;
 
         try
@@ -1138,11 +1138,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CatchDeclaration_c59738ba(
+    public int SyntaxFactory_CatchDeclaration_6e568a3f(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5196);
+        RoslynCallCounters.Record(3311);
         result = default;
 
         try
@@ -1156,12 +1156,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CatchDeclaration_988788c4(
+    public int SyntaxFactory_CatchDeclaration_a3d5b9f5(
         long @type,
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5197);
+        RoslynCallCounters.Record(3312);
         result = default;
 
         try
@@ -1175,14 +1175,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CatchDeclaration_f3643628(
+    public int SyntaxFactory_CatchDeclaration_2f1fb441(
         long openParenToken,
         long @type,
         long identifier,
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5198);
+        RoslynCallCounters.Record(3313);
         result = default;
 
         try
@@ -1196,11 +1196,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CatchFilterClause_9476c0c3(
+    public int SyntaxFactory_CatchFilterClause_1e06addc(
         long filterExpression,
         out long result)
     {
-        RoslynCallCounters.Record(5199);
+        RoslynCallCounters.Record(3314);
         result = default;
 
         try
@@ -1214,14 +1214,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CatchFilterClause_f6696b29(
+    public int SyntaxFactory_CatchFilterClause_499e4625(
         long whenKeyword,
         long openParenToken,
         long filterExpression,
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5200);
+        RoslynCallCounters.Record(3315);
         result = default;
 
         try
@@ -1235,12 +1235,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CheckedExpression_ff59f821(
+    public int SyntaxFactory_CheckedExpression_1b11883f(
         ushort kind,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5201);
+        RoslynCallCounters.Record(3316);
         result = default;
 
         try
@@ -1254,7 +1254,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CheckedExpression_137ecb2e(
+    public int SyntaxFactory_CheckedExpression_3455e450(
         ushort kind,
         long keyword,
         long openParenToken,
@@ -1262,7 +1262,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5202);
+        RoslynCallCounters.Record(3317);
         result = default;
 
         try
@@ -1276,12 +1276,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CheckedStatement_f00296d7(
+    public int SyntaxFactory_CheckedStatement_a821bb7c(
         ushort kind,
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(5203);
+        RoslynCallCounters.Record(3318);
         result = default;
 
         try
@@ -1295,13 +1295,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CheckedStatement_d176753b(
+    public int SyntaxFactory_CheckedStatement_cbb6688b(
         ushort kind,
         long keyword,
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(5204);
+        RoslynCallCounters.Record(3319);
         result = default;
 
         try
@@ -1315,11 +1315,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ClassDeclaration_ab6d5ebd(
+    public int SyntaxFactory_ClassDeclaration_f97e2f06(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5205);
+        RoslynCallCounters.Record(3320);
         result = default;
 
         try
@@ -1333,11 +1333,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ClassDeclaration_b45e617f(
+    public int SyntaxFactory_ClassDeclaration_55a53113(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5206);
+        RoslynCallCounters.Record(3321);
         result = default;
 
         try
@@ -1351,11 +1351,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ClassOrStructConstraint_94e2a516(
+    public int SyntaxFactory_ClassOrStructConstraint_9566cd08(
         ushort kind,
         out long result)
     {
-        RoslynCallCounters.Record(5207);
+        RoslynCallCounters.Record(3322);
         result = default;
 
         try
@@ -1369,12 +1369,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ClassOrStructConstraint_bdfdeb1e(
+    public int SyntaxFactory_ClassOrStructConstraint_bb153a99(
         ushort kind,
         long classOrStructKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(5208);
+        RoslynCallCounters.Record(3323);
         result = default;
 
         try
@@ -1388,13 +1388,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ClassOrStructConstraint_ab22b0d8(
+    public int SyntaxFactory_ClassOrStructConstraint_83828250(
         ushort kind,
         long classOrStructKeyword,
         long questionToken,
         out long result)
     {
-        RoslynCallCounters.Record(5209);
+        RoslynCallCounters.Record(3324);
         result = default;
 
         try
@@ -1412,7 +1412,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5210);
+        RoslynCallCounters.Record(3325);
         result = default;
 
         try
@@ -1426,10 +1426,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CompilationUnit_bb278ba9(
+    public int SyntaxFactory_CompilationUnit_b2bae28b(
         out long result)
     {
-        RoslynCallCounters.Record(5211);
+        RoslynCallCounters.Record(3326);
         result = default;
 
         try
@@ -1443,12 +1443,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConditionalAccessExpression_3de6331c(
+    public int SyntaxFactory_ConditionalAccessExpression_e4ea8cb7(
         long expression,
         long whenNotNull,
         out long result)
     {
-        RoslynCallCounters.Record(5212);
+        RoslynCallCounters.Record(3327);
         result = default;
 
         try
@@ -1462,13 +1462,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConditionalAccessExpression_31891a11(
+    public int SyntaxFactory_ConditionalAccessExpression_3de04c55(
         long expression,
         long operatorToken,
         long whenNotNull,
         out long result)
     {
-        RoslynCallCounters.Record(5213);
+        RoslynCallCounters.Record(3328);
         result = default;
 
         try
@@ -1482,13 +1482,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConditionalExpression_34605ebb(
+    public int SyntaxFactory_ConditionalExpression_96764323(
         long condition,
         long whenTrue,
         long whenFalse,
         out long result)
     {
-        RoslynCallCounters.Record(5214);
+        RoslynCallCounters.Record(3329);
         result = default;
 
         try
@@ -1502,7 +1502,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConditionalExpression_eb479b54(
+    public int SyntaxFactory_ConditionalExpression_9020088f(
         long condition,
         long questionToken,
         long whenTrue,
@@ -1510,7 +1510,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long whenFalse,
         out long result)
     {
-        RoslynCallCounters.Record(5215);
+        RoslynCallCounters.Record(3330);
         result = default;
 
         try
@@ -1528,7 +1528,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5216);
+        RoslynCallCounters.Record(3331);
         result = default;
 
         try
@@ -1542,10 +1542,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConstructorConstraint_0cda8912(
+    public int SyntaxFactory_ConstructorConstraint_96d2f32c(
         out long result)
     {
-        RoslynCallCounters.Record(5217);
+        RoslynCallCounters.Record(3332);
         result = default;
 
         try
@@ -1559,13 +1559,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConstructorConstraint_80eaa93d(
+    public int SyntaxFactory_ConstructorConstraint_ec2a9078(
         long newKeyword,
         long openParenToken,
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5218);
+        RoslynCallCounters.Record(3333);
         result = default;
 
         try
@@ -1579,11 +1579,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConstructorDeclaration_3cd5fa14(
+    public int SyntaxFactory_ConstructorDeclaration_572f35df(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5219);
+        RoslynCallCounters.Record(3334);
         result = default;
 
         try
@@ -1597,11 +1597,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConstructorDeclaration_ca99d40a(
+    public int SyntaxFactory_ConstructorDeclaration_30951267(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5220);
+        RoslynCallCounters.Record(3335);
         result = default;
 
         try
@@ -1615,12 +1615,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConstructorInitializer_96bd1360(
+    public int SyntaxFactory_ConstructorInitializer_11432ae4(
         ushort kind,
         long argumentList,
         out long result)
     {
-        RoslynCallCounters.Record(5221);
+        RoslynCallCounters.Record(3336);
         result = default;
 
         try
@@ -1634,14 +1634,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConstructorInitializer_206fc7d0(
+    public int SyntaxFactory_ConstructorInitializer_befd5fe2(
         ushort kind,
         long colonToken,
         long thisOrBaseKeyword,
         long argumentList,
         out long result)
     {
-        RoslynCallCounters.Record(5222);
+        RoslynCallCounters.Record(3337);
         result = default;
 
         try
@@ -1655,10 +1655,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ContinueStatement_2b76a709(
+    public int SyntaxFactory_ContinueStatement_9bf6b2d5(
         out long result)
     {
-        RoslynCallCounters.Record(5223);
+        RoslynCallCounters.Record(3338);
         result = default;
 
         try
@@ -1672,12 +1672,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ContinueStatement_9d5150fe(
+    public int SyntaxFactory_ContinueStatement_a78fca87(
         long continueKeyword,
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5224);
+        RoslynCallCounters.Record(3339);
         result = default;
 
         try
@@ -1691,12 +1691,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConversionOperatorDeclaration_482e5bd8(
+    public int SyntaxFactory_ConversionOperatorDeclaration_47b883b4(
         long implicitOrExplicitKeyword,
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5225);
+        RoslynCallCounters.Record(3340);
         result = default;
 
         try
@@ -1710,12 +1710,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConversionOperatorMemberCref_24704df0(
+    public int SyntaxFactory_ConversionOperatorMemberCref_81556dfa(
         long implicitOrExplicitKeyword,
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5226);
+        RoslynCallCounters.Record(3341);
         result = default;
 
         try
@@ -1729,13 +1729,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConversionOperatorMemberCref_f54761df(
+    public int SyntaxFactory_ConversionOperatorMemberCref_39b8bfcd(
         long implicitOrExplicitKeyword,
         long @type,
         long parameters,
         out long result)
     {
-        RoslynCallCounters.Record(5227);
+        RoslynCallCounters.Record(3342);
         result = default;
 
         try
@@ -1749,14 +1749,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConversionOperatorMemberCref_a198eaa7(
+    public int SyntaxFactory_ConversionOperatorMemberCref_f7ad3fb1(
         long implicitOrExplicitKeyword,
         long operatorKeyword,
         long @type,
         long parameters,
         out long result)
     {
-        RoslynCallCounters.Record(5228);
+        RoslynCallCounters.Record(3343);
         result = default;
 
         try
@@ -1770,7 +1770,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ConversionOperatorMemberCref_9ac486c4(
+    public int SyntaxFactory_ConversionOperatorMemberCref_9d3ee118(
         long implicitOrExplicitKeyword,
         long operatorKeyword,
         long checkedKeyword,
@@ -1778,7 +1778,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long parameters,
         out long result)
     {
-        RoslynCallCounters.Record(5229);
+        RoslynCallCounters.Record(3344);
         result = default;
 
         try
@@ -1797,7 +1797,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long options,
         out long result)
     {
-        RoslynCallCounters.Record(5230);
+        RoslynCallCounters.Record(3345);
         result = default;
 
         try
@@ -1811,11 +1811,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CrefParameter_5d9729a8(
+    public int SyntaxFactory_CrefParameter_2f1914a2(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5231);
+        RoslynCallCounters.Record(3346);
         result = default;
 
         try
@@ -1829,12 +1829,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CrefParameter_4d51c032(
+    public int SyntaxFactory_CrefParameter_3066c293(
         long refKindKeyword,
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5232);
+        RoslynCallCounters.Record(3347);
         result = default;
 
         try
@@ -1848,13 +1848,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_CrefParameter_f7ece31b(
+    public int SyntaxFactory_CrefParameter_df52774d(
         long refKindKeyword,
         long readOnlyKeyword,
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5233);
+        RoslynCallCounters.Record(3348);
         result = default;
 
         try
@@ -1873,7 +1873,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long designation,
         out long result)
     {
-        RoslynCallCounters.Record(5234);
+        RoslynCallCounters.Record(3349);
         result = default;
 
         try
@@ -1892,7 +1892,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long designation,
         out long result)
     {
-        RoslynCallCounters.Record(5235);
+        RoslynCallCounters.Record(3350);
         result = default;
 
         try
@@ -1906,10 +1906,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefaultConstraint_23072bf3(
+    public int SyntaxFactory_DefaultConstraint_5cce8eb9(
         out long result)
     {
-        RoslynCallCounters.Record(5236);
+        RoslynCallCounters.Record(3351);
         result = default;
 
         try
@@ -1923,11 +1923,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefaultConstraint_47b2c356(
+    public int SyntaxFactory_DefaultConstraint_18c950b7(
         long defaultKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(5237);
+        RoslynCallCounters.Record(3352);
         result = default;
 
         try
@@ -1941,11 +1941,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefaultExpression_2dd52689(
+    public int SyntaxFactory_DefaultExpression_5350d58a(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5238);
+        RoslynCallCounters.Record(3353);
         result = default;
 
         try
@@ -1959,14 +1959,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefaultExpression_964a1d83(
+    public int SyntaxFactory_DefaultExpression_999880b1(
         long keyword,
         long openParenToken,
         long @type,
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5239);
+        RoslynCallCounters.Record(3354);
         result = default;
 
         try
@@ -1980,10 +1980,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefaultSwitchLabel_dc269240(
+    public int SyntaxFactory_DefaultSwitchLabel_310ee37b(
         out long result)
     {
-        RoslynCallCounters.Record(5240);
+        RoslynCallCounters.Record(3355);
         result = default;
 
         try
@@ -1997,11 +1997,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefaultSwitchLabel_b2623b43(
+    public int SyntaxFactory_DefaultSwitchLabel_f7911995(
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5241);
+        RoslynCallCounters.Record(3356);
         result = default;
 
         try
@@ -2015,12 +2015,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefaultSwitchLabel_d9ab0c52(
+    public int SyntaxFactory_DefaultSwitchLabel_41b5b1b1(
         long keyword,
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5242);
+        RoslynCallCounters.Record(3357);
         result = default;
 
         try
@@ -2034,7 +2034,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefineDirectiveTrivia_14527dc1(
+    public int SyntaxFactory_DefineDirectiveTrivia_ba9dd24a(
         long hashToken,
         long defineKeyword,
         long name,
@@ -2042,7 +2042,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5243);
+        RoslynCallCounters.Record(3358);
         result = default;
 
         try
@@ -2056,12 +2056,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefineDirectiveTrivia_8078bab6(
+    public int SyntaxFactory_DefineDirectiveTrivia_5f96651f(
         long name,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5244);
+        RoslynCallCounters.Record(3359);
         result = default;
 
         try
@@ -2075,12 +2075,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DefineDirectiveTrivia_fa152b52(
+    public int SyntaxFactory_DefineDirectiveTrivia_5ac78356(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5245);
+        RoslynCallCounters.Record(3360);
         result = default;
 
         try
@@ -2094,12 +2094,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DelegateDeclaration_02014f97(
+    public int SyntaxFactory_DelegateDeclaration_0988cfa5(
         long returnType,
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5246);
+        RoslynCallCounters.Record(3361);
         result = default;
 
         try
@@ -2113,12 +2113,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DelegateDeclaration_d8d657e5(
+    public int SyntaxFactory_DelegateDeclaration_99987c59(
         long returnType,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5247);
+        RoslynCallCounters.Record(3362);
         result = default;
 
         try
@@ -2132,11 +2132,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DestructorDeclaration_8b405851(
+    public int SyntaxFactory_DestructorDeclaration_7d3f9055(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5248);
+        RoslynCallCounters.Record(3363);
         result = default;
 
         try
@@ -2150,11 +2150,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DestructorDeclaration_85614dfe(
+    public int SyntaxFactory_DestructorDeclaration_c5ae5341(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5249);
+        RoslynCallCounters.Record(3364);
         result = default;
 
         try
@@ -2172,7 +2172,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5250);
+        RoslynCallCounters.Record(3365);
         result = default;
 
         try
@@ -2186,10 +2186,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DiscardDesignation_b04a30e5(
+    public int SyntaxFactory_DiscardDesignation_e48aaa70(
         out long result)
     {
-        RoslynCallCounters.Record(5251);
+        RoslynCallCounters.Record(3366);
         result = default;
 
         try
@@ -2203,11 +2203,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DiscardDesignation_cb1807a4(
+    public int SyntaxFactory_DiscardDesignation_5264377a(
         long underscoreToken,
         out long result)
     {
-        RoslynCallCounters.Record(5252);
+        RoslynCallCounters.Record(3367);
         result = default;
 
         try
@@ -2221,10 +2221,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DiscardPattern_336d8a2b(
+    public int SyntaxFactory_DiscardPattern_f1576fd0(
         out long result)
     {
-        RoslynCallCounters.Record(5253);
+        RoslynCallCounters.Record(3368);
         result = default;
 
         try
@@ -2238,11 +2238,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DiscardPattern_fce66aae(
+    public int SyntaxFactory_DiscardPattern_383bf777(
         long underscoreToken,
         out long result)
     {
-        RoslynCallCounters.Record(5254);
+        RoslynCallCounters.Record(3369);
         result = default;
 
         try
@@ -2256,12 +2256,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DoStatement_921cce11(
+    public int SyntaxFactory_DoStatement_60801f72(
         long statement,
         long condition,
         out long result)
     {
-        RoslynCallCounters.Record(5255);
+        RoslynCallCounters.Record(3370);
         result = default;
 
         try
@@ -2275,7 +2275,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_DoStatement_153ccce9(
+    public int SyntaxFactory_DoStatement_7662165c(
         long doKeyword,
         long statement,
         long whileKeyword,
@@ -2285,7 +2285,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5256);
+        RoslynCallCounters.Record(3371);
         result = default;
 
         try
@@ -2303,7 +2303,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5257);
+        RoslynCallCounters.Record(3372);
         result = default;
 
         try
@@ -2321,7 +2321,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long content,
         out long result)
     {
-        RoslynCallCounters.Record(5258);
+        RoslynCallCounters.Record(3373);
         result = default;
 
         try
@@ -2339,7 +2339,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5259);
+        RoslynCallCounters.Record(3374);
         result = default;
 
         try
@@ -2357,7 +2357,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5260);
+        RoslynCallCounters.Record(3375);
         result = default;
 
         try
@@ -2371,11 +2371,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElementAccessExpression_a85a0391(
+    public int SyntaxFactory_ElementAccessExpression_496ad009(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5261);
+        RoslynCallCounters.Record(3376);
         result = default;
 
         try
@@ -2389,12 +2389,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElementAccessExpression_613a5131(
+    public int SyntaxFactory_ElementAccessExpression_b6a4dffb(
         long expression,
         long argumentList,
         out long result)
     {
-        RoslynCallCounters.Record(5262);
+        RoslynCallCounters.Record(3377);
         result = default;
 
         try
@@ -2408,10 +2408,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElementBindingExpression_f0d6f1fb(
+    public int SyntaxFactory_ElementBindingExpression_9649e68a(
         out long result)
     {
-        RoslynCallCounters.Record(5263);
+        RoslynCallCounters.Record(3378);
         result = default;
 
         try
@@ -2425,11 +2425,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElementBindingExpression_b6f7946c(
+    public int SyntaxFactory_ElementBindingExpression_927831f7(
         long argumentList,
         out long result)
     {
-        RoslynCallCounters.Record(5264);
+        RoslynCallCounters.Record(3379);
         result = default;
 
         try
@@ -2443,14 +2443,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElifDirectiveTrivia_6f888891(
+    public int SyntaxFactory_ElifDirectiveTrivia_5b62fe42(
         long condition,
         int isActive,
         int branchTaken,
         int conditionValue,
         out long result)
     {
-        RoslynCallCounters.Record(5265);
+        RoslynCallCounters.Record(3380);
         result = default;
 
         try
@@ -2464,7 +2464,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElifDirectiveTrivia_bee946b2(
+    public int SyntaxFactory_ElifDirectiveTrivia_1a99f92d(
         long hashToken,
         long elifKeyword,
         long condition,
@@ -2474,7 +2474,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int conditionValue,
         out long result)
     {
-        RoslynCallCounters.Record(5266);
+        RoslynCallCounters.Record(3381);
         result = default;
 
         try
@@ -2488,11 +2488,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElseClause_b44dd2f7(
+    public int SyntaxFactory_ElseClause_fb69f1f9(
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5267);
+        RoslynCallCounters.Record(3382);
         result = default;
 
         try
@@ -2506,12 +2506,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElseClause_8a3e7657(
+    public int SyntaxFactory_ElseClause_1da59cae(
         long elseKeyword,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5268);
+        RoslynCallCounters.Record(3383);
         result = default;
 
         try
@@ -2525,7 +2525,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElseDirectiveTrivia_d55636e8(
+    public int SyntaxFactory_ElseDirectiveTrivia_969c81d0(
         long hashToken,
         long elseKeyword,
         long endOfDirectiveToken,
@@ -2533,7 +2533,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int branchTaken,
         out long result)
     {
-        RoslynCallCounters.Record(5269);
+        RoslynCallCounters.Record(3384);
         result = default;
 
         try
@@ -2547,12 +2547,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ElseDirectiveTrivia_7ee7aadd(
+    public int SyntaxFactory_ElseDirectiveTrivia_5730202f(
         int isActive,
         int branchTaken,
         out long result)
     {
-        RoslynCallCounters.Record(5270);
+        RoslynCallCounters.Record(3385);
         result = default;
 
         try
@@ -2566,10 +2566,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EmptyStatement_0d3b35e7(
+    public int SyntaxFactory_EmptyStatement_38af05ad(
         out long result)
     {
-        RoslynCallCounters.Record(5271);
+        RoslynCallCounters.Record(3386);
         result = default;
 
         try
@@ -2583,11 +2583,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EmptyStatement_749ec688(
+    public int SyntaxFactory_EmptyStatement_309ff5ef(
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5272);
+        RoslynCallCounters.Record(3387);
         result = default;
 
         try
@@ -2601,14 +2601,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndIfDirectiveTrivia_2544ebda(
+    public int SyntaxFactory_EndIfDirectiveTrivia_32358ade(
         long hashToken,
         long endIfKeyword,
         long endOfDirectiveToken,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5273);
+        RoslynCallCounters.Record(3388);
         result = default;
 
         try
@@ -2622,11 +2622,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndIfDirectiveTrivia_7892ef96(
+    public int SyntaxFactory_EndIfDirectiveTrivia_8be0ce7a(
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5274);
+        RoslynCallCounters.Record(3389);
         result = default;
 
         try
@@ -2640,11 +2640,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndOfLine_166e97af(
+    public int SyntaxFactory_EndOfLine_f1dcc890(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5275);
+        RoslynCallCounters.Record(3390);
         result = default;
 
         try
@@ -2658,14 +2658,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndRegionDirectiveTrivia_630d49b2(
+    public int SyntaxFactory_EndRegionDirectiveTrivia_d30785f8(
         long hashToken,
         long endRegionKeyword,
         long endOfDirectiveToken,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5276);
+        RoslynCallCounters.Record(3391);
         result = default;
 
         try
@@ -2679,11 +2679,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EndRegionDirectiveTrivia_0cc39b30(
+    public int SyntaxFactory_EndRegionDirectiveTrivia_6e80d780(
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5277);
+        RoslynCallCounters.Record(3392);
         result = default;
 
         try
@@ -2697,11 +2697,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EnumDeclaration_5b61e065(
+    public int SyntaxFactory_EnumDeclaration_a4cfbca8(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5278);
+        RoslynCallCounters.Record(3393);
         result = default;
 
         try
@@ -2715,11 +2715,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EnumDeclaration_2148f0f0(
+    public int SyntaxFactory_EnumDeclaration_601a3db8(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5279);
+        RoslynCallCounters.Record(3394);
         result = default;
 
         try
@@ -2733,11 +2733,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EnumMemberDeclaration_743661cb(
+    public int SyntaxFactory_EnumMemberDeclaration_d431610f(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5280);
+        RoslynCallCounters.Record(3395);
         result = default;
 
         try
@@ -2751,11 +2751,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EnumMemberDeclaration_7f3750a4(
+    public int SyntaxFactory_EnumMemberDeclaration_293e254a(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5281);
+        RoslynCallCounters.Record(3396);
         result = default;
 
         try
@@ -2769,11 +2769,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EqualsValueClause_6bc3742b(
+    public int SyntaxFactory_EqualsValueClause_53af3bd8(
         long value,
         out long result)
     {
-        RoslynCallCounters.Record(5282);
+        RoslynCallCounters.Record(3397);
         result = default;
 
         try
@@ -2787,12 +2787,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EqualsValueClause_c2600f13(
+    public int SyntaxFactory_EqualsValueClause_b9549948(
         long equalsToken,
         long value,
         out long result)
     {
-        RoslynCallCounters.Record(5283);
+        RoslynCallCounters.Record(3398);
         result = default;
 
         try
@@ -2806,14 +2806,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ErrorDirectiveTrivia_ef937ada(
+    public int SyntaxFactory_ErrorDirectiveTrivia_26dd781c(
         long hashToken,
         long errorKeyword,
         long endOfDirectiveToken,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5284);
+        RoslynCallCounters.Record(3399);
         result = default;
 
         try
@@ -2827,11 +2827,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ErrorDirectiveTrivia_a100b4cc(
+    public int SyntaxFactory_ErrorDirectiveTrivia_d50398a2(
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5285);
+        RoslynCallCounters.Record(3400);
         result = default;
 
         try
@@ -2845,12 +2845,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EventDeclaration_a3f24918(
+    public int SyntaxFactory_EventDeclaration_4f39cdf4(
         long @type,
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5286);
+        RoslynCallCounters.Record(3401);
         result = default;
 
         try
@@ -2864,12 +2864,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EventDeclaration_e39e05c9(
+    public int SyntaxFactory_EventDeclaration_43c31e20(
         long @type,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5287);
+        RoslynCallCounters.Record(3402);
         result = default;
 
         try
@@ -2883,11 +2883,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_EventFieldDeclaration_dfa8e931(
+    public int SyntaxFactory_EventFieldDeclaration_6987fab6(
         long declaration,
         out long result)
     {
-        RoslynCallCounters.Record(5288);
+        RoslynCallCounters.Record(3403);
         result = default;
 
         try
@@ -2901,11 +2901,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ExplicitInterfaceSpecifier_956990de(
+    public int SyntaxFactory_ExplicitInterfaceSpecifier_3df20a8d(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5289);
+        RoslynCallCounters.Record(3404);
         result = default;
 
         try
@@ -2919,12 +2919,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ExplicitInterfaceSpecifier_90da4be0(
+    public int SyntaxFactory_ExplicitInterfaceSpecifier_6aacc54e(
         long name,
         long dotToken,
         out long result)
     {
-        RoslynCallCounters.Record(5290);
+        RoslynCallCounters.Record(3405);
         result = default;
 
         try
@@ -2943,7 +2943,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5291);
+        RoslynCallCounters.Record(3406);
         result = default;
 
         try
@@ -2961,7 +2961,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5292);
+        RoslynCallCounters.Record(3407);
         result = default;
 
         try
@@ -2975,11 +2975,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ExpressionStatement_e36e8850(
+    public int SyntaxFactory_ExpressionStatement_49f0c7fe(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5293);
+        RoslynCallCounters.Record(3408);
         result = default;
 
         try
@@ -2993,12 +2993,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ExpressionStatement_78322b86(
+    public int SyntaxFactory_ExpressionStatement_cf4c2a94(
         long expression,
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5294);
+        RoslynCallCounters.Record(3409);
         result = default;
 
         try
@@ -3012,10 +3012,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ExtensionBlockDeclaration_a160b626(
+    public int SyntaxFactory_ExtensionBlockDeclaration_682654ed(
         out long result)
     {
-        RoslynCallCounters.Record(5295);
+        RoslynCallCounters.Record(3410);
         result = default;
 
         try
@@ -3029,11 +3029,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ExtensionMemberCref_30be0e28(
+    public int SyntaxFactory_ExtensionMemberCref_a037de23(
         long member,
         out long result)
     {
-        RoslynCallCounters.Record(5296);
+        RoslynCallCounters.Record(3411);
         result = default;
 
         try
@@ -3047,13 +3047,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ExtensionMemberCref_d17bb79b(
+    public int SyntaxFactory_ExtensionMemberCref_b1cbc257(
         long typeArgumentList,
         long parameters,
         long member,
         out long result)
     {
-        RoslynCallCounters.Record(5297);
+        RoslynCallCounters.Record(3412);
         result = default;
 
         try
@@ -3067,7 +3067,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ExtensionMemberCref_880279df(
+    public int SyntaxFactory_ExtensionMemberCref_364e29b2(
         long extensionKeyword,
         long typeArgumentList,
         long parameters,
@@ -3075,7 +3075,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long member,
         out long result)
     {
-        RoslynCallCounters.Record(5298);
+        RoslynCallCounters.Record(3413);
         result = default;
 
         try
@@ -3089,11 +3089,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ExternAliasDirective_9aa297ec(
+    public int SyntaxFactory_ExternAliasDirective_2343dfe2(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5299);
+        RoslynCallCounters.Record(3414);
         result = default;
 
         try
@@ -3107,14 +3107,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ExternAliasDirective_43b24267(
+    public int SyntaxFactory_ExternAliasDirective_ff6411ce(
         long externKeyword,
         long aliasKeyword,
         long identifier,
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5300);
+        RoslynCallCounters.Record(3415);
         result = default;
 
         try
@@ -3128,11 +3128,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ExternAliasDirective_dc8fbf2c(
+    public int SyntaxFactory_ExternAliasDirective_2cd8151b(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5301);
+        RoslynCallCounters.Record(3416);
         result = default;
 
         try
@@ -3146,11 +3146,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FieldDeclaration_ac21d3b9(
+    public int SyntaxFactory_FieldDeclaration_fdb3e60c(
         long declaration,
         out long result)
     {
-        RoslynCallCounters.Record(5302);
+        RoslynCallCounters.Record(3417);
         result = default;
 
         try
@@ -3164,10 +3164,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FieldExpression_d73f33b5(
+    public int SyntaxFactory_FieldExpression_4d0164af(
         out long result)
     {
-        RoslynCallCounters.Record(5303);
+        RoslynCallCounters.Record(3418);
         result = default;
 
         try
@@ -3181,11 +3181,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FieldExpression_26a74489(
+    public int SyntaxFactory_FieldExpression_512c911c(
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(5304);
+        RoslynCallCounters.Record(3419);
         result = default;
 
         try
@@ -3199,11 +3199,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FileScopedNamespaceDeclaration_6b4ee590(
+    public int SyntaxFactory_FileScopedNamespaceDeclaration_4c4ab54a(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5305);
+        RoslynCallCounters.Record(3420);
         result = default;
 
         try
@@ -3217,11 +3217,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FinallyClause_694561bb(
+    public int SyntaxFactory_FinallyClause_c26ecc06(
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(5306);
+        RoslynCallCounters.Record(3421);
         result = default;
 
         try
@@ -3235,12 +3235,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FinallyClause_5779638f(
+    public int SyntaxFactory_FinallyClause_ebea3c76(
         long finallyKeyword,
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(5307);
+        RoslynCallCounters.Record(3422);
         result = default;
 
         try
@@ -3254,12 +3254,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FixedStatement_00668410(
+    public int SyntaxFactory_FixedStatement_03ec931b(
         long declaration,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5308);
+        RoslynCallCounters.Record(3423);
         result = default;
 
         try
@@ -3273,7 +3273,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FixedStatement_2d74c52f(
+    public int SyntaxFactory_FixedStatement_acc37ae3(
         long fixedKeyword,
         long openParenToken,
         long declaration,
@@ -3281,7 +3281,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5309);
+        RoslynCallCounters.Record(3424);
         result = default;
 
         try
@@ -3295,14 +3295,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ForEachStatement_ab7b75d1(
+    public int SyntaxFactory_ForEachStatement_cf7fc1f6(
         long @type,
         long identifier,
         long expression,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5310);
+        RoslynCallCounters.Record(3425);
         result = default;
 
         try
@@ -3316,14 +3316,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ForEachStatement_c5cdf589(
+    public int SyntaxFactory_ForEachStatement_e66b82be(
         long @type,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long expression,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5311);
+        RoslynCallCounters.Record(3426);
         result = default;
 
         try
@@ -3337,7 +3337,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ForEachStatement_43a6d5ed(
+    public int SyntaxFactory_ForEachStatement_d69f130f(
         long forEachKeyword,
         long openParenToken,
         long @type,
@@ -3348,7 +3348,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5312);
+        RoslynCallCounters.Record(3427);
         result = default;
 
         try
@@ -3362,7 +3362,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ForEachStatement_0d10a636(
+    public int SyntaxFactory_ForEachStatement_6f155558(
         long awaitKeyword,
         long forEachKeyword,
         long openParenToken,
@@ -3374,7 +3374,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5313);
+        RoslynCallCounters.Record(3428);
         result = default;
 
         try
@@ -3388,13 +3388,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ForEachVariableStatement_6619e556(
+    public int SyntaxFactory_ForEachVariableStatement_6eedf3f9(
         long variable,
         long expression,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5314);
+        RoslynCallCounters.Record(3429);
         result = default;
 
         try
@@ -3408,7 +3408,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ForEachVariableStatement_3cdc8e11(
+    public int SyntaxFactory_ForEachVariableStatement_0947661e(
         long forEachKeyword,
         long openParenToken,
         long variable,
@@ -3418,7 +3418,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5315);
+        RoslynCallCounters.Record(3430);
         result = default;
 
         try
@@ -3432,7 +3432,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ForEachVariableStatement_083764a3(
+    public int SyntaxFactory_ForEachVariableStatement_66b5fc15(
         long awaitKeyword,
         long forEachKeyword,
         long openParenToken,
@@ -3443,7 +3443,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5316);
+        RoslynCallCounters.Record(3431);
         result = default;
 
         try
@@ -3457,11 +3457,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ForStatement_7eb32873(
+    public int SyntaxFactory_ForStatement_31e5845d(
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5317);
+        RoslynCallCounters.Record(3432);
         result = default;
 
         try
@@ -3475,13 +3475,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FromClause_ffc75ba7(
+    public int SyntaxFactory_FromClause_0dc22b7b(
         long @type,
         long identifier,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5318);
+        RoslynCallCounters.Record(3433);
         result = default;
 
         try
@@ -3495,12 +3495,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FromClause_03523705(
+    public int SyntaxFactory_FromClause_8558b999(
         long identifier,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5319);
+        RoslynCallCounters.Record(3434);
         result = default;
 
         try
@@ -3514,7 +3514,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FromClause_ab58b8bf(
+    public int SyntaxFactory_FromClause_05b230df(
         long fromKeyword,
         long @type,
         long identifier,
@@ -3522,7 +3522,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5320);
+        RoslynCallCounters.Record(3435);
         result = default;
 
         try
@@ -3536,12 +3536,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FromClause_392f2b16(
+    public int SyntaxFactory_FromClause_bb3fbcd4(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5321);
+        RoslynCallCounters.Record(3436);
         result = default;
 
         try
@@ -3555,11 +3555,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FunctionPointerCallingConvention_4065f2ba(
+    public int SyntaxFactory_FunctionPointerCallingConvention_41b04f02(
         long managedOrUnmanagedKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(5322);
+        RoslynCallCounters.Record(3437);
         result = default;
 
         try
@@ -3573,12 +3573,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FunctionPointerCallingConvention_8716fc96(
+    public int SyntaxFactory_FunctionPointerCallingConvention_5dc0d759(
         long managedOrUnmanagedKeyword,
         long unmanagedCallingConventionList,
         out long result)
     {
-        RoslynCallCounters.Record(5323);
+        RoslynCallCounters.Record(3438);
         result = default;
 
         try
@@ -3592,11 +3592,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FunctionPointerParameter_18dd997e(
+    public int SyntaxFactory_FunctionPointerParameter_85cff1de(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5324);
+        RoslynCallCounters.Record(3439);
         result = default;
 
         try
@@ -3610,10 +3610,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FunctionPointerType_23f14b47(
+    public int SyntaxFactory_FunctionPointerType_4b78ae4f(
         out long result)
     {
-        RoslynCallCounters.Record(5325);
+        RoslynCallCounters.Record(3440);
         result = default;
 
         try
@@ -3627,12 +3627,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FunctionPointerType_cec23b29(
+    public int SyntaxFactory_FunctionPointerType_fb68ac7f(
         long callingConvention,
         long parameterList,
         out long result)
     {
-        RoslynCallCounters.Record(5326);
+        RoslynCallCounters.Record(3441);
         result = default;
 
         try
@@ -3646,14 +3646,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_FunctionPointerType_64b88375(
+    public int SyntaxFactory_FunctionPointerType_09759858(
         long delegateKeyword,
         long asteriskToken,
         long callingConvention,
         long parameterList,
         out long result)
     {
-        RoslynCallCounters.Record(5327);
+        RoslynCallCounters.Record(3442);
         result = default;
 
         try
@@ -3671,7 +3671,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5328);
+        RoslynCallCounters.Record(3443);
         result = default;
 
         try
@@ -3685,11 +3685,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_GenericName_b76bc95b(
+    public int SyntaxFactory_GenericName_a479c808(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5329);
+        RoslynCallCounters.Record(3444);
         result = default;
 
         try
@@ -3703,12 +3703,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_GenericName_c9c502fe(
+    public int SyntaxFactory_GenericName_663943bb(
         long identifier,
         long typeArgumentList,
         out long result)
     {
-        RoslynCallCounters.Record(5330);
+        RoslynCallCounters.Record(3445);
         result = default;
 
         try
@@ -3722,11 +3722,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_GenericName_b4769ea7(
+    public int SyntaxFactory_GenericName_e161f32f(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5331);
+        RoslynCallCounters.Record(3446);
         result = default;
 
         try
@@ -3744,7 +3744,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5332);
+        RoslynCallCounters.Record(3447);
         result = default;
 
         try
@@ -3762,7 +3762,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5333);
+        RoslynCallCounters.Record(3448);
         result = default;
 
         try
@@ -3776,11 +3776,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_GlobalStatement_f236c12b(
+    public int SyntaxFactory_GlobalStatement_dcbe7476(
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5334);
+        RoslynCallCounters.Record(3449);
         result = default;
 
         try
@@ -3794,12 +3794,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_GotoStatement_7559f935(
+    public int SyntaxFactory_GotoStatement_1c7010cb(
         ushort kind,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5335);
+        RoslynCallCounters.Record(3450);
         result = default;
 
         try
@@ -3813,13 +3813,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_GotoStatement_58e1d3af(
+    public int SyntaxFactory_GotoStatement_a8eb1f04(
         ushort kind,
         long caseOrDefaultKeyword,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5336);
+        RoslynCallCounters.Record(3451);
         result = default;
 
         try
@@ -3833,7 +3833,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_GotoStatement_dc7d177f(
+    public int SyntaxFactory_GotoStatement_fca684e7(
         ushort kind,
         long gotoKeyword,
         long caseOrDefaultKeyword,
@@ -3841,7 +3841,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5337);
+        RoslynCallCounters.Record(3452);
         result = default;
 
         try
@@ -3855,12 +3855,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_GroupClause_32db67ac(
+    public int SyntaxFactory_GroupClause_a5f17b5b(
         long groupExpression,
         long byExpression,
         out long result)
     {
-        RoslynCallCounters.Record(5338);
+        RoslynCallCounters.Record(3453);
         result = default;
 
         try
@@ -3874,14 +3874,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_GroupClause_340b440b(
+    public int SyntaxFactory_GroupClause_190d67db(
         long groupKeyword,
         long groupExpression,
         long byKeyword,
         long byExpression,
         out long result)
     {
-        RoslynCallCounters.Record(5339);
+        RoslynCallCounters.Record(3454);
         result = default;
 
         try
@@ -3895,11 +3895,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IdentifierName_85e5d560(
+    public int SyntaxFactory_IdentifierName_5e1550f2(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5340);
+        RoslynCallCounters.Record(3455);
         result = default;
 
         try
@@ -3913,11 +3913,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IdentifierName_1b3149ff(
+    public int SyntaxFactory_IdentifierName_c56e74c9(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(5341);
+        RoslynCallCounters.Record(3456);
         result = default;
 
         try
@@ -3931,7 +3931,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Identifier_51a68cac(
+    public int SyntaxFactory_Identifier_7f7f303a(
         long leading,
         ushort contextualKind,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
@@ -3939,7 +3939,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5342);
+        RoslynCallCounters.Record(3457);
         result = default;
 
         try
@@ -3953,13 +3953,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Identifier_376e70ff(
+    public int SyntaxFactory_Identifier_811c2953(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5343);
+        RoslynCallCounters.Record(3458);
         result = default;
 
         try
@@ -3973,11 +3973,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Identifier_a6176010(
+    public int SyntaxFactory_Identifier_d421c8ea(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5344);
+        RoslynCallCounters.Record(3459);
         result = default;
 
         try
@@ -3991,14 +3991,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IfDirectiveTrivia_d112e463(
+    public int SyntaxFactory_IfDirectiveTrivia_9b05c771(
         long condition,
         int isActive,
         int branchTaken,
         int conditionValue,
         out long result)
     {
-        RoslynCallCounters.Record(5345);
+        RoslynCallCounters.Record(3460);
         result = default;
 
         try
@@ -4012,7 +4012,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IfDirectiveTrivia_5528280e(
+    public int SyntaxFactory_IfDirectiveTrivia_aacb6fab(
         long hashToken,
         long ifKeyword,
         long condition,
@@ -4022,7 +4022,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int conditionValue,
         out long result)
     {
-        RoslynCallCounters.Record(5346);
+        RoslynCallCounters.Record(3461);
         result = default;
 
         try
@@ -4036,12 +4036,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IfStatement_a5abc60d(
+    public int SyntaxFactory_IfStatement_3f383260(
         long condition,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5347);
+        RoslynCallCounters.Record(3462);
         result = default;
 
         try
@@ -4055,13 +4055,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IfStatement_823d8845(
+    public int SyntaxFactory_IfStatement_f4752b4e(
         long condition,
         long statement,
         long @else,
         out long result)
     {
-        RoslynCallCounters.Record(5348);
+        RoslynCallCounters.Record(3463);
         result = default;
 
         try
@@ -4075,7 +4075,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IfStatement_060f6789(
+    public int SyntaxFactory_IfStatement_36e9a870(
         long ifKeyword,
         long openParenToken,
         long condition,
@@ -4084,7 +4084,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long @else,
         out long result)
     {
-        RoslynCallCounters.Record(5349);
+        RoslynCallCounters.Record(3464);
         result = default;
 
         try
@@ -4098,7 +4098,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IgnoredDirectiveTrivia_666724e8(
+    public int SyntaxFactory_IgnoredDirectiveTrivia_2ad2dc7e(
         long hashToken,
         long colonToken,
         long content,
@@ -4106,7 +4106,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5350);
+        RoslynCallCounters.Record(3465);
         result = default;
 
         try
@@ -4120,12 +4120,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IgnoredDirectiveTrivia_0f30cfae(
+    public int SyntaxFactory_IgnoredDirectiveTrivia_712f955c(
         long content,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5351);
+        RoslynCallCounters.Record(3466);
         result = default;
 
         try
@@ -4139,11 +4139,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IgnoredDirectiveTrivia_f6b8943c(
+    public int SyntaxFactory_IgnoredDirectiveTrivia_ecda1a88(
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5352);
+        RoslynCallCounters.Record(3467);
         result = default;
 
         try
@@ -4157,11 +4157,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ImplicitArrayCreationExpression_fc8c0b48(
+    public int SyntaxFactory_ImplicitArrayCreationExpression_0b881913(
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5353);
+        RoslynCallCounters.Record(3468);
         result = default;
 
         try
@@ -4175,7 +4175,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ImplicitArrayCreationExpression_c7bae0ce(
+    public int SyntaxFactory_ImplicitArrayCreationExpression_a9468b53(
         long newKeyword,
         long openBracketToken,
         long commas,
@@ -4183,7 +4183,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5354);
+        RoslynCallCounters.Record(3469);
         result = default;
 
         try
@@ -4197,12 +4197,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ImplicitArrayCreationExpression_1affe587(
+    public int SyntaxFactory_ImplicitArrayCreationExpression_979c3412(
         long commas,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5355);
+        RoslynCallCounters.Record(3470);
         result = default;
 
         try
@@ -4216,10 +4216,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ImplicitElementAccess_1b479200(
+    public int SyntaxFactory_ImplicitElementAccess_4d1b514f(
         out long result)
     {
-        RoslynCallCounters.Record(5356);
+        RoslynCallCounters.Record(3471);
         result = default;
 
         try
@@ -4233,11 +4233,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ImplicitElementAccess_1af913a4(
+    public int SyntaxFactory_ImplicitElementAccess_5bde1b04(
         long argumentList,
         out long result)
     {
-        RoslynCallCounters.Record(5357);
+        RoslynCallCounters.Record(3472);
         result = default;
 
         try
@@ -4251,10 +4251,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ImplicitObjectCreationExpression_f1630a61(
+    public int SyntaxFactory_ImplicitObjectCreationExpression_e365741c(
         out long result)
     {
-        RoslynCallCounters.Record(5358);
+        RoslynCallCounters.Record(3473);
         result = default;
 
         try
@@ -4268,12 +4268,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ImplicitObjectCreationExpression_a0725ceb(
+    public int SyntaxFactory_ImplicitObjectCreationExpression_41f6247a(
         long argumentList,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5359);
+        RoslynCallCounters.Record(3474);
         result = default;
 
         try
@@ -4287,13 +4287,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ImplicitObjectCreationExpression_ac9bf16b(
+    public int SyntaxFactory_ImplicitObjectCreationExpression_adc6270a(
         long newKeyword,
         long argumentList,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5360);
+        RoslynCallCounters.Record(3475);
         result = default;
 
         try
@@ -4307,11 +4307,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ImplicitStackAllocArrayCreationExpression_0280d633(
+    public int SyntaxFactory_ImplicitStackAllocArrayCreationExpression_0ac3ccc5(
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5361);
+        RoslynCallCounters.Record(3476);
         result = default;
 
         try
@@ -4325,14 +4325,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ImplicitStackAllocArrayCreationExpression_63895aaa(
+    public int SyntaxFactory_ImplicitStackAllocArrayCreationExpression_1158581f(
         long stackAllocKeyword,
         long openBracketToken,
         long closeBracketToken,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5362);
+        RoslynCallCounters.Record(3477);
         result = default;
 
         try
@@ -4346,11 +4346,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IncompleteMember_96b0c09e(
+    public int SyntaxFactory_IncompleteMember_a64f62f4(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5363);
+        RoslynCallCounters.Record(3478);
         result = default;
 
         try
@@ -4364,11 +4364,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IndexerDeclaration_52b498c7(
+    public int SyntaxFactory_IndexerDeclaration_4bd44241(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5364);
+        RoslynCallCounters.Record(3479);
         result = default;
 
         try
@@ -4382,11 +4382,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IndexerMemberCref_7f5210b3(
+    public int SyntaxFactory_IndexerMemberCref_0a140429(
         long parameters,
         out long result)
     {
-        RoslynCallCounters.Record(5365);
+        RoslynCallCounters.Record(3480);
         result = default;
 
         try
@@ -4400,12 +4400,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IndexerMemberCref_d4eacdb0(
+    public int SyntaxFactory_IndexerMemberCref_e85eb29d(
         long thisKeyword,
         long parameters,
         out long result)
     {
-        RoslynCallCounters.Record(5366);
+        RoslynCallCounters.Record(3481);
         result = default;
 
         try
@@ -4419,11 +4419,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_InterfaceDeclaration_94db6db0(
+    public int SyntaxFactory_InterfaceDeclaration_299c58ac(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5367);
+        RoslynCallCounters.Record(3482);
         result = default;
 
         try
@@ -4437,11 +4437,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_InterfaceDeclaration_e79f9a36(
+    public int SyntaxFactory_InterfaceDeclaration_9c0fffbb(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5368);
+        RoslynCallCounters.Record(3483);
         result = default;
 
         try
@@ -4455,11 +4455,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_InterpolatedStringExpression_067d07b6(
+    public int SyntaxFactory_InterpolatedStringExpression_7db2aa26(
         long stringStartToken,
         out long result)
     {
-        RoslynCallCounters.Record(5369);
+        RoslynCallCounters.Record(3484);
         result = default;
 
         try
@@ -4473,12 +4473,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_InterpolatedStringExpression_65d81d09(
+    public int SyntaxFactory_InterpolatedStringExpression_5c722192(
         long stringStartToken,
         long stringEndToken,
         out long result)
     {
-        RoslynCallCounters.Record(5370);
+        RoslynCallCounters.Record(3485);
         result = default;
 
         try
@@ -4492,10 +4492,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_InterpolatedStringText_bd2324a7(
+    public int SyntaxFactory_InterpolatedStringText_33c5be7a(
         out long result)
     {
-        RoslynCallCounters.Record(5371);
+        RoslynCallCounters.Record(3486);
         result = default;
 
         try
@@ -4509,11 +4509,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_InterpolatedStringText_50b7b242(
+    public int SyntaxFactory_InterpolatedStringText_0ffaeb32(
         long textToken,
         out long result)
     {
-        RoslynCallCounters.Record(5372);
+        RoslynCallCounters.Record(3487);
         result = default;
 
         try
@@ -4532,7 +4532,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long value,
         out long result)
     {
-        RoslynCallCounters.Record(5373);
+        RoslynCallCounters.Record(3488);
         result = default;
 
         try
@@ -4546,11 +4546,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_InterpolationFormatClause_6a6ad09b(
+    public int SyntaxFactory_InterpolationFormatClause_da74d3c4(
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5374);
+        RoslynCallCounters.Record(3489);
         result = default;
 
         try
@@ -4564,12 +4564,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_InterpolationFormatClause_d3528f20(
+    public int SyntaxFactory_InterpolationFormatClause_1cfca4ea(
         long colonToken,
         long formatStringToken,
         out long result)
     {
-        RoslynCallCounters.Record(5375);
+        RoslynCallCounters.Record(3490);
         result = default;
 
         try
@@ -4583,11 +4583,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Interpolation_b12bbae3(
+    public int SyntaxFactory_Interpolation_c606fe78(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5376);
+        RoslynCallCounters.Record(3491);
         result = default;
 
         try
@@ -4601,13 +4601,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Interpolation_0962883b(
+    public int SyntaxFactory_Interpolation_f55263c1(
         long expression,
         long alignmentClause,
         long formatClause,
         out long result)
     {
-        RoslynCallCounters.Record(5377);
+        RoslynCallCounters.Record(3492);
         result = default;
 
         try
@@ -4621,7 +4621,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Interpolation_2e91f07b(
+    public int SyntaxFactory_Interpolation_df9529b0(
         long openBraceToken,
         long expression,
         long alignmentClause,
@@ -4629,7 +4629,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long closeBraceToken,
         out long result)
     {
-        RoslynCallCounters.Record(5378);
+        RoslynCallCounters.Record(3493);
         result = default;
 
         try
@@ -4643,11 +4643,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_InvocationExpression_933397ce(
+    public int SyntaxFactory_InvocationExpression_eafafb06(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5379);
+        RoslynCallCounters.Record(3494);
         result = default;
 
         try
@@ -4661,12 +4661,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_InvocationExpression_e8453754(
+    public int SyntaxFactory_InvocationExpression_b7b4361e(
         long expression,
         long argumentList,
         out long result)
     {
-        RoslynCallCounters.Record(5380);
+        RoslynCallCounters.Record(3495);
         result = default;
 
         try
@@ -4684,7 +4684,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long tree,
         out int result)
     {
-        RoslynCallCounters.Record(5381);
+        RoslynCallCounters.Record(3496);
         result = default;
 
         try
@@ -4698,12 +4698,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IsPatternExpression_bf4937aa(
+    public int SyntaxFactory_IsPatternExpression_51137e50(
         long expression,
         long pattern,
         out long result)
     {
-        RoslynCallCounters.Record(5382);
+        RoslynCallCounters.Record(3497);
         result = default;
 
         try
@@ -4717,13 +4717,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_IsPatternExpression_da0126b2(
+    public int SyntaxFactory_IsPatternExpression_f8ab506c(
         long expression,
         long isKeyword,
         long pattern,
         out long result)
     {
-        RoslynCallCounters.Record(5383);
+        RoslynCallCounters.Record(3498);
         result = default;
 
         try
@@ -4737,7 +4737,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_JoinClause_63c272cc(
+    public int SyntaxFactory_JoinClause_1ab1b39c(
         long @type,
         long identifier,
         long inExpression,
@@ -4746,7 +4746,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long @into,
         out long result)
     {
-        RoslynCallCounters.Record(5384);
+        RoslynCallCounters.Record(3499);
         result = default;
 
         try
@@ -4760,14 +4760,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_JoinClause_9749ccb5(
+    public int SyntaxFactory_JoinClause_48662cb7(
         long identifier,
         long inExpression,
         long leftExpression,
         long rightExpression,
         out long result)
     {
-        RoslynCallCounters.Record(5385);
+        RoslynCallCounters.Record(3500);
         result = default;
 
         try
@@ -4781,7 +4781,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_JoinClause_15a63fb1(
+    public int SyntaxFactory_JoinClause_feac6760(
         long joinKeyword,
         long @type,
         long identifier,
@@ -4794,7 +4794,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long @into,
         out long result)
     {
-        RoslynCallCounters.Record(5386);
+        RoslynCallCounters.Record(3501);
         result = default;
 
         try
@@ -4808,14 +4808,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_JoinClause_744c83f5(
+    public int SyntaxFactory_JoinClause_0b451384(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long inExpression,
         long leftExpression,
         long rightExpression,
         out long result)
     {
-        RoslynCallCounters.Record(5387);
+        RoslynCallCounters.Record(3502);
         result = default;
 
         try
@@ -4829,11 +4829,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_JoinIntoClause_57a98a9e(
+    public int SyntaxFactory_JoinIntoClause_1855936f(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5388);
+        RoslynCallCounters.Record(3503);
         result = default;
 
         try
@@ -4847,12 +4847,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_JoinIntoClause_2a98b733(
+    public int SyntaxFactory_JoinIntoClause_0ac3dffd(
         long intoKeyword,
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5389);
+        RoslynCallCounters.Record(3504);
         result = default;
 
         try
@@ -4866,11 +4866,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_JoinIntoClause_553aca11(
+    public int SyntaxFactory_JoinIntoClause_a2a8b10b(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5390);
+        RoslynCallCounters.Record(3505);
         result = default;
 
         try
@@ -4884,12 +4884,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LabeledStatement_6e44332a(
+    public int SyntaxFactory_LabeledStatement_126a087a(
         long identifier,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5391);
+        RoslynCallCounters.Record(3506);
         result = default;
 
         try
@@ -4903,13 +4903,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LabeledStatement_1d7c63ef(
+    public int SyntaxFactory_LabeledStatement_80c88f0b(
         long identifier,
         long colonToken,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5392);
+        RoslynCallCounters.Record(3507);
         result = default;
 
         try
@@ -4923,12 +4923,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LabeledStatement_a4dece42(
+    public int SyntaxFactory_LabeledStatement_55184268(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5393);
+        RoslynCallCounters.Record(3508);
         result = default;
 
         try
@@ -4942,12 +4942,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LetClause_fc089717(
+    public int SyntaxFactory_LetClause_3c989d22(
         long identifier,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5394);
+        RoslynCallCounters.Record(3509);
         result = default;
 
         try
@@ -4961,14 +4961,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LetClause_ee9801c3(
+    public int SyntaxFactory_LetClause_b0b761ca(
         long letKeyword,
         long identifier,
         long equalsToken,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5395);
+        RoslynCallCounters.Record(3510);
         result = default;
 
         try
@@ -4982,12 +4982,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LetClause_e5cfd9de(
+    public int SyntaxFactory_LetClause_2c7239cc(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5396);
+        RoslynCallCounters.Record(3511);
         result = default;
 
         try
@@ -5001,12 +5001,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineDirectivePosition_109d5ee2(
+    public int SyntaxFactory_LineDirectivePosition_3b4437b0(
         long line,
         long character,
         out long result)
     {
-        RoslynCallCounters.Record(5397);
+        RoslynCallCounters.Record(3512);
         result = default;
 
         try
@@ -5020,7 +5020,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineDirectivePosition_802febb4(
+    public int SyntaxFactory_LineDirectivePosition_9996933c(
         long openParenToken,
         long line,
         long commaToken,
@@ -5028,7 +5028,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5398);
+        RoslynCallCounters.Record(3513);
         result = default;
 
         try
@@ -5042,7 +5042,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineDirectiveTrivia_34c2c97f(
+    public int SyntaxFactory_LineDirectiveTrivia_7f80fc66(
         long hashToken,
         long lineKeyword,
         long line,
@@ -5051,7 +5051,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5399);
+        RoslynCallCounters.Record(3514);
         result = default;
 
         try
@@ -5065,13 +5065,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineDirectiveTrivia_3b60bb07(
+    public int SyntaxFactory_LineDirectiveTrivia_908c0a75(
         long line,
         long @file,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5400);
+        RoslynCallCounters.Record(3515);
         result = default;
 
         try
@@ -5085,12 +5085,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineDirectiveTrivia_fbfeead5(
+    public int SyntaxFactory_LineDirectiveTrivia_e0de9fce(
         long line,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5401);
+        RoslynCallCounters.Record(3516);
         result = default;
 
         try
@@ -5104,7 +5104,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineSpanDirectiveTrivia_f450f591(
+    public int SyntaxFactory_LineSpanDirectiveTrivia_8fd36f70(
         long start,
         long end,
         long characterOffset,
@@ -5112,7 +5112,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5402);
+        RoslynCallCounters.Record(3517);
         result = default;
 
         try
@@ -5126,14 +5126,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineSpanDirectiveTrivia_356474bb(
+    public int SyntaxFactory_LineSpanDirectiveTrivia_8031de27(
         long start,
         long end,
         long @file,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5403);
+        RoslynCallCounters.Record(3518);
         result = default;
 
         try
@@ -5147,7 +5147,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LineSpanDirectiveTrivia_cf4e0cc8(
+    public int SyntaxFactory_LineSpanDirectiveTrivia_54cfe0e0(
         long hashToken,
         long lineKeyword,
         long start,
@@ -5159,7 +5159,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5404);
+        RoslynCallCounters.Record(3519);
         result = default;
 
         try
@@ -5173,11 +5173,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LiteralExpression_5029e332(
+    public int SyntaxFactory_LiteralExpression_8c9aa8a9(
         ushort kind,
         out long result)
     {
-        RoslynCallCounters.Record(5405);
+        RoslynCallCounters.Record(3520);
         result = default;
 
         try
@@ -5191,12 +5191,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LiteralExpression_60546f4f(
+    public int SyntaxFactory_LiteralExpression_c06e09db(
         ushort kind,
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(5406);
+        RoslynCallCounters.Record(3521);
         result = default;
 
         try
@@ -5210,14 +5210,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_cd4ca391(
+    public int SyntaxFactory_Literal_fc51221c(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         ushort value,
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5407);
+        RoslynCallCounters.Record(3522);
         result = default;
 
         try
@@ -5231,14 +5231,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_c4709b2e(
+    public int SyntaxFactory_Literal_64a2766f(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         int value,
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5408);
+        RoslynCallCounters.Record(3523);
         result = default;
 
         try
@@ -5252,14 +5252,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_729c8837(
+    public int SyntaxFactory_Literal_1ecef8f4(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         long value,
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5409);
+        RoslynCallCounters.Record(3524);
         result = default;
 
         try
@@ -5273,14 +5273,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_2bc49c16(
+    public int SyntaxFactory_Literal_beb2c4a8(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5410);
+        RoslynCallCounters.Record(3525);
         result = default;
 
         try
@@ -5294,14 +5294,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_a5259219(
+    public int SyntaxFactory_Literal_a734a88f(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         uint value,
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5411);
+        RoslynCallCounters.Record(3526);
         result = default;
 
         try
@@ -5315,14 +5315,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_c0b6ae7d(
+    public int SyntaxFactory_Literal_810daf08(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         ulong value,
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5412);
+        RoslynCallCounters.Record(3527);
         result = default;
 
         try
@@ -5336,11 +5336,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_3a601e8c(
+    public int SyntaxFactory_Literal_db560234(
         ushort value,
         out long result)
     {
-        RoslynCallCounters.Record(5413);
+        RoslynCallCounters.Record(3528);
         result = default;
 
         try
@@ -5354,11 +5354,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_c7f09a25(
+    public int SyntaxFactory_Literal_990e40bf(
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(5414);
+        RoslynCallCounters.Record(3529);
         result = default;
 
         try
@@ -5372,11 +5372,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_3afe9d9d(
+    public int SyntaxFactory_Literal_b59f8ff9(
         long value,
         out long result)
     {
-        RoslynCallCounters.Record(5415);
+        RoslynCallCounters.Record(3530);
         result = default;
 
         try
@@ -5390,11 +5390,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_456768d6(
+    public int SyntaxFactory_Literal_fcad66ef(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result)
     {
-        RoslynCallCounters.Record(5416);
+        RoslynCallCounters.Record(3531);
         result = default;
 
         try
@@ -5408,12 +5408,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_2a30456b(
+    public int SyntaxFactory_Literal_42c581e0(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         ushort value,
         out long result)
     {
-        RoslynCallCounters.Record(5417);
+        RoslynCallCounters.Record(3532);
         result = default;
 
         try
@@ -5427,12 +5427,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_9fed0ac6(
+    public int SyntaxFactory_Literal_95ae3f67(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         int value,
         out long result)
     {
-        RoslynCallCounters.Record(5418);
+        RoslynCallCounters.Record(3533);
         result = default;
 
         try
@@ -5446,12 +5446,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_38a1eb34(
+    public int SyntaxFactory_Literal_64c6c9ed(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         long value,
         out long result)
     {
-        RoslynCallCounters.Record(5419);
+        RoslynCallCounters.Record(3534);
         result = default;
 
         try
@@ -5465,12 +5465,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_9de767e0(
+    public int SyntaxFactory_Literal_1c77ec43(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result)
     {
-        RoslynCallCounters.Record(5420);
+        RoslynCallCounters.Record(3535);
         result = default;
 
         try
@@ -5484,12 +5484,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_d7f3b025(
+    public int SyntaxFactory_Literal_37a7ea1c(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         uint value,
         out long result)
     {
-        RoslynCallCounters.Record(5421);
+        RoslynCallCounters.Record(3536);
         result = default;
 
         try
@@ -5503,12 +5503,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_02470519(
+    public int SyntaxFactory_Literal_6f6d7310(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         ulong value,
         out long result)
     {
-        RoslynCallCounters.Record(5422);
+        RoslynCallCounters.Record(3537);
         result = default;
 
         try
@@ -5522,11 +5522,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_97beecf7(
+    public int SyntaxFactory_Literal_7336d7e3(
         uint value,
         out long result)
     {
-        RoslynCallCounters.Record(5423);
+        RoslynCallCounters.Record(3538);
         result = default;
 
         try
@@ -5540,11 +5540,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Literal_31e09d2b(
+    public int SyntaxFactory_Literal_701b1930(
         ulong value,
         out long result)
     {
-        RoslynCallCounters.Record(5424);
+        RoslynCallCounters.Record(3539);
         result = default;
 
         try
@@ -5558,7 +5558,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LoadDirectiveTrivia_edbd9a22(
+    public int SyntaxFactory_LoadDirectiveTrivia_0afaedbe(
         long hashToken,
         long loadKeyword,
         long @file,
@@ -5566,7 +5566,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5425);
+        RoslynCallCounters.Record(3540);
         result = default;
 
         try
@@ -5580,12 +5580,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LoadDirectiveTrivia_d2030b69(
+    public int SyntaxFactory_LoadDirectiveTrivia_f5a904d5(
         long @file,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5426);
+        RoslynCallCounters.Record(3541);
         result = default;
 
         try
@@ -5599,11 +5599,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LocalDeclarationStatement_ada4c09e(
+    public int SyntaxFactory_LocalDeclarationStatement_13c93b75(
         long declaration,
         out long result)
     {
-        RoslynCallCounters.Record(5427);
+        RoslynCallCounters.Record(3542);
         result = default;
 
         try
@@ -5617,7 +5617,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LocalDeclarationStatement_c0b9e063(
+    public int SyntaxFactory_LocalDeclarationStatement_4d721263(
         long awaitKeyword,
         long usingKeyword,
         long modifiers,
@@ -5625,7 +5625,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5428);
+        RoslynCallCounters.Record(3543);
         result = default;
 
         try
@@ -5639,12 +5639,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LocalDeclarationStatement_35fe19f9(
+    public int SyntaxFactory_LocalDeclarationStatement_e6a53b27(
         long modifiers,
         long declaration,
         out long result)
     {
-        RoslynCallCounters.Record(5429);
+        RoslynCallCounters.Record(3544);
         result = default;
 
         try
@@ -5658,13 +5658,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LocalDeclarationStatement_47f0d71d(
+    public int SyntaxFactory_LocalDeclarationStatement_0cbef534(
         long modifiers,
         long declaration,
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5430);
+        RoslynCallCounters.Record(3545);
         result = default;
 
         try
@@ -5678,12 +5678,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LocalFunctionStatement_f3c309ad(
+    public int SyntaxFactory_LocalFunctionStatement_e2453aab(
         long returnType,
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5431);
+        RoslynCallCounters.Record(3546);
         result = default;
 
         try
@@ -5697,12 +5697,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LocalFunctionStatement_435701ec(
+    public int SyntaxFactory_LocalFunctionStatement_692c0359(
         long returnType,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5432);
+        RoslynCallCounters.Record(3547);
         result = default;
 
         try
@@ -5716,12 +5716,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LockStatement_ad217613(
+    public int SyntaxFactory_LockStatement_e5a94148(
         long expression,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5433);
+        RoslynCallCounters.Record(3548);
         result = default;
 
         try
@@ -5735,7 +5735,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_LockStatement_e2610466(
+    public int SyntaxFactory_LockStatement_305420dc(
         long lockKeyword,
         long openParenToken,
         long expression,
@@ -5743,7 +5743,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5434);
+        RoslynCallCounters.Record(3549);
         result = default;
 
         try
@@ -5757,11 +5757,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_MakeRefExpression_dfad9f32(
+    public int SyntaxFactory_MakeRefExpression_53540bf3(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5435);
+        RoslynCallCounters.Record(3550);
         result = default;
 
         try
@@ -5775,14 +5775,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_MakeRefExpression_2bbf4fda(
+    public int SyntaxFactory_MakeRefExpression_8eccb61f(
         long keyword,
         long openParenToken,
         long expression,
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5436);
+        RoslynCallCounters.Record(3551);
         result = default;
 
         try
@@ -5796,13 +5796,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_MemberAccessExpression_4f66677b(
+    public int SyntaxFactory_MemberAccessExpression_bf0a0ea0(
         ushort kind,
         long expression,
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5437);
+        RoslynCallCounters.Record(3552);
         result = default;
 
         try
@@ -5816,14 +5816,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_MemberAccessExpression_9615479d(
+    public int SyntaxFactory_MemberAccessExpression_a4d3724f(
         ushort kind,
         long expression,
         long operatorToken,
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5438);
+        RoslynCallCounters.Record(3553);
         result = default;
 
         try
@@ -5837,11 +5837,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_MemberBindingExpression_5ccf7b5f(
+    public int SyntaxFactory_MemberBindingExpression_d8176ac3(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5439);
+        RoslynCallCounters.Record(3554);
         result = default;
 
         try
@@ -5855,12 +5855,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_MemberBindingExpression_8b05d33b(
+    public int SyntaxFactory_MemberBindingExpression_cf399c69(
         long operatorToken,
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5440);
+        RoslynCallCounters.Record(3555);
         result = default;
 
         try
@@ -5874,12 +5874,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_MethodDeclaration_8e3e82c3(
+    public int SyntaxFactory_MethodDeclaration_9d15b806(
         long returnType,
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5441);
+        RoslynCallCounters.Record(3556);
         result = default;
 
         try
@@ -5893,12 +5893,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_MethodDeclaration_f694784f(
+    public int SyntaxFactory_MethodDeclaration_2aeb3854(
         long returnType,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5442);
+        RoslynCallCounters.Record(3557);
         result = default;
 
         try
@@ -5912,11 +5912,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_MissingToken_bf6485d6(
+    public int SyntaxFactory_MissingToken_b886d61a(
         ushort kind,
         out long result)
     {
-        RoslynCallCounters.Record(5443);
+        RoslynCallCounters.Record(3558);
         result = default;
 
         try
@@ -5930,13 +5930,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_MissingToken_7eca5bb5(
+    public int SyntaxFactory_MissingToken_c85479f4(
         long leading,
         ushort kind,
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5444);
+        RoslynCallCounters.Record(3559);
         result = default;
 
         try
@@ -5950,11 +5950,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NameColon_9801efb9(
+    public int SyntaxFactory_NameColon_8f70f234(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5445);
+        RoslynCallCounters.Record(3560);
         result = default;
 
         try
@@ -5968,12 +5968,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NameColon_963c8979(
+    public int SyntaxFactory_NameColon_6f850fde(
         long name,
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5446);
+        RoslynCallCounters.Record(3561);
         result = default;
 
         try
@@ -5987,11 +5987,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NameColon_d66eec69(
+    public int SyntaxFactory_NameColon_99fd7953(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(5447);
+        RoslynCallCounters.Record(3562);
         result = default;
 
         try
@@ -6005,11 +6005,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NameEquals_f9222b12(
+    public int SyntaxFactory_NameEquals_5bbb7824(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5448);
+        RoslynCallCounters.Record(3563);
         result = default;
 
         try
@@ -6023,12 +6023,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NameEquals_c5bcd7c0(
+    public int SyntaxFactory_NameEquals_183c89ea(
         long name,
         long equalsToken,
         out long result)
     {
-        RoslynCallCounters.Record(5449);
+        RoslynCallCounters.Record(3564);
         result = default;
 
         try
@@ -6042,11 +6042,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NameEquals_4a837abc(
+    public int SyntaxFactory_NameEquals_a1692f95(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(5450);
+        RoslynCallCounters.Record(3565);
         result = default;
 
         try
@@ -6060,11 +6060,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NameMemberCref_888f8546(
+    public int SyntaxFactory_NameMemberCref_10ffb9dc(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5451);
+        RoslynCallCounters.Record(3566);
         result = default;
 
         try
@@ -6078,12 +6078,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NameMemberCref_195d430d(
+    public int SyntaxFactory_NameMemberCref_30d07e49(
         long name,
         long parameters,
         out long result)
     {
-        RoslynCallCounters.Record(5452);
+        RoslynCallCounters.Record(3567);
         result = default;
 
         try
@@ -6097,11 +6097,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NamespaceDeclaration_dc29acb6(
+    public int SyntaxFactory_NamespaceDeclaration_6ea959fe(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5453);
+        RoslynCallCounters.Record(3568);
         result = default;
 
         try
@@ -6115,10 +6115,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NodeOrTokenList_f7b2e7dd(
+    public int SyntaxFactory_NodeOrTokenList_5abb58d5(
         out long result)
     {
-        RoslynCallCounters.Record(5454);
+        RoslynCallCounters.Record(3569);
         result = default;
 
         try
@@ -6132,7 +6132,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NullableDirectiveTrivia_570ce1d7(
+    public int SyntaxFactory_NullableDirectiveTrivia_25ee80ff(
         long hashToken,
         long nullableKeyword,
         long settingToken,
@@ -6141,7 +6141,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5455);
+        RoslynCallCounters.Record(3570);
         result = default;
 
         try
@@ -6155,13 +6155,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NullableDirectiveTrivia_76b301a2(
+    public int SyntaxFactory_NullableDirectiveTrivia_de3e3c2d(
         long settingToken,
         long targetToken,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5456);
+        RoslynCallCounters.Record(3571);
         result = default;
 
         try
@@ -6175,12 +6175,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NullableDirectiveTrivia_1b61e36d(
+    public int SyntaxFactory_NullableDirectiveTrivia_a71fa04e(
         long settingToken,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5457);
+        RoslynCallCounters.Record(3572);
         result = default;
 
         try
@@ -6194,11 +6194,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NullableType_2f686035(
+    public int SyntaxFactory_NullableType_61742ea9(
         long elementType,
         out long result)
     {
-        RoslynCallCounters.Record(5458);
+        RoslynCallCounters.Record(3573);
         result = default;
 
         try
@@ -6212,12 +6212,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_NullableType_173b4753(
+    public int SyntaxFactory_NullableType_9b546729(
         long elementType,
         long questionToken,
         out long result)
     {
-        RoslynCallCounters.Record(5459);
+        RoslynCallCounters.Record(3574);
         result = default;
 
         try
@@ -6231,11 +6231,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ObjectCreationExpression_119a69db(
+    public int SyntaxFactory_ObjectCreationExpression_68261a1f(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5460);
+        RoslynCallCounters.Record(3575);
         result = default;
 
         try
@@ -6249,13 +6249,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ObjectCreationExpression_ed19a48a(
+    public int SyntaxFactory_ObjectCreationExpression_7d436191(
         long @type,
         long argumentList,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5461);
+        RoslynCallCounters.Record(3576);
         result = default;
 
         try
@@ -6269,14 +6269,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ObjectCreationExpression_b904a516(
+    public int SyntaxFactory_ObjectCreationExpression_7c660042(
         long newKeyword,
         long @type,
         long argumentList,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5462);
+        RoslynCallCounters.Record(3577);
         result = default;
 
         try
@@ -6290,10 +6290,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_OmittedArraySizeExpression_157596f7(
+    public int SyntaxFactory_OmittedArraySizeExpression_7162a69b(
         out long result)
     {
-        RoslynCallCounters.Record(5463);
+        RoslynCallCounters.Record(3578);
         result = default;
 
         try
@@ -6307,11 +6307,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_OmittedArraySizeExpression_263ceee3(
+    public int SyntaxFactory_OmittedArraySizeExpression_5dae1b6a(
         long omittedArraySizeExpressionToken,
         out long result)
     {
-        RoslynCallCounters.Record(5464);
+        RoslynCallCounters.Record(3579);
         result = default;
 
         try
@@ -6325,10 +6325,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_OmittedTypeArgument_0e65b45a(
+    public int SyntaxFactory_OmittedTypeArgument_567eb99a(
         out long result)
     {
-        RoslynCallCounters.Record(5465);
+        RoslynCallCounters.Record(3580);
         result = default;
 
         try
@@ -6342,11 +6342,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_OmittedTypeArgument_57ab2894(
+    public int SyntaxFactory_OmittedTypeArgument_01357d50(
         long omittedTypeArgumentToken,
         out long result)
     {
-        RoslynCallCounters.Record(5466);
+        RoslynCallCounters.Record(3581);
         result = default;
 
         try
@@ -6360,12 +6360,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_OperatorDeclaration_ac80785b(
+    public int SyntaxFactory_OperatorDeclaration_898c681a(
         long returnType,
         long operatorToken,
         out long result)
     {
-        RoslynCallCounters.Record(5467);
+        RoslynCallCounters.Record(3582);
         result = default;
 
         try
@@ -6379,11 +6379,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_OperatorMemberCref_f15a2f12(
+    public int SyntaxFactory_OperatorMemberCref_62e1dbf8(
         long operatorToken,
         out long result)
     {
-        RoslynCallCounters.Record(5468);
+        RoslynCallCounters.Record(3583);
         result = default;
 
         try
@@ -6397,12 +6397,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_OperatorMemberCref_54328b9e(
+    public int SyntaxFactory_OperatorMemberCref_f2612932(
         long operatorToken,
         long parameters,
         out long result)
     {
-        RoslynCallCounters.Record(5469);
+        RoslynCallCounters.Record(3584);
         result = default;
 
         try
@@ -6416,13 +6416,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_OperatorMemberCref_beaf6693(
+    public int SyntaxFactory_OperatorMemberCref_5a3e7d57(
         long operatorKeyword,
         long operatorToken,
         long parameters,
         out long result)
     {
-        RoslynCallCounters.Record(5470);
+        RoslynCallCounters.Record(3585);
         result = default;
 
         try
@@ -6436,14 +6436,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_OperatorMemberCref_21804b6a(
+    public int SyntaxFactory_OperatorMemberCref_7110c6bb(
         long operatorKeyword,
         long checkedKeyword,
         long operatorToken,
         long parameters,
         out long result)
     {
-        RoslynCallCounters.Record(5471);
+        RoslynCallCounters.Record(3586);
         result = default;
 
         try
@@ -6457,12 +6457,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Ordering_74b0363c(
+    public int SyntaxFactory_Ordering_89c3a6f0(
         ushort kind,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5472);
+        RoslynCallCounters.Record(3587);
         result = default;
 
         try
@@ -6476,13 +6476,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Ordering_501e6681(
+    public int SyntaxFactory_Ordering_072986ea(
         ushort kind,
         long expression,
         long ascendingOrDescendingKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(5473);
+        RoslynCallCounters.Record(3588);
         result = default;
 
         try
@@ -6496,11 +6496,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Parameter_e751749a(
+    public int SyntaxFactory_Parameter_b70006b6(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5474);
+        RoslynCallCounters.Record(3589);
         result = default;
 
         try
@@ -6514,11 +6514,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedExpression_7c1792a1(
+    public int SyntaxFactory_ParenthesizedExpression_e744786c(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5475);
+        RoslynCallCounters.Record(3590);
         result = default;
 
         try
@@ -6532,13 +6532,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedExpression_7502d30f(
+    public int SyntaxFactory_ParenthesizedExpression_e163f443(
         long openParenToken,
         long expression,
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5476);
+        RoslynCallCounters.Record(3591);
         result = default;
 
         try
@@ -6552,10 +6552,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedLambdaExpression_6b6da45f(
+    public int SyntaxFactory_ParenthesizedLambdaExpression_fb45ca0c(
         out long result)
     {
-        RoslynCallCounters.Record(5477);
+        RoslynCallCounters.Record(3592);
         result = default;
 
         try
@@ -6569,11 +6569,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedLambdaExpression_0d0d0380(
+    public int SyntaxFactory_ParenthesizedLambdaExpression_e886337e(
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5478);
+        RoslynCallCounters.Record(3593);
         result = default;
 
         try
@@ -6587,12 +6587,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedLambdaExpression_3327f291(
+    public int SyntaxFactory_ParenthesizedLambdaExpression_8204681c(
         long parameterList,
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5479);
+        RoslynCallCounters.Record(3594);
         result = default;
 
         try
@@ -6606,13 +6606,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedLambdaExpression_ad298c6a(
+    public int SyntaxFactory_ParenthesizedLambdaExpression_ff105da6(
         long parameterList,
         long block,
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(5480);
+        RoslynCallCounters.Record(3595);
         result = default;
 
         try
@@ -6626,14 +6626,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedLambdaExpression_bcdc8c4b(
+    public int SyntaxFactory_ParenthesizedLambdaExpression_2ec57bde(
         long asyncKeyword,
         long parameterList,
         long arrowToken,
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5481);
+        RoslynCallCounters.Record(3596);
         result = default;
 
         try
@@ -6647,7 +6647,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedLambdaExpression_d48c4abc(
+    public int SyntaxFactory_ParenthesizedLambdaExpression_1c948ce5(
         long asyncKeyword,
         long parameterList,
         long arrowToken,
@@ -6655,7 +6655,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(5482);
+        RoslynCallCounters.Record(3597);
         result = default;
 
         try
@@ -6669,14 +6669,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedLambdaExpression_77d78c56(
+    public int SyntaxFactory_ParenthesizedLambdaExpression_e99db4fd(
         long modifiers,
         long parameterList,
         long block,
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(5483);
+        RoslynCallCounters.Record(3598);
         result = default;
 
         try
@@ -6690,7 +6690,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedLambdaExpression_5df6f484(
+    public int SyntaxFactory_ParenthesizedLambdaExpression_ce114d96(
         long modifiers,
         long parameterList,
         long arrowToken,
@@ -6698,7 +6698,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(5484);
+        RoslynCallCounters.Record(3599);
         result = default;
 
         try
@@ -6712,11 +6712,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedPattern_133aea75(
+    public int SyntaxFactory_ParenthesizedPattern_1ae1503a(
         long pattern,
         out long result)
     {
-        RoslynCallCounters.Record(5485);
+        RoslynCallCounters.Record(3600);
         result = default;
 
         try
@@ -6730,13 +6730,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParenthesizedPattern_25498950(
+    public int SyntaxFactory_ParenthesizedPattern_8d268754(
         long openParenToken,
         long pattern,
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5486);
+        RoslynCallCounters.Record(3601);
         result = default;
 
         try
@@ -6757,7 +6757,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int consumeFullText,
         out long result)
     {
-        RoslynCallCounters.Record(5487);
+        RoslynCallCounters.Record(3602);
         result = default;
 
         try
@@ -6778,7 +6778,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int consumeFullText,
         out long result)
     {
-        RoslynCallCounters.Record(5488);
+        RoslynCallCounters.Record(3603);
         result = default;
 
         try
@@ -6799,7 +6799,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int consumeFullText,
         out long result)
     {
-        RoslynCallCounters.Record(5489);
+        RoslynCallCounters.Record(3604);
         result = default;
 
         try
@@ -6820,7 +6820,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int consumeFullText,
         out long result)
     {
-        RoslynCallCounters.Record(5490);
+        RoslynCallCounters.Record(3605);
         result = default;
 
         try
@@ -6840,7 +6840,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long options,
         out long result)
     {
-        RoslynCallCounters.Record(5491);
+        RoslynCallCounters.Record(3606);
         result = default;
 
         try
@@ -6861,7 +6861,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int consumeFullText,
         out long result)
     {
-        RoslynCallCounters.Record(5492);
+        RoslynCallCounters.Record(3607);
         result = default;
 
         try
@@ -6880,7 +6880,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int offset,
         out long result)
     {
-        RoslynCallCounters.Record(5493);
+        RoslynCallCounters.Record(3608);
         result = default;
 
         try
@@ -6901,7 +6901,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int consumeFullText,
         out long result)
     {
-        RoslynCallCounters.Record(5494);
+        RoslynCallCounters.Record(3609);
         result = default;
 
         try
@@ -6921,7 +6921,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int consumeFullText,
         out long result)
     {
-        RoslynCallCounters.Record(5495);
+        RoslynCallCounters.Record(3610);
         result = default;
 
         try
@@ -6942,7 +6942,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int consumeFullText,
         out long result)
     {
-        RoslynCallCounters.Record(5496);
+        RoslynCallCounters.Record(3611);
         result = default;
 
         try
@@ -6963,7 +6963,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int consumeFullText,
         out long result)
     {
-        RoslynCallCounters.Record(5497);
+        RoslynCallCounters.Record(3612);
         result = default;
 
         try
@@ -6982,7 +6982,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int offset,
         out long result)
     {
-        RoslynCallCounters.Record(5498);
+        RoslynCallCounters.Record(3613);
         result = default;
 
         try
@@ -7001,7 +7001,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int offset,
         out long result)
     {
-        RoslynCallCounters.Record(5499);
+        RoslynCallCounters.Record(3614);
         result = default;
 
         try
@@ -7015,14 +7015,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParseTypeName_c81adac4(
+    public int SyntaxFactory_ParseTypeName_4e8d5f47(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         int offset,
         long options,
         int consumeFullText,
         out long result)
     {
-        RoslynCallCounters.Record(5500);
+        RoslynCallCounters.Record(3615);
         result = default;
 
         try
@@ -7036,13 +7036,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ParseTypeName_0a9e6f16(
+    public int SyntaxFactory_ParseTypeName_adf631b7(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         int offset,
         int consumeFullText,
         out long result)
     {
-        RoslynCallCounters.Record(5501);
+        RoslynCallCounters.Record(3616);
         result = default;
 
         try
@@ -7056,11 +7056,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PointerType_a0f87aa3(
+    public int SyntaxFactory_PointerType_569c5e11(
         long elementType,
         out long result)
     {
-        RoslynCallCounters.Record(5502);
+        RoslynCallCounters.Record(3617);
         result = default;
 
         try
@@ -7074,12 +7074,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PointerType_44ab636d(
+    public int SyntaxFactory_PointerType_d6475436(
         long elementType,
         long asteriskToken,
         out long result)
     {
-        RoslynCallCounters.Record(5503);
+        RoslynCallCounters.Record(3618);
         result = default;
 
         try
@@ -7093,12 +7093,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PostfixUnaryExpression_33987085(
+    public int SyntaxFactory_PostfixUnaryExpression_5ff6e252(
         ushort kind,
         long operand,
         out long result)
     {
-        RoslynCallCounters.Record(5504);
+        RoslynCallCounters.Record(3619);
         result = default;
 
         try
@@ -7112,13 +7112,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PostfixUnaryExpression_2a64d160(
+    public int SyntaxFactory_PostfixUnaryExpression_7198bb23(
         ushort kind,
         long operand,
         long operatorToken,
         out long result)
     {
-        RoslynCallCounters.Record(5505);
+        RoslynCallCounters.Record(3620);
         result = default;
 
         try
@@ -7132,7 +7132,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_e796eed2(
+    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_423ffdea(
         long hashToken,
         long pragmaKeyword,
         long checksumKeyword,
@@ -7143,7 +7143,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5506);
+        RoslynCallCounters.Record(3621);
         result = default;
 
         try
@@ -7157,14 +7157,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_33698983(
+    public int SyntaxFactory_PragmaChecksumDirectiveTrivia_e619f96d(
         long @file,
         long guid,
         long bytes,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5507);
+        RoslynCallCounters.Record(3622);
         result = default;
 
         try
@@ -7178,12 +7178,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PragmaWarningDirectiveTrivia_19017fcd(
+    public int SyntaxFactory_PragmaWarningDirectiveTrivia_f386ea7d(
         long disableOrRestoreKeyword,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5508);
+        RoslynCallCounters.Record(3623);
         result = default;
 
         try
@@ -7201,7 +7201,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long keyword,
         out long result)
     {
-        RoslynCallCounters.Record(5509);
+        RoslynCallCounters.Record(3624);
         result = default;
 
         try
@@ -7215,12 +7215,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PrefixUnaryExpression_b706847f(
+    public int SyntaxFactory_PrefixUnaryExpression_f084f858(
         ushort kind,
         long operand,
         out long result)
     {
-        RoslynCallCounters.Record(5510);
+        RoslynCallCounters.Record(3625);
         result = default;
 
         try
@@ -7234,13 +7234,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PrefixUnaryExpression_1d5c2758(
+    public int SyntaxFactory_PrefixUnaryExpression_9a324188(
         ushort kind,
         long operatorToken,
         long operand,
         out long result)
     {
-        RoslynCallCounters.Record(5511);
+        RoslynCallCounters.Record(3626);
         result = default;
 
         try
@@ -7258,7 +7258,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5512);
+        RoslynCallCounters.Record(3627);
         result = default;
 
         try
@@ -7272,11 +7272,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PrimaryConstructorBaseType_fc453fbf(
+    public int SyntaxFactory_PrimaryConstructorBaseType_36c0e881(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5513);
+        RoslynCallCounters.Record(3628);
         result = default;
 
         try
@@ -7290,12 +7290,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PrimaryConstructorBaseType_72c09345(
+    public int SyntaxFactory_PrimaryConstructorBaseType_bb185b82(
         long @type,
         long argumentList,
         out long result)
     {
-        RoslynCallCounters.Record(5514);
+        RoslynCallCounters.Record(3629);
         result = default;
 
         try
@@ -7309,12 +7309,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PropertyDeclaration_f546640f(
+    public int SyntaxFactory_PropertyDeclaration_c3ca3ae7(
         long @type,
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5515);
+        RoslynCallCounters.Record(3630);
         result = default;
 
         try
@@ -7328,12 +7328,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_PropertyDeclaration_80d1667b(
+    public int SyntaxFactory_PropertyDeclaration_7e88ff2e(
         long @type,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5516);
+        RoslynCallCounters.Record(3631);
         result = default;
 
         try
@@ -7347,12 +7347,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_QualifiedCref_f2cbda1e(
+    public int SyntaxFactory_QualifiedCref_3b295955(
         long container,
         long member,
         out long result)
     {
-        RoslynCallCounters.Record(5517);
+        RoslynCallCounters.Record(3632);
         result = default;
 
         try
@@ -7366,13 +7366,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_QualifiedCref_110b90c2(
+    public int SyntaxFactory_QualifiedCref_4892e72b(
         long container,
         long dotToken,
         long member,
         out long result)
     {
-        RoslynCallCounters.Record(5518);
+        RoslynCallCounters.Record(3633);
         result = default;
 
         try
@@ -7386,12 +7386,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_QualifiedName_7ac9d217(
+    public int SyntaxFactory_QualifiedName_0929361b(
         long left,
         long right,
         out long result)
     {
-        RoslynCallCounters.Record(5519);
+        RoslynCallCounters.Record(3634);
         result = default;
 
         try
@@ -7405,13 +7405,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_QualifiedName_d3448001(
+    public int SyntaxFactory_QualifiedName_0d745fb9(
         long left,
         long dotToken,
         long right,
         out long result)
     {
-        RoslynCallCounters.Record(5520);
+        RoslynCallCounters.Record(3635);
         result = default;
 
         try
@@ -7425,11 +7425,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_QueryBody_bf383377(
+    public int SyntaxFactory_QueryBody_042acb95(
         long selectOrGroup,
         out long result)
     {
-        RoslynCallCounters.Record(5521);
+        RoslynCallCounters.Record(3636);
         result = default;
 
         try
@@ -7443,12 +7443,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_QueryContinuation_acd6d148(
+    public int SyntaxFactory_QueryContinuation_6dfad843(
         long identifier,
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5522);
+        RoslynCallCounters.Record(3637);
         result = default;
 
         try
@@ -7462,13 +7462,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_QueryContinuation_ac308e38(
+    public int SyntaxFactory_QueryContinuation_e03cc99b(
         long intoKeyword,
         long identifier,
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5523);
+        RoslynCallCounters.Record(3638);
         result = default;
 
         try
@@ -7482,12 +7482,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_QueryContinuation_b39b9022(
+    public int SyntaxFactory_QueryContinuation_9a8246c4(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5524);
+        RoslynCallCounters.Record(3639);
         result = default;
 
         try
@@ -7506,7 +7506,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5525);
+        RoslynCallCounters.Record(3640);
         result = default;
 
         try
@@ -7520,10 +7520,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RangeExpression_cadba3bc(
+    public int SyntaxFactory_RangeExpression_05207c7a(
         out long result)
     {
-        RoslynCallCounters.Record(5526);
+        RoslynCallCounters.Record(3641);
         result = default;
 
         try
@@ -7537,12 +7537,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RangeExpression_f87654d9(
+    public int SyntaxFactory_RangeExpression_f43fec31(
         long leftOperand,
         long rightOperand,
         out long result)
     {
-        RoslynCallCounters.Record(5527);
+        RoslynCallCounters.Record(3642);
         result = default;
 
         try
@@ -7556,13 +7556,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RangeExpression_af8d530a(
+    public int SyntaxFactory_RangeExpression_7644afd1(
         long leftOperand,
         long operatorToken,
         long rightOperand,
         out long result)
     {
-        RoslynCallCounters.Record(5528);
+        RoslynCallCounters.Record(3643);
         result = default;
 
         try
@@ -7576,13 +7576,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RecordDeclaration_70a7b019(
+    public int SyntaxFactory_RecordDeclaration_38b787b2(
         ushort kind,
         long keyword,
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5529);
+        RoslynCallCounters.Record(3644);
         result = default;
 
         try
@@ -7596,13 +7596,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RecordDeclaration_998052ba(
+    public int SyntaxFactory_RecordDeclaration_c003ee6f(
         ushort kind,
         long keyword,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5530);
+        RoslynCallCounters.Record(3645);
         result = default;
 
         try
@@ -7616,12 +7616,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RecordDeclaration_763e3ec8(
+    public int SyntaxFactory_RecordDeclaration_c63d085e(
         long keyword,
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5531);
+        RoslynCallCounters.Record(3646);
         result = default;
 
         try
@@ -7635,12 +7635,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RecordDeclaration_3295d06a(
+    public int SyntaxFactory_RecordDeclaration_70ec81cd(
         long keyword,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5532);
+        RoslynCallCounters.Record(3647);
         result = default;
 
         try
@@ -7654,10 +7654,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RecursivePattern_15e819e5(
+    public int SyntaxFactory_RecursivePattern_f87a8d0d(
         out long result)
     {
-        RoslynCallCounters.Record(5533);
+        RoslynCallCounters.Record(3648);
         result = default;
 
         try
@@ -7671,14 +7671,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RecursivePattern_50e54517(
+    public int SyntaxFactory_RecursivePattern_0689c13b(
         long @type,
         long positionalPatternClause,
         long propertyPatternClause,
         long designation,
         out long result)
     {
-        RoslynCallCounters.Record(5534);
+        RoslynCallCounters.Record(3649);
         result = default;
 
         try
@@ -7692,11 +7692,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RefExpression_812ed1b3(
+    public int SyntaxFactory_RefExpression_f2db6704(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5535);
+        RoslynCallCounters.Record(3650);
         result = default;
 
         try
@@ -7710,12 +7710,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RefExpression_30339826(
+    public int SyntaxFactory_RefExpression_59664854(
         long refKeyword,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5536);
+        RoslynCallCounters.Record(3651);
         result = default;
 
         try
@@ -7729,10 +7729,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RefStructConstraint_620b6dfb(
+    public int SyntaxFactory_RefStructConstraint_81f1dcc4(
         out long result)
     {
-        RoslynCallCounters.Record(5537);
+        RoslynCallCounters.Record(3652);
         result = default;
 
         try
@@ -7746,12 +7746,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RefStructConstraint_227bf063(
+    public int SyntaxFactory_RefStructConstraint_4fff62d0(
         long refKeyword,
         long structKeyword,
         out long result)
     {
-        RoslynCallCounters.Record(5538);
+        RoslynCallCounters.Record(3653);
         result = default;
 
         try
@@ -7765,11 +7765,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RefTypeExpression_95a3471c(
+    public int SyntaxFactory_RefTypeExpression_bdc4654b(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5539);
+        RoslynCallCounters.Record(3654);
         result = default;
 
         try
@@ -7783,14 +7783,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RefTypeExpression_e8f74582(
+    public int SyntaxFactory_RefTypeExpression_b4ea67e0(
         long keyword,
         long openParenToken,
         long expression,
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5540);
+        RoslynCallCounters.Record(3655);
         result = default;
 
         try
@@ -7804,11 +7804,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RefType_910478b0(
+    public int SyntaxFactory_RefType_4aa5acc5(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5541);
+        RoslynCallCounters.Record(3656);
         result = default;
 
         try
@@ -7822,12 +7822,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RefType_92c3be6e(
+    public int SyntaxFactory_RefType_7e4b1c05(
         long refKeyword,
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5542);
+        RoslynCallCounters.Record(3657);
         result = default;
 
         try
@@ -7841,13 +7841,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RefType_2f95c1b7(
+    public int SyntaxFactory_RefType_e52e3a62(
         long refKeyword,
         long readOnlyKeyword,
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5543);
+        RoslynCallCounters.Record(3658);
         result = default;
 
         try
@@ -7861,12 +7861,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RefValueExpression_2659a30d(
+    public int SyntaxFactory_RefValueExpression_447b10c4(
         long expression,
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5544);
+        RoslynCallCounters.Record(3659);
         result = default;
 
         try
@@ -7880,7 +7880,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RefValueExpression_c8005648(
+    public int SyntaxFactory_RefValueExpression_541a39c0(
         long keyword,
         long openParenToken,
         long expression,
@@ -7889,7 +7889,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5545);
+        RoslynCallCounters.Record(3660);
         result = default;
 
         try
@@ -7903,7 +7903,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ReferenceDirectiveTrivia_a66a8517(
+    public int SyntaxFactory_ReferenceDirectiveTrivia_6862c609(
         long hashToken,
         long referenceKeyword,
         long @file,
@@ -7911,7 +7911,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5546);
+        RoslynCallCounters.Record(3661);
         result = default;
 
         try
@@ -7925,12 +7925,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ReferenceDirectiveTrivia_78ce8ef2(
+    public int SyntaxFactory_ReferenceDirectiveTrivia_fcd96f73(
         long @file,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5547);
+        RoslynCallCounters.Record(3662);
         result = default;
 
         try
@@ -7944,14 +7944,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RegionDirectiveTrivia_da85ceef(
+    public int SyntaxFactory_RegionDirectiveTrivia_a0a5bd6d(
         long hashToken,
         long regionKeyword,
         long endOfDirectiveToken,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5548);
+        RoslynCallCounters.Record(3663);
         result = default;
 
         try
@@ -7965,11 +7965,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_RegionDirectiveTrivia_26402d2c(
+    public int SyntaxFactory_RegionDirectiveTrivia_1afe2509(
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5549);
+        RoslynCallCounters.Record(3664);
         result = default;
 
         try
@@ -7988,7 +7988,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5550);
+        RoslynCallCounters.Record(3665);
         result = default;
 
         try
@@ -8002,11 +8002,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ReturnStatement_bba37ef0(
+    public int SyntaxFactory_ReturnStatement_23aa7e3d(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5551);
+        RoslynCallCounters.Record(3666);
         result = default;
 
         try
@@ -8020,13 +8020,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ReturnStatement_4ea7c8b0(
+    public int SyntaxFactory_ReturnStatement_f96d1a70(
         long returnKeyword,
         long expression,
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5552);
+        RoslynCallCounters.Record(3667);
         result = default;
 
         try
@@ -8040,11 +8040,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ScopedType_4a260ee1(
+    public int SyntaxFactory_ScopedType_fefee728(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5553);
+        RoslynCallCounters.Record(3668);
         result = default;
 
         try
@@ -8058,12 +8058,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ScopedType_651b3280(
+    public int SyntaxFactory_ScopedType_2d02252c(
         long scopedKeyword,
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5554);
+        RoslynCallCounters.Record(3669);
         result = default;
 
         try
@@ -8077,11 +8077,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SelectClause_73f8b388(
+    public int SyntaxFactory_SelectClause_909f9ea4(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5555);
+        RoslynCallCounters.Record(3670);
         result = default;
 
         try
@@ -8095,12 +8095,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SelectClause_a41a3763(
+    public int SyntaxFactory_SelectClause_df8ab18d(
         long selectKeyword,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5556);
+        RoslynCallCounters.Record(3671);
         result = default;
 
         try
@@ -8114,14 +8114,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ShebangDirectiveTrivia_2911db1c(
+    public int SyntaxFactory_ShebangDirectiveTrivia_72e3e9a2(
         long hashToken,
         long exclamationToken,
         long endOfDirectiveToken,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5557);
+        RoslynCallCounters.Record(3672);
         result = default;
 
         try
@@ -8135,11 +8135,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ShebangDirectiveTrivia_d3210673(
+    public int SyntaxFactory_ShebangDirectiveTrivia_2128af96(
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5558);
+        RoslynCallCounters.Record(3673);
         result = default;
 
         try
@@ -8157,7 +8157,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5559);
+        RoslynCallCounters.Record(3674);
         result = default;
 
         try
@@ -8171,11 +8171,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SimpleLambdaExpression_8cc00a73(
+    public int SyntaxFactory_SimpleLambdaExpression_540fa0b8(
         long parameter,
         out long result)
     {
-        RoslynCallCounters.Record(5560);
+        RoslynCallCounters.Record(3675);
         result = default;
 
         try
@@ -8189,12 +8189,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SimpleLambdaExpression_c72b75dd(
+    public int SyntaxFactory_SimpleLambdaExpression_ea31d129(
         long parameter,
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5561);
+        RoslynCallCounters.Record(3676);
         result = default;
 
         try
@@ -8208,13 +8208,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SimpleLambdaExpression_da10bdbf(
+    public int SyntaxFactory_SimpleLambdaExpression_93203f23(
         long parameter,
         long block,
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(5562);
+        RoslynCallCounters.Record(3677);
         result = default;
 
         try
@@ -8228,14 +8228,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SimpleLambdaExpression_2171af7c(
+    public int SyntaxFactory_SimpleLambdaExpression_d5e54b86(
         long asyncKeyword,
         long parameter,
         long arrowToken,
         long body,
         out long result)
     {
-        RoslynCallCounters.Record(5563);
+        RoslynCallCounters.Record(3678);
         result = default;
 
         try
@@ -8249,7 +8249,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SimpleLambdaExpression_f7d8fe53(
+    public int SyntaxFactory_SimpleLambdaExpression_d898f54f(
         long asyncKeyword,
         long parameter,
         long arrowToken,
@@ -8257,7 +8257,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(5564);
+        RoslynCallCounters.Record(3679);
         result = default;
 
         try
@@ -8271,14 +8271,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SimpleLambdaExpression_624ab1b3(
+    public int SyntaxFactory_SimpleLambdaExpression_1211d235(
         long modifiers,
         long parameter,
         long block,
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(5565);
+        RoslynCallCounters.Record(3680);
         result = default;
 
         try
@@ -8292,7 +8292,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SimpleLambdaExpression_eaddfe6f(
+    public int SyntaxFactory_SimpleLambdaExpression_973c1627(
         long modifiers,
         long parameter,
         long arrowToken,
@@ -8300,7 +8300,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long expressionBody,
         out long result)
     {
-        RoslynCallCounters.Record(5566);
+        RoslynCallCounters.Record(3681);
         result = default;
 
         try
@@ -8318,7 +8318,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5567);
+        RoslynCallCounters.Record(3682);
         result = default;
 
         try
@@ -8332,11 +8332,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SizeOfExpression_b14bcafb(
+    public int SyntaxFactory_SizeOfExpression_f66d0b56(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5568);
+        RoslynCallCounters.Record(3683);
         result = default;
 
         try
@@ -8350,14 +8350,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SizeOfExpression_0aaa190b(
+    public int SyntaxFactory_SizeOfExpression_70e5c080(
         long keyword,
         long openParenToken,
         long @type,
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5569);
+        RoslynCallCounters.Record(3684);
         result = default;
 
         try
@@ -8371,10 +8371,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SkippedTokensTrivia_143d0d66(
+    public int SyntaxFactory_SkippedTokensTrivia_5e3600f5(
         out long result)
     {
-        RoslynCallCounters.Record(5570);
+        RoslynCallCounters.Record(3685);
         result = default;
 
         try
@@ -8388,11 +8388,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SkippedTokensTrivia_97714e3a(
+    public int SyntaxFactory_SkippedTokensTrivia_8d6dc311(
         long tokens,
         out long result)
     {
-        RoslynCallCounters.Record(5571);
+        RoslynCallCounters.Record(3686);
         result = default;
 
         try
@@ -8406,11 +8406,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SlicePattern_38eed3a3(
+    public int SyntaxFactory_SlicePattern_ff91e792(
         long pattern,
         out long result)
     {
-        RoslynCallCounters.Record(5572);
+        RoslynCallCounters.Record(3687);
         result = default;
 
         try
@@ -8424,12 +8424,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SlicePattern_5584d349(
+    public int SyntaxFactory_SlicePattern_02a841a6(
         long dotDotToken,
         long pattern,
         out long result)
     {
-        RoslynCallCounters.Record(5573);
+        RoslynCallCounters.Record(3688);
         result = default;
 
         try
@@ -8443,11 +8443,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SpreadElement_237075ab(
+    public int SyntaxFactory_SpreadElement_f0b7bea0(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5574);
+        RoslynCallCounters.Record(3689);
         result = default;
 
         try
@@ -8461,12 +8461,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SpreadElement_086cde2a(
+    public int SyntaxFactory_SpreadElement_e325629f(
         long operatorToken,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5575);
+        RoslynCallCounters.Record(3690);
         result = default;
 
         try
@@ -8480,11 +8480,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_StackAllocArrayCreationExpression_c5878a6b(
+    public int SyntaxFactory_StackAllocArrayCreationExpression_d6476420(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5576);
+        RoslynCallCounters.Record(3691);
         result = default;
 
         try
@@ -8498,12 +8498,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_StackAllocArrayCreationExpression_b5d064da(
+    public int SyntaxFactory_StackAllocArrayCreationExpression_1e4d42d2(
         long @type,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5577);
+        RoslynCallCounters.Record(3692);
         result = default;
 
         try
@@ -8517,12 +8517,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_StackAllocArrayCreationExpression_92255e52(
+    public int SyntaxFactory_StackAllocArrayCreationExpression_ce52d082(
         long stackAllocKeyword,
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5578);
+        RoslynCallCounters.Record(3693);
         result = default;
 
         try
@@ -8536,13 +8536,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_StackAllocArrayCreationExpression_1484d742(
+    public int SyntaxFactory_StackAllocArrayCreationExpression_cf3716a9(
         long stackAllocKeyword,
         long @type,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5579);
+        RoslynCallCounters.Record(3694);
         result = default;
 
         try
@@ -8556,11 +8556,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_StructDeclaration_2c189094(
+    public int SyntaxFactory_StructDeclaration_25fde174(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5580);
+        RoslynCallCounters.Record(3695);
         result = default;
 
         try
@@ -8574,11 +8574,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_StructDeclaration_769aaae7(
+    public int SyntaxFactory_StructDeclaration_44a924bd(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5581);
+        RoslynCallCounters.Record(3696);
         result = default;
 
         try
@@ -8592,12 +8592,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Subpattern_173f239f(
+    public int SyntaxFactory_Subpattern_9dfaba0a(
         long expressionColon,
         long pattern,
         out long result)
     {
-        RoslynCallCounters.Record(5582);
+        RoslynCallCounters.Record(3697);
         result = default;
 
         try
@@ -8611,12 +8611,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Subpattern_3c32c000(
+    public int SyntaxFactory_Subpattern_20b945dc(
         long nameColon,
         long pattern,
         out long result)
     {
-        RoslynCallCounters.Record(5583);
+        RoslynCallCounters.Record(3698);
         result = default;
 
         try
@@ -8630,11 +8630,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Subpattern_3028b0b4(
+    public int SyntaxFactory_Subpattern_28ef04c8(
         long pattern,
         out long result)
     {
-        RoslynCallCounters.Record(5584);
+        RoslynCallCounters.Record(3699);
         result = default;
 
         try
@@ -8648,12 +8648,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SwitchExpressionArm_19d634da(
+    public int SyntaxFactory_SwitchExpressionArm_1f6aabb7(
         long pattern,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5585);
+        RoslynCallCounters.Record(3700);
         result = default;
 
         try
@@ -8667,13 +8667,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SwitchExpressionArm_c1254e36(
+    public int SyntaxFactory_SwitchExpressionArm_5fb59c5e(
         long pattern,
         long whenClause,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5586);
+        RoslynCallCounters.Record(3701);
         result = default;
 
         try
@@ -8687,14 +8687,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SwitchExpressionArm_fa1721e6(
+    public int SyntaxFactory_SwitchExpressionArm_f67aff16(
         long pattern,
         long whenClause,
         long equalsGreaterThanToken,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5587);
+        RoslynCallCounters.Record(3702);
         result = default;
 
         try
@@ -8708,11 +8708,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SwitchExpression_8e425005(
+    public int SyntaxFactory_SwitchExpression_f7665498(
         long governingExpression,
         out long result)
     {
-        RoslynCallCounters.Record(5588);
+        RoslynCallCounters.Record(3703);
         result = default;
 
         try
@@ -8726,10 +8726,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SwitchSection_506ef4e0(
+    public int SyntaxFactory_SwitchSection_0724db9b(
         out long result)
     {
-        RoslynCallCounters.Record(5589);
+        RoslynCallCounters.Record(3704);
         result = default;
 
         try
@@ -8743,11 +8743,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_SwitchStatement_8f543e63(
+    public int SyntaxFactory_SwitchStatement_372a6e5f(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5590);
+        RoslynCallCounters.Record(3705);
         result = default;
 
         try
@@ -8766,7 +8766,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5591);
+        RoslynCallCounters.Record(3706);
         result = default;
 
         try
@@ -8780,10 +8780,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ThisExpression_eb046d8a(
+    public int SyntaxFactory_ThisExpression_21a33525(
         out long result)
     {
-        RoslynCallCounters.Record(5592);
+        RoslynCallCounters.Record(3707);
         result = default;
 
         try
@@ -8797,11 +8797,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ThisExpression_1eaf6490(
+    public int SyntaxFactory_ThisExpression_c47398af(
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(5593);
+        RoslynCallCounters.Record(3708);
         result = default;
 
         try
@@ -8815,11 +8815,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ThrowExpression_f72c3b70(
+    public int SyntaxFactory_ThrowExpression_940b48dc(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5594);
+        RoslynCallCounters.Record(3709);
         result = default;
 
         try
@@ -8833,12 +8833,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ThrowExpression_0d20d69c(
+    public int SyntaxFactory_ThrowExpression_190713dc(
         long throwKeyword,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5595);
+        RoslynCallCounters.Record(3710);
         result = default;
 
         try
@@ -8852,11 +8852,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ThrowStatement_54ea85eb(
+    public int SyntaxFactory_ThrowStatement_0795d993(
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5596);
+        RoslynCallCounters.Record(3711);
         result = default;
 
         try
@@ -8870,13 +8870,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_ThrowStatement_f38a02e9(
+    public int SyntaxFactory_ThrowStatement_e7d7bb37(
         long throwKeyword,
         long expression,
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5597);
+        RoslynCallCounters.Record(3712);
         result = default;
 
         try
@@ -8890,10 +8890,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TokenList_7afc68c0(
+    public int SyntaxFactory_TokenList_0e2ee98f(
         out long result)
     {
-        RoslynCallCounters.Record(5598);
+        RoslynCallCounters.Record(3713);
         result = default;
 
         try
@@ -8907,11 +8907,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TokenList_c3559bb0(
+    public int SyntaxFactory_TokenList_56956a53(
         long token,
         out long result)
     {
-        RoslynCallCounters.Record(5599);
+        RoslynCallCounters.Record(3714);
         result = default;
 
         try
@@ -8925,11 +8925,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Token_485ea923(
+    public int SyntaxFactory_Token_82f364db(
         ushort kind,
         out long result)
     {
-        RoslynCallCounters.Record(5600);
+        RoslynCallCounters.Record(3715);
         result = default;
 
         try
@@ -8943,13 +8943,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Token_b9c1ddb1(
+    public int SyntaxFactory_Token_6e4293e7(
         long leading,
         ushort kind,
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5601);
+        RoslynCallCounters.Record(3716);
         result = default;
 
         try
@@ -8963,7 +8963,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Token_67c191f7(
+    public int SyntaxFactory_Token_07523d9c(
         long leading,
         ushort kind,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
@@ -8971,7 +8971,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5602);
+        RoslynCallCounters.Record(3717);
         result = default;
 
         try
@@ -8985,10 +8985,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TriviaList_edf2bebf(
+    public int SyntaxFactory_TriviaList_f4605e5b(
         out long result)
     {
-        RoslynCallCounters.Record(5603);
+        RoslynCallCounters.Record(3718);
         result = default;
 
         try
@@ -9002,11 +9002,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TriviaList_7f2b3a6b(
+    public int SyntaxFactory_TriviaList_78b814bf(
         long trivia,
         out long result)
     {
-        RoslynCallCounters.Record(5604);
+        RoslynCallCounters.Record(3719);
         result = default;
 
         try
@@ -9024,7 +9024,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long node,
         out long result)
     {
-        RoslynCallCounters.Record(5605);
+        RoslynCallCounters.Record(3720);
         result = default;
 
         try
@@ -9038,11 +9038,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TupleElement_88507270(
+    public int SyntaxFactory_TupleElement_30cb331a(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5606);
+        RoslynCallCounters.Record(3721);
         result = default;
 
         try
@@ -9056,12 +9056,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TupleElement_d38d0c3f(
+    public int SyntaxFactory_TupleElement_351b8906(
         long @type,
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5607);
+        RoslynCallCounters.Record(3722);
         result = default;
 
         try
@@ -9079,7 +9079,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5608);
+        RoslynCallCounters.Record(3723);
         result = default;
 
         try
@@ -9097,7 +9097,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5609);
+        RoslynCallCounters.Record(3724);
         result = default;
 
         try
@@ -9111,12 +9111,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TypeDeclaration_3ba6a008(
+    public int SyntaxFactory_TypeDeclaration_e96928cb(
         ushort kind,
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5610);
+        RoslynCallCounters.Record(3725);
         result = default;
 
         try
@@ -9130,12 +9130,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TypeDeclaration_98ab1cc6(
+    public int SyntaxFactory_TypeDeclaration_f8a2e8bb(
         ushort kind,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5611);
+        RoslynCallCounters.Record(3726);
         result = default;
 
         try
@@ -9149,11 +9149,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TypeOfExpression_854cb8e3(
+    public int SyntaxFactory_TypeOfExpression_a957086b(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5612);
+        RoslynCallCounters.Record(3727);
         result = default;
 
         try
@@ -9167,14 +9167,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TypeOfExpression_eef99e25(
+    public int SyntaxFactory_TypeOfExpression_e6771e91(
         long keyword,
         long openParenToken,
         long @type,
         long closeParenToken,
         out long result)
     {
-        RoslynCallCounters.Record(5613);
+        RoslynCallCounters.Record(3728);
         result = default;
 
         try
@@ -9188,11 +9188,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TypeParameterConstraintClause_363e0cbf(
+    public int SyntaxFactory_TypeParameterConstraintClause_c907adbb(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5614);
+        RoslynCallCounters.Record(3729);
         result = default;
 
         try
@@ -9206,11 +9206,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TypeParameterConstraintClause_cf38941a(
+    public int SyntaxFactory_TypeParameterConstraintClause_9f2cc76c(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         out long result)
     {
-        RoslynCallCounters.Record(5615);
+        RoslynCallCounters.Record(3730);
         result = default;
 
         try
@@ -9224,11 +9224,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TypeParameter_24a93d55(
+    public int SyntaxFactory_TypeParameter_b67bc692(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5616);
+        RoslynCallCounters.Record(3731);
         result = default;
 
         try
@@ -9242,11 +9242,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_TypeParameter_b37d9d81(
+    public int SyntaxFactory_TypeParameter_0de8aeaa(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5617);
+        RoslynCallCounters.Record(3732);
         result = default;
 
         try
@@ -9264,7 +9264,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5618);
+        RoslynCallCounters.Record(3733);
         result = default;
 
         try
@@ -9278,11 +9278,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UnaryPattern_e818193e(
+    public int SyntaxFactory_UnaryPattern_498d3b68(
         long pattern,
         out long result)
     {
-        RoslynCallCounters.Record(5619);
+        RoslynCallCounters.Record(3734);
         result = default;
 
         try
@@ -9296,12 +9296,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UnaryPattern_c4607c64(
+    public int SyntaxFactory_UnaryPattern_358cff3b(
         long operatorToken,
         long pattern,
         out long result)
     {
-        RoslynCallCounters.Record(5620);
+        RoslynCallCounters.Record(3735);
         result = default;
 
         try
@@ -9315,7 +9315,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UndefDirectiveTrivia_15dfdd88(
+    public int SyntaxFactory_UndefDirectiveTrivia_b7bba2ec(
         long hashToken,
         long undefKeyword,
         long name,
@@ -9323,7 +9323,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5621);
+        RoslynCallCounters.Record(3736);
         result = default;
 
         try
@@ -9337,12 +9337,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UndefDirectiveTrivia_706b914a(
+    public int SyntaxFactory_UndefDirectiveTrivia_d2df43b0(
         long name,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5622);
+        RoslynCallCounters.Record(3737);
         result = default;
 
         try
@@ -9356,12 +9356,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UndefDirectiveTrivia_726d107e(
+    public int SyntaxFactory_UndefDirectiveTrivia_f9508117(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5623);
+        RoslynCallCounters.Record(3738);
         result = default;
 
         try
@@ -9375,11 +9375,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UnsafeStatement_bd6b0a04(
+    public int SyntaxFactory_UnsafeStatement_57f456f3(
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(5624);
+        RoslynCallCounters.Record(3739);
         result = default;
 
         try
@@ -9393,12 +9393,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UnsafeStatement_105ce098(
+    public int SyntaxFactory_UnsafeStatement_dbb39944(
         long unsafeKeyword,
         long block,
         out long result)
     {
-        RoslynCallCounters.Record(5625);
+        RoslynCallCounters.Record(3740);
         result = default;
 
         try
@@ -9412,12 +9412,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingDirective_6d879545(
+    public int SyntaxFactory_UsingDirective_e888a60d(
         long @alias,
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5626);
+        RoslynCallCounters.Record(3741);
         result = default;
 
         try
@@ -9431,12 +9431,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingDirective_bee3d09a(
+    public int SyntaxFactory_UsingDirective_60da92b0(
         long @alias,
         long namespaceOrType,
         out long result)
     {
-        RoslynCallCounters.Record(5627);
+        RoslynCallCounters.Record(3742);
         result = default;
 
         try
@@ -9450,11 +9450,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingDirective_16abd273(
+    public int SyntaxFactory_UsingDirective_dc295a43(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5628);
+        RoslynCallCounters.Record(3743);
         result = default;
 
         try
@@ -9468,11 +9468,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingDirective_96e333eb(
+    public int SyntaxFactory_UsingDirective_05ad68ee(
         long namespaceOrType,
         out long result)
     {
-        RoslynCallCounters.Record(5629);
+        RoslynCallCounters.Record(3744);
         result = default;
 
         try
@@ -9486,13 +9486,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingDirective_bf616910(
+    public int SyntaxFactory_UsingDirective_1b4c0c07(
         long staticKeyword,
         long @alias,
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5630);
+        RoslynCallCounters.Record(3745);
         result = default;
 
         try
@@ -9506,7 +9506,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingDirective_0e23c252(
+    public int SyntaxFactory_UsingDirective_0c0a0b8d(
         long usingKeyword,
         long staticKeyword,
         long @alias,
@@ -9514,7 +9514,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5631);
+        RoslynCallCounters.Record(3746);
         result = default;
 
         try
@@ -9528,7 +9528,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingDirective_dc6a3326(
+    public int SyntaxFactory_UsingDirective_ef7aa14a(
         long globalKeyword,
         long usingKeyword,
         long staticKeyword,
@@ -9537,7 +9537,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5632);
+        RoslynCallCounters.Record(3747);
         result = default;
 
         try
@@ -9551,7 +9551,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingDirective_2fc60784(
+    public int SyntaxFactory_UsingDirective_631a98ab(
         long globalKeyword,
         long usingKeyword,
         long staticKeyword,
@@ -9561,7 +9561,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5633);
+        RoslynCallCounters.Record(3748);
         result = default;
 
         try
@@ -9575,11 +9575,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingStatement_f2caced2(
+    public int SyntaxFactory_UsingStatement_42fbb475(
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5634);
+        RoslynCallCounters.Record(3749);
         result = default;
 
         try
@@ -9593,13 +9593,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingStatement_a8b01d14(
+    public int SyntaxFactory_UsingStatement_9ac3801e(
         long declaration,
         long expression,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5635);
+        RoslynCallCounters.Record(3750);
         result = default;
 
         try
@@ -9613,7 +9613,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingStatement_aecfa3dd(
+    public int SyntaxFactory_UsingStatement_51c0cde6(
         long usingKeyword,
         long openParenToken,
         long declaration,
@@ -9622,7 +9622,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5636);
+        RoslynCallCounters.Record(3751);
         result = default;
 
         try
@@ -9636,7 +9636,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_UsingStatement_8a94faee(
+    public int SyntaxFactory_UsingStatement_0d77716c(
         long awaitKeyword,
         long usingKeyword,
         long openParenToken,
@@ -9646,7 +9646,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5637);
+        RoslynCallCounters.Record(3752);
         result = default;
 
         try
@@ -9660,11 +9660,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_VarPattern_79852e38(
+    public int SyntaxFactory_VarPattern_e04cd084(
         long designation,
         out long result)
     {
-        RoslynCallCounters.Record(5638);
+        RoslynCallCounters.Record(3753);
         result = default;
 
         try
@@ -9678,12 +9678,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_VarPattern_e53ce8e8(
+    public int SyntaxFactory_VarPattern_9459bdfb(
         long varKeyword,
         long designation,
         out long result)
     {
-        RoslynCallCounters.Record(5639);
+        RoslynCallCounters.Record(3754);
         result = default;
 
         try
@@ -9697,11 +9697,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_VariableDeclaration_4cd9a752(
+    public int SyntaxFactory_VariableDeclaration_b0e3bb20(
         long @type,
         out long result)
     {
-        RoslynCallCounters.Record(5640);
+        RoslynCallCounters.Record(3755);
         result = default;
 
         try
@@ -9715,11 +9715,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_VariableDeclarator_8b1c76da(
+    public int SyntaxFactory_VariableDeclarator_fccc6f93(
         long identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5641);
+        RoslynCallCounters.Record(3756);
         result = default;
 
         try
@@ -9733,13 +9733,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_VariableDeclarator_92c58825(
+    public int SyntaxFactory_VariableDeclarator_cd2ec425(
         long identifier,
         long argumentList,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5642);
+        RoslynCallCounters.Record(3757);
         result = default;
 
         try
@@ -9753,11 +9753,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_VariableDeclarator_e0c46ba1(
+    public int SyntaxFactory_VariableDeclarator_ab6c2fb0(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         out long result)
     {
-        RoslynCallCounters.Record(5643);
+        RoslynCallCounters.Record(3758);
         result = default;
 
         try
@@ -9778,7 +9778,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5644);
+        RoslynCallCounters.Record(3759);
         result = default;
 
         try
@@ -9792,14 +9792,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WarningDirectiveTrivia_ab26e605(
+    public int SyntaxFactory_WarningDirectiveTrivia_2c9b9dcf(
         long hashToken,
         long warningKeyword,
         long endOfDirectiveToken,
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5645);
+        RoslynCallCounters.Record(3760);
         result = default;
 
         try
@@ -9813,11 +9813,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WarningDirectiveTrivia_469c3137(
+    public int SyntaxFactory_WarningDirectiveTrivia_5c0c89cb(
         int isActive,
         out long result)
     {
-        RoslynCallCounters.Record(5646);
+        RoslynCallCounters.Record(3761);
         result = default;
 
         try
@@ -9831,11 +9831,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WhenClause_f1adcd9e(
+    public int SyntaxFactory_WhenClause_9306a3fe(
         long condition,
         out long result)
     {
-        RoslynCallCounters.Record(5647);
+        RoslynCallCounters.Record(3762);
         result = default;
 
         try
@@ -9849,12 +9849,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WhenClause_676c9f64(
+    public int SyntaxFactory_WhenClause_504aa256(
         long whenKeyword,
         long condition,
         out long result)
     {
-        RoslynCallCounters.Record(5648);
+        RoslynCallCounters.Record(3763);
         result = default;
 
         try
@@ -9868,11 +9868,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WhereClause_645e0aba(
+    public int SyntaxFactory_WhereClause_bf8af249(
         long condition,
         out long result)
     {
-        RoslynCallCounters.Record(5649);
+        RoslynCallCounters.Record(3764);
         result = default;
 
         try
@@ -9886,12 +9886,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WhereClause_65cc4862(
+    public int SyntaxFactory_WhereClause_ebfbddb8(
         long whereKeyword,
         long condition,
         out long result)
     {
-        RoslynCallCounters.Record(5650);
+        RoslynCallCounters.Record(3765);
         result = default;
 
         try
@@ -9905,12 +9905,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WhileStatement_848604e9(
+    public int SyntaxFactory_WhileStatement_7a2dcd4e(
         long condition,
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5651);
+        RoslynCallCounters.Record(3766);
         result = default;
 
         try
@@ -9924,7 +9924,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WhileStatement_c50c9e84(
+    public int SyntaxFactory_WhileStatement_02f9116e(
         long whileKeyword,
         long openParenToken,
         long condition,
@@ -9932,7 +9932,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long statement,
         out long result)
     {
-        RoslynCallCounters.Record(5652);
+        RoslynCallCounters.Record(3767);
         result = default;
 
         try
@@ -9946,11 +9946,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_Whitespace_daa75452(
+    public int SyntaxFactory_Whitespace_0a1cf872(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5653);
+        RoslynCallCounters.Record(3768);
         result = default;
 
         try
@@ -9964,12 +9964,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WithExpression_156f7f6f(
+    public int SyntaxFactory_WithExpression_10c4e2ca(
         long expression,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5654);
+        RoslynCallCounters.Record(3769);
         result = default;
 
         try
@@ -9983,13 +9983,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_WithExpression_52923279(
+    public int SyntaxFactory_WithExpression_7aa1110e(
         long expression,
         long withKeyword,
         long initializer,
         out long result)
     {
-        RoslynCallCounters.Record(5655);
+        RoslynCallCounters.Record(3770);
         result = default;
 
         try
@@ -10003,13 +10003,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlCDataSection_e079524b(
+    public int SyntaxFactory_XmlCDataSection_cca4c4c6(
         long startCDataToken,
         long textTokens,
         long endCDataToken,
         out long result)
     {
-        RoslynCallCounters.Record(5656);
+        RoslynCallCounters.Record(3771);
         result = default;
 
         try
@@ -10023,11 +10023,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlCDataSection_d1ed0b7d(
+    public int SyntaxFactory_XmlCDataSection_049dc184(
         long textTokens,
         out long result)
     {
-        RoslynCallCounters.Record(5657);
+        RoslynCallCounters.Record(3772);
         result = default;
 
         try
@@ -10041,13 +10041,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlComment_25449d5b(
+    public int SyntaxFactory_XmlComment_15dfb0ea(
         long lessThanExclamationMinusMinusToken,
         long textTokens,
         long minusMinusGreaterThanToken,
         out long result)
     {
-        RoslynCallCounters.Record(5658);
+        RoslynCallCounters.Record(3773);
         result = default;
 
         try
@@ -10061,11 +10061,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlComment_7fc230c2(
+    public int SyntaxFactory_XmlComment_338c21d0(
         long textTokens,
         out long result)
     {
-        RoslynCallCounters.Record(5659);
+        RoslynCallCounters.Record(3774);
         result = default;
 
         try
@@ -10079,11 +10079,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlCrefAttribute_a27000ff(
+    public int SyntaxFactory_XmlCrefAttribute_2ad19ab7(
         long cref,
         out long result)
     {
-        RoslynCallCounters.Record(5660);
+        RoslynCallCounters.Record(3775);
         result = default;
 
         try
@@ -10097,12 +10097,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlCrefAttribute_478caad6(
+    public int SyntaxFactory_XmlCrefAttribute_3cbab89b(
         long cref,
         ushort quoteKind,
         out long result)
     {
-        RoslynCallCounters.Record(5661);
+        RoslynCallCounters.Record(3776);
         result = default;
 
         try
@@ -10116,14 +10116,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlCrefAttribute_99141cc5(
+    public int SyntaxFactory_XmlCrefAttribute_419be273(
         long name,
         long startQuoteToken,
         long cref,
         long endQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(5662);
+        RoslynCallCounters.Record(3777);
         result = default;
 
         try
@@ -10137,7 +10137,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlCrefAttribute_206dc8f4(
+    public int SyntaxFactory_XmlCrefAttribute_6e945933(
         long name,
         long equalsToken,
         long startQuoteToken,
@@ -10145,7 +10145,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long endQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(5663);
+        RoslynCallCounters.Record(3778);
         result = default;
 
         try
@@ -10159,11 +10159,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlElementEndTag_86b94d6d(
+    public int SyntaxFactory_XmlElementEndTag_050e611d(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5664);
+        RoslynCallCounters.Record(3779);
         result = default;
 
         try
@@ -10177,13 +10177,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlElementEndTag_b3c1feac(
+    public int SyntaxFactory_XmlElementEndTag_93c03f31(
         long lessThanSlashToken,
         long name,
         long greaterThanToken,
         out long result)
     {
-        RoslynCallCounters.Record(5665);
+        RoslynCallCounters.Record(3780);
         result = default;
 
         try
@@ -10197,11 +10197,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlElementStartTag_a73416ad(
+    public int SyntaxFactory_XmlElementStartTag_8e4e1a62(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5666);
+        RoslynCallCounters.Record(3781);
         result = default;
 
         try
@@ -10215,12 +10215,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlElement_5a2d1b95(
+    public int SyntaxFactory_XmlElement_f0c2f4c9(
         long startTag,
         long endTag,
         out long result)
     {
-        RoslynCallCounters.Record(5667);
+        RoslynCallCounters.Record(3782);
         result = default;
 
         try
@@ -10234,11 +10234,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlEmptyElement_9e1636e7(
+    public int SyntaxFactory_XmlEmptyElement_f4e1be0a(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5668);
+        RoslynCallCounters.Record(3783);
         result = default;
 
         try
@@ -10252,11 +10252,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlEmptyElement_e9e4bf62(
+    public int SyntaxFactory_XmlEmptyElement_1b813335(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string localName,
         out long result)
     {
-        RoslynCallCounters.Record(5669);
+        RoslynCallCounters.Record(3784);
         result = default;
 
         try
@@ -10277,7 +10277,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5670);
+        RoslynCallCounters.Record(3785);
         result = default;
 
         try
@@ -10291,11 +10291,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlExampleElement_acde9981(
+    public int SyntaxFactory_XmlExampleElement_b8fb9aaf(
         long content,
         out long result)
     {
-        RoslynCallCounters.Record(5671);
+        RoslynCallCounters.Record(3786);
         result = default;
 
         try
@@ -10309,12 +10309,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlExceptionElement_9c35830f(
+    public int SyntaxFactory_XmlExceptionElement_2a96d479(
         long cref,
         long content,
         out long result)
     {
-        RoslynCallCounters.Record(5672);
+        RoslynCallCounters.Record(3787);
         result = default;
 
         try
@@ -10328,14 +10328,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlNameAttribute_d1a5395f(
+    public int SyntaxFactory_XmlNameAttribute_ac940d37(
         long name,
         long startQuoteToken,
         long identifier,
         long endQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(5673);
+        RoslynCallCounters.Record(3788);
         result = default;
 
         try
@@ -10349,7 +10349,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlNameAttribute_f5e10a5c(
+    public int SyntaxFactory_XmlNameAttribute_366e822e(
         long name,
         long equalsToken,
         long startQuoteToken,
@@ -10357,7 +10357,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long endQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(5674);
+        RoslynCallCounters.Record(3789);
         result = default;
 
         try
@@ -10371,14 +10371,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlNameAttribute_029622f1(
+    public int SyntaxFactory_XmlNameAttribute_d5369cd3(
         long name,
         long startQuoteToken,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string identifier,
         long endQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(5675);
+        RoslynCallCounters.Record(3790);
         result = default;
 
         try
@@ -10392,11 +10392,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlNameAttribute_fdcb303a(
+    public int SyntaxFactory_XmlNameAttribute_7d9ebe02(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string parameterName,
         out long result)
     {
-        RoslynCallCounters.Record(5676);
+        RoslynCallCounters.Record(3791);
         result = default;
 
         try
@@ -10410,12 +10410,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlName_f5fbf093(
+    public int SyntaxFactory_XmlName_106dbb49(
         long prefix,
         long localName,
         out long result)
     {
-        RoslynCallCounters.Record(5677);
+        RoslynCallCounters.Record(3792);
         result = default;
 
         try
@@ -10429,11 +10429,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlName_bb60b203(
+    public int SyntaxFactory_XmlName_04835877(
         long localName,
         out long result)
     {
-        RoslynCallCounters.Record(5678);
+        RoslynCallCounters.Record(3793);
         result = default;
 
         try
@@ -10447,11 +10447,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlName_0309a974(
+    public int SyntaxFactory_XmlName_b899cb8f(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string localName,
         out long result)
     {
-        RoslynCallCounters.Record(5679);
+        RoslynCallCounters.Record(3794);
         result = default;
 
         try
@@ -10469,7 +10469,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5680);
+        RoslynCallCounters.Record(3795);
         result = default;
 
         try
@@ -10486,7 +10486,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_XmlNullKeywordElement(
         out long result)
     {
-        RoslynCallCounters.Record(5681);
+        RoslynCallCounters.Record(3796);
         result = default;
 
         try
@@ -10500,11 +10500,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlParaElement_f9f81c98(
+    public int SyntaxFactory_XmlParaElement_a4a8826f(
         long content,
         out long result)
     {
-        RoslynCallCounters.Record(5682);
+        RoslynCallCounters.Record(3797);
         result = default;
 
         try
@@ -10518,12 +10518,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlParamElement_e6555ea4(
+    public int SyntaxFactory_XmlParamElement_e1567c98(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string parameterName,
         long content,
         out long result)
     {
-        RoslynCallCounters.Record(5683);
+        RoslynCallCounters.Record(3798);
         result = default;
 
         try
@@ -10541,7 +10541,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string parameterName,
         out long result)
     {
-        RoslynCallCounters.Record(5684);
+        RoslynCallCounters.Record(3799);
         result = default;
 
         try
@@ -10555,12 +10555,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlPermissionElement_a96c33fe(
+    public int SyntaxFactory_XmlPermissionElement_efe31a14(
         long cref,
         long content,
         out long result)
     {
-        RoslynCallCounters.Record(5685);
+        RoslynCallCounters.Record(3800);
         result = default;
 
         try
@@ -10574,11 +10574,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlPlaceholderElement_426d9441(
+    public int SyntaxFactory_XmlPlaceholderElement_dd44d85a(
         long content,
         out long result)
     {
-        RoslynCallCounters.Record(5686);
+        RoslynCallCounters.Record(3801);
         result = default;
 
         try
@@ -10592,11 +10592,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlPrefix_04ef6d54(
+    public int SyntaxFactory_XmlPrefix_6808ab8e(
         long prefix,
         out long result)
     {
-        RoslynCallCounters.Record(5687);
+        RoslynCallCounters.Record(3802);
         result = default;
 
         try
@@ -10610,12 +10610,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlPrefix_9d422bbc(
+    public int SyntaxFactory_XmlPrefix_f99c5cd1(
         long prefix,
         long colonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5688);
+        RoslynCallCounters.Record(3803);
         result = default;
 
         try
@@ -10629,11 +10629,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlPrefix_056a43d9(
+    public int SyntaxFactory_XmlPrefix_c4ef73c8(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string prefix,
         out long result)
     {
-        RoslynCallCounters.Record(5689);
+        RoslynCallCounters.Record(3804);
         result = default;
 
         try
@@ -10650,7 +10650,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_XmlPreliminaryElement(
         out long result)
     {
-        RoslynCallCounters.Record(5690);
+        RoslynCallCounters.Record(3805);
         result = default;
 
         try
@@ -10664,11 +10664,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlProcessingInstruction_4037de75(
+    public int SyntaxFactory_XmlProcessingInstruction_6985e9a3(
         long name,
         out long result)
     {
-        RoslynCallCounters.Record(5691);
+        RoslynCallCounters.Record(3806);
         result = default;
 
         try
@@ -10682,12 +10682,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlProcessingInstruction_4af15913(
+    public int SyntaxFactory_XmlProcessingInstruction_99dfc5ba(
         long name,
         long textTokens,
         out long result)
     {
-        RoslynCallCounters.Record(5692);
+        RoslynCallCounters.Record(3807);
         result = default;
 
         try
@@ -10701,14 +10701,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlProcessingInstruction_c4906584(
+    public int SyntaxFactory_XmlProcessingInstruction_00e9ce03(
         long startProcessingInstructionToken,
         long name,
         long textTokens,
         long endProcessingInstructionToken,
         out long result)
     {
-        RoslynCallCounters.Record(5693);
+        RoslynCallCounters.Record(3808);
         result = default;
 
         try
@@ -10722,11 +10722,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlRemarksElement_f8889161(
+    public int SyntaxFactory_XmlRemarksElement_c2519f05(
         long content,
         out long result)
     {
-        RoslynCallCounters.Record(5694);
+        RoslynCallCounters.Record(3809);
         result = default;
 
         try
@@ -10740,11 +10740,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlReturnsElement_607046ab(
+    public int SyntaxFactory_XmlReturnsElement_8ff60743(
         long content,
         out long result)
     {
-        RoslynCallCounters.Record(5695);
+        RoslynCallCounters.Record(3810);
         result = default;
 
         try
@@ -10758,11 +10758,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlSeeAlsoElement_d5d3c7d4(
+    public int SyntaxFactory_XmlSeeAlsoElement_8717de36(
         long cref,
         out long result)
     {
-        RoslynCallCounters.Record(5696);
+        RoslynCallCounters.Record(3811);
         result = default;
 
         try
@@ -10780,7 +10780,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long cref,
         out long result)
     {
-        RoslynCallCounters.Record(5697);
+        RoslynCallCounters.Record(3812);
         result = default;
 
         try
@@ -10794,11 +10794,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlSummaryElement_ea9ecd83(
+    public int SyntaxFactory_XmlSummaryElement_a3ca2a61(
         long content,
         out long result)
     {
-        RoslynCallCounters.Record(5698);
+        RoslynCallCounters.Record(3813);
         result = default;
 
         try
@@ -10812,13 +10812,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextAttribute_d61bf5ba(
+    public int SyntaxFactory_XmlTextAttribute_50539d26(
         long name,
         ushort quoteKind,
         long textTokens,
         out long result)
     {
-        RoslynCallCounters.Record(5699);
+        RoslynCallCounters.Record(3814);
         result = default;
 
         try
@@ -10832,13 +10832,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextAttribute_5030d28f(
+    public int SyntaxFactory_XmlTextAttribute_3cf6636b(
         long name,
         long startQuoteToken,
         long endQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(5700);
+        RoslynCallCounters.Record(3815);
         result = default;
 
         try
@@ -10852,7 +10852,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextAttribute_834d1fa8(
+    public int SyntaxFactory_XmlTextAttribute_c1be072f(
         long name,
         long equalsToken,
         long startQuoteToken,
@@ -10860,7 +10860,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long endQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(5701);
+        RoslynCallCounters.Record(3816);
         result = default;
 
         try
@@ -10874,14 +10874,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextAttribute_9a46cbf2(
+    public int SyntaxFactory_XmlTextAttribute_2c41f916(
         long name,
         long startQuoteToken,
         long textTokens,
         long endQuoteToken,
         out long result)
     {
-        RoslynCallCounters.Record(5702);
+        RoslynCallCounters.Record(3817);
         result = default;
 
         try
@@ -10895,13 +10895,13 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextAttribute_3475f54f(
+    public int SyntaxFactory_XmlTextAttribute_6e7f3b27(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         ushort quoteKind,
         long textTokens,
         out long result)
     {
-        RoslynCallCounters.Record(5703);
+        RoslynCallCounters.Record(3818);
         result = default;
 
         try
@@ -10915,12 +10915,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextAttribute_682f05ce(
+    public int SyntaxFactory_XmlTextAttribute_ad279fdb(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result)
     {
-        RoslynCallCounters.Record(5704);
+        RoslynCallCounters.Record(3819);
         result = default;
 
         try
@@ -10934,14 +10934,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextLiteral_ddfb2f0a(
+    public int SyntaxFactory_XmlTextLiteral_95f1a9a9(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5705);
+        RoslynCallCounters.Record(3820);
         result = default;
 
         try
@@ -10955,11 +10955,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextLiteral_c8f89bf5(
+    public int SyntaxFactory_XmlTextLiteral_c79a6563(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result)
     {
-        RoslynCallCounters.Record(5706);
+        RoslynCallCounters.Record(3821);
         result = default;
 
         try
@@ -10973,12 +10973,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextLiteral_005a9905(
+    public int SyntaxFactory_XmlTextLiteral_ba9433a0(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result)
     {
-        RoslynCallCounters.Record(5707);
+        RoslynCallCounters.Record(3822);
         result = default;
 
         try
@@ -10992,14 +10992,14 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextNewLine_b07faa52(
+    public int SyntaxFactory_XmlTextNewLine_b9cd6a61(
         long leading,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         long trailing,
         out long result)
     {
-        RoslynCallCounters.Record(5708);
+        RoslynCallCounters.Record(3823);
         result = default;
 
         try
@@ -11013,11 +11013,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextNewLine_97d9e0b6(
+    public int SyntaxFactory_XmlTextNewLine_a6eeede1(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         out long result)
     {
-        RoslynCallCounters.Record(5709);
+        RoslynCallCounters.Record(3824);
         result = default;
 
         try
@@ -11031,12 +11031,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlTextNewLine_6d059209(
+    public int SyntaxFactory_XmlTextNewLine_1c874aef(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string text,
         int continueXmlDocumentationComment,
         out long result)
     {
-        RoslynCallCounters.Record(5710);
+        RoslynCallCounters.Record(3825);
         result = default;
 
         try
@@ -11050,10 +11050,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlText_5e25ad3f(
+    public int SyntaxFactory_XmlText_02080a10(
         out long result)
     {
-        RoslynCallCounters.Record(5711);
+        RoslynCallCounters.Record(3826);
         result = default;
 
         try
@@ -11067,11 +11067,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlText_85a062a0(
+    public int SyntaxFactory_XmlText_be3456e0(
         long textTokens,
         out long result)
     {
-        RoslynCallCounters.Record(5712);
+        RoslynCallCounters.Record(3827);
         result = default;
 
         try
@@ -11085,11 +11085,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlText_0c40cc5f(
+    public int SyntaxFactory_XmlText_f59a720c(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string value,
         out long result)
     {
-        RoslynCallCounters.Record(5713);
+        RoslynCallCounters.Record(3828);
         result = default;
 
         try
@@ -11103,10 +11103,10 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlThreadSafetyElement_a8d2ff05(
+    public int SyntaxFactory_XmlThreadSafetyElement_1138931c(
         out long result)
     {
-        RoslynCallCounters.Record(5714);
+        RoslynCallCounters.Record(3829);
         result = default;
 
         try
@@ -11120,12 +11120,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlThreadSafetyElement_917111fe(
+    public int SyntaxFactory_XmlThreadSafetyElement_6b63a147(
         int isStatic,
         int isInstance,
         out long result)
     {
-        RoslynCallCounters.Record(5715);
+        RoslynCallCounters.Record(3830);
         result = default;
 
         try
@@ -11139,11 +11139,11 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_XmlValueElement_b15cdd4d(
+    public int SyntaxFactory_XmlValueElement_d51febd7(
         long content,
         out long result)
     {
-        RoslynCallCounters.Record(5716);
+        RoslynCallCounters.Record(3831);
         result = default;
 
         try
@@ -11157,12 +11157,12 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_YieldStatement_54578e63(
+    public int SyntaxFactory_YieldStatement_4db6b928(
         ushort kind,
         long expression,
         out long result)
     {
-        RoslynCallCounters.Record(5717);
+        RoslynCallCounters.Record(3832);
         result = default;
 
         try
@@ -11176,7 +11176,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         }
     }
 
-    public int SyntaxFactory_YieldStatement_84de19a5(
+    public int SyntaxFactory_YieldStatement_6e5d2fae(
         ushort kind,
         long yieldKeyword,
         long returnOrBreakKeyword,
@@ -11184,7 +11184,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
         long semicolonToken,
         out long result)
     {
-        RoslynCallCounters.Record(5718);
+        RoslynCallCounters.Record(3833);
         result = default;
 
         try
@@ -11201,7 +11201,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_get_CarriageReturnLineFeed(
         out long result)
     {
-        RoslynCallCounters.Record(5719);
+        RoslynCallCounters.Record(3834);
         result = default;
 
         try
@@ -11218,7 +11218,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_get_CarriageReturn(
         out long result)
     {
-        RoslynCallCounters.Record(5720);
+        RoslynCallCounters.Record(3835);
         result = default;
 
         try
@@ -11235,7 +11235,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_get_ElasticCarriageReturnLineFeed(
         out long result)
     {
-        RoslynCallCounters.Record(5721);
+        RoslynCallCounters.Record(3836);
         result = default;
 
         try
@@ -11252,7 +11252,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_get_ElasticCarriageReturn(
         out long result)
     {
-        RoslynCallCounters.Record(5722);
+        RoslynCallCounters.Record(3837);
         result = default;
 
         try
@@ -11269,7 +11269,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_get_ElasticLineFeed(
         out long result)
     {
-        RoslynCallCounters.Record(5723);
+        RoslynCallCounters.Record(3838);
         result = default;
 
         try
@@ -11286,7 +11286,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_get_ElasticMarker(
         out long result)
     {
-        RoslynCallCounters.Record(5724);
+        RoslynCallCounters.Record(3839);
         result = default;
 
         try
@@ -11303,7 +11303,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_get_ElasticSpace(
         out long result)
     {
-        RoslynCallCounters.Record(5725);
+        RoslynCallCounters.Record(3840);
         result = default;
 
         try
@@ -11320,7 +11320,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_get_ElasticTab(
         out long result)
     {
-        RoslynCallCounters.Record(5726);
+        RoslynCallCounters.Record(3841);
         result = default;
 
         try
@@ -11337,7 +11337,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_get_LineFeed(
         out long result)
     {
-        RoslynCallCounters.Record(5727);
+        RoslynCallCounters.Record(3842);
         result = default;
 
         try
@@ -11354,7 +11354,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_get_Space(
         out long result)
     {
-        RoslynCallCounters.Record(5728);
+        RoslynCallCounters.Record(3843);
         result = default;
 
         try
@@ -11371,7 +11371,7 @@ internal sealed partial class SyntaxFactoryVtblDispatcher : ISyntaxFactoryVtbl
     public int SyntaxFactory_get_Tab(
         out long result)
     {
-        RoslynCallCounters.Record(5729);
+        RoslynCallCounters.Record(3844);
         result = default;
 
         try

@@ -194,7 +194,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.GetCurrentControlVtbl();
             global::RoslynAot.Abi.ISyntaxNodeExtensionsVtbl vtbl = global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSyntaxNodeExtensionsVtbl(controlVtbl);
-            int status = vtbl.SyntaxNodeExtensions_WithoutTrivia_660d9cea(token.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.SyntaxNodeExtensions_WithoutTrivia_17bc7a29(token.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxToken.__RoslynAotCreateProxy(controlVtbl, result);
         }

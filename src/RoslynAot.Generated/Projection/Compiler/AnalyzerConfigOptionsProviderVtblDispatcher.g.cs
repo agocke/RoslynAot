@@ -23,12 +23,12 @@ internal sealed partial class AnalyzerConfigOptionsProviderVtblDispatcher : IAna
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int AnalyzerConfigOptionsProvider_GetOptions_beed9d0f(
+    public int AnalyzerConfigOptionsProvider_GetOptions_7679b147(
         long receiver,
         long textFile,
         out long result)
     {
-        RoslynCallCounters.Record(278);
+        RoslynCallCounters.Record(4217);
         result = default;
 
         try
@@ -42,12 +42,12 @@ internal sealed partial class AnalyzerConfigOptionsProviderVtblDispatcher : IAna
         }
     }
 
-    public int AnalyzerConfigOptionsProvider_GetOptions_1ed7181a(
+    public int AnalyzerConfigOptionsProvider_GetOptions_5559c949(
         long receiver,
         long tree,
         out long result)
     {
-        RoslynCallCounters.Record(279);
+        RoslynCallCounters.Record(4218);
         result = default;
 
         try
@@ -65,7 +65,7 @@ internal sealed partial class AnalyzerConfigOptionsProviderVtblDispatcher : IAna
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(280);
+        RoslynCallCounters.Record(4219);
         result = default;
 
         try

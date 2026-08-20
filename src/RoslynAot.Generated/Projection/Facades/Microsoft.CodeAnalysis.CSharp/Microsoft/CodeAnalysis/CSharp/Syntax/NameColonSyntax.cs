@@ -50,7 +50,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.INameColonSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.NameColonSyntax_Accept_9af80603(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.NameColonSyntax_Accept_8676d576(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static NameColonSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (NameColonSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("387cb29d-f18b-593b-9a51-9234d82af6e4")]
+        [System.Runtime.InteropServices.Guid("c6bcd98b-3311-5239-a6b9-8267aab4b64a")]
         internal partial interface __RoslynAotImplementation : NameColonSyntax
         {
         }

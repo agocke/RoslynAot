@@ -29,7 +29,7 @@ internal sealed partial class DesktopAssemblyIdentityComparerVtblDispatcher : ID
         long definition,
         out int result)
     {
-        RoslynCallCounters.Record(17);
+        RoslynCallCounters.Record(3956);
         result = default;
 
         try
@@ -43,13 +43,13 @@ internal sealed partial class DesktopAssemblyIdentityComparerVtblDispatcher : ID
         }
     }
 
-    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_5365274e(
+    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_48afd736(
         long receiver,
         long reference,
         long definition,
         out int result)
     {
-        RoslynCallCounters.Record(18);
+        RoslynCallCounters.Record(3957);
         result = default;
 
         try
@@ -63,13 +63,13 @@ internal sealed partial class DesktopAssemblyIdentityComparerVtblDispatcher : ID
         }
     }
 
-    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_c297003d(
+    public int AssemblyIdentityComparer_ReferenceMatchesDefinition_a58aa09d(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string referenceDisplayName,
         long definition,
         out int result)
     {
-        RoslynCallCounters.Record(19);
+        RoslynCallCounters.Record(3958);
         result = default;
 
         try

@@ -23,12 +23,12 @@ internal sealed partial class RuntimeRudeEditTypeVtblDispatcher : IRuntimeRudeEd
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int RuntimeRudeEdit_ctor_22fadd92(
+    public int RuntimeRudeEdit_ctor_c76b3dfd(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string message,
         int errorCode,
         out long result)
     {
-        RoslynCallCounters.Record(504);
+        RoslynCallCounters.Record(4443);
         result = default;
 
         try

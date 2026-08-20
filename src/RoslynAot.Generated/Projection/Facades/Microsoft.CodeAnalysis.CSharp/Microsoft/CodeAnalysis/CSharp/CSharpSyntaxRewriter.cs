@@ -1228,7 +1228,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxRewriter_VisitList_fbf0527b(__RoslynAotGetHandle(), list.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.CSharpSyntaxRewriter_VisitList_47a7b73f(__RoslynAotGetHandle(), list.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTokenList.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1237,7 +1237,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxRewriter_VisitList_fd253111(__RoslynAotGetHandle(), list.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.CSharpSyntaxRewriter_VisitList_25c9faa4(__RoslynAotGetHandle(), list.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTriviaList.__RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -1258,7 +1258,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICSharpSyntaxRewriterVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CSharpSyntaxRewriter_VisitListElement_c7baf79c(__RoslynAotGetHandle(), element.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.CSharpSyntaxRewriter_VisitListElement_92523152(__RoslynAotGetHandle(), element.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return SyntaxTrivia.__RoslynAotCreateProxy(controlVtbl, result);
         }

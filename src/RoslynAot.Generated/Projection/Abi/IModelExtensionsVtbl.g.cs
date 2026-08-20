@@ -12,19 +12,19 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("e40f326e-a6f4-5240-b00c-23477151f9c7")]
+[Guid("b3dbb9c0-41ce-58ee-89aa-36d8a68d6629")]
 public partial interface IModelExtensionsVtbl
 {
 
     [PreserveSig]
-    int ModelExtensions_AnalyzeControlFlow_60359e22(
+    int ModelExtensions_AnalyzeControlFlow_e3b1d041(
         long semanticModel,
         long statement,
         out long result
     );
 
     [PreserveSig]
-    int ModelExtensions_AnalyzeControlFlow_bd8ea2ed(
+    int ModelExtensions_AnalyzeControlFlow_79ec334b(
         long semanticModel,
         long firstStatement,
         long lastStatement,
@@ -32,14 +32,14 @@ public partial interface IModelExtensionsVtbl
     );
 
     [PreserveSig]
-    int ModelExtensions_AnalyzeDataFlow_13158217(
+    int ModelExtensions_AnalyzeDataFlow_3f9d2c2d(
         long semanticModel,
         long statementOrExpression,
         out long result
     );
 
     [PreserveSig]
-    int ModelExtensions_AnalyzeDataFlow_530954c6(
+    int ModelExtensions_AnalyzeDataFlow_2356859c(
         long semanticModel,
         long firstStatement,
         long lastStatement,

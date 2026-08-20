@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("6d27e7e9-9c40-5cb4-b390-9fedc131483d")]
+[Guid("da00a8e8-6855-5149-b4d9-1cf7f4aa8986")]
 public partial interface IISkippedTokensTriviaSyntaxVtbl
 {
 

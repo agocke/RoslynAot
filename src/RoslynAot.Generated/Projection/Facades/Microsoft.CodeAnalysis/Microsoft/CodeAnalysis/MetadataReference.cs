@@ -130,7 +130,7 @@ namespace Microsoft.CodeAnalysis
 
         internal static MetadataReference __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 5874608341607437559L, -6046704724973048161L)is MetadataReference __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6798624647272510207L, -5071322913194470214L)is MetadataReference __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetMetadataReferenceVtbl(controlVtbl), handle);
         }

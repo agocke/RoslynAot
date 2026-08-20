@@ -36,7 +36,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IAnalyzerReferenceVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.AnalyzerReference_GetGenerators_4b9df097(__RoslynAotGetHandle(), language, out long result);
+            int status = vtbl.AnalyzerReference_GetGenerators_d2b8011a(__RoslynAotGetHandle(), language, out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return System.Collections.Immutable.ImmutableArray.CreateRange(global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ReadObjectCollection<ISourceGenerator>(controlVtbl, result, static (controlVtbl, handle) => ISourceGenerator.__RoslynAotCreateProxy(controlVtbl, handle)));
         }
@@ -117,7 +117,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         internal static AnalyzerReference __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6555347751427910664L, -6628361700300581491L)is AnalyzerReference __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 5919384169885089462L, 2114986769501096373L)is AnalyzerReference __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetAnalyzerReferenceVtbl(controlVtbl), handle);
         }

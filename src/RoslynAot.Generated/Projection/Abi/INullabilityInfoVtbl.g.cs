@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("514d366d-46fa-5e30-93db-e58479b0d334")]
+[Guid("c030cd59-9539-5e8f-b866-07b07dafae4d")]
 public partial interface INullabilityInfoVtbl
 {
 
     [PreserveSig]
-    int NullabilityInfo_Equals_74e8bf1f(
+    int NullabilityInfo_Equals_34934d28(
         long receiver,
         long other,
         out int result

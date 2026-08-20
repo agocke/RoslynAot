@@ -26,7 +26,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISingleVariableDesignationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SingleVariableDesignationSyntax_Accept_e77e5ccb(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.SingleVariableDesignationSyntax_Accept_b25ba16d(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -59,7 +59,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SingleVariableDesignationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SingleVariableDesignationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("3811f59e-4f88-56a7-8ade-54033c67dfa6")]
+        [System.Runtime.InteropServices.Guid("5fdd02ea-ae1f-531f-9a36-c0081cd96dd1")]
         internal partial interface __RoslynAotImplementation : SingleVariableDesignationSyntax
         {
         }

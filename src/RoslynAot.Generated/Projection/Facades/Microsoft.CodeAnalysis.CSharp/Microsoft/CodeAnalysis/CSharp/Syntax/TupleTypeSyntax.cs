@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ITupleTypeSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.TupleTypeSyntax_Accept_9a1f1e7a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.TupleTypeSyntax_Accept_25f95cb0(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -98,7 +98,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static TupleTypeSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (TupleTypeSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f433b131-b96d-5627-8999-f90edd5bdee7")]
+        [System.Runtime.InteropServices.Guid("192ed6f5-e303-5fe6-9e05-94e1d74cb09d")]
         internal partial interface __RoslynAotImplementation : TupleTypeSyntax
         {
         }

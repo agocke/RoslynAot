@@ -12,18 +12,18 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("3ab16431-994a-5b8e-ae81-bc3db3f0bd29")]
+[Guid("6eaf6ca3-bcaf-5cc0-a983-b015cd97a1ca")]
 public partial interface ICrefParameterSyntaxVtbl : ICSharpSyntaxNodeVtbl
 {
 
     [PreserveSig]
-    int CrefParameterSyntax_Accept_e393fe01(
+    int CrefParameterSyntax_Accept_dae9bd78(
         long receiver,
         long visitor
     );
 
     [PreserveSig]
-    int CrefParameterSyntax_Update_80124e15(
+    int CrefParameterSyntax_Update_8e388112(
         long receiver,
         long refKindKeyword,
         long @type,
@@ -31,7 +31,7 @@ public partial interface ICrefParameterSyntaxVtbl : ICSharpSyntaxNodeVtbl
     );
 
     [PreserveSig]
-    int CrefParameterSyntax_Update_e4378064(
+    int CrefParameterSyntax_Update_bea2bb66(
         long receiver,
         long refKindKeyword,
         long readOnlyKeyword,

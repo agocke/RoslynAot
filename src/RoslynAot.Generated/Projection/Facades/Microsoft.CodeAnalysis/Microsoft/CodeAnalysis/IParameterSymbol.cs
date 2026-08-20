@@ -208,7 +208,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IParameterSymbol __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IParameterSymbol)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("e22269e6-9e92-5901-bbfc-1a4eeb5c39df")]
+        [System.Runtime.InteropServices.Guid("bae96b47-2ecd-59e8-9483-cfd14783cce8")]
         internal partial interface __RoslynAotImplementation : IParameterSymbol
         {
         }

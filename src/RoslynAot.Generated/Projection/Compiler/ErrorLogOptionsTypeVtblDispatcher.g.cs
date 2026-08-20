@@ -28,7 +28,7 @@ internal sealed partial class ErrorLogOptionsTypeVtblDispatcher : IErrorLogOptio
         int sarifVersion,
         out long result)
     {
-        RoslynCallCounters.Record(514);
+        RoslynCallCounters.Record(4453);
         result = default;
 
         try

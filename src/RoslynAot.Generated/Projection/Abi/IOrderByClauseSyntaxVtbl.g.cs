@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("fcb579de-0320-5ef2-8ec8-b9def755380f")]
+[Guid("391f4154-02cc-563c-a298-1eb76126f8be")]
 public partial interface IOrderByClauseSyntaxVtbl : IQueryClauseSyntaxVtbl
 {
 
     [PreserveSig]
-    int OrderByClauseSyntax_Accept_24c1ec81(
+    int OrderByClauseSyntax_Accept_e1aa6551(
         long receiver,
         long visitor
     );

@@ -127,7 +127,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static LambdaExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (LambdaExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("fd6a99a8-8673-5d6f-b5ea-0d48c208b329")]
+        [System.Runtime.InteropServices.Guid("1219d4ba-65a6-5e87-8fc9-90a3a7df4686")]
         internal partial interface __RoslynAotImplementation : LambdaExpressionSyntax
         {
         }

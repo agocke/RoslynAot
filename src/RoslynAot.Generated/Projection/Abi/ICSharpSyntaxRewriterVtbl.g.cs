@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("d137bb13-5ef0-5f28-a218-800a39e2acec")]
+[Guid("50577377-fa49-543c-a003-9d0d48e3d86d")]
 public partial interface ICSharpSyntaxRewriterVtbl
 {
 
@@ -941,7 +941,7 @@ public partial interface ICSharpSyntaxRewriterVtbl
     );
 
     [PreserveSig]
-    int CSharpSyntaxRewriter_VisitListElement_c7baf79c(
+    int CSharpSyntaxRewriter_VisitListElement_92523152(
         long receiver,
         long element,
         out long result
@@ -962,14 +962,14 @@ public partial interface ICSharpSyntaxRewriterVtbl
     );
 
     [PreserveSig]
-    int CSharpSyntaxRewriter_VisitList_fbf0527b(
+    int CSharpSyntaxRewriter_VisitList_47a7b73f(
         long receiver,
         long list,
         out long result
     );
 
     [PreserveSig]
-    int CSharpSyntaxRewriter_VisitList_fd253111(
+    int CSharpSyntaxRewriter_VisitList_25c9faa4(
         long receiver,
         long list,
         out long result

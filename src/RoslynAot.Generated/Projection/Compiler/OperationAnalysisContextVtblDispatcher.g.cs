@@ -27,7 +27,7 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(340);
+        RoslynCallCounters.Record(4279);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         long receiver,
         long diagnostic)
     {
-        RoslynCallCounters.Record(341);
+        RoslynCallCounters.Record(4280);
 
         try
         {
@@ -62,7 +62,7 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(342);
+        RoslynCallCounters.Record(4281);
         result = default;
 
         try
@@ -80,7 +80,7 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(343);
+        RoslynCallCounters.Record(4282);
         result = default;
 
         try
@@ -98,7 +98,7 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(344);
+        RoslynCallCounters.Record(4283);
         result = default;
 
         try
@@ -116,7 +116,7 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(345);
+        RoslynCallCounters.Record(4284);
         result = default;
 
         try
@@ -134,7 +134,7 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(346);
+        RoslynCallCounters.Record(4285);
         result = default;
 
         try
@@ -152,7 +152,7 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(347);
+        RoslynCallCounters.Record(4286);
         result = default;
 
         try
@@ -170,7 +170,7 @@ internal sealed partial class OperationAnalysisContextVtblDispatcher : IOperatio
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(348);
+        RoslynCallCounters.Record(4287);
         result = default;
 
         try

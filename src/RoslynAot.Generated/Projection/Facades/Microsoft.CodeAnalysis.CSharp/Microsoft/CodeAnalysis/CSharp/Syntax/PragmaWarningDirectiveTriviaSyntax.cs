@@ -94,7 +94,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IPragmaWarningDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.PragmaWarningDirectiveTriviaSyntax_Accept_886c884d(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.PragmaWarningDirectiveTriviaSyntax_Accept_40d11411(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -182,7 +182,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static PragmaWarningDirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (PragmaWarningDirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("6eea842e-f7c4-5daf-8cb5-db1aeb373eec")]
+        [System.Runtime.InteropServices.Guid("2d97783d-2a65-5cc0-8111-fa3fef8dab48")]
         internal partial interface __RoslynAotImplementation : PragmaWarningDirectiveTriviaSyntax
         {
         }

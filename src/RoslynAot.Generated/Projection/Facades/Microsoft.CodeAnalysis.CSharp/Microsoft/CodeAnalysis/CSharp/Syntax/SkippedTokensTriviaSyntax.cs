@@ -26,7 +26,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISkippedTokensTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SkippedTokensTriviaSyntax_Accept_ee5b8ff8(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.SkippedTokensTriviaSyntax_Accept_97261484(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -64,7 +64,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SkippedTokensTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SkippedTokensTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("113b6962-2ff9-5618-9b93-585e00aec7c4")]
+        [System.Runtime.InteropServices.Guid("f9088a1b-ba20-5a87-98e9-83f4e3fae86d")]
         internal partial interface __RoslynAotImplementation : SkippedTokensTriviaSyntax
         {
         }

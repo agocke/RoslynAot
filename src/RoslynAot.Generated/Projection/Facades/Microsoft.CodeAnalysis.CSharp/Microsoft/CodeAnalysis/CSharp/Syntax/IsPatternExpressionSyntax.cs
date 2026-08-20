@@ -50,7 +50,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IIsPatternExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.IsPatternExpressionSyntax_Accept_b418b821(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.IsPatternExpressionSyntax_Accept_4a6fdee1(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -101,7 +101,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IsPatternExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IsPatternExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f39f7e38-c963-5fc4-bcad-911547e4d114")]
+        [System.Runtime.InteropServices.Guid("fac013d9-44ab-579e-845d-9346375b3951")]
         internal partial interface __RoslynAotImplementation : IsPatternExpressionSyntax
         {
         }

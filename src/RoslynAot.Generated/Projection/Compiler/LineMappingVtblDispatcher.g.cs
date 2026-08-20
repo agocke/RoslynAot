@@ -23,12 +23,12 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int LineMapping_Equals_894d29f3(
+    public int LineMapping_Equals_fc6bdcd5(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(901);
+        RoslynCallCounters.Record(4840);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(902);
+        RoslynCallCounters.Record(4841);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(903);
+        RoslynCallCounters.Record(4842);
         requiredLength = default;
 
         try
@@ -90,7 +90,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(904);
+        RoslynCallCounters.Record(4843);
         result = default;
 
         try
@@ -108,7 +108,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(905);
+        RoslynCallCounters.Record(4844);
         result = default;
 
         try
@@ -126,7 +126,7 @@ internal sealed partial class LineMappingVtblDispatcher : ILineMappingVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(906);
+        RoslynCallCounters.Record(4845);
         result = default;
 
         try

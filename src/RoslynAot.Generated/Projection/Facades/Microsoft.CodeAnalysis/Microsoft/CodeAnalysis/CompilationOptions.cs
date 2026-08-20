@@ -910,7 +910,7 @@ namespace Microsoft.CodeAnalysis
 
         internal static CompilationOptions __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 5888310641099443978L, -6025039398404712057L)is CompilationOptions __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6051877633432401859L, -7361254524798083687L)is CompilationOptions __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetCompilationOptionsVtbl(controlVtbl), handle);
         }

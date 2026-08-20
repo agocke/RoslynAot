@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ff676d75-6d49-50f5-843f-7cceaae6e7d4")]
+[Guid("9f92ec07-189d-595a-8671-6319ce3a9851")]
 public partial interface IGeneratorAttributeTypeVtbl
 {
 
     [PreserveSig]
-    int GeneratorAttribute_ctor_c5744252(
+    int GeneratorAttribute_ctor_cbc7ea9a(
         out long result
     );
 }

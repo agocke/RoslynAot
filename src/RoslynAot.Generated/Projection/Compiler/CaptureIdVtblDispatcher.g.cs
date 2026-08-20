@@ -23,12 +23,12 @@ internal sealed partial class CaptureIdVtblDispatcher : ICaptureIdVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CaptureId_Equals_256826b3(
+    public int CaptureId_Equals_2b3a131c(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(538);
+        RoslynCallCounters.Record(4477);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class CaptureIdVtblDispatcher : ICaptureIdVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(539);
+        RoslynCallCounters.Record(4478);
         result = default;
 
         try

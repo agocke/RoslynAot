@@ -29,7 +29,7 @@ internal sealed partial class SymbolDisplayPartVtblDispatcher : ISymbolDisplayPa
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(1508);
+        RoslynCallCounters.Record(5447);
         requiredLength = default;
 
         try
@@ -53,7 +53,7 @@ internal sealed partial class SymbolDisplayPartVtblDispatcher : ISymbolDisplayPa
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1509);
+        RoslynCallCounters.Record(5448);
         result = default;
 
         try
@@ -71,7 +71,7 @@ internal sealed partial class SymbolDisplayPartVtblDispatcher : ISymbolDisplayPa
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1510);
+        RoslynCallCounters.Record(5449);
         result = default;
 
         try

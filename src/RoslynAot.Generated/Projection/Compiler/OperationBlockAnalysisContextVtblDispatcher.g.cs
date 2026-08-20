@@ -28,7 +28,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long operationBlock,
         out long result)
     {
-        RoslynCallCounters.Record(349);
+        RoslynCallCounters.Record(4288);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         long diagnostic)
     {
-        RoslynCallCounters.Record(350);
+        RoslynCallCounters.Record(4289);
 
         try
         {
@@ -63,7 +63,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(351);
+        RoslynCallCounters.Record(4290);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(352);
+        RoslynCallCounters.Record(4291);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(353);
+        RoslynCallCounters.Record(4292);
         result = default;
 
         try
@@ -117,7 +117,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(354);
+        RoslynCallCounters.Record(4293);
         result = default;
 
         try
@@ -135,7 +135,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(355);
+        RoslynCallCounters.Record(4294);
         result = default;
 
         try
@@ -153,7 +153,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(356);
+        RoslynCallCounters.Record(4295);
         result = default;
 
         try
@@ -171,7 +171,7 @@ internal sealed partial class OperationBlockAnalysisContextVtblDispatcher : IOpe
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(357);
+        RoslynCallCounters.Record(4296);
         result = default;
 
         try

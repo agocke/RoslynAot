@@ -58,7 +58,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IEnumMemberDeclarationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.EnumMemberDeclarationSyntax_Accept_199f3eb9(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.EnumMemberDeclarationSyntax_Accept_ac66c6a7(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -129,7 +129,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static EnumMemberDeclarationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (EnumMemberDeclarationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("29d06a20-8436-5216-9898-4ed955f0514c")]
+        [System.Runtime.InteropServices.Guid("064920cd-d421-54dd-a96f-2d09514bdb66")]
         internal partial interface __RoslynAotImplementation : EnumMemberDeclarationSyntax
         {
         }

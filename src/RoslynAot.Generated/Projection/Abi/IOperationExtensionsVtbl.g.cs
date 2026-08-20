@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("b50290f9-6bf1-5d84-be5f-3dab1f24e6b2")]
+[Guid("50aef0df-d35e-57d4-ad77-11137bbd784e")]
 public partial interface IOperationExtensionsVtbl
 {
 
@@ -29,7 +29,7 @@ public partial interface IOperationExtensionsVtbl
     );
 
     [PreserveSig]
-    int OperationExtensions_GetArgumentName_72d8a01f(
+    int OperationExtensions_GetArgumentName_bb82e034(
         long dynamicOperation,
         int index,
         nint buffer,
@@ -38,7 +38,7 @@ public partial interface IOperationExtensionsVtbl
     );
 
     [PreserveSig]
-    int OperationExtensions_GetArgumentName_7fb3ddd1(
+    int OperationExtensions_GetArgumentName_15a0582f(
         long dynamicOperation,
         int index,
         nint buffer,
@@ -47,7 +47,7 @@ public partial interface IOperationExtensionsVtbl
     );
 
     [PreserveSig]
-    int OperationExtensions_GetArgumentName_96476486(
+    int OperationExtensions_GetArgumentName_98ff6b42(
         long dynamicOperation,
         int index,
         nint buffer,
@@ -62,13 +62,13 @@ public partial interface IOperationExtensionsVtbl
     );
 
     [PreserveSig]
-    int OperationExtensions_GetDeclaredVariables_5f2c88e6(
+    int OperationExtensions_GetDeclaredVariables_c806b780(
         long declarationGroup,
         out long result
     );
 
     [PreserveSig]
-    int OperationExtensions_GetDeclaredVariables_9ad378cf(
+    int OperationExtensions_GetDeclaredVariables_df5cda8c(
         long declaration,
         out long result
     );

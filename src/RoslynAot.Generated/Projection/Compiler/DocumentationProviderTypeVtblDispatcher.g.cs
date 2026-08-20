@@ -26,7 +26,7 @@ internal sealed partial class DocumentationProviderTypeVtblDispatcher : IDocumen
     public int DocumentationProvider_get_Default(
         out long result)
     {
-        RoslynCallCounters.Record(469);
+        RoslynCallCounters.Record(4408);
         result = default;
 
         try

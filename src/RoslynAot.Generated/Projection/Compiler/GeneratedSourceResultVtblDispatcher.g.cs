@@ -29,7 +29,7 @@ internal sealed partial class GeneratedSourceResultVtblDispatcher : IGeneratedSo
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(567);
+        RoslynCallCounters.Record(4506);
         requiredLength = default;
 
         try
@@ -53,7 +53,7 @@ internal sealed partial class GeneratedSourceResultVtblDispatcher : IGeneratedSo
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(568);
+        RoslynCallCounters.Record(4507);
         result = default;
 
         try
@@ -71,7 +71,7 @@ internal sealed partial class GeneratedSourceResultVtblDispatcher : IGeneratedSo
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(569);
+        RoslynCallCounters.Record(4508);
         result = default;
 
         try

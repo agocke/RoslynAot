@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("63c7f43a-d425-5b51-bee1-613a7d94bc12")]
+[Guid("c9ebd55f-4331-58a4-b907-a6aa529fb26f")]
 public partial interface IAnonymousMethodExpressionSyntaxVtbl : IAnonymousFunctionExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int AnonymousMethodExpressionSyntax_Accept_89568460(
+    int AnonymousMethodExpressionSyntax_Accept_85508337(
         long receiver,
         long visitor
     );
@@ -44,7 +44,7 @@ public partial interface IAnonymousMethodExpressionSyntaxVtbl : IAnonymousFuncti
     );
 
     [PreserveSig]
-    int AnonymousMethodExpressionSyntax_Update_1e572891(
+    int AnonymousMethodExpressionSyntax_Update_e51ddd01(
         long receiver,
         long asyncKeyword,
         long delegateKeyword,
@@ -54,7 +54,7 @@ public partial interface IAnonymousMethodExpressionSyntaxVtbl : IAnonymousFuncti
     );
 
     [PreserveSig]
-    int AnonymousMethodExpressionSyntax_Update_210d22c8(
+    int AnonymousMethodExpressionSyntax_Update_5b681816(
         long receiver,
         long asyncKeyword,
         long delegateKeyword,
@@ -65,7 +65,7 @@ public partial interface IAnonymousMethodExpressionSyntaxVtbl : IAnonymousFuncti
     );
 
     [PreserveSig]
-    int AnonymousMethodExpressionSyntax_Update_ffc38c1c(
+    int AnonymousMethodExpressionSyntax_Update_80772905(
         long receiver,
         long modifiers,
         long delegateKeyword,

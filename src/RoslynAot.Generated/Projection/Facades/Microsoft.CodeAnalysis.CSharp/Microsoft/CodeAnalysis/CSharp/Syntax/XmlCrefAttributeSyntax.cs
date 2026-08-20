@@ -74,7 +74,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IXmlCrefAttributeSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.XmlCrefAttributeSyntax_Accept_0b2ab59d(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.XmlCrefAttributeSyntax_Accept_3ce76e0e(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -143,7 +143,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static XmlCrefAttributeSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (XmlCrefAttributeSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("cd496417-cfc1-5b21-90ab-ead71f63a069")]
+        [System.Runtime.InteropServices.Guid("566388d2-0048-5245-991c-30dfcc53688b")]
         internal partial interface __RoslynAotImplementation : XmlCrefAttributeSyntax
         {
         }

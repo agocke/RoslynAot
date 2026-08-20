@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("bfb24381-7994-5f74-b58b-0d05adc06a93")]
+[Guid("fc9904ec-370a-5ea9-bbd1-3c086d6413a2")]
 public partial interface IYieldStatementSyntaxVtbl : IStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int YieldStatementSyntax_Accept_6edce146(
+    int YieldStatementSyntax_Accept_d233e4f2(
         long receiver,
         long visitor
     );
@@ -30,7 +30,7 @@ public partial interface IYieldStatementSyntaxVtbl : IStatementSyntaxVtbl
     );
 
     [PreserveSig]
-    int YieldStatementSyntax_Update_741126ff(
+    int YieldStatementSyntax_Update_9c376405(
         long receiver,
         long yieldKeyword,
         long returnOrBreakKeyword,

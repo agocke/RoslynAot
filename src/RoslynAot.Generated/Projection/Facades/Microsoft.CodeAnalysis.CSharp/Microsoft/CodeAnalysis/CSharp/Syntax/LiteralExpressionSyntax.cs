@@ -26,7 +26,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILiteralExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LiteralExpressionSyntax_Accept_7c9d43af(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.LiteralExpressionSyntax_Accept_41051884(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -59,7 +59,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static LiteralExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (LiteralExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("fc181b70-54df-561f-b303-ec4ca9b1b873")]
+        [System.Runtime.InteropServices.Guid("638b0fa9-dada-5043-be7a-5df128a9b4df")]
         internal partial interface __RoslynAotImplementation : LiteralExpressionSyntax
         {
         }

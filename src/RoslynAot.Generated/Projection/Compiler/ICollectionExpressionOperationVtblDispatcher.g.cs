@@ -27,7 +27,7 @@ internal sealed partial class ICollectionExpressionOperationVtblDispatcher : IIC
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1015);
+        RoslynCallCounters.Record(4954);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class ICollectionExpressionOperationVtblDispatcher : IIC
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1016);
+        RoslynCallCounters.Record(4955);
         result = default;
 
         try

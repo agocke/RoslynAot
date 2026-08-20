@@ -27,7 +27,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         long diagnostic)
     {
-        RoslynCallCounters.Record(397);
+        RoslynCallCounters.Record(4336);
 
         try
         {
@@ -44,7 +44,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(398);
+        RoslynCallCounters.Record(4337);
         result = default;
 
         try
@@ -62,7 +62,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(399);
+        RoslynCallCounters.Record(4338);
         result = default;
 
         try
@@ -80,7 +80,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(400);
+        RoslynCallCounters.Record(4339);
         result = default;
 
         try
@@ -98,7 +98,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(401);
+        RoslynCallCounters.Record(4340);
         result = default;
 
         try
@@ -116,7 +116,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(402);
+        RoslynCallCounters.Record(4341);
         result = default;
 
         try
@@ -134,7 +134,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(403);
+        RoslynCallCounters.Record(4342);
         result = default;
 
         try
@@ -152,7 +152,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(404);
+        RoslynCallCounters.Record(4343);
         result = default;
 
         try
@@ -170,7 +170,7 @@ internal sealed partial class SyntaxNodeAnalysisContextVtblDispatcher : ISyntaxN
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(405);
+        RoslynCallCounters.Record(4344);
         result = default;
 
         try

@@ -23,12 +23,12 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int FileLinePositionSpan_Equals_d45642e1(
+    public int FileLinePositionSpan_Equals_4d9cd337(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(519);
+        RoslynCallCounters.Record(4458);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(520);
+        RoslynCallCounters.Record(4459);
         result = default;
 
         try
@@ -66,7 +66,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(521);
+        RoslynCallCounters.Record(4460);
         requiredLength = default;
 
         try
@@ -90,7 +90,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(522);
+        RoslynCallCounters.Record(4461);
         result = default;
 
         try
@@ -108,7 +108,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(523);
+        RoslynCallCounters.Record(4462);
         result = default;
 
         try
@@ -126,7 +126,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(524);
+        RoslynCallCounters.Record(4463);
         result = default;
 
         try
@@ -146,7 +146,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(525);
+        RoslynCallCounters.Record(4464);
         requiredLength = default;
 
         try
@@ -170,7 +170,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(526);
+        RoslynCallCounters.Record(4465);
         result = default;
 
         try
@@ -188,7 +188,7 @@ internal sealed partial class FileLinePositionSpanVtblDispatcher : IFileLinePosi
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(527);
+        RoslynCallCounters.Record(4466);
         result = default;
 
         try

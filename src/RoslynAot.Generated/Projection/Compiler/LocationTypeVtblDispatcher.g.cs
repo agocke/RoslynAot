@@ -23,12 +23,12 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int Location_Create_f04163e0(
+    public int Location_Create_6a648459(
         long syntaxTree,
         long textSpan,
         out long result)
     {
-        RoslynCallCounters.Record(910);
+        RoslynCallCounters.Record(4849);
         result = default;
 
         try
@@ -42,13 +42,13 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
         }
     }
 
-    public int Location_Create_b413dfe8(
+    public int Location_Create_5ab307bc(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string filePath,
         long textSpan,
         long lineSpan,
         out long result)
     {
-        RoslynCallCounters.Record(911);
+        RoslynCallCounters.Record(4850);
         result = default;
 
         try
@@ -62,7 +62,7 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
         }
     }
 
-    public int Location_Create_f1cd4cc8(
+    public int Location_Create_c84951a7(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string filePath,
         long textSpan,
         long lineSpan,
@@ -70,7 +70,7 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
         long mappedLineSpan,
         out long result)
     {
-        RoslynCallCounters.Record(912);
+        RoslynCallCounters.Record(4851);
         result = default;
 
         try
@@ -87,7 +87,7 @@ internal sealed partial class LocationTypeVtblDispatcher : ILocationTypeVtbl
     public int Location_get_None(
         out long result)
     {
-        RoslynCallCounters.Record(921);
+        RoslynCallCounters.Record(4860);
         result = default;
 
         try

@@ -594,7 +594,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static CommandLineArguments __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CommandLineArguments)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("2fac501d-83b0-56ba-bf13-2b76d53f4581")]
+        [System.Runtime.InteropServices.Guid("50042c6a-4478-58d5-8ba0-b2056371e42f")]
         internal partial interface __RoslynAotImplementation : CommandLineArguments
         {
         }

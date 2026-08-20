@@ -27,7 +27,7 @@ internal sealed partial class ISyntaxReceiverVtblDispatcher : IISyntaxReceiverVt
         long receiver,
         long syntaxNode)
     {
-        RoslynCallCounters.Record(856);
+        RoslynCallCounters.Record(4795);
 
         try
         {

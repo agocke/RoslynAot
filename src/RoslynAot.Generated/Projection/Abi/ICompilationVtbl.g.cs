@@ -12,19 +12,19 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("1c388af9-27ea-514c-a475-bd5f805854c3")]
+[Guid("295b3758-983d-5322-8919-e2fbc9c97794")]
 public partial interface ICompilationVtbl
 {
 
     [PreserveSig]
-    int Compilation_AddReferences_1dc6f2bd(
+    int Compilation_AddReferences_c318a8c9(
         long receiver,
         long references,
         out long result
     );
 
     [PreserveSig]
-    int Compilation_AddSyntaxTrees_e998fef3(
+    int Compilation_AddSyntaxTrees_872b528d(
         long receiver,
         long trees,
         out long result
@@ -52,7 +52,7 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_CreateArrayTypeSymbol_9c42fb46(
+    int Compilation_CreateArrayTypeSymbol_53b4abca(
         long receiver,
         long elementType,
         int rank,
@@ -60,7 +60,7 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_CreateArrayTypeSymbol_0a70aa8d(
+    int Compilation_CreateArrayTypeSymbol_da7196ca(
         long receiver,
         long elementType,
         int rank,
@@ -69,7 +69,7 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_CreateBuiltinOperator_3a58e2c3(
+    int Compilation_CreateBuiltinOperator_9c7e95e7(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         long returnType,
@@ -78,7 +78,7 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_CreateBuiltinOperator_9b476975(
+    int Compilation_CreateBuiltinOperator_0de3b46a(
         long receiver,
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string name,
         long returnType,
@@ -147,7 +147,7 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_GetSemanticModel_09967ca5(
+    int Compilation_GetSemanticModel_f9120011(
         long receiver,
         long syntaxTree,
         int ignoreAccessibility,
@@ -212,14 +212,14 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_RemoveReferences_6bf9685c(
+    int Compilation_RemoveReferences_d15d1ae1(
         long receiver,
         long references,
         out long result
     );
 
     [PreserveSig]
-    int Compilation_RemoveSyntaxTrees_7ffe04ec(
+    int Compilation_RemoveSyntaxTrees_d6d718dd(
         long receiver,
         long trees,
         out long result
@@ -263,7 +263,7 @@ public partial interface ICompilationVtbl
     );
 
     [PreserveSig]
-    int Compilation_WithReferences_ea2bb507(
+    int Compilation_WithReferences_1e7e01e0(
         long receiver,
         long newReferences,
         out long result

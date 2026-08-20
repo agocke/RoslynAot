@@ -23,13 +23,13 @@ internal sealed partial class FileLinePositionSpanTypeVtblDispatcher : IFileLine
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int FileLinePositionSpan_ctor_5deacbc8(
+    public int FileLinePositionSpan_ctor_270d2ce6(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         long start,
         long end,
         out long result)
     {
-        RoslynCallCounters.Record(517);
+        RoslynCallCounters.Record(4456);
         result = default;
 
         try
@@ -43,12 +43,12 @@ internal sealed partial class FileLinePositionSpanTypeVtblDispatcher : IFileLine
         }
     }
 
-    public int FileLinePositionSpan_ctor_539ce908(
+    public int FileLinePositionSpan_ctor_6d4c9aa3(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         long span,
         out long result)
     {
-        RoslynCallCounters.Record(518);
+        RoslynCallCounters.Record(4457);
         result = default;
 
         try

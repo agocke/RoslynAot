@@ -126,7 +126,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IDelegateDeclarationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.DelegateDeclarationSyntax_Accept_42d82a24(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.DelegateDeclarationSyntax_Accept_1fad86f2(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -260,7 +260,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static DelegateDeclarationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (DelegateDeclarationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("5aa45693-1bcc-5138-9a98-794f9c10784d")]
+        [System.Runtime.InteropServices.Guid("a0af411a-6058-5285-95be-e6f1b179dfaf")]
         internal partial interface __RoslynAotImplementation : DelegateDeclarationSyntax
         {
         }

@@ -88,7 +88,7 @@ namespace Microsoft.CodeAnalysis.Operations
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IForToLoopOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IForToLoopOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("3d7d335f-a1a9-5faf-b4b0-86af85d328e9")]
+        [System.Runtime.InteropServices.Guid("28409ee8-f297-5e28-a902-4f7d5c4bdaf0")]
         internal partial interface __RoslynAotImplementation : IForToLoopOperation
         {
         }

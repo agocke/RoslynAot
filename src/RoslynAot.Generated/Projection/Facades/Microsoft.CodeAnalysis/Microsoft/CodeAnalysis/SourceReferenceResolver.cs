@@ -85,7 +85,7 @@ namespace Microsoft.CodeAnalysis
 
         internal static SourceReferenceResolver __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle)
         {
-            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 6478075930287905510L, 3263992619985221565L)is SourceReferenceResolver __roslynAotDerived)
+            if (global::RoslynAot.RoslynFacade.RoslynDerivedProxyRegistry.TryCreate(controlVtbl, handle, 5979497240805481802L, 1783107786087387582L)is SourceReferenceResolver __roslynAotDerived)
                 return __roslynAotDerived;
             return new __RoslynAotProxy(controlVtbl, global::RoslynAot.RoslynFacade.RoslynVtblFactory.GetSourceReferenceResolverVtbl(controlVtbl), handle);
         }

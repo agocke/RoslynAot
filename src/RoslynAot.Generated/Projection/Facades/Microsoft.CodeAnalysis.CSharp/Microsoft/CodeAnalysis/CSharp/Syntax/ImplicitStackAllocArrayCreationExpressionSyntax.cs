@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IImplicitStackAllocArrayCreationExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ImplicitStackAllocArrayCreationExpressionSyntax_Accept_076869fd(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ImplicitStackAllocArrayCreationExpressionSyntax_Accept_a070c03c(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -131,7 +131,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ImplicitStackAllocArrayCreationExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ImplicitStackAllocArrayCreationExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("8c84bc5f-5fb0-58c0-96ad-eed88b86964f")]
+        [System.Runtime.InteropServices.Guid("d4bfee2e-6c6a-5f31-b8c1-1efe5569a99d")]
         internal partial interface __RoslynAotImplementation : ImplicitStackAllocArrayCreationExpressionSyntax
         {
         }

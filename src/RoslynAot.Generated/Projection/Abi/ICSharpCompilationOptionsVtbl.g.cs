@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("5d19bee6-cd08-547b-948a-97bac23948f9")]
+[Guid("31ed11f5-7a25-57db-8f54-30b260ef7219")]
 public partial interface ICSharpCompilationOptionsVtbl : ICompilationOptionsVtbl
 {
 
     [PreserveSig]
-    int CSharpCompilationOptions_Equals_c8ded782(
+    int CSharpCompilationOptions_Equals_e21568bf(
         long receiver,
         long other,
         out int result

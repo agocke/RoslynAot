@@ -29,7 +29,7 @@ internal sealed partial class AdditionalTextVtblDispatcher : IAdditionalTextVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(0);
+        RoslynCallCounters.Record(3939);
         requiredLength = default;
 
         try

@@ -12,1500 +12,1500 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("08484e2d-ab09-5c61-9486-fa8a0734df38")]
+[Guid("6fdeb395-79cd-5199-a094-53cc391f27d7")]
 public partial interface ICSharpSyntaxVisitorVtbl
 {
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_DefaultVisit_d702e622(
+    int CSharpSyntaxVisitor_DefaultVisit_4c7cdd70(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAccessorDeclaration_a1fbc65b(
+    int CSharpSyntaxVisitor_VisitAccessorDeclaration_840c0875(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAccessorList_a7c02e07(
+    int CSharpSyntaxVisitor_VisitAccessorList_22000fd2(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAliasQualifiedName_f4f2e881(
+    int CSharpSyntaxVisitor_VisitAliasQualifiedName_ed5fe2d5(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAllowsConstraintClause_eb2e702f(
+    int CSharpSyntaxVisitor_VisitAllowsConstraintClause_18c48865(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAnonymousMethodExpression_b917cb20(
+    int CSharpSyntaxVisitor_VisitAnonymousMethodExpression_43fab10c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAnonymousObjectCreationExpression_45452305(
+    int CSharpSyntaxVisitor_VisitAnonymousObjectCreationExpression_8a14f00d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAnonymousObjectMemberDeclarator_3f8a145a(
+    int CSharpSyntaxVisitor_VisitAnonymousObjectMemberDeclarator_e9677de4(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitArgumentList_72184e29(
+    int CSharpSyntaxVisitor_VisitArgumentList_4622fc98(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitArgument_53f7924e(
+    int CSharpSyntaxVisitor_VisitArgument_6afff0b8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitArrayCreationExpression_e4416c62(
+    int CSharpSyntaxVisitor_VisitArrayCreationExpression_c4a86407(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitArrayRankSpecifier_6edcb417(
+    int CSharpSyntaxVisitor_VisitArrayRankSpecifier_144af787(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitArrayType_27b0b841(
+    int CSharpSyntaxVisitor_VisitArrayType_914e39ab(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitArrowExpressionClause_f7aebbb1(
+    int CSharpSyntaxVisitor_VisitArrowExpressionClause_2857d8e0(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAssignmentExpression_b4e1b38b(
+    int CSharpSyntaxVisitor_VisitAssignmentExpression_c62c7790(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAttributeArgumentList_dc8ab933(
+    int CSharpSyntaxVisitor_VisitAttributeArgumentList_350f43f3(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAttributeArgument_8957858d(
+    int CSharpSyntaxVisitor_VisitAttributeArgument_6179c0cf(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAttributeList_efee39dd(
+    int CSharpSyntaxVisitor_VisitAttributeList_6ba24ae8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAttributeTargetSpecifier_5f94a3b2(
+    int CSharpSyntaxVisitor_VisitAttributeTargetSpecifier_5addea3e(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAttribute_82539d88(
+    int CSharpSyntaxVisitor_VisitAttribute_4aa4f89f(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitAwaitExpression_e3af35f6(
+    int CSharpSyntaxVisitor_VisitAwaitExpression_988b2428(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitBadDirectiveTrivia_90961106(
+    int CSharpSyntaxVisitor_VisitBadDirectiveTrivia_34eee06e(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitBaseExpression_f1e13899(
+    int CSharpSyntaxVisitor_VisitBaseExpression_5c3eec42(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitBaseList_3817af2a(
+    int CSharpSyntaxVisitor_VisitBaseList_e11401dd(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitBinaryExpression_7ff4040e(
+    int CSharpSyntaxVisitor_VisitBinaryExpression_c771e264(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitBinaryPattern_e5d90ab4(
+    int CSharpSyntaxVisitor_VisitBinaryPattern_3056325e(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitBlock_5094a622(
+    int CSharpSyntaxVisitor_VisitBlock_1dd9d0a7(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitBracketedArgumentList_f65f7cd5(
+    int CSharpSyntaxVisitor_VisitBracketedArgumentList_cc5ae77a(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitBracketedParameterList_668dea7f(
+    int CSharpSyntaxVisitor_VisitBracketedParameterList_adbb9543(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitBreakStatement_30da7889(
+    int CSharpSyntaxVisitor_VisitBreakStatement_7edec58d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCasePatternSwitchLabel_1ba25373(
+    int CSharpSyntaxVisitor_VisitCasePatternSwitchLabel_32e8cf8b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCaseSwitchLabel_ccd474ca(
+    int CSharpSyntaxVisitor_VisitCaseSwitchLabel_8deb65e8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCastExpression_9d5c22dc(
+    int CSharpSyntaxVisitor_VisitCastExpression_2bf6a17c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCatchClause_ecfd423b(
+    int CSharpSyntaxVisitor_VisitCatchClause_60fe402c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCatchDeclaration_a32af0ce(
+    int CSharpSyntaxVisitor_VisitCatchDeclaration_da4b60bf(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCatchFilterClause_c21ab58c(
+    int CSharpSyntaxVisitor_VisitCatchFilterClause_5a26b94d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCheckedExpression_8567a70a(
+    int CSharpSyntaxVisitor_VisitCheckedExpression_c57d0610(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCheckedStatement_bd94e71b(
+    int CSharpSyntaxVisitor_VisitCheckedStatement_61077acf(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitClassDeclaration_4e851eb1(
+    int CSharpSyntaxVisitor_VisitClassDeclaration_4edf738a(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitClassOrStructConstraint_5b59d3db(
+    int CSharpSyntaxVisitor_VisitClassOrStructConstraint_6a2baf4c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCollectionExpression_8ce052d2(
+    int CSharpSyntaxVisitor_VisitCollectionExpression_5f751308(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCompilationUnit_77de7cdc(
+    int CSharpSyntaxVisitor_VisitCompilationUnit_23a3d662(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitConditionalAccessExpression_a8ed84b4(
+    int CSharpSyntaxVisitor_VisitConditionalAccessExpression_ca65f3b5(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitConditionalExpression_9856d7ff(
+    int CSharpSyntaxVisitor_VisitConditionalExpression_728e4d44(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitConstantPattern_2e2783fe(
+    int CSharpSyntaxVisitor_VisitConstantPattern_1abdb40b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitConstructorConstraint_6344c31e(
+    int CSharpSyntaxVisitor_VisitConstructorConstraint_db1a9d55(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitConstructorDeclaration_ec586a1e(
+    int CSharpSyntaxVisitor_VisitConstructorDeclaration_82255b3c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitConstructorInitializer_0750fe74(
+    int CSharpSyntaxVisitor_VisitConstructorInitializer_d3d62211(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitContinueStatement_0e4d4edf(
+    int CSharpSyntaxVisitor_VisitContinueStatement_0a11eb09(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitConversionOperatorDeclaration_02cb0436(
+    int CSharpSyntaxVisitor_VisitConversionOperatorDeclaration_8c52ff12(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitConversionOperatorMemberCref_85d4b88f(
+    int CSharpSyntaxVisitor_VisitConversionOperatorMemberCref_5e9a839a(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCrefBracketedParameterList_e8a7bd91(
+    int CSharpSyntaxVisitor_VisitCrefBracketedParameterList_e60cd013(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCrefParameterList_cef1496a(
+    int CSharpSyntaxVisitor_VisitCrefParameterList_0d4f5c97(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitCrefParameter_539cdbe2(
+    int CSharpSyntaxVisitor_VisitCrefParameter_1b5e1ecf(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDeclarationExpression_958ea075(
+    int CSharpSyntaxVisitor_VisitDeclarationExpression_2649bc92(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDeclarationPattern_d91580cc(
+    int CSharpSyntaxVisitor_VisitDeclarationPattern_a452a39b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDefaultConstraint_45a6e700(
+    int CSharpSyntaxVisitor_VisitDefaultConstraint_deb644c8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDefaultExpression_646cbe74(
+    int CSharpSyntaxVisitor_VisitDefaultExpression_b6f75b52(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDefaultSwitchLabel_fc611436(
+    int CSharpSyntaxVisitor_VisitDefaultSwitchLabel_9b8ab3cf(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDefineDirectiveTrivia_0d93e123(
+    int CSharpSyntaxVisitor_VisitDefineDirectiveTrivia_f3572b00(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDelegateDeclaration_5f7d5832(
+    int CSharpSyntaxVisitor_VisitDelegateDeclaration_09e88889(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDestructorDeclaration_72e3d4de(
+    int CSharpSyntaxVisitor_VisitDestructorDeclaration_c3ad949d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDiscardDesignation_a57fe3b9(
+    int CSharpSyntaxVisitor_VisitDiscardDesignation_6a25ba7a(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDiscardPattern_dd5a4bbc(
+    int CSharpSyntaxVisitor_VisitDiscardPattern_936584ac(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDoStatement_7ef2f7bb(
+    int CSharpSyntaxVisitor_VisitDoStatement_2c1dc973(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitDocumentationCommentTrivia_bdb4b738(
+    int CSharpSyntaxVisitor_VisitDocumentationCommentTrivia_1d1b58af(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitElementAccessExpression_39c736ce(
+    int CSharpSyntaxVisitor_VisitElementAccessExpression_af90c83c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitElementBindingExpression_95542bd7(
+    int CSharpSyntaxVisitor_VisitElementBindingExpression_eef52c34(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitElifDirectiveTrivia_59383339(
+    int CSharpSyntaxVisitor_VisitElifDirectiveTrivia_d502cddf(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitElseClause_772d8348(
+    int CSharpSyntaxVisitor_VisitElseClause_608b147d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitElseDirectiveTrivia_6d5fa4bd(
+    int CSharpSyntaxVisitor_VisitElseDirectiveTrivia_43aa1b06(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitEmptyStatement_6886567a(
+    int CSharpSyntaxVisitor_VisitEmptyStatement_41672854(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitEndIfDirectiveTrivia_c1d11ee4(
+    int CSharpSyntaxVisitor_VisitEndIfDirectiveTrivia_bd5c92c8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitEndRegionDirectiveTrivia_3fe7acdc(
+    int CSharpSyntaxVisitor_VisitEndRegionDirectiveTrivia_33ed7247(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitEnumDeclaration_254523fd(
+    int CSharpSyntaxVisitor_VisitEnumDeclaration_5eb38fb7(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitEnumMemberDeclaration_89977e30(
+    int CSharpSyntaxVisitor_VisitEnumMemberDeclaration_616403d4(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitEqualsValueClause_dc85cc32(
+    int CSharpSyntaxVisitor_VisitEqualsValueClause_74a1f333(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitErrorDirectiveTrivia_c4701c69(
+    int CSharpSyntaxVisitor_VisitErrorDirectiveTrivia_ee7015b8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitEventDeclaration_b2d86119(
+    int CSharpSyntaxVisitor_VisitEventDeclaration_a9003f27(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitEventFieldDeclaration_ad44747a(
+    int CSharpSyntaxVisitor_VisitEventFieldDeclaration_8a7b38ba(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitExplicitInterfaceSpecifier_2cfb526b(
+    int CSharpSyntaxVisitor_VisitExplicitInterfaceSpecifier_00f1664a(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitExpressionColon_30704bd9(
+    int CSharpSyntaxVisitor_VisitExpressionColon_23c04ce7(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitExpressionElement_3f5e9d20(
+    int CSharpSyntaxVisitor_VisitExpressionElement_29e4c4cf(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitExpressionStatement_d8ec8513(
+    int CSharpSyntaxVisitor_VisitExpressionStatement_d4ba5fae(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitExtensionBlockDeclaration_eebb27c7(
+    int CSharpSyntaxVisitor_VisitExtensionBlockDeclaration_9b89d001(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitExtensionMemberCref_1ee1893d(
+    int CSharpSyntaxVisitor_VisitExtensionMemberCref_49503182(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitExternAliasDirective_8984fc46(
+    int CSharpSyntaxVisitor_VisitExternAliasDirective_21bb03df(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFieldDeclaration_32b4a256(
+    int CSharpSyntaxVisitor_VisitFieldDeclaration_a6f8a91c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFieldExpression_5508b193(
+    int CSharpSyntaxVisitor_VisitFieldExpression_e85b3c2e(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFileScopedNamespaceDeclaration_1fc9b9b6(
+    int CSharpSyntaxVisitor_VisitFileScopedNamespaceDeclaration_871721bc(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFinallyClause_7fbd80a0(
+    int CSharpSyntaxVisitor_VisitFinallyClause_3616247a(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFixedStatement_cd525c04(
+    int CSharpSyntaxVisitor_VisitFixedStatement_303c3e78(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitForEachStatement_f383963d(
+    int CSharpSyntaxVisitor_VisitForEachStatement_54e4cc41(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitForEachVariableStatement_ac5842fb(
+    int CSharpSyntaxVisitor_VisitForEachVariableStatement_ee48fe2b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitForStatement_5f122cab(
+    int CSharpSyntaxVisitor_VisitForStatement_e809048c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFromClause_cb4b7ef9(
+    int CSharpSyntaxVisitor_VisitFromClause_88645df3(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFunctionPointerCallingConvention_dee8b9f5(
+    int CSharpSyntaxVisitor_VisitFunctionPointerCallingConvention_ccc2cbcf(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFunctionPointerParameterList_169a307d(
+    int CSharpSyntaxVisitor_VisitFunctionPointerParameterList_b31e60ef(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFunctionPointerParameter_3ea802f4(
+    int CSharpSyntaxVisitor_VisitFunctionPointerParameter_61a8ac24(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFunctionPointerType_8e42b89b(
+    int CSharpSyntaxVisitor_VisitFunctionPointerType_65155193(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConventionList_01d7665f(
+    int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConventionList_1584ade4(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConvention_c73518da(
+    int CSharpSyntaxVisitor_VisitFunctionPointerUnmanagedCallingConvention_4c376ef3(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitGenericName_ca935de7(
+    int CSharpSyntaxVisitor_VisitGenericName_aa28c8f8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitGlobalStatement_65571f0f(
+    int CSharpSyntaxVisitor_VisitGlobalStatement_3786c3b1(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitGotoStatement_edb6d48f(
+    int CSharpSyntaxVisitor_VisitGotoStatement_edbff3d4(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitGroupClause_bebacb88(
+    int CSharpSyntaxVisitor_VisitGroupClause_99dfbcdd(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitIdentifierName_2e8c438e(
+    int CSharpSyntaxVisitor_VisitIdentifierName_0f51e73f(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitIfDirectiveTrivia_8de8c1fe(
+    int CSharpSyntaxVisitor_VisitIfDirectiveTrivia_135baaa8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitIfStatement_3e92f30a(
+    int CSharpSyntaxVisitor_VisitIfStatement_8baba9e5(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitIgnoredDirectiveTrivia_747fe64f(
+    int CSharpSyntaxVisitor_VisitIgnoredDirectiveTrivia_8e06b5d0(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitImplicitArrayCreationExpression_6b2b9487(
+    int CSharpSyntaxVisitor_VisitImplicitArrayCreationExpression_3fef2ef0(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitImplicitElementAccess_15b10ecd(
+    int CSharpSyntaxVisitor_VisitImplicitElementAccess_13c8663a(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitImplicitObjectCreationExpression_2bd03991(
+    int CSharpSyntaxVisitor_VisitImplicitObjectCreationExpression_f4cabded(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitImplicitStackAllocArrayCreationExpression_387d4311(
+    int CSharpSyntaxVisitor_VisitImplicitStackAllocArrayCreationExpression_4819ba7d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitIncompleteMember_a309d256(
+    int CSharpSyntaxVisitor_VisitIncompleteMember_7e4f7b19(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitIndexerDeclaration_5dcb19d0(
+    int CSharpSyntaxVisitor_VisitIndexerDeclaration_b6c354e8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitIndexerMemberCref_dc7b3a5d(
+    int CSharpSyntaxVisitor_VisitIndexerMemberCref_1e2af18e(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitInitializerExpression_a57b898b(
+    int CSharpSyntaxVisitor_VisitInitializerExpression_a12d4e8c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitInterfaceDeclaration_dfa929b0(
+    int CSharpSyntaxVisitor_VisitInterfaceDeclaration_2f38c523(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitInterpolatedStringExpression_72173ece(
+    int CSharpSyntaxVisitor_VisitInterpolatedStringExpression_8d6b248a(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitInterpolatedStringText_d514aa68(
+    int CSharpSyntaxVisitor_VisitInterpolatedStringText_cfeeb218(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitInterpolationAlignmentClause_e364080d(
+    int CSharpSyntaxVisitor_VisitInterpolationAlignmentClause_1bbcda71(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitInterpolationFormatClause_3220322c(
+    int CSharpSyntaxVisitor_VisitInterpolationFormatClause_9e84c6b4(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitInterpolation_c884ce45(
+    int CSharpSyntaxVisitor_VisitInterpolation_5dbad78b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitInvocationExpression_337afd5c(
+    int CSharpSyntaxVisitor_VisitInvocationExpression_21102e3b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitIsPatternExpression_fad25131(
+    int CSharpSyntaxVisitor_VisitIsPatternExpression_bb7bc3cb(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitJoinClause_d9df92e0(
+    int CSharpSyntaxVisitor_VisitJoinClause_9284f5a3(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitJoinIntoClause_e6266506(
+    int CSharpSyntaxVisitor_VisitJoinIntoClause_b1c74644(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitLabeledStatement_0076932e(
+    int CSharpSyntaxVisitor_VisitLabeledStatement_98efcd19(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitLetClause_e223b444(
+    int CSharpSyntaxVisitor_VisitLetClause_8ddce83d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitLineDirectivePosition_99a26c9f(
+    int CSharpSyntaxVisitor_VisitLineDirectivePosition_1d0ed319(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitLineDirectiveTrivia_b819224d(
+    int CSharpSyntaxVisitor_VisitLineDirectiveTrivia_9544a4d5(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitLineSpanDirectiveTrivia_54afbe91(
+    int CSharpSyntaxVisitor_VisitLineSpanDirectiveTrivia_b4c7c91f(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitListPattern_3ac3945e(
+    int CSharpSyntaxVisitor_VisitListPattern_e260a981(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitLiteralExpression_af777344(
+    int CSharpSyntaxVisitor_VisitLiteralExpression_3e49cc23(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitLoadDirectiveTrivia_436dc7f5(
+    int CSharpSyntaxVisitor_VisitLoadDirectiveTrivia_c1daa9ed(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitLocalDeclarationStatement_ea830ea8(
+    int CSharpSyntaxVisitor_VisitLocalDeclarationStatement_4fd31ac2(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitLocalFunctionStatement_eeadf5cd(
+    int CSharpSyntaxVisitor_VisitLocalFunctionStatement_e589afe3(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitLockStatement_43066410(
+    int CSharpSyntaxVisitor_VisitLockStatement_4a38f36b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitMakeRefExpression_a2da06e1(
+    int CSharpSyntaxVisitor_VisitMakeRefExpression_309da0b9(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitMemberAccessExpression_78eb5e49(
+    int CSharpSyntaxVisitor_VisitMemberAccessExpression_8f7a3c54(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitMemberBindingExpression_7e7f2ede(
+    int CSharpSyntaxVisitor_VisitMemberBindingExpression_dd6690e2(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitMethodDeclaration_d5d1dd24(
+    int CSharpSyntaxVisitor_VisitMethodDeclaration_d4d69901(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitNameColon_72e30503(
+    int CSharpSyntaxVisitor_VisitNameColon_a3b428f2(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitNameEquals_6091b3d8(
+    int CSharpSyntaxVisitor_VisitNameEquals_801cfe33(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitNameMemberCref_4162c1d7(
+    int CSharpSyntaxVisitor_VisitNameMemberCref_300e01de(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitNamespaceDeclaration_1acd6778(
+    int CSharpSyntaxVisitor_VisitNamespaceDeclaration_1c6b602b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitNullableDirectiveTrivia_1f4e6c7f(
+    int CSharpSyntaxVisitor_VisitNullableDirectiveTrivia_1dfadd2e(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitNullableType_18aeb7fd(
+    int CSharpSyntaxVisitor_VisitNullableType_7073ca65(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitObjectCreationExpression_5fc7da46(
+    int CSharpSyntaxVisitor_VisitObjectCreationExpression_545806fd(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitOmittedArraySizeExpression_33db03fd(
+    int CSharpSyntaxVisitor_VisitOmittedArraySizeExpression_adf5b9a5(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitOmittedTypeArgument_ca753069(
+    int CSharpSyntaxVisitor_VisitOmittedTypeArgument_52f1d1fb(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitOperatorDeclaration_a85ba15f(
+    int CSharpSyntaxVisitor_VisitOperatorDeclaration_2acbf34d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitOperatorMemberCref_6fa41aa1(
+    int CSharpSyntaxVisitor_VisitOperatorMemberCref_0ac03bed(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitOrderByClause_54611c4d(
+    int CSharpSyntaxVisitor_VisitOrderByClause_fd0f8f7d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitOrdering_f1bf71e6(
+    int CSharpSyntaxVisitor_VisitOrdering_64caa07c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitParameterList_53ea00d0(
+    int CSharpSyntaxVisitor_VisitParameterList_de1429fb(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitParameter_1ec75a19(
+    int CSharpSyntaxVisitor_VisitParameter_cdafcbd0(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitParenthesizedExpression_61684a57(
+    int CSharpSyntaxVisitor_VisitParenthesizedExpression_801f6225(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitParenthesizedLambdaExpression_ddc04295(
+    int CSharpSyntaxVisitor_VisitParenthesizedLambdaExpression_fbe12065(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitParenthesizedPattern_f6487f26(
+    int CSharpSyntaxVisitor_VisitParenthesizedPattern_2d913a01(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitParenthesizedVariableDesignation_863be0f1(
+    int CSharpSyntaxVisitor_VisitParenthesizedVariableDesignation_5a533eff(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitPointerType_8a7a5f35(
+    int CSharpSyntaxVisitor_VisitPointerType_9eeeda24(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitPositionalPatternClause_425f54b4(
+    int CSharpSyntaxVisitor_VisitPositionalPatternClause_017b94e3(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitPostfixUnaryExpression_2f38953f(
+    int CSharpSyntaxVisitor_VisitPostfixUnaryExpression_b42a608c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitPragmaChecksumDirectiveTrivia_90a90353(
+    int CSharpSyntaxVisitor_VisitPragmaChecksumDirectiveTrivia_2f9d72f3(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitPragmaWarningDirectiveTrivia_a0649a52(
+    int CSharpSyntaxVisitor_VisitPragmaWarningDirectiveTrivia_e17b4b43(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitPredefinedType_622f18ea(
+    int CSharpSyntaxVisitor_VisitPredefinedType_09baea66(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitPrefixUnaryExpression_b756a192(
+    int CSharpSyntaxVisitor_VisitPrefixUnaryExpression_a6292d16(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitPrimaryConstructorBaseType_a5616f33(
+    int CSharpSyntaxVisitor_VisitPrimaryConstructorBaseType_9fd6f970(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitPropertyDeclaration_11f7d58e(
+    int CSharpSyntaxVisitor_VisitPropertyDeclaration_a23105c8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitPropertyPatternClause_52ed1b76(
+    int CSharpSyntaxVisitor_VisitPropertyPatternClause_8645b026(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitQualifiedCref_b70e2743(
+    int CSharpSyntaxVisitor_VisitQualifiedCref_ad3509a5(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitQualifiedName_2d4e7d8b(
+    int CSharpSyntaxVisitor_VisitQualifiedName_2ffde7a7(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitQueryBody_7fee1032(
+    int CSharpSyntaxVisitor_VisitQueryBody_95cc36b3(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitQueryContinuation_2ee2b4f1(
+    int CSharpSyntaxVisitor_VisitQueryContinuation_09e44967(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitQueryExpression_b2e529f1(
+    int CSharpSyntaxVisitor_VisitQueryExpression_a60e13c3(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitRangeExpression_3ef57fd5(
+    int CSharpSyntaxVisitor_VisitRangeExpression_7d4c9589(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitRecordDeclaration_d6533764(
+    int CSharpSyntaxVisitor_VisitRecordDeclaration_bdcfd344(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitRecursivePattern_2928f580(
+    int CSharpSyntaxVisitor_VisitRecursivePattern_68c993d5(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitRefExpression_81ead925(
+    int CSharpSyntaxVisitor_VisitRefExpression_7ae5e424(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitRefStructConstraint_537bd556(
+    int CSharpSyntaxVisitor_VisitRefStructConstraint_9ee817e9(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitRefTypeExpression_1b246cd1(
+    int CSharpSyntaxVisitor_VisitRefTypeExpression_01d20590(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitRefType_7998e744(
+    int CSharpSyntaxVisitor_VisitRefType_e50838cf(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitRefValueExpression_152ca291(
+    int CSharpSyntaxVisitor_VisitRefValueExpression_e048d70d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitReferenceDirectiveTrivia_62d7a97a(
+    int CSharpSyntaxVisitor_VisitReferenceDirectiveTrivia_68adc5f2(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitRegionDirectiveTrivia_a3ecfbd3(
+    int CSharpSyntaxVisitor_VisitRegionDirectiveTrivia_837e36b7(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitRelationalPattern_d73a95f8(
+    int CSharpSyntaxVisitor_VisitRelationalPattern_042940a8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitReturnStatement_855052d9(
+    int CSharpSyntaxVisitor_VisitReturnStatement_4051ddfd(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitScopedType_a000d1ec(
+    int CSharpSyntaxVisitor_VisitScopedType_e652e2be(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSelectClause_da15a13b(
+    int CSharpSyntaxVisitor_VisitSelectClause_d42fb3bd(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitShebangDirectiveTrivia_d21caa67(
+    int CSharpSyntaxVisitor_VisitShebangDirectiveTrivia_305d3bcc(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSimpleBaseType_4e995d79(
+    int CSharpSyntaxVisitor_VisitSimpleBaseType_8e347567(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSimpleLambdaExpression_92b13c54(
+    int CSharpSyntaxVisitor_VisitSimpleLambdaExpression_f93df685(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSingleVariableDesignation_ad7f7110(
+    int CSharpSyntaxVisitor_VisitSingleVariableDesignation_eb8749b0(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSizeOfExpression_eec729aa(
+    int CSharpSyntaxVisitor_VisitSizeOfExpression_df2e424b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSkippedTokensTrivia_667f87b2(
+    int CSharpSyntaxVisitor_VisitSkippedTokensTrivia_7b481f00(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSlicePattern_ecd62981(
+    int CSharpSyntaxVisitor_VisitSlicePattern_9c103ce9(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSpreadElement_1e480dea(
+    int CSharpSyntaxVisitor_VisitSpreadElement_5293c41a(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitStackAllocArrayCreationExpression_20f8a2f2(
+    int CSharpSyntaxVisitor_VisitStackAllocArrayCreationExpression_b9b4390d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitStructDeclaration_701de94e(
+    int CSharpSyntaxVisitor_VisitStructDeclaration_dc3e7b3f(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSubpattern_ec4fbaf1(
+    int CSharpSyntaxVisitor_VisitSubpattern_ac453756(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSwitchExpressionArm_57911871(
+    int CSharpSyntaxVisitor_VisitSwitchExpressionArm_2b4ebd5b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSwitchExpression_f6eb8b81(
+    int CSharpSyntaxVisitor_VisitSwitchExpression_befe0fbe(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSwitchSection_744c407e(
+    int CSharpSyntaxVisitor_VisitSwitchSection_35a00ce2(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitSwitchStatement_3e65f9b0(
+    int CSharpSyntaxVisitor_VisitSwitchStatement_0f10807f(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitThisExpression_6dfbd512(
+    int CSharpSyntaxVisitor_VisitThisExpression_66bb6aa9(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitThrowExpression_0de8c1c3(
+    int CSharpSyntaxVisitor_VisitThrowExpression_bcfb5f23(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitThrowStatement_5aa7b8d0(
+    int CSharpSyntaxVisitor_VisitThrowStatement_bf3659ef(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTryStatement_4e5ed3f5(
+    int CSharpSyntaxVisitor_VisitTryStatement_5e9a198b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTupleElement_95cfb423(
+    int CSharpSyntaxVisitor_VisitTupleElement_09a8b81b(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTupleExpression_a94a8bc4(
+    int CSharpSyntaxVisitor_VisitTupleExpression_6cdc2226(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTupleType_904d0fd2(
+    int CSharpSyntaxVisitor_VisitTupleType_4b24a6f4(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTypeArgumentList_aaa5b782(
+    int CSharpSyntaxVisitor_VisitTypeArgumentList_1721e9f4(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTypeConstraint_6103ebb6(
+    int CSharpSyntaxVisitor_VisitTypeConstraint_8c4c9528(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTypeCref_16012d4f(
+    int CSharpSyntaxVisitor_VisitTypeCref_f92b93cf(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTypeOfExpression_0f8d6feb(
+    int CSharpSyntaxVisitor_VisitTypeOfExpression_6cbfa820(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTypeParameterConstraintClause_f398a41d(
+    int CSharpSyntaxVisitor_VisitTypeParameterConstraintClause_e5e70ade(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTypeParameterList_f19d41ac(
+    int CSharpSyntaxVisitor_VisitTypeParameterList_3b26d35c(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTypeParameter_ada7739a(
+    int CSharpSyntaxVisitor_VisitTypeParameter_05a549f8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitTypePattern_462e375e(
+    int CSharpSyntaxVisitor_VisitTypePattern_af61850e(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitUnaryPattern_eb28ba7f(
+    int CSharpSyntaxVisitor_VisitUnaryPattern_a879b4a8(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitUndefDirectiveTrivia_5dedd85d(
+    int CSharpSyntaxVisitor_VisitUndefDirectiveTrivia_92b25c0f(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitUnsafeStatement_269026af(
+    int CSharpSyntaxVisitor_VisitUnsafeStatement_f9b4b0fe(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitUsingDirective_59a64312(
+    int CSharpSyntaxVisitor_VisitUsingDirective_d31575d5(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitUsingStatement_e54b1e3b(
+    int CSharpSyntaxVisitor_VisitUsingStatement_af7053ec(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitVarPattern_ecdbc735(
+    int CSharpSyntaxVisitor_VisitVarPattern_d3d95b17(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitVariableDeclaration_2f3a61ec(
+    int CSharpSyntaxVisitor_VisitVariableDeclaration_ea95c83f(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitVariableDeclarator_553898ad(
+    int CSharpSyntaxVisitor_VisitVariableDeclarator_d62a1eaa(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitWarningDirectiveTrivia_fdbedf37(
+    int CSharpSyntaxVisitor_VisitWarningDirectiveTrivia_d663a0ea(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitWhenClause_9440ecf2(
+    int CSharpSyntaxVisitor_VisitWhenClause_8d8964ba(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitWhereClause_46c8af96(
+    int CSharpSyntaxVisitor_VisitWhereClause_5c5e5a47(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitWhileStatement_890d83f0(
+    int CSharpSyntaxVisitor_VisitWhileStatement_dfb24af5(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitWithExpression_f8afef22(
+    int CSharpSyntaxVisitor_VisitWithExpression_205c3277(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlCDataSection_a36011a3(
+    int CSharpSyntaxVisitor_VisitXmlCDataSection_03b78665(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlComment_0bbdbf4b(
+    int CSharpSyntaxVisitor_VisitXmlComment_4d623f97(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlCrefAttribute_95581af8(
+    int CSharpSyntaxVisitor_VisitXmlCrefAttribute_7320ae50(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlElementEndTag_4df2c1a5(
+    int CSharpSyntaxVisitor_VisitXmlElementEndTag_6bb68f25(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlElementStartTag_d1579666(
+    int CSharpSyntaxVisitor_VisitXmlElementStartTag_8bff2db0(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlElement_aad38f7c(
+    int CSharpSyntaxVisitor_VisitXmlElement_1a2eb181(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlEmptyElement_372dc9e8(
+    int CSharpSyntaxVisitor_VisitXmlEmptyElement_1589d22a(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlNameAttribute_f2e70540(
+    int CSharpSyntaxVisitor_VisitXmlNameAttribute_6011262e(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlName_b47e5426(
+    int CSharpSyntaxVisitor_VisitXmlName_d1325122(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlPrefix_64ff06d7(
+    int CSharpSyntaxVisitor_VisitXmlPrefix_fd30996d(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlProcessingInstruction_0318510f(
+    int CSharpSyntaxVisitor_VisitXmlProcessingInstruction_9fd042e4(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlTextAttribute_2697ed0c(
+    int CSharpSyntaxVisitor_VisitXmlTextAttribute_128278da(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitXmlText_3faf536f(
+    int CSharpSyntaxVisitor_VisitXmlText_6a6e2066(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_VisitYieldStatement_95fe1bbd(
+    int CSharpSyntaxVisitor_VisitYieldStatement_1104e4f4(
         long receiver,
         long node
     );
 
     [PreserveSig]
-    int CSharpSyntaxVisitor_Visit_d0bb6f27(
+    int CSharpSyntaxVisitor_Visit_6a327ad1(
         long receiver,
         long node
     );

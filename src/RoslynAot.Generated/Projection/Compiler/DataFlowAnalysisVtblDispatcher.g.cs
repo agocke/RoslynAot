@@ -27,7 +27,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(223);
+        RoslynCallCounters.Record(4162);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(224);
+        RoslynCallCounters.Record(4163);
         result = default;
 
         try
@@ -63,7 +63,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(225);
+        RoslynCallCounters.Record(4164);
         result = default;
 
         try
@@ -81,7 +81,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(226);
+        RoslynCallCounters.Record(4165);
         result = default;
 
         try
@@ -99,7 +99,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(227);
+        RoslynCallCounters.Record(4166);
         result = default;
 
         try
@@ -117,7 +117,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(228);
+        RoslynCallCounters.Record(4167);
         result = default;
 
         try
@@ -135,7 +135,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(229);
+        RoslynCallCounters.Record(4168);
         result = default;
 
         try
@@ -153,7 +153,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(230);
+        RoslynCallCounters.Record(4169);
         result = default;
 
         try
@@ -171,7 +171,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(231);
+        RoslynCallCounters.Record(4170);
         result = default;
 
         try
@@ -189,7 +189,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(232);
+        RoslynCallCounters.Record(4171);
         result = default;
 
         try
@@ -207,7 +207,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(233);
+        RoslynCallCounters.Record(4172);
         result = default;
 
         try
@@ -225,7 +225,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(234);
+        RoslynCallCounters.Record(4173);
         result = default;
 
         try
@@ -243,7 +243,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(235);
+        RoslynCallCounters.Record(4174);
         result = default;
 
         try
@@ -261,7 +261,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(236);
+        RoslynCallCounters.Record(4175);
         result = default;
 
         try
@@ -279,7 +279,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(237);
+        RoslynCallCounters.Record(4176);
         result = default;
 
         try
@@ -297,7 +297,7 @@ internal sealed partial class DataFlowAnalysisVtblDispatcher : IDataFlowAnalysis
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(238);
+        RoslynCallCounters.Record(4177);
         result = default;
 
         try

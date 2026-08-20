@@ -49,7 +49,7 @@ namespace Microsoft.CodeAnalysis
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IChildSyntaxListVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ChildSyntaxList_Equals_1b84856b(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+            int status = vtbl.ChildSyntaxList_Equals_4305b2f7(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return result != 0;
         }
@@ -187,7 +187,7 @@ namespace Microsoft.CodeAnalysis
             {
                 global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
                 global::RoslynAot.Abi.IChildSyntaxListReversedVtbl vtbl = __RoslynAotGetVtbl();
-                int status = vtbl.ChildSyntaxList_Reversed_Equals_26c111ae(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
+                int status = vtbl.ChildSyntaxList_Reversed_Equals_74ed5c25(__RoslynAotGetHandle(), other.__RoslynAotGetHandle(), out int result);
                 global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
                 return result != 0;
             }

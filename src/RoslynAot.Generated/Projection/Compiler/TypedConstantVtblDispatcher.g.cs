@@ -23,12 +23,12 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int TypedConstant_Equals_67eaa43c(
+    public int TypedConstant_Equals_c2c5b504(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1870);
+        RoslynCallCounters.Record(5809);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1871);
+        RoslynCallCounters.Record(5810);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1872);
+        RoslynCallCounters.Record(5811);
         result = default;
 
         try
@@ -82,7 +82,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1873);
+        RoslynCallCounters.Record(5812);
         result = default;
 
         try
@@ -100,7 +100,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1874);
+        RoslynCallCounters.Record(5813);
         result = default;
 
         try
@@ -120,7 +120,7 @@ internal sealed partial class TypedConstantVtblDispatcher : ITypedConstantVtbl
         out long constantLow,
         out long constantHigh)
     {
-        RoslynCallCounters.Record(1875);
+        RoslynCallCounters.Record(5814);
         constantKind = default;
         constantLow = default;
         constantHigh = default;

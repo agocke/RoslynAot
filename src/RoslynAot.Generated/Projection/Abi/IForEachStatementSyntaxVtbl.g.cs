@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("354601e5-a635-5efa-ad75-d7f6ae16be74")]
+[Guid("92fc4405-a935-5f7e-986c-168e337185cc")]
 public partial interface IForEachStatementSyntaxVtbl : ICommonForEachStatementSyntaxVtbl
 {
 
     [PreserveSig]
-    int ForEachStatementSyntax_Accept_0181a252(
+    int ForEachStatementSyntax_Accept_b08522d1(
         long receiver,
         long visitor
     );
@@ -30,7 +30,7 @@ public partial interface IForEachStatementSyntaxVtbl : ICommonForEachStatementSy
     );
 
     [PreserveSig]
-    int ForEachStatementSyntax_Update_3cd71d1b(
+    int ForEachStatementSyntax_Update_0e38ac44(
         long receiver,
         long forEachKeyword,
         long openParenToken,
@@ -44,7 +44,7 @@ public partial interface IForEachStatementSyntaxVtbl : ICommonForEachStatementSy
     );
 
     [PreserveSig]
-    int ForEachStatementSyntax_Update_d904656c(
+    int ForEachStatementSyntax_Update_a588bae1(
         long receiver,
         long awaitKeyword,
         long forEachKeyword,

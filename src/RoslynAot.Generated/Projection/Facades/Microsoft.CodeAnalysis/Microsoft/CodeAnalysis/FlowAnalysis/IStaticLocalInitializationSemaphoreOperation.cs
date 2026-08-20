@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static IStaticLocalInitializationSemaphoreOperation __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (IStaticLocalInitializationSemaphoreOperation)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("33f4724d-872d-52ac-8157-235d3b7a0f8e")]
+        [System.Runtime.InteropServices.Guid("9380d4b4-d225-5d71-b1d2-43f52857e412")]
         internal partial interface __RoslynAotImplementation : IStaticLocalInitializationSemaphoreOperation
         {
         }

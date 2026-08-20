@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICasePatternSwitchLabelSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CasePatternSwitchLabelSyntax_Accept_f5515cf5(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.CasePatternSwitchLabelSyntax_Accept_9e8de44a(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -122,7 +122,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static CasePatternSwitchLabelSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CasePatternSwitchLabelSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("966315ea-efc0-52f2-ae54-2e27b4836234")]
+        [System.Runtime.InteropServices.Guid("53915cef-ed2e-5a29-9ffb-6e28bb1a406f")]
         internal partial interface __RoslynAotImplementation : CasePatternSwitchLabelSyntax
         {
         }

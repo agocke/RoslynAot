@@ -27,7 +27,7 @@ internal sealed partial class IReturnOperationVtblDispatcher : IIReturnOperation
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1183);
+        RoslynCallCounters.Record(5122);
         result = default;
 
         try

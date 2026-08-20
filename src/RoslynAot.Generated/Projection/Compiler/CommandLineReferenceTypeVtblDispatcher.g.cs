@@ -28,7 +28,7 @@ internal sealed partial class CommandLineReferenceTypeVtblDispatcher : ICommandL
         long properties,
         out long result)
     {
-        RoslynCallCounters.Record(94);
+        RoslynCallCounters.Record(4033);
         result = default;
 
         try

@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("ffe2cc3d-cd0e-51b7-85f4-ea9977a9d803")]
+[Guid("4ecccb27-76e9-52e9-9ad9-c8df7cca22a3")]
 public partial interface IConversionOperatorMemberCrefSyntaxVtbl : IMemberCrefSyntaxVtbl
 {
 
     [PreserveSig]
-    int ConversionOperatorMemberCrefSyntax_Accept_1e2bedb1(
+    int ConversionOperatorMemberCrefSyntax_Accept_f8d450cb(
         long receiver,
         long visitor
     );
@@ -30,7 +30,7 @@ public partial interface IConversionOperatorMemberCrefSyntaxVtbl : IMemberCrefSy
     );
 
     [PreserveSig]
-    int ConversionOperatorMemberCrefSyntax_Update_1773769c(
+    int ConversionOperatorMemberCrefSyntax_Update_e392768f(
         long receiver,
         long implicitOrExplicitKeyword,
         long operatorKeyword,
@@ -40,7 +40,7 @@ public partial interface IConversionOperatorMemberCrefSyntaxVtbl : IMemberCrefSy
     );
 
     [PreserveSig]
-    int ConversionOperatorMemberCrefSyntax_Update_125ea231(
+    int ConversionOperatorMemberCrefSyntax_Update_95aea824(
         long receiver,
         long implicitOrExplicitKeyword,
         long operatorKeyword,

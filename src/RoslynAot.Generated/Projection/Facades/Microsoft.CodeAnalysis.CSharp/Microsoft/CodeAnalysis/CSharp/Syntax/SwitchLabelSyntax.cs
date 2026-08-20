@@ -58,7 +58,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SwitchLabelSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SwitchLabelSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("de4ab2fc-d2cf-55d1-bc6f-a327e5d8559d")]
+        [System.Runtime.InteropServices.Guid("b9aeb144-5291-57e4-aff2-e5e27dcb3ddc")]
         internal partial interface __RoslynAotImplementation : SwitchLabelSyntax
         {
         }

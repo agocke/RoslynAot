@@ -66,7 +66,7 @@ namespace Microsoft.CodeAnalysis
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static EmbeddedText __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (EmbeddedText)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("85b04136-3596-5403-a0f0-0371e8d7c6db")]
+        [System.Runtime.InteropServices.Guid("d4781577-e850-5843-a52a-39cc40a1723e")]
         internal partial interface __RoslynAotImplementation : EmbeddedText
         {
         }

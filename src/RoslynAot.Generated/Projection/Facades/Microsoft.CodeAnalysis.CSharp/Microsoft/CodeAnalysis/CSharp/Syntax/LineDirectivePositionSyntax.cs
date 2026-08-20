@@ -74,7 +74,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ILineDirectivePositionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.LineDirectivePositionSyntax_Accept_777eea99(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.LineDirectivePositionSyntax_Accept_9c7fb3e6(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -143,7 +143,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static LineDirectivePositionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (LineDirectivePositionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("d3aadaff-e0b1-5010-a768-b90cbd88a7a9")]
+        [System.Runtime.InteropServices.Guid("1ddd8269-aab6-5175-82af-9463015b65d6")]
         internal partial interface __RoslynAotImplementation : LineDirectivePositionSyntax
         {
         }

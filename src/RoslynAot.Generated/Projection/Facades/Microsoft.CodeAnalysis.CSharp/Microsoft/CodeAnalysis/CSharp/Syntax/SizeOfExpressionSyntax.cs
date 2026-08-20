@@ -62,7 +62,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ISizeOfExpressionSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.SizeOfExpressionSyntax_Accept_277b34c1(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.SizeOfExpressionSyntax_Accept_f7dab2c2(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -122,7 +122,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static SizeOfExpressionSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (SizeOfExpressionSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("f4de1345-a737-52ae-ba5a-5f36d0491989")]
+        [System.Runtime.InteropServices.Guid("6f288d3f-ac2a-5baa-bd44-6bdafb1d487d")]
         internal partial interface __RoslynAotImplementation : SizeOfExpressionSyntax
         {
         }

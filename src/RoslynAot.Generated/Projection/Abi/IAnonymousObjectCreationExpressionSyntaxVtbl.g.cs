@@ -12,12 +12,12 @@ using System.Runtime.InteropServices.Marshalling;
 namespace RoslynAot.Abi;
 
 [GeneratedComInterface]
-[Guid("43451624-2ce0-5776-8da0-8c4156b9cef7")]
+[Guid("b7903f8e-6458-59b2-ac33-127c7ad09431")]
 public partial interface IAnonymousObjectCreationExpressionSyntaxVtbl : IExpressionSyntaxVtbl
 {
 
     [PreserveSig]
-    int AnonymousObjectCreationExpressionSyntax_Accept_198a2295(
+    int AnonymousObjectCreationExpressionSyntax_Accept_04df4aa7(
         long receiver,
         long visitor
     );

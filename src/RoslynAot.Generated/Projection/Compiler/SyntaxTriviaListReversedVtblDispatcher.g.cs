@@ -23,12 +23,12 @@ internal sealed partial class SyntaxTriviaListReversedVtblDispatcher : ISyntaxTr
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int SyntaxTriviaList_Reversed_Equals_c7515ea0(
+    public int SyntaxTriviaList_Reversed_Equals_0d2370e6(
         long receiver,
         long other,
         out int result)
     {
-        RoslynCallCounters.Record(1758);
+        RoslynCallCounters.Record(5697);
         result = default;
 
         try
@@ -46,7 +46,7 @@ internal sealed partial class SyntaxTriviaListReversedVtblDispatcher : ISyntaxTr
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(1759);
+        RoslynCallCounters.Record(5698);
         result = default;
 
         try
@@ -64,7 +64,7 @@ internal sealed partial class SyntaxTriviaListReversedVtblDispatcher : ISyntaxTr
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(1760);
+        RoslynCallCounters.Record(5699);
         result = default;
 
         try

@@ -118,7 +118,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IForEachVariableStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ForEachVariableStatementSyntax_Accept_de6efae3(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ForEachVariableStatementSyntax_Accept_53e37d26(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -145,7 +145,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IForEachVariableStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ForEachVariableStatementSyntax_Update_5b1b9ccb(__RoslynAotGetHandle(), forEachKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), variable.__RoslynAotGetHandle(), inKeyword.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.ForEachVariableStatementSyntax_Update_2a766283(__RoslynAotGetHandle(), forEachKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), variable.__RoslynAotGetHandle(), inKeyword.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -154,7 +154,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IForEachVariableStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ForEachVariableStatementSyntax_Update_3c8b3ccd(__RoslynAotGetHandle(), awaitKeyword.__RoslynAotGetHandle(), forEachKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), variable.__RoslynAotGetHandle(), inKeyword.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.ForEachVariableStatementSyntax_Update_ac30a7de(__RoslynAotGetHandle(), awaitKeyword.__RoslynAotGetHandle(), forEachKeyword.__RoslynAotGetHandle(), openParenToken.__RoslynAotGetHandle(), variable.__RoslynAotGetHandle(), inKeyword.__RoslynAotGetHandle(), expression.__RoslynAotGetHandle(), closeParenToken.__RoslynAotGetHandle(), statement.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -242,7 +242,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ForEachVariableStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ForEachVariableStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("e15f487a-5681-5770-8ba7-7fb003bd118a")]
+        [System.Runtime.InteropServices.Guid("daaaf258-510a-59a3-a7b3-ed48331539d5")]
         internal partial interface __RoslynAotImplementation : ForEachVariableStatementSyntax
         {
         }

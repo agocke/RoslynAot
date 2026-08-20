@@ -74,7 +74,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IShebangDirectiveTriviaSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ShebangDirectiveTriviaSyntax_Accept_3cddf934(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ShebangDirectiveTriviaSyntax_Accept_3cec86a4(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -143,7 +143,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ShebangDirectiveTriviaSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ShebangDirectiveTriviaSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("3197eb40-df3c-5e64-9624-a17367cd4adc")]
+        [System.Runtime.InteropServices.Guid("fdf8d05d-06e0-5b09-bf3b-fb79082706f0")]
         internal partial interface __RoslynAotImplementation : ShebangDirectiveTriviaSyntax
         {
         }

@@ -27,7 +27,7 @@ internal sealed partial class ILabelSymbolVtblDispatcher : IILabelSymbolVtbl
         long receiver,
         out long result)
     {
-        RoslynCallCounters.Record(660);
+        RoslynCallCounters.Record(4599);
         result = default;
 
         try

@@ -27,7 +27,7 @@ internal sealed partial class EmbeddedTextVtblDispatcher : IEmbeddedTextVtbl
         long receiver,
         out int result)
     {
-        RoslynCallCounters.Record(471);
+        RoslynCallCounters.Record(4410);
         result = default;
 
         try
@@ -47,7 +47,7 @@ internal sealed partial class EmbeddedTextVtblDispatcher : IEmbeddedTextVtbl
         int bufferLength,
         out int requiredLength)
     {
-        RoslynCallCounters.Record(472);
+        RoslynCallCounters.Record(4411);
         requiredLength = default;
 
         try

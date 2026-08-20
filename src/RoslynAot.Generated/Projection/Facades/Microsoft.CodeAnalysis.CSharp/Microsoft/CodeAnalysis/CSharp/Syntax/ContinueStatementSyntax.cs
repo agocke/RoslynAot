@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IContinueStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ContinueStatementSyntax_Accept_cf273196(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.ContinueStatementSyntax_Accept_2d7085e9(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -73,7 +73,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IContinueStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.ContinueStatementSyntax_Update_22f71f22(__RoslynAotGetHandle(), continueKeyword.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.ContinueStatementSyntax_Update_6168bbdf(__RoslynAotGetHandle(), continueKeyword.__RoslynAotGetHandle(), semicolonToken.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -107,7 +107,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static ContinueStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (ContinueStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("e8d5305f-896c-5579-b1f1-841aafbb08e1")]
+        [System.Runtime.InteropServices.Guid("4b748635-bf98-5500-92da-184c3ccfa01d")]
         internal partial interface __RoslynAotImplementation : ContinueStatementSyntax
         {
         }

@@ -28,7 +28,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
         int minor,
         out long result)
     {
-        RoslynCallCounters.Record(1450);
+        RoslynCallCounters.Record(5389);
         result = default;
 
         try
@@ -45,7 +45,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_None(
         out long result)
     {
-        RoslynCallCounters.Record(1457);
+        RoslynCallCounters.Record(5396);
         result = default;
 
         try
@@ -62,7 +62,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_Windows2000(
         out long result)
     {
-        RoslynCallCounters.Record(1458);
+        RoslynCallCounters.Record(5397);
         result = default;
 
         try
@@ -79,7 +79,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_Windows7(
         out long result)
     {
-        RoslynCallCounters.Record(1459);
+        RoslynCallCounters.Record(5398);
         result = default;
 
         try
@@ -96,7 +96,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_Windows8(
         out long result)
     {
-        RoslynCallCounters.Record(1460);
+        RoslynCallCounters.Record(5399);
         result = default;
 
         try
@@ -113,7 +113,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_WindowsVista(
         out long result)
     {
-        RoslynCallCounters.Record(1461);
+        RoslynCallCounters.Record(5400);
         result = default;
 
         try
@@ -130,7 +130,7 @@ internal sealed partial class SubsystemVersionTypeVtblDispatcher : ISubsystemVer
     public int SubsystemVersion_get_WindowsXP(
         out long result)
     {
-        RoslynCallCounters.Record(1462);
+        RoslynCallCounters.Record(5401);
         result = default;
 
         try

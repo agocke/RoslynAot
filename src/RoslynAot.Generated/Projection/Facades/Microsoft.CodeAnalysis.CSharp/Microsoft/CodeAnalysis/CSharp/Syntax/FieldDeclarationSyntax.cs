@@ -58,7 +58,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.IFieldDeclarationSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.FieldDeclarationSyntax_Accept_4a5628e7(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.FieldDeclarationSyntax_Accept_c1bfb45f(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -133,7 +133,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static FieldDeclarationSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (FieldDeclarationSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("9afd5bee-788a-5a7e-afab-8e03a0b01ed9")]
+        [System.Runtime.InteropServices.Guid("e70a7f27-c4e6-5c37-9ac4-2d140a75d8ee")]
         internal partial interface __RoslynAotImplementation : FieldDeclarationSyntax
         {
         }

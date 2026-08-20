@@ -23,12 +23,12 @@ internal sealed partial class CommandLineSourceFileTypeVtblDispatcher : ICommand
         _owner = owner ?? throw new ArgumentNullException(nameof(owner));
     }
 
-    public int CommandLineSourceFile_ctor_a9081338(
+    public int CommandLineSourceFile_ctor_12392447(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         int isScript,
         out long result)
     {
-        RoslynCallCounters.Record(105);
+        RoslynCallCounters.Record(4044);
         result = default;
 
         try
@@ -42,13 +42,13 @@ internal sealed partial class CommandLineSourceFileTypeVtblDispatcher : ICommand
         }
     }
 
-    public int CommandLineSourceFile_ctor_5dfbeda0(
+    public int CommandLineSourceFile_ctor_19b731f5(
         [global::System.Runtime.InteropServices.Marshalling.MarshalUsing(typeof(global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller))] string path,
         int isScript,
         int isInputRedirected,
         out long result)
     {
-        RoslynCallCounters.Record(106);
+        RoslynCallCounters.Record(4045);
         result = default;
 
         try

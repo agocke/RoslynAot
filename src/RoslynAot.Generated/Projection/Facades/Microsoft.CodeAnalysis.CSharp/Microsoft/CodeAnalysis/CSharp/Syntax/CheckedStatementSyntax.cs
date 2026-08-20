@@ -46,7 +46,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICheckedStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CheckedStatementSyntax_Accept_eed97577(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
+            int status = vtbl.CheckedStatementSyntax_Accept_acdc642e(__RoslynAotGetHandle(), visitor.__RoslynAotGetHandle());
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
         }
 
@@ -91,7 +91,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         {
             global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl = __RoslynAotGetControlVtbl();
             global::RoslynAot.Abi.ICheckedStatementSyntaxVtbl vtbl = __RoslynAotGetVtbl();
-            int status = vtbl.CheckedStatementSyntax_Update_3f654dcb(__RoslynAotGetHandle(), keyword.__RoslynAotGetHandle(), block.__RoslynAotGetHandle(), out long result);
+            int status = vtbl.CheckedStatementSyntax_Update_8524d09b(__RoslynAotGetHandle(), keyword.__RoslynAotGetHandle(), block.__RoslynAotGetHandle(), out long result);
             global::RoslynAot.RoslynFacade.RoslynFacadeRuntime.ThrowIfFailed(controlVtbl, status);
             return __RoslynAotCreateProxy(controlVtbl, result);
         }
@@ -125,7 +125,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public long __RoslynAotGetHandle() => __RoslynAotGetProxy().GetHandle();
         internal static CheckedStatementSyntax __RoslynAotCreateProxy(global::RoslynAot.Abi.IRoslynControlVtbl controlVtbl, long handle) => (CheckedStatementSyntax)(object)global::RoslynAot.RoslynFacade.RoslynObjectProxy.GetOrCreate(controlVtbl, handle);
         [System.Runtime.InteropServices.DynamicInterfaceCastableImplementation]
-        [System.Runtime.InteropServices.Guid("4a66fe63-ff90-529f-8470-c152f71c42bd")]
+        [System.Runtime.InteropServices.Guid("11e1058b-cdb2-538e-8665-42ee0dc5945b")]
         internal partial interface __RoslynAotImplementation : CheckedStatementSyntax
         {
         }
