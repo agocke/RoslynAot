@@ -13,181 +13,181 @@ namespace Microsoft.CodeAnalysis
         public static TNode? GetCurrentNode<TNode>(this SyntaxNode root, TNode node)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static System.Collections.Generic.IEnumerable<TNode> GetCurrentNodes<TNode>(this SyntaxNode root, TNode node)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static System.Collections.Generic.IEnumerable<TNode> GetCurrentNodes<TNode>(this SyntaxNode root, System.Collections.Generic.IEnumerable<TNode> nodes)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot InsertNodesAfter<TRoot>(this TRoot root, SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<SyntaxNode> newNodes)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot InsertNodesBefore<TRoot>(this TRoot root, SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<SyntaxNode> newNodes)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot InsertTokensAfter<TRoot>(this TRoot root, SyntaxToken tokenInList, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot InsertTokensBefore<TRoot>(this TRoot root, SyntaxToken tokenInList, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot InsertTriviaAfter<TRoot>(this TRoot root, SyntaxTrivia trivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot InsertTriviaBefore<TRoot>(this TRoot root, SyntaxTrivia trivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TNode NormalizeWhitespace<TNode>(this TNode node, string indentation, bool elasticTrivia)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TNode NormalizeWhitespace<TNode>(this TNode node, string indentation = "    ", string eol = "\r\n", bool elasticTrivia = false)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot? RemoveNode<TRoot>(this TRoot root, SyntaxNode node, SyntaxRemoveOptions options)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot? RemoveNodes<TRoot>(this TRoot root, System.Collections.Generic.IEnumerable<SyntaxNode> nodes, SyntaxRemoveOptions options)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot ReplaceNode<TRoot>(this TRoot root, SyntaxNode oldNode, SyntaxNode newNode)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot ReplaceNode<TRoot>(this TRoot root, SyntaxNode oldNode, System.Collections.Generic.IEnumerable<SyntaxNode> newNodes)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot ReplaceNodes<TRoot, TNode>(this TRoot root, System.Collections.Generic.IEnumerable<TNode> nodes, System.Func<TNode, TNode, SyntaxNode> computeReplacementNode)
             where TRoot : SyntaxNode where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot ReplaceSyntax<TRoot>(this TRoot root, System.Collections.Generic.IEnumerable<SyntaxNode>? nodes, System.Func<SyntaxNode, SyntaxNode, SyntaxNode>? computeReplacementNode, System.Collections.Generic.IEnumerable<SyntaxToken>? tokens, System.Func<SyntaxToken, SyntaxToken, SyntaxToken>? computeReplacementToken, System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia>? computeReplacementTrivia)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot ReplaceToken<TRoot>(this TRoot root, SyntaxToken oldToken, SyntaxToken newToken)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot ReplaceToken<TRoot>(this TRoot root, SyntaxToken tokenInList, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot ReplaceTokens<TRoot>(this TRoot root, System.Collections.Generic.IEnumerable<SyntaxToken> tokens, System.Func<SyntaxToken, SyntaxToken, SyntaxToken> computeReplacementToken)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot ReplaceTrivia<TRoot>(this TRoot root, SyntaxTrivia trivia, SyntaxTrivia newTrivia)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot ReplaceTrivia<TRoot>(this TRoot root, SyntaxTrivia oldTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot ReplaceTrivia<TRoot>(this TRoot root, System.Collections.Generic.IEnumerable<SyntaxTrivia> trivia, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia> computeReplacementTrivia)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot TrackNodes<TRoot>(this TRoot root, params SyntaxNode[] nodes)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TRoot TrackNodes<TRoot>(this TRoot root, System.Collections.Generic.IEnumerable<SyntaxNode> nodes)
             where TRoot : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TSyntax WithLeadingTrivia<TSyntax>(this TSyntax node, params SyntaxTrivia[]? trivia)
             where TSyntax : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TSyntax WithLeadingTrivia<TSyntax>(this TSyntax node, SyntaxTriviaList trivia)
             where TSyntax : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TSyntax WithLeadingTrivia<TSyntax>(this TSyntax node, System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia)
             where TSyntax : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TSyntax WithoutLeadingTrivia<TSyntax>(this TSyntax node)
             where TSyntax : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TSyntax WithoutTrailingTrivia<TSyntax>(this TSyntax node)
             where TSyntax : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static SyntaxToken WithoutTrivia(this SyntaxToken token)
@@ -202,31 +202,31 @@ namespace Microsoft.CodeAnalysis
         public static TSyntax WithoutTrivia<TSyntax>(this TSyntax syntax)
             where TSyntax : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TSyntax WithTrailingTrivia<TSyntax>(this TSyntax node, params SyntaxTrivia[]? trivia)
             where TSyntax : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TSyntax WithTrailingTrivia<TSyntax>(this TSyntax node, SyntaxTriviaList trivia)
             where TSyntax : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TSyntax WithTrailingTrivia<TSyntax>(this TSyntax node, System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia)
             where TSyntax : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static TSyntax WithTriviaFrom<TSyntax>(this TSyntax syntax, SyntaxNode node)
             where TSyntax : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
     }
 }

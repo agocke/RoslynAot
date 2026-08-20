@@ -14,13 +14,13 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
         }
 
         public static int Compare(System.ReadOnlySpan<char> left, System.ReadOnlySpan<char> right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'left' is unsupported: Generic substitutions are not supported.");
         }
 
         public static int Compare(string left, string right)
@@ -43,7 +43,7 @@ namespace Microsoft.CodeAnalysis
 
         public static bool Equals(System.ReadOnlySpan<char> left, System.ReadOnlySpan<char> right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'left' is unsupported: Generic substitutions are not supported.");
         }
 
         public static bool Equals(string left, string right)
@@ -91,7 +91,7 @@ namespace Microsoft.CodeAnalysis
 
         public static void ToLower(System.Text.StringBuilder builder)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'builder' is unsupported: The type is not part of a generated facade assembly.");
         }
     }
 }

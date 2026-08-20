@@ -312,7 +312,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -351,7 +351,7 @@ namespace Microsoft.CodeAnalysis
 
         INamedTypeSymbol Construct(System.Collections.Immutable.ImmutableArray<ITypeSymbol> typeArguments, System.Collections.Immutable.ImmutableArray<NullableAnnotation> typeArgumentNullableAnnotations)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'typeArguments' is unsupported: Generic substitutions are not supported.");
         }
 
         INamedTypeSymbol ConstructUnboundGenericType()

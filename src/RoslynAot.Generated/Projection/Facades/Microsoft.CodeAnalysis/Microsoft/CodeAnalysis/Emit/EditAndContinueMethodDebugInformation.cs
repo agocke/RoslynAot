@@ -14,12 +14,12 @@ namespace Microsoft.CodeAnalysis.Emit
         private readonly int _dummyPrimitive;
         public static EditAndContinueMethodDebugInformation Create(System.Collections.Immutable.ImmutableArray<byte> compressedSlotMap, System.Collections.Immutable.ImmutableArray<byte> compressedLambdaMap, System.Collections.Immutable.ImmutableArray<byte> compressedStateMachineStateMap)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'compressedSlotMap' is unsupported: Generic substitutions are not supported.");
         }
 
         public static EditAndContinueMethodDebugInformation Create(System.Collections.Immutable.ImmutableArray<byte> compressedSlotMap, System.Collections.Immutable.ImmutableArray<byte> compressedLambdaMap)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'compressedSlotMap' is unsupported: Generic substitutions are not supported.");
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Microsoft.CodeAnalysis
 
         public static DesktopAssemblyIdentityComparer LoadFromXml(System.IO.Stream input)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'input' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;

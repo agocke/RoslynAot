@@ -152,7 +152,7 @@ namespace Microsoft.CodeAnalysis
 
         public override readonly bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public readonly System.Collections.Generic.IEnumerable<SyntaxAnnotation> GetAnnotations(string annotationKind)
@@ -166,7 +166,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly System.Collections.Generic.IEnumerable<SyntaxAnnotation> GetAnnotations(params string[] annotationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotationKinds' is unsupported: Arrays are not supported.");
         }
 
         public readonly System.Collections.Generic.IEnumerable<Diagnostic> GetDiagnostics()
@@ -225,7 +225,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly bool HasAnnotations(params string[] annotationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotationKinds' is unsupported: Arrays are not supported.");
         }
 
         public readonly bool IsEquivalentTo(SyntaxTrivia trivia)
@@ -248,12 +248,12 @@ namespace Microsoft.CodeAnalysis
 
         public static bool operator ==(SyntaxTrivia left, SyntaxTrivia right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(SyntaxTrivia left, SyntaxTrivia right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public readonly string ToFullString()
@@ -283,7 +283,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxTrivia WithAdditionalAnnotations(System.Collections.Generic.IEnumerable<SyntaxAnnotation> annotations)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotations' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly SyntaxTrivia WithoutAnnotations(params SyntaxAnnotation[] annotations)
@@ -297,7 +297,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxTrivia WithoutAnnotations(System.Collections.Generic.IEnumerable<SyntaxAnnotation> annotations)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotations' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly SyntaxTrivia WithoutAnnotations(string annotationKind)
@@ -311,7 +311,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly void WriteTo(System.IO.TextWriter writer)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'writer' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;

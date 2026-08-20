@@ -13,14 +13,14 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     {
         public DiagnosticAnalyzerAttribute(string firstLanguage, params string[] additionalLanguages)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'additionalLanguages' is unsupported: Arrays are not supported.");
         }
 
         public string[] Languages
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Arrays are not supported.");
             }
         }
     }

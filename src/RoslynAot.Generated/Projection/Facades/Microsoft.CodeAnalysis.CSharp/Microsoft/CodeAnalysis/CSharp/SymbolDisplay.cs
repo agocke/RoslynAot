@@ -26,22 +26,22 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static string? FormatPrimitive(object? obj, bool quoteStrings, bool useHexadecimalNumbers)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public static System.Collections.Immutable.ImmutableArray<SymbolDisplayPart> ToDisplayParts(ISymbol symbol, SymbolDisplayFormat? format = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static System.Collections.Immutable.ImmutableArray<SymbolDisplayPart> ToDisplayParts(ITypeSymbol symbol, NullableAnnotation nullableAnnotation, SymbolDisplayFormat? format = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static System.Collections.Immutable.ImmutableArray<SymbolDisplayPart> ToDisplayParts(ITypeSymbol symbol, NullableFlowState nullableFlowState, SymbolDisplayFormat? format = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static string ToDisplayString(ISymbol symbol, SymbolDisplayFormat? format = null)
@@ -67,17 +67,17 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static System.Collections.Immutable.ImmutableArray<SymbolDisplayPart> ToMinimalDisplayParts(ISymbol symbol, SemanticModel semanticModel, int position, SymbolDisplayFormat? format = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static System.Collections.Immutable.ImmutableArray<SymbolDisplayPart> ToMinimalDisplayParts(ITypeSymbol symbol, NullableAnnotation nullableAnnotation, SemanticModel semanticModel, int position, SymbolDisplayFormat? format = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static System.Collections.Immutable.ImmutableArray<SymbolDisplayPart> ToMinimalDisplayParts(ITypeSymbol symbol, NullableFlowState nullableFlowState, SemanticModel semanticModel, int position, SymbolDisplayFormat? format = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public static string ToMinimalDisplayString(ISymbol symbol, SemanticModel semanticModel, int position, SymbolDisplayFormat? format = null)

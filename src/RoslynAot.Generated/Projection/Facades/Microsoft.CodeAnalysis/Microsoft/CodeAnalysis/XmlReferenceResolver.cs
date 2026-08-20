@@ -39,7 +39,7 @@ namespace Microsoft.CodeAnalysis
 
             public override bool Equals(object? other)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'other' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override int GetHashCode()
@@ -53,7 +53,7 @@ namespace Microsoft.CodeAnalysis
 
             public override System.IO.Stream OpenRead(string resolvedPath)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override string? ResolveReference(string path, string? baseFilePath)

@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis
     {
         protected PortableExecutableReference(MetadataReferenceProperties properties, string? fullPath = null, DocumentationProvider? initialDocumentation = null) : base(default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public override string? Display
@@ -59,12 +59,12 @@ namespace Microsoft.CodeAnalysis
         protected abstract Metadata GetMetadataImpl();
         public new PortableExecutableReference WithAliases(System.Collections.Generic.IEnumerable<string> aliases)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'aliases' is unsupported: Generic substitutions are not supported.");
         }
 
         public new PortableExecutableReference WithAliases(System.Collections.Immutable.ImmutableArray<string> aliases)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'aliases' is unsupported: Generic substitutions are not supported.");
         }
 
         public new PortableExecutableReference WithEmbedInteropTypes(bool value)
@@ -111,17 +111,17 @@ namespace Microsoft.CodeAnalysis
 
             protected override DocumentationProvider CreateDocumentationProvider()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
 
             protected override Metadata GetMetadataImpl()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
 
             protected override PortableExecutableReference WithPropertiesImpl(MetadataReferenceProperties properties)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
         }
 

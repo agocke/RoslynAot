@@ -24,7 +24,7 @@ namespace Microsoft.CodeAnalysis
 
         protected Metadata CommonCopy()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public static AssemblyMetadata Create(ModuleMetadata module)
@@ -47,12 +47,12 @@ namespace Microsoft.CodeAnalysis
 
         public static AssemblyMetadata Create(System.Collections.Generic.IEnumerable<ModuleMetadata> modules)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'modules' is unsupported: Generic substitutions are not supported.");
         }
 
         public static AssemblyMetadata Create(System.Collections.Immutable.ImmutableArray<ModuleMetadata> modules)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'modules' is unsupported: Generic substitutions are not supported.");
         }
 
         public static AssemblyMetadata CreateFromFile(string path)
@@ -66,22 +66,22 @@ namespace Microsoft.CodeAnalysis
 
         public static AssemblyMetadata CreateFromImage(System.Collections.Generic.IEnumerable<byte> peImage)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peImage' is unsupported: Generic substitutions are not supported.");
         }
 
         public static AssemblyMetadata CreateFromImage(System.Collections.Immutable.ImmutableArray<byte> peImage)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peImage' is unsupported: Generic substitutions are not supported.");
         }
 
         public static AssemblyMetadata CreateFromStream(System.IO.Stream peStream, bool leaveOpen = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peStream' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public static AssemblyMetadata CreateFromStream(System.IO.Stream peStream, System.Reflection.PortableExecutable.PEStreamOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peStream' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public void Dispose()
@@ -103,7 +103,7 @@ namespace Microsoft.CodeAnalysis
 
         public PortableExecutableReference GetReference(DocumentationProvider? documentation = null, System.Collections.Immutable.ImmutableArray<string> aliases = default, bool embedInteropTypes = false, string? filePath = null, string? display = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'aliases' is unsupported: Generic substitutions are not supported.");
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;

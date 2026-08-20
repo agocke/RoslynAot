@@ -25,7 +25,7 @@ namespace Microsoft.CodeAnalysis.Emit
 
             init
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
         }
 

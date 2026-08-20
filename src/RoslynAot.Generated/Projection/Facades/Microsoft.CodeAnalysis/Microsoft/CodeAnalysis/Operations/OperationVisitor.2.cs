@@ -12,648 +12,648 @@ namespace Microsoft.CodeAnalysis.Operations
     {
         public virtual TResult? DefaultVisit(IOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? Visit(IOperation? operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitAddressOf(IAddressOfOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitAnonymousFunction(IAnonymousFunctionOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitAnonymousObjectCreation(IAnonymousObjectCreationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitArgument(IArgumentOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitArrayCreation(IArrayCreationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitArrayElementReference(IArrayElementReferenceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitArrayInitializer(IArrayInitializerOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitAttribute(IAttributeOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitAwait(IAwaitOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitBinaryOperator(IBinaryOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitBinaryPattern(IBinaryPatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitBlock(IBlockOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitBranch(IBranchOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitCatchClause(ICatchClauseOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitCaughtException(FlowAnalysis.ICaughtExceptionOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitCoalesce(ICoalesceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitCoalesceAssignment(ICoalesceAssignmentOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         [System.Obsolete("ICollectionElementInitializerOperation has been replaced with IInvocationOperation and IDynamicInvocationOperation", true)]
         public virtual TResult? VisitCollectionElementInitializer(ICollectionElementInitializerOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public virtual TResult? VisitCollectionExpression(ICollectionExpressionOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitCompoundAssignment(ICompoundAssignmentOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitConditional(IConditionalOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitConditionalAccess(IConditionalAccessOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitConditionalAccessInstance(IConditionalAccessInstanceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitConstantPattern(IConstantPatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitConstructorBodyOperation(IConstructorBodyOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitConversion(IConversionOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDeclarationExpression(IDeclarationExpressionOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDeclarationPattern(IDeclarationPatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDeconstructionAssignment(IDeconstructionAssignmentOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDefaultCaseClause(IDefaultCaseClauseOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDefaultValue(IDefaultValueOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDelegateCreation(IDelegateCreationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDiscardOperation(IDiscardOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDiscardPattern(IDiscardPatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDynamicIndexerAccess(IDynamicIndexerAccessOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDynamicInvocation(IDynamicInvocationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDynamicMemberReference(IDynamicMemberReferenceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitDynamicObjectCreation(IDynamicObjectCreationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitEmpty(IEmptyOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitEnd(IEndOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitEventAssignment(IEventAssignmentOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitEventReference(IEventReferenceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitExpressionStatement(IExpressionStatementOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitFieldInitializer(IFieldInitializerOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitFieldReference(IFieldReferenceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitFlowAnonymousFunction(FlowAnalysis.IFlowAnonymousFunctionOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitFlowCapture(FlowAnalysis.IFlowCaptureOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitFlowCaptureReference(FlowAnalysis.IFlowCaptureReferenceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitForEachLoop(IForEachLoopOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitForLoop(IForLoopOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitForToLoop(IForToLoopOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitFunctionPointerInvocation(IFunctionPointerInvocationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitImplicitIndexerReference(IImplicitIndexerReferenceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitIncrementOrDecrement(IIncrementOrDecrementOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitInlineArrayAccess(IInlineArrayAccessOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitInstanceReference(IInstanceReferenceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitInterpolatedString(IInterpolatedStringOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitInterpolatedStringAddition(IInterpolatedStringAdditionOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitInterpolatedStringAppend(IInterpolatedStringAppendOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitInterpolatedStringHandlerArgumentPlaceholder(IInterpolatedStringHandlerArgumentPlaceholderOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitInterpolatedStringHandlerCreation(IInterpolatedStringHandlerCreationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitInterpolatedStringText(IInterpolatedStringTextOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitInterpolation(IInterpolationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitInvalid(IInvalidOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitInvocation(IInvocationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitIsNull(FlowAnalysis.IIsNullOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitIsPattern(IIsPatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitIsType(IIsTypeOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitLabeled(ILabeledOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitListPattern(IListPatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitLiteral(ILiteralOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitLocalFunction(ILocalFunctionOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitLocalReference(ILocalReferenceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitLock(ILockOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitMemberInitializer(IMemberInitializerOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitMethodBodyOperation(IMethodBodyOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitMethodReference(IMethodReferenceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitNameOf(INameOfOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitNegatedPattern(INegatedPatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitObjectCreation(IObjectCreationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitObjectOrCollectionInitializer(IObjectOrCollectionInitializerOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitOmittedArgument(IOmittedArgumentOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitParameterInitializer(IParameterInitializerOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitParameterReference(IParameterReferenceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitParenthesized(IParenthesizedOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitPatternCaseClause(IPatternCaseClauseOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitPropertyInitializer(IPropertyInitializerOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitPropertyReference(IPropertyReferenceOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitPropertySubpattern(IPropertySubpatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitRaiseEvent(IRaiseEventOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitRangeCaseClause(IRangeCaseClauseOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitRangeOperation(IRangeOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitRecursivePattern(IRecursivePatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitReDim(IReDimOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitReDimClause(IReDimClauseOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitRelationalCaseClause(IRelationalCaseClauseOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitRelationalPattern(IRelationalPatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitReturn(IReturnOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitSimpleAssignment(ISimpleAssignmentOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitSingleValueCaseClause(ISingleValueCaseClauseOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitSizeOf(ISizeOfOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitSlicePattern(ISlicePatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitSpread(ISpreadOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitStaticLocalInitializationSemaphore(FlowAnalysis.IStaticLocalInitializationSemaphoreOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitStop(IStopOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitSwitch(ISwitchOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitSwitchCase(ISwitchCaseOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitSwitchExpression(ISwitchExpressionOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitSwitchExpressionArm(ISwitchExpressionArmOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitThrow(IThrowOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitTranslatedQuery(ITranslatedQueryOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitTry(ITryOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitTuple(ITupleOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitTupleBinaryOperator(ITupleBinaryOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitTypeOf(ITypeOfOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitTypeParameterObjectCreation(ITypeParameterObjectCreationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitTypePattern(ITypePatternOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitUnaryOperator(IUnaryOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitUsing(IUsingOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitUsingDeclaration(IUsingDeclarationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitUtf8String(IUtf8StringOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitVariableDeclaration(IVariableDeclarationOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitVariableDeclarationGroup(IVariableDeclarationGroupOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitVariableDeclarator(IVariableDeclaratorOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitVariableInitializer(IVariableInitializerOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitWhileLoop(IWhileLoopOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
 
         public virtual TResult? VisitWith(IWithOperation operation, TArgument argument)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Receiver is unsupported: Generic substitutions are not supported.");
         }
     }
 }

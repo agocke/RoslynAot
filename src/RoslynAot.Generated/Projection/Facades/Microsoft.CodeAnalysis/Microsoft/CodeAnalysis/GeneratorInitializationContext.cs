@@ -16,23 +16,23 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
             }
         }
 
         public readonly void RegisterForPostInitialization(System.Action<GeneratorPostInitializationContext> callback)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'callback' is unsupported: Delegates are not supported.");
         }
 
         public readonly void RegisterForSyntaxNotifications(SyntaxContextReceiverCreator receiverCreator)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'receiverCreator' is unsupported: Delegates are not supported.");
         }
 
         public readonly void RegisterForSyntaxNotifications(SyntaxReceiverCreator receiverCreator)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'receiverCreator' is unsupported: Delegates are not supported.");
         }
     }
 }

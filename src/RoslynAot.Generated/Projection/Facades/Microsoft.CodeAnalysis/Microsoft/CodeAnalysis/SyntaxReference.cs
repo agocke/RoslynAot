@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis
         public abstract SyntaxNode GetSyntax(System.Threading.CancellationToken cancellationToken = default);
         public virtual System.Threading.Tasks.Task<SyntaxNode> GetSyntaxAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         internal SyntaxReference()
@@ -44,7 +44,7 @@ namespace Microsoft.CodeAnalysis
 
             public override SyntaxNode GetSyntax(System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override Text.TextSpan Span

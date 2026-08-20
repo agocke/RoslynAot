@@ -30,13 +30,13 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static CSharpGeneratorDriver Create(System.Collections.Generic.IEnumerable<ISourceGenerator> generators, System.Collections.Generic.IEnumerable<AdditionalText>? additionalTexts = null, CSharpParseOptions? parseOptions = null, Diagnostics.AnalyzerConfigOptionsProvider? optionsProvider = null, GeneratorDriverOptions driverOptions = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'generators' is unsupported: Generic substitutions are not supported.");
         }
 
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public static CSharpGeneratorDriver Create(System.Collections.Generic.IEnumerable<ISourceGenerator> generators, System.Collections.Generic.IEnumerable<AdditionalText>? additionalTexts, CSharpParseOptions? parseOptions, Diagnostics.AnalyzerConfigOptionsProvider? optionsProvider)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'generators' is unsupported: Generic substitutions are not supported.");
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;

@@ -39,7 +39,7 @@ namespace Microsoft.CodeAnalysis
         {
             if (__RoslynAotIsLocal)
                 return other is not null && __RoslynAotAreEqual(other);
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'other' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         protected abstract int GetHash();
@@ -67,7 +67,7 @@ namespace Microsoft.CodeAnalysis
 
         string System.IFormattable.ToString(string? ignored, System.IFormatProvider? formatProvider)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
         }
 
         public sealed override string ToString()
@@ -84,7 +84,7 @@ namespace Microsoft.CodeAnalysis
         {
             if (__RoslynAotIsLocal)
                 return __RoslynAotGetText(formatProvider);
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'formatProvider' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         internal LocalizableString()
@@ -112,17 +112,17 @@ namespace Microsoft.CodeAnalysis
 
             protected override bool AreEqual(object? other)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
 
             protected override int GetHash()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
 
             protected override string GetText(System.IFormatProvider? formatProvider)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
         }
 

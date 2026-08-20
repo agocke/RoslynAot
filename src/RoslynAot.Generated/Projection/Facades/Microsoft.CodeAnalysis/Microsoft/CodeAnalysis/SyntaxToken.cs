@@ -258,17 +258,17 @@ namespace Microsoft.CodeAnalysis
 
         public override readonly bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public readonly System.Collections.Generic.IEnumerable<SyntaxTrivia> GetAllTrivia()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly System.Collections.Generic.IEnumerable<SyntaxAnnotation> GetAnnotations(System.Collections.Generic.IEnumerable<string> annotationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotationKinds' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly System.Collections.Generic.IEnumerable<SyntaxAnnotation> GetAnnotations(string annotationKind)
@@ -282,7 +282,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly System.Collections.Generic.IEnumerable<SyntaxAnnotation> GetAnnotations(params string[] annotationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotationKinds' is unsupported: Arrays are not supported.");
         }
 
         public readonly System.Collections.Generic.IEnumerable<Diagnostic> GetDiagnostics()
@@ -350,7 +350,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly bool HasAnnotations(params string[] annotationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotationKinds' is unsupported: Arrays are not supported.");
         }
 
         public readonly bool IsEquivalentTo(SyntaxToken token)
@@ -382,12 +382,12 @@ namespace Microsoft.CodeAnalysis
 
         public static bool operator ==(SyntaxToken left, SyntaxToken right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(SyntaxToken left, SyntaxToken right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public readonly string ToFullString()
@@ -417,12 +417,12 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxToken WithAdditionalAnnotations(System.Collections.Generic.IEnumerable<SyntaxAnnotation> annotations)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotations' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly SyntaxToken WithLeadingTrivia(params SyntaxTrivia[]? trivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'trivia' is unsupported: Arrays are not supported.");
         }
 
         public readonly SyntaxToken WithLeadingTrivia(SyntaxTriviaList trivia)
@@ -436,7 +436,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxToken WithLeadingTrivia(System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'trivia' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly SyntaxToken WithoutAnnotations(params SyntaxAnnotation[] annotations)
@@ -450,7 +450,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxToken WithoutAnnotations(System.Collections.Generic.IEnumerable<SyntaxAnnotation> annotations)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'annotations' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly SyntaxToken WithoutAnnotations(string annotationKind)
@@ -464,7 +464,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxToken WithTrailingTrivia(params SyntaxTrivia[]? trivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'trivia' is unsupported: Arrays are not supported.");
         }
 
         public readonly SyntaxToken WithTrailingTrivia(SyntaxTriviaList trivia)
@@ -478,7 +478,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxToken WithTrailingTrivia(System.Collections.Generic.IEnumerable<SyntaxTrivia>? trivia)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'trivia' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly SyntaxToken WithTriviaFrom(SyntaxToken token)
@@ -492,7 +492,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly void WriteTo(System.IO.TextWriter writer)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'writer' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;

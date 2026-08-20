@@ -3,13 +3,13 @@
   "modules": [
     {
       "module": "(all analyzers)",
-      "sizeBytes": 9551216,
+      "sizeBytes": 9555312,
       "retainedTypeCount": 21023,
       "retainedMethodCount": 23837
     },
     {
       "module": "Microsoft.CodeAnalysis.CSharp.NetAnalyzers.Microsoft.CodeQuality.Analyzers.QualityGuidelines.CSharpAvoidMultipleEnumerationsAnalyzer",
-      "sizeBytes": 6420560,
+      "sizeBytes": 6424656,
       "retainedTypeCount": 15804,
       "retainedMethodCount": 14220
     },
@@ -21,7 +21,7 @@
     },
     {
       "module": "Microsoft.CodeQuality.CSharp.Analyzers.Maintainability.CSharpAvoidDeadConditionalCode",
-      "sizeBytes": 5687904,
+      "sizeBytes": 5692000,
       "retainedTypeCount": 13679,
       "retainedMethodCount": 12211
     },

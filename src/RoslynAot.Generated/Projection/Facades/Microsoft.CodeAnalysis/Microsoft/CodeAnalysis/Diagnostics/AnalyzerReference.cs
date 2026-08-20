@@ -29,7 +29,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         [System.Obsolete("Use GetGenerators(string language) or GetGeneratorsForAllLanguages()")]
         public virtual System.Collections.Immutable.ImmutableArray<ISourceGenerator> GetGenerators()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public virtual System.Collections.Immutable.ImmutableArray<ISourceGenerator> GetGenerators(string language)

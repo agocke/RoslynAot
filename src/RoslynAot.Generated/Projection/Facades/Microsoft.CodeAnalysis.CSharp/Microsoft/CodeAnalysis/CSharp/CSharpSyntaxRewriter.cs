@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis.CSharp
     {
         public CSharpSyntaxRewriter(bool visitIntoStructuredTrivia = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Abstract types cannot be constructed.");
         }
 
         public virtual bool VisitIntoStructuredTrivia
@@ -1245,13 +1245,13 @@ namespace Microsoft.CodeAnalysis.CSharp
         public virtual SeparatedSyntaxList<TNode> VisitList<TNode>(SeparatedSyntaxList<TNode> list)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public virtual SyntaxList<TNode> VisitList<TNode>(SyntaxList<TNode> list)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public virtual SyntaxTrivia VisitListElement(SyntaxTrivia element)
@@ -1266,7 +1266,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         public virtual TNode? VisitListElement<TNode>(TNode? node)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public override SyntaxNode? VisitListPattern(Syntax.ListPatternSyntax node)

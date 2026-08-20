@@ -30,8 +30,12 @@ tree](#regenerating-the-checked-in-tree) rather than sketched here.
 
 The generated types are partial. Members covered by the initial projection
 receive executable COM proxy bodies. Other concrete constructors, methods,
-operators, and accessors throw `PlatformNotSupportedException`; abstract and
-interface members retain declaration-only bodies. Binding-relevant assembly
+operators, and accessors throw `PlatformNotSupportedException` carrying the
+model's reason for the member being unsupported — `Return type is unsupported:
+Generic substitutions are not supported.` rather than a bare "not implemented",
+so an analyzer author who hits one can tell a per-member gap from a whole class
+of API without going to the manifest. Abstract and interface members retain
+declaration-only bodies. Binding-relevant assembly
 attributes, including Roslyn friend-assembly declarations, are preserved.
 GenAPI's usual `ReferenceAssemblyAttribute` is deliberately omitted because
 these facades must execute.
@@ -79,22 +83,33 @@ when needed to distinguish legal same-name types such as `Name` and `Name<T>`.
 
 ## Regenerating the checked-in tree
 
-`src/RoslynAot.Generated/Projection` is generator output that is committed, so
-a clean regeneration must be byte-identical to what is in the tree. It is not
-only a convenience copy: `ManifestIdentity` in `Abi/RoslynControlVtbl.g.cs` is
-the constant the analyzer hands back to the compiler to assert that both sides
-were built from the same projection. Anything that moves the model owes a
-regeneration in the same commit — a projection rule, a table entry, or just an
-override's reason string, because the reasons are hashed into the identity.
+`src/RoslynAot.Generated/Projection` is generator output that is committed, and
+nothing rebuilds it during a normal build — the compiler and the analyzer both
+compile the checked-in files, so the tree is the source of truth rather than a
+cache of one. The generator runs when someone deliberately moves the
+projection, and a change to a projection rule or a table entry owes a
+regeneration in the same commit, otherwise the tables describe a tree that does
+not exist.
 
-### Baseline inputs
+Regenerating is reproducible, which matters for one practical reason: a regen
+diff should be attributable to the change you made. If the input assemblies
+drift with whatever SDK is installed, the diff also contains surface drift, and
+the two cannot be told apart — see the history of issue #9 for what that costs.
+`ManifestIdentity` in `Abi/RoslynControlVtbl.g.cs` is a separate mechanism and
+does not help here: both sides read it out of this same tree, so it catches a
+compiler and an analyzer built from *different commits*, not a tree built from
+different inputs.
+
+### The projected Roslyn
 
 The projection is generated from the NuGet `Microsoft.CodeAnalysis.Common` and
 `Microsoft.CodeAnalysis.CSharp` **5.0.0** packages. Both are named as
 `PackageReference`s with `GeneratePathProperty="true"` in
-`RoslynAot.RoslynFacadeGenerator.csproj`, so the baseline is pinned in the
+`RoslynAot.RoslynFacadeGenerator.csproj`, so the version is pinned in the
 project file and the regeneration command reads the paths back out rather than
-hunting for assemblies.
+hunting for assemblies. (The GenAPI fork under `Upstream/` references the same
+version for its own compilation; the three references are not centrally pinned,
+so moving one means moving all of them.)
 
 That package version is the Roslyn analyzers themselves compile against — the
 sample analyzer references `Microsoft.CodeAnalysis.CSharp` 5.0.0 — and it is
@@ -574,8 +589,16 @@ stable identity scheme is the canonical id described under
 Everything the emitters do is decided by `ProjectionModel`, and everything the
 model decides is written out under `Projection/Manifest/` — `RoslynProjection.json`
 in full, `ProjectionInventory.txt` as one greppable line per type and per call.
-Both are checked in, so a change to a projection rule shows up as a reviewable
-diff rather than as an analyzer failing on someone's machine.
+
+Read them for two things, and read the generated code for everything else. The
+first is the counts in the inventory's header: when a rule change touches a
+thousand files, `supported=`, `unsupported=`, `vtbls=` and `types=` are how you
+see the size and direction of what you did. The second is a specific member —
+grep its canonical id to see the strategy and wire signature the model chose.
+What these files are *not* is a review medium. A change to the projected Roslyn
+version rewrites the disambiguating hash on every overloaded operation name, so
+the inventory diff can run to thousands of lines with a handful of meaningful
+ones in it; the generated C# is where a reviewer who knows Roslyn should look.
 
 Members are keyed by **canonical id**: `[Assembly]M:Ns.Type.Member(Params)~Return`,
 built from `DocumentationCommentId`. The assembly prefix is there because a

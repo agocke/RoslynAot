@@ -13,7 +13,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     {
         public AnalyzerImageReference(System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, string? fullPath = null, string? display = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'analyzers' is unsupported: Generic substitutions are not supported.");
         }
 
         public override string Display

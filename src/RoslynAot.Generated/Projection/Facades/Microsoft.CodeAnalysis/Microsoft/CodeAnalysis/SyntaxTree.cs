@@ -16,7 +16,7 @@ namespace Microsoft.CodeAnalysis
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
             }
         }
 
@@ -50,7 +50,7 @@ namespace Microsoft.CodeAnalysis
         public abstract FileLinePositionSpan GetLineSpan(Text.TextSpan span, System.Threading.CancellationToken cancellationToken = default);
         public virtual LineVisibility GetLineVisibility(int position, System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public abstract Location GetLocation(Text.TextSpan span);
@@ -58,12 +58,12 @@ namespace Microsoft.CodeAnalysis
         public abstract SyntaxReference GetReference(SyntaxNode node);
         public SyntaxNode GetRoot(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Threading.Tasks.Task<SyntaxNode> GetRootAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         protected abstract System.Threading.Tasks.Task<SyntaxNode> GetRootAsyncCore(System.Threading.CancellationToken cancellationToken);
@@ -71,7 +71,7 @@ namespace Microsoft.CodeAnalysis
         public abstract Text.SourceText GetText(System.Threading.CancellationToken cancellationToken = default);
         public virtual System.Threading.Tasks.Task<Text.SourceText> GetTextAsync(System.Threading.CancellationToken cancellationToken = default)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public abstract bool HasHiddenRegions();
@@ -86,7 +86,7 @@ namespace Microsoft.CodeAnalysis
 
         public bool TryGetRoot(out SyntaxNode? root)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. ref, in, and out parameters are not supported.");
         }
 
         protected abstract bool TryGetRootCore(out SyntaxNode? root);
@@ -95,7 +95,7 @@ namespace Microsoft.CodeAnalysis
         [System.Obsolete("Obsolete due to performance problems, use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
         public virtual SyntaxTree WithDiagnosticOptions(System.Collections.Immutable.ImmutableDictionary<string, ReportDiagnostic> options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public abstract SyntaxTree WithFilePath(string path);
@@ -125,12 +125,12 @@ namespace Microsoft.CodeAnalysis
 
             public override System.Collections.Generic.IList<Text.TextSpan> GetChangedSpans(SyntaxTree syntaxTree)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
 
             public override System.Collections.Generic.IList<Text.TextChange> GetChanges(SyntaxTree oldTree)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
 
             public override System.Collections.Generic.IEnumerable<Diagnostic> GetDiagnostics(SyntaxNode node)
@@ -171,17 +171,17 @@ namespace Microsoft.CodeAnalysis
 
             public override System.Collections.Generic.IEnumerable<Diagnostic> GetDiagnostics(System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override System.Collections.Generic.IEnumerable<LineMapping> GetLineMappings(System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override FileLinePositionSpan GetLineSpan(Text.TextSpan span, System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override Location GetLocation(Text.TextSpan span)
@@ -195,7 +195,7 @@ namespace Microsoft.CodeAnalysis
 
             public override FileLinePositionSpan GetMappedLineSpan(Text.TextSpan span, System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override SyntaxReference GetReference(SyntaxNode node)
@@ -209,17 +209,17 @@ namespace Microsoft.CodeAnalysis
 
             protected override System.Threading.Tasks.Task<SyntaxNode> GetRootAsyncCore(System.Threading.CancellationToken cancellationToken)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
 
             protected override SyntaxNode GetRootCore(System.Threading.CancellationToken cancellationToken)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
 
             public override Text.SourceText GetText(System.Threading.CancellationToken cancellationToken = default)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'cancellationToken' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override bool HasHiddenRegions()
@@ -242,12 +242,12 @@ namespace Microsoft.CodeAnalysis
 
             protected override bool TryGetRootCore(out SyntaxNode? root)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
             }
 
             public override bool TryGetText(out Text.SourceText? text)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. ref, in, and out parameters are not supported.");
             }
 
             public override SyntaxTree WithChangedText(Text.SourceText newText)
@@ -281,7 +281,7 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
                 }
             }
 
@@ -324,7 +324,7 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
                 }
             }
         }

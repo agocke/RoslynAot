@@ -51,17 +51,17 @@ namespace Microsoft.CodeAnalysis.Operations
 
         public static RefKind? GetArgumentRefKind(this IDynamicIndexerAccessOperation dynamicOperation, int index)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Only nullable facade value handles are supported.");
         }
 
         public static RefKind? GetArgumentRefKind(this IDynamicInvocationOperation dynamicOperation, int index)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Only nullable facade value handles are supported.");
         }
 
         public static RefKind? GetArgumentRefKind(this IDynamicObjectCreationOperation dynamicOperation, int index)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Only nullable facade value handles are supported.");
         }
 
         public static IOperation? GetCorrespondingOperation(this IBranchOperation operation)

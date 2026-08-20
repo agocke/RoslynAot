@@ -40,12 +40,12 @@ namespace Microsoft.CodeAnalysis.Text
             {
                 add
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'EventAdd' is not supported.");
                 }
 
                 remove
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'EventAdd' is not supported.");
                 }
             }
 

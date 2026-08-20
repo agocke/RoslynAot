@@ -31,13 +31,13 @@ namespace Microsoft.CodeAnalysis
         public static bool Any<TNode>(this SeparatedSyntaxList<TNode> list, CSharp.SyntaxKind kind)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static bool Any<TNode>(this SyntaxList<TNode> list, CSharp.SyntaxKind kind)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static bool ContainsDirective(this SyntaxNode node, CSharp.SyntaxKind kind)
@@ -70,13 +70,13 @@ namespace Microsoft.CodeAnalysis
         public static int IndexOf<TNode>(this SeparatedSyntaxList<TNode> list, CSharp.SyntaxKind kind)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static int IndexOf<TNode>(this SyntaxList<TNode> list, CSharp.SyntaxKind kind)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static bool IsKind(this SyntaxNode? node, CSharp.SyntaxKind kind)

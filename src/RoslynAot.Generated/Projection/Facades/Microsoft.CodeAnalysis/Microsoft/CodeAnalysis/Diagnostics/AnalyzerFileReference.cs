@@ -71,12 +71,12 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             add
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'EventAdd' is not supported.");
             }
 
             remove
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'EventRemove' is not supported.");
             }
         }
 
@@ -100,7 +100,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public override bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> GetAnalyzers(string language)
@@ -123,13 +123,13 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public System.Reflection.Assembly GetAssembly()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
         }
 
         [System.Obsolete("Use GetGenerators(string language) or GetGeneratorsForAllLanguages()")]
         public override System.Collections.Immutable.ImmutableArray<ISourceGenerator> GetGenerators()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public override System.Collections.Immutable.ImmutableArray<ISourceGenerator> GetGenerators(string language)

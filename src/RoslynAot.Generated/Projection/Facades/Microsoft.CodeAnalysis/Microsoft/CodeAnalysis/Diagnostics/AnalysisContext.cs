@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public virtual void RegisterAdditionalFileAction(System.Action<AdditionalFileAnalysisContext> action)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'action' is unsupported: Delegates are not supported.");
         }
 
         public abstract void RegisterCodeBlockAction(System.Action<CodeBlockAnalysisContext> action);
@@ -57,17 +57,17 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
         public virtual void RegisterOperationAction(System.Action<OperationAnalysisContext> action, System.Collections.Immutable.ImmutableArray<OperationKind> operationKinds)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'action' is unsupported: Delegates are not supported.");
         }
 
         public virtual void RegisterOperationBlockAction(System.Action<OperationBlockAnalysisContext> action)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'action' is unsupported: Delegates are not supported.");
         }
 
         public virtual void RegisterOperationBlockStartAction(System.Action<OperationBlockStartAnalysisContext> action)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'action' is unsupported: Delegates are not supported.");
         }
 
         public abstract void RegisterSemanticModelAction(System.Action<SemanticModelAnalysisContext> action);
@@ -81,7 +81,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         public abstract void RegisterSymbolAction(System.Action<SymbolAnalysisContext> action, System.Collections.Immutable.ImmutableArray<SymbolKind> symbolKinds);
         public virtual void RegisterSymbolStartAction(System.Action<SymbolStartAnalysisContext> action, SymbolKind symbolKind)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'action' is unsupported: Delegates are not supported.");
         }
 
         public void RegisterSyntaxNodeAction<TLanguageKindEnum>(System.Action<SyntaxNodeAnalysisContext> action, params TLanguageKindEnum[] syntaxKinds)
@@ -97,12 +97,12 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         public abstract void RegisterSyntaxTreeAction(System.Action<SyntaxTreeAnalysisContext> action);
         public bool TryGetValue<TValue>(AdditionalText text, AdditionalTextValueProvider<TValue> valueProvider, out TValue value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public bool TryGetValue<TValue>(Text.SourceText text, SourceTextValueProvider<TValue> valueProvider, out TValue value)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         internal AnalysisContext()
@@ -130,42 +130,42 @@ namespace Microsoft.CodeAnalysis.Diagnostics
 
             public override void RegisterCodeBlockAction(System.Action<CodeBlockAnalysisContext> action)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'action' is unsupported: Delegates are not supported.");
             }
 
             public override void RegisterCodeBlockStartAction<TLanguageKindEnum>(System.Action<CodeBlockStartAnalysisContext<TLanguageKindEnum>> action)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
             }
 
             public override void RegisterCompilationAction(System.Action<CompilationAnalysisContext> action)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'action' is unsupported: Delegates are not supported.");
             }
 
             public override void RegisterCompilationStartAction(System.Action<CompilationStartAnalysisContext> action)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'action' is unsupported: Delegates are not supported.");
             }
 
             public override void RegisterSemanticModelAction(System.Action<SemanticModelAnalysisContext> action)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'action' is unsupported: Delegates are not supported.");
             }
 
             public override void RegisterSymbolAction(System.Action<SymbolAnalysisContext> action, System.Collections.Immutable.ImmutableArray<SymbolKind> symbolKinds)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'action' is unsupported: Delegates are not supported.");
             }
 
             public override void RegisterSyntaxNodeAction<TLanguageKindEnum>(System.Action<SyntaxNodeAnalysisContext> action, System.Collections.Immutable.ImmutableArray<TLanguageKindEnum> syntaxKinds)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
             }
 
             public override void RegisterSyntaxTreeAction(System.Action<SyntaxTreeAnalysisContext> action)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'action' is unsupported: Delegates are not supported.");
             }
         }
 

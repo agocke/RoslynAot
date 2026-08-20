@@ -27,7 +27,7 @@ namespace Microsoft.CodeAnalysis.Emit
         [System.Obsolete("Specify errorCode")]
         public RuntimeRudeEdit(string message)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Obsolete APIs are not projected into compiler dispatch.");
         }
 
         public int ErrorCode

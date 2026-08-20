@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis
     {
         public virtual string Format(Diagnostic diagnostic, System.IFormatProvider? formatter = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'formatter' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         internal DiagnosticFormatter()

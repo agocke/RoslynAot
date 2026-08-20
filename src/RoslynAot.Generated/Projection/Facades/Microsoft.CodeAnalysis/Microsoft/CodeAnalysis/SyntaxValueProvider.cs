@@ -14,12 +14,12 @@ namespace Microsoft.CodeAnalysis
         private readonly int _dummyPrimitive;
         public readonly IncrementalValuesProvider<T> CreateSyntaxProvider<T>(System.Func<SyntaxNode, System.Threading.CancellationToken, bool> predicate, System.Func<GeneratorSyntaxContext, System.Threading.CancellationToken, T> transform)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public readonly IncrementalValuesProvider<T> ForAttributeWithMetadataName<T>(string fullyQualifiedMetadataName, System.Func<SyntaxNode, System.Threading.CancellationToken, bool> predicate, System.Func<GeneratorAttributeSyntaxContext, System.Threading.CancellationToken, T> transform)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;

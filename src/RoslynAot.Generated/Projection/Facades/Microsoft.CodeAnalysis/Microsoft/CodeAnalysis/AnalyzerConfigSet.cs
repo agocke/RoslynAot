@@ -25,13 +25,13 @@ namespace Microsoft.CodeAnalysis
         public static AnalyzerConfigSet Create<TList>(TList analyzerConfigs, out System.Collections.Immutable.ImmutableArray<Diagnostic> diagnostics)
             where TList : System.Collections.Generic.IReadOnlyCollection<AnalyzerConfig>
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public static AnalyzerConfigSet Create<TList>(TList analyzerConfigs)
             where TList : System.Collections.Generic.IReadOnlyCollection<AnalyzerConfig>
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
 
         public AnalyzerConfigOptionsResult GetOptionsForSourcePath(string sourcePath)

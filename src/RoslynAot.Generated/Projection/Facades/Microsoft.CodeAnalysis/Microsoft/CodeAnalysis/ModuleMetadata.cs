@@ -47,7 +47,7 @@ namespace Microsoft.CodeAnalysis
 
         protected Metadata CommonCopy()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public static ModuleMetadata CreateFromFile(string path)
@@ -61,37 +61,37 @@ namespace Microsoft.CodeAnalysis
 
         public static ModuleMetadata CreateFromImage(System.Collections.Generic.IEnumerable<byte> peImage)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peImage' is unsupported: Generic substitutions are not supported.");
         }
 
         public static ModuleMetadata CreateFromImage(System.Collections.Immutable.ImmutableArray<byte> peImage)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peImage' is unsupported: Generic substitutions are not supported.");
         }
 
         public static ModuleMetadata CreateFromImage(nint peImage, int size)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peImage' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public static ModuleMetadata CreateFromMetadata(nint metadata, int size, System.Action onDispose)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'metadata' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public static ModuleMetadata CreateFromMetadata(nint metadata, int size)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'metadata' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public static ModuleMetadata CreateFromStream(System.IO.Stream peStream, bool leaveOpen = false)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peStream' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public static ModuleMetadata CreateFromStream(System.IO.Stream peStream, System.Reflection.PortableExecutable.PEStreamOptions options)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'peStream' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public void Dispose()
@@ -104,17 +104,17 @@ namespace Microsoft.CodeAnalysis
 
         public System.Reflection.Metadata.MetadataReader GetMetadataReader()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public System.Collections.Immutable.ImmutableArray<string> GetModuleNames()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public System.Guid GetModuleVersionId()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public PortableExecutableReference GetReference(DocumentationProvider? documentation = null, string? filePath = null, string? display = null)

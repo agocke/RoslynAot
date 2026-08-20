@@ -28,7 +28,7 @@ namespace Microsoft.CodeAnalysis.CSharp
 
         public static bool TryParse(string? version, out LanguageVersion result)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. ref, in, and out parameters are not supported.");
         }
     }
 }

@@ -12,29 +12,29 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     {
         public CompilationWithAnalyzersOptions(AnalyzerOptions? options, System.Action<System.Exception, DiagnosticAnalyzer, Diagnostic>? onAnalyzerException, bool concurrentAnalysis, bool logAnalyzerExecutionTime, bool reportSuppressedDiagnostics, System.Func<System.Exception, bool>? analyzerExceptionFilter, System.Func<DiagnosticAnalyzer, AnalyzerConfigOptionsProvider>? getAnalyzerConfigOptionsProvider)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'onAnalyzerException' is unsupported: Delegates are not supported.");
         }
 
         public CompilationWithAnalyzersOptions(AnalyzerOptions? options, System.Action<System.Exception, DiagnosticAnalyzer, Diagnostic>? onAnalyzerException, bool concurrentAnalysis, bool logAnalyzerExecutionTime, bool reportSuppressedDiagnostics, System.Func<System.Exception, bool>? analyzerExceptionFilter)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'onAnalyzerException' is unsupported: Delegates are not supported.");
         }
 
         public CompilationWithAnalyzersOptions(AnalyzerOptions options, System.Action<System.Exception, DiagnosticAnalyzer, Diagnostic>? onAnalyzerException, bool concurrentAnalysis, bool logAnalyzerExecutionTime, bool reportSuppressedDiagnostics)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'onAnalyzerException' is unsupported: Delegates are not supported.");
         }
 
         public CompilationWithAnalyzersOptions(AnalyzerOptions options, System.Action<System.Exception, DiagnosticAnalyzer, Diagnostic>? onAnalyzerException, bool concurrentAnalysis, bool logAnalyzerExecutionTime)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'onAnalyzerException' is unsupported: Delegates are not supported.");
         }
 
         public System.Func<System.Exception, bool>? AnalyzerExceptionFilter
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Delegates are not supported.");
             }
         }
 
@@ -66,7 +66,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Delegates are not supported.");
             }
         }
 

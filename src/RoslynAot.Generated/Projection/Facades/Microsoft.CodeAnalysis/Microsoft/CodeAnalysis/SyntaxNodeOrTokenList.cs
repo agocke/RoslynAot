@@ -14,12 +14,12 @@ namespace Microsoft.CodeAnalysis
         private readonly int _dummyPrimitive;
         public SyntaxNodeOrTokenList(params SyntaxNodeOrToken[] nodesAndTokens)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'nodesAndTokens' is unsupported: Arrays are not supported.");
         }
 
         public SyntaxNodeOrTokenList(System.Collections.Generic.IEnumerable<SyntaxNodeOrToken> nodesAndTokens)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'nodesAndTokens' is unsupported: Generic substitutions are not supported.");
         }
 
         public int Count
@@ -81,7 +81,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxNodeOrTokenList AddRange(System.Collections.Generic.IEnumerable<SyntaxNodeOrToken> nodesOrTokens)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'nodesOrTokens' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly bool Any()
@@ -95,7 +95,7 @@ namespace Microsoft.CodeAnalysis
 
         public static SyntaxNodeOrTokenList Create(System.ReadOnlySpan<SyntaxNodeOrToken> nodesAndTokens)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'nodesAndTokens' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly bool Equals(SyntaxNodeOrTokenList other)
@@ -109,7 +109,7 @@ namespace Microsoft.CodeAnalysis
 
         public override readonly bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public readonly SyntaxNodeOrToken First()
@@ -168,7 +168,7 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxNodeOrTokenList InsertRange(int index, System.Collections.Generic.IEnumerable<SyntaxNodeOrToken> nodesAndTokens)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'nodesAndTokens' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly SyntaxNodeOrToken Last()
@@ -191,12 +191,12 @@ namespace Microsoft.CodeAnalysis
 
         public static bool operator ==(SyntaxNodeOrTokenList left, SyntaxNodeOrTokenList right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(SyntaxNodeOrTokenList left, SyntaxNodeOrTokenList right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public readonly SyntaxNodeOrTokenList Remove(SyntaxNodeOrToken nodeOrTokenInList)
@@ -228,17 +228,17 @@ namespace Microsoft.CodeAnalysis
 
         public readonly SyntaxNodeOrTokenList ReplaceRange(SyntaxNodeOrToken nodeOrTokenInList, System.Collections.Generic.IEnumerable<SyntaxNodeOrToken> newNodesAndTokens)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'newNodesAndTokens' is unsupported: Generic substitutions are not supported.");
         }
 
         readonly System.Collections.Generic.IEnumerator<SyntaxNodeOrToken> System.Collections.Generic.IEnumerable<SyntaxNodeOrToken>.GetEnumerator()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
         }
 
         readonly System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
         }
 
         public readonly string ToFullString()
@@ -265,7 +265,7 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
                 }
             }
 
@@ -273,33 +273,33 @@ namespace Microsoft.CodeAnalysis
             {
                 get
                 {
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
                 }
             }
 
             public override bool Equals(object? obj)
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
 
             public override int GetHashCode()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
 
             public bool MoveNext()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Mutable facade value receivers are not supported.");
             }
 
             void System.Collections.IEnumerator.Reset()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
             }
 
             void System.IDisposable.Dispose()
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
             }
 
             private readonly global::RoslynAot.Abi.IRoslynControlVtbl? __roslynAotControlVtbl;

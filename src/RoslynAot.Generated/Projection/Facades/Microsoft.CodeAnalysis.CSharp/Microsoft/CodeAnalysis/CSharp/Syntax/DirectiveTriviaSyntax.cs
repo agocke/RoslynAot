@@ -60,17 +60,17 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public DirectiveTriviaSyntax? GetNextDirective(System.Func<DirectiveTriviaSyntax, bool>? predicate = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'predicate' is unsupported: Delegates are not supported.");
         }
 
         public DirectiveTriviaSyntax? GetPreviousDirective(System.Func<DirectiveTriviaSyntax, bool>? predicate = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'predicate' is unsupported: Delegates are not supported.");
         }
 
         public System.Collections.Generic.List<DirectiveTriviaSyntax> GetRelatedDirectives()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
         }
 
         public DirectiveTriviaSyntax WithEndOfDirectiveToken(SyntaxToken endOfDirectiveToken)

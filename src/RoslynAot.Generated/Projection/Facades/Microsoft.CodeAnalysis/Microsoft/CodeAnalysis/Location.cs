@@ -121,7 +121,7 @@ namespace Microsoft.CodeAnalysis
         public abstract override bool Equals(object? obj);
         protected virtual string GetDebuggerDisplay()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Only public members can be dispatched by RoslynInterop.");
         }
 
         public abstract override int GetHashCode();
@@ -145,12 +145,12 @@ namespace Microsoft.CodeAnalysis
 
         public static bool operator ==(Location? left, Location? right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(Location? left, Location? right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public override string ToString()
@@ -184,7 +184,7 @@ namespace Microsoft.CodeAnalysis
             {
                 if (__RoslynAotIsLocal)
                     return ReferenceEquals(this, obj);
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override int GetHashCode()

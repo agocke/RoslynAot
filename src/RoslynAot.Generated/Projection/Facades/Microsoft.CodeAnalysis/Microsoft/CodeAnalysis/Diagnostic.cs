@@ -51,7 +51,7 @@ namespace Microsoft.CodeAnalysis
             {
                 if (__RoslynAotIsLocal)
                     return __RoslynAotLocalProperties;
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -60,7 +60,7 @@ namespace Microsoft.CodeAnalysis
 
         public static Diagnostic Create(DiagnosticDescriptor descriptor, Location? location, DiagnosticSeverity effectiveSeverity, System.Collections.Generic.IEnumerable<Location>? additionalLocations, System.Collections.Immutable.ImmutableDictionary<string, string?>? properties, params object? []? messageArgs)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'additionalLocations' is unsupported: Generic substitutions are not supported.");
         }
 
         public static Diagnostic Create(DiagnosticDescriptor descriptor, Location? location, System.Collections.Generic.IEnumerable<Location>? additionalLocations, System.Collections.Immutable.ImmutableDictionary<string, string?>? properties, params object? []? messageArgs)
@@ -70,12 +70,12 @@ namespace Microsoft.CodeAnalysis
 
         public static Diagnostic Create(DiagnosticDescriptor descriptor, Location? location, System.Collections.Generic.IEnumerable<Location>? additionalLocations, params object? []? messageArgs)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'additionalLocations' is unsupported: Generic substitutions are not supported.");
         }
 
         public static Diagnostic Create(DiagnosticDescriptor descriptor, Location? location, System.Collections.Immutable.ImmutableDictionary<string, string?>? properties, params object? []? messageArgs)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'properties' is unsupported: Generic substitutions are not supported.");
         }
 
         public static Diagnostic Create(DiagnosticDescriptor descriptor, Location? location, params object? []? messageArgs)
@@ -85,18 +85,18 @@ namespace Microsoft.CodeAnalysis
 
         public static Diagnostic Create(string id, string category, LocalizableString message, DiagnosticSeverity severity, DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, int warningLevel, LocalizableString? title = null, LocalizableString? description = null, string? helpLink = null, Location? location = null, System.Collections.Generic.IEnumerable<Location>? additionalLocations = null, System.Collections.Generic.IEnumerable<string>? customTags = null, System.Collections.Immutable.ImmutableDictionary<string, string?>? properties = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'additionalLocations' is unsupported: Generic substitutions are not supported.");
         }
 
         public static Diagnostic Create(string id, string category, LocalizableString message, DiagnosticSeverity severity, DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, int warningLevel, bool isSuppressed, LocalizableString? title = null, LocalizableString? description = null, string? helpLink = null, Location? location = null, System.Collections.Generic.IEnumerable<Location>? additionalLocations = null, System.Collections.Generic.IEnumerable<string>? customTags = null, System.Collections.Immutable.ImmutableDictionary<string, string?>? properties = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'additionalLocations' is unsupported: Generic substitutions are not supported.");
         }
 
         public abstract bool Equals(Diagnostic? obj);
         public sealed override bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public abstract override int GetHashCode();
@@ -112,7 +112,7 @@ namespace Microsoft.CodeAnalysis
 
         string System.IFormattable.ToString(string? ignored, System.IFormatProvider? formatProvider)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'ExplicitInterfaceImplementation' is not supported.");
         }
 
         public override string ToString()
@@ -172,7 +172,7 @@ namespace Microsoft.CodeAnalysis
             {
                 if (__RoslynAotIsLocal)
                     return __RoslynAotGetLocalMessage(formatProvider);
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'formatProvider' is unsupported: The type is not part of a generated facade assembly.");
             }
 
             public override System.Collections.Generic.IReadOnlyList<Location> AdditionalLocations
@@ -181,7 +181,7 @@ namespace Microsoft.CodeAnalysis
                 {
                     if (__RoslynAotIsLocal)
                         return __RoslynAotLocalAdditionalLocations;
-                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                    throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
                 }
             }
 

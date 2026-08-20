@@ -8,9 +8,6 @@ namespace RoslynAot.RoslynFacadeGenerator;
 
 internal static class FacadeSourceGenerator
 {
-    private const string UnsupportedMessage =
-        "This Roslyn API is not implemented by RoslynAot.";
-
     public static void Generate(
         IReadOnlyList<string> assemblyPaths,
         IReadOnlyList<string> referencePaths,
@@ -62,7 +59,8 @@ internal static class FacadeSourceGenerator
                 assemblySymbols,
                 temporaryDirectory,
                 headerFile: null,
-                exceptionMessage: UnsupportedMessage,
+                exceptionMessage:
+                    FacadeDeclarationTransform.UnsupportedMessage,
                 excludeApiFiles: null,
                 excludeAttributesFiles: null,
                 respectInternals: false,

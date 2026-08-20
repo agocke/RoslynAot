@@ -105,7 +105,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
 
         public new CommonForEachStatementSyntax WithAttributeLists(SyntaxList<AttributeListSyntax> attributeLists)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'attributeLists' is unsupported: Generic substitutions are not supported.");
         }
 
         public CommonForEachStatementSyntax WithAwaitKeyword(SyntaxToken awaitKeyword)

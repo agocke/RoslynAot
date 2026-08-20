@@ -54,17 +54,17 @@ namespace Microsoft.CodeAnalysis
 
         System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers()
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. The three overloads collide in the interface's projected vtbl, and the arity overload would silently answer for the other two. Withdrawn until overload identity reaches the vtbl slot rather than the name.");
         }
 
         System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers(string name, int arity)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. The three overloads collide in the interface's projected vtbl, and the arity overload would silently answer for the other two. Withdrawn until overload identity reaches the vtbl slot rather than the name.");
         }
 
         System.Collections.Immutable.ImmutableArray<INamedTypeSymbol> GetTypeMembers(string name)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. The three overloads collide in the interface's projected vtbl, and the arity overload would silently answer for the other two. Withdrawn until overload identity reaches the vtbl slot rather than the name.");
         }
 
         private global::RoslynAot.RoslynFacade.RoslynObjectProxy __RoslynAotGetProxy() => (global::RoslynAot.RoslynFacade.RoslynObjectProxy)(object)this;

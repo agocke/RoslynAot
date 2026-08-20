@@ -40,7 +40,7 @@ namespace Microsoft.CodeAnalysis.Text
         {
             get
             {
-                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+                throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Return type is unsupported: Generic substitutions are not supported.");
             }
         }
 
@@ -58,7 +58,7 @@ namespace Microsoft.CodeAnalysis.Text
 
         public static TextChangeRange Collapse(System.Collections.Generic.IEnumerable<TextChangeRange> changes)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'changes' is unsupported: Generic substitutions are not supported.");
         }
 
         public readonly bool Equals(TextChangeRange other)
@@ -72,7 +72,7 @@ namespace Microsoft.CodeAnalysis.Text
 
         public override readonly bool Equals(object? obj)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'obj' is unsupported: The type is not part of a generated facade assembly.");
         }
 
         public override readonly int GetHashCode()
@@ -86,12 +86,12 @@ namespace Microsoft.CodeAnalysis.Text
 
         public static bool operator ==(TextChangeRange left, TextChangeRange right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public static bool operator !=(TextChangeRange left, TextChangeRange right)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Method kind 'UserDefinedOperator' is not supported.");
         }
 
         public override readonly string ToString()

@@ -12,7 +12,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     {
         public SyntaxTreeValueProvider(System.Func<SyntaxTree, TValue> computeValue, System.Collections.Generic.IEqualityComparer<SyntaxTree>? syntaxTreeComparer = null)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'computeValue' is unsupported: Delegates are not supported.");
         }
     }
 }

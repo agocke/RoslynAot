@@ -13,7 +13,7 @@ namespace Microsoft.CodeAnalysis
         public static SyntaxList<TNode> Create<TNode>(System.ReadOnlySpan<TNode> nodes)
             where TNode : SyntaxNode
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Generic methods are not supported.");
         }
     }
 }

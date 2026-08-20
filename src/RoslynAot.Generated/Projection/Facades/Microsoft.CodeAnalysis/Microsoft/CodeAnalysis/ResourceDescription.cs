@@ -12,12 +12,12 @@ namespace Microsoft.CodeAnalysis
     {
         public ResourceDescription(string resourceName, System.Func<System.IO.Stream> dataProvider, bool isPublic)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'dataProvider' is unsupported: Delegates are not supported.");
         }
 
         public ResourceDescription(string resourceName, string? fileName, System.Func<System.IO.Stream> dataProvider, bool isPublic)
         {
-            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot.");
+            throw new System.PlatformNotSupportedException("This Roslyn API is not implemented by RoslynAot. Parameter 'dataProvider' is unsupported: Delegates are not supported.");
         }
 
         internal ResourceDescription()
